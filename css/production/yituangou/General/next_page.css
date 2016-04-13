@@ -1,0 +1,27 @@
+.netx_page {
+  width: 460px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.netx_page li {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #d5d5d5;
+  margin-right: 5px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #323232;
+  border-radius: 4px;
+}
+.netx_page .next {
+  width: 84px;
+}
+.netx_page .next_color {
+  background-color: #c40e24;
+  border: none;
+  color: #fff;
+}

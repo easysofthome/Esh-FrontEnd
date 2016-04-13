@@ -1,0 +1,67 @@
+@messageDot: -4px -4px 8px 8px;
+@selectBtn_o: -4px -20px 6px 11px;
+@selectBtn: -4px -39px 6px 11px;
+@icon-download: -4px -58px 12px 12px;
+@icon-ser: -4px -78px 12px 12px;
+@icon-vip: -4px -98px 12px 12px;
+@icon-linkedin: -4px -118px 16px 16px;
+@switch_dot_cur: -4px -142px 16px 16px;
+@icon-qq: -4px -166px 16px 16px;
+@icon-sina: -4px -190px 16px 16px;
+@icon-163: -4px -214px 16px 16px;
+@sites: -4px -238px 18px 18px;
+@switch_dot: -4px -264px 18px 18px;
+@location: -4px -290px 14px 18px;
+@switch-bg: -4px -316px 58px 24px;
+@messageOrigin: -4px -348px 22px 24px;
+@message: -4px -380px 20px 24px;
+@switch-lang: -4px -412px 91px 24px;
+@foot_Wechat: -4px -444px 30px 30px;
+@foot_qq: -4px -482px 30px 30px;
+@closeBtn: -4px -520px 30px 30px;
+@number-footer2: -4px -558px 257px 41px;
+@logoOrigin: -4px -607px 167px 43px;
+@logo: -4px -658px 167px 43px;
+@scrollTop: -4px -709px 54px 54px;
+@number-footer: -4px -771px 199px 62px;
+@match: -4px -841px 100px 100px;
+@modSearch: -4px -949px 100px 100px;
+@modSearchOn: -4px -1057px 100px 100px;
+@attention: -4px -1165px 100px 100px;
+@trend: -4px -1273px 100px 100px;
+@priceDet: -4px -1381px 100px 100px;
+@priceDetOn: -4px -1489px 100px 100px;
+@buyerEva: -4px -1597px 100px 100px;
+@attentionOn: -4px -1705px 100px 100px;
+@matchOn: -4px -1813px 100px 100px;
+@buyerEvaOn: -4px -1921px 100px 100px;
+@survey: -4px -2029px 100px 100px;
+@surveyOn: -4px -2137px 100px 100px;
+@industryDet: -4px -2245px 100px 100px;
+@industryDetOn: -4px -2353px 100px 100px;
+@trendOn: -4px -2461px 100px 100px;
+@icon-code: -4px -2569px 96px 118px;
+@banner-word: -4px -2695px 403px 124px;
+@circle: -4px -2827px 400px 400px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-easydata {
+  background-image: url("/images/production/easydata/sprite-easydata.PNG");
+}

@@ -1,0 +1,7 @@
+//修复IE6 png透明背景图片
+.fixIe6pngTransparent(@imgurl)
+{
+
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src="@{imgurl}");
+    _background: none;
+}

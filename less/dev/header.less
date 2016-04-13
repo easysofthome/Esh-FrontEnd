@@ -1,0 +1,708 @@
+@import 'globalImp';
+
+.header
+{
+    //a标签默认颜色
+    @tag-a-normalColor: rgb(255, 255, 255);
+    //头部的高度
+    @header-top-Height: 27px;
+    .maxwidth_1000()
+    {
+        max-width: @Webwidth;
+
+        _width: @Webwidth;
+    }
+    //第一层容器头部顶到头
+    .header-top
+    {
+        line-height: 20px;
+
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+
+        background: rgb(1, 143, 181);
+
+        .size(100%,@header-top-Height);
+        //第二层设置最大宽度居中,IE6不支持maxwidth
+        .header-box
+        {
+            .maxwidth_1000;
+            .center-block;
+        }
+        //分割线
+        .li-spacing
+        {
+            display: inline;
+            float: right;
+            overflow: hidden;
+
+            margin: 8px 10px 0;
+
+            background-color: rgb(26, 171, 207);
+
+            .size(1px,14px);
+        }
+        a
+        {
+            &.img
+            {
+                margin-top: 3px;
+
+                color: rgb(251, 251, 248);
+                //a标签黄色
+                &:hover
+                {
+                    text-decoration: none;
+
+                    color: #ffca00;
+                }
+            }
+        }
+        //appioc
+        .eshapp,
+        .eshUser
+        {
+            float: right;
+            &:hover a
+            {
+                text-decoration: none;
+
+                color: rgb(0, 0, 0);
+            }
+        }
+        .app-title,
+        .lnk-user
+        {
+            line-height: 27px;
+
+            position: relative;
+
+            zoom: 1;
+
+            min-width: 100px;
+            height: 27px;
+
+            vertical-align: middle;
+            //fix ie6
+
+            .inlineBlock(true);
+            .user-uid
+            {
+                float: none;
+
+                padding-left: 10px;
+            }
+            a
+            {
+                line-height: 20px;
+
+                color: @tag-a-normalColor;
+
+                .inlineBlock;
+            }
+            i
+            {
+                //向下的三角图标
+                .triangle(#fff);
+            }
+        }
+        //绑定三角旋转配合js todo:hover
+        .lnk-user-rotate
+        {
+            i
+            {
+                .triangleRotate(#000);
+            }
+        }
+        //选中
+        .lnk-user-selected
+        {
+            background: rgb(254, 254, 254);
+        }
+        //国旗图标
+        .english
+        {
+            margin-top: -2px;
+
+            vertical-align: middle;
+
+            background: url('/Static/Images/us.gif') no-repeat;
+
+            .inlineBlock;
+            .size(20px,11px);
+            .layout;
+        }
+        //下拉层
+        .user-list,
+        .app-content
+        {
+            position: absolute;
+            z-index: 999999;
+            top: 27px;
+
+            overflow: hidden;
+
+            height: 0;
+
+            background: rgb(254, 254, 254);
+
+            .transition(height .1s);
+            .opacity(.95);
+            .border-radius( 0 0 2px 2px);
+            .box-shadow(0 3px 3px rgba(0, 0, 0, .1));
+        }
+        .user-list
+        {
+            li
+            {
+                background: rgb(254, 254, 254);
+                a
+                {
+                    &:link,
+                    :visited
+                    {
+                        line-height: 20px;
+
+                        display: block;
+
+                        height: 20px;
+                        margin: 0;
+                        padding: 3px 10px;
+
+                        color: rgb(0, 0, 0);
+                        background: rgb(254, 254, 254);
+                    }
+                    &:hover
+                    {
+                        position: relative;
+
+                        color: @tag-a-normalColor;
+                        background: rgb(0, 162, 202);
+                    }
+                }
+            }
+        }
+        .user-list-info
+        {
+            height: 54px;
+            &-pic
+            {
+                float: left;
+
+                .square(50px);
+                img
+                {
+                    .square(38px);
+                }
+                a
+                {
+                    display: block;
+
+                    margin: 10px 0 0 10px;
+                    padding-left: 0;
+                }
+            }
+            &-txt
+            {
+                line-height: 16px;
+
+                height: 50px;
+                margin-left: 60px;
+                padding-top: 12px;
+
+                white-space: nowrap;
+            }
+        }
+        //余额
+        #mPrepayMoney
+        {
+            color: rgb(255, 153, 0);
+        }
+        //充值
+        #lnk_charge
+        {
+            margin: 0 10px;
+
+            white-space: nowrap;
+
+            color: rgb(0, 160, 199);
+        }
+        //站内信条数
+        .lnk-message
+        {
+            display: inline;
+            float: none;
+
+            padding: 0 9px;
+
+            cursor: default!important;
+
+            color: @tag-a-normalColor!important;
+            background: rgb(255, 153, 0);
+
+            .border-radius(5px);
+        }
+        //app客户端层
+        .app-yjf
+        {
+            width: 210px;
+            padding: 20px;
+
+            background: #fff;
+            strong
+            {
+                font-size: 14px;
+
+                width: 100%;
+
+                text-align: center;
+
+                color: #333;
+            }
+            .btnapp1()
+            {
+                display: block;
+
+                margin: 5px 0 0 10px;
+
+                text-indent: -9999px;
+
+                background: url(/Static/Images/btn-app.png) no-repeat left top;
+
+                .size(97px,29px);
+            }
+            .btnapp2()
+            {
+                line-height: 30px;
+
+                text-align: center;
+                text-indent: 0;
+
+                color: #fff;
+            }
+            a.btn-app-apple,
+            a.btn-app-android,
+            a.btn-app-design,
+            a.btn-app-download
+            {
+                .btnapp1;
+            }
+            a.btn-app-design,
+            a.btn-app-download
+            {
+                .btnapp2;
+            }
+            a.btn-app-android
+            {
+                background-position: 0 -30px;
+            }
+            a.btn-app-design
+            {
+                background-position: 0 -60px;
+            }
+            a.btn-app-download
+            {
+                background-position: 0 -90px;
+                :hover
+                {
+                    background-position: 0 -120px;
+                }
+            }
+            .apploadimgsize()
+            {
+                .square(76px);
+            }
+            .appLoadApple,
+            .appLoadAndroid
+            {
+                .apploadimgsize;
+            }
+        }
+        //vip图标
+        .vipimg
+        {
+            display: block;
+            float: left;
+
+            margin-top: 4px;
+
+            background: url(/Static/Images/vip.png) no-repeat left top;
+
+            .size(24px,11px);
+        }
+    }
+    //导航
+    .navigate
+    {
+        margin-top: @header-top-Height;
+        //IE6下postion fix无效导致默认产生间距所以在IE6下将间距设置为0
+        //或者使用css表达式,兼容postion fix http://www.cnblogs.com/leejersey/archive/2013/09/08/3308840.html
+
+        _margin-top: 0;
+        //header样式
+        .homeHeader
+        {
+            min-width: 998px;
+        }
+        //导航第一层包裹
+        .header-wrap
+        {
+            position: relative;
+            z-index: 103;
+
+            height: 75px;
+
+            background: rgb(0, 162, 202);
+        }
+        //一级导航
+        .header-inner
+        {
+            height: 75px;
+
+            .center-block();
+            .maxwidth_1000();
+            .logosize()
+            {
+                .size(399px,75px);
+            }
+            //LOGO
+            .logo
+            {
+                font-size: 120px;
+                line-height: 75px;
+
+                display: inherit;
+                float: left;
+
+                color: #fff;
+
+                .logosize();
+            }
+            .header-logo
+            {
+                position: absolute;
+
+                display: inline-block;
+                overflow: hidden;
+
+                background-image: url(@imgurl);
+                //透明背景png图片
+
+                @imgurl: '/Static/Images/MemberImg/logo.png';
+                .fixIe6pngTransparent(@imgurl);
+                .logosize();
+            }
+            //导航文字开始
+            nav
+            {
+                float: left;
+                clear: right;
+                overflow: hidden;
+
+                height: 75px;
+                margin-left: 100px;
+                li
+                {
+                    font-size: 16px;
+                    line-height: 75px;
+
+                    float: left;
+
+                    height: 75px;
+                    padding: 0 16px;
+                    h2
+                    {
+                        font-size: 16px;
+                        font-weight: normal;
+
+                        margin: 0;
+
+                        cursor: default;
+
+                        color: @tag-a-normalColor;
+                    }
+                    a
+                    {
+                        color: @tag-a-normalColor;
+                    }
+                    //选中
+                    &.a1
+                    {
+                        color: @tag-a-normalColor;
+                        background: rgb(1, 149, 187);
+                    }
+                    &.selected
+                    {
+                        background-color: #0095bb;
+                    }
+                }
+            }
+        }
+        //二级导航
+        .sub-menus
+        {
+            position: absolute;
+            z-index: 102;
+            top: 134px;
+            right: 0;
+            left: 0;
+            .sub-menu
+            {
+                position: absolute;
+                top: -650px;
+
+                overflow: hidden;
+
+                width: 100%;
+                height: auto;
+                margin: 0;
+
+                background: #333;
+
+                .layout;
+                .opacity(0);
+                .transition(550ms);
+                .transition-timing-function(cubic-bezier(.17, .5, .44, .36));
+                &.show
+                {
+                    top: -32px;
+
+                    .transition-timing-function(cubic-bezier(.73, .67, .77, .92));
+                    .transition(250ms);
+                    .opacity(1);
+                }
+                dl
+                {
+                    font-size: 14px;
+
+                    float: left;
+
+                    margin: 5px;
+                    padding: 12.5px 30px 12.5px 0;
+                    dt
+                    {
+                        font-weight: normal;
+                        line-height: 22px;
+
+                        margin-top: 8px;
+                        margin-bottom: 6px;
+                        padding-bottom: 11px;
+
+                        color: #959595;
+                        border-bottom: 1px solid #666;
+                    }
+                    dd
+                    {
+                        margin-bottom: 5px;
+                        margin-left: -5px;
+                        padding: 5px 0;
+                        a
+                        {
+                            padding: 0 5px;
+
+                            color: #ddd;
+                            &:hover,
+                            &.current
+                            {
+                                text-decoration: none;
+
+                                color: #00a2ca;
+                            }
+                        }
+                    }
+                }
+            }
+            .menu_hengxiang
+            {
+                dl
+                {
+                    dd
+                    {
+                        line-height: 22px;
+
+                        float: left;
+
+                        margin-right: 12px;
+
+                        white-space: nowrap;
+                    }
+                    &.firstwindth
+                    {
+                        width: 435px;
+                    }
+                    &.otherwindth
+                    {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//easysofthome文字logo
+.textlogo
+{
+    display: block;
+
+    background: url(/Static/Images/MemberImg/Webtop_left.jpg) no-repeat left top;
+
+    .size(115px,23px);
+}
+
+
+//站内信小窗口
+
+.h-notice
+{
+    position: fixed;
+    z-index: 500;
+    top: 80px;
+    right: 40px;
+
+    width: 300px;
+    .panel
+    {
+        .bd
+        {
+            overflow: hidden;
+
+            margin-top: 0;
+            li
+            {
+                position: relative;
+
+                margin: 10px 0;
+
+                .size(300px,130px);
+                &.active
+                {
+                    white-space: normal;
+                }
+                .wrap
+                {
+                    font-size: 14px;
+
+                    position: relative;
+                    z-index: 2;
+                    top: 5px;
+                    left: 5px;
+
+                    overflow: hidden;
+
+                    padding: 8px 10px 5px 70px;
+
+                    text-align: left;
+
+                    border-bottom: 1px solid #e1e1e1;
+                    background: #fff;
+
+                    .size(210px,107px);
+                }
+                .bd
+                {
+                    overflow: hidden;
+
+                    height: 63px;
+                }
+                .pic
+                {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+
+                    overflow: hidden;
+
+                    .square(50px);
+                    img
+                    {
+                        .square(50px);
+                        .border-radius(3px);
+                    }
+                }
+                span
+                {
+                    display: block;
+
+                    color: #999;
+                }
+                p
+                {
+                    position: relative;
+                    top: -3px;
+                }
+                a
+                {
+                    &:hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+                .bg
+                {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    background: #000;
+
+                    .size(300px,130px);
+                    .opacity(.2);
+                }
+            }
+            .del
+            {
+                display: none;
+            }
+        }
+        .ft
+        {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+            width: 210px;
+            .btn-sub
+            {
+                padding: 4px 10px;
+                &:hover
+                {
+                    text-decoration: none;
+                }
+            }
+            .signed
+            {
+                background: #ccc!important;
+            }
+        }
+    }
+}
+
+
+//私信按钮
+.g9,
+.lightgray
+{
+    color: rgb(153, 153, 153);
+}
+.esh_btn-sub
+{
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(55, 181, 249)!important;
+}
+.esh_btn
+{
+    padding: 5px 15px;
+
+    cursor: pointer;
+    text-align: center;
+
+    border: 0;
+
+    .border-radius(3px);
+}

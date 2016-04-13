@@ -1,0 +1,111 @@
+.icon-yisheji-log {
+  background-image: url("/images/production/yisheji/log/sprite-yisheji-log.PNG");
+}
+.logcontentbox {
+  margin: 0 auto;
+  background-position: -4px -189px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 1190px;
+  height: 482px;
+}
+.logcontentbox .logbox {
+  width: 356px;
+  margin-top: 40px;
+  margin-left: 732px;
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+.logcontentbox .log_withinbox {
+  width: 308px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.logcontentbox .log_title {
+  font-size: 20px;
+}
+.logcontentbox .log_jianju {
+  margin-top: 10px;
+}
+.logcontentbox .log_prompt {
+  line-height: 24px;
+  color: #666;
+  border: 1px solid #ffe57d;
+  background-color: #fff6d2;
+}
+.logcontentbox .log_prompt .prompt_img {
+  margin: 4px 16px 4px 10px;
+  background-position: -4px -50px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 16px;
+}
+.logcontentbox .enter_left {
+  width: 35px;
+  border: 1px solid #bdbdbd;
+  border-right: none;
+}
+.logcontentbox .enter_left .user {
+  margin: 12px 10px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+.logcontentbox .enter_left .lock {
+  margin: 11px 10px;
+  background-position: -4px -26px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 16px;
+}
+.logcontentbox .enter_gongong {
+  line-height: 38px;
+  height: 38px;
+  color: #999;
+  border: 1px solid #bdbdbd;
+}
+.logcontentbox .enter_right {
+  width: 271px;
+  border-left: none;
+}
+.logcontentbox .enter_yanzheng {
+  padding-left: 10px;
+  width: 184px;
+}
+.logcontentbox .yangzhengma {
+  width: 88px;
+  border: 1px solid #bdbdbd;
+  height: 38px;
+  margin-left: 20px;
+}
+.logcontentbox .hanggao {
+  line-height: 40px;
+}
+.logcontentbox a {
+  color: #666;
+}
+.logcontentbox .check_weiz {
+  margin-top: 14px;
+  *margin-top: 10px;
+  margin-right: 4px;
+}
+.logcontentbox .log_ann {
+  display: block;
+  background-color: #e4393c;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+}
+.logcontentbox .zhuche {
+  color: #e4393c;
+  margin-left: 8px;
+}

@@ -1,0 +1,118 @@
+.icon-easydata-priceDet {
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+}
+.tablebox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.tablebox .table_cont {
+  width: 1160px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+}
+.tablebox .tab_tit {
+  font-size: 18px;
+  color: #000;
+}
+.tablebox .Margins {
+  margin-top: 30px;
+}
+.tablebox .tab_unit,
+.tablebox .Spread_text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888;
+}
+.tablebox .Spread_text {
+  width: 72px;
+  margin-left: 20px;
+  color: #3ca1d7;
+}
+.tablebox .pricechangesbox {
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size: 14px;
+  color: #333;
+  line-height: 48px;
+  width: 1159px;
+}
+.tablebox .vertical {
+  background-color: #f2f3f5;
+  font-size: 16px;
+}
+.tablebox .vert_data {
+  font-size: 14px;
+}
+.tablebox .vert_data:nth-child(odd) {
+  background: #f8f8f8;
+}
+.tablebox .impor_year,
+.tablebox .impor_name,
+.tablebox .impor_decrease,
+.tablebox .impor_namesub,
+.tablebox .impor_decreasesub,
+.tablebox .sales_year,
+.tablebox .sales_yearnum,
+.tablebox .supp_name,
+.tablebox .supp_year,
+.tablebox .supp_nameval {
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.tablebox .impor_namesub,
+.tablebox .impor_decreasesub,
+.tablebox .supp_nameval {
+  text-align: left;
+}
+.tablebox .impor_year {
+  width: 90px;
+}
+.tablebox .impor_name {
+  width: 585px;
+}
+.tablebox .impor_decrease {
+  width: 240px;
+}
+.tablebox .impor_namesub {
+  width: 565px;
+  padding-left: 20px;
+}
+.tablebox .impor_decreasesub {
+  width: 220px;
+  padding-left: 20px;
+}
+.tablebox .supp_name {
+  width: 282px;
+}
+.tablebox .supp_nameval {
+  width: 262px;
+  padding-left: 20px;
+}
+.tablebox .supp_year {
+  width: 145px;
+}
+.tablebox .sales_year {
+  width: 162px;
+}
+.tablebox .sales_yearnum {
+  width: 165px;
+}
+.tablebox .Spread {
+  margin: 6px 0 0 6px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/images/icon/easydata/priceDet/Spread.png");
+  _background: none;
+}
+.tablebox .link00 {
+  color: #333;
+}

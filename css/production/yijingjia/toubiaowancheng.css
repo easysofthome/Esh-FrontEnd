@@ -1,0 +1,38 @@
+.anniu {
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 25px;
+  cursor: pointer;
+  color: #fff;
+  -vertical-align: middle;
+}
+.main {
+  border: 1px #d6d6d6 solid;
+  width: 1188px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-bottom: 56px;
+  background-image: url("/images/production/yijingjia/toubiaowancheng/toubiaochenggong.png");
+  background-repeat: no-repeat;
+  background-position: center 35px;
+}
+.main p {
+  width: 570px;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
+  line-height: 22px;
+  -vertical-align: middle;
+}
+.main .jixu-guanli {
+  width: 324px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.main .jixu-guanli a {
+  float: left;
+  background-color: #c30e23;
+}
+.main .jixu-guanli .jixu {
+  margin-right: 80px;
+}

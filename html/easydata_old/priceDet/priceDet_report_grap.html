@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/production/easydata_old/global.css">
+  <link rel="stylesheet" href="/css/production/easydata_old/analysis-report.css">
+  <link href="/css/production/easydata_old/report/basicinformation.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easydata_old/report/productanalysis.css" rel="stylesheet" type="text/css"/>
+  <title>易家纺电子商务服务平台|阿根廷国家分析报告</title>
+</head>
+<body>
+
+  @@include('/easydata_old/header.html')
+  <div class="analysis_report_box">
+
+    <div class="basic_inf">
+      <div class="inf_box">
+        <p class="clearfix position">
+          <span class="lf home"></span>
+          <span class="lf arrow"></span>
+          <a href="#" class="lf">了解价格行情</a>
+          <span class="lf arrow"></span>
+          <a href="/html/easydata_old/priceDet/importDet.html" class="lf">查看国外进口价格</a>
+          <span class="lf arrow"></span>
+          <a href="/html/easydata_old/priceDet/priceDet_report.html" class="lf current">阿根廷采购分析报告</a>
+          <span class="rg prompt">数据说明：--代表无数据，红色代表最高，绿色代表最低</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="margin_top_40">@@include('/easydata_old/report/timeswitch.html')</div>
+
+    <div class="margin_top_20">
+      <div class="pro_an clearfix">
+      <div class="pro_cnt">
+        <p class="clearfix">
+          <span class="lf pro_tit">采购的产品分析</span>
+          <span class="rg item">数量单位：件</span>
+          <span class="rg item">重量单位：吨</span>
+        </p>
+        <div id="chartdiv1" style="float:left;width:100%;height:400px;">
+
+        </div>
+        <div id="chartdiv2" style="float:left;width:50%;height:400px;">
+
+        </div>
+        <div id="chartdiv3" style="float:left;width:50%;height:400px;">
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="margin_top_20">
+      <div class="pro_an clearfix">
+      <div class="pro_cnt">
+        <p class="clearfix">
+          <span class="lf pro_tit">按月采购产品分析</span>
+          <span class="rg item">数量单位：件</span>
+          <span class="rg item">重量单位：吨</span>
+        </p>
+        <div id="chartdiv4" style="width:100%;height:400px;">
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="margin_top_20">
+      <div class="pro_an clearfix">
+      <div class="pro_cnt">
+        <p class="clearfix">
+          <span class="lf pro_tit">供应国家分析</span>
+          <span class="rg item">数量单位：件</span>
+          <span class="rg item">重量单位：吨</span>
+        </p>
+        <div id="chartdiv5" style="width:100%;height:400px;">
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="margin_top_20">
+      <div class="pro_an clearfix">
+      <div class="pro_cnt">
+        <p class="clearfix">
+          <span class="lf pro_tit">港口分析</span>
+          <span class="rg item">数量单位：件</span>
+          <span class="rg item">重量单位：吨</span>
+        </p>
+        <div id="chartdiv6" style="width:100%;height:400px;">
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="margin_top_20">
+      <div class="pro_an clearfix">
+        <div class="pro_cnt">
+          <p class="clearfix">
+            <span class="lf pro_tit">运输方式分析</span>
+            <span class="rg item">数量单位：件</span>
+            <span class="rg item">重量单位：吨</span>
+          </p>
+          <div id="chartdiv7" style="width:100%;height:400px;">
+
+          </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    @@include('/easydata_old/backBtn.html')
+    <!-- /返回按钮 -->
+
+    @@include('/easydata_old/footer.html')
+  </div>
+
+  <script src="/js/easydata_old/amchart/amchart.js"></script>
+  <script src="/js/easydata_old/amchart/serial.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+  <script src="/js/easydata_old/priceDet/chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@shangchu: -4px -4px 13px 13px;
+@shixiang: -4px -25px 81px 15px;
+@dun: -4px -48px 21px 21px;
+@shijian: -4px -77px 21px 21px;
+@xingyong: -4px -106px 21px 21px;
+@miantu: -4px -135px 77px 77px;
+@miantu2: -4px -220px 77px 77px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yituangou-renzheng {
+  background-image: url("/images/production/yituangou/renzheng/sprite-yituangou-renzheng.PNG");
+}

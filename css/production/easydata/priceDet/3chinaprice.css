@@ -1,0 +1,166 @@
+.icon-easydata-priceDet {
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+}
+.tablebox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.tablebox .table_cont {
+  width: 1160px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+}
+.tablebox .gao,
+.tablebox .gao2 {
+  background-position: -4px -98px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/images/icon/easydata/priceDet/gao.png");
+  _background: none;
+}
+.tablebox .gao2,
+.tablebox .di2,
+.tablebox .avg2 {
+  margin: 14px 20px 14px 20px;
+}
+.tablebox .di,
+.tablebox .di2 {
+  background-position: -4px -70px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/images/icon/easydata/priceDet/di.png");
+  _background: none;
+}
+.tablebox .avg,
+.tablebox .avg2 {
+  background-position: -4px -42px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/images/icon/easydata/priceDet/avg.png");
+  _background: none;
+}
+.tablebox .avg,
+.tablebox .di,
+.tablebox .gao {
+  margin-right: 4px;
+}
+.tablebox .gao_rignt {
+  margin-right: 30px;
+}
+.tablebox .di_rignt {
+  margin-right: 14px;
+}
+.tablebox .highcolor {
+  color: #69c731;
+}
+.tablebox .lowcolor {
+  color: #f6492b;
+}
+.tablebox .price_data {
+  width: 60px;
+}
+.tablebox .price_year {
+  width: 182px;
+}
+.tablebox .tab_tit {
+  font-size: 18px;
+  color: #000;
+}
+.tablebox .Margins {
+  margin-top: 30px;
+}
+.tablebox .tab_unit,
+.tablebox .gao_rignt,
+.tablebox .di_rignt {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888;
+}
+.tablebox .chinapricebox,
+.tablebox .pricechangesbox {
+  width: 444px;
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size: 14px;
+  color: #333;
+  line-height: 48px;
+}
+.tablebox #chinapricefig1 {
+  width: 670px;
+  height: 344px;
+}
+.tablebox #chinapricefig2 {
+  width: 100%;
+  height: 400px;
+}
+.tablebox .pricechangesbox {
+  width: 1159px;
+}
+.tablebox .vertical {
+  background-color: #f2f3f5;
+  font-size: 16px;
+}
+.tablebox .vert_data {
+  font-size: 14px;
+}
+.tablebox .vert_data:nth-child(odd) {
+  background: #f8f8f8;
+}
+.tablebox .horizontal,
+.tablebox .price_data,
+.tablebox .price_year,
+.tablebox .supp_rank,
+.tablebox .supp_name,
+.tablebox .supp_price,
+.tablebox .supp_namedata {
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.tablebox .horizontal {
+  width: 110px;
+}
+.tablebox .supp_rank {
+  width: 150px;
+}
+.tablebox .supp_name {
+  width: 582px;
+}
+.tablebox .supp_price {
+  width: 120px;
+}
+.tablebox .supp_namedata {
+  padding-left: 20px;
+  width: 562px;
+  text-align: left;
+}
+.tablebox .supp_butt {
+  width: 98px;
+  display: block;
+  line-height: 28px;
+  color: #3ca1d7;
+  border: 1px solid #3ca1d7;
+  text-align: center;
+  margin: 9px auto 9px auto;
+  transition: all .3s;
+  border-radius: 2px;
+}
+.tablebox .supp_butt:hover {
+  background: #3ca1d7;
+  color: #fff;
+}

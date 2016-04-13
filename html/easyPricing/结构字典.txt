@@ -1,0 +1,11 @@
+combination                      自由组合
+  |
+
+fabric                           面料核价
+  |
+
+singleProduct                    单品核价
+  | choice                       选择款式尺寸
+
+suite                            套件核价
+  |

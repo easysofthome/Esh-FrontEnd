@@ -1,0 +1,65 @@
+@import '../../../sprite/easydesign/sprite.less';
+@import '../../../../less/dev/mixins/mixins.less';
+
+.flowerbox{
+  font-size: 14px;
+  color:#666666;
+  width: 285px;
+  .border-radius(2px);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  .flowerimg{
+    width: 285px;
+    height: 285px;
+    overflow: hidden;
+    background-color: #000;
+    display: block;
+  }
+  .flowetextbox{
+    background-color: #fff;
+    width: 245px;
+    margin: 0 auto;
+    padding: 20px 20px 0 20px;
+  }
+  .flower_tit,{
+    font-size: 16px;
+    color:#333;
+    padding-bottom: 14px;
+    display: block;
+  }
+  .touxiang{
+    width: 20px;
+    height: 20px;
+    .border-radius(60px);
+      overflow: hidden;
+      display: block;
+  }
+  .flowernane,.free{
+    margin-left: 4px;
+    line-height: 20px;
+    color:#666666;
+  }
+  .flower_tit:hover,.flowernane:hover{
+    color: #ff6600;
+  }
+  .free{
+    color:#28b28b;
+  }
+  .browse{
+    margin:6px 6px 0 0  ;
+    .sprite(@browse);
+    .icon-easydesign;
+  }
+  .dianzang{
+    margin:0px 6px 0 0  ;
+    .sprite(@dianzang);
+    .icon-easydesign;
+    &:hover{
+      .sprite(@dianzang_oga);
+      .icon-easydesign;
+    }
+  }
+  .likebox{
+    margin-top: 8px;
+    padding-bottom: 10px;
+  }
+}

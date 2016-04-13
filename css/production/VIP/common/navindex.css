@@ -1,0 +1,212 @@
+.icon-VIP-common-nav {
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.navind_box {
+  background-color: #303745;
+}
+.navind_box .navind {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 84px;
+}
+.navind_box .logo {
+  padding-top: 14px;
+}
+.navind_box .signout {
+  line-height: 19px;
+  width: 38px;
+  margin-top: 3px;
+  margin-left: 14px;
+  text-align: center;
+  color: #afb1b6;
+  border: 1px solid #afb1b6;
+  border-radius: 4px;
+}
+.navind_box .welcome {
+  line-height: 25px;
+  color: #afb1b6;
+}
+.navind_box .nav_top {
+  margin-top: 50px;
+  font-size: 16px;
+}
+.navind_box .nav_top a {
+  color: #fff;
+}
+.navind_box .nav_left {
+  margin-left: 100px;
+}
+.navind_box .nav_longleft {
+  margin-left: 380px;
+}
+.navind_box .rela {
+  position: relative;
+}
+.navind_box .newsRed {
+  line-height: 24px;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  text-align: center;
+  font-size: 13px;
+  background-position: -4px -69px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 346px;
+  margin-top: 12px;
+  margin-left: -173px;
+}
+.Userinfbox .upperpart {
+  margin: 0 10px;
+  padding: 25px 0 38px 103px;
+}
+.Userinfbox .upperpart .headPor {
+  position: relative;
+}
+.Userinfbox .upperpart .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Userinfbox .AfterClickBg {
+  background-color: #3e485c;
+}
+.Userinfbox .lowerpart {
+  padding: 0 10px;
+  padding-bottom: 24px;
+  padding-bottom: 15px;
+  background-image: url('/images/production/VIP/common/nav/a08_bg.png');
+}
+.Userinfbox .user {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+.Userinfbox .usertop {
+  padding-top: 10px;
+}
+.Userinfbox .vipbox {
+  margin-top: 20px;
+}
+.Userinfbox .vipwidth {
+  display: inline;
+  width: 54px;
+  margin-left: 20px;
+  font-size: 13px;
+}
+.Userinfbox .vipwidth a {
+  color: #333;
+  line-height: 32px;
+}
+.Userinfbox .vipwidth span {
+  display: block;
+  padding-top: 6px;
+  text-align: center;
+}
+.Userinfbox .VIP {
+  margin: 0 auto;
+  background-position: -4px -301px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .Light {
+  margin: 0 auto;
+  background-position: -4px -141px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .phone {
+  margin: 0 auto;
+  background-position: -4px -101px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .realname {
+  margin: 0 auto;
+  background-position: -4px -261px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .mailbox {
+  margin: 0 auto;
+  background-position: -4px -221px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .password {
+  margin: 0 auto;
+  background-position: -4px -181px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .VIPtopmar {
+  margin-top: 12px;
+}
+.Userinfbox .security {
+  margin-top: 26px;
+  margin-left: 20px;
+}
+.Userinfbox .progressbar {
+  margin: 0 auto;
+  margin-top: 12px;
+  background-position: -4px -18px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 286px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .progress {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 143px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .lowerpart_bot {
+  background-position: -4px -46px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 346px;
+  height: 15px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}

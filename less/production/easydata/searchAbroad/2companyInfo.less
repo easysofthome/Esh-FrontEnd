@@ -1,0 +1,181 @@
+
+@import '../../../sprite/easydata/searchAbroad/sprite.less';
+
+@import '../../../dev/mixins/mixins.less';
+
+.basic_inf
+{
+    margin-top: 112px;
+    font-size: 14px;
+
+    background-color: #303845;
+    .compatible
+    {
+        padding-bottom: 15px;
+    }
+    .inf_box
+    {
+        width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+    .red_txt01
+    {
+        color: #f6492b;
+    }
+    .green_txt01
+    {
+        color: #69c731;
+    }
+    .white_txt
+    {
+        color: #e3e3e3;
+    }
+    .position
+    {
+        line-height: 16px;
+        // margin-right: 110px;
+
+        padding-top: 40px;
+        a
+        {
+            color: #888;
+        }
+        .home
+        {
+            .sprite(@home);
+            .icon-easydata-searchAbroad;
+            .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/home.png');
+        }
+        .arr
+        {
+            margin: 3px 5px 0 5px;
+
+            .sprite(@arr);
+            .icon-easydata-searchAbroad;
+            .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/arr.png');
+        }
+        .current
+        {
+            color: #e3e3e3;
+        }
+    }
+    .inf_content
+    {
+        margin-top: 40px;
+        padding-bottom: 15px;
+
+        background-color: #3f4755;
+        .contbox
+        {
+            width: 460px;
+            margin: 15px 0 0 20px;
+
+            color: #ccc;
+            border-right: 1px solid #656c77;
+        }
+        .green
+        {
+            margin: 20px 0 0 70px;
+
+            .sprite(@green);
+            .icon-easydata-searchAbroad;
+            .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/green.png');
+        }
+        .blue
+        {
+            margin: 20px 0 0 30px;
+
+            .sprite(@blue);
+            .icon-easydata-searchAbroad;
+            .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/blue.png');
+        }
+        .orange
+        {
+            margin: 20px 0 0 30px;
+
+            .sprite(@orange);
+            .icon-easydata-searchAbroad;
+            .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/orange.png');
+        }
+        .money,
+        .dollar,
+        .quantity
+        {
+            text-align: center;
+        }
+        .money
+        {
+            font-size: 16px;
+
+            margin-top: 64px;
+
+            color: #ccc;
+        }
+        .dollar
+        {
+            font-size: 24px;
+        }
+        .orange_txt
+        {
+            color: #ff9000;
+        }
+        .titlebox
+        {
+            line-height: 24px;
+
+            padding-top: 2px;
+        }
+        .cont_title
+        {
+            color: #e3e3e3;
+        }
+        .add_butt
+        {
+            width: 66px;
+            height: 24px;
+            margin-right: 15px;
+
+            color: #fff;
+            background-color: #f60;
+
+            .border-radius(3px);
+            .add
+            {
+                margin: 5px 4px 0 10px;
+
+                .sprite(@add,inline);
+                .icon-easydata-searchAbroad;
+                .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/add.png');
+            }
+        }
+        .inf_linehe,
+        .inf_top,
+        .inf_bottom
+        {
+            line-height: 34px;
+        }
+        .inf_top
+        {
+            margin-top: 20px;
+        }
+        .inf_bottom
+        {
+            padding-bottom: 6px;
+        }
+
+
+        // 总金额和总件数
+        .mar_135,.mar_90{
+            .money{
+                margin-top: 50px;
+            }
+        }
+        .mar_135{
+            margin-left: 135px;
+        }
+        .mar_90{
+            margin-left: 90px;
+        }
+    }
+}

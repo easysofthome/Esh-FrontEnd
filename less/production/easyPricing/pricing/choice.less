@@ -1,0 +1,98 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easyPricing/pricing/sprite.less';
+
+// 进度条
+.progressBar{
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 14px 0 24px 0;
+  text-align: center;
+  line-height: 24px;
+  .border-radius(3px);
+  ul.words{
+    li.width{
+      width: 144px;
+    }
+    li.widththree{
+      width: 912px;
+    }
+    li.widthfour{
+      width: 352px;
+      margin-left: 104px;
+    }
+    li.widthfour2{
+      width: 352px;
+      margin-right: 104px;
+    }
+    li.txtblue{
+      color: #3ca1d7;
+    }
+  }
+  ul.Step{
+    margin: 5px 0 0 60px;
+    li.barthree{
+      width: 504px;
+      height: 24px;
+    }
+    li.barfour{
+      width: 328px;
+      height: 24px;
+    }
+    li.bargray{
+      background-image: url("/images/production/easyPricing/pricing/bargray.png");
+      background-repeat: repeat-x;
+      background-position: center;
+    }
+    li.barblue{
+      background-image: url("/images/production/easyPricing/pricing/barblue.png");
+      background-repeat: repeat-x;
+      background-position: center;
+    }
+    li.barblue{
+      background-image: url("/images/production/easyPricing/pricing/barblue.png");
+    }
+    li.circle{
+      .sprite(@circlegray);
+      .icon-easyPricing-pricing;
+    }
+    li.txtwhite{
+      color: #fff;
+      .sprite(@circleblue);
+      .icon-easyPricing-pricing;
+    }
+  }
+}
+
+
+// 类型
+.typebox{
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  line-height: 26px;
+  padding: 6px 0 20px 0;
+  .border-radius(3px);
+  p.tit{
+    width: 70px;
+    margin: 14px 0 0 20px;
+    display: inline;
+  }
+  ul.type{
+    width: 1090px;
+    margin-right: 20px;
+    .type_a{
+      display: block;
+      padding: 0 10px;
+      margin: 14px 11px 0 11px;
+      color: #666;
+      .border-radius(3px);
+    }
+    .type_a:hover,.cur{
+      background-color: #3ca1d7;
+      color: #fff;
+    }
+  }
+}

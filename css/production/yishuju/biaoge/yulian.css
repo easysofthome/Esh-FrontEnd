@@ -1,0 +1,114 @@
+.wenzichengse {
+  color: #ff6600;
+}
+.wenzishenghui {
+  color: #333;
+}
+.wenziqianhui {
+  color: #888;
+}
+.wenzilanse {
+  color: #00a2c9;
+}
+.heiti {
+  color: #000;
+}
+.wenzihongse {
+  color: #dc1416;
+}
+.wenzilvse {
+  color: #10bb39;
+}
+.jiachu {
+  font-weight: bold;
+}
+.dahaozi {
+  font-size: 16px;
+}
+.xiaohaozi {
+  font-size: 13px;
+}
+.wenziyuzhong {
+  text-align: center;
+}
+.qujiachu {
+  font-weight: lighter;
+}
+.combox {
+  line-height: 22px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 8px;
+  text-align: center;
+  border: 1px solid #00a2c9;
+  background-color: #fff;
+}
+.combox a {
+  color: #00a2c9;
+}
+.com_chengse {
+  border: 1px solid #ff8a56;
+}
+.com_chengse a,
+.com_chengse a:hover {
+  color: #ff8a56;
+}
+.xiaocom {
+  width: 80px;
+}
+.dacom {
+  width: 140px;
+}
+.qujizhong {
+  margin: 8px 20px 0 0;
+}
+.shujubiankuan {
+  margin: 0 auto;
+  width: 1000px;
+}
+.shujubiankuan .xiabianju {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.shujubiankuan .chukobox {
+  width: 998px;
+  border: 1px solid #dedede;
+  line-height: 40px;
+  background-color: #fff;
+}
+.shujubiankuan .chukobox .right_biankuan {
+  border-right: 1px solid #dfdfdf;
+}
+.shujubiankuan .chukobox .huibeijing {
+  background-color: #eeeeee;
+}
+.shujubiankuan .chukobox .xiabiankuang {
+  border-bottom: 1px solid #dfdfdf;
+}
+.shujubiankuan .chukobox .biaotihanggao {
+  line-height: 74px;
+}
+.shujubiankuan .chukobox .biaotikuan {
+  width: 70px;
+}
+.shujubiankuan .chukobox .IEjianrou {
+  _width: 68px;
+}
+.shujubiankuan .chukobox .nfenkuan {
+  width: 74px;
+}
+.shujubiankuan .chukobox .biaogezi {
+  font-size: 12px;
+}
+.shujubiankuan .chukobox .paihangkuan_lf {
+  width: 499px;
+}
+.shujubiankuan .chukobox .paihangkuan_rg {
+  width: 498px;
+}
+.shujubiankuan .chukobox .paihangbianju {
+  margin-left: 20px;
+}
+.shujubiankuan .chukobox .gunjiajiaju {
+  margin-left: 10px;
+}

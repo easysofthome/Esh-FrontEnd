@@ -1,0 +1,153 @@
+@import '../../sprite/easydata/sprite.less';
+@import '../../../less/dev/mixins/mixins.less';
+
+.header{
+  height: 90px;
+  background-color: #3F4753;
+  text-align: center;
+  .header-wrapper{
+    margin:0 auto;
+    padding:0 30px;
+    .logo{
+      height: 90px;
+      float:left;
+      #header-logo{
+        margin-top:22px;
+        .sprite(@logoOrigin);
+        .icon-easydata;
+        .fixIe6pngTransparent('/images/icon/easydata/logo.png');
+      }
+    }
+    .nav-more{
+      display: none;
+      position:absolute;
+      z-index: 2;
+      text-align: left;
+      .box-shadow(0 0 2px 0 #3F4753;);
+      li{
+        height:40px;
+        background-color: #3F4753;
+        a{
+          margin:0px;
+          font-size:14px;
+          padding-left: 20px;
+          color: #fff;
+          line-height: 40px;
+        }
+        &:hover{
+          background-color:#3CA1D7;
+          a{
+            color:white;
+          }
+        }
+      }
+    }
+    .nav-ol1{width:168px;right: 0;}
+    .nav-ol2{width:110px;left:0;}
+    .nav-ol3{width:125px;top:90px;right: 18px;}
+    #nav{
+      float:left;
+      width: 860px;
+      ul{
+        margin-left: 6px;
+      }
+      .nav-li{
+        float:left;
+        height: 90px;
+        &:hover{
+          i{
+            .triangleRotate(#dbdbdb);
+          }
+        }
+        .ul-a{
+          display:block;
+          color:#dbdbdb;
+          font-size: 16px;
+          padding: 48px 20px 20px 20px;
+        }
+        i{.triangle(#dbdbdb);}
+        &:hover{
+          background-color: #3C434F;
+        }
+      }
+      .more{
+        cursor:pointer;
+        position: relative;
+      }
+      .cur{
+        a{
+          color:#f60;
+        }
+      }
+    }
+    #login{
+      width:170px;
+      float:right;
+      .login-message-box{
+        color:#dbdbdb;
+        width:80px;
+        height: 90px;
+        text-align: center;
+        .mes-ico{
+          margin: 22px auto 0;
+          width:40px;
+          height:45px;
+          .sprite(@messageOrigin);
+          .icon-easydata;
+          .fixIe6pngTransparent('/images/icon/easydata/messageOrigin.png');
+          overflow: visible;
+        }
+        .mes-dot{
+          position: relative;
+          top: -3px;
+          left:18px;
+          .sprite(@messageDot);
+          .icon-easydata;
+          .fixIe6pngTransparent('/images/icon/easydata/messageDot.png');
+        }
+        &:hover{
+          background-color: #3C434F;
+        }
+      }
+      .login-ico-wrap{
+        width:90px;
+        height: 90px;
+        .login-ico-box{
+          padding: 23px 20px 23px 10px;
+          position: relative;
+          .login-ico-bg{
+            width: 60px;
+            height:43px;
+            border: 1px solid #ccc;
+            position: relative;
+            overflow: hidden;
+            .border-radius(3px);
+            &:hover{
+              cursor:pointer;
+              background-color: #3C434F;
+              span{
+                .triangleRotate(#dbdbdb);
+              }
+            }
+            img{
+              width:43px;
+              height: 43px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              .border-radius(3px);
+            }
+            span{
+              .triangle(#dbdbdb);
+              float:right;
+              margin-top:23px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+}

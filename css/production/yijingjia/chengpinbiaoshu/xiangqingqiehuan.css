@@ -1,0 +1,35 @@
+.xiangqingqiehuan {
+  width: 903px;
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/shangxiabian.PNG");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.xiangqingqiehuan li {
+  float: left;
+  padding: 0 20px;
+  line-height: 38px;
+  -vertical-align: middle;
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  border-right: 1px #d6d6d6 solid;
+}
+.xiangqingqiehuan li a {
+  color: #333;
+}
+.xiangqingqiehuan li a:hover {
+  color: #c30e23;
+}
+.xiangqingqiehuan .li_qubiank {
+  border-right: none;
+}
+.xiangqingqiehuan .dangqian {
+  color: #c30e23;
+  background-color: #fff;
+  line-height: 38px;
+  -vertical-align: middle;
+  border-top: 2px solid #c30e23;
+}
+.xiangqingqiehuan .dangqian a {
+  color: #c30e23;
+}

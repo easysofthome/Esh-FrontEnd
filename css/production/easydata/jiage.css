@@ -1,0 +1,161 @@
+.icon-easydata {
+  background-image: url("/images/production/easydata/sprite-easydata.PNG");
+}
+ol.module-ol li .mod-ol-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+ol.module-ol li .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-position: -4px -251px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("/images/production/easydata/sprite-easydata.PNG");
+}
+ol.module-ol li .mod-li1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -415px;
+  margin-top: -310px;
+  width: 830px;
+  height: 620px;
+  background-color: white;
+  border-radius: 4px;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont {
+  padding: 30px;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont .mod-li1-tit {
+  font-size: 20px;
+  color: #333;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.continent {
+  margin-left: -10px;
+  padding: 20px 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.continent li {
+  float: left;
+  margin-left: 10px;
+  color: #888;
+  font-size: 18px;
+  padding: 6px 20px;
+  border: 1px solid white;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.continent li:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #f60;
+  border: 1px solid #f60;
+  border-radius: 3px;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.continent .cur {
+  cursor: pointer;
+  color: #fff;
+  background-color: #f60;
+  border: 1px solid #f60;
+  border-radius: 3px;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.country {
+  padding: 30px 0;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.country li {
+  float: left;
+  margin-right: 30px;
+  font-size: 13px;
+  color: #333;
+  padding: 10px 0;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.country li:hover {
+  cursor: pointer;
+}
+ol.module-ol li .mod-li1 .mod-li1-cont ul.country li img {
+  float: left;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+ol.module-ol li .mod-li2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -243px;
+  margin-top: -87px;
+  width: 486px;
+  height: 174px;
+  background-color: white;
+  border-radius: 4px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont {
+  padding: 30px 20px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-tit {
+  color: #333;
+  font-size: 20px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup {
+  margin-top: 30px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn {
+  float: left;
+  color: #fff;
+  background-color: #F60;
+  border-color: #F60;
+  padding: 15px 35px;
+  font-size: 18px;
+  line-height: 18px;
+  border-radius: 4px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn:focus,
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn.focus {
+  color: #fff;
+  background-color: #ff751a;
+  border-color: #ffb380;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn:hover {
+  color: #fff;
+  background-color: #ff751a;
+  border-color: #ff8b3d;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn:active,
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-export-btn.active {
+  color: #fff;
+  background-color: #ff751a;
+  border-color: #ff8b3d;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn {
+  float: right;
+  color: #fff;
+  background-color: #3CA1D7;
+  border-color: #3CA1D7;
+  padding: 15px 35px;
+  font-size: 18px;
+  line-height: 18px;
+  border-radius: 4px;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn:focus,
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn.focus {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #a6d4ed;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn:hover {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn:active,
+ol.module-ol li .mod-li2 .mod-li2-cont .mod-li2-btngroup .mod-import-btn.active {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}

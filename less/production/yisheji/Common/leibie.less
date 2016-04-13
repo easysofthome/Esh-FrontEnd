@@ -1,0 +1,128 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/yisheji/header/sprite.less';
+
+.leibie_box
+{
+    line-height: 24px;
+
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+
+    _vertical-align: middle;
+    .leibie
+    {
+        margin-top: 30px;
+    }
+    span
+    {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    a
+    {
+        margin-left: 13px;
+        padding: 0 11px;
+
+        color: #000;
+    }
+    .current,
+    a:hover
+    {
+        color: #fff;
+        background-color: #fd6464;
+
+        .border-radius(5px);
+    }
+    .leibie_p
+    {
+        width: 1105px;
+        a
+        {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+.Collapse
+{
+    line-height: 40px;
+
+    width: 1200px;
+    margin: 0 auto;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #000;
+    background-color: #f2f3f5;
+
+    _vertical-align: middle;
+}
+
+
+.select-box01
+{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.select-box
+{
+    line-height: 28px;
+
+    position: relative;
+
+    width: 137px;
+    height: 28px;
+    margin-top: 25px;
+    margin-left: 20px;
+
+    border: 1px #d9d9d9 solid;
+    span
+    {
+        width: 93px;
+        margin-left: 15px;
+
+        border-right: 1px #d9d9d9 solid;
+    }
+    i
+    {
+        margin-top: 12px;
+        margin-left: 11px;
+
+        .sprite(@xiala-hui);
+        .icon-yisheji-header;
+    }
+    .select-ul
+    {
+        position: absolute;
+        top: 29px;
+        left: -1px;
+
+        width: 137px;
+
+        border: 1px #d9d9d9 solid;
+        background-color: #fff;
+
+        li:hover
+        {
+            background-color: #1e90ff;
+            a
+            {
+                color: #fff;
+            }
+        }
+        a
+        {
+            display: block;
+
+            padding-left: 15px;
+
+            color: #666;
+        }
+    }
+}

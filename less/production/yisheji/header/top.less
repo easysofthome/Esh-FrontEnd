@@ -1,0 +1,268 @@
+
+@import '../../../sprite/yisheji/header/sprite.less';
+
+@import '../../../dev/mixins/mixins.less';
+
+.head-top
+{
+    width: 1200px;
+    margin: 0 auto;
+}
+.logo
+{
+    margin-top: 34px;
+}
+.top-box
+{
+    margin-top: 21px;
+    li
+    {
+        a:hover
+        {
+            color: #f90;
+        }
+        a
+        {
+            color: #666;
+        }
+    }
+    .fore02,
+    .fore03,
+    .fore04,
+    .fore05
+    {
+        margin-left: 30px;
+    }
+    .fore01,
+    .fore02,
+    .fore04,
+    .fore05
+    {
+        margin-top: 10px;
+    }
+    .fore01
+    {
+        color: #f90;
+        a
+        {
+            color: #f90;
+        }
+    }
+    .fore02
+    {
+        i
+        {
+            margin-top: 5px;
+            margin-right: 5px;
+
+            .sprite(@VIP);
+            .icon-yisheji-header;
+        }
+    }
+    .fore03
+    {
+        position: relative;
+        i
+        {
+            margin-top: 9px;
+            margin-left: 5px;
+
+            .sprite(@xiala-hui);
+            .icon-yisheji-header;
+        }
+    }
+    .fore03:hover
+    {
+        i
+        {
+            .sprite(@xiala-hui-on);
+            .icon-yisheji-header;
+        }
+    }
+    .fore05
+    {
+        i
+        {
+            margin-top: 5px;
+            margin-right: 5px;
+
+            .sprite(@English);
+            .icon-yisheji-header;
+        }
+    }
+    .number
+    {
+        margin-top: 15px;
+    }
+    .xiaoxi
+    {
+        line-height: 20px;
+
+        margin-left: 5px;
+        padding: 0 9px;
+
+        color: #fff;
+        background-color: #f90;
+
+        _vertical-align: middle;
+        .border-radius(5px);
+    }
+}
+
+
+
+// 用户下拉框
+
+
+.user-on
+{
+    display: block;
+
+    width: 130px;
+    padding-top: 10px;
+    padding-left: 10px;
+
+    border: 1px solid #fff;
+    border-bottom: none;
+}
+
+.user-on:hover
+{
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+}
+.user-box
+{
+    font-size: 12px;
+
+    position: absolute;
+    z-index: 3;
+    top: 34px;
+    left: 0;
+
+    width: 140px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    background-color: #fff;
+    .a00
+    {
+        display: block;
+
+        margin-left: 10px;
+
+        .border-radius(10px);
+    }
+    .p00
+    {
+        margin-left: 12px;
+        .color-00
+        {
+            color: #ff9e0d;
+        }
+        .color-01
+        {
+            color: #2db0d1;
+        }
+    }
+    ul
+    {
+        line-height: 24px;
+
+        margin-left: 10px;
+
+        _vertical-align: middle;
+    }
+}
+
+
+
+// 下载区下拉
+.app-on
+{
+    display: block;
+
+    width: 105px;
+    padding-top: 10px;
+    padding-left: 10px;
+
+    border: 1px solid #fff;
+    border-bottom: none;
+}
+.app-on:hover
+{
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+}
+
+.app-box
+{
+    font-size: 12px;
+
+    position: absolute;
+    z-index: 3;
+    top: 34px;
+    left: 0;
+
+    width: 115px;
+    padding-bottom: 15px;
+
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    background-color: #fff;
+    .p00
+    {
+        font-weight: bold;
+
+        margin-left: 10px;
+        padding-top: 10px;
+
+        color: #333;
+    }
+    .app
+    {
+        margin-top: 10px;
+        margin-left: 10px;
+        .app-apple
+        {
+            display: block;
+
+            margin-top: 10px;
+
+            .sprite(@App-Store);
+            .icon-yisheji-header;
+        }
+        .app-android
+        {
+            display: block;
+
+            margin-top: 10px;
+
+            .sprite(@APP-Android);
+            .icon-yisheji-header;
+        }
+    }
+    .app-a
+    {
+        line-height: 29px;
+
+        display: block;
+
+        margin-top: 10px;
+        margin-left: 10px;
+
+        text-align: center;
+
+        color: #fff;
+
+        _vertical-align: middle;
+        .sprite(@App-btn-bg);
+        .icon-yisheji-header;
+    }
+    .app-a:hover
+    {
+        color: #fff;
+    }
+}

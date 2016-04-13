@@ -1,0 +1,230 @@
+.icon-yijingjia-chengpinbiaoshu {
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/sprite-yijingjia-chengpinbiaoshu.PNG");
+}
+.icon-yijingjia-XIAOICO {
+  background-image: url("/images/production/yijingjia/XIAOICO/sprite-yijingjia-XIAOICO.PNG");
+}
+.main-l-top {
+  width: 903px;
+  margin-top: 20px;
+  border: 1px #d6d6d6 solid;
+}
+.main-l-top .top-leixing {
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.main-l-top .top-leixing .leixing {
+  line-height: 30px;
+  float: left;
+  padding: 0 12px;
+  color: #fff;
+  background-color: #ff9600;
+  _vertical-align: middle;
+}
+.main-l-top .top-leixing .biaoshuhao {
+  font-size: 21px;
+  float: left;
+  width: 90px;
+  text-align: center;
+  color: #333;
+  border: 1px #ff9600 solid;
+  border-left: none;
+}
+.main-l-top .top-leixing .shou-00 {
+  float: right;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.main-l-top .top-leixing .shoucang {
+  background-position: -4px -100px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.main-l-top .top-leixing .fenxiang {
+  background-position: -4px -36px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.main-l-top .top-leixing .shoucang:hover {
+  background-position: -4px -68px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.main-l-top .top-leixing .fenxiang:hover {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.main-l-top .fenxiang-neirong {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 206px;
+  padding: 10px 0;
+  border: 1px #d6d6d6 solid;
+}
+.main-l-top .fenxiang-neirong span {
+  font-family: '宋体';
+  line-height: 32px;
+  float: left;
+  margin-left: 8px;
+  -vertical-align: middle;
+}
+.main-l-top .fenxiang-neirong span a {
+  color: #666;
+}
+.main-l-top .fenxiang-neirong span a:hover {
+  color: #333;
+}
+.main-l-top .fenxiang-neirong .tengxunweibo {
+  background-position: -4px -78px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.main-l-top .fenxiang-neirong .xinglangweibo {
+  background-position: -4px -126px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.main-l-top .fenxiang-neirong .wangyi {
+  background-position: -4px -102px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.main-l-top .fenxiang-neirong .in {
+  background-position: -4px -30px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.main-l-top .fenxiang-neirong .icon-XIAOICO {
+  margin-top: 8px;
+}
+.main-l-top .fenxiang-neirong .diyige-IE6 {
+  -margin-left: 5px;
+}
+.main-l-top .fenxiang-neirong dd {
+  float: left;
+  margin-left: 10px;
+}
+.main-l-top .biaoshuming {
+  font-size: 24px;
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #333;
+}
+.main-l-top .jibenxinxi {
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 12px;
+}
+.main-l-top .jibenxinxi li {
+  float: left;
+  margin-right: 45px;
+}
+.main-l-top .biaoshujindu {
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.main-l-top .biaoshujindu li {
+  float: left;
+}
+.main-l-top .biaoshujindu .icon-biaoshujindu01 {
+  background-position: -4px -132px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 173px;
+  height: 25px;
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/sprite-yijingjia-chengpinbiaoshu.PNG");
+}
+.main-l-top .biaoshujindu .icon-biaoshujindu01 .icon-biaoshujindu03 {
+  background-position: -4px -165px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 173px;
+  height: 25px;
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/sprite-yijingjia-chengpinbiaoshu.PNG");
+}
+.main-l-top .biaoshujindu .icon-biaoshujindu02 {
+  background-position: -4px -198px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 173px;
+  height: 25px;
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/sprite-yijingjia-chengpinbiaoshu.PNG");
+}
+.main-l-top .biaoshujindu .icon-biaoshujindu02 .icon-biaoshujindu03 {
+  background-position: -4px -231px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 173px;
+  height: 25px;
+  background-image: url("/images/production/yijingjia/chengpinbiaoshu/sprite-yijingjia-chengpinbiaoshu.PNG");
+}
+.main-l-top .biaoshujindu .jianyi {
+  width: 172px;
+}
+.main-l-top .jinduwenzi {
+  line-height: 20px;
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 6px;
+  -vertical-align: middle;
+}
+.main-l-top .jinduwenzi li {
+  font-family: '宋体';
+  float: left;
+  width: 173px;
+  text-align: center;
+}
+.main-l-top .jinduwenzi .jianyi {
+  width: 172px;
+}
+.main-l-top .jinduwenzi .dangqian {
+  color: #c30e23;
+}
+.main-l-top .fabiaoren {
+  line-height: 22px;
+  width: 863px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px #d6d6d6 solid;
+  -vertical-align: middle;
+}
+.main-l-top .fabiaoren .fabiaoren-yaoqiu {
+  font-size: 16px;
+  line-height: 30px;
+  color: #333;
+}

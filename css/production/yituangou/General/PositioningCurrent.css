@@ -1,0 +1,23 @@
+.xiangxibox {
+  font-size: 12px;
+  line-height: 16px;
+  width: 1190px;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: #333;
+}
+.xiangxibox .justif {
+  float: left;
+}
+.xiangxibox a {
+  color: #333;
+}
+.xiangxibox .dangqianyanse {
+  color: #d52532;
+}
+.xiangxibox .weizhijianju {
+  margin: 0 4px;
+}
+.xiangxibox .jiantuoyanse {
+  color: #aaa;
+}

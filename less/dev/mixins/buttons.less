@@ -1,0 +1,66 @@
+//按钮
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+
+
+   &:focus,
+  &.focus {
+    color: @color;
+    background-color: lighten(@background, 5%);
+        border-color: lighten(@border, 25%);
+  }
+  &:hover {
+    color: @color;
+    background-color: lighten(@background, 5%);
+        border-color: lighten(@border, 12%);
+  }
+  &:active,
+  &.active,
+  {
+    color: @color;
+    background-color: lighten(@background, 5%);
+        border-color: lighten(@border, 12%);
+  }
+
+}
+
+// Button sizes
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+
+  @gary:rgb(193, 193, 193);
+  @white:#ffffff;
+._esh-custom-btn(@color,@border-radius){
+            color: @color;
+            border: 1px solid @color;
+
+            .border-radius(@border-radius);
+}
+
+
+.esh-custom-btn(@disable) when(@disable){
+
+  ._esh-custom-btn(@gary,2px);
+  cursor: default;
+
+}
+
+
+.esh-custom-btn(@color,@border-radius){
+  ._esh-custom-btn(@color,@border-radius);
+   &:hover
+            {
+                color:@white;
+                background:darken(@color,10%);
+            }
+
+}

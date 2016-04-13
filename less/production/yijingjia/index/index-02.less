@@ -1,0 +1,198 @@
+
+@import '../../../sprite/yijingjia/index/sprite.less';
+
+@border: 1px #d6d6d6 solid;
+@red:#c30e23;
+
+.guanggao-01
+{
+    margin-top: 20px;
+}
+
+.main-02
+{
+    margin-top: 25px;
+    .tuijian
+    {
+
+        line-height: 30px;
+
+        overflow: hidden;
+
+        background-image: url('/images/production/yijingjia/index/fengexian.png');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        .rebiao
+        {
+            font-size: 20px;
+
+            padding-right: 4px;
+
+            color: #333;
+            border-bottom: 1px @red solid;
+            span
+            {
+                font-weight: bold;
+
+                color: @red;
+            }
+        }
+        li
+        {
+            font-size: 16px;
+
+            float: left;
+
+            margin-right: 40px;
+
+            a:hover
+            {
+                color: @red;
+            }
+            a
+            {
+                color: #333;
+            }
+        }
+    }
+    .tuijian-liebiao:hover{
+        background-color: #efefef;
+    }
+    .tuijian-liebiao
+    {
+        overflow: hidden;
+        position: relative;
+
+        border-top: #b2b2b2 1px dashed;
+        .liebiao-l
+        {
+            float: left;
+            display: inline;
+
+            margin-left: 20px;
+            padding: 20px 0;
+        }
+        .liebiao-r
+        {
+            float: left;
+            display: inline;
+            overflow: hidden;
+
+            width: 1078px;
+            margin-top: 20px;
+            margin-left: 12px;
+            p
+            {
+                font-size: 18px;
+
+                float: left;
+
+                margin-top: 8px;
+
+                a:hover
+                {
+                    color: @red;
+                }
+                span
+                {
+                    margin-right: 10px;
+
+                    color: #ff9600;
+                }
+                a
+                {
+                    color: #333;
+                }
+            }
+            .toubiaoanniu
+            {
+                font-size: 18px;
+                line-height: 40px;
+
+                float: right;
+
+                width: 122px;
+                margin-right: 20px;
+
+                cursor: pointer;
+                text-align: center;
+
+                color: #fff;
+                background-color: #b4b4b4;
+            }
+            .toubiaoanniu:hover
+            {
+                background-color: #c30e23;
+            }
+            ul
+            {
+                clear: both;
+
+                padding-top: 9px;
+                li
+                {
+                    float: left;
+
+                    width: 187px;
+
+                    a:hover
+                    {
+                        color: @red;
+                    };
+                    a
+                    {
+                        color: #666;
+                    }
+                }
+                .jiezhi
+                {
+                    float: right;
+
+                    width: 122px;
+                    margin-right: 20px;
+
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .tui-dangqian
+    {
+        border: none;
+        background-color: #efefef;
+        .liebiao-r
+        {
+            .toubiaoanniu01
+            {
+                font-size: 18px;
+                line-height: 40px;
+
+                float: right;
+
+                width: 122px;
+                margin-right: 20px;
+
+                cursor: pointer;
+                text-align: center;
+
+                color: #fff;
+                background-color: #c30e23;
+            }
+        }
+    }
+}
+
+
+.guanggao-02
+{
+    margin-top: 10px;
+}
+
+
+.tuijian-icon{
+    position: absolute;
+    top: 18px;
+    right: 220px;
+    .sprite(@tuijian);
+    .icon-yijingjia-index;
+}

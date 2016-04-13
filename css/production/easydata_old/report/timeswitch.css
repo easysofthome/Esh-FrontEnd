@@ -1,0 +1,60 @@
+.icon-easydata_old-report {
+  background-image: url("/images/production/easydata_old/report/sprite-easydata_old-report.PNG");
+}
+.timeswitchbox {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.timeswitchbox .marginL {
+  margin-left: 20px;
+  position: relative;
+}
+.timeswitchbox .marginL .line {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  border-bottom: 2px solid #f60;
+  width: 100px;
+}
+.timeswitchbox .marginL .years {
+  line-height: 58px;
+  width: 100px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #fff;
+}
+.timeswitchbox .marginL .hover {
+  color: #f60;
+}
+.timeswitchbox .switching,
+.timeswitchbox .cur_blueimg {
+  line-height: 60px;
+  width: 90px;
+  color: #333;
+}
+.timeswitchbox .cur_blueimg {
+  color: #3ca1d7;
+  background-color: #f2f3f5;
+}
+.timeswitchbox .blueimg {
+  margin: 22px 5px 0 16px;
+  background-position: -4px -91px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/easydata_old/report/sprite-easydata_old-report.PNG");
+}
+.timeswitchbox .graytable {
+  margin: 22px 5px 0 16px;
+  background-position: -4px -67px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/easydata_old/report/sprite-easydata_old-report.PNG");
+}

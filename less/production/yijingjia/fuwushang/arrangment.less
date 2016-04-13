@@ -1,0 +1,131 @@
+@import '../../../sprite/yijingjia/fuwushang/sprite.less';
+.arrangmentbox_qubiankuan{
+  border: 1px solid #d5d5d5;
+  border-top: none;
+}
+
+.arrangmentbox
+{
+    width: 903px;
+
+    .arrangment_withinbox
+    {
+        width: 862px;
+        margin: 0 auto 0 auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .within_way
+        {
+            a
+            {
+                line-height: 28px;
+
+                float: left;
+
+                padding: 0 16px;
+
+                color: #535353;
+                border: 1px solid #d5d5d5;
+                span
+                {
+                    float: left;
+                }
+                .sequence_img
+                {
+                    float: left;
+
+                    margin-top: 10px;
+                    margin-left: 6px;
+
+                    .sprite(@sequence);
+                }
+                background-color: #ececec;
+            }
+            .li_color{
+                background-color: #fff;
+
+            }
+            .li_leftborder
+            {
+                border-left: none;
+                
+                            }
+            .li_zhonghejuli
+            {
+                padding: 0 18px;
+               
+            }
+        }
+        .within_searchbox
+        {
+            float: left;
+
+            width: 152px;
+            margin-left: 20px;
+            .search_left
+            {
+                float: left;
+
+                width: 121px;
+
+                border: 1px solid #d5d5d5;
+                border-right: none;
+                input
+                {
+                    line-height: 28px;
+
+                    width: 121px;
+                    height: 28px;
+
+                    color: #cacaca;
+                    border: 0;
+                    border: none;
+
+                    *height: 26px;
+                }
+            }
+            .search_right
+            {
+                float: left;
+
+                width: 28px;
+                height: 28px;
+
+                border: 1px solid #d5d5d5;
+                .right_img
+                {
+                    margin: 5px;
+
+                    .sprite(@search);
+                }
+            }
+        }
+        .within_buttbox
+        {
+            float: right;
+            .butt
+            {
+                line-height: 28px;
+
+                display: block;
+                float: left;
+
+                width: 83px;
+                height: 28px;
+
+                text-align: center;
+
+                color: #333;
+                border: 1px solid #d5d5d5;
+            }
+            .butt_juli
+            {
+                margin-left: 3px;
+            }
+            .butt_color
+            {
+                color: #bbb;
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.icon-easydata-priceDet {
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+}
+.tablebox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.tablebox .table_cont {
+  width: 1160px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+}
+.tablebox .tab_tit {
+  font-size: 18px;
+  color: #000;
+}
+.tablebox .Margins {
+  margin-top: 30px;
+}
+.tablebox .tab_unit,
+.tablebox .Spread_text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888;
+}
+.tablebox .bule {
+  color: #3ca1d7;
+}
+.tablebox .Spread_text {
+  width: 72px;
+  margin-left: 20px;
+  color: #3ca1d7;
+}
+.tablebox .Spread {
+  margin: 6px 0 0 6px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/images/icon/easydata/priceDet/Spread.png");
+  _background: none;
+}
+.tablebox .pricechangesbox {
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size: 14px;
+  color: #333;
+  line-height: 48px;
+  width: 1159px;
+}
+.tablebox .vertical {
+  background-color: #f2f3f5;
+  font-size: 16px;
+}
+.tablebox .vert_data {
+  font-size: 14px;
+}
+.tablebox .vert_data:nth-child(odd) {
+  background: #f8f8f8;
+}
+.tablebox .search_acc,
+.tablebox .search_money,
+.tablebox .suppliers_rank,
+.tablebox .suppliers_name,
+.tablebox .supplieraccoun_rank,
+.tablebox .supplieraccoun_name,
+.tablebox .supplieraccoun_country,
+.tablebox .supplieraccoun_name2,
+.tablebox .Purcha_country,
+.tablebox .Purcha_price {
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.tablebox .search_acc {
+  width: 230px;
+}
+.tablebox .search_money {
+  width: 231px;
+}
+.tablebox .suppliers_rank {
+  width: 153px;
+}
+.tablebox .suppliers_name {
+  width: 200px;
+}
+.tablebox .supplieraccoun_rank {
+  width: 60px;
+}
+.tablebox .supplieraccoun_name {
+  width: 392px;
+}
+.tablebox .supplieraccoun_name2 {
+  width: 372px;
+  padding-left: 20px;
+  text-align: left;
+}
+.tablebox .supplieraccoun_country {
+  width: 140px;
+}
+.tablebox .Purcha_country {
+  width: 495px;
+}
+.tablebox .Purcha_country01 {
+  width: 475px;
+  text-align: left;
+  padding-left: 20px;
+}
+.tablebox .Purcha_price {
+  width: 220px;
+}
+.tablebox .link00 {
+  color: #333;
+}

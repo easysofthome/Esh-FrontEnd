@@ -1,0 +1,108 @@
+.icon-yisheji-index {
+  background-image: url("/images/production/yisheji/index/sprite-yisheji-index.PNG");
+}
+.huaxingkubox {
+  background-color: #5ab6ab;
+}
+.huaxingkubox .huaxingku {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.huaxingkubox .huaxingku .qiehuanyanshi {
+  width: 198px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333333;
+}
+.huaxingkubox .huaxingku .dakuang {
+  width: 199px;
+}
+.huaxingkubox .huaxingku .qiehuanbianju {
+  margin-left: 2px;
+}
+.huaxingkubox .huaxingku .genduo {
+  margin-left: 58px;
+  margin-top: 19px;
+  background-position: -4px -24px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 51px;
+  height: 12px;
+}
+.huaxingkubox .huaxingku .textbianju {
+  margin-left: 20px;
+}
+.huaxingkubox .huaxingku .textjuzhong {
+  text-align: center;
+}
+.huaxingkubox .huaxingku .qing {
+  background-color: #e7f6d9;
+}
+.huaxingkubox .huaxingku .huang {
+  background-color: #fbf0d0;
+}
+.huaxingkubox .huaxingku .lan {
+  background-color: #d6edf5;
+}
+.huaxingkubox .huaxingku .hong {
+  background-color: #fbd0da;
+}
+.huaxingkubox .huaxingku .lv {
+  background-color: #d9f6e4;
+}
+.huaxingkubox .huaxingku .chakanhuaxing {
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .leftjiantou {
+  margin-top: 138px;
+  cursor: pointer;
+  background-position: -4px -245px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 40px;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .rightjiantou {
+  cursor: pointer;
+  margin-top: 138px;
+  background-position: -4px -293px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 40px;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .chakanmianliao {
+  margin-top: 30px;
+  margin-left: 40px;
+  width: 255px;
+  height: 255px;
+  overflow: hidden;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .chakanmianbianju {
+  margin-left: 20px;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .dingwei {
+  width: 255px;
+  height: 255px;
+  position: relative;
+  overflow: hidden;
+}
+.huaxingkubox .huaxingku .chakanhuaxing .toudi {
+  position: absolute;
+  width: 255px;
+  height: 40px;
+  line-height: 40px;
+  color: #e45f40;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  background-image: url("/images/production/yisheji/index/heitouming.png");
+}

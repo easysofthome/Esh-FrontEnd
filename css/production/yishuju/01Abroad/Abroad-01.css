@@ -1,0 +1,417 @@
+.icon-yishuju-UpperPart {
+  background-image: url("/images/production/yishuju/UpperPart/sprite-yishuju-UpperPart.PNG");
+}
+/*----------上部分按钮样式------------*/
+.Search-Search {
+  line-height: 24px;
+  margin-top: 10px;
+  padding: 0 10px;
+  color: #fff;
+  _vertical-align: middle;
+}
+.Search-Search i {
+  margin-top: 6px;
+  margin-right: 7px;
+}
+.Search-Search .Search {
+  background-position: -4px -112px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+.Search-Search .Reset {
+  background-position: -4px -133px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 14px;
+}
+.Search-Search .Collection {
+  background-position: -4px -52px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-Search .Contact {
+  background-position: -4px -72px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-Search .PayAttention {
+  background-position: -4px -92px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-color-01 {
+  background-color: #00a2c9;
+}
+.Search-color-02 {
+  background-color: #888;
+}
+.Search-color-03 {
+  background-color: #f9a83f;
+}
+/*----------UpperPart-01------------*/
+.suppliers-header {
+  line-height: 32px;
+  width: 998px;
+  margin: 0 auto;
+  margin-top: 32px;
+  border: solid 1px #dfdfdf;
+  _vertical-align: middle;
+}
+.suppliers-header span,
+.suppliers-header a:hover {
+  color: #00a2c9;
+}
+.suppliers-header a {
+  color: #666;
+}
+.suppliers-header i {
+  margin: 0 13px;
+  margin-top: 1px;
+  background-position: -4px -185px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 34px;
+  height: 30px;
+}
+.suppliers-header .rig {
+  padding-right: 5px;
+}
+/*----------UpperPart-02------------*/
+.suppliers-Classification-frame {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.suppliers-Classification-frame .suppliers-words-box {
+  border-bottom: #00a2c9 3px solid;
+}
+.suppliers-Classification-frame .suppliers-words {
+  font-size: 16px;
+  line-height: 40px;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  background-color: #00a2c9;
+  _vertical-align: middle;
+}
+.suppliers-Classification-frame .suppliers-Classification {
+  width: 998px;
+  border: solid 1px #dfdfdf;
+  border-top: none;
+  background-color: #fff;
+}
+.Classification-box {
+  margin: 0 20px;
+  border-bottom: solid 1px #dfdfdf;
+}
+.Classification-box h3 {
+  font-size: 13px;
+  line-height: 53px;
+  width: 83px;
+  color: #000;
+  _vertical-align: middle;
+}
+.Classification-box .h3-span {
+  margin-right: 26px;
+}
+.Classification-box .right {
+  font-size: 13px;
+  margin-top: 15px;
+}
+.Classification-box .right-bottom {
+  width: 875px;
+  padding-bottom: 8px;
+  border-bottom: solid 1px #dfdfdf;
+}
+.Classification-box .right-bottom-none {
+  border: none;
+}
+.Classification-box .right-bottom-color {
+  width: 875px;
+  background-color: #f6f6f6;
+}
+.Classification-box a {
+  line-height: 23px;
+  padding: 0 10px;
+  color: #666;
+  _vertical-align: middle;
+}
+.Classification-box .right-span {
+  margin: 0 6px;
+}
+.Classification-box i {
+  margin-top: 7px;
+  margin-left: 5px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 8px;
+  height: 8px;
+}
+.Classification-box .border {
+  border: solid 1px #dfdfdf;
+}
+.Classification-box .current-border,
+.Classification-box .border:hover {
+  border: #00a2c9 1px solid;
+}
+.Classification-box .words-color,
+.Classification-box .color {
+  margin-right: 10px;
+}
+.Classification-box .current-color,
+.Classification-box .color:hover {
+  color: #fff;
+  background-color: #00a2c9;
+}
+.Classification-box .words-color:hover,
+.Classification-box .current-words {
+  color: #00a2c9;
+}
+.Classification-box-none {
+  padding-bottom: 25px;
+  border: none;
+}
+/*----------UpperPart-03------------*/
+.Search-terms-frame {
+  font-size: 13px;
+  line-height: 44px;
+  width: 998px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: solid 1px #dfdfdf;
+  background-color: #fff;
+  _vertical-align: middle;
+}
+.Search-terms-box {
+  padding-left: 20px;
+  color: #666;
+  border-bottom: solid 1px #dfdfdf;
+}
+.Search-terms-box .Search-terms-margin {
+  margin-left: 10px;
+}
+.Search-terms-box .span-color {
+  margin-right: 5px;
+  color: #000;
+}
+.Search-terms-box .span-margin {
+  margin: 0 5px;
+}
+.Search-terms-box input {
+  line-height: 22px;
+  height: 22px;
+  margin-top: 10px;
+  padding-left: 5px;
+  border: solid 1px #dfdfdf;
+  _vertical-align: middle;
+}
+.Search-terms-box .input01 {
+  width: 67px;
+}
+.Search-terms-box .input02 {
+  width: 177px;
+}
+.Search-terms-box select {
+  line-height: 22px;
+  width: 98px;
+  height: 22px;
+  margin-top: 10px;
+  color: #666;
+  border: solid 1px #dfdfdf;
+  _vertical-align: middle;
+}
+.Search-terms-Sort {
+  padding: 0 20px;
+}
+.Search-terms-Sort .Sort-margin {
+  margin-right: 40px;
+  color: #888;
+}
+.Search-terms-Sort i {
+  margin-left: 5px;
+}
+.Search-terms-Sort .Sort-on {
+  margin-top: 18px;
+  background-position: -4px -20px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 7px;
+  height: 8px;
+}
+.Search-terms-Sort .Sort-Under {
+  margin-top: 18px;
+  background-position: -4px -36px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 7px;
+  height: 8px;
+}
+/*----------UpperPart-04------------*/
+.Top-blue-line {
+  width: 1000px;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #00a2c9;
+}
+.blue-line-title {
+  font-size: 13px;
+  width: 998px;
+  margin: 0 auto;
+  border: solid 1px #dfdfdf;
+  border-top: none;
+  background-color: #fff;
+}
+.blue-line-title .name-p {
+  font-size: 16px;
+  padding: 0 20px;
+  padding-top: 16px;
+  color: #00a2c9;
+}
+.blue-line-title .title-box {
+  padding: 0 20px;
+  padding-bottom: 15px;
+}
+.blue-line-title .title-box-p {
+  margin-top: 10px;
+  margin-right: 45px;
+}
+.blue-line-title .span-color {
+  color: #f60;
+}
+.blue-line-title .title-margin {
+  margin-left: 10px;
+}
+/*----------UpperPart-05------------*/
+.UpperPart-05-box {
+  font-size: 13px;
+  line-height: 32px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 18px;
+  color: #db1414;
+  _vertical-align: middle;
+}
+.UpperPart-05-box a {
+  color: #fff;
+  background-color: #00a2c9;
+}
+.UpperPart-05-box .baobiao-icon {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 7px;
+  background-position: -4px -155px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 22px;
+}
+.UpperPart-05-box .color-01 {
+  width: 1px;
+  height: 32px;
+  background-color: #00b5d4;
+}
+.UpperPart-05-box .color-02 {
+  padding-right: 10px;
+  padding-left: 6px;
+  border-left: #008ab8 1px solid;
+}
+/*----------UpperPart-06------------*/
+.UpperPart-06-box {
+  width: 1000px;
+  margin: 0 auto;
+  border: solid 1px #dfdfdf;
+  border-top: none;
+  background-color: #fff;
+}
+.UpperPart-06-box .Classification-box {
+  border: none;
+}
+.wenzichengse {
+  color: #ff6600;
+}
+.wenzishenghui {
+  color: #333;
+}
+.wenziqianhui {
+  color: #888;
+}
+.wenzilanse {
+  color: #00a2c9;
+}
+.heiti {
+  color: #000;
+}
+.wenzihongse {
+  color: #dc1416;
+}
+.wenzilvse {
+  color: #10bb39;
+}
+.jiachu {
+  font-weight: bold;
+}
+.dahaozi {
+  font-size: 16px;
+}
+.xiaohaozi {
+  font-size: 13px;
+}
+.wenziyuzhong {
+  text-align: center;
+}
+.qujiachu {
+  font-weight: lighter;
+}
+.fanyebox {
+  font-size: 12px;
+  line-height: 28px;
+  color: #a1a1a1;
+  margin-left: 310px;
+}
+.fanyebox .fanyejuxingkuang {
+  border: 1px solid #dddddd;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+.fanyebox .baikuan {
+  border: 1px solid #fff;
+}
+.fanyebox .biankuanjuli {
+  margin-left: 7px;
+}
+.fanyebox .shengsekuang {
+  border: 1px solid #a1a1a1;
+}
+.Abroad-box01 {
+  margin-top: 10px;
+}
+.Abroad-box02 {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 46px;
+}
+.Abroad-fanye {
+  margin-left: 356px;
+}

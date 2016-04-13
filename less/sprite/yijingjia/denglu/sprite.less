@@ -1,0 +1,28 @@
+@huiyuan-xiala: -4px -4px 13px 7px;
+@huiyuan-xiala2: -4px -19px 13px 7px;
+@denglu1: -4px -34px 15px 16px;
+@guanbi: -4px -58px 15px 16px;
+@zhuche: -4px -82px 16px 16px;
+@debgluzhuangtai: -4px -106px 45px 45px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yijingjia-denglu {
+  background-image: url("/images/production/yijingjia/denglu/sprite-yijingjia-denglu.PNG");
+}

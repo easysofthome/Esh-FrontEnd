@@ -1,0 +1,150 @@
+
+@import '../../../../sprite/VIP/common/RegLog/sprite.less';
+
+@import '../../../../dev/mixins/mixins.less';
+
+.logbox{
+    background: url("/images/production/VIP/common/RegLog/logback.png") top center no-repeat;
+    padding-top: 80px;
+    .header{
+  position:fixed;
+  top:0;
+  z-index:9999;
+  background:rgba(0,0,0,0);
+  width:100%;
+  _filter:progid:DXImageTransform.Microsoft.Gradient(enabled='true',startColorstr='#00000000',endColorStr='#00000000');
+  .top{
+    font-size: 12px;
+    line-height: 14px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 9px 0;
+    a{
+        color: #fff;
+    }
+    .butt_right{
+        margin-right: 20px;
+    }
+    #username{
+      i{
+        padding: 0px 11px;
+        background: #f90;
+        font-style: normal;
+        border-radius: 9px;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+.loglog{
+    margin: 0 auto 0 auto;
+    .sprite(@loglogo);
+    .icon-VIP-common-RegLog;
+}
+.log_left{
+    width: 350px;
+    padding-right: 20px;
+
+}
+.log_box{
+    width: 900px;
+       padding:40px;
+    border:1px solid #dedede;
+    margin: 56px auto 0 auto;
+    background-color: #fff;
+      .border-radius(5px);
+}
+.username,.password,.Codes{
+    border: 0;
+    border:none;
+    background-color: #f2f2f2;
+    .border-radius(5px);
+    line-height: 46px;
+    width: 330px;
+    padding-left: 20px;
+    color: #999;
+    font-size: 16px;
+    display: block;
+
+}
+.username{
+    margin-top: 20px;
+}
+.Codes{
+    width: 130px;
+}
+.password,.Codes_box,.butt_log{
+    margin-top: 20px;
+}
+.Codes_cen{
+    width: 160px;
+    height: 46px;
+    background-color: #000;
+    overflow: hidden;
+    background: url("/images/production/VIP/common/RegLog/codes.jpg");
+}
+.QRcode{
+    margin: 30px 0 0 20px;
+
+    width: 450px;
+    height: 285px;
+
+     background: url("/images/production/VIP/common/RegLog/erweima.png") no-repeat;
+}
+.QRcode_text{
+    font-size: 16px;
+    margin-top: 10px;
+    color: #666;
+}
+.for_pass{
+    text-align: right;
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #3ca1d7;
+}
+.butt_log{
+    width: 350px;
+    text-align: center;
+    line-height: 46px;
+    color: #fff;
+    background-color: #3ca1d7;
+    font-size: 18px;
+    display: block;
+    .border-radius(5px);
+}
+.arr_rig{
+    margin: 2px 0 0 4px;
+   .sprite(@arrow-right);
+    .icon-VIP-common-RegLog;
+}
+.immediately{
+    color: #3ca1d7;
+    font-size: 16px;
+    text-decoration:underline;
+}
+.status{
+    margin-top: 2px;
+}
+.immediately_box{
+    margin: 20px 0 0 90px;
+}
+
+
+}
+.user_box,.password_box,.authcode_box{
+  position: relative;
+  top: 0;
+  left: 0;
+  span.placeholder{
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    color: #888;
+    font-size: 16px;
+  }
+}
+.butt_log{
+  border: 0;
+}

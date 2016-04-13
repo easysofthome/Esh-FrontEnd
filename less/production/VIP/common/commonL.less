@@ -1,0 +1,300 @@
+
+@import '../../../sprite/VIP/common/nav/sprite.less';
+
+@import '../../../sprite/VIP/common/left/sprite.less';
+
+@import '../../../dev/mixins/mixins.less';
+
+// 安全管理
+// 上部分
+.safety
+{
+    padding: 15px 0 11px 0;
+    background-color: #fff;
+    width: 326px;
+    padding-bottom: 20px;
+    .txt_blue{
+        color: #37b5f9;
+    }
+    .security
+    {
+        margin-left: 20px;
+        font-size: 16px;
+        color: #333;
+    }
+    .progressbar
+    {
+        margin: 0 auto;
+        margin-top: 10px;
+
+        .sprite(@progressbar);
+        .icon-VIP-common-nav;
+    }
+    .progress
+    {
+        .sprite(@progress);
+        .icon-VIP-common-nav;
+    }
+    .progressblue
+    {
+        .sprite(@progressblue);
+        .icon-VIP-common-nav;
+    }
+    .vipbox
+    {
+        margin-top: 20px;
+    }
+    .vipwidth
+    {
+        display: inline;
+
+        width: 54px;
+        margin-left: 20px;
+        font-size: 13px;
+        a{
+            color: #333;
+            line-height: 32px;
+        }
+        span{
+            display: block;
+
+            text-align: center;
+        }
+    }
+    .phone
+    {
+        margin: 0 auto;
+
+        .sprite(@phone);
+        .icon-VIP-common-nav;
+    }
+    .realname
+    {
+        margin: 0 auto;
+
+        .sprite(@realname);
+        .icon-VIP-common-nav;
+    }
+    .mailbox
+    {
+        margin: 0 auto;
+
+        .sprite(@mailbox);
+        .icon-VIP-common-nav;
+    }
+    .password
+    {
+        margin: 0 auto;
+
+        .sprite(@password);
+        .icon-VIP-common-nav;
+    }
+    .VIPtopmar
+    {
+        margin-top: 15px;
+    }
+
+    // 数据表单  form
+    .VIP_top{
+        padding-bottom: 11px;
+    }
+    .VIP
+    {
+        margin: 0 auto;
+
+        .sprite(@VIP);
+        .icon-VIP-common-nav;
+    }
+    .Light
+    {
+        margin: 0 auto;
+
+        .sprite(@Light);
+        .icon-VIP-common-nav;
+    }
+    .phone
+    {
+        margin: 0 auto;
+
+        .sprite(@phone);
+        .icon-VIP-common-nav;
+    }
+    .realname
+    {
+        margin: 0 auto;
+
+        .sprite(@realname);
+        .icon-VIP-common-nav;
+    }
+    .mailbox
+    {
+        margin: 0 auto;
+
+        .sprite(@mailbox);
+        .icon-VIP-common-nav;
+    }
+    .password
+    {
+        margin: 0 auto;
+
+        .sprite(@password);
+        .icon-VIP-common-nav;
+    }
+}
+
+
+// 下部分分类
+.classbox
+{
+    width: 326px;
+    .classwords{
+      border-left: 3px solid #fff;
+      font-size: 16px;
+      background-color: #fff;
+      border-top: #f2f3f5 1px solid;
+      a{
+        color: #333;
+      }
+    }
+    .cur
+    {
+        border-left: 3px solid #4a7bc4;
+        background-color: #ebebeb;
+        a{
+          color: #4a7bc4;
+        }
+        .bold{
+            font-weight: bold;
+        }
+    }
+    .class_a
+    {
+        line-height: 50px;
+        display: block;
+        height: 50px;
+    }
+    .TELgray
+    {
+      margin-right: 10px;
+      margin-top: 15px;
+        .sprite(@TELgray);
+        .icon-VIP-common-left;
+    }
+    .TELwhite
+    {
+        margin-right: 10px;
+        margin-top: 15px;
+        .sprite(@TELwhite);
+        .icon-VIP-common-left;
+    }
+    .current_ico
+    {
+        margin-left: 64px;
+    }
+    .usergray
+    {
+        margin-right: 10px;
+        margin-top: 15px;
+        .sprite(@usergray);
+        .icon-VIP-common-left;
+    }
+    .userwhite
+    {
+        margin-right: 10px;
+        margin-top: 15px;
+        .sprite(@userwhite);
+        .icon-VIP-common-left;
+    }
+    .sub_gray,.subset_cur{
+        margin-left: 94px;
+    }
+
+}
+
+
+// 数据表单  form
+.balanceVIP{
+    background-color:#FFF;
+    padding: 20px 20px 0 20px;
+    width: 286px;
+    .borbottom{
+      border-bottom: #f5f5f5 1px solid;
+      padding-bottom: 20px;
+    }
+}
+.balancebot{
+    padding-bottom: 20px;
+}
+.balancebox_no,.balancebox{
+    width: 142px;
+    border-right: #f5f5f5 1px solid;
+    text-align: center;
+    line-height: 30px;
+    .balance{
+        font-size: 16px;
+        color: #333;
+    }
+    span.num{
+        font-size: 24px;
+        color: #ec8b00;
+    }
+    .txt_red{
+        color: #4a7bc4;
+        &:hover{
+            color: #e85d40;
+        }
+    }
+}
+.balancebox_no{
+    border-right: none;
+    width: 143px;
+}
+.classbox{
+    .subset_cur{
+        .subset{
+            display: inline;
+            margin: 26px 7px 0 0;
+            .sprite(@subset_b);
+            .icon-VIP-common-left;
+        }
+    }
+    .sub_gray{
+        span{
+            color: #333;
+        }
+        .subset{
+            margin: 26px 7px 0 0;
+            .sprite(@subset_g);
+            .icon-VIP-common-left;
+        }
+    }
+
+}
+
+// 在线客户
+.hotlinebox{
+    width: 328px;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #fff;
+    i.hotline{
+        margin-left: 20px;
+        .sprite(@hotlinenum);
+        .icon-VIP-common-left;
+    }
+    p.onlineser{
+        margin: 10px 0 0 20px;
+        color: #333;
+    }
+    a.qq{
+        margin: 5px 0 0 20px;
+        .sprite(@qq);
+        .icon-VIP-common-left;
+    }
+}
+
+// 上面跟导航相连，距离导航10px
+.aboveNo{
+    margin-top: 10px;
+}
+

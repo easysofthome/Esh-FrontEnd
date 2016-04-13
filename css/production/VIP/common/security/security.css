@@ -1,0 +1,209 @@
+.icon-VIP-common-security {
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}
+.main_box {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+.securityR {
+  font-size: 18px;
+  width: 854px;
+  margin-top: 40px;
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+.securityR .note {
+  font-size: 14px;
+  color: red;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.securityR .shuruchang,
+.securityR .phone,
+.securityR .codes_val {
+  line-height: 32px;
+  height: 34px;
+  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  width: 320px;
+  padding-left: 10px;
+  color: #999;
+}
+.securityR .mailbox {
+  font-size: 16px;
+  line-height: 34px;
+  font-weight: bold;
+  color: #666;
+}
+.securityR .codes_val {
+  width: 120px;
+}
+.securityR .phone {
+  width: 200px;
+}
+.securityR .codes {
+  width: 100px;
+  border-radius: 3px;
+  line-height: 34px;
+  text-align: center;
+  background-color: #00a2ca;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 20px;
+}
+.securityR .veri_left {
+  margin-left: 15px;
+}
+.securityR .prompt {
+  width: 330px;
+  font-size: 12px;
+  padding-top: 10px;
+  color: red;
+}
+.securityR .shurutop {
+  margin-top: 20px;
+}
+.securityR .titilexingxi {
+  line-height: 34px;
+  width: 268px;
+  font-size: 14px;
+  text-align: right;
+}
+.securityR .quyutitle,
+.securityR .quyutitle2 {
+  line-height: 50px;
+  margin: 40px auto 50px auto;
+  text-align: center;
+  color: #333;
+  background-position: -4px -110px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 814px;
+  height: 50px;
+}
+.securityR .quyutitle2 {
+  margin-bottom: 30px;
+}
+.securityR .save {
+  border: 1px solid #ff9900;
+  border-radius: 3px;
+  width: 280px;
+  line-height: 38px;
+  color: #ff9902;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  margin: 30px 0 0 310px;
+}
+.securityRpwd {
+  height: 554px;
+}
+.anquan-box {
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 20px 0 91px 0;
+}
+.anquan-box .anquan_main02 {
+  border-bottom: #ebebeb 1px solid;
+  margin: 40px 20px 0 20px;
+  padding: 0 58px 40px 40px;
+  font-size: 16px;
+  color: #333;
+}
+.anquan-box .anquan_main02 .main02_words {
+  width: 405px;
+  margin-left: 50px;
+  font-size: 13px;
+}
+.anquan-box .anquan_main02 span.bold {
+  font-weight: bold;
+}
+.anquan-box .anquan_main02 a.txt_red {
+  color: #fc2e2e;
+}
+.shezhi .correct i,
+.shezhi .error i {
+  margin-top: 4px;
+  margin-right: 4px;
+}
+.shezhi .correct {
+  color: #14b610;
+}
+.shezhi .correct i {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}
+.shezhi .error {
+  color: #333;
+}
+.shezhi .error i {
+  background-position: -4px -28px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}
+.shezhi .margin_a {
+  margin-right: 15px;
+}
+.a06_box {
+  font-size: 12px;
+  width: 854px;
+  margin-top: 175px;
+  background-color: #fff;
+}
+.a06_main {
+  position: relative;
+  margin-left: 186px;
+  background-position: -4px -273px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 508px;
+  height: 249px;
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}
+.a06_main .touxiang_box {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+.a06_main .touxiang_box .touxiang {
+  margin-left: 19px;
+  padding-bottom: 8px;
+  background-position: -4px -52px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 46px;
+  height: 50px;
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}
+.a06_main .words {
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.a06_main .words p {
+  margin-top: 7px;
+}
+.a06_main .yinzhang {
+  position: absolute;
+  top: 48px;
+  left: 112px;
+  background-position: -4px -168px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 97px;
+  height: 97px;
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}

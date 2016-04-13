@@ -1,0 +1,11 @@
+//清楚浮动
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+    clear: both;
+  }
+  *zoom:1;
+}

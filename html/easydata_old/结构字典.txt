@@ -1,0 +1,24 @@
+﻿buyer                           全球买家库
+  |-buyerList.html                买球买家库列表
+buyerEva                        采购商评估与维护
+  |-buyerList.html                01采购商数据(总数量，总质量)
+  |-analysis-report-03.html           03查看分析报告
+industryDet                     监测国内外同行
+  |-inlandList.html               02查找中国供应商同行(总金额，总数量，总质量)
+  |-foreignList.html              A02查看国外采购商同行(总数量，总重量)
+  |-inlandList_report                 国内分析报表
+  |-foreignList_report                国外分析报表
+priceDet                        了解价格行情
+  |-exportDet                     查看国内进口价格
+  |-importDet                     查看国外
+  |-report.html                       查看分析
+search              精确寻找潜在国外客户
+  |-buyerList.html    02采购商数据(总数量，总重量)
+  |-report.html       02采购商数据
+  |-originOrder.html  03查看原始提单
+supplier            中国供应商库
+  |-supplierList.html  卖家库列表信息
+index.html      易数据首页
+companyInfo.html 公司信息
+
+originDate

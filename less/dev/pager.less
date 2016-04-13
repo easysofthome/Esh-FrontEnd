@@ -1,0 +1,54 @@
+/*分页样式*/
+
+@import 'globalImp';
+.pages
+{
+    @margin_padding_px:10px;
+    font-size: 12px;
+
+    float: left;
+
+    width: 100%;
+    margin: @margin_padding_px 0;
+
+    text-align: center;
+
+    color: #a1a1a1;
+    *padding-bottom: @margin_padding_px;
+    //盒子
+    a,
+    .cpb
+    {
+        margin: 0 2px;
+        padding: 3px 10px;
+
+        text-decoration: none;
+
+        color: #a1a1a1;
+        border: 1px solid #ddd;
+        background: #fff;
+
+        .displayinlineBlock();
+        .border-radius(3px);
+    }
+    a
+    {
+        &:hover
+        {
+            text-decoration: none;
+
+            color: #00a2c9;
+            border: 1px solid #a1a1a1;
+
+            .border-radius(3px);
+        }
+    }
+    .cpb
+    {
+        font-weight: bold;
+
+        color: #f50;
+        border: none;
+        background: none;
+    }
+}

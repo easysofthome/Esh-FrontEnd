@@ -1,0 +1,30 @@
+@subset_b: -4px -4px 10px 2px;
+@subset_g: -4px -14px 10px 2px;
+@TELgray: -4px -24px 20px 20px;
+@TELwhite: -4px -52px 20px 20px;
+@usergray: -4px -80px 20px 20px;
+@userwhite: -4px -108px 20px 20px;
+@qq: -4px -136px 30px 30px;
+@hotlinenum: -4px -174px 257px 40px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-common-left {
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}

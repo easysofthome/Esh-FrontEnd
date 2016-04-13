@@ -1,0 +1,185 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/huiyuanzhongxin/right/sprite.less';
+
+@import 'common/mingxi.less';
+
+.a17-box01
+{
+    margin-top: 40px;
+    padding-top: 20px;
+
+    background-color: #fff;
+    padding-bottom: 23px;
+    .chaxun
+    {
+        line-height: 28px;
+
+        margin-top: 25px;
+        .ipt
+        {
+            width: 111px;
+            height: 28px;
+
+            border: 1px #cecece solid;
+
+            .border-radius(3px);
+        }
+        .span_zhi
+        {
+            margin: 0 10px;
+        }
+        .span_yewu
+        {
+            margin-left: 20px;
+        }
+        .btn_chaxun
+        {
+            line-height: 30px;
+
+            height: 30px;
+            margin-left: 10px;
+
+            color: #333;
+            background-color: #e0e0e0;
+        }
+    }
+}
+
+
+
+.select-box
+{
+    line-height: 28px;
+
+    position: relative;
+
+    width: 131px;
+    height: 28px;
+
+    border: 1px #cecece solid;
+
+    .border-radius(3px);
+    span
+    {
+        width: 90px;
+        margin-left: 15px;
+    }
+    i
+    {
+        margin-top: 11px;
+        margin-left: 8px;
+
+        .sprite(@xiala_hui);
+        .icon-huiyuanzhongxin-right;
+    }
+    .select-ul
+    {
+        position: absolute;
+        top: 29px;
+        left: -1px;
+
+        width: 131px;
+
+        border: 1px #d9d9d9 solid;
+        background-color: #fff;
+
+        li:hover
+        {
+            background-color: #1e90ff;
+            a
+            {
+                color: #fff;
+            }
+        }
+            a
+            {
+                display: block;
+
+                padding-left: 15px;
+
+                color: #666;
+            }
+    }
+}
+
+.fenlei-ul
+{
+    padding-top: 14px;
+    padding-bottom: 15px;
+    background-color: #fff;
+
+    border-top: #f2f3f5 1px solid;
+}
+
+.fenlei-box,
+.fenlei-box1
+{
+    padding: 0 5px;
+
+    text-align: center;
+}
+.fenlei-box
+{
+    width: 118px;
+}
+.fenlei-box1
+{
+    width: 204px;
+}
+
+
+.table-box
+{
+    li
+    {
+        position: relative;
+
+        margin-top: 20px;
+
+        background-color: #fff;
+        line-height: 24px;
+        _vertical-align: middle;
+    }
+    .table_00
+    {
+        position: relative;
+        z-index: 2;
+
+        overflow: hidden;
+
+        padding: 20px 0;
+        font-size: 14px;
+    }
+    .post
+    {
+        .shade
+        {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            opacity: 0;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+
+            filter: alpha(opacity=0);
+        }
+        .shade:after
+        {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+
+            content: '';
+
+            border: 1px solid rgba(0, 0, 0, .05);
+        }
+    }
+}

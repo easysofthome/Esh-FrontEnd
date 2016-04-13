@@ -1,0 +1,9 @@
+.logtail {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+}
+.logtail span {
+  margin: 0 14px;
+}

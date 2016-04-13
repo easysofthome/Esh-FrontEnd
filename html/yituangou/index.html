@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>易团购平台-首页</title>
+<link href="\css\production\yituangou\global.css" rel="stylesheet" type="text/css"/>
+<link href="\css\production\yituangou\index.css" rel="stylesheet" type="text/css"/>
+
+<body>
+@@include('/yituangou/head/index-head.html')
+
+<div class="banner-color">
+	<div class="banner-Frame clearfix">
+		<div class="Frame-left">
+			<a href=""><img src="\images\production\yituangou\index\banner.png"></a>
+			<ul class="slider-nav clearfix">
+				<li class="slider-item slider-selected">1</li>
+				<li class="slider-item">2</li>
+				<li class="slider-item">3</li>
+				<li class="slider-item">4</li>
+			</ul>
+		</div>
+
+		<ul class="Frame-right">
+			<li class="Frame-right-01 clearfix">
+				<p class="right-p01 Time-limit icon-yituangou-index"></p>
+				<p class="right-p02">
+					<span class="p-span01">每天10:00限时秒杀</span>
+					<span class="p-span02">10:00 daily limit</span>
+				</p>
+			</li>
+			<li class="Frame-right-01 clearfix">
+				<p class="right-p01 lowest icon-yituangou-index"></p>
+				<p class="right-p02">
+					<span class="p-span01">打造全网最低价</span>
+					<span class="p-span02">Lowest price</span>
+				</p>
+			</li>
+			<li class="Frame-right-01 Frame-right-02 clearfix">
+				<p class="right-p01 Quality-testing icon-yituangou-index"></p>
+				<p class="right-p02">
+					<span class="p-span01">商品验货质检</span>
+					<span class="p-span02">Commodity inspection</span>
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="main-color">
+	<div class="main-Frame">
+		<p class="Small-title">
+			<span class="Small-title01">精选团购</span>
+			<span class="Small-title02">每日10点精品特卖</span>
+		</p>
+		@@include('/yituangou/Buy/Buy-01.html')
+	</div>
+
+	<div class="main-Frame">
+		<p class="Small-title">
+			<span class="Small-title01">更多品牌团购</span>
+		</p>
+		<div class="Brand clearfix">
+			<a href="/html/yituangou/Company/Release.html" class="Company-logo-left Company-logo">
+				<img src="\images\production\yituangou\index\Company-logo01.png">
+			</a>
+			<a href="/html/yituangou/Company/Release.html" class="Company-logo">
+				<img src="\images\production\yituangou\index\Company-logo02.png">
+			</a>
+			<a href="/html/yituangou/Company/Release.html" class="Company-logo">
+				<img src="\images\production\yituangou\index\Company-logo03.png">
+			</a>
+			<a href="/html/yituangou/Company/Release.html" class="Company-logo">
+				<img src="\images\production\yituangou\index\Company-logo04.png">
+			</a>
+			<a href="/html/yituangou/Company/Release.html" class="Company-logo">
+				<img src="\images\production\yituangou\index\Company-logo05.png">
+			</a>
+		</div>
+	</div>
+
+	<div class="main-Frame">
+		<p class="Small-title clearfix">
+			<span class="Small-title01 Small-title04">单品团</span>
+			<a href="/html/yituangou/Yarn.html" class="Small-title02 Small-title03">纱线</a>
+			<a href="" class="Small-title02 Small-title03">羽绒</a>
+			<a href="" class="Small-title02 Small-title03">PP棉</a>
+			<a href="" class="Small-title02 Small-title03">坯布</a>
+			<a href="" class="Small-title02 Small-title03">无纺布</a>
+			<a href="" class="Small-title02 Small-title03">染料</a>
+		</p>
+	</div>
+
+	<div class="m01-Frame clearfix">
+		<div class="Sort clearfix">
+			<a href="" class="Sort-a clearfix">
+				<span class="Comprehensive icon-yituangou-index Sort-icon"></span>
+				<span>综合</span>
+			</a>
+			<a href="" class="Sort-a clearfix">
+				<span class="Rise icon-yituangou-index Sort-icon"></span>
+				<span>价格</span>
+			</a>
+			<a href="" class="Sort-a clearfix">
+				<span class="Drop icon-yituangou-index Sort-icon"></span>
+				<span>销量</span>
+			</a>
+		</div>
+		<form class="search-Frame clearfix" method="get" name="" action="" target="_blank" >
+			<div class="index-Search icon-yituangou-index"></div>
+		  	<div class="searchText ">
+				<input name="w" type="text" value="高端家纺" onfocus="if (value =='高端家纺'){value =''}" onblur="if (value ==''){value='高端家纺'}"/>
+			</div>
+			<a href="" type="submit" class="searchBut">搜索</a>
+		</form>
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+
+	<div class="Buy-Frame">
+		@@include('/yituangou/Buy/Buy-02.html')
+	</div>
+	@@include('/yituangou/General/netx_page.html')
+</div>
+
+@@include('/yituangou/footer.html')
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,216 @@
+
+@import '../../dev/mixins/mixins.less';
+
+@import '../../sprite/yituangou/index/sprite.less';
+
+@import 'General/Sort.less';
+
+@import 'General/General-01.less';
+
+.banner-color
+{
+    width: 100%;
+
+    background-color: #c3e0fe;
+}
+
+.banner-Frame
+{
+    width: 1190px;
+    margin: 0 auto;
+    .Frame-left
+    {
+        position: relative;
+
+        float: left;
+
+        margin-left: 240px;
+    }
+    .slider-nav
+    {
+        font-family: 'Arial Regular';
+        font-size: 16px;
+
+        position: absolute;
+        bottom: 10px;
+        left: 292px;
+
+        width: 700px;
+
+        text-align: center;
+
+        color: #fff;
+        .slider-item
+        {
+            line-height: 24px;
+
+            display: inline-block;
+            float: left;
+
+            width: 24px;
+            height: 24px;
+            margin: 0 5px;
+
+            cursor: pointer;
+
+            background-color: #000;
+
+            _vertical-align: middle;
+            .border-radius(50%);
+        }
+        .slider-selected
+        {
+            background-color: #d42532;
+        }
+        .slider-item:hover
+        {
+            background-color: #d42532;
+        }
+    }
+}
+
+
+.Frame-right
+{
+    float: right;
+
+    height: 300px;
+
+    background-color: #fff;
+}
+
+
+
+
+
+.main-Frame
+{
+    width: 1190px;
+    margin: 0 auto;
+    .Small-title
+    {
+        font-family: '微软雅黑';
+
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+    .Small-title01
+    {
+        font-size: 20px;
+
+        color: #010101;
+    }
+    .Small-title02
+    {
+        font-size: 13px;
+
+        color: #888;
+    }
+    .Small-title03
+    {
+        float: right;
+
+        margin-right: 2px;
+        margin-left: 63px;
+    }
+    .Small-title03:hover
+    {
+        color: #d42532;
+    }
+    .Small-title04
+    {
+        float: left;
+    }
+}
+
+
+
+.Brand
+{
+    padding: 9px 0;
+
+    border: #ddd 1px solid;
+    background-color: #fff;
+    .Company-logo
+    {
+        float: left;
+
+        margin-left: 20px;
+    }
+    .Company-logo-left
+    {
+        margin-left: 9px;
+    }
+}
+
+
+.m01-Frame
+{
+    width: 1190px;
+    margin: 0 auto;
+    .Sort-a
+    {
+        border: #ddd 1px solid;
+    }
+    .search-Frame
+    {
+        font-family: '宋体';
+        font-size: 13px;
+
+        float: right;
+
+        border: #ddd 1px solid;
+        .index-Search
+        {
+            float: left;
+
+            margin-right: 5px;
+
+            .sprite(@index-Search);
+        }
+        .searchText
+        {
+            float: left;
+            input
+            {
+                line-height: 30px;
+
+                float: left;
+
+                width: 190px;
+                height: 30px;
+
+                color: #666;
+                border: none;
+                background-color: #fff;
+
+                _vertical-align: middle;
+            }
+            input:focus {
+                outline:none;
+            }
+        }
+        .searchBut
+        {
+            line-height: 30px;
+
+            float: left;
+
+            padding: 0 12px;
+
+            color: #333;
+            border-left: #ddd 1px solid;
+            background-color: #fff;
+
+            _vertical-align: middle;
+        }
+    }
+}
+
+
+.Buy-Frame
+{
+    width: 1190px;
+    margin: 0 auto;
+    margin-top: 20px;
+}

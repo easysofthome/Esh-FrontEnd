@@ -1,0 +1,426 @@
+@import '../../dev/globalImp';
+/*数据平台首页*/
+
+//banner-data顶部数据平台介绍
+.banner-data
+{
+    background: url(/Static/Images/DataImg/banner-data.jpg) no-repeat center center rgb(39, 33, 50);
+
+    .size(100%,  390px);
+    .play-video();
+    .banner-content
+    {
+        width: @Webwidth;
+
+        .center-block();
+    }
+    .lf
+    {
+        width: 550px;
+        margin-top: 50px;
+
+        color: rgb(255, 255, 255);
+    }
+    .rg
+    {
+        margin-top: 50px;
+
+        background: url(/Static/Images/DataImg/banner-video.png) no-repeat;
+
+        .size(379px,243px);
+        .border-radius(3px);
+    }
+    h1
+    {
+        font-size: 35px;
+        font-weight: normal;
+        line-height: 50px;
+
+        margin: 10px 0;
+    }
+    h2
+    {
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 40px;
+
+        margin: 10px 0;
+        margin-bottom: 20px;
+    }
+    .btn
+    {
+        font-size: 18px;
+        line-height: 30px;
+
+        margin-right: 15px;
+
+        .size(150px,30px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrap
+{
+    margin-bottom: 20px;
+}
+//第一部分 左右两边头像
+.content
+{
+    padding: 10px 20px;
+
+    border: 1px rgb(225, 225, 225) solid;
+    background: rgb(255, 255, 255);
+
+    .size(450px,170px);
+    .inlineBlock(true);
+    .main_text
+    {
+        float: left;
+
+        width: 240px;
+        margin-top: 10px;
+    }
+    h3
+    {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+
+        margin: 0;
+        padding-left: 15px;
+
+        color: rgb(55, 181, 249);
+        border-left: 4px solid rgb(55, 181, 249);
+    }
+    h3.gary
+    {
+        color: rgb(102, 102, 102);
+    }
+    .fs_big
+    {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 30px;
+
+        margin-top: 10px;
+        margin-left: 19px;
+    }
+    .fs_small
+    {
+        line-height: 24px;
+
+        margin-left: 19px;
+    }
+    .btn
+    {
+        font-size: 20px;
+        line-height: 40px;
+
+        margin: 10px 0 10px 20px;
+        padding: 0 10px;
+
+        .size(160px,40px);
+    }
+    .icon
+    {
+        margin-left: 20px;
+
+        background: url(/Static/Images/DataImg/figure.png) no-repeat;
+
+        .square(172px);
+        _display: inline;
+    }
+    .icon2_blue
+    {
+        background-position: -172px -0;
+    }
+    .icon1_grey
+    {
+        background-position: -0 -172px;
+    }
+    .icon2_grey
+    {
+        background-position: -172px -172px;
+    }
+}
+
+//第二部分 左右两个列表
+.content_2
+{
+    //顶头title
+    .title
+    {
+        height: 40px;
+
+        border-bottom: 2px solid rgb(225, 225, 225);
+        div
+        {
+            font-size: 18px;
+            line-height: 40px;
+
+            float: left;
+
+            height: 40px;
+
+            color: rgb(51, 51, 51);
+            border-bottom: 2px solid rgb(55, 181, 249);
+        }
+    }
+    .list
+    {
+        .plug-btn
+        {
+            padding: 0 10px;
+        }
+        li
+        {
+            // float: left;
+            margin-top: 15px;
+
+            border: 1px solid rgb(225, 225, 225);
+            background-color: rgb(255, 255, 255);
+            &:hover
+            {
+                border-color: #37b5f9;
+            }
+        }
+        //主要文字
+        .maintext
+        {
+            float: left;
+
+            width: 295px;
+            margin: 10px 14px;
+            p
+            {
+                margin-top: 10px;
+            }
+        }
+        //左边标题
+        h3
+        {
+            font-size: 14px;
+            font-weight: normal;
+
+            margin: 0;
+
+            color: rgb(51, 51, 51);
+        }
+        //右边按钮
+        //tab开始
+        .TabTitle3
+        {
+            margin-top: 5px;
+
+            border-top: 1px rgb(225, 225, 225) solid;
+            li
+            {
+                float: left;
+
+                width: 30%;
+                margin: 0;
+
+                text-align: center;
+
+                border: none;
+                //tab里面的字颜色
+                & a
+                {
+                    color: rgb(85, 26, 139);
+                }
+                //分割线
+                &.litab-0
+                {
+                    width: 3px;
+
+                    color: rgb(170, 170, 170);
+                }
+                //被选中或者经过
+                &.active,
+                &:hover
+                {
+                    margin-top: -1px;
+
+                    cursor: pointer;
+
+                    color: #37b5f9;
+                    border: none;
+                    border-top: 1px #37b5f9 solid;
+                }
+            }
+        }
+    }
+    .m-dlwb
+    {
+        //按钮有效
+        .plug-btn
+        {
+            .esh-custom-btn(rgb(55, 181, 249),2px);
+        }
+    }
+    .m-dlwb-gray
+    {
+        //无效
+        .plug-btn
+        {
+            .esh-custom-btn(true);
+        }
+    }
+    //列表图标
+    .supplier-a,
+    .supplier-b,
+    .supplier-c,
+    .supplier-d,
+    .supplier-e,
+    .buyer-a,
+    .buyer-b,
+    .buyer-c,
+    .buyer-d,
+    .buyer-e
+    {
+        float: left;
+
+        width: 167px;
+        height: 167px;
+
+        background: url(/Static/Images/DataImg/data-commerce.gif) no-repeat;
+    }
+    .supplier-a
+    {
+        background-position: -0 0;
+    }
+    .supplier-b
+    {
+        background-position: -0 -167px;
+    }
+    .supplier-c
+    {
+        background-position: -0 -334px;
+    }
+    .supplier-d
+    {
+        background-position: -0 -501px;
+    }
+    .supplier-e
+    {
+        background-position: -0 -668px;
+    }
+    .buyer-a
+    {
+        background-position: -334px 0;
+    }
+    .buyer-b
+    {
+        background-position: -334px -167px;
+    }
+    .buyer-c
+    {
+        background-position: -334px -334px;
+    }
+    .buyer-d
+    {
+        background-position: -334px -501px;
+    }
+    .buyer-e
+    {
+        background-position: -334px -668px;
+    }
+    .m-dlwb-gray .supplier-a
+    {
+        background-position: -167px 0;
+    }
+    .m-dlwb-gray .supplier-b
+    {
+        background-position: -167px -167px;
+    }
+    .m-dlwb-gray .supplier-c
+    {
+        background-position: -167px -334px;
+    }
+    .m-dlwb-gray .supplier-d
+    {
+        background-position: -167px -501px;
+    }
+    .m-dlwb-gray .supplier-e
+    {
+        background-position: -167px -668px;
+    }
+    .m-dlwb-gray .buyer-a
+    {
+        background-position: -501px 0;
+    }
+    .m-dlwb-gray .buyer-b
+    {
+        background-position: -501px -167px;
+    }
+    .m-dlwb-gray .buyer-c
+    {
+        background-position: -501px -334px;
+    }
+    .m-dlwb-gray .buyer-d
+    {
+        background-position: -501px -501px;
+    }
+    .m-dlwb-gray .buyer-e
+    {
+        background-position: -501px -668px;
+    }
+}
+
+//数据排名
+.data-rank
+{
+    margin-top: 15px;
+    padding: 10px;
+
+    border: 1px rgb(225, 225, 225) solid;
+    background: rgb(255, 255, 255);
+    ul
+    {
+        line-height: 30px;
+
+        float: left;
+
+        width: 210px;
+        margin-right: 10px;
+        padding: 0 0 0 20px;
+
+        border-left: 1px rgb(239, 239, 239) dotted;
+        li
+        {
+            overflow: hidden;
+
+            width: 100%;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            a
+            {
+                color: rgb(102, 102, 102);
+                &:hover
+                {
+                    color: #f60;
+                }
+            }
+        }
+    }
+}
+
+
+@import 'countryMap.less';

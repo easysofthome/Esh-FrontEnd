@@ -1,0 +1,37 @@
+@lanjingdu: -4px -4px 143px 6px;
+@jingdu: -4px -18px 143px 6px;
+@jingdutiao: -4px -32px 286px 6px;
+@a08_bg_bottom: -4px -46px 346px 15px;
+@yuan: -4px -69px 24px 24px;
+@logo: -4px -101px 216px 26px;
+@huangv: -4px -135px 32px 32px;
+@mima: -4px -175px 32px 32px;
+@shiming: -4px -215px 32px 32px;
+@shoujibangding: -4px -255px 32px 32px;
+@youxiang: -4px -295px 32px 32px;
+@luv: -4px -335px 32px 32px;
+@jianrongyuan: -4px -375px 80px 80px;
+@touxiangwaikau: -4px -463px 120px 120px;
+@touxiangwaikau2: -4px -591px 120px 120px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-huiyuanzhongxin-top {
+  background-image: url("/images/production/huiyuanzhongxin/top/sprite-huiyuanzhongxin-top.PNG");
+}

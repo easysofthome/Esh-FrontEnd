@@ -1,0 +1,164 @@
+
+@import '../../../sprite/yijingjia/log/sprite.less';
+
+
+.logbox
+{
+    width: 1188px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+    margin-top: 40px;
+    border: 1px solid #d6d6d6;
+    .logbox_left
+    {
+        float: left;
+
+        margin: 56px 0 0 140px;
+
+        _margin-left: 70px;
+        .sprite(@log_transaction);
+    }
+    .logbox_right
+    {
+        float: left;
+
+        width: 326px;
+
+        margin-top: 80px;
+        margin-left: 124px;
+        padding-bottom: 30px;
+
+        border: 1px solid #d6d6d6;
+        h1
+        {
+            font-size: 16px;
+            font-weight: bold;
+
+            margin: 18px 0 0 25px;
+         
+
+            color: #333;
+        }
+        .yanzheng{
+       
+        	width:278px;
+        	margin:0 auto;
+        	margin-top: 20px;
+        	
+        	.yanzheng_img{
+        		float: left;
+        		padding-bottom: 2px;
+        		.sprite(@tishi);
+        	}
+        	.tishi_wenzhi{
+        		margin-left: 4px;
+        		line-height: 18px;
+        		float: left;
+        		color:#c40e24;
+        	}
+        }
+        .enterstyle
+        {
+            width: 278px;
+            height: 38px;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            border: 1px solid #e6e6e6;
+            .account_img
+            {
+                float: left;
+
+                margin: 10px 10px 0 10px;
+
+                _margin-left: 5px;
+                .sprite(@denglu_yonghu);
+            }
+            .password_img
+            {
+                float: left;
+
+                margin: 10px 10px 0 10px;
+
+                _margin-left: 5px;
+                .sprite(@denglu_suo);
+            }
+            input
+            {
+                font-size: 12px;
+                line-height: 38px;
+
+                float: left;
+
+                width: 240px;
+                height: 38px;
+
+                color: #999;
+                border: 0;
+            }
+        }
+        .password
+        {
+            margin-top: 20px;
+        }
+        .autologinbox
+        {
+            font-size: 12px;
+
+            width: 278px;
+            margin: 0 auto;
+            margin-top: 14px;
+
+            color: #4c4c4c;
+            a
+            {
+                float: right;
+
+                height: 14px;
+
+                color: #132a87;
+            }
+            label
+            {
+                float: left;
+
+                input
+                {
+                    height: 14px;
+
+                    vertical-align: bottom;
+                }
+            }
+        }
+        .buttbox
+        {
+        	padding-top: 10px;
+            width: 278px;
+            margin: 0 auto;
+            margin-top: 14px;
+            .butt_yanshi
+            {
+                width: 126px;
+                height: 40px;
+
+                -webkit-border-radius: 5px;
+                   -moz-border-radius: 5px;
+                        border-radius: 5px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: #fff;
+            }
+            .butt_denglu
+            {
+                float: left;
+
+                background-color: #c40e24;
+            }
+            .butt_zhuci
+            {
+            	float: right;
+                background-color: #114e87;
+            }
+        }
+    }
+}

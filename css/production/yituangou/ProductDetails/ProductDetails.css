@@ -1,0 +1,122 @@
+.icon-yituangou-ProductDetails {
+  background-image: url("/images/production/yituangou/ProductDetails/sprite-yituangou-ProductDetails.PNG");
+}
+.Product-Small-title {
+  font-size: 20px;
+  line-height: 49px;
+  _vertical-align: middle;
+  background-image: url("/images/production/yituangou/ProductDetails/Background-line.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.Product-Small-title a {
+  float: left;
+  padding: 0 30px;
+  color: #888;
+  border-top: 2px solid #fff;
+}
+.Product-Small-title .current {
+  color: #d42532;
+  border-top: 2px solid #d42532;
+  background-color: #fff;
+}
+.Product-Small-title .border-left {
+  border-left: #cccccc 1px solid;
+}
+.Product-Small-title .border-right {
+  border-right: #cccccc 1px solid;
+}
+.Product-01-Frame {
+  padding-top: 30px;
+}
+.Product-main {
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.Product02-left {
+  float: left;
+}
+.Product02-left01 {
+  width: 840px;
+  background-color: #fff;
+  font-size: 13px;
+  padding-bottom: 100px;
+}
+.Product02-Content01 {
+  font-family: '宋体';
+  margin: 0 24px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: #e5e5e5 1px solid;
+}
+.Product02-Content01 .title-bold {
+  font-weight: bold;
+  padding-bottom: 14px;
+  color: #333;
+}
+.Product02-Content01 .Content01 {
+  line-height: 30px;
+  float: left;
+  width: 260px;
+  color: #888;
+  _vertical-align: middle;
+}
+.Product02-Content01 .Content01-p {
+  width: 792px;
+  line-height: 30px;
+  float: left;
+  color: #888;
+  _vertical-align: middle;
+}
+.Product02-Content03 {
+  margin: 0 24px;
+  margin-top: 50px;
+  border-bottom: 1px solid #000;
+}
+.Product02-Content03 p {
+  width: 78px;
+  line-height: 24px;
+  _vertical-align: middle;
+  color: #fff;
+  font-family: '宋体';
+  text-align: center;
+  font-weight: bold;
+  background-color: #000;
+  border-radius: 5px 5px 0 0;
+}
+.Certificate-icon {
+  margin: 0 24px;
+  width: 782px;
+  border: 1px solid #e7e7e7;
+  padding: 4px;
+  margin-top: 5px;
+}
+.Certificate-icon01 {
+  margin-top: 30px;
+}
+.Product02-left02 {
+  margin-top: 20px;
+}
+.Product02-right {
+  float: right;
+  background-color: #fff;
+  width: 330px;
+}
+.Product02-right .ProductDetails-01 {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 30px;
+  _vertical-align: middle;
+  color: #333;
+  background-position: -4px -100px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 330px;
+  height: 30px;
+}
+.Product02-right .Buy-06-icon {
+  margin-top: 15px;
+  margin-left: 24px;
+}

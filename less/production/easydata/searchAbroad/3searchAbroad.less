@@ -1,0 +1,154 @@
+@import '../../../../less/dev/mixins/mixins.less';
+@import '../../../sprite/easydata/priceDet/sprite.less';
+.tablebox{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+   .border-radius(4px);
+   background-color: #fff;
+  .table_cont{
+    width: 1160px;
+    margin: 0px auto 0 auto;
+    padding-top: 30px;
+  }
+
+
+
+  //
+
+
+
+
+
+
+  .tab_tit{
+    font-size: 18px;
+    color:#000;
+  }
+  .Margins{
+    margin-top: 30px;
+
+  }
+ .tab_unit,.Spread_text{
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+
+  }
+  .bule{
+    color: #3ca1d7;
+  }
+  .Spread_text{
+    width: 72px;
+    margin-left: 20px;
+    color:#3ca1d7;
+  }
+  .Spread{
+    margin:6px 0 0 6px;
+    .sprite(@Spread);
+    .icon-easydata-priceDet;
+    .fixIe6pngTransparent('/images/icon/easydata/priceDet/Spread.png');
+  }
+  //
+
+
+
+
+  //
+  .pricechangesbox{
+       border-left: 1px solid #cccccc;
+    border-top:1px solid #cccccc;
+    font-size: 14px;
+    color:#333;
+    line-height: 48px;
+    width: 1159px;
+  }
+  //**出口价格每年的月度变化
+  .vertical{
+    background-color: #f2f3f5;
+    font-size: 16px;
+  }
+  .vert_data{
+    font-size: 14px;
+  }
+  .vert_data:nth-child(odd){
+    background: #f8f8f8;
+  }
+  .search_acc,
+  .search_money,
+  .suppliers_rank,
+  .suppliers_name,
+  .supplieraccoun_rank,
+  .supplieraccoun_name,
+  .supplieraccoun_country,
+  .supplieraccoun_name2,
+  .Purcha_country,
+  .Purcha_price
+  {
+    text-align: center;
+    border-right:  1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  //
+
+  .search_acc{
+    width: 230px;
+  }
+  .search_money{
+    width: 231px;
+  }
+
+  //2015年枕头总量占比
+
+
+  //
+  .suppliers_rank{
+    width: 153px;
+  }
+  .suppliers_name{
+    width: 200px;
+  }
+
+  //2015年枕头向各供应国的采购总量占比
+
+  //
+  .supplieraccoun_rank{
+    width: 60px;
+  }
+  .supplieraccoun_name{
+    width: 392px;
+  }
+  .supplieraccoun_name2{
+    width: 372px;
+    padding-left: 20px;
+    text-align: left;
+
+  }
+  .supplieraccoun_country{
+    width: 140px;
+  }
+
+  //2015年枕头向各供应商的采购总量占比
+
+
+
+   //
+  .Purcha_country{
+    width: 495px;
+  }
+  .Purcha_country01{
+    width: 475px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .Purcha_price{
+    width: 220px;
+  }
+
+  //2015年枕头向各供应国的采购单价
+
+  // 链接
+  .link00{
+    color: #333;
+  }
+}

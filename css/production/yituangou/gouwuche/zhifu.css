@@ -1,0 +1,132 @@
+.icon-yituangou-gouwuche {
+  background-image: url("/images/production/yituangou/gouwuche/sprite-yituangou-gouwuche.PNG");
+}
+.zhifubox {
+  font-size: 13px;
+  line-height: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  color: #888;
+}
+.zhifubox .hongsezi {
+  color: #d42532;
+}
+.zhifubox .huisezi {
+  color: #333;
+}
+.zhifubox .lianse {
+  color: #275392;
+}
+.zhifubox .jiachu {
+  font-weight: bold;
+}
+.zhifubox .zhifudinggaodu {
+  padding-top: 10px;
+}
+.zhifubox .xiaohaozhi {
+  font-size: 12px;
+}
+.zhifubox .dingdanbox {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+}
+.zhifubox .dingdanlibox {
+  width: 962px;
+  margin: 0 auto;
+  margin-top: 18px;
+}
+.zhifubox .xian {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.zhifubox .dizhi {
+  margin-top: 10px;
+}
+.zhifubox .kuangdu {
+  width: 700px;
+  padding-bottom: 10px;
+}
+.zhifubox input {
+  vertical-align: middle;
+}
+.zhifubox .juse {
+  color: #f60;
+}
+.zhifubox .zhihaoeighteen {
+  font-size: 18px;
+}
+.zhifubox .xieyi {
+  margin-left: 6px;
+}
+.zhifubox .jiantou {
+  margin-top: -2px;
+  margin-left: 4px;
+  vertical-align: middle;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  width: 6px;
+  height: 4px;
+}
+.zhifubox .zhifufangshibox {
+  margin-top: 20px;
+  background-image: url('/images/production/yituangou/zhifubiankuang.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.zhifubox .fangshibiankuan {
+  font-size: 16px;
+  line-height: 50px;
+  padding-right: 26px;
+  padding-left: 26px;
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  background-color: #fff;
+  color: #888;
+}
+.zhifubox .selected {
+  border-top: 2px solid #f60;
+  border-bottom: none;
+  background-color: #fff;
+}
+.zhifubox .qita {
+  border: 1px solid #e6e6e6;
+  background-color: #f3f3f3;
+}
+.zhifubox .fangshibiankuan_juli {
+  margin-left: 8px;
+}
+.zhifubox .zhifubaobox {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+}
+.zhifubox .zhifubaobox .zhifubaolibox {
+  width: 920px;
+  margin: 0 auto;
+  padding-top: 36px;
+}
+.zhifubox .radioweizhi {
+  margin-top: 20px;
+  margin-right: 6px;
+}
+.zhifubox .zhifubaotu {
+  background-position: -4px -76px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 134px;
+  height: 52px;
+}
+.zhifubox .tongyi_com {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  border: 1px solid #d74c00;
+  width: 188px;
+  line-height: 38px;
+  background-color: #ff6600;
+  margin-bottom: 20px;
+}

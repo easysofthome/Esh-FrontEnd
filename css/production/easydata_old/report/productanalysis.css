@@ -1,0 +1,213 @@
+.pro_an {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 7px 7px #eeeeee;
+  -moz-box-shadow: 0px 0px 7px 7px #eeeeee;
+  -ms-box-shadow: 0px 0px 7px 7px #eeeeee;
+  -o-box-shadow: 0px 0px 7px 7px #eeeeee;
+  box-shadow: 0px 0px 7px 7px #eeeeee;
+}
+.pro_an .swit_mon {
+  padding: 30px 0 10px 10px;
+  font-size: 16px;
+}
+.pro_an .swit_mon a {
+  color: #333333;
+  margin-right: 40px;
+}
+.pro_an .swit_mon .current {
+  color: #ff6700;
+}
+.pro_an .pro_hig {
+  padding-top: 30px;
+}
+.pro_an .pro_cnt {
+  width: 1160px;
+  margin: 0 auto;
+}
+.pro_an .pro_cnt .pro_tit {
+  font-size: 18px;
+  padding-top: 30px;
+}
+.pro_an .pro_cnt .item,
+.pro_an .pro_cnt .money {
+  font-size: 14px;
+  padding-top: 34px;
+  color: #888;
+}
+.pro_an .pro_cnt .item {
+  margin-left: 20px;
+}
+.pro_an .tab_frame {
+  font-size: 14px;
+  width: 1158px;
+  margin-top: 16px;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  line-height: 48px;
+  text-align: center;
+  color: #333;
+}
+.pro_an .rgbom_bor,
+.pro_an .bom_bor {
+  border-bottom: 1px solid #ccc;
+}
+.pro_an .rgbom_bor {
+  border-right: 1px solid #ccc;
+}
+.pro_an .tab_pro {
+  width: 216px;
+}
+.pro_an .tot_money {
+  width: 234px;
+}
+.pro_an .tab_acc {
+  width: 144px;
+}
+.pro_an .tab_ope {
+  width: 90px;
+}
+.pro_an .tab_month {
+  width: 185px;
+}
+.pro_an .tab_months {
+  width: 80px;
+}
+.pro_an .tab_seq {
+  width: 150px;
+}
+.pro_an .tab_supp {
+  width: 449px;
+}
+.pro_an .tab_freq {
+  width: 140px;
+}
+.pro_an .tab_client {
+  width: 560px;
+}
+.pro_an .tab_reduce {
+  width: 298px;
+}
+.pro_an .tab_cou {
+  width: 260px;
+}
+.pro_an .tab_statistics {
+  width: 187px;
+}
+.pro_an .tab_totalmot {
+  width: 171px;
+}
+.pro_an .tab_domestic {
+  width: 105px;
+}
+.pro_an .tab_foreigncou {
+  width: 217px;
+}
+.pro_an .tab_foreignmon {
+  width: 68px;
+}
+.pro_an .tab_foreignopn {
+  width: 112px;
+}
+.pro_an .tab_Japanpro {
+  width: 351px;
+}
+.pro_an .tab_Japanmoney {
+  width: 206px;
+}
+.pro_an .tab_Japancoun {
+  width: 301px;
+}
+.pro_an .tab_Japanana {
+  width: 168px;
+}
+.pro_an .tab_transport {
+  width: 631px;
+}
+.pro_an .tit_size {
+  font-size: 16px;
+}
+.pro_an .data_high {
+  color: #db1414;
+}
+.pro_an .data_low {
+  color: #44901e;
+}
+.pro_an .acc_color {
+  color: #f60;
+}
+.pro_an .tab_titcolor {
+  font-size: 16px;
+  background-color: #f2f3f5;
+}
+.pro_an .tab_white {
+  background-color: #fff;
+}
+.pro_an .ope_butt,
+.pro_an .ope_buttana {
+  color: #ffffff;
+  background-color: #3ca1d7;
+  border-color: #3ca1d7;
+  padding: 7px 18px;
+  font-size: 14px;
+  line-height: 32px;
+  border-radius: 3px;
+}
+.pro_an .ope_butt:focus,
+.pro_an .ope_buttana:focus,
+.pro_an .ope_butt.focus,
+.pro_an .ope_buttana.focus {
+  color: #ffffff;
+  background-color: #51abdb;
+  border-color: #a6d4ed;
+}
+.pro_an .ope_butt:hover,
+.pro_an .ope_buttana:hover {
+  color: #ffffff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}
+.pro_an .ope_butt:active,
+.pro_an .ope_buttana:active,
+.pro_an .ope_butt.active,
+.pro_an .ope_buttana.active {
+  color: #ffffff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}
+.pro_an .ope_buttjap {
+  padding: 7px 30px;
+  font-size: 14px;
+  line-height: 32px;
+  border-radius: 3px;
+}
+.pro_an .ope_buttana,
+.pro_an .ope_buttjap {
+  color: #ffffff;
+  background-color: #ff6600;
+  border-color: #ff6600;
+}
+.pro_an .ope_buttana:focus,
+.pro_an .ope_buttjap:focus,
+.pro_an .ope_buttana.focus,
+.pro_an .ope_buttjap.focus {
+  color: #ffffff;
+  background-color: #ff751a;
+  border-color: #ffb380;
+}
+.pro_an .ope_buttana:hover,
+.pro_an .ope_buttjap:hover {
+  color: #ffffff;
+  background-color: #ff751a;
+  border-color: #ff8b3d;
+}
+.pro_an .ope_buttana:active,
+.pro_an .ope_buttjap:active,
+.pro_an .ope_buttana.active,
+.pro_an .ope_buttjap.active {
+  color: #ffffff;
+  background-color: #ff751a;
+  border-color: #ff8b3d;
+}

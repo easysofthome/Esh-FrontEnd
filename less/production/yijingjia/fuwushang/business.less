@@ -1,0 +1,189 @@
+
+@import '../../../sprite/yijingjia/fuwushang/sprite.less';
+.businessbox
+{
+    margin-top: 20px;
+    font-size: 14px;
+
+    width: 903px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border: 1px solid #d6d6d6;
+    .business_logo
+    {
+        float: left;
+
+        margin: 0 14px 0 20px;
+
+        _margin-left: 10px;
+    }
+    .business_information
+    {
+        float: left;
+
+        margin-top: 6px;
+        .information_titlebox
+        {
+            _width: 512px;
+            .titlebox_title
+            {
+                font-size: 16px;
+                font-weight: bold;
+
+                float: left;
+
+                color: #132b88;
+            }
+            .title_credit
+            {
+                float: left;
+
+                padding-top: 2px;
+                padding-left: 20px;
+                li
+                {
+                    float: left;
+
+                    padding-left: 10px;
+
+                    .sprite(@star_huang);
+                }
+                .li_starhui
+                {
+                    float: left;
+
+                    padding-left: 10px;
+
+                    .sprite(@star_hui);
+                }
+            }
+        }
+        .information_detailbox
+        {
+            width: 512px;
+            margin-top: 10px;
+            .detail_contents
+            {
+                float: left;
+
+                color: #666;
+            }
+            .detail_butt
+            {
+                float: right;
+
+                color: #333;
+            }
+            .detail_butt:hover{
+                color: #c30d23;
+            }
+        }
+        .information_operatingbox
+        {
+            width: 512px;
+            padding-top: 12px;
+            .operating_ldentity
+            {
+                line-height: 22px;
+
+                float: left;
+
+                padding-right: 8px;
+                padding-left: 8px;
+
+                color: #c30d23;
+                border: 1px solid #c30d23;
+            }
+            .operating_record
+            {
+                float: right;
+                li
+                {
+                    line-height: 24px;
+
+                    float: left;
+                    span
+                    {
+                        color: #c30d23;
+                    }
+                }
+                .juli
+                {
+                    margin: 0 14px 0 14px;
+                }
+            }
+        }
+    }
+    .ibusiness_buttbox
+    {
+        float: left;
+
+        margin-left: 70px;
+        padding-top: 20px;
+        .butt_join
+        {
+            width: 152px;
+            height: 30px;
+
+            border: 1px solid #efd88f;
+            background-color: #ffeeba;
+            .join_img
+            {
+                float: left;
+
+                margin: 6px 6px 0 26px;
+
+                .sprite(@join);
+                _margin-left: 13px;
+            }
+            a
+            {
+                line-height: 28px;
+
+                color: #947e3d;
+            }
+        }
+        .butt_style
+        {
+            width: 70px;
+            height: 26px;
+            margin-top: 10px;
+
+            border: 1px solid #d0d0d0;
+            background-color: #eee;
+        }
+        a
+        {
+            line-height: 24px;
+
+            float: left;
+
+            color: #a6a6a6;
+        }
+        .butt_imgstyle
+        {
+            float: left;
+            margin: 7px 4px 0 7px;
+            _margin-left:3.5px;
+        }
+        .butt_collect
+        {
+            float: left;
+            .collect_img
+            {
+                .sprite(@collect);
+            }
+        }
+        .butt_contact
+        {
+            float: left;
+
+            margin-left: 10px;
+            .contact_img
+            {
+                .sprite(@contact);
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.icon-huiyuanzhongxin-right {
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a06_box {
+  font-size: 12px;
+  width: 854px;
+  height: 480px;
+  margin-top: 40px;
+  padding-top: 200px;
+  background-color: #fff;
+}
+.a06_main {
+  position: relative;
+  margin-left: 186px;
+  background-position: -4px -1432px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 508px;
+  height: 249px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a06_main .touxiang_box {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+.a06_main .touxiang_box .touxiang {
+  margin-left: 19px;
+  padding-bottom: 8px;
+  background-position: -4px -549px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 46px;
+  height: 50px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a06_main .words {
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.a06_main .words p {
+  margin-top: 7px;
+}
+.a06_main .yinzhang {
+  position: absolute;
+  top: 48px;
+  left: 112px;
+  background-position: -4px -831px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 97px;
+  height: 97px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}

@@ -1,0 +1,62 @@
+@import '../../../sprite/easydata_old/report/sprite.less';
+@import '../../../dev/mixins/mixins.less';
+
+
+.timeswitchbox
+{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    .border-radius(5px);
+    .marginL{
+        margin-left: 20px;
+        position: relative;
+        .line{
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            border-bottom: 2px solid #f60;
+            width: 100px;
+        }
+        .years
+        {
+            line-height: 58px;
+
+            width: 100px;
+
+            text-align: center;
+
+            color: #333;
+            border-bottom: 2px solid #fff;
+        }
+        .hover{
+            color: #f60;
+        }
+    }
+    .switching,.cur_blueimg
+    {
+        line-height: 60px;
+
+        width: 90px;
+
+        color: #333;
+    }
+    .cur_blueimg{
+        color: #3ca1d7;
+          background-color: #f2f3f5;
+    }
+    .blueimg
+    {
+        margin: 22px 5px 0 16px;
+
+        .sprite(@grayimg);
+        .icon-easydata_old-report;
+    }
+   .graytable
+    {
+        margin: 22px 5px 0 16px;
+
+        .sprite(@bluetable);
+        .icon-easydata_old-report;
+    }
+}

@@ -1,0 +1,9 @@
+// 设置背景颜色,鼠标移过或者获得焦点亮度减低10%
+
+.bg-variant(@color) {
+  background-color: @color;
+  &:hover,
+  &:focus {
+    background-color: darken(@color, 10%);
+  }
+}

@@ -1,0 +1,36 @@
+
+.play-video()
+{
+    .videoDiv
+    {
+        display: block;
+
+        margin: 70px auto;
+
+        cursor: pointer;
+        text-align: center;
+
+        color: rgb(254, 132, 49);
+        background: rgb(0, 0, 0);
+
+        .square(100px);
+        .transition(all .2s ease-in-out);
+        .opacity(.3);
+        .border-radius(4px);
+        &:hover,
+        &:focus{
+            .opacity(.6);
+         }
+    }
+    .play_video
+    {
+        display: block;
+        float: left;
+
+        margin: 18px 0 0 18px;
+
+        background: url(/Static/Images/base.png) no-repeat;
+
+        .square(62px);
+    }
+}

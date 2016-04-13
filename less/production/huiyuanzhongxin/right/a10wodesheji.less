@@ -1,0 +1,203 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/huiyuanzhongxin/right/sprite.less';
+
+.a10-box01
+{
+    margin-top: 40px;
+    padding-top: 17px;
+
+    background-color: #fff;
+    .box01_span
+    {
+        margin-left: 20px;
+    }
+    .box01_btn
+    {
+        line-height: 36px;
+
+        width: 128px;
+        height: 36px;
+        margin-right: 20px;
+
+        background-color: #fd6464;
+
+        .border-radius(5px);
+        i
+        {
+            margin-top: 10px;
+            margin-right: 11px;
+            margin-left: 17px;
+
+            .sprite(@icon_shangchuan);
+            .icon-huiyuanzhongxin-right;
+        }
+    }
+}
+
+.leibie_box
+{
+    line-height: 24px;
+
+    padding-bottom: 30px;
+
+    _vertical-align: middle;
+    .leibie
+    {
+        margin-top: 10px;
+    }
+    span
+    {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    a
+    {
+        margin-left: 13px;
+        padding: 0 11px;
+
+        color: #000;
+    }
+    .current,
+    a:hover
+    {
+        color: #fff;
+        background-color: #fd6464;
+
+        .border-radius(5px);
+    }
+    .leibie_p
+    {
+        width: 760px;
+        a
+        {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+
+.huaxing-box
+{
+    .post
+    {
+        li
+        {
+            position: relative;
+
+            margin-top: 20px;
+
+            background-color: #fff;
+        }
+        .shade
+        {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            opacity: 0;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+
+            filter: alpha(opacity=0);
+        }
+        .shade:after
+        {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+
+            content: '';
+
+            border: 1px solid rgba(0, 0, 0, .05);
+        }
+        .huaxing
+        {
+            position: relative;
+            z-index: 2;
+
+            overflow: hidden;
+
+            padding: 20px;
+        }
+    }
+}
+
+
+.p01
+{
+    font-size: 16px;
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #333;
+}
+
+
+.huaxing-word
+{
+    margin-left: 15px;
+    .p02
+    {
+        margin-top: 9px;
+        padding-bottom: 9px;
+        i
+        {
+            margin-top: 3px;
+            margin-right: 4px;
+
+            .sprite(@icon-yan);
+            .icon-huiyuanzhongxin-right;
+        }
+    }
+    .p03
+    {
+        line-height: 24px;
+
+        _vertical-align: middle;
+        .words-red
+        {
+            color: #fd6464;
+        }
+    }
+}
+
+
+.btn_box
+{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    .btn_shiyong
+    {
+        background-color: #37b5f9;
+    }
+    .btn_shanchu
+    {
+        margin-left: 10px;
+
+        background-color: #fd6464;
+    }
+    .btn_a00{
+		margin-top: 32px;
+    }
+}
+
+
+
+.a11_shuju01{
+	margin-top: 10px;
+	line-height: 24px;
+}
+.btn_a01{
+	margin-top: 20px;
+}

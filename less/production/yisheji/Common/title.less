@@ -1,0 +1,47 @@
+
+@import '../../../sprite/yisheji/Common/sprite.less';
+
+.title
+{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 45px;
+
+    background-image: url('/images/production/yisheji/Common/title-bg.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    a
+    {
+        font-size: 20px;
+        line-height: 32px;
+
+        margin-right: 60px;
+        padding: 0 20px 11px 20px;
+
+        _vertical-align: middle;
+        i
+        {
+            margin-right: 15px;
+        }
+    }
+    .title-a
+    {
+        color: #252525;
+        i
+        {
+            .sprite(@icon-diyi);
+            .icon-yisheji-Common;
+        }
+    }
+    .current,
+    .title-a:hover
+    {
+        color: #5ab6ab;
+        border-bottom: #5ab6ab 3px solid;
+        i
+        {
+            .sprite(@icon-diyi-lv);
+            .icon-yisheji-Common;
+        }
+    }
+}

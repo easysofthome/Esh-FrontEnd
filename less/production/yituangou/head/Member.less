@@ -1,0 +1,71 @@
+
+@import 'Member-Search.less';
+@import '../../../dev/mixins/mixins.less';
+
+.Member-nav-color{
+	width:100%;
+	background-color: #d52532;
+}
+
+
+.Member-nav{
+	width:1190px;
+	margin:0 auto;
+	
+	.logo{
+		float: left;
+		margin-top: 10px; 
+	}
+
+	.nav{
+		float: left;
+		line-height: 60px;
+		_vertical-align: middle;
+		font-size: 14px;
+		font-family: '微软雅黑';
+		position: relative;
+		
+		margin-left: 80px;
+		.nav-li{
+			float: left;
+			margin:0 25px;
+			a{
+				color:#fff;
+			}
+		}
+		.Member-current{
+			margin-top: -6px;
+			margin-left: 10px;
+			.sprite(@Member-current);
+		}
+
+		.news{
+			position: absolute;
+			right: 6px;
+			top:8px;
+			line-height: 21px;
+			_vertical-align: middle;
+			text-align: center;
+			color:#666;
+			.sprite(@Member-news);
+		}
+	}
+
+	.Member-Search{
+		float: left;
+		margin-left: 250px;
+	}
+
+	.Return{
+		float: right;
+		border: 1px solid #fff;
+		color: #fff;
+		font-family: '微软雅黑';
+		font-size: 12px;
+		line-height: 20px;
+		_vertical-align: middle;
+		padding: 0 8px;
+		.border-radius(10px);
+		margin-top: 20px;
+	}
+}

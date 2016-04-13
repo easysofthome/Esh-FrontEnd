@@ -1,0 +1,71 @@
+.icon-huiyuanzhongxin-top {
+  background-image: url("/images/production/huiyuanzhongxin/top/sprite-huiyuanzhongxin-top.PNG");
+}
+.tongyongtop {
+  background-color: #303745;
+}
+.tongyongtop .tongyongtopbox {
+  width: 1200px;
+  margin: 0 auto;
+}
+.tongyongtop .loginstatus {
+  background-color: #4a7bc4;
+  width: 326px;
+}
+.tongyongtop .loginstatus .touxiangbox {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 10px 0px 20px;
+}
+.tongyongtop .loginstatus .jianrongbj {
+  background-position: -4px -375px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.tongyongtop .loginstatus .yonghuname {
+  line-height: 100px;
+}
+.tongyongtop .loginstatus .yonghuann {
+  background-color: #e85d40;
+  width: 112px;
+  line-height: 30px;
+  text-align: center;
+  margin: 35px 0 0 24px;
+  border-radius: 4px;
+}
+.tongyongtop .navyangshi {
+  line-height: 100px;
+}
+.tongyongtop .navmargins {
+  margin-left: 100px;
+}
+.tongyongtop .longnavmargins {
+  margin-left: 150px;
+}
+.tongyongtop .dingwei {
+  position: relative;
+}
+.tongyongtop .yuan {
+  background-position: -4px -69px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  text-align: center;
+  line-height: 24px;
+}
+.tongyongtop .zhiti_13 {
+  font-size: 13px;
+}

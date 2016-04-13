@@ -1,0 +1,82 @@
+.icon-easydesign {
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.flowerbox {
+  font-size: 14px;
+  color: #666666;
+  width: 285px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.flowerbox .flowerimg {
+  width: 285px;
+  height: 285px;
+  overflow: hidden;
+  background-color: #000;
+  display: block;
+}
+.flowerbox .flowetextbox {
+  background-color: #fff;
+  width: 245px;
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+}
+.flowerbox .flower_tit {
+  font-size: 16px;
+  color: #333;
+  padding-bottom: 14px;
+  display: block;
+}
+.flowerbox .touxiang {
+  width: 20px;
+  height: 20px;
+  border-radius: 60px;
+  overflow: hidden;
+  display: block;
+}
+.flowerbox .flowernane,
+.flowerbox .free {
+  margin-left: 4px;
+  line-height: 20px;
+  color: #666666;
+}
+.flowerbox .flower_tit:hover,
+.flowerbox .flowernane:hover {
+  color: #ff6600;
+}
+.flowerbox .free {
+  color: #28b28b;
+}
+.flowerbox .browse {
+  margin: 6px 6px 0 0  ;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 11px;
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.flowerbox .dianzang {
+  margin: 0px 6px 0 0  ;
+  background-position: -4px -199px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.flowerbox .dianzang:hover {
+  background-position: -4px -171px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.flowerbox .likebox {
+  margin-top: 8px;
+  padding-bottom: 10px;
+}

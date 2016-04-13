@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>易团购平台-公司发布的团购</title>
+	<link href="\css\production\yituangou\global.css" rel="stylesheet" type="text/css"/>
+	<link href="\css\production\yituangou\Company\Company.css" rel="stylesheet" type="text/css"/>
+
+<body>
+	@@include('/yituangou/head/index-head01.html')
+	<div class="main-color">
+		<div class="PositioningCurrent">
+			<ul class="xiangxibox clearfix">
+				<li class="justif">您的位置：</li>
+				<li class="justif">
+					<a href="">首页</a>
+				</li>
+				<li class="justif weizhijianju jiantuoyanse">></li>
+				<li class="justif">
+					<a href="">我的易团购</a>
+				</li>
+				<li class="justif weizhijianju jiantuoyanse">></li>
+				<li class="justif dangqianyanse">订单详情</li>
+			</ul>
+		</div>
+		@@include('/yituangou/Company/Introduction.html')
+		<div class="Switch">
+			<div class="Switch-text clearfix">
+				<a href="/html/yituangou/Company/Release.html" class="current">发布</a>
+				<a href="/html/yituangou/Company/Purchase.html">采购</a>
+			</div>
+			<div class="Company-Sort clearfix">@@include('/yituangou/General/Sort.html')</div>
+		</div>
+
+		<div class="Company-Buy-05">@@include('/yituangou/Buy/Buy-05.html')</div>
+		<div class="Company-Buy-05">@@include('/yituangou/Buy/Buy-05.html')</div>
+		<div class="Company-Buy-05">@@include('/yituangou/Buy/Buy-05.html')</div>
+		<div class="Company-Buy-05">@@include('/yituangou/Buy/Buy-05.html')</div>
+		@@include('/yituangou/General/netx_page.html')
+	</div>
+	@@include('/yituangou/footer.html')
+</body>
+</html>

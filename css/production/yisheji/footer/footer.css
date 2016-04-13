@@ -1,0 +1,94 @@
+.icon-yisheji-footer {
+  background-image: url("/images/production/yisheji/footer/sprite-yisheji-footer.PNG");
+}
+.footer-box {
+  width: 100%;
+  margin-top: 90px;
+  padding-bottom: 30px;
+  background-color: #303745;
+}
+.footer-nav {
+  width: 1200px;
+  margin: 0 auto;
+}
+.footer-nav .dl-box {
+  margin-top: 54px;
+  margin-right: 85px;
+}
+.footer-nav .dl-box dt {
+  font-size: 16px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+.footer-nav .dl-box dd {
+  line-height: 30px;
+  height: 30px;
+}
+.footer-nav .dl-box a {
+  color: #828997;
+}
+.footer-nav .dl-box .icon-qq {
+  background-position: -4px -52px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/yisheji/footer/sprite-yisheji-footer.PNG");
+}
+.footer-nav .dl-box .icon-sina {
+  background-position: -4px -76px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/yisheji/footer/sprite-yisheji-footer.PNG");
+}
+.footer-nav .dl-box .icon-163 {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/yisheji/footer/sprite-yisheji-footer.PNG");
+}
+.footer-nav .dl-box .icon-linkedin {
+  background-position: -4px -28px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/yisheji/footer/sprite-yisheji-footer.PNG");
+}
+.footer-nav .dl-box i {
+  margin-top: 9px;
+  margin-right: 5px;
+}
+.footer-nav .code {
+  margin-top: 54px;
+}
+.footer-nav .kefu {
+  margin-top: 54px;
+}
+.footer-nav .kefu .btn {
+  line-height: 30px;
+  display: block;
+  width: 176px;
+  height: 30px;
+  margin-top: 18px;
+  margin-left: 3px;
+  text-align: center;
+  color: #fff;
+  background-color: #508ce4;
+}
+.banquan {
+  line-height: 34px;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px;
+  text-align: center;
+  color: #7a818f;
+}

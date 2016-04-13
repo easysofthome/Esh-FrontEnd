@@ -1,0 +1,198 @@
+
+@import 'common/mingxi.less';
+
+@import '../../../sprite/huiyuanzhongxin/right/sprite.less';
+
+@import '../../../dev/mixins/mixins.less';
+
+
+.title_box
+{
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 23px;
+
+    background-color: #fff;
+    .main02
+    {
+        margin-top: 25px;
+        .main02_mar
+        {
+            margin-left: 5px;
+
+            text-decoration: underline;
+        }
+        .span_mar
+        {
+            margin-top: 5px;
+        }
+        .a05_put
+        {
+            line-height: 28px;
+
+            width: 133px;
+            height: 28px;
+            margin-left: 5px;
+
+            border: #cecece 1px solid;
+        }
+        .btn_chaxun
+        {
+            line-height: 30px;
+
+            height: 30px;
+            margin-left: 10px;
+
+            color: #333;
+            background-color: #e0e0e0;
+        }
+    }
+}
+
+
+.select-box
+{
+    line-height: 28px;
+
+    position: relative;
+
+    width: 131px;
+    height: 28px;
+    margin-right: 13px;
+    margin-left: 5px;
+
+    border: 1px #cecece solid;
+
+    .border-radius(3px);
+    span
+    {
+        width: 90px;
+        margin-left: 15px;
+    }
+    i
+    {
+        margin-top: 11px;
+        margin-left: 8px;
+
+        .sprite(@xiala_hui);
+        .icon-huiyuanzhongxin-right;
+    }
+    .select-ul
+    {
+        position: absolute;
+        top: 29px;
+        left: -1px;
+
+        width: 131px;
+
+        border: 1px #d9d9d9 solid;
+        background-color: #fff;
+
+        li:hover
+        {
+            background-color: #1e90ff;
+            a
+            {
+                color: #fff;
+            }
+        }
+            a
+            {
+                display: block;
+
+                padding-left: 15px;
+
+                color: #666;
+            }
+    }
+}
+
+
+
+.fenlei-ul
+{
+    padding-top: 14px;
+    padding-bottom: 15px;
+
+    border-top: #f2f3f5 1px solid;
+    background-color: #fff;
+}
+
+.fenlei-box,
+.fenlei-box1,
+.fenlei-box2
+{
+    padding: 0 5px;
+
+    text-align: center;
+}
+.fenlei-box
+{
+    width: 109px;
+}
+.fenlei-box1
+{
+    width: 130px;
+}
+.fenlei-box2
+{
+    width: 160px;
+}
+
+
+.table-box
+{
+    li
+    {
+        line-height: 24px;
+
+        position: relative;
+
+        margin-top: 20px;
+
+        background-color: #fff;
+
+        _vertical-align: middle;
+    }
+    .table_00
+    {
+        font-size: 14px;
+
+        position: relative;
+        z-index: 2;
+
+        overflow: hidden;
+
+        padding: 20px 0;
+    }
+    .post
+    {
+        .shade
+        {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            opacity: 0;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+
+            filter: alpha(opacity=0);
+        }
+        .shade:after
+        {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+
+            content: '';
+
+            border: 1px solid rgba(0, 0, 0, .05);
+        }
+    }
+}

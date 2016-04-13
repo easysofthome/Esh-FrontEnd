@@ -1,0 +1,18 @@
+.fabrictitle {
+  padding: 20px 0 0 20px;
+  width: 1200px;
+  margin: 0 auto;
+  line-height: 18px;
+}
+.fabrictitle .fabrictitle_left {
+  font-size: 18px;
+  padding-left: 10px;
+  border-left: 2px solid #3ca1d7;
+  color: #666666;
+}
+.fabrictitle .fabrictitle_rg {
+  font-size: 12px;
+}
+.fabrictitle .fabrictitle_rg a {
+  color: #666666;
+}

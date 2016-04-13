@@ -1,0 +1,33 @@
+@progress: -4px -4px 143px 6px;
+@progressbar: -4px -18px 286px 6px;
+@progressblue: -4px -32px 143px 6px;
+@lowerpart_bot: -4px -46px 346px 15px;
+@newsRed: -4px -69px 24px 24px;
+@phone: -4px -101px 32px 32px;
+@Light: -4px -141px 32px 32px;
+@password: -4px -181px 32px 32px;
+@mailbox: -4px -221px 32px 32px;
+@realname: -4px -261px 32px 32px;
+@VIP: -4px -301px 32px 32px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-common-nav {
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}

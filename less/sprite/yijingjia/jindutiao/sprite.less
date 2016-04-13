@@ -1,0 +1,30 @@
+@changjingdutiao-hong: -4px -4px 544px 32px;
+@changjingdutiao-hui: -4px -44px 544px 32px;
+@jingdutiao-hong: -4px -84px 272px 32px;
+@jingdutiao-hui: -4px -124px 272px 32px;
+@yuan-hui: -4px -164px 32px 32px;
+@yuanxing-hong: -4px -204px 32px 32px;
+@zhongjingdutiao-hong: -4px -244px 363px 32px;
+@zhongjingdutiao-hui: -4px -284px 363px 32px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yijingjia-jindutiao {
+  background-image: url("/images/production/yijingjia/jindutiao/sprite-yijingjia-jindutiao.PNG");
+}

@@ -1,0 +1,29 @@
+<link href="/css/production/easydata_old/report/timeswitch.css" rel="stylesheet" type="text/css"/>
+
+<div class="timeswitchbox clearfix">
+  <div class="marginL clearfix lf">
+    <a href="#" class="years lf">2013</a>
+    <a href="#" class="years lf">2014</a>
+    <a href="#" class="years lf cur hover">2015</a>
+    <span class="line"></span>
+  </div>
+  <a href="#" class="rg switching">
+    <span class="lf blueimg"></span>
+    <span>图形</span>
+  </a>
+  <a href="#" class="rg cur_blueimg">
+    <span class="lf graytable"></span>
+    <span>表格</span>
+  </a>
+</div>
+
+<script src="/js/common/seajs/sea-debug.js"></script>
+<!-- <script src="/Static/seajs/seajs-combo.js"></script> -->
+<script src="/js/common/seajs/seajs-css.js"></script>
+<script src="/js/rootConfig.js"></script>
+
+<script>
+  seajs.use("js/easydata_old/switchTab",function (switchTab) {
+    switchTab.set(".marginL","a","span",".cur",100);
+  });
+</script>

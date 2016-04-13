@@ -1,0 +1,189 @@
+@import '../../../sprite/yijingjia/index/sprite.less';
+
+
+@border: 1px #d6d6d6 solid;
+@red:#c30e23;
+
+.main-01
+{
+    overflow: hidden;
+    
+    .main01center
+    {
+        float: left;
+        display: inline;
+
+        margin-top: 20px;
+        margin-left: 234px;
+        .ma01cen-top
+        {
+            position: relative;
+
+            width: 670px;
+            height: 292px;
+
+            background-color: red;
+            ul
+            {
+                position: absolute;
+                right: 13px;
+                bottom: 10px;
+
+                overflow: hidden;
+
+                li:hover
+                {
+                    .sprite(@qiehuan-red);
+                    .icon-yijingjia-index;
+                }
+                    li
+                    {
+                        float: left;
+
+                        margin: 0 2px;
+
+                        cursor: pointer;
+
+                        .sprite(@qiehuan-bai);
+                        .icon-yijingjia-index;
+                    }
+                        .dangqian
+                        {
+                            .sprite(@qiehuan-red);
+                            .icon-yijingjia-index;
+                        }
+            }
+        }
+        .ma01cen-bottom
+        {
+            overflow: hidden;
+
+            width: 670px;
+            dl
+            {
+                display: inline;
+                float: left;
+
+                margin-top: 23px;
+                margin-right: 53px;
+                margin-left: 20px;
+
+                text-align: center;
+                dt
+                {
+                    font-weight: bold;
+
+                    width: 63px;
+                    height: 50px;
+                    margin: 0 auto;
+
+                    background-position: center;
+                }
+                .hangye
+                {
+                    .sprite(@hangye);
+                    .icon-yijingjia-index;
+                }
+                .anquan
+                {
+                    .sprite(@anquan);
+                    .icon-yijingjia-index;
+                }
+                .caozuo
+                {
+                    .sprite(@caozuo);
+                    .icon-yijingjia-index;
+                }
+                .yongjin-02
+                {
+                    .sprite(@yongjin);
+                    .icon-yijingjia-index;
+                }
+                dd
+                {
+                    margin-top: 10px;
+                    p
+                    {
+                        line-height: 22px;
+
+                        color: #888;
+                        span
+                        {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .dd01
+            {
+                width: 107px;
+            }
+            .dd02
+            {
+                width: 92px;
+            }
+            .dd03
+            {
+                width: 117px;
+            }
+            .yongjin-01
+            {
+                width: 91px;
+                margin-right: 0;
+            }
+        }
+    }
+    .main01right
+    {
+        
+        float: right;
+      
+        li
+        {
+            width: 264px;
+            height: 134px;
+            margin-top: 20px;
+
+            border: @border;
+            p
+            {
+                line-height: 26px;
+
+                float: left;
+
+                margin-top: 40px;
+                margin-right: 12px;
+
+                color: #949494;
+                span
+                {
+                    font-size: 20px;
+
+                    color: #ff9600;
+                }
+            }
+            .pingtai-01
+            {
+                width: 66px;
+                height: 66px;
+                margin-top: 34px;
+                margin-left: 12px;
+            }
+            .lishi
+            {
+                .sprite(@lishi);
+                .icon-yijingjia-index;
+            }
+            .zuori
+            {
+                .sprite(@zuori);
+                .icon-yijingjia-index;
+            }
+            .renshu
+            {
+                .sprite(@renshu);
+                .icon-yijingjia-index;
+            }
+        }
+    }
+}

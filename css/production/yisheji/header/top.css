@@ -1,0 +1,210 @@
+.icon-yisheji-header {
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.head-top {
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  margin-top: 34px;
+}
+.top-box {
+  margin-top: 21px;
+}
+.top-box li a:hover {
+  color: #f90;
+}
+.top-box li a {
+  color: #666;
+}
+.top-box .fore02,
+.top-box .fore03,
+.top-box .fore04,
+.top-box .fore05 {
+  margin-left: 30px;
+}
+.top-box .fore01,
+.top-box .fore02,
+.top-box .fore04,
+.top-box .fore05 {
+  margin-top: 10px;
+}
+.top-box .fore01 {
+  color: #f90;
+}
+.top-box .fore01 a {
+  color: #f90;
+}
+.top-box .fore02 i {
+  margin-top: 5px;
+  margin-right: 5px;
+  background-position: -4px -61px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 30px;
+  height: 13px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.top-box .fore03 {
+  position: relative;
+}
+.top-box .fore03 i {
+  margin-top: 9px;
+  margin-left: 5px;
+  background-position: -4px -28px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 6px;
+  height: 4px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.top-box .fore03:hover i {
+  background-position: -4px -16px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 6px;
+  height: 4px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.top-box .fore05 i {
+  margin-top: 5px;
+  margin-right: 5px;
+  background-position: -4px -40px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 13px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.top-box .number {
+  margin-top: 15px;
+}
+.top-box .xiaoxi {
+  line-height: 20px;
+  margin-left: 5px;
+  padding: 0 9px;
+  color: #fff;
+  background-color: #f90;
+  _vertical-align: middle;
+  border-radius: 5px;
+}
+.user-on {
+  display: block;
+  width: 130px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+.user-on:hover {
+  border: 1px solid #e1e1e1;
+  border-bottom: none;
+}
+.user-box {
+  font-size: 12px;
+  position: absolute;
+  z-index: 3;
+  top: 34px;
+  left: 0;
+  width: 140px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border: 1px solid #e1e1e1;
+  border-top: none;
+  background-color: #fff;
+}
+.user-box .a00 {
+  display: block;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.user-box .p00 {
+  margin-left: 12px;
+}
+.user-box .p00 .color-00 {
+  color: #ff9e0d;
+}
+.user-box .p00 .color-01 {
+  color: #2db0d1;
+}
+.user-box ul {
+  line-height: 24px;
+  margin-left: 10px;
+  _vertical-align: middle;
+}
+.app-on {
+  display: block;
+  width: 105px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+.app-on:hover {
+  border: 1px solid #e1e1e1;
+  border-bottom: none;
+}
+.app-box {
+  font-size: 12px;
+  position: absolute;
+  z-index: 3;
+  top: 34px;
+  left: 0;
+  width: 115px;
+  padding-bottom: 15px;
+  border: 1px solid #e1e1e1;
+  border-top: none;
+  background-color: #fff;
+}
+.app-box .p00 {
+  font-weight: bold;
+  margin-left: 10px;
+  padding-top: 10px;
+  color: #333;
+}
+.app-box .app {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.app-box .app .app-apple {
+  margin-top: 10px;
+  background-position: -4px -156px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 97px;
+  height: 29px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.app-box .app .app-android {
+  margin-top: 10px;
+  background-position: -4px -82px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 97px;
+  height: 29px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.app-box .app-a {
+  line-height: 29px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  _vertical-align: middle;
+  background-position: -4px -119px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 97px;
+  height: 29px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.app-box .app-a:hover {
+  color: #fff;
+}

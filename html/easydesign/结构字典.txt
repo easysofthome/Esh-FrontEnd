@@ -1,0 +1,31 @@
+Flowers                    花型库
+  | leibie                 类别
+  | fenlei                 排序方式
+  | Flowers                花型
+  | whole                  全部花型库
+  | free                   免费花型库
+  | VIP                    VIP花型库
+
+Fabric                     面料库
+
+quality                    品质样库
+  | leibie                 类别
+  | whole                  全部品质样库
+  | free                   免费品质样库
+  | VIP                    VIP品质样库
+
+scene                      成品设计场景
+  | whole                  全部成品设计场景
+  | free                   免费成品设计场景
+  | VIP                    VIP成品设计场景
+
+Model                      款式模型
+  | whole                  全部款式模型
+  | free                   免费款式模型
+  | VIP                    VIP款式模型
+
+works                      成品作品
+
+studio                     工作室展示
+
+hisDesign                  他的设计

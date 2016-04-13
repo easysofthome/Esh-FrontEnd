@@ -1,0 +1,249 @@
+.icon-huiyuanzhongxin-index {
+  background-image: url("/images/production/huiyuanzhongxin/index/sprite-huiyuanzhongxin-index.PNG");
+}
+.indexbox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+.indexbox .indexleft {
+  width: 600px;
+}
+.indexbox .indexright {
+  width: 516px;
+}
+.indexbox .left_title {
+  font-size: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d4d4d4;
+}
+.indexbox .yidou {
+  margin-top: 15px;
+  background-position: -4px -980px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 333px;
+  height: 333px;
+}
+.indexbox .jiayi {
+  margin-top: 100px;
+  background-position: -4px -720px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 252px;
+  height: 252px;
+}
+.indexbox .yidoutitle,
+.indexbox .yidoushu,
+.indexbox .danwei,
+.indexbox .yiaoyi,
+.indexbox .tooltitle {
+  text-align: center;
+}
+.indexbox .yidoutitle,
+.indexbox .yiaoyi {
+  font-size: 20px;
+  margin-top: 66px;
+}
+.indexbox .xiaoshu {
+  font-size: 20px;
+}
+.indexbox .yiaoyi {
+  margin-top: 40px;
+}
+.indexbox .danwei {
+  margin-top: 4px;
+  color: #888;
+}
+.indexbox .yidoushu {
+  font-size: 30px;
+  color: #ec8b00;
+}
+.indexbox .bankcard {
+  display: block;
+  margin-top: 30px;
+}
+.indexbox .yidoushu {
+  margin-top: 20px;
+}
+.indexbox .tianjia {
+  margin-top: 3px;
+  margin-right: 4px;
+  margin-left: 122px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline;
+  width: 12px;
+  height: 12px;
+}
+.indexbox .leftxianxiang,
+.indexbox .rightxianxiang,
+.indexbox .leftxianxianglong,
+.indexbox .rightxianxianglong {
+  line-height: 34px;
+  text-align: center;
+}
+.indexbox .leftxianxiang {
+  background-position: -4px -24px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 73px;
+  height: 34px;
+}
+.indexbox .rightxianxiang {
+  background-position: -4px -108px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 73px;
+  height: 34px;
+}
+.indexbox .leftxianxianglong {
+  background-position: -4px -66px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 93px;
+  height: 34px;
+}
+.indexbox .rightxianxianglong {
+  background-position: -4px -150px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 93px;
+  height: 34px;
+}
+.indexbox .operating,
+.indexbox .jiaoyioperating， {
+  width: 186px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+.indexbox .jiaoyioperating， {
+  width: 146px;
+}
+.indexbox .toolbox {
+  margin-top: 15px;
+}
+.indexbox .tool {
+  width: 86px;
+  padding-bottom: 10px;
+}
+.indexbox .data {
+  background-position: -4px -480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .hejia {
+  background-position: -4px -240px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .cidian {
+  background-position: -4px -384px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .zhixiangcishuan {
+  background-position: -4px -672px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .chengben {
+  background-position: -4px -336px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .shaxian {
+  background-position: -4px -624px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .kezhong {
+  background-position: -4px -192px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .haiguan {
+  background-position: -4px -528px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .haiyunfei {
+  background-position: -4px -576px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .huilv {
+  background-position: -4px -288px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.indexbox .danweiico {
+  background-position: -4px -432px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 47px;
+  height: 40px;
+}
+.indexbox .data,
+.indexbox .hejia,
+.indexbox .cidian,
+.indexbox .zhixiangcishuan,
+.indexbox .chengben,
+.indexbox .shaxian,
+.indexbox .kezhong,
+.indexbox .haiguan,
+.indexbox .haiyunfei,
+.indexbox .huilv,
+.indexbox .danweiico {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.indexbox .tooltitle {
+  margin-top: 6px;
+  display: block;
+  color: #333;
+}
+.indexbox .toolleft {
+  margin-left: 43px;
+}
+.indexbox .tooltop {
+  margin-top: 30px;
+}

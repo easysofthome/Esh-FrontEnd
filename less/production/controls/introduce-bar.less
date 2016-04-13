@@ -1,0 +1,100 @@
+@import '../../dev/globalImp';
+@basecolor:rgb(255, 255, 255);
+.introduceSize()
+{
+    .size(100%,90px);
+}
+
+.introduce-bar
+{
+    position: fixed;
+    .fixie6Postionfixed();
+    z-index: 101;
+    z-index: 1001;
+    bottom: 0;
+
+    overflow: hidden;
+
+    .introduceSize;
+    .introduce-warp
+    {
+        width: 1180px;
+
+        .center-block();
+        .btn
+        {
+            font-size: 16px;
+        }
+    }
+    .introduce-item
+    {
+        float: left;
+
+        width: 17%;
+        padding-top: 15px;
+        .introduce
+        {
+            font-size: 14px;
+
+            color: rgb(204, 204, 204);
+        }
+    }
+    .like
+    {
+        position: relative;
+
+        float: left;
+
+        padding-top: 10px;
+
+        .size(130px,95px);
+        .flag-title
+        {
+            font-size: 14px;
+
+            margin-top: 20px;
+
+            color: @basecolor;
+        }
+        .code
+        {
+            position: absolute;
+            top: 8px;
+            right: 0;
+        }
+    }
+    .close
+    {
+        font-size: 24px;
+        line-height: 40px;
+
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+
+        width: 40px;
+        height: 40px;
+
+        text-align: center;
+
+        color: @basecolor;
+        &:hover{
+            color: darken(@basecolor, 25%);
+        }
+    }
+}
+
+
+.introduce-bg
+{
+    position: fixed;
+    .fixie6Postionfixed();
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+
+    background: rgb(0, 0, 0);
+
+    .introduceSize;
+    .opacity(.8);
+}

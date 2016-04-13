@@ -1,0 +1,109 @@
+.icon-easydata-priceDet {
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+}
+.tablebox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.tablebox .table_cont {
+  width: 1160px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+}
+.tablebox .tab_tit {
+  font-size: 18px;
+  color: #000;
+}
+.tablebox .Margins {
+  margin-top: 30px;
+}
+.tablebox .tab_unit {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888;
+}
+.tablebox .bule {
+  color: #3ca1d7;
+}
+.tablebox .supp_butt,
+.tablebox .suppbutt_left {
+  width: 98px;
+  display: block;
+  line-height: 28px;
+  color: #3ca1d7;
+  border: 1px solid #3ca1d7;
+  text-align: center;
+  margin: 9px auto 9px auto;
+  transition: all .3s;
+  border-radius: 2px;
+}
+.tablebox .supp_butt:hover,
+.tablebox .suppbutt_left:hover {
+  background: #3ca1d7;
+  color: #fff;
+}
+.tablebox .butt_box {
+  width: 220px;
+  margin: 0 auto;
+}
+.tablebox .suppbutt_left {
+  margin-left: 20px;
+}
+.tablebox .pricechangesbox {
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size: 14px;
+  color: #333;
+  line-height: 48px;
+  width: 1159px;
+}
+.tablebox .vertical {
+  background-color: #f2f3f5;
+  font-size: 16px;
+}
+.tablebox .vert_data {
+  font-size: 14px;
+}
+.tablebox .vert_data:nth-child(odd) {
+  background: #f8f8f8;
+}
+.tablebox .japan_product,
+.tablebox .japan_acc,
+.tablebox .japan_rank,
+.tablebox .japan_name,
+.tablebox .japan_mail,
+.tablebox .japan_detail,
+.tablebox .japan_name2 {
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.tablebox .japan_product {
+  width: 193px;
+}
+.tablebox .japan_acc {
+  width: 192px;
+}
+.tablebox .japan_rank {
+  width: 60px;
+}
+.tablebox .japan_name {
+  width: 474px;
+}
+.tablebox .japan_name2 {
+  width: 454px;
+  padding-left: 20px;
+  text-align: left;
+}
+.tablebox .japan_mail {
+  width: 170px;
+}
+.tablebox .japan_detail {
+  width: 280px;
+}
+.tablebox .link00 {
+  color: #333;
+}

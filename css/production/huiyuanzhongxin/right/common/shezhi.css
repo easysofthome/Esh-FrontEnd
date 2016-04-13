@@ -1,0 +1,35 @@
+.icon-huiyuanzhongxin-right {
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.shezhi .correct i,
+.shezhi .error i {
+  margin-top: 4px;
+  margin-right: 4px;
+}
+.shezhi .correct {
+  color: #14b610;
+}
+.shezhi .correct i {
+  background-position: -4px -110px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.shezhi .error {
+  color: #333;
+}
+.shezhi .error i {
+  background-position: -4px -158px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.shezhi .margin_a {
+  margin-right: 15px;
+}

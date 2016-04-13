@@ -1,0 +1,9 @@
+//修复IE6不支持fixed 
+
+//底部固定
+.fixie6Postionfixed()
+{
+    _position: absolute;
+    _bottom: auto;
+    _top: e("expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))");
+}

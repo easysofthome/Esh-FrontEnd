@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|注册</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/RegLog/registered.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+  <div class="logbox">
+    <div class="header">
+       <div class="top clearfix">
+        <a href="#" class="lf butt_right" id="username">
+          easysofthome <i>0</i>
+        </a>
+        <a href="#" class="lf butt_right" id="login">登录</a>
+        <a href="#" class="lf butt_right" id="register">注册</a>
+        <a href="#" class="lf butt_right">开通VIP会员</a>
+        <a href="#" class="lf butt_right">客服服务</a>
+        <a href="#" class="rg butt_right">国际版</a>
+        <a href="#" class="rg butt_right">易家纺下载区</a>
+        <a href="#" class="rg butt_right">易核价</a>
+        <a href="#" class="rg butt_right">易设计</a>
+        <a href="#" class="rg butt_right">易数据</a>
+        <a href="#" class="rg butt_right">易家纺首页</a>
+      </div>
+    </div>
+
+    <a href="#" class="loglog"></a>
+    <div class="log_content clearfix">
+      <div class="lf signup">
+      <form action="" id="register-form" method="post">
+
+        <input type="hidden" name="authcodeMg" id="authcodeMg">
+        <input type="hidden" name="state" id="state" value="">
+
+        <p class="sign_mem">会员注册</p>
+        <p class="member"></p>
+        <div class="clearfix user">
+          <span class="men_tit lf">用　户　名：</span>
+          <div class="lf input_left username_box">
+            <span class="placeholder">请输入手机号或邮箱</span>
+            <input type="text" class="input_style" value="" name="regName" id="form-account">
+            <div class="input-tip"></div>
+          </div>
+        </div>
+        <div class="clearfix padding">
+          <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
+          <div class="lf input_left2">
+            <input type="text" class="input_codes" id="authCode" name="authCode">
+            <a href="#" class="butt_cides rg" id="getCode">获取验证码</a>
+            <div class="input-tip"></div>
+          </div>
+        </div>
+
+        <div class="clearfix padding">
+          <span class="men_tit lf">密　　　码：</span>
+          <div class="lf input_left password_box">
+            <span class="placeholder">请输入密码</span>
+            <input type="password" class="input_style" value="" id="form-pwd" name="pwd"/>
+            <i class="i-status"></i>
+            <div class="input-tip"></div>
+          </div>
+        </div>
+
+        <div class="clearfix padding">
+          <span class="men_tit lf">
+            <span class="lf">确</span>
+            <span class="lf words">认</span>
+            <span class="lf words">密</span>
+            <span class="lf words2">码：</span>
+          </span>
+          <div class="lf input_left passwordRe_box">
+            <span class="placeholder">请再次输入密码</span>
+            <input id="form-equalTopwd" name="pwdRepeat" type="password" class="input_style" value="">
+            <div class="input-tip"></div>
+          </div>
+        </div>
+
+        <div class="clearfix padding">
+          <span class="men_tit lf">企业中文名：</span>
+          <div class="lf input_left">
+            <input type="text" class="input_style" id="company-name" name="companyName">
+            <div class="input-tip"></div>
+          </div>
+        </div>
+        <div class="clearfix padding">
+          <span class="men_tit lf">企业英文名：</span>
+          <div class="lf input_left">
+            <input type="text" class="input_style" id="company-name-en" name="companyNameEn">
+            <div class="input-tip"></div>
+          </div>
+        </div>
+        <div class="clearfix padding">
+          <span class="men_tit lf">身　　　份：</span>
+          <div class="lf input_left identity">
+            <label class="lf">
+              <input type="radio" name="identity" value="1" class="radio_posi"/>工厂
+              <div class="input-tip" style="display:inline-block"></div>
+            </label>
+            <label class="lf">
+              <input type="radio" name="identity" value="1" class="radio_posi"/>贸易商
+            </label>
+            <label class="lf">
+              <input type="radio" name="identity" value="1" class="radio_posi"/>进口商
+            </label>
+            <label class="lf">
+              <input type="radio" name="identity" value="1" class="radio_posi"/>零售商
+            </label>
+          </div>
+        </div>
+        <div class="clearfix padding">
+          <span class="men_tit lf">
+            <span class="lf">企</span>
+            <span class="lf words">业</span>
+            <span class="lf words">类</span>
+            <span class="lf words2">型：</span>
+          </span>
+          <div class="lf input_left">
+            <label class="lf chec_spacing">
+              <input type="radio" name="companyType" value="1" class="lf chec_posi">纺纱厂
+              <div class="input-tip" style="display:inline-block"></div>
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="companyType" value="2" class="lf chec_posi">织布厂
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="companyType" value="3" class="lf chec_posi">成品厂
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="companyType" value="4" class="lf chec_posi">后处理厂
+            </label>
+            <label class="lf service_marg">
+              <input type="radio" name="companyType" value="1" class="lf chec_posi">绣花厂
+            </label>
+            <label class="radio_spacing lf service_marg">
+              <input type="radio" name="companyType" value="2" class="lf chec_posi">辅料厂
+            </label>
+            <label class="radio_spacing lf service_marg">
+              <input type="radio" name="companyType" value="3" class="lf chec_posi">印花厂
+            </label>
+            <label class="radio_spacing lf service_marg">
+              <input type="radio" name="companyType" value="4" class="lf chec_posi">纱线染厂
+            </label>
+            <label class="lf service_marg">
+              <input type="radio" name="companyType" value="1" class="lf chec_posi">面料染厂
+            </label>
+            <label class="radio_spacing lf service_marg">
+              <input type="radio" name="companyType" value="2" class="lf chec_posi">包装材料厂
+            </label>
+          </div>
+        </div>
+        <div class="clearfix agree">
+          <input type="checkbox" name="agree" value="2" class="lf check_agree">
+          <span class="lf check_agreetext">我已阅读并同意</span>
+          <a href="#" class="bule_color lf" id="protocol">《易家纺用户注册协议》</a>
+          <a href="#" class="bule_color lf" id="promise">《隐私承诺》</a>
+          <div class="input-tip" style="display:inline-block;margin-left: 92px;"></div>
+        </div>
+        <button class="cutt_reg" type="submit">立即注册</button>
+      </form>
+      </div>
+      <div class="lf rg_box">
+        <p>已有易家纺账号：</p>
+        <a href="./login.html" class="clearfix logarr_box">
+          <span class="lf log_text">直接登录</span>
+          <span class="logarr lf"></span>
+        </a>
+        <dl class="servicebox">
+          <dt>完成注册即可享受以下服务：</dt>
+          <dd class="service_marg">
+            1、可使用所有
+            <span class="red_color">免费花型</span>
+            和
+            <span class="red_color">免费品质样</span>
+            进行面料设计
+          </dd>
+          <dd class="service_marg">
+            2、可使用
+            <span class="red_color">面料核价</span>
+            和
+            <span class="red_color">单品核价</span>
+          </dd>
+          <dd class="service_marg">
+            3、可使用所有
+            <span class="red_color">免费浴室、卧室、客厅和餐厅场景</span>
+          </dd>
+          <dd class="service_marg">
+            4、可使用所有
+            <span class="red_color">免费款式模型</span>
+            进行成品设计
+          </dd>
+          <dd class="service_marg">
+            5、可查询进出口贸易数据
+            <span class="red_color">50</span>
+            次
+          </dd>
+          <dd class="service_marg">
+            6、无限制使用最低分辨率云渲染，免费使用高品质云渲染
+            <span class="red_color">5</span>
+            次
+          </dd>
+
+        </dl>
+      </div>
+    </div>
+  </div>
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/VIP/rootConfig.js"></script>
+  <script>
+    seajs.use('/js/common/regLog/register');
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+.icon-yituangou-gouwuche {
+  background-image: url("/images/production/yituangou/gouwuche/sprite-yituangou-gouwuche.PNG");
+}
+.wanchengwaibox {
+  border-top: 3px solid #d42532;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  width: 1000px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.wanchengbox {
+  line-height: 28px;
+  width: 522px;
+  margin: 0 auto;
+  color: #333;
+}
+.wanchengbox .wangchengtu {
+  margin-left: 96px;
+  background-position: -4px -136px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 78px;
+  height: 78px;
+}
+.wanchengbox .tujuli {
+  margin-left: 20px;
+}
+.wanchengbox .zhihaothirteen {
+  font-size: 13px;
+}
+.wanchengbox .yanseqianhui {
+  color: #888;
+}
+.wanchengbox .zhifuchengg {
+  font-size: 30px;
+}
+.wanchengbox .lianxifangshijuli {
+  margin-top: 26px;
+}
+.wanchengbox .hongse {
+  color: #d42532;
+}
+.wanchengbox .tuobujuli {
+  margin-top: 8px;
+}
+.wanchengbox .lanse {
+  color: #275394;
+}
+.wanchengbox .xuxianbiankuang {
+  margin-top: 38px;
+  text-align: center;
+  border: 1px dashed #dedbd4;
+}
+.wanchengbox .wenzhijuli {
+  margin-left: 16px;
+}
+.wanchengbox .annbox {
+  line-height: 40px;
+  margin-top: 26px;
+}
+.wanchengbox .annbox .annjuli {
+  margin-left: 32px;
+}
+.wanchengbox .annbox .Button {
+  width: 108px;
+  text-align: center;
+  color: #fff;
+  background-color: #d42532;
+  _vertical-align: middle;
+  border-radius: 3px;
+}
+.wancheng-buy-frame {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.wancheng-buy-frame .wancheng-line {
+  line-height: 55px;
+  margin: 0 20px;
+  background-image: url('/images/production/yituangou/ProductDetails/Background-line01.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  _vertical-align: middle;
+}
+.wancheng-buy-frame .wancheng-line p {
+  font-size: 20px;
+  width: 93px;
+  padding-left: 8px;
+  color: #333;
+  border-bottom: #d52532 3px solid;
+}
+.wancheng-buy-frame .wancheng-Buy-06 {
+  float: left;
+  width: 282px;
+  margin-top: 20px;
+  margin-right: 37px;
+  margin-left: 20px;
+}
+.wancheng-buy-frame .wancheng-Buy {
+  margin-right: 0;
+}

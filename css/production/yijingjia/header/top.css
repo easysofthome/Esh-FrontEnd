@@ -1,0 +1,53 @@
+.dingbutop {
+  overflow: hidden;
+  border-bottom: 1px solid #e1e1e1;
+  width: 100%;
+}
+.dingbutop a:visited {
+  color: #666;
+}
+.dingbutop a:active {
+  color: #666;
+}
+.dingbutop a:link {
+  color: #666;
+}
+.dingbutop a:hover {
+  color: #666;
+}
+.dingbutop .topbox {
+  overflow: hidden;
+  margin: 0 auto;
+}
+.dingbutop .topbox p {
+  line-height: 32px;
+  float: left;
+  colror: #656565;
+}
+.dingbutop .topbox p a {
+  font-weight: bold;
+  color: #c40e24;
+}
+.dingbutop .topbox p span {
+  margin-left: 8px;
+  color: #c40e24;
+}
+.dingbutop .topbox ul {
+  margin-left: 48%;
+  margin-right: 22px;
+  _margin-left: 390px;
+  float: left;
+  line-height: 32px;
+}
+.dingbutop .topbox ul li {
+  float: left;
+}
+.dingbutop .topbox ul li a {
+  float: left;
+}
+.dingbutop .topbox ul li span {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+}

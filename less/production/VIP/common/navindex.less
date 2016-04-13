@@ -1,0 +1,223 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/VIP/common/nav/sprite.less';
+
+// 会员中心首页导航
+.navind_box
+{
+    background-color: #303745;
+    .navind
+    {
+        position: relative;
+
+        width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 84px;
+    }
+    .logo
+    {
+        padding-top: 14px;
+    }
+    .signout
+    {
+        line-height: 19px;
+
+        width: 38px;
+        margin-top: 3px;
+        margin-left: 14px;
+
+        text-align: center;
+
+        color: #afb1b6;
+        border: 1px solid #afb1b6;
+
+        .border-radius(4px);
+    }
+    .welcome
+    {
+        line-height: 25px;
+
+        color: #afb1b6;
+    }
+    .nav_top
+    {
+        margin-top: 50px;
+        font-size: 16px;
+        a{
+            color: #fff;
+        }
+    }
+    .nav_left
+    {
+        margin-left: 100px;
+    }
+    .nav_longleft
+    {
+        margin-left: 380px;
+    }
+    .rela
+    {
+        position: relative;
+    }
+    .newsRed
+    {
+        line-height: 24px;
+
+        position: absolute;
+        top: -18px;
+        right: -18px;
+
+        text-align: center;
+        font-size: 13px;
+
+        .sprite(@newsRed);
+        .icon-VIP-common-nav;
+    }
+}
+
+
+.Userinfbox
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 346px;
+    margin-top: 12px;
+    margin-left: -173px;
+    .upperpart
+    {
+        margin: 0 10px;
+        padding: 25px 0 38px 103px;
+        .headPor
+          {
+            position: relative;
+          }
+          .mask
+          {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+    }
+    .AfterClickBg
+    {
+        background-color: #3e485c;
+    }
+    .lowerpart
+    {
+        padding: 0 10px;
+        padding-bottom: 24px;
+        padding-bottom: 15px;
+
+        background-image: url('/images/production/VIP/common/nav/a08_bg.png');
+    }
+    .user
+    {
+        padding-top: 20px;
+
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+    }
+    .usertop
+    {
+        padding-top: 10px;
+    }
+
+    // vip部分
+    .vipbox
+    {
+        margin-top: 20px;
+    }
+    .vipwidth
+    {
+        display: inline;
+
+        width: 54px;
+        margin-left: 20px;
+        font-size: 13px;
+        a{
+            color: #333;
+            line-height: 32px;
+        }
+        span{
+            display: block;
+            padding-top: 6px;
+
+            text-align: center;
+        }
+    }
+    .VIP
+    {
+        margin: 0 auto;
+
+        .sprite(@VIP);
+        .icon-VIP-common-nav;
+    }
+    .Light
+    {
+        margin: 0 auto;
+
+        .sprite(@Light);
+        .icon-VIP-common-nav;
+    }
+    .phone
+    {
+        margin: 0 auto;
+
+        .sprite(@phone);
+        .icon-VIP-common-nav;
+    }
+    .realname
+    {
+        margin: 0 auto;
+
+        .sprite(@realname);
+        .icon-VIP-common-nav;
+    }
+    .mailbox
+    {
+        margin: 0 auto;
+
+        .sprite(@mailbox);
+        .icon-VIP-common-nav;
+    }
+    .password
+    {
+        margin: 0 auto;
+
+        .sprite(@password);
+        .icon-VIP-common-nav;
+    }
+    .VIPtopmar
+    {
+        margin-top: 12px;
+    }
+    .security
+    {
+        margin-top: 26px;
+        margin-left: 20px;
+    }
+    .progressbar
+    {
+        margin: 0 auto;
+        margin-top: 12px;
+
+        .sprite(@progressbar);
+        .icon-VIP-common-nav;
+    }
+    .progress
+    {
+        .sprite(@progress);
+        .icon-VIP-common-nav;
+    }
+
+    // 底部带阴影
+    .lowerpart_bot
+    {
+        .sprite(@lowerpart_bot);
+        .icon-VIP-common-nav;
+    }
+}

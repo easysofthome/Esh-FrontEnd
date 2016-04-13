@@ -1,0 +1,146 @@
+
+@import '../../../sprite/huiyuanzhongxin/right/sprite.less';
+
+.xiaoxi_box
+{
+    margin-top: 20px;
+    li
+    {
+        position: relative;
+
+        margin-top: 20px;
+
+        background-color: #fff;
+    }
+    .xiaoxi_main
+    {
+        position: relative;
+        z-index: 2;
+
+        overflow: hidden;
+        
+    }
+    .post
+    {
+        .shade
+        {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            opacity: 0;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+
+            filter: alpha(opacity=0);
+        }
+        .shade:after
+        {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+
+            content: '';
+
+            border: 1px solid rgba(0, 0, 0, .05);
+        }
+    }
+
+
+    .btn{
+        font-size: 14px;
+        margin-top: 6px;
+    }
+    .bg_hui{
+        background-color: #676767;
+        margin-right: 10px;
+    }
+    .bg_hong{
+        background-color: #fc4444;
+    }
+}
+
+
+
+.xiaoxi_main{
+    padding-top: 20px;
+    .main_p01{
+        margin-top: 10px;
+    }
+    .main_p02{
+        margin-top: 15px;
+        padding-bottom: 20px;
+        i{
+            margin-top: 7px;
+            margin-left: 5px;
+        }
+        .shouqi{
+            .sprite(@icon_shouqi);
+            .icon-huiyuanzhongxin-right;
+        }
+        .zhankai{
+            .sprite(@icon_zhankai);
+            .icon-huiyuanzhongxin-right;
+        }
+    }
+    .main_p03{
+        margin-top: 10px;
+    }
+
+
+    .neirong{
+        border-top: #d9d9d9 1px solid;
+        padding-top: 16px;
+        padding-bottom: 20px;
+        line-height: 24px;
+        _vertical-align: middle;
+        .neirong_lf{
+            width: 786px;
+        }
+
+        .icon_00{
+            margin-top: 10px;
+        }
+
+        .neirong_p01{
+            margin-top: 10px;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        .neirong_p02{
+            margin-top: 0;
+        }
+        .neirong_p03{
+            margin-top: 20px;
+        }
+        .neirong_p04{
+            text-align: right;
+        }
+        .int_huifu{
+            input{
+                width: 700px;
+                line-height: 30px;
+                height: 30px;
+                border: #d9d9d9 1px solid;
+                margin-top: 6px;
+            }
+        }
+    }
+
+
+
+    .gundongtiao{
+        margin-top: 4px;
+        .sprite(@gundongtiao_bg);
+        .icon-huiyuanzhongxin-right;
+        i{
+            .sprite(@gundongtiao);
+            .icon-huiyuanzhongxin-right;
+        }
+    }
+}

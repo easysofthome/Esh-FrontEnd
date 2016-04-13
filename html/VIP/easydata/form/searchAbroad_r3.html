@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>易家纺-电子商务平台|会员中心-精确匹配国外潜在买家</title>
+	<link href="/css/production/VIP/easydata/form/form.css" rel="stylesheet" type="text/css"/>
+
+	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+	@@include('/VIP/common/nav.html')
+	<div class="main_box clearfix">
+		@@include('/VIP/easydata/form/formL.html')
+		<div class="rg">
+			<!-- 右边搜索 -->
+			<div class="searchint">
+				<p class="tit">精确匹配国外潜在买家</p>
+				<p class="tit_Small">易家纺推荐的买家</p>
+				<p class="promptbox clearfix">
+					<span class="prompt lf">友情提示：您设置的条件越全面，易家纺会越精确的为您匹配买家。</span>
+					<!-- <a class="openstop rg" href="#">管理设置条件</a> -->
+				</p>
+				<ul class="intbox clearfix">
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="请选择产品" />
+						<p class="inwords rg"><span class="txt_red">*</span>产品　</p>
+					</li>
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="希望销售金额" />
+						<p class="inwords rg"><span class="txt_red">*</span>金额　</p>
+					</li>
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="希望销售数量" />
+						<p class="inwords rg"><span class="txt_red">*</span>数量　</p>
+					</li>
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="请输入港口名称" />
+						<p class="inwords rg"><span class="txt_red">*</span>港口　</p>
+					</li>
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="请输入产品最低美元价格" />
+						<p class="inwords rg"><span class="txt_red">*</span>最低价　</p>
+					</li>
+					<li class="lf intbox_li clearfix">
+						<input class="int rg" type="text" placeholder="请选择匹配度" />
+						<p class="inwords rg">匹配度　</p>
+					</li>
+				</ul>
+				<div class="int_btn clearfix">
+					<a class="lf btn_b" href="#">保存设置</a>
+					<a class="rg btn_r" href="#">重置设置</a>
+				</div>
+				<!-- <div class="typebox clearfix">
+					<span class="type_tit lf">产　品：</span>
+					<p class="type lf clearfix">
+						<a class="content lf cur" href="#">枕头</a>
+						<a class="content lf" href="#">被子</a>
+						<a class="content lf" href="#">床单</a>
+					</p>
+				</div>
+				<div class="typebox clearfix">
+					<span class="type_tit lf">国　家：</span>
+					<p class="type lf clearfix">
+						<a class="content lf cur" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+					</p>
+				</div> -->
+				<div class="modify">
+					<ul class="record clearfix tit">
+						<li class="lf column">品名</li>
+						<li class="lf column">金额（万美元）</li>
+						<li class="lf column">数量（件）</li>
+						<li class="lf column">最低价（美元）</li>
+						<li class="lf column">数据处理状态</li>
+						<li class="lf column oper clearfix">操作</li>
+					</ul>
+					<ul class="record clearfix">
+						<li class="lf column"><a class="txt_blue" href="#">枕头</a></li>
+						<li class="lf column">8888.00</li>
+						<li class="lf column">3000</li>
+						<li class="lf column">3.00</li>
+						<li class="lf column txt_red">处理中</li>
+						<li class="lf column oper clearfix">
+							<a class="btn_opergG lf stopG" href="#">&nbsp;&nbsp;等待中</a>
+							<a class="btn_operg lf">修改</a>
+							<a class="btn_operg lf">删除</a>
+						</li>
+						<div class="countrydata clearfix">
+							<p class="lf country">中国</p>
+							<p class="lf txt_red column">处理中</p>
+							<a class="btn_operg btn_result lf">等待中</a>
+						</div>
+						<div class="countrydata clearfix">
+							<p class="lf country">中国</p>
+							<p class="lf column">已完成</p>
+							<a class="btn_oper btn_result lf" href="#">查看</a>
+						</div>
+						<div class="countrydata clearfix">
+							<p class="lf country">中国</p>
+							<p class="lf txt_red column">处理中</p>
+							<a class="btn_operg btn_result lf">等待中</a>
+						</div>
+						<div class="countrydata clearfix">
+							<p class="lf country">中国</p>
+							<p class="lf column">已完成</p>
+							<a class="btn_oper btn_result lf" href="#">查看</a>
+						</div>
+					</ul>
+					<ul class="record clearfix">
+						<li class="lf column"><a class="txt_blue" href="#">枕头</a></li>
+						<li class="lf column">8888.00</li>
+						<li class="lf column">3000</li>
+						<li class="lf column">3.00</li>
+						<li class="lf column txt_red">处理中</li>
+						<li class="lf column oper clearfix">
+							<a class="btn_opergG lf openG" href="#">&nbsp;&nbsp;等待中</a>
+							<a class="btn_operg lf">修改</a>
+							<a class="btn_operg lf">删除</a></li>
+					</ul>
+					<ul class="record clearfix">
+						<li class="lf column"><a class="txt_blue" href="#">枕头</a></li>
+						<li class="lf column">8888.00</li>
+						<li class="lf column">3000</li>
+						<li class="lf column">3.00</li>
+						<li class="lf column txt_red">处理中</li>
+						<li class="lf column oper clearfix">
+							<a class="btn_opergG lf openG" href="#">&nbsp;&nbsp;等待中</a>
+							<a class="btn_operg lf">修改</a>
+							<a class="btn_operg lf">删除</a></li>
+					</ul>
+					<ul class="record clearfix">
+						<li class="lf column"><a class="txt_blue" href="#">枕头</a></li>
+						<li class="lf column">8888.00</li>
+						<li class="lf column">3000</li>
+						<li class="lf column">3.00</li>
+						<li class="lf column txt_red">处理中</li>
+						<li class="lf column oper clearfix">
+							<a class="btn_opergG lf openG" href="#">&nbsp;&nbsp;等待中</a>
+							<a class="btn_operg lf">修改</a>
+							<a class="btn_operg lf">删除</a>
+						</li>
+					</ul>
+					<ul class="record clearfix">
+						<li class="lf column"><a class="txt_blue" href="#">枕头</a></li>
+						<li class="lf column">8888.00</li>
+						<li class="lf column">3000</li>
+						<li class="lf column">3.00</li>
+						<li class="lf column">已完成</li>
+						<li class="lf column oper clearfix">
+							<a class="btn_oper lf openB" href="#">&nbsp;&nbsp;&nbsp;&nbsp;查看</a>
+							<a class="btn_oper lf" href="#">修改</a>
+							<a class="btn_operr lf" href="#">删除</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <p class="promptbox clearfix">
+					<span class="prompt lf">友情提示：您设置的条件越全面，易家纺会越精确的为您匹配买家。</span>
+					<a class="openstop rg clearfix" href="#">
+						<i class="stop rg"></i>
+						<span class="stoptxt rg">收起</span>
+					</a>
+				</p>
+				<ul class="intbox clearfix">
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="请选择国家" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="请选择产品" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="选择产品生产淡季月份" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="希望销售金额" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="希望销售数量" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="请输入港口名称" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="请输入产品最低美元价格" /></li>
+					<li class="lf intbox_li"><input class="int" type="text" placeholder="请选择匹配度" /></li>
+				</ul>
+				<div class="int_btn clearfix">
+					<a class="lf btn_b" href="#">保存设置</a>
+					<a class="rg btn_r" href="#">重置设置</a>
+				</div> -->
+			</div>
+
+		</div>
+	</div>
+	@@include('/VIP/common/footer.html')
+</body>
+</html>

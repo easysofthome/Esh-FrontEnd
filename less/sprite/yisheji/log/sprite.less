@@ -1,0 +1,28 @@
+@user: -4px -4px 14px 14px;
+@lock: -4px -26px 14px 16px;
+@logtishi: -4px -50px 12px 16px;
+@yanzhengma: -4px -74px 88px 38px;
+@logo: -4px -120px 354px 61px;
+@logbj: -4px -189px 1190px 482px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yisheji-log {
+  background-image: url("/images/production/yisheji/log/sprite-yisheji-log.PNG");
+}

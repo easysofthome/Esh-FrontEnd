@@ -1,0 +1,143 @@
+/* 全局css 包括normalize,header,until */
+@devPath:'../dev/';
+
+@import '@{devPath}globalImp';
+/* --------------------------------------------初始化浏览器差异----------------------------------------------------- */
+@import '@{devPath}normalize.less';
+
+
+
+/* --------------------------------------------网站通用或者默认样式----------------------------------------------------- */
+body
+{
+    font-family: '微软雅黑';
+    font-size: 12px;
+    line-height: 22px;
+    width: 100%;
+    height: 100%;
+
+    color: #666;
+    background: #fbfaf8;
+}
+
+
+//这个也不知道是什么,莫名其妙就来个黑色还很多地方用到
+.c-3
+{
+    color: rgb(51, 51, 51);
+}
+
+
+
+//问号ioc
+.record-help
+{
+    cursor: pointer;
+    vertical-align: top;
+
+    background: url(/static/images/CommonImg/question.png) 50% 50% no-repeat;
+
+    .square(14px);
+    .inlineBlock();
+}
+
+
+//主要盒子 todo:名字是不是能改一下
+.box
+{
+    //bfc&超出的部分不再显示
+    overflow: hidden;
+
+    width: @Webwidth;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    _zoom: 1;
+}
+//所有图片默认上下居中
+img
+{
+    vertical-align: middle;
+}
+
+
+//分享springimg
+.fxspringimg
+{
+    background: url(/Static/images/is.png) no-repeat;
+}
+
+/*腾讯微博*/
+.bds_tqq
+{
+    padding-left: 25px;
+
+    background-position: 0 -240px;
+}
+/*新浪微微博*/
+.bds_tsina
+{
+    padding-left: 25px;
+
+    background-position: 0 -120px;
+}
+/*网易微博*/
+.bds_t163
+{
+    padding-left: 25px;
+
+    background-position: 0 -720px;
+}
+/*linkedin*/
+.bds_linkedin
+{
+    padding-left: 25px;
+
+    background-position: 0 -1359px;
+}
+
+
+.btn
+{
+    padding: 5px 15px;
+
+    cursor: pointer;
+    text-align: center;
+
+    border: 0;
+    border-radius: 3px;
+
+    .inlineBlock(true);
+}
+
+.btn-sub
+{
+    .button-variant(rgb(255, 255, 255),rgb(55, 181, 249),rgb(55, 181, 249));
+}
+
+.btn-main
+{
+    .button-variant(rgb(255, 255, 255),rgb(242, 109, 126),rgb(55, 181, 249));
+}
+
+
+
+
+/* --------------------------------------------基本工具----------------------------------------------------- */
+@import '@{devPath}until.less';
+
+/* --------------------------------------------头部css开始----------------------------------------------------- */
+
+@import '@{devPath}header.less';
+
+/* ---------------------------------------------底部css开始 ----------------------------------------------------*/
+
+@import '@{devPath}footer.less';
+
+
+/* ---------------------------------------------分页样式----------------------------------------------------*/
+@import '@{devPath}pager.less';
+
+
+/* ---------------------------------------------列表页面 导航条样式 ----------------------------------------------------*/
+@import '@{devPath}breadcrumb.less';

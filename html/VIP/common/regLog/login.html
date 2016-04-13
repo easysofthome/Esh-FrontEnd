@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|注册</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/RegLog/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+  <div class="logbox">
+    <div class="header">
+       <div class="top clearfix">
+        <a href="#" class="lf butt_right" id="username">
+          easysofthome <i>0</i>
+        </a>
+        <a href="#" class="lf butt_right" id="login">登录</a>
+        <a href="#" class="lf butt_right" id="register">注册</a>
+        <a href="#" class="lf butt_right">开通VIP会员</a>
+        <a href="#" class="lf butt_right">客服服务</a>
+        <a href="#" class="rg butt_right">国际版</a>
+        <a href="#" class="rg butt_right">易家纺下载区</a>
+        <a href="#" class="rg butt_right">易核价</a>
+        <a href="#" class="rg butt_right">易设计</a>
+        <a href="#" class="rg butt_right">易数据</a>
+        <a href="#" class="rg butt_right">易家纺首页</a>
+      </div>
+    </div>
+
+    <a href="#" class="loglog"></a>
+    <div class="log_box clearfix">
+    <div class="log_left rg">
+      <form action="" method="post" onsubmit="return formCheck();">
+        <div class="user_box">
+          <span class="placeholder">请输入手机号或邮箱</span>
+          <input type="text" class="username" value="">
+        </div>
+        <div class="password_box">
+          <span class="placeholder">请输入密码</span>
+          <input type="password" class="password" value="">
+        </div>
+        <div class="clearfix Codes_box">
+          <div class="authcode_box">
+            <span class="placeholder">请输入验证码</span>
+            <input type="text" class="Codes lf" value="">
+          </div>
+          <div class="Codes_cen rg"></div>
+        </div>
+        <a href="#" class="for_pass">忘记密码？</a>
+        <button href="#" class="butt_log" type="submit">登录</button>
+        <p class="clearfixb immediately_box">
+          <span class="lf status">还没有易家纺帐号？</span>
+          <a href="./register.html" class="lf">
+            <span class="lf immediately">立即注册</span>
+            <span  class="lf arr_rig"></span>
+          </a>
+        </p>
+      </form>
+    </div>
+    <div class="lf">
+
+        <div class="QRcode"></div>
+
+    </div>
+    </div>
+  </div>
+
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/VIP/rootConfig.js"></script>
+  <script>
+    seajs.use('/js/common/regLog/login');
+  </script>
+</body>
+</html>

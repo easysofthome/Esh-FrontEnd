@@ -1,0 +1,221 @@
+.icon-yituangou-head {
+  background-image: url("/images/production/yituangou/head/sprite-yituangou-head.PNG");
+}
+.top-log-frame {
+  width: 100%;
+  background-color: #fff;
+}
+.top-log {
+  font-family: '宋体';
+  font-size: 13px;
+  line-height: 40px;
+  width: 1190px;
+  margin: 0 auto;
+}
+.top-log .top-left {
+  float: left;
+  color: #888;
+}
+.top-log .top-right {
+  float: right;
+}
+.top-log .top-right .top-nav,
+.top-log .top-right .spacer {
+  float: left;
+}
+.top-log .top-right .a-color {
+  color: #333;
+}
+.top-log .top-right .a-color:hover {
+  color: #d30f26;
+}
+.top-log .top-right .red-color {
+  color: #d30f26;
+}
+.top-log .top-right .spacer {
+  width: 1px;
+  height: 13px;
+  margin: 0 20px;
+  margin-top: 14px;
+  background-color: #555;
+}
+.top-log .top-right .margin-right {
+  margin-right: 6px;
+}
+.top-log .top-right .ShoppingCart {
+  float: left;
+  margin-top: 10px;
+  margin-right: 4px;
+  background-position: -4px -64px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+/*top-log*/
+.drop-down-BOX span {
+  float: left;
+}
+.drop-down-BOX .drop-down {
+  margin-top: 18px;
+  margin-left: 6px;
+  background-position: -4px -15px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 6px;
+  height: 3px;
+}
+.drop-down-BOX:hover .drop-down {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 6px;
+  height: 3px;
+}
+.ProgressBar {
+  text-align: center;
+  line-height: 24px;
+  /*左边*/
+  /*中间*/
+  /*右边*/
+}
+.ProgressBar .ProgressBar-li01-hong {
+  float: left;
+  color: #fff;
+  background-position: -4px -213px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li01-hong .number {
+  background-position: -4px -309px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li01-hui {
+  float: left;
+  color: #888;
+  background-position: -4px -149px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li01-hui .number {
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li02-hong {
+  float: left;
+  color: #fff;
+  background-position: -4px -181px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li02-hong .number {
+  background-position: -4px -309px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li02-hui {
+  float: left;
+  color: #888;
+  background-position: -4px -373px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li02-hui .number {
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li03-hong {
+  float: left;
+  color: #fff;
+  background-position: -4px -245px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li03-hong .number {
+  background-position: -4px -309px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li03-hui {
+  float: left;
+  color: #888;
+  background-position: -4px -277px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.ProgressBar .ProgressBar-li03-hui .number {
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 178px;
+  height: 24px;
+}
+.head-color {
+  background-color: #f6f6f6;
+}
+.head-Frame {
+  width: 1190px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.head-Frame .logo {
+  float: left;
+}
+.head-Frame .head-ProgressBar {
+  float: right;
+}
+.ProgressBar-words {
+  font-family: '宋体';
+  font-size: 13px;
+  margin-top: 10px;
+}
+.ProgressBar-words .words-li {
+  width: 178px;
+  float: left;
+  text-align: center;
+  color: #888;
+}
+.ProgressBar-words .current {
+  color: #d42532;
+}

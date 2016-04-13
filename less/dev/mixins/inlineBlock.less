@@ -1,0 +1,27 @@
+//inline block
+
+
+
+.In7InLineBlock()
+{
+    *display: inline;
+
+    *zoom: 1;
+}
+
+.displayinlineBlock()
+{
+    display: inline-block;
+}
+
+.inlineBlock()
+{
+    .displayinlineBlock;
+}
+
+
+.inlineBlock(@islayout) when (@islayout = true)
+{
+    .displayinlineBlock;
+    .In7InLineBlock;
+}

@@ -1,0 +1,25 @@
+﻿buyer                           全球买家库
+
+supplier                        中国供应商库
+
+我是供应商
+searchAbroad                    精确匹配国外潜在卖家
+
+industryDet                     密切监测国内外同行
+
+priceDet                        准确了解价格行情
+
+maintainCus                     有效维护现有客户
+
+我是采购商
+searchChina                     精准匹配中国供应商
+
+priceTrend                      随时跟踪价格走势
+
+competitor                      密切关注竞争对手
+
+monitorSup                      及时监测供应商
+
+
+
+index.html                      易数据首页

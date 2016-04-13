@@ -1,0 +1,9 @@
+// 文字强调
+
+.text-emphasis-variant(@color) {
+  color: @color;
+  &:hover,
+  &:focus {
+    color: darken(@color, 10%);
+  }
+}
