@@ -1,5 +1,5 @@
 ﻿var alias = {
-
+//
 //Lib
     'jquery': 'js/lib/jquery/jquery',    //基本库支持 ('js/lib/jquery/jquery-1.8.3')
     // 兼容
