@@ -6,6 +6,7 @@
 
 .index-banner-box
 {
+    position: relative;
     z-index: 1;
 
     width: 100%;
@@ -38,11 +39,8 @@
 
         color: #fff;
         background-color: #fa9b36;
-
         .border-radius(100px);
-
-        i
-        {
+        i{
             margin-top: 8px;
             margin-right: 18px;
             margin-left: 34px;
@@ -51,34 +49,35 @@
             .icon-yisheji-index;
         }
     }
-    .banner-lunbo
+}
+.switchable-triggers
+{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+
+    margin: 0 0 0 -22px;
+    li
     {
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
+        line-height: normal;
 
-        margin: 0 0 0 -22px;
-        a
-        {
-            line-height: normal;
+        display: inline-block;
+        overflow: hidden;
 
-            display: inline-block;
-            overflow: hidden;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
 
-            width: 10px;
-            height: 10px;
-            margin: 0 5px;
+        text-align: center;
 
-            text-align: center;
+        border: 1px solid #fff;
 
-            border: 1px solid #fff;
-
-            .border-radius(50%);
-        }
-        .current
-        {
-            background-color: #fff;
-        }
+        .border-radius(50%);
+        cursor: pointer;
+    }
+    .current
+    {
+        background-color: #fff;
     }
 }
 ///banner
@@ -93,14 +92,12 @@
 }
 
 .simulation_outbox,.studiobox{
-        background-color: #dce4ed;
-
+    background-color: #dce4ed;
 }
 .studiobox{
     padding-bottom: 60px;
 }
 .exp_butt{
-
         width: 794px;
         margin: 40px auto 0 auto;
         li{
@@ -120,18 +117,23 @@
              background-color: #3ca1d7;
              color: #fff;
         }
-        }
+}
 .exo_conbox{
     width: 1200px;
     margin: 30px auto 0 auto;
     .con_left{
-            margin-left: 4px;
-        }
+      margin-left: 4px;
+    }
     .selectbox{
+    /*
         background-image: url("/images/production/easydesign/Transparent.png");
+    */  
+        position: absolute;
         left: 0;
         top:0;
-        position: absolute;
+        z-index: 2;
+        background-color: #000;
+        .opacity(0);
         width: 297px;
         height: 297px;
     }
@@ -142,35 +144,60 @@
         position: relative;
         margin-bottom: 4px;
         background-color: #3ca1d7;
-
-
+        
+        .top-line,.right-line,.bottom-line,.left-line{
+          position: absolute;
+          z-index: 3;
+          background-color: white;
+        }
+        .top-line,.bottom-line{
+          width: 100%;
+          height: 0px;
+        }
+        .left-line,.right-line{
+          width: 0px;
+          height: 100%;
+        }
+        .top-line,.left-line{left: 0;top: 0;}
+        .right-line,.bottom-line{right: 0;bottom: 0;}
     }
 
-     .img_position{
-            margin-left: -86px;
-        }
-        .search{
-            margin: 110px auto 0 auto;
-            .sprite(@search);
-            .icon-easydesign;
-        }
-         .moreimg{
-            margin: 110px auto 0 auto;
-            .sprite(@moreimg);
-            .icon-easydesign;
-        }
-        .select_text{
-            margin-top: 10px;
-            color:#fff;
-            font-size: 16px;
-            display: block;
-        }
+    .img_position{
+        margin-left: -86px;
+    }
+    .more-box{
+      position: absolute;
+      top: 110px;
+      left: 0;
+      z-index: 3;
+      text-align: center;
+      width: 100%;
+    }
+    .search{
+        .opacity(0);
+        margin: 0 auto;
+        .sprite(@search);
+        .icon-easydesign;
+    }
+    .moreimg{
+        margin: 110px auto 0 auto;
+        .sprite(@moreimg);
+        .icon-easydesign;
+    }
+    .select_text{
+        display: block;
+        .opacity(0);
+        z-index: 3;
+        color:#fff;
+        font-size: 16px;
+        margin-top: 10px;
+    }
 
 }
 
 .sim_titlebox{
     position: relative;
-       display: inline-block;
+    display: inline-block;
 }
 .title_left{
     .sprite(@titlelf);
