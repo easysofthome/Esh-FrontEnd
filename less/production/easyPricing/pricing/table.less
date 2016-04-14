@@ -1,0 +1,121 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+p.smalltitle{
+  // 小标题
+  margin-left: 42px;
+  font-size: 16px;
+  color: #333;
+  a.shrink{
+    color: #3ca1d7;
+    &:hover{
+      color: #ff6600;
+    }
+  }
+}
+.txt_red{
+  // 红色
+  color: #ff0000;
+}
+
+//表格
+table.tab{
+  width: 1074px;
+  text-align: center;
+  margin: 20px 0 0 42px;
+  border-top: #eaeaea 1px solid;
+  border-left: #eaeaea 1px solid;
+  td{
+    border-right: #eaeaea 1px solid;
+    border-bottom: #eaeaea 1px solid;
+    line-height: 28px;
+    a{
+      color: #3ca1d7;
+      &:hover{
+        color: #ff0000;
+      }
+    }
+    // 输入框
+    div.pricebox{
+      padding: 10px 0;
+      p.price{
+      line-height: 40px;
+      white-space:nowrap;
+      }
+      input.int{
+        width: 58px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin: 0 8px 0 5px;
+        .border-radius(3px);
+      }
+    }
+    img{
+      display: inline;
+    }
+  }
+  // 款式尺码信息
+  td.style{
+    width: 146px;
+    padding: 20px 20px 14px 20px;
+    span{
+      margin-top: 4px;
+      display: block;
+    }
+  }
+  td.sty{
+    width: 175px;
+  }
+  // 主要面料
+  td.fab_purpose{
+    width: 154px;
+    padding: 0 10px;
+  }
+  td.fab_picture{
+    width: 146px;
+    padding: 20px;
+  }
+  td.fabric{
+    width: 140px;
+  }
+  td.fab_class{
+    width: 116px;
+  }
+  td.fab_weight{
+    width: 84px;
+  }
+  td.fab_replace{
+    width: 106px;
+  }
+  td.fab_price{
+    width: 251px;
+    padding: 0 10px;
+  }
+  // 主要辅料
+  td.acc_num{
+    width: 140px;
+  }
+  td.acc_price{
+    width: 170px;
+    padding: 0 10px;
+  }
+  td.acc_purpose{
+    width: 216px;
+    padding: 0 10px;
+    text-align: left;
+  }
+  td.acc_quantity{
+    width: 105px;
+  }
+
+  // 标题样式
+  tr.tit{
+    background-color: #eaeaea;
+    td{
+      line-height: 50px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
