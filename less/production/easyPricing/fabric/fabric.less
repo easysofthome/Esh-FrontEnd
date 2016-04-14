@@ -1,12 +1,230 @@
 @import '../../../dev/mixins/mixins.less';
+@import '../../../sprite/easyPricing/fabric/sprite.less';
 .fabricbox{
   width: 1200px;
   margin:0 auto;
-   .border-radius(5px);
-   background-color: #000;
-   .fabric_con{
+  .border-radius(5px);
+  background-color: #fff;
+  padding-bottom: 40px;
+  .fabric_con{
     padding-top: 10px;
-    width: 1102px;
+    width: 1150px;
     margin:0 auto;
-   }
+  }
+
+  .title_name,.title_density,.yarn_tit,.para_tit,.ingredient_tit,.AddItem_tit{
+    font-size: 16px;
+    text-align: right;
+  }
+  .para_tit{
+    line-height: 130px;
+    width: 80px;
+  }
+  .title_name{
+    width:124px;
+  }
+  .data_frm,.rad_frm{
+    padding:20px 0 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .rad_frm{
+    padding: 10px 0 10px 0;
+  }
+  .input_fabric,.dropdown_box,.fabric_width,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
+    border:1px solid #cdcfd1;
+  .border-radius(5px);
+    color: #333333;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #fff;
+  }
+  .handle_one,.handle_two{
+    padding:0 20px 0 20px;
+    cursor: pointer;
+    position: relative;
+  }
+  .fabric_money{
+    margin-left: 10px;
+    width: 40px;
+  }
+  .current_handle{
+    border: 1px solid #3ca1d7;
+
+  }
+  .select{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    .sprite(@select);
+    .icon-easyPricing-fabric;
+  }
+  .handle_two{
+    margin-left: 10px;
+  }
+  .yarn_butt{
+    display:inline-block;
+    width: 90px;
+    padding:0;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #3ca1d7;
+    font-style: 16px;
+    .border-radius(5px);
+    margin: 40px 0 0 10px;
+
+  }
+  .density_input{
+    width: 68px;
+    padding: 0;
+    text-align: center;
+  }
+  .input_fabric{
+    width: 80px;
+    margin-left: 10px;
+  }
+  .plus{
+    margin: 12px 5px 12px 5px;
+    .sprite(@plus);
+    .icon-easyPricing-fabric;
+  }
+  .reduceiput{
+    width: 40px;
+    padding: 0;
+    text-align: center;
+    border-left:none;
+    border-right: none;
+    .border-radius(0);
+  }
+  .reducebox,.increasebox{
+    width: 38px;
+    padding-left: 0;
+    background-color: #f7f7f7;
+    .border-radius(5px 0 0 5px);
+  }
+  .reduceimg{
+        margin: 18px auto 0 auto;
+        .sprite(@cut_back);
+        .icon-easyPricing-fabric;
+    }
+    .increaseimg{
+        margin:11px auto 0 auto;
+        .sprite(@curr_increase);
+        .icon-easyPricing-fabric;
+    }
+    .include{
+      margin-top: 38px;
+        .sprite(@include);
+        .icon-easyPricing-fabric;
+    }
+  .increasebox{
+    .border-radius(0 5px 5px 0);
+    border: 1px solid #3ca1d7;
+    background-color: #3ca1d7;
+  }
+  .width_company{
+    position: relative;
+    margin-left: 10px;
+  }
+  .remove_left{
+    margin-left: 0;
+  }
+  .fabric_width,.width_company{
+    width: 90px;
+  }
+  .dropdown_box{
+    background-color: #fff;
+    position: relative;
+    width: 212px;
+  }
+  .down_arr{
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    .sprite(@down_arr);
+    .icon-easyPricing-fabric;
+  }
+  .Single_box,.title_name,.title_density,.yarn_tit,.prompt,.ingredient_tit,.AddItem_tit{
+    line-height: 40px;
+  }
+  .ingredient_tit{
+    width: 40px;
+
+  }
+  .yarn_tit{
+    width: 92px;
+    text-align: right;
+  }
+  .Single_box{
+    font-size: 14px;
+  }
+  .radio_rg{
+    padding-right:20px;
+  }
+  .radio_post{
+    margin:14px 4px 0 0;
+    display: inline-block;
+    *margin-top:10px;
+  }
+  .yarntype_box,.wefttype_box{
+    width: 1102px;
+    margin:14px auto 0 auto;
+    border:1px dashed #e5e5e5;
+    padding-bottom: 20px;
+  }
+  .wefttype_box{
+    margin:0 auto;
+    border-top:none;
+  }
+  .yarndensity_box{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .prompt{
+    margin-left: 20px;
+    color: #ff0000;
+  }
+  .yarn_para,.yarn_para2{
+    width: 350px;
+    margin-left: 20px;
+    background-color: #f7f7f7;
+    height: 130px;
+    .border-radius(5px);
+  }
+  .yarn_para2{
+    margin-left: 5px;
+  }
+  .ingredient,.thickness{
+    margin-top: 20px;
+    display: block;
+  }
+  .thickness{
+    margin-top: 10px;
+  }
+  .AddItem{
+    margin-top: 10px;
+  }
+  .AddItem_tit{
+    width: 240px;
+  }
+  .butt_box{
+    width: 320px;
+    margin: 30px auto 0 auto;
+  }
+  .butt_pricing,.butt_return{
+    width: 150px;
+    line-height: 40px;
+    font-size: 16px;
+    color:#fff;
+    text-align: center;
+    background-color: #929698;
+     .border-radius(5px);
+
+  }
+  .butt_return{
+    background-color: #3ca1d7;
+  }
+
 }
