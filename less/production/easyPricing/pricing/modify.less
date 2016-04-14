@@ -1,0 +1,141 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easyPricing/pricing/sprite.less';
+
+@import 'progressBar.less';
+
+@import 'table.less';
+
+.mainbox{
+  padding-bottom: 70px;
+}
+
+// 核对修改参数
+.modifybox{
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  p.title{
+    font-size: 30px;
+    color: #303845;
+    text-align: center;
+    line-height: 90px;
+  }
+  p.reminder{
+    // 温馨提示
+    margin: 15px 0 0 30px;
+    font-size: 12px;
+    color: #ff0000;
+  }
+  // 核价方式及费率修改
+  div.ratebox{
+    margin: 40px 20px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: #e5e5e5 1px solid;
+    div.pricingbox{
+      margin-left: 42px;
+      label.lab{
+        margin: 15px 30px 0 0;
+        input.int{
+          margin: 2px 5px 0 0;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  //费率信息
+  div.information{
+    margin: 15px 20px 0 20px;
+    padding-bottom: 20px;
+    border-bottom: #e5e5e5 1px solid;
+    font-size: 16px;
+    ul.intbox{
+      margin: 15px 0 0 42px;
+      li.intli{
+        margin-right: 20px;
+        line-height: 40px;
+        display: inline;
+      }
+      li.GIFintli{
+        margin-right: 130px;
+      }
+      input.int{
+        width: 88px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin-left: 5px;
+        .border-radius(3px);
+      }
+    }
+    // LDP费率信息
+    div.LDP{
+      margin-left: 42px;
+    }
+    ul.LDPL,ul.LDPR{
+      width: 440px;
+      li.intli{
+        line-height: 50px;
+      }
+      p.name{
+        width: 88px;
+        margin-top: 20px;
+        text-align: right;
+        line-height: 40px;
+      }
+      input.int{
+        width: 88px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin: 20px 0 0 5px;
+        .border-radius(3px);
+      }
+    }
+    ul.LDPR{
+      width: 610px;
+      margin-left: 20px;
+      p.name{
+        width: 112px;
+      }
+    }
+    //选择款式工缴报价方式
+    form.radiobox{
+      margin: 15px 0 0 42px;
+      label.offer{
+        margin-right: 20px;
+      }
+      input.rad{
+        width: 20px;
+        height: 20px;
+        margin: 2px 5px 0 0;
+      }
+      p.reminder{
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // 按钮
+  .btnbox{
+    width: 320px;
+    margin: 0 auto;
+    padding: 30px 0 40px 0;
+    a.btn_gray{
+      width: 150px;
+      text-align: center;
+      margin-right: 20px;
+      .button-variant(#fff; #929698; #929698);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue{
+      width: 150px;
+      text-align: center;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+  }
+}

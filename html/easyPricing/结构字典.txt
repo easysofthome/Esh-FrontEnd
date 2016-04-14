@@ -6,6 +6,8 @@ fabric                           面料核价
 
 singleProduct                    单品核价
   | choice                       选择款式尺寸
+  | modify                       修改单品参数
+  | complete                     核价完成
 
 suite                            套件核价
   |

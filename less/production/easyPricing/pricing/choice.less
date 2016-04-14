@@ -3,6 +3,8 @@
 
 @import '../../../sprite/easyPricing/pricing/sprite.less';
 
+@import 'progressBar.less';
+
 // 进度条
 .progressBar{
   width: 1200px;
@@ -88,11 +90,110 @@
       padding: 0 10px;
       margin: 14px 11px 0 11px;
       color: #666;
+       white-space:nowrap;//a标签内不换行
       .border-radius(3px);
     }
     .type_a:hover,.cur{
       background-color: #3ca1d7;
       color: #fff;
+    }
+  }
+}
+
+
+// 排序
+.sortbox{
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  font-size: 12px;
+  div.sort{
+    line-height: 32px;
+    p.tit{
+      margin-right: 5px;
+    }
+    width: 970px;
+    a.cur,a.sort_ablue{
+      margin-right: 30px;
+      i{
+        margin: 12px 0 0 9px;
+        .icon-easyPricing-pricing;
+      }
+    }
+    a.sort_ablue{
+      color: #888;
+      i{
+        .sprite(@sortgray);
+      }
+    }
+    a.cur,a.sort_ablue:hover{
+      color: #3ca1d7;
+      i{
+        .sprite(@sortblue);
+      }
+    }
+  }
+  div.intbox{
+    width: 140px;
+    border: 1px solid #d1d1d1;
+    .border-radius(3px);
+    input.int{
+      width: 88px;
+      line-height: 18px;
+      padding: 5px 10px;
+      border: 0;
+      background-color: #f2f3f5;
+    }
+    i{
+      margin: 8px 0 0 8px;
+      .sprite(@searchgray);
+      .icon-easyPricing-pricing;
+    }
+  }
+}
+
+
+// 排列
+ul.arraybox{
+  width: 1220px;
+  margin: 20px auto 0 auto;
+  padding-bottom: 5px;
+  li.array{
+    background-color: #fff;
+    padding-bottom: 15px;
+    margin: 0 10px;
+    display: inline;
+    .border-radius(3px);
+    .picture{
+      width: 265px;
+      height: 265px;
+      margin: 10px;
+    }
+    p.name{
+      margin-left: 15px;
+    }
+    div.dropbox{
+      margin: 10px 10px 0 10px;
+      border-top: #e5e5e5 1px solid;
+      width: 265px;
+      label.lab{
+        width: 76px;
+        margin: 11px 6px 0 6px;
+        cursor: pointer;
+        font-size: 12px;
+        input.int{
+          margin: 3px 5px 0 0;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    a.btn{
+      display: block;
+      width: 254px;
+      text-align: center;
+      margin: 10px 0 0 16px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
     }
   }
 }
