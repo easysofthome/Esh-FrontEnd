@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+﻿module.exports = function(grunt) {
   //var test123;
   // LiveReload的默认端口号，你也可以改成你想要的端口号
   var lrPort = 35729;
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         // 服务器端口号
         port: 8180,
         // 服务器地址(可以使用主机名localhost，也能使用IP)
-        hostname: '182.168.1.115',
+        hostname: '182.168.1.113',
         // 物理路径(默认为. 即根目录) 使用'.'或'..'为路径的时，可能会返回403 Forbidden. 此时将该值改为相对路径 。
         base: '.'
       },
