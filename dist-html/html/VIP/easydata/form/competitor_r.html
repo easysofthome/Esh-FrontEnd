@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>易家纺-电子商务平台|会员中心-精确匹配国外潜在买家</title>
+	<title>易家纺-电子商务平台|会员中心-密切关注竞争对手</title>
 	<link href="/css/production/VIP/easydata/form/form.css" rel="stylesheet" type="text/css"/>
 
 	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
@@ -28,17 +28,21 @@
 							<img width="80" hright="80" src="/images/production/VIP/common/nav/mask4a7.png"></div>
 						<img width="80" hright="80" src="/images/production/VIP/common/nav/headPor.png"></div>
 				</div>
-				<p class="username lf">彼得的狗</p>
-				<a href="#" class="lf returnbtn">返回会员首页</a>
+				<div class="username lf">
+					<p>彼得的狗</p>
+					<a class="btn_formap" href="#">修改头像</a>
+				</div>
+				<a href="/html/VIP/common/index.html" class="lf returnbtn">返回会员首页</a>
 			</div>
 			<div class="lf navR clearfix">
-				<a href="#" class="lf navmar_fir">基本资料</a>
-				<a href="#" class="lf navmar">安全管理</a>
-				<a href="#" class="lf navmar">账户管理</a>
+				<a href="/html/VIP/common/basicData/basicData.html" class="lf navmar_fir">基本资料</a>
+				<a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a>
+				<a href="/html/VIP/common/account/meaccount.html" class="lf navmar">账户管理</a>
 				<span class="lf navmar newsRedbox">
 					<a class="newsRed">22</a>
-					<a href="#">消息中心</a>
+					<a href="/html/VIP/common/news/news.html">消息中心</a>
 				</span>
+				<a href="#" class="lf navmar">服务列表</a>
 			</div>
 		</div>
 	</div>
@@ -56,18 +60,24 @@
 <body>
 
   <div class="lf">
-    <div class="balancebox">
-      <p class="balance">
-        易豆余额:
-        <span>20个</span>
-      </p>
-      <p class="Recharge">
-        <a class="txt_red" href="#">易豆充值</a>
-        <a class="txt_red" href="#">充值明细</a>
-      </p>
+    <div class="balanceVIP">
+      <div class="borbottom clearfix">
+        <div class="balancebox lf">
+          <p class="balance">剩余易豆</p>
+          <p><span class="num">20</span>个</p>
+          <p>
+            <a class="txt_red" href="#">充值</a>　　<a class="txt_red" href="#">明细</a>
+          </p>
+        </div>
+        <div class="balancebox_no lf">
+          <p class="balance">VIP会员</p>
+          <p><span class="num">300</span>天</p>
+          <p><a class="txt_red" href="#">续费</a></p>
+        </div>
+      </div>
     </div>
     <div class="safety">
-      <ul class="clearfix VIP_top">
+      <!-- <ul class="clearfix VIP_top">
         <li class="lf vipwidth">
           <a href="#">
             <span class="VIP"></span>
@@ -104,32 +114,32 @@
             <span>易核价</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
       <p class="security">安全级别</p>
       <div class="progressbar">
         <span class="progress"></span>
       </div>
       <ul class="clearfix vipbox VIPtopmar">
         <li class="lf vipwidth">
-          <a href="#">
+          <a href="/html/VIP/common/security/verifyP.html">
             <span class="phone"></span>
             <span>手机绑定</span>
           </a>
         </li>
         <li class="lf vipwidth">
-          <a href="#">
+          <a href="/html/VIP/common/basicData/authentication.html">
             <span class="realname"></span>
             <span>实名认证</span>
           </a>
         </li>
         <li class="lf vipwidth">
-          <a href="#">
+          <a href="/html/VIP/common/security/verifyM.html">
             <span class="mailbox"></span>
             <span>邮箱绑定</span>
           </a>
         </li>
         <li class="lf vipwidth">
-          <a href="#">
+          <a href="/html/VIP/common/security/modifyPwd.html">
             <span class="password"></span>
             <span>修改密码</span>
           </a>
@@ -289,10 +299,22 @@
         </dd>
       </dl>
     </div>
+    <!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|会员中心-在线客服</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/commonL.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
     <div class="hotlinebox">
       <i class="hotline"></i>
-      <a class="customerser" href="#">在线客服</a>
+      <p class="onlineser">在线客服：</p>
+      <a class="qq" href="#"></a>
     </div>
+</body>
+</html>
   </div>
 </body>
 </html>
@@ -313,89 +335,122 @@
 					</p>
 				</div> -->
 				<p class="promptbox clearfix">
-					<span class="prompt lf">友情提示：您设置的条件越全面，易家纺会越精确的为您匹配买家。</span>
-					<a class="openstop rg clearfix" href="#">
-						<i class="stop rg"></i>
-						<span class="stoptxt rg">收起</span>
-					</a>
+					<span class="prompt lf">友情提示：易家纺通过贸易数据发现您做过以下产品，将通过您做过的产品为您自动匹配同等级的竞争对手：</span>
 				</p>
-				<ul class="intbox clearfix">
-					<li class="lf intbox_li"><input class="int" type="text" placeholder="请选择国家" /></li>
-					<li class="lf intbox_li"><input class="int" type="text" placeholder="请选择产品" /></li>
-					<li class="lf intbox_li"><input class="int" type="text" placeholder="希望销售金额" /></li>
-					<li class="lf intbox_li"><input class="int" type="text" placeholder="希望销售数量" /></li>
-					<li class="lf intbox_li"><input class="int" type="text" placeholder="请输入产品最低美元价格" /></li>
-				</ul>
-				<div class="int_btn clearfix">
-					<a class="lf btn_b" href="#">保存设置</a>
-					<a class="rg btn_r" href="#">重置设置</a>
+				<div class="typebox clearfix">
+					<span class="type_tit lf">产　品：</span>
+					<p class="type lf clearfix">
+						<a class="content lf cur" href="#">枕头</a>
+						<a class="content lf" href="#">被子</a>
+						<a class="content lf" href="#">床单</a>
+					</p>
+				</div>
+				<div class="typebox clearfix">
+					<span class="type_tit lf">国　家：</span>
+					<p class="type lf clearfix">
+						<a class="content lf cur" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+						<a class="content lf" href="#">阿根廷</a>
+						<a class="content lf" href="#">美国</a>
+					</p>
 				</div>
 			</div>
 
 			<!-- 右边列表 -->
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">01</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort02 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">02</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort03 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">03</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">04</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">05</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">06</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">07</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">08</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
 			<div class="data_right clearfix">
-				<div class="left_info lf">
-					<p class="count_tit">BAXTER ARGENTINA SA</p>
-					<p class="counter">所属国家：阿根廷</p>
+				<div class="left_info lf clearfix">
+					<div class="list_sort04 lf">
+		        <p class="sort_p01">SORT</p>
+		        <p class="sort_p02">09</p>
+		      </div>
+					<p class="count_tit lf">BAXTER ARGENTINA SA</p>
 				</div>
 				<a href="#" class="rg butt_data">查看对手</a>
 			</div>
+
 			<!doctype html>
 <html>
 <head>

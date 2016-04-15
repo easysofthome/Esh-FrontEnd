@@ -2,7 +2,7 @@
   <html>
   <head>
     <meta charset="utf-8">
-    <title>易家纺-电子商务平台|会员中心-首页</title>
+    <title>易家纺-电子商务平台|会员中心-基本信息</title>
     <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/VIP/common/basicData/basicData.css" rel="stylesheet" type="text/css"/>
   </head>
@@ -27,17 +27,21 @@
 							<img width="80" hright="80" src="/images/production/VIP/common/nav/mask4a7.png"></div>
 						<img width="80" hright="80" src="/images/production/VIP/common/nav/headPor.png"></div>
 				</div>
-				<p class="username lf">彼得的狗</p>
-				<a href="#" class="lf returnbtn">返回会员首页</a>
+				<div class="username lf">
+					<p>彼得的狗</p>
+					<a class="btn_formap" href="#">修改头像</a>
+				</div>
+				<a href="/html/VIP/common/index.html" class="lf returnbtn">返回会员首页</a>
 			</div>
 			<div class="lf navR clearfix">
-				<a href="#" class="lf navmar_fir">基本资料</a>
-				<a href="#" class="lf navmar">安全管理</a>
-				<a href="#" class="lf navmar">账户管理</a>
+				<a href="/html/VIP/common/basicData/basicData.html" class="lf navmar_fir">基本资料</a>
+				<a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a>
+				<a href="/html/VIP/common/account/meaccount.html" class="lf navmar">账户管理</a>
 				<span class="lf navmar newsRedbox">
 					<a class="newsRed">22</a>
-					<a href="#">消息中心</a>
+					<a href="/html/VIP/common/news/news.html">消息中心</a>
 				</span>
+				<a href="#" class="lf navmar">服务列表</a>
 			</div>
 		</div>
 	</div>
@@ -56,78 +60,86 @@
 <body>
 
 	<div class="lf">
-		<div class="safety">
-			<p class="security">安全级别</p>
-			<div class="progressbar">
-				<span class="progress"></span>
-			</div>
-			<ul class="clearfix vipbox VIPtopmar">
-				<li class="lf vipwidth">
-					<a href="#">
-						<span class="phone"></span>
-						<span>手机绑定</span>
-					</a>
-				</li>
-				<li class="lf vipwidth">
-					<a href="#">
-						<span class="realname"></span>
-						<span>实名认证</span>
-					</a>
-				</li>
-				<li class="lf vipwidth">
-					<a href="#">
-						<span class="mailbox"></span>
-						<span>邮箱绑定</span>
-					</a>
-				</li>
-				<li class="lf vipwidth">
-					<a href="#">
-						<span class="password"></span>
-						<span>修改密码</span>
-					</a>
-				</li>
-
-			</ul>
+    <div class="safety">
+      <p class="security">
+        资料填写进度：
+        <span class="txt_blue">50%</span>
+      </p>
+      <div class="progressbar">
+        <span class="progressblue"></span>
+      </div>
+    </div>
+		<div class="classbox">
+      <dl class="classwords cur">
+        <dt>
+          <a href="#" class="class_a clearfix current_ico">
+            <span class="lf userwhite"></span>
+            <span class="lf bold">基本信息</span>
+          </a>
+        </dt>
+      </dl>
 		</div>
-		<ul class="classbox">
-			<li class="classwords cur">
-				<a href="#" class="class_a clearfix">
-					<span class="lf userwhite current_ico"></span>
-					<span class="lf">安全信息</span>
-
-				</a>
-			</li>
-			<li class="classwords">
-				<a href="#" class="class_a clearfix">
-					<span class="lf TELgray current_ico"></span>
-					<span class="lf">实名认证</span>
-				</a>
-			</li>
-		</ul>
+    <!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|会员中心-在线客服</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/commonL.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="hotlinebox">
+      <i class="hotline"></i>
+      <p class="onlineser">在线客服：</p>
+      <a class="qq" href="#"></a>
+    </div>
+</body>
+</html>
 	</div>
 </body>
 </html>
 
       <div class="rg databox">
         <!-- 基本资料 -->
+        <div class="promise">
+          <p class="redTxt">郑重承诺：</p>
+          <p>易家纺在服务器连接时传输的数据绝对不涉及用户隐私内容，如：姓名、电话、住址、E-mail、帐号信息，实名信息等，请放心填写您的信息。</p>
+        </div>
+
+        <div class="reward">
+          <p class="redTxt">实名认证通过以后你将获得以下奖励:</p>
+          <p>1、新增<span class="redTxt">3000</span>个免费花型。</p>
+          <p>2、新增<span class="redTxt">75</span>个免费品质样。</p>
+          <p>3、新增<span class="redTxt">60</span>个模型。</p>
+          <p>4、新增餐厅和卧室场景<span class="redTxt">1</span>个。</p>
+          <p>5、新增进出口贸易数据查询<span class="redTxt">15</span>次。</p>
+          <p>6、可使用高品质云渲染<span class="redTxt">3</span>次</p>
+        </div>
+
         <div class="dataTop clearfix">
-          <div class="headPor lf">
+
+
+          <!-- <div class="headPor lf">
             <div class="mask">
               <img width="90" hright="90" src="/images/production/VIP/common/nav/maskfff.png"></div>
-            <img width="90" hright="90" src="/images/production/VIP/common/nav/headPor.png"></div>
+            <img width="90" hright="90" src="/images/production/VIP/common/nav/headPor.png"></div> -->
 
           <div class="topInfor lf">
-            <div class="Inforbox"><span class="three">用户</span>名：&nbsp;&nbsp;<span>13524380372</span></div>
+            <div class="Inforbox">
+              <p class="lf"><span class="three">用户</span>名：&nbsp;&nbsp;<span>13524380372</span></p>
+              <p class="lf"><span class="two">身</span>份：&nbsp;&nbsp;<span>工厂</span></p>
+            </div>
             <div class="Inforbox clearfix">
               <p class="lf"><span class="five">企业中文</span>名：&nbsp;&nbsp;<span>孚日集团股份有限公司</span></p>
               <p class="lf"><span class="five">企业英文</span>名：&nbsp;&nbsp;<span>Vosges group co., LTD</span></p>
             </div>
             <div class="Inforbox clearfix">
-              <p class="lf"><span class="two">身</span>份：&nbsp;&nbsp;<span>工厂</span></p>
-              <p class="lf"><span class="four">企业类</span>型：&nbsp;&nbsp;<span>纺纱厂</span></p>
+              <span class="four">企业类</span>型：&nbsp;&nbsp;<span>纺纱厂</span>
+              　　　<a class="btn_modify" href="#">修改</a>
             </div>
           </div>
         </div>
+
 
 
         <div class="contactbox">
@@ -167,20 +179,6 @@
 
         <a href="#" class="save">保存资料</a>
 
-        <div class="promise">
-          <p class="redTxt">郑重承诺：</p>
-          <p>易家纺在服务器连接时传输的数据绝对不涉及用户隐私内容，如：姓名、电话、住址、E-mail、帐号信息，实名信息等，请放心填写您的信息。</p>
-        </div>
-
-        <div class="reward">
-          <p class="redTxt">实名认证通过以后你将获得以下奖励:</p>
-          <p>1、新增<span class="redTxt">3000</span>个免费花型。</p>
-          <p>2、新增<span class="redTxt">75</span>个免费品质样。</p>
-          <p>3、新增<span class="redTxt">60</span>个模型。</p>
-          <p>4、新增餐厅和卧室场景<span class="redTxt">1</span>个。</p>
-          <p>5、新增进出口贸易数据查询<span class="redTxt">15</span>次。</p>
-          <p>6、可使用高品质云渲染<span class="redTxt">3</span>次</p>
-        </div>
       </div>
     </div>
 
