@@ -7,6 +7,9 @@
     <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
 
   <body>
+  @@include('/easyPricing/header.html')
+  @@include('/easyPricing/fabric/fabrictitle.html')
+  <div class="mainbox">
     <div class="fabricbox">
       <div class="fabric_con">
         <div class="clearfix data_frm">
@@ -256,25 +259,24 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="clearfix rad_frm">
-        <span class="lf title_name">织造种类：</span>
-        <div class="lf Single_box">
-          <label class="lf radio_rg">
-            <input name="Fruit" type="radio" class="lf radio_post" />
-            <span class="lf">提花布</span>
-          </label>
-          <label class="lf radio_rg">
-            <input name="Fruit" type="radio" class="lf radio_post" />
-            <span class="lf">小提花</span>
-          </label>
-          <label class="lf">
-            <input name="Fruit" type="radio" class="lf radio_post" />
-            <span class="lf">平纹、斜纹、缎纹</span>
-          </label>
+        <div class="clearfix rad_frm">
+          <span class="lf title_name">织造种类：</span>
+          <div class="lf Single_box">
+            <label class="lf radio_rg">
+              <input name="Fruit" type="radio" class="lf radio_post" />
+              <span class="lf">提花布</span>
+            </label>
+            <label class="lf radio_rg">
+              <input name="Fruit" type="radio" class="lf radio_post" />
+              <span class="lf">小提花</span>
+            </label>
+            <label class="lf">
+              <input name="Fruit" type="radio" class="lf radio_post" />
+              <span class="lf">平纹、斜纹、缎纹</span>
+            </label>
+          </div>
         </div>
-      </div>
-      <div class="clearfix data_frm">
+        <div class="clearfix data_frm">
         <span class="lf title_name">染厂后处理：</span>
         <div class="lf handle_one current_handle">
           <span class="select"></span>
@@ -324,10 +326,15 @@
         </div>
 
       </div>
+      </div>
+
+
       <p class="clearfix butt_box">
         <a href="#" class="lf butt_pricing">返回</a>
         <a href="#" class="rg butt_return">开始核价</a>
       </p>
     </div>
+</div>
+    @@include('/easyPricing/common/footer2.html')
   </body>
   </html>

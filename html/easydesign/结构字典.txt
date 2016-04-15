@@ -29,3 +29,6 @@ works                      成品作品
 studio                     工作室展示
 
 hisDesign                  他的设计
+  | flowerType             花型
+  | Fabric                 面料
+  | endProduct             三维成品

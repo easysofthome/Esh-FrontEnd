@@ -1,8 +1,11 @@
 combination                      自由组合
-  |
+  | choice                       选择款式
+  | combination                  组合套件
+  | modify                       修改单品参数
+  | complete                     核价完成
 
 fabric                           面料核价
-  |
+  | fabric                       面料核价
 
 singleProduct                    单品核价
   | choice                       选择款式尺寸
@@ -10,4 +13,6 @@ singleProduct                    单品核价
   | complete                     核价完成
 
 suite                            套件核价
-  |
+  | choice                       选择款式尺寸
+  | modify                       修改单品参数
+  | complete                     核价完成
