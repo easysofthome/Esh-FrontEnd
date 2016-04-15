@@ -23,7 +23,7 @@ var comboSyntax =['&&', '&'];
 if (this.seajs) {
     seajs.config({
 
-        local: "/",
+        local: "/static/",
         base: "http://182.168.1.115:2323/",
         debug: true,
 
