@@ -7,6 +7,8 @@
 
 @import 'table.less';
 
+@import '../fabric/fabrictitle.less';
+
 .mainbox{
   padding-bottom: 70px;
 }
@@ -101,23 +103,35 @@
         width: 112px;
       }
     }
-    //选择款式工缴报价方式
-    form.radiobox{
-      margin: 15px 0 0 42px;
-      label.offer{
-        margin-right: 20px;
-      }
-      input.rad{
-        width: 20px;
-        height: 20px;
-        margin: 2px 5px 0 0;
-      }
-      p.reminder{
-        margin-top: 0;
-      }
+  }
+  //选择款式工缴报价方式
+  form.radiobox{
+    margin: 15px 0 0 42px;
+    label.offer{
+      margin-right: 20px;
+    }
+    input.rad{
+      width: 20px;
+      height: 20px;
+      margin: 2px 5px 0 0;
+    }
+    p.reminder{
+      margin-top: 0;
     }
   }
-
+  form.radiocom{
+    padding: 0 20px;
+    margin: 0;
+    text-align: left;
+    label.offer{
+      margin-right: 0;
+    }
+    input.rad{
+      width: 20px;
+      height: 20px;
+      margin: 9px 5px 0 0;
+    }
+  }
 
   // 按钮
   .btnbox{
@@ -138,4 +152,13 @@
       .button-size(0; 0; 16px; 40px; 3px);
     }
   }
+
+}
+
+
+//核价结果
+div.resultbox{
+  margin: 30px 20px 0 20px;
+  padding-bottom: 30px;
+  font-size: 16px;
 }
