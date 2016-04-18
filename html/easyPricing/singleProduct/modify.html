@@ -8,7 +8,17 @@
 </head>
 
 <body>
+@@include('/easyPricing/header.html')
 <div class="mainbox">
+  <p class="fabrictitle clearfix">
+    <span class="lf fabrictitle_left">单品核价</span>
+    <span class="rg fabrictitle_rg">
+      当前位置：
+      <a href="#">首页</a>
+      >
+      <a href="#">单品核价</a>
+    </span>
+  </p>
   <!-- 进度条 -->
   <div class="progressBar">
     <ul class="words clearfix">
@@ -100,7 +110,7 @@
     <!-- LDP费率信息 -->
     <div class="information">
       <p class="smalltitle">
-        LDP费率信息　<a class="shrink" href="#">获取出口税率</a>
+        LDP费率信息　<a class="shrink" target=_blank href="/html/easyPricing/pricing/export.html">获取出口税率</a>
       </p>
       <div class="LDP clearfix">
         <ul class="LDPL lf">
@@ -152,22 +162,22 @@
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td class="style">款式</td>
-          <td class="sty">单品类型</td>
-          <td class="sty">尺码</td>
-          <td class="sty">产品辅料</td>
-          <td class="sty">包装辅料</td>
-          <td class="sty">体积信息</td>
+          <td>单品类型</td>
+          <td>尺码</td>
+          <td>产品辅料</td>
+          <td>包装辅料</td>
+          <td>体积信息</td>
         </tr>
         <tr>
           <td class="style">
             <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
             <span>打圆环浴帘</span>
           </td>
-          <td class="sty">单品浴帘</td>
-          <td class="sty">72*72</td>
-          <td class="sty"><a href="#">查看修改</a></td>
-          <td class="sty"><a href="#">查看修改</a></td>
-          <td class="sty"><a href="#">查看修改</a></td>
+          <td>单品浴帘</td>
+          <td>72*72</td>
+          <td><a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a></td>
+          <td><a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a></td>
+          <td><a target=_blank href="/html/easyPricing/pricing/volume.html">查看修改</a></td>
         </tr>
       </table>
     </div>
@@ -178,12 +188,12 @@
       </p>
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
-          <td class="fab_purpose">主要用途</td>
+          <td>主要用途</td>
           <td class="fab_picture">面料图片</td>
-          <td class="fabric">面料编号</td>
-          <td class="fab_class">面料分类</td>
-          <td class="fab_weight">面料克重</td>
-          <td class="fab_replace">面料替换</td>
+          <td>面料编号</td>
+          <td>面料分类</td>
+          <td>面料克重</td>
+          <td>面料替换</td>
           <td class="fab_price">门幅&价格</td>
         </tr>
         <tr>
@@ -191,10 +201,10 @@
           <td class="fab_picture">
             <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
           </td>
-          <td class="fabric">FD110600248</td>
-          <td class="fab_class">涤粘面料</td>
-          <td class="fab_weight">207</td>
-          <td class="fab_replace"><a href="#">替换面料</a></td>
+          <td>FD110600248</td>
+          <td>涤粘面料</td>
+          <td>207</td>
+          <td><a target=_blank href="/html/easyPricing/pricing/replaceFabric.html">替换面料</a></td>
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
@@ -217,19 +227,19 @@
       </p>
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
-          <td class="acc_num">辅料编号</td>
-          <td class="acc_price">辅料名称</td>
+          <td>辅料编号</td>
+          <td>辅料名称</td>
           <td class="acc_purpose">用途</td>
-          <td class="acc_quantity">辅料用量</td>
+          <td>辅料用量</td>
           <td class="acc_price">辅料单价</td>
-          <td class="acc_num">辅料成本（元）</td>
-          <td class="acc_quantity">辅料替换</td>
+          <td>辅料成本（元）</td>
+          <td>辅料替换</td>
         </tr>
         <tr>
-          <td class="acc_num">AD110600027</td>
-          <td class="acc_price">浴帘无纺布衬条</td>
+          <td>AD110600027</td>
+          <td>浴帘无纺布衬条</td>
           <td class="acc_purpose">浴帘衬条裁片</td>
-          <td class="acc_quantity">1.83 米</td>
+          <td>1.83 米</td>
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
@@ -237,12 +247,12 @@
               <p class="lf price">元/米</p>
             </div>
           </td>
-          <td class="acc_num">0.366</td>
-          <td class="acc_quantity"><a href="#">辅料替换</a></td>
+          <td>0.366</td>
+          <td><a target=_blank href="/html/easyPricing/pricing/accessories.html">辅料替换</a></td>
         </tr>
         <tr>
-          <td class="acc_num">AD110600061</td>
-          <td class="acc_price">浴帘铜气眼</td>
+          <td>AD110600061</td>
+          <td>浴帘铜气眼</td>
           <td class="acc_purpose">
             <p>浴帘圆环 </p>
             <div class="pricebox clearfix">
@@ -251,7 +261,7 @@
               <p class="lf price">个</p>
             </div>
           </td>
-          <td class="acc_quantity">1.83 米</td>
+          <td>1.83 米</td>
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
@@ -259,8 +269,8 @@
               <p class="lf price">元/个</p>
             </div>
           </td>
-          <td class="acc_num">0.366</td>
-          <td class="acc_quantity"><a href="#">辅料替换</a></td>
+          <td>0.366</td>
+          <td><a target=_blank href="/html/easyPricing/pricing/accessories.html">辅料替换</a></td>
         </tr>
       </table>
     </div>
@@ -283,12 +293,12 @@
 
     <!-- 按钮 -->
     <div class="btnbox clearfix">
-      <a class="lf btn_gray" href="#">返　回</a>
-      <a class="lf btn_blue" href="#">开始核价</a>
+      <a class="lf btn_gray" href="/html/easyPricing/singleProduct/choice.html">返　回</a>
+      <a class="lf btn_blue" href="/html/easyPricing/singleProduct/complete.html">开始核价</a>
     </div>
   </div>
 </div>
 
-@@include('/easydesign/footer.html')
+@@include('/easyPricing/common/footer2.html')
 </body>
 </html>

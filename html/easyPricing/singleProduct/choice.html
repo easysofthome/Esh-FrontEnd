@@ -8,6 +8,17 @@
 </head>
 
 <body>
+@@include('/easyPricing/header.html')
+<div class="mainbox">
+  <p class="fabrictitle clearfix">
+    <span class="lf fabrictitle_left">单品核价</span>
+    <span class="rg fabrictitle_rg">
+      当前位置：
+      <a href="#">首页</a>
+      >
+      <a href="#">单品核价</a>
+    </span>
+  </p>
   <!-- 进度条 -->
   <div class="progressBar">
     <ul class="words clearfix">
@@ -97,7 +108,7 @@
         <img src="/images/production/easyPricing/pricing/array_picture.png" />
       </div>
       <p class="name">滚边枕头</p>
-      <!-- <div class="dropbox clearfix">
+      <div class="dropbox clearfix">
         <label class="lab lf clearrfix">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
@@ -123,7 +134,7 @@
           <span class="words lf">70*72</span>
         </label>
       </div>
-      <a class="btn" href="#">下一步</a> -->
+      <a class="btn" href="/html/easyPricing/singleProduct/modify.html">下一步</a>
     </li>
     <li class="lf array">
       <div class="picture">
@@ -171,7 +182,8 @@
     </li>
   </ul>
 
-  @@include('/easydesign/common/next.html')
-  @@include('/easydesign/footer.html')
+  @@include('/easyPricing/common/next.html')
+  </div>
+  @@include('/easyPricing/common/footer2.html')
 </body>
 </html>

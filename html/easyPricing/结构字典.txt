@@ -1,13 +1,29 @@
 combination                      自由组合
-  |
+  | choice                        选择款式
+  | combination                   组合套件
+  | modify                        修改单品参数
+  | complete                      核价完成
 
 fabric                           面料核价
-  |
+  | fabric                        面料核价
 
 singleProduct                    单品核价
-  | choice                       选择款式尺寸
-  | modify                       修改单品参数
-  | complete                     核价完成
+  | choice                        选择款式尺寸
+  | modify                        修改单品参数
+  | complete                      核价完成
 
 suite                            套件核价
-  |
+  | choice                        选择款式尺寸
+  | modify                        修改单品参数
+  | complete                      核价完成
+
+pricing                          易核价（弹窗页面）
+  | accessories                   辅料查询
+  | export                        出口税率信息查询
+  | factory                       工厂报价纱线库
+  | productacc                    产品辅料信息
+  | replaceFabric                 替换面料
+  | similarSingle                 同类单品选择
+  | storehouse                    易家纺纱线库（精细选择）
+  | streamline                    易家纺纱线库（简易选择）
+  | volume                        体积信息查看修改

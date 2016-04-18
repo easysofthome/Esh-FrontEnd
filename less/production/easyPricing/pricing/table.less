@@ -28,7 +28,7 @@ table.tab{
   td{
     border-right: #eaeaea 1px solid;
     border-bottom: #eaeaea 1px solid;
-    line-height: 28px;
+    line-height: 36px;
     a{
       color: #3ca1d7;
       &:hover{
@@ -51,10 +51,16 @@ table.tab{
         .border-radius(3px);
       }
     }
-    img{
-      display: inline;
+    input.combina_int{
+      width: 58px;
+      line-height: 16px;
+      padding: 10px;
+      border: #cdcfd1 1px solid;
+      .border-radius(3px);
     }
   }
+
+  // 单品核价
   // 款式尺码信息
   td.style{
     width: 146px;
@@ -68,34 +74,38 @@ table.tab{
     width: 175px;
   }
   // 主要面料
-  td.fab_purpose{
-    width: 154px;
-    padding: 0 10px;
-  }
+  // td.fab_purpose{
+  //   width: 154px;
+  //   padding: 0 10px;
+  // }
   td.fab_picture{
     width: 146px;
     padding: 20px;
   }
-  td.fabric{
-    width: 140px;
-  }
-  td.fab_class{
-    width: 116px;
-  }
-  td.fab_weight{
-    width: 84px;
-  }
-  td.fab_replace{
-    width: 106px;
-  }
+  // td.fabric{
+  //   width: 140px;
+  // }
+  // td.fab_class{
+  //   width: 116px;
+  // }
+  // td.fab_weight{
+  //   width: 84px;
+  // }
+  // td.fab_replace{
+  //   width: 106px;
+  // }
   td.fab_price{
     width: 251px;
     padding: 0 10px;
   }
+  // td.fab_price2{
+  //   width: 251px;
+  //   padding: 0 63px;
+  // }
   // 主要辅料
-  td.acc_num{
-    width: 140px;
-  }
+  // td.acc_num{
+  //   width: 140px;
+  // }
   td.acc_price{
     width: 170px;
     padding: 0 10px;
@@ -105,8 +115,60 @@ table.tab{
     padding: 0 10px;
     text-align: left;
   }
-  td.acc_quantity{
-    width: 105px;
+  // td.acc_quantity{
+  //   width: 105px;
+  // }
+
+  //单品核价结果  //自由组合第二步
+  td.re_sin_type{
+    width: 110px;
+    padding: 20px 10px;
+  }
+  // td.re_single{
+  //   width: 79px;
+  // }
+  // td.re_sin_name{
+  //   width: 170px;
+  // }
+
+
+  // 套件核价
+  // 款式尺码信息   //自由组合第三步
+  td.sui_style{
+    width: 146px;
+    padding: 20px;
+  }
+  // td.sui_sty_type{
+  //   width: 150px;
+  // }
+  // td.sui_sty_size{
+  //   width: 105px;
+  // }
+  // td.sui_sty_name{
+  //   width: 120px;
+  // }
+  // td.sui_sty_num{
+  //   width: 76px;
+  // }
+  // 套件核价结果
+  td.sui_result{
+    width: 110px;
+    padding: 20px 10px;
+  }
+  // td.sui_re_type{
+  //   width: 120px;
+  // }
+  // td.sui_re_num{
+  //   width: 78px;
+  // }
+  // td.sui_re_size{
+  //   width: 65px;
+  // }
+
+
+  //自由组合第二部
+  td.td_int{
+    width: 120px;
   }
 
   // 标题样式
@@ -116,6 +178,12 @@ table.tab{
       line-height: 50px;
       padding: 0;
       text-align: center;
+    }
+  }
+  tr.tittwo{
+    background-color: #f8f8f8;
+    td{
+      line-height: 44px;
     }
   }
 }
