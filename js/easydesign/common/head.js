@@ -29,11 +29,12 @@ define(function (require, exports, module) {
       }
     });
     /** /却换中英文 **/
+    /** @type {void} 鼠标滚动增加阴影 */
     var top = $(window).scrollTop();
     $(window).scroll(function() {
       top = $(window).scrollTop();
       if(top > 0){
-        $('.header').css('box-shadow','0 0 3px 1px #666');
+        $('.header').css('box-shadow','0px 0px 3px 2px #ddd');
       }else{
         $('.header').css('box-shadow','none');
       }

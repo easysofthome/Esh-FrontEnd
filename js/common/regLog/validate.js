@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-    require('js/common/regLog/validation');
+    require('js/lib/validation/validation');
 
     // input
     var form = $("#register-form");
