@@ -55,26 +55,38 @@
         </div>
 
 
-
+        <form action="" id="modify-baseData" method="post">
         <div class="contactbox">
           <div class="words"><span>联系方式</span></div>
 
           <div class="contact">
             <div class="contact_int clearfix">
               <p class="lf"><span class="two">邮</span>箱：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="int"></div>
+              <div class="lf">
+                <input type="text" class="int" name="email" id="email" />
+                <div class="input-tip"></div>
+              </div>
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="two">手</span>机：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="int"></div>
+              <div class="lf">
+                <input type="text" class="int" name="phone" id="phone" />
+                <div class="input-tip"></div>
+              </div>
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="three">联系</span>人：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="int"></div>
+              <div class="lf">
+                <input type="text" class="int" name="contact" id="contact" />
+                <div class="input-tip"></div>
+              </div>
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="letter_two">Q</span>Q：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="int"></div>
+              <div class="lf">
+                <input type="text" class="int" name="qq" id="qq" />
+                <div class="input-tip"></div>
+              </div>
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="three">所在</span>地：&nbsp;&nbsp;</p>
@@ -85,18 +97,22 @@
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="four">详细地</span>址：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="address"></div>
+              <div class="lf">
+                <input type="text" class="address" name="address" id="address" />
+                <div class="input-tip"></div>
+              </div>
             </div>
           </div>
         </div>
-
-
-        <a href="#" class="save">保存资料</a>
-
+        <input type="submit" class="save" value="保存资料" />
+        </form>
       </div>
     </div>
 
     @@include('/VIP/common/footer.html')
+    <script>
+      seajs.use('js/VIP/common/basicData/basicData');
+    </script>
   </body>
 
   </html>

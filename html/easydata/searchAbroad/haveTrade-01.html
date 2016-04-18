@@ -136,13 +136,12 @@
         <div class="table_cont">
             <div class="clearfix">
                 <span class="lf tab_tit">2015年全部产品向各供应国的采购总量占比</span>
-
-                 <a href="#" class="rg Spread_text">
-                    <span class="lf ">展开所有</span>
+                 <div class="rg Spread_text">
+                    <span class="lf" id="show-more1">展开所有</span>
                     <span class="rg Spread"></span>
-                </a>
+                </div>
             </div>
-            <div class="clearfix Margins">
+            <div class="clearfix Margins" data-control="show-more1" show="true" style="height: 200px;overflow: hidden;">
                 <div class="lf pricechangesbox">
                     <ul class="vertical clearfix">
                         <li class="lf suppliers_rank">供应国排名</li>
@@ -276,6 +275,17 @@
 
   <!-- 版权 -->
 @@include('/easydata/footer2.html')
+<script>
+    seajs.use('jquery',function () {
+        $('#show-more1').on('click',function () {
+            var obj = $('[data-control=show-more1]');
+            if(obj.attr('show') === 'false')
+                $('[data-control=show-more1]').css('height','200px').attr('show','true');
+            else
+                $('[data-control=show-more1]').css('height','auto').attr('show','false');
+        });
+    });
+</script>
 </div>
 </body>
 </html>
