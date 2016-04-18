@@ -89,6 +89,7 @@
   </div>
 </div>
 
+
   <div class="banner-wrapper clearfix">
     <img src="/images/production/easydata/banner.jpg" alt="" class="banner-bg">
     <div class="videoinfo-box">
@@ -306,26 +307,7 @@
     </div>
   </div><!-- rank-wrapper -->
 
-  <script src="/Static/seajs/sea-debug.js"></script>
-  <!-- <script src="/Static/seajs/seajs-combo.js"></script> -->
-  <script src="/Static/seajs/seajs-css.js"></script>
-
-  <script src="/Static/js/easydata/rootConfig.js"></script>
-  <script>
-    seajs.use('index');
-  </script>
-
-    <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>无标题文档</title>
-  <link href="/css/production/easydata/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/easydata/footer.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/easydata/global.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
+    <link href="/css/production/easydata/footer.css" rel="stylesheet" type="text/css"/>
 
   <div class="foot_box">
     <div class="footer-nav clearfix">
@@ -393,7 +375,17 @@
       浙ICP备B2-20140102号
     </div>
   </div>
-</body>
-</html>
+
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/Static/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script>
+    seajs.use('js/easydata/common/head');
+  </script>
+  <script>
+    seajs.use('js/easydata/Index/index');
+  </script>
 </body>
 </html>
