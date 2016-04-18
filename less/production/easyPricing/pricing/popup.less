@@ -1,0 +1,235 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easyPricing/pricing/sprite.less';
+
+//通用样式
+div.popupbox{
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  font-size: 12px;
+  padding-bottom: 20px;
+  .border-radius(3px);
+  -webkit-box-shadow:0px 0px 5px #000;
+  -moz-box-shadow:0px 0px 5px #000;
+  box-shadow:0px 0px 5px #000;
+  p.title{
+    margin: 0 10px;
+    line-height: 40px;
+    font-size: 14px;
+    background-image: url("/images/production/easyPricing/pricing/grayline.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    a{
+      color: #666;
+      padding: 0 10px;
+      margin-right: 20px;
+    }
+    .cur,.herfa:hover{
+      color: #3ca1d7;
+      border-bottom: 2px solid #3ca1d7;
+    }
+    span.btn_close{
+      margin-top: 15px;
+      cursor: pointer;
+      .sprite(@btn_close);
+      .icon-easyPricing-pricing;
+    }
+  }
+  // 类型
+  div.typebox{
+    width: 980px;
+    margin: 0 10px;
+    background-color: #fff;
+    padding-top: 5px;
+    div.container{
+      border-bottom: dashed 1px #dbdbdb;
+    }
+    p.tit{
+      width: 60px;
+      margin-top: 7px;
+      display: inline;
+      text-align: right;
+    }
+    ul.type{
+      width: 920px;
+      a.type_a{
+        padding: 0 10px;
+        .border-radius(3px);
+        margin: 7px 5px;
+        display: block;
+        color: #666;
+        white-space:nowrap;
+      }
+      a.type_a:hover,a.cur{
+        background-color: #3ca1d7;
+        color: #fff;
+      }
+    }
+  }
+  // 排序
+  .sortbox{
+    width: 980px;
+    margin: 10px 10px 0 10px;
+    div.sort{
+      line-height: 32px;
+      width: 830px;
+      p.tit{
+        margin-right: 5px;
+      }
+      a.cur,a.sort_ablue{
+        margin-right: 30px;
+        i{
+          margin: 12px 0 0 9px;
+          .icon-easyPricing-pricing;
+        }
+      }
+      a.sort_ablue{
+        color: #888;
+        i{
+          .sprite(@sortgray);
+        }
+      }
+      a.cur,a.sort_ablue:hover{
+        color: #3ca1d7;
+        i{
+          .sprite(@sortblue);
+        }
+      }
+    }
+    div.intbox,div.intchoice{
+      width: 140px;
+      border: 1px solid #d1d1d1;
+      .border-radius(3px);
+      input.int{
+        width: 88px;
+        line-height: 18px;
+        padding: 5px 10px;
+        border: 0;
+        background-color: #fff;
+      }
+      i{
+        margin: 8px 0 0 8px;
+        .sprite(@searchgray);
+        .icon-easyPricing-pricing;
+      }
+    }
+    div.intchoice{
+      width: 150px;
+      border: 0;
+      input.int{
+        border: 1px solid #d1d1d1;
+      }
+      span{
+        line-height: 30px;
+      }
+    }
+  }
+
+  // 查询
+  .querybox{
+    width: 980px;
+    margin: 10px 10px 0 10px;
+    div.intbox{
+      line-height: 30px;
+      margin-right: 30px;
+      .border-radius(3px);
+      input.int{
+        width: 88px;
+        line-height: 18px;
+        padding: 5px 10px;
+        border: 1px solid #d1d1d1;
+        background-color: #fff;
+      }
+    }
+    a.btn_blue{
+      width: 70px;
+      text-align: center;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 12px; 30px; 3px);
+    }
+  }
+
+  //表格
+  .tabbox{
+    margin-top: 10px;
+  }
+
+  //按钮样式
+  label.labbox{
+    line-height: 16px;
+    input.checkint{
+      width: 16px;
+      height: 16px;
+      margin: 0 2px 0 10px;
+    }
+  }
+  div.btnbox{
+    width: 160px;
+    margin: 10px auto 0 auto;
+    .btn_blue{
+      width: 70px;
+      text-align: center;
+      margin-right: 20px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 12px; 30px; 3px);
+    }
+    .btn_gray{
+      width: 70px;
+      text-align: center;
+      .button-variant(#fff; #ccc; #ccc);
+      .button-size(0; 0; 12px; 30px; 3px);
+    }
+  }
+}
+
+
+// 排列   //替换面料
+ul.arraybox{
+  width: 1000px;
+  margin: 10px auto 0 auto;
+  padding-bottom: 5px;
+  li.array{
+    background-color: #fff;
+    padding-bottom: 10px;
+    margin: 0 10px;
+    display: inline;
+    .border-radius(3px);
+    .picture{
+      width: 230px;
+      height: 230px;
+      cursor: pointer;
+    }
+    div.words{
+      margin: 5px 0 0 5px;
+    }
+    a.name{
+      color: #666;
+      display: block;
+      &:hover{
+        color: #ff6600;
+      }
+    }
+  }
+}
+
+
+// 体积信息查看修改
+.volumebox{
+  width: 980px;
+  margin: 10px 10px 0 10px;
+  div.intbox{
+    line-height: 30px;
+    margin: 10px 45px 10px 0;
+    display: inline;
+    .border-radius(3px);
+    input.int{
+      width: 128px;
+      line-height: 18px;
+      padding: 5px 10px;
+      border: 1px solid #d1d1d1;
+      background-color: #fff;
+    }
+  }
+}
