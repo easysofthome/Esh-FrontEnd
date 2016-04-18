@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易核价-易家纺电子商务服务平台_出口税率信息查询（弹窗）</title>
+  <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div class="popupbox">
+    <p class="title clearfix">
+      <a class="cur lf">出口税率信息查询</a>
+      <span class="rg btn_close"></span>
+    </p>
+
+    <!-- 类型 -->
+    <div class="typebox">
+      <div class="clearfix container">
+        <p class="lf tit">税率分类：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">其他装饰用织物制品</a></li>
+          <li class="lf"><a class="type_a" href="#">棉制枕壳、被壳，羽绒被壳，盖被壳</a></li>
+          <li class="lf"><a class="type_a" href="#">弹簧床垫;寝具及类似用品</a></li>
+          <li class="lf"><a class="type_a" href="#">毯子及旅行毯</a></li>
+          <li class="lf"><a class="type_a" href="#">窗品</a></li>
+          <li class="lf"><a class="type_a" href="#">织物织品</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 查询 -->
+    <div class="querybox clearfix">
+      <div class="lf intbox clearfix">
+        <span class="lf">参考代码：</span>
+        <input class="int lf" type="text" />
+      </div>
+      <div class="lf intbox clearfix">
+        <span class="lf">中文描述：</span>
+        <input class="int lf" type="text" />
+      </div>
+      <div class="lf intbox clearfix">
+        <span class="lf">英文描述：</span>
+        <input class="int lf" type="text" />
+      </div>
+      <a class="lf btn_blue" href="#">查询</a>
+    </div>
+
+    <!-- 表格 -->
+    <div class="tabbox">@@include('/easyPricing/Pop-ups/export.html')</div>
+
+    @@include('/easyPricing/common/next2.html')
+  </div>
+
+</body>
+</html>
