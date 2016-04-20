@@ -1,0 +1,77 @@
+@import '../../../sprite/VIP/common/top/sprite.less';
+@import '../../../dev/mixins/mixins.less';
+
+  .header-top{
+    height: 32px;
+    width: 100%;
+    background: #303845;
+    .header-top-wrap{
+      height: 32px;
+      width: 1200px;
+      margin: 0 auto;
+      a{
+        line-height: 32px;
+        color: #fff;
+        font-size: 12px;
+        &:hover{
+          color: #3ca1d7;
+        }
+      }
+      .user{
+        float:left;
+        .login,.vip-ser{
+          float: left;
+          margin-right: 30px;
+        }
+        .login{
+          margin-left: -10px;
+          a{
+            margin-left: 10px;
+          }
+        }
+        .vip-ser{
+          padding: 4px 10px;
+          line-height: 12px;
+          background: #f60;
+          margin: 5px 30px 5px 0;
+          .border-radius(4px);
+          &:hover{
+            color: #fff;
+          }
+        }
+        span.vip,span.service{
+            margin-right: 5px;
+            .icon-VIP-common-top;
+        }
+        span.vip{
+          .sprite(@icon-vip,inline-block);
+          .fixIe6pngTransparent('/images/icon/easydata/icon-vip.png');
+        }
+        span.service{
+          .sprite(@icon-ser,inline-block);
+          .fixIe6pngTransparent('/images/icon/easydata/icon-ser.png');
+        }
+      }
+      .menu{
+        width: 468px;
+        height: 32px;
+        float: right;
+        a{
+          margin-left: 30px;
+          span{
+          margin-right:5px;
+            .sprite(@icon-download,inline-block);
+            .icon-VIP-common-top;
+            .fixIe6pngTransparent('/images/icon/easydata/icon-download.png');
+          }
+          i{
+            margin-left:5px;
+            .triangle(#fff);
+          }
+        }
+        a.tri:hover i{
+          .triangleRotate(#fff);
+        }
+      }
+    }
+  }
