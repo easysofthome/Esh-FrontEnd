@@ -1,5 +1,7 @@
 define(function (require, exports, module) {
+
   var AmCharts = require('serial');
+
   module.exports.init = function (name, dataProvider) {
 
     AmCharts.makeChart(name,

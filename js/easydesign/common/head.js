@@ -1,5 +1,9 @@
 define(function (require, exports, module) {
   require('jquery');
+  // 搜索
+  require('js/easydesign/common/search');
+  var switchSel = require('js/easydata/common/switchSel');
+  switchSel.set('.sea-words','.sea-words>span','.xiala-box','.xiala-box>li','');
 
   $(function () {
     /** 登录状态的导航  */
@@ -41,11 +45,23 @@ define(function (require, exports, module) {
 
     });
 
-
-
-
-
-
+    // 收起按钮
+    var categoryHigh = 0;
+    $(document).ready(function () {
+      $('.leibie').each(function(index, el) {
+        categoryHigh = categoryHigh + $(this).height() + parseInt($(this).css('margin-top'));
+      });
+      if(categoryHigh < 300) $('.Collapse').hide();
+    });
+    $('.Collapse').on('click', function() {
+      if($('.leibie_box').attr('show')=='true'){
+        $('.leibie_box').animate({'height':'200px'},300);
+        $('.leibie_box').attr('show','false');
+      }else{
+        $('.leibie_box').animate({'height':categoryHigh},300);
+        $('.leibie_box').attr('show','true');
+      }
+    });
 
 
   });
