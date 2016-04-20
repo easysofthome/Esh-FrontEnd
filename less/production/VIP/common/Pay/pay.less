@@ -1,0 +1,89 @@
+@import '../../../../sprite/VIP/common/Pay/sprite.less';
+
+.pay_way,.yidou_tit{
+    font-size: 16px;
+    color:#999999;
+    line-height: 16px;
+
+}
+.yidou_tit{
+    margin-top: 20px;
+}
+
+.pay_box{
+    padding-top: 10px;
+    li{
+        width: 150px;
+        height: 40px;
+        border:1px solid #e5e5e5;
+        position: relative;
+        cursor:pointer;
+    }
+    .zhifubao{
+        margin: 7px auto 0 auto;
+         .sprite(@zhifubao);
+        .icon-VIP-common-Pay;
+    }
+    .yidou{
+        margin: 7px auto 0 auto;
+         .sprite(@yidou);
+        .icon-VIP-common-Pay;
+    }
+    .select_pay{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .sprite(@gouxian);
+        .icon-VIP-common-Pay;
+        display: none;
+    }
+    li:hover .select_pay{
+        display: block;
+
+    }
+    li:hover{
+        border:1px solid #ff5200;
+    }
+    .zaixian{
+        margin: 7px auto 0 auto;
+         .sprite(@zaixian);
+        .icon-VIP-common-Pay;
+    }
+    .li_max{
+        margin-left: 10px;
+    }
+
+}
+.Bean_box{
+        margin-top: 10px;
+
+        .yidou_name,.yidou_unit{
+            font-size: 14px;
+            margin-top: 3px;
+        }
+        .yidou_unit{
+            margin-left: 4px;
+        }
+        .yidou_data{
+            margin-left: 10px;
+            font-size:20px;
+            color:#fe6600;
+        }
+
+    }
+.bean_height{
+    margin-top: 0px;
+}
+.bean_butt{
+    margin-top: 20px;
+    width: 190px;
+    display: block;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    background-color: #fe6600;
+    color: #fff;
+}
+.bean_butt:hover{
+    background-color: #f75533;
+}
