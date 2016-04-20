@@ -29,6 +29,7 @@
         </div>
 
         <div class="fangshibox">
+          <form action="" method="post" id="form-submit">
           <div class="fangshititle clearfix">
             <a class="title_danqian lf">方式二</a>
           </div>
@@ -37,34 +38,50 @@
               <span class="txt_red">*</span>
               <span>汇款人银行账号：</span>
             </div>
-            <input type="text" class="shurukaung"></div>
+            <input type="text" class="lf shurukaung" name="remitAccount">
+            <div class="input-tip"></div>
+          </div>
           <div class="clearfix tongyongtop_00">
             <div class="title_caozuo lf">汇款人姓名：</div>
-            <input type="text" class="shurukaung"></div>
-          <div class="clearfix tongyongtop_00">
+            <input type="text" class="lf shurukaung" name="remitter" />
+            <div class="input-tip"></div>
+          </div>
+          <div class="clearfix tongyongtop_00" id="num">
             <div class="title_caozuo lf">汇款金额：</div>
-            <input type="text" class="shurukaung" value="金额需小于50W，格式为：120.00"></div>
+            <div class="placeholder">金额需小于50W，格式为：120.00</div>
+            <input type="text" class="lf shurukaung" name="num"/>
+            <div class="input-tip"></div>
+          </div>
           <div class="clearfix tongyongtop_00">
             <div class="title_caozuo lf">汇款时间：</div>
-            <input type="text" class="shurukaung"></div>
+            <input type="text" class="lf shurukaung" name="dataTime"/>
+            <div class="input-tip"></div>
+          </div>
           <div class="clearfix tongyongtop_00">
             <div class="title_caozuo lf">
-              <span class="txt_red">*</span>
-              <span>联系人手机：</span>
+              <div class="txt_red" style="display:inline">*</div>
+              <div style="display:inline">联系人手机：</div>
             </div>
-            <input type="text" class="shurukaung"></div>
+            <input type="text" class="lf shurukaung" name="phone"/>
+            <div class="input-tip"></div>
+          </div>
           <div class="clearfix tongyongtop_00">
             <div class="title_caozuo lf">备注：</div>
             <div class="lf">
-              <textarea class="beizhu "></textarea>
+              <textarea class="beizhu lf" name="remark"></textarea>
+              <div class="input-tip"></div>
               <p class="tishi">（填入文字上限为200个字符）</p>
             </div>
           </div>
-          <a href="#" class="tijiao">提交</a>
+          <input type="submit" class="tijiao" value="提交"/>
+        </form>
         </div>
       </div>
     </div>
   </div>
     @@include('/VIP/common/footer.html')
+  <script>
+    seajs.use('js/VIP/common/account/submit');
+  </script>
 </body>
   </html>

@@ -3,6 +3,9 @@
 
 @import '../../../sprite/easydata/sprite.less';
 
+/**********选择产品样式 import './sel-pro.less'********/
+@import './sel-pro.less';
+
 /** 滚动条样式  */
 /* 滚动条的滑轨背景颜色 */
 .short_season::-webkit-scrollbar-track,
@@ -153,105 +156,6 @@
             }
           }
         }
-      }
-    }
-    .sel-pro{
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0px;
-      z-index: 2;
-      //width: 500px;
-      width: 708px;
-      background: #fff;
-      border: 1px solid #cdcfd1;
-      ul.level1{
-        display: inline-block;
-        float: left;
-        font-size: 16px;
-        li{
-          width: 100px;
-          line-height:20px;
-          padding:6px 15px 6px 15px;
-          background: #eee;
-          position: relative;
-          top: 0;
-          left: 0;
-          &:hover,&.cur{
-            background: #3ca1d7;
-            cursor:pointer;
-            color: #fff;
-          }
-        }
-      }
-      .level2{
-        float:left;
-        ul{
-          display: none;
-          //width: 296px;
-          width: 578px;
-          li{
-            float: left;
-            //width: 37%;
-            font-size: 14px;
-            margin: 3px 10px;
-            border: 1px solid #fff;
-            cursor: pointer;
-            position: relative;
-            top: 0;
-            left: 0;
-            &:hover{
-              .has-child{
-                background: #eee;
-                border: 1px solid #ccc;
-                border-bottom: 1px solid #eee;
-                color: #3ca1d7;
-              }
-              div.final{
-                background: #eee;
-                border: 1px solid #ccc;
-                color: #3ca1d7;
-              }
-              i{
-                .triangleRotate(#666);
-              }
-            }
-            .level3-tit{
-              display: inline-block;
-              position: relative;
-              top: 0;
-              left: 0;
-              z-index: 1;
-              height: 100%;
-              padding: 3px 5px;
-              border: 1px solid #fff;
-            }
-            .has-child{
-              i{
-                .triangle(#666);
-              }
-            }
-            .level3{
-              display:none;
-              position: absolute;
-              top: 25px;
-              left: 0;
-              z-index: 2;
-              border: 1px solid #ccc;
-              background: #eee;
-              width: 445px;
-              span{
-                float: left;
-                cursor: pointer;
-                padding: 5px 10px;
-                &:hover{
-                  color: #3ca1d7;
-                }
-              }
-            }
-          }
-        }
-
       }
     }
   }

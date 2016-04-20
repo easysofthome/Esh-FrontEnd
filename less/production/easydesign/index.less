@@ -91,10 +91,10 @@
     padding-bottom: 100px;
 }
 
-.simulation_outbox,.studiobox{
+.simulation_outbox,.studio-wrap{
     background-color: #dce4ed;
 }
-.studiobox{
+.studio-wrap{
     padding-bottom: 60px;
 }
 .exp_butt{
@@ -108,6 +108,12 @@
             .border-radius(60px);
             font-size: 14px;
             color: #666666;
+            cursor: pointer;
+            &:hover{
+                border: 1px solid #3ca1d7;
+                background-color: #3ca1d7;
+                color: #fff;
+            }
         }
         .exp_lileft{
             margin-left: 10px;
@@ -231,12 +237,77 @@
     margin-top: 0;
 }
 
+.sim_img_box{
+  width: 1200px;
+  height: 278px;
+  overflow: hidden;
+  margin: 70px auto 0 auto;
+  ul{
+    li{
+      float:left;
+      border: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      b{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: 198px;
+        height: 100%;
+        border-left: 2px solid #dce4ed;
+      }
+      .sim_cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0 auto auto 0;
+        width: 200px;
+        height: 100%;
+        background: #000;
+        .opacity(0.6);
+      }
+      .first_cover{
+        width: 300px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        margin-top: -75px;
+        margin-left: -150px;
+      }
+      .sim_cont_box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -75px auto auto -150px;
+        width: 300px;
+        height: 150px;
+        color: #fff;
+      }
+      .sim_cover_tit{
+        font-size: 22px;
+        font-size: 22px;
+        padding: 20px 20px 10px;
+        border-bottom: 2px solid #3ca1d7;
+        position: relative;
+        z-index: 4;
+        display: inline-block;
+      }
+      .sim_cover_cont{
+        width: 160px;
+        font-size: 14px;
+        margin: 10px auto auto;
+      }
+    }
+  }
+}
 
 
 
 
-
-.studiobox{
+.studio-wrap{
 
 
 .studio{
@@ -261,28 +332,35 @@
 
     }
     .studip_conleft{
-      width:900px;
-      background-color: #58b2e2;
-      position: relative;
-      height: 340px;}
+        width:900px;
+        background-color: #58b2e2;
+        position: relative;
+        height: 340px;
+        text-align: center;
+    }
     .studip_conrg{
         width:300px;
         background-color:#3ca1d7;
-     height: 340px;
+        height: 340px;
+        text-align: center;
     }
     .leftjiantou{
         position: absolute;
         left: 0;
         top:150px;
+        z-index: 2;
         .sprite(@leftjiantou);
         .icon-easydesign;
+        display: none;
     }
     .rightjiantou{
-           position: absolute;
+        position: absolute;
         right: 0;
         top:150px;
+        z-index: 2;
         .sprite(@rightjiantou);
         .icon-easydesign;
+        display: none;
     }
     .yiyou{
         color:#fff;
@@ -299,31 +377,33 @@
     .cangjiagzs{
         .sprite(@computer);
         margin:70px auto 0 auto;
-         .icon-easydesign;
+        .icon-easydesign;
     }
 
     .immediately{
-        background-color: #e85d40;
-        width: 204px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        margin: 0 auto;
-        color: #fff;
-        display: block;
-        font-size: 20px;
+        .button-variant(#fff, #e85d40, #e85d40);
+        .button-size(0,60px,20px, 40px,0);
+        display: inline-block;
         margin-top: 23px;
     }
-    .stu_lefylist,.stu_lefylist2{
-        margin-top: 56px;
-        width: 204px;
-        background-color: #fff;
-        margin-left: 12px;
-        .border-radius(5px);
-        padding-bottom: 20px;
-    }
-    .stu_lefylist2{
-        margin-left: 20px;
+    .studio_box{
+        width: 880px;
+        height: 340px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        ul{
+            margin-left: -18px;
+            width: 3520px;
+            li{
+                margin-top: 56px;
+                width: 204px;
+                background-color: #fff;
+                margin-left: 20px;
+                .border-radius(5px);
+                padding-bottom: 20px;
+            }
+        }
     }
     .locate{
         position: relative;
@@ -382,18 +462,13 @@
         }
     }
     .increase_butt{
-        width: 162px;
-        height: 30px;
-        background-color: #37b5f9;
-        display:block;
+        .button-variant(#fff, #37b5f9, #e85d40);
+        .button-size(0,60px,16px, 30px,0);
+        display: inline-block;
         margin:20px auto 0 auto;
-        color: #fff;
-        font-size: 16px;
-
-        line-height: 30px;
     }
     .increase{
-        margin: 8px 4px 0 52px;
+        margin: 8px 0;
         _margin-left:26px;
         .sprite(@jia);
          .icon-easydesign;
@@ -448,9 +523,13 @@
     .a04:hover{
         background-color: #e85d40;
         color: #fff;
+        cursor: pointer;
         i{
             .sprite(@videobai);
             .icon-easydesign;
         }
     }
+}
+.video{
+  .play-video(-140px)
 }
