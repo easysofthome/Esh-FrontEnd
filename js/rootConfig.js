@@ -15,7 +15,10 @@
     // 轮播、切换
     'switchable': 'js/lib/jquery.switchable/2.0/jquery.switchable.min',         //切换
     'fullPage': 'js/lib/jquery.fullPage/jquery.fullPage.min.js',          //全屏滚动
-    'fullPageCss': 'js/lib/jquery.fullPage/jquery.fullPage.css'          //全屏滚动样式
+    'fullPageCss': 'js/lib/jquery.fullPage/jquery.fullPage.css',          //全屏滚动样式
+    // 易设计图片对比
+    'jquery.event.move': 'js/lib/jquery.event.move/jquery.event.move.js',
+    'jquery.twentytwenty': 'js/lib/jquery.twentytwenty/jquery.twentytwenty.js'
 
 };
 var comboSyntax =['&&', '&'];

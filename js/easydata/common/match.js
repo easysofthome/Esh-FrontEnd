@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
 
   require('jquery');
+  var switchMatch = require('js/easydata/common/switchMatch');
 
   var placeholder = require('placeholder');
   // 重置按钮
@@ -28,19 +29,23 @@ define(function (require, exports, module) {
   });
 
   // 选择匹配度、合作可能性、合作风险、生产淡旺季
-    $('#sel-match>input,#sel-possible>input,#sel-risk>input,.sel_season>input,.port>input').on('mouseover', function(event) {
-      $(this).siblings('ol,ul').show();
-    });
-    $('#sel-match,#sel-possible,#sel-risk,.sel_season,.port').hover(function(event) {
+    // $('#sel-match>input,#sel-possible>input,#sel-risk>input,.sel_season>input,.port>input').on('mouseover', function(event) {
+    //   $(this).siblings('ol,ul').show();
+    // });
+    // $('#sel-match,#sel-possible,#sel-risk,.sel_season,.port').hover(function(event) {
 
-    },function () {
-      $(this).find('ol,ul').hide();
-    });
-    // 点击选择
-    $('.sel-match li,.sel-possible li,.sel-risk li,.short_season li').on('click', function(event) {
-      $(this).parent().hide();
-      $(this).parent().siblings('input').val($(this).text())
-    });
+    // },function () {
+    //   $(this).find('ol,ul').hide();
+    // });
+    // // 点击选择
+    // $('.sel-match li,.sel-possible li,.sel-risk li,.short_season li').on('click', function(event) {
+    //   $(this).parent().hide();
+    //   $(this).parent().siblings('input').val($(this).text())
+    // });
+    switchMatch.initHover("#sel-match");
+    switchMatch.initHover(".port");
+    switchMatch.initClick(".sel-match");
+
 
   // 添加、删除港口
     var inputObj = $(".sel-port").siblings('input');
