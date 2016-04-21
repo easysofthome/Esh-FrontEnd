@@ -67,6 +67,11 @@
         border: 1px solid #37b5f9;
         line-height: 22px;
         .border-radius(12px);
+        transition: all .3s;
+        &:hover{
+          background: #37b5f9;
+          color: #fff;
+        }
     }
 }
 
@@ -153,6 +158,7 @@
         margin-top: 10px;
         margin-right: 15px;
         margin-left: 5px;
+        cursor: pointer;
     }
     .shitu02
     {
@@ -170,41 +176,35 @@
 // 下拉框
 .xiala-box
 {
+    display: none;
     position: absolute;
     top: 50px;
-    left: 0;
-    .xiala-bottom
-    {
-        width: 156px;
-        height: 15px;
-
-        background-image: url('/images/production/easydesign/common/xiala-bg-bottom.png');
-    }
-}
-.xiala-box01
-{
+    left: 10px;
     line-height: 36px;
-
-    width: 156px;
+    width: 136px;
     padding-top: 3px;
-
-    background-image: url('/images/production/easydesign/common/xiala-bg.png');
-
+    background: #fff;
+    .box-shadow(0 6px 14px 3px #ccc);
     _vertical-align: middle;
-    .xiala-a01
+    li
     {
         display: block;
-
-        margin-left: 25px;
-
+        padding-left: 25px;
         color: #333;
+        &:hover{
+            cursor: pointer;
+            background: #3ca1d7;
+            color: #fff;
+        }
     }
 }
+
 
 
 // 图片下拉框
 .bg022-box
 {
+    display: none;
     position: absolute;
     top: 10px;
     left: 0;

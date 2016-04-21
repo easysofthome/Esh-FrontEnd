@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>易家纺-电子商务平台|会员中心-内页导航</title>
+  <title>易家纺-电子商务平台|会员中心首页</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+  @@include('/VIP/common/top.html')
   @@include('/VIP/common/navindex.html')
   <!-- 首页内容 -->
   <div class="indexbox clearfix">
@@ -17,19 +18,19 @@
           <p class="area_tit">剩余易豆</p>
           <p class="area_num">325</p>
           <p class="Company">单位：个</p>
-          <a class="btn_blue" href="#">充值</a>
+          <a class="btn_blue" href="/html/VIP/common/account/recharge.html">充值</a>
         </div>
         <div class="area lf">
           <p class="area_tit">易客计划</p>
           <p class="area_num">32</p>
           <p class="Company">用户：个</p>
-          <a class="btn_blue" href="#">加入易客计划</a>
+          <a class="btn_blue" href="/html/VIP/common/account/invitation.html">加入易客计划</a>
         </div>
         <div class="area arealast lf">
           <p class="area_tit">VIP会员</p>
           <p class="area_num">35</p>
           <p class="Company">剩余：天</p>
-          <a class="btn_blue" href="#">续费</a>
+          <a class="btn_blue" href="/html/VIP/common/Pay/purchase.html">续费</a>
         </div>
       </div>
 
@@ -38,9 +39,29 @@
         <div class="progressbar_s"><i></i></div>
         <ul class="clearfix">
           <li class="safty safty_cur lf clearfix">
-            <a href="#" class="lf safty_a">
+            <a href="/html/VIP/common/security/verifyP.html" class="lf safty_a">
+              <b></b>
               <i class="phone_s"></i>
               <span>手机绑定</span>
+            </a>
+
+            <p class="lf words">绑定手机后，您可以通过手机找回密码等</p>
+            <div class="operation rg">
+              <p class="alreadySet clearfix">
+                <a class="rg">已设置</a>
+                <i class="rg"></i>
+              </p>
+              <p class="modify clearfix">
+                <a href="/html/VIP/common/security/verifyP.html" class="rg">修改</a>
+              </p>
+            </div>
+
+          </li>
+          <li class="safty lf clearfix">
+            <a href="/html/VIP/common/basicData/authenticaSucc.html" class="lf safty_a">
+              <b></b>
+              <i class="realname_s"></i>
+              <span>实名认证</span>
             </a>
             <p class="lf words">绑定手机后，您可以通过手机找回密码等</p>
             <div class="operation rg">
@@ -52,24 +73,45 @@
                 <a href="/html/VIP/common/security/verifyP.html" class="rg">修改</a>
               </p>
             </div>
+
           </li>
           <li class="safty lf clearfix">
-            <a href="#" class="lf safty_a">
-              <i class="realname_s"></i>
-              <span>实名认证</span>
-            </a>
-          </li>
-          <li class="safty lf clearfix">
-            <a href="#" class="lf safty_a">
+            <a href="/html/VIP/common/security/verifyM-addto.html" class="lf safty_a">
+              <b></b>
               <i class="mailbox_s"></i>
               <span>邮箱绑定</span>
             </a>
+
+            <p class="lf words">绑定手机后，您可以通过手机找回密码等</p>
+            <div class="operation rg">
+              <p class="alreadySet clearfix">
+                <a class="rg">已设置</a>
+                <i class="rg"></i>
+              </p>
+              <p class="modify clearfix">
+                <a href="/html/VIP/common/security/verifyP.html" class="rg">修改</a>
+              </p>
+            </div>
+
           </li>
           <li class="safty safty_last lf clearfix">
-            <a href="#" class="lf safty_a">
+            <a href="/html/VIP/common/security/modifyPwd.html" class="lf safty_a">
+              <b></b>
               <i class="password_s"></i>
               <span>修改密码</span>
             </a>
+
+            <p class="lf words">绑定手机后，您可以通过手机找回密码等</p>
+            <div class="operation rg">
+              <p class="alreadySet clearfix">
+                <a class="rg">已设置</a>
+                <i class="rg"></i>
+              </p>
+              <p class="modify clearfix">
+                <a href="/html/VIP/common/security/verifyP.html" class="rg">修改</a>
+              </p>
+            </div>
+
           </li>
         </ul>
       </div>
@@ -143,5 +185,9 @@
     </div>
   </div>
   @@include('/VIP/common/footer.html')
+
+  <script>
+    seajs.use('js/VIP/common/index');
+  </script>
 </body>
 </html>

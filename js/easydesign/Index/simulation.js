@@ -1,4 +1,6 @@
 define(function (require, exports, module) {
+
+  require('switchable');
   var Accordion = $('.sim_img_box ul');
 
   Accordion.switchable({

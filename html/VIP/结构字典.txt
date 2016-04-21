@@ -1,0 +1,68 @@
+common                              会员中心通用页面
+  account（文件夹）
+  | details                           汇款底单信息详情
+  | invitation                        我要邀请的朋友
+  | meaccount                         充值明细
+  | query                             汇款底单信息查询
+  | recharge                          充值
+  | Submit                            汇款底单信息提交
+
+  basicData（文件夹）
+  | authenticaSucc                    实名认证完成
+  | authentication                    实名认证
+  | basicData                         基本信息
+  | headportrait                      头像照片
+
+  news（文件夹）
+  | news                              消息中心
+
+  pay（文件夹）
+  | purchase                          购买VIP
+
+  regLog（文件夹）
+  | forgetpass                        找回密码第一步
+  | forgetpass2                       找回密码第二步
+  | forgetpass3                       找回密码第三步
+  | forgetpass4                       找回密码第四步
+  | login                             登录
+  | register                          注册
+
+  security（文件夹）
+  | modifyPwd-addto                   设置登录密码
+  | modifyPwd                         登录密码修改
+  | security                          安全管理
+  | verifyM-addto                     设置邮箱
+  | verifyM                           邮箱验证
+  | verifyP-addto                     设置手机号码
+  | verifyP                           新手机验证
+
+  index                               首页
+
+
+
+easydata                            易数椐会员中心页面
+  form（文件夹）
+  | competitor_f                      密切关注竞争对手（我关注的对手）
+  | competitor_r                      密切关注竞争对手（易家纺推荐的对手）
+
+  | industryDet_f                     密切监测国内外同行（我关注的同行）
+  | industryDet_r                     密切监测国内外同行（易家纺推荐的同行）
+  | industryDet_r3                    密切监测国内外同行（设置条件页面）
+
+  | maintainCus_f                     有效维护现有客户（我关注的客户）
+  | maintainCus_r                     有效维护现有客户（易家纺推荐的客户）
+
+  | monitorSup_f                      及时监测供应商（我关注的卖家）
+  | monitorSup_r                      及时监测供应商（易家纺推荐的卖家）
+
+  | priceDet                          准确了解全球价格行情（我关注的价格行情国家）
+
+  | priceTrend                        随时跟踪价格走势（我关注的价格行情国家）
+
+  | searchAbroad_f                    精确匹配国外潜在买家（我关注的买家）
+  | searchAbroad_r                    精确匹配国外潜在买家（易家纺推荐的买家）
+  | searchAbroad_r2                   精确匹配国外潜在买家（数据库中没有）
+  | searchAbroad_r3                   精确匹配国外潜在买家（设置条件页面）
+
+  | searchChina_f                     精准匹配中国供应商（我关注的卖家）
+  | searchChina_r                     精准匹配中国供应商（易家纺推荐的卖家）

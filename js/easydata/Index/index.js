@@ -7,7 +7,7 @@ define(function (require, exports, module) {
   rankCar.init();
   require('animateNumber');
 
-  var switchSel = require('js/easydata/common/switchSel');
+  var switchSel = require('js/common/module/switchSel');
   switchSel.set('.rank-btn','.rank-btn-tit','.rank-btn-ul','.rank-btn-li','&nbsp;&nbsp;<span></span>');
 
   $(function () {

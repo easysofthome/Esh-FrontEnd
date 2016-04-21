@@ -6,96 +6,163 @@
 // 会员中心内页导航
 .navbox
 {
-    background-color: #303745;
-    .nav
-    {
-        font-size: 16px;
+  background-color: #303745;
+  background-image: url("/images/production/VIP/common/nav/blue_line.png");
+  background-position: top;
+  background-repeat: repeat-x;
+  .nav
+  {
+    font-size: 16px;
 
-        width: 1200px;
-        margin: 0 auto;
-    }
+    width: 1200px;
+    margin: 0 auto;
+  }
 }
 .navL
 {
-    width: 326px;
-    height: 100px;
+  width: 326px;
+  height: 100px;
 
-    background-color: #4a7bc4;
-    .headPorbox
-    {
-        display: inline;
+  background-color: #4a7bc4;
+  .headPorbox
+  {
+    display: inline;
 
-        margin: 10px 10px 0 20px;
-    }
-    .username
+    margin: 10px 10px 0 20px;
+    // 用户头像
+    .headPor
     {
-        color: #fff;
-        margin-top: 40px;
-        a.btn_formap{
-            margin-top: 10px;
-            .button-variant(#fff; #e85d40; #e85d40);
-            .button-size(0; 5px; 12px; 24px; 3px);
-        }
-    }
-    .returnbtn
-    {
-        width: 112px;
-        margin: 35px 0 0 24px;
-
-        text-align: center;
-        .button-variant(#fff; #e85d40; #e85d40);
-        .button-size(0; 0; 16px; 30px; 4px);
-    }
-}
-.navR
-{
-    line-height: 100px;
-
-    color: #fff;
-    a
-    {
-        color: #fff;
-    }
-    .navmar
-    {
-        margin-left: 100px;
-    }
-    .navmar_fir
-    {
-        margin-left: 87px;
-    }
-    .newsRedbox
-    {
-        position: relative;
-    }
-    .newsRed
-    {
-        font-size: 13px;
-        line-height: 24px;
-
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      span.mask-words{
+        line-height: 1;
+        padding: 32px 0;
+        display: none;
+        width: 100%;
+        height: 34px;
         position: absolute;
-        top: 20px;
-        right: -18px;
-
         text-align: center;
+        background: #000;
+        color: #fff;
+        opacity: .6;
+      }
+      img.headportrait{
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
+      img.mask{
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:hover{
+        span.mask-words{
+          display: block;
+        }
+      }
+    }
+  }
+  .username
+  {
+    color: #fff;
+    margin-top: 40px;
+  }
+  .returnbtn
+  {
+    width: 112px;
+    margin: 35px 0 0 24px;
 
-        .sprite(@newsRed);
-        .icon-VIP-common-nav;
-    }
-    .zhiti_13
-    {
-        font-size: 13px;
-    }
+    text-align: center;
+    .button-variant(#fff; #e85d40; #e85d40);
+    .button-size(0; 0; 16px; 30px; 4px);
+  }
 }
-
-// 用户头像
-.headPor
+ul.navR
 {
+  line-height: 100px;
+
+  color: #fff;
+  margin-left: 53px;
+  li.menu
+  {
     position: relative;
-}
-.mask
-{
-    position: absolute;
     top: 0;
     left: 0;
+    float: left;
+    a{
+      color: #fff;
+    }
+    &:hover{
+      background: #22212e;
+      a,p{
+        color: #3ca1d7;
+      }
+      span{
+        color: #fff;
+      }
+    }
+    &.nav-more{
+      cursor: pointer;
+      ul{
+        display: none;
+        position: absolute;
+        top: 100px;
+        left:0;
+        width:100%;
+        li{
+          width: 100%;
+          text-align:center;
+          line-height: 50px;
+          background: #22212e;
+          a{
+            color: #fff;
+            display: block;
+          }
+          &:hover{
+            background: #303745;
+            a{color: #3ca1d7;}
+          }
+        }
+      }
+    }
+  }
+  .navmar
+  {
+    padding: 0 50px;
+  }
+  .newsRedbox
+  {
+    position: relative;
+  }
+  .newsRed
+  {
+    font-size: 13px;
+    line-height: 24px;
+
+    position: absolute;
+    top: 20px;
+    right: 18px;
+
+    text-align: center;
+
+    .sprite(@newsRed);
+    .icon-VIP-common-nav;
+  }
+  .zhiti_13
+  {
+    font-size: 13px;
+  }
 }
+
+

@@ -2,19 +2,10 @@ define(function (require, exports, module) {
   require('jquery');
 
   // placeholder
-  $('.placeholder,.user_box>input,.password_box>input,.authcode_box>input').on('click focus',function  () {
-    if($(this).hasClass('placeholder')){
-      $(this).hide();
-      $(this).siblings('input').focus();
-    }else{
-      $(this).siblings('span').hide();
-    }
-  });
-  $('.user_box>input,.password_box>input,.authcode_box>input').blur(function  () {
-    if($(this).val()===''){
-      $(this).siblings('span').show();
-    }
-  });
+  var placehold = require('js/common/module/placehold');
+  placehold.init('.user_box>input,.password_box>input,.authcode_box>input');
+
+
   // 检查表单
   window.formCheck = function(){
     var user = $('.user_box>input'),

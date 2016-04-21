@@ -19,6 +19,11 @@
           <span class="lf span_mar">审核状态：</span>
           <div class="select-box clearfix lf">
             <span class="lf">全部</span> <i class="lf"></i>
+            <ul class="select-ul">
+              <li>审核中</li>
+              <li>已通过</li>
+              <li>未通过</li>
+            </ul>
 
           </div>
           <span class="lf txt_red">提示：如果您的汇款底单信息提交错误，可以</span>
@@ -48,7 +53,7 @@
                 17:13:35
               </td>
               <td class="fenlei-box">审核中</td>
-              <td class="fenlei-box">--</td>
+              <td class="fenlei-box"><a class="txt_blue" href="/html/VIP/common/account/details.html">查看</a></td>
             </tr>
           </table>
         </li>
@@ -65,7 +70,7 @@
                 17:13:35
               </td>
               <td class="fenlei-box">审核中</td>
-              <td class="fenlei-box">--</td>
+              <td class="fenlei-box"><a class="txt_blue" href="/html/VIP/common/account/details.html">查看</a></td>
             </tr>
           </table>
         </li>
@@ -82,7 +87,7 @@
                 17:13:35
               </td>
               <td class="fenlei-box">审核中</td>
-              <td class="fenlei-box">--</td>
+              <td class="fenlei-box"><a class="txt_blue" href="/html/VIP/common/account/details.html">查看</a></td>
             </tr>
           </table>
         </li>
@@ -99,7 +104,7 @@
                 17:13:35
               </td>
               <td class="fenlei-box">审核中</td>
-              <td class="fenlei-box">--</td>
+              <td class="fenlei-box"><a class="txt_blue" href="#">查看</a></td>
             </tr>
           </table>
         </li>
@@ -116,7 +121,7 @@
                 17:13:35
               </td>
               <td class="fenlei-box">审核中</td>
-              <td class="fenlei-box">--</td>
+              <td class="fenlei-box"><a class="txt_blue" href="/html/VIP/common/account/details.html">查看</a></td>
             </tr>
           </table>
         </li>
@@ -124,5 +129,9 @@
     </div>
   </div>
     @@include('/VIP/common/footer.html')
+
+  <script>
+    seajs.use('js/VIP/common/account/query.js');
+  </script>
 </body>
   </html>
