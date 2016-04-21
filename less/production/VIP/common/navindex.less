@@ -6,204 +6,223 @@
 // 会员中心首页导航
 .navind_box
 {
-    background-color: #303745;
-    background-image: url("/images/production/VIP/common/nav/blue_line.png");
-    background-position: top;
-    background-repeat: repeat-x;
-    .navind
-    {
-        position: relative;
+  background-color: #303745;
+  background-image: url('/images/production/VIP/common/nav/blue_line.png');
+  background-repeat: repeat-x;
+  background-position: top;
+  .navind
+  {
+    position: relative;
 
-        width: 1200px;
-        margin: 0 auto;
-        padding-bottom: 84px;
-        padding-top: 40px;
-    }
-    .nav_top
-    {
-        margin-top: 37px;
-        font-size: 16px;
-        a{
-            color: #fff;
-        }
-    }
-    .nav_left
-    {
-        margin-left: 100px;
-    }
-    .nav_longleft
-    {
-        margin-left: 380px;
-    }
-    .rela
-    {
-        position: relative;
-    }
-    .newsRed
-    {
-        line-height: 24px;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 84px;
+  }
+  .nav_top
+  {
+    font-size: 16px;
 
-        position: absolute;
-        top: -18px;
-        right: -18px;
-
-        text-align: center;
-        font-size: 13px;
-
-        .sprite(@newsRed);
-        .icon-VIP-common-nav;
+    margin-top: 37px;
+    a
+    {
+      color: #fff;
     }
+  }
+  .nav_left
+  {
+    margin-left: 100px;
+  }
+  .nav_longleft
+  {
+    margin-left: 380px;
+  }
+  .rela
+  {
+    position: relative;
+  }
+  .newsRed
+  {
+    font-size: 13px;
+    line-height: 24px;
+
+    position: absolute;
+    top: -18px;
+    right: -18px;
+
+    text-align: center;
+
+    .sprite(@newsRed);
+    .icon-VIP-common-nav;
+  }
 }
 
 
 .Userinfbox
 {
-    position: absolute;
-    top: 0;
-    left: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
 
-    width: 346px;
-    margin-left: -173px;
-    p.identitybox{
-        margin-top: 7px;
-        width: 120px;
-        text-align: center;
-        color: #c7c5c6;
-        font-size: 16px;
-    }
-    .upperpart
-    {
-        margin: 0 10px;
-        padding: 20px 0 14px 103px;
-        .headPor
-          {
-            position: relative;
-          }
-          .mask
-          {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-    }
-    // 头像背景颜色
-    .AfterClickBg
-    {
-        background-color: #3e485c;
-    }
-    .lowerpart
-    {
-        padding: 0 10px;
-        padding-bottom: 24px;
-        padding-bottom: 15px;
+  width: 346px;
+  margin-left: -173px;
+  p.identitybox
+  {
+    font-size: 16px;
 
-        background-image: url('/images/production/VIP/common/nav/a08_bg.png');
-    }
-    .user
-    {
-        padding-top: 20px;
+    width: 120px;
+    margin-top: 7px;
 
-        text-align: center;
-        font-size: 16px;
-        color: #333;
-    }
-    .usertop
-    {
-        padding-top: 10px;
-    }
+    text-align: center;
 
-    // vip部分
-    .vipbox
+    color: #c7c5c6;
+  }
+  .upperpart
+  {
+    margin: 0 10px;
+    padding: 20px 0 14px 103px;
+    .headPor
     {
-        margin-top: 20px;
+      position: relative;
     }
-    .vipwidth
+    .mask
     {
-        display: inline;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  // 头像背景颜色
+  .AfterClickBg
+  {
+    background-color: #3e485c;
+  }
+  .lowerpart
+  {
+    padding: 0 10px;
+    padding-bottom: 24px;
+    padding-bottom: 15px;
 
-        width: 54px;
-        margin-left: 20px;
-        font-size: 13px;
-        a{
-            color: #333;
-            line-height: 32px;
-        }
-        span{
-            display: block;
-            padding-top: 6px;
+    background-image: url('/images/production/VIP/common/nav/a08_bg.png');
+  }
+  .user
+  {
+    font-size: 16px;
 
-            text-align: center;
-        }
-    }
-    .VIP
-    {
-        margin: 0 auto;
+    padding-top: 20px;
 
-        .sprite(@VIP);
-        .icon-VIP-common-nav;
-    }
-    .Light
-    {
-        margin: 0 auto;
+    text-align: center;
 
-        .sprite(@Light);
-        .icon-VIP-common-nav;
-    }
-    .phone
-    {
-        margin: 0 auto;
+    color: #333;
+  }
+  .usertop
+  {
+    padding-top: 10px;
+  }
+  // vip部分
+  .vipbox
+  {
+    margin-top: 20px;
+  }
+  .vipwidth
+  {
+    font-size: 13px;
 
-        .sprite(@phone);
-        .icon-VIP-common-nav;
-    }
-    .realname
-    {
-        margin: 0 auto;
+    display: inline;
 
-        .sprite(@realname);
-        .icon-VIP-common-nav;
-    }
-    .mailbox
+    width: 54px;
+    margin-left: 20px;
+    a
     {
-        margin: 0 auto;
+      line-height: 32px;
 
-        .sprite(@mailbox);
-        .icon-VIP-common-nav;
+      color: #333;
     }
-    .password
+    span
     {
-        margin: 0 auto;
+      display: block;
 
-        .sprite(@password);
-        .icon-VIP-common-nav;
+      text-align: center;
     }
-    .VIPtopmar
-    {
-        margin-top: 12px;
-    }
-    .security
-    {
-        margin-top: 26px;
-        margin-left: 20px;
-    }
-    .progressbar
-    {
-        margin: 0 auto;
-        margin-top: 12px;
+  }
+  .Light
+  {
+    margin: 0 auto;
 
-        .sprite(@progressbar);
-        .icon-VIP-common-nav;
-    }
-    .progress
-    {
-        .sprite(@progress);
-        .icon-VIP-common-nav;
-    }
+    .sprite(@Light);
+    .icon-VIP-common-nav;
+  }
+  .phone
+  {
+    .sprite(@phone);
+  }
+  .realname
+  {
+    .sprite(@realname);
+  }
+  .mailbox
+  {
+    .sprite(@mailbox);
+  }
+  .password
+  {
+    .sprite(@password);
+  }
+  .phone_no
+  {
+    .sprite(@phone_no);
+  }
+  .realname_no
+  {
+    .sprite(@realname_no);
+  }
+  .mailbox_no
+  {
+    .sprite(@mailbox_no);
+  }
+  .password_no
+  {
+    .sprite(@password_no);
+  }
+  .phone,
+  .phone_no,
+  .realname,
+  .realname_no,
+  .mailbox,
+  .mailbox_no,
+  .password,
+  .password_no
+  {
+    margin: 0 auto;
 
-    // 底部带阴影
-    .lowerpart_bot
-    {
-        .sprite(@lowerpart_bot);
-        .icon-VIP-common-nav;
-    }
+    .icon-VIP-common-nav;
+  }
+  .VIPtopmar
+  {
+    margin-top: 12px;
+  }
+  .security
+  {
+    margin-top: 26px;
+    margin-left: 20px;
+  }
+  .progressbar
+  {
+    margin: 0 auto;
+    margin-top: 12px;
+
+    .sprite(@progressbar);
+    .icon-VIP-common-nav;
+  }
+  .progress
+  {
+    .sprite(@progress);
+    .icon-VIP-common-nav;
+  }
+  // 底部带阴影
+  .lowerpart_bot
+  {
+    .sprite(@lowerpart_bot);
+    .icon-VIP-common-nav;
+  }
 }
