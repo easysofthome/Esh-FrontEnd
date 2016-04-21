@@ -11,7 +11,7 @@ define(function (require, exports, module) {
     var h1 = $('.main_box').height();
     var h2 = parseInt($('.main_box').css('padding-bottom'));
 
-    var mainH = screenH - 100 - 133;
+    var mainH = screenH - 100 - 133 -32;
     if(mainH > (h1+h2)){
      $('.main_box').height(mainH-h2);
     }else{

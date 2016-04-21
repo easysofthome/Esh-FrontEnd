@@ -13,13 +13,13 @@ define(function (require, exports, module) {
 
 
       if(obj.attr('show')=='true'){
-        $(this).find('span').html('展开');
+        $(this).html('<span class="lf">展开</span><i class="rg zhankai"></i>');
         obj.animate({'height':'120px'},0,function () {
           head.setHeight(screenH);
         });
         obj.attr('show','false');
       }else if( h > 120){
-        $(this).find('span').html('收起');
+        $(this).html('<span class="lf">收起</span><i class="rg shouqi"></i>');
         obj.animate({'height':h},0,function () {
           head.setHeight(screenH);
         });
