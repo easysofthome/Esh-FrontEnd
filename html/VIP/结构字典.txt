@@ -1,16 +1,23 @@
 common                              会员中心通用页面
   account（文件夹）
-  | meaccount                         我的账户
+  | details                           汇款底单信息详情
+  | invitation                        我要邀请的朋友
+  | meaccount                         充值明细
   | query                             汇款底单信息查询
+  | recharge                          充值
   | Submit                            汇款底单信息提交
 
   basicData（文件夹）
   | authenticaSucc                    实名认证完成
   | authentication                    实名认证
   | basicData                         基本信息
+  | headportrait                      头像照片
 
   news（文件夹）
   | news                              消息中心
+
+  pay（文件夹）
+  | purchase                          购买VIP
 
   regLog（文件夹）
   | forgetpass                        找回密码第一步

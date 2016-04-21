@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|会员中心-充值</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/account/meaccount.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/Pay/Pay.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  @@include('/VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('/VIP/common/account/accountL.html')
+    <div class="rg">
+      <div class="recharge_box">
+        <div class="a12_main02">
+          <p class="clearfix mingxi">
+            <a class="lf current mingxi_mar">充值</a>
+          </p>
+        </div>
+        <div class="moneybox clearfix">
+          <p class="balance lf">易豆余额：<span class="txt_oga">0.00</span> 元</p>
+          <div class="money lf clearfix">
+            <span class="lf">充值金额：</span>
+            <input class="lf int" type="text" />
+            <span class="lf">元</span>
+          </div>
+        </div>
+        <div class="recharge">
+          <div class="pay_way">选择支付方式：</div>
+          <ul class="clearfix pay_box">
+            <li class="lf">
+              <span class="zhifubao"></span>
+              <span class="select_pay"></span>
+            </li>
+            <li class="li_max lf">
+              <span class="zaixian"></span>
+              <span class="select_pay"></span>
+            </li>
+          </ul>
+          <a href="#" class="bean_butt">确认支付</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    @@include('/VIP/common/footer.html')
+</body>
+  </html>

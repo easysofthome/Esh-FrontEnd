@@ -1,0 +1,57 @@
+  <!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>易家纺-电子商务平台|会员中心-基本信息</title>
+    <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/production/VIP/common/basicData/headportrait.css" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+    @@include('/VIP/common/nav.html')
+
+    <div class="main_box clearfix">
+      @@include('/VIP/common/basicData/basicDataL.html')
+
+      <div class="rg portraitbox clearfix">
+        <div class="portraitboxL lf">
+          <p class="btn_upload clearfix">
+            <i class="lf"></i>
+            <span class="lf">选择您要上传的头像</span>
+          </p>
+          <p class="format">仅支持jpeg、png图片文件，且小于5M</p>
+          <div class="img-cont">
+            <div class="img-b">
+              <img alt="" width="150" height="150" src="/images/production/VIP/common/headportrait.jpg">
+            </div>
+          </div>
+          <p class="preservation">保存</p>
+        </div>
+
+        <div class="portraitboxR lf">
+          <h3>效果预览</h3>
+          <p class="Smallprint">你上传的图片会自动生成2种尺寸，请注意小尺寸的头像是否清晰</p>
+          <div class="img-cont img-m-cont">
+            <div class="img-b">
+              <img alt="" width="100" height="66" src="/images/production/VIP/common/headportrait.jpg">
+            </div>
+          </div>
+          <p class="Smallprint">100*100像素</p>
+          <div class="img-cont img-s-cont">
+            <div class="img-b">
+              <img alt="" width="50" height="33" src="/images/production/VIP/common/headportrait.jpg">
+            </div>
+          </div>
+          <p class="Smallprint">50*50像素</p>
+        </div>
+      </div>
+
+    </div>
+
+    @@include('/VIP/common/footer.html')
+    <script>
+      seajs.use('js/VIP/common/basicData/basicData');
+    </script>
+  </body>
+
+  </html>
