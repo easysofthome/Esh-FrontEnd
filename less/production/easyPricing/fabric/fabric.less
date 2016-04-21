@@ -34,7 +34,7 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
+  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
     border:1px solid #cdcfd1;
   .border-radius(5px);
     color: #333333;
@@ -128,14 +128,17 @@
     border: 1px solid #3ca1d7;
     background-color: #3ca1d7;
   }
-  .width_company{
+  .width_company,.width_company_none{
     position: relative;
     margin-left: 10px;
+  }
+  .width_company_none{
+    margin-left: 0;
   }
   .remove_left{
     margin-left: 0;
   }
-  .fabric_width,.width_company{
+  .fabric_width,.width_company,.width_company_none{
     width: 90px;
   }
   .dropdown_box{

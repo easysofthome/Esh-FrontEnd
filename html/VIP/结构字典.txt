@@ -66,3 +66,15 @@ easydata                            易数椐会员中心页面
 
   | searchChina_f                     精准匹配中国供应商（我关注的卖家）
   | searchChina_r                     精准匹配中国供应商（易家纺推荐的卖家）
+
+
+
+easydesign                          易设计会员中心页面
+  Fabric（面料）
+
+  finishedProduct（三维成品）
+
+  Flowers（花型）
+  | Flowers                           我的花型
+
+  Rendering（渲染任务）
