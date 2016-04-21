@@ -19,5 +19,11 @@ define(function (require, exports, module) {
     }
   }
 
+  $('.nav-more').hover(function() {
+    $(this).find('ul').slideDown(100);
+  }, function() {
+    $(this).find('ul').slideUp(100);
+  });
+
   module.exports.setHeight = setHeight;
 });
