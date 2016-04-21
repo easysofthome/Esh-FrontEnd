@@ -4,48 +4,56 @@
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|会员中心-我的账户</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/account/query.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/account/details.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   @@include('/VIP/common/nav.html')
   <div class="main_box clearfix">
     @@include('/VIP/common/account/accountL.html')
-    <div class="rg">
-      <div class="title_box">
-        <p class="clearfix mingxi">
-          <a class="lf current mingxi_mar">汇款底单信息详情</a>
-        </p>
+    <div class="rg billbox">
+      <p class="clearfix mingxi">
+        <a class="lf current mingxi_mar">汇款底单信息详情</a>
+      </p>
 
+      <div class="Inforbox clearfix">
+        <div class="lf clearfix">
+          <p class="lf tit">汇款人银行账号：</p>
+          <p class="lf words">666666666666</p>
+        </div>
+        <div class="lf clearfix">
+          <p class="lf tit">汇款金额：</p>
+          <p class="lf words">4000（美元）</p>
+        </div>
+        <div class="lf clearfix">
+          <p class="lf tit">联系人手机：</p>
+          <p class="lf words">13515811374</p>
+        </div>
+        <div class="lf clearfix">
+          <p class="lf tit">汇款人姓名：</p>
+          <p class="lf words">林永通</p>
+        </div>
+        <div class="lf clearfix">
+          <p class="lf tit">汇款时间：</p>
+          <p class="lf words">2016/4/21　12:00</p>
+        </div>
       </div>
-      <ul class="clearfix fenlei-ul ification_ul">
-        <li class="lf fenlei-box">汇款人姓名</li>
-        <li class="lf fenlei-box">汇款金额</li>
-        <li class="lf fenlei-box1">汇款人银行账号</li>
-        <li class="lf fenlei-box">联系人手机</li>
-        <li class="lf fenlei-box">汇款时间</li>
-        <li class="lf fenlei-box">审核状态</li>
-      </ul>
-      <ul class="table-box clearfix ification_box">
-        <li class="tabli">
-          <table class="table_00">
-            <tr>
-              <td class="fenlei-box">null</td>
-              <td class="fenlei-box txt_oga">20.00</td>
-              <td class="fenlei-box1">6666666666666666</td>
-              <td class="fenlei-box">13515811374</td>
-              <td class="fenlei-box">
-                2015-08-31
-                <br/>
-                17:13:35
-              </td>
-              <td class="fenlei-box">审核中</td>
-            </tr>
-          </table>
-        </li>
-      </ul>
-      <div class="remarks">
-        <span></span>
+
+      <div class="remarksbox clearfix">
+        <span class="lf tit">添加备注：</span>
+        <div class="lf">
+          <textarea></textarea>
+          <p class="word-count">（还可以写 50个字）</p>
+          <p class="btn_determine">确定</p>
+        </div>
       </div>
+
+      <div class="scanningpart">
+        <p class="tit">汇款底单扫描件：</p>
+        <div class="License">
+          <img src="/images/production/VIP/common/scanningPart.jpg" width="436" height="600">
+        </div>
+      </div>
+
     </div>
   </div>
     @@include('/VIP/common/footer.html')
