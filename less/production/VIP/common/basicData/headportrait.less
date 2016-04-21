@@ -1,0 +1,96 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/common/security/sprite.less';
+
+.main_box{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.portraitbox
+{
+  width: 854px;
+  margin-top: 40px;
+
+  background-color: #fff;
+  padding-bottom: 70px;
+}
+
+.portraitboxL{
+  margin-top: 40px;
+  padding: 0 28px 0 40px;
+  border-right: #e9eaec 1px solid;
+  p.btn_upload{
+    width: 200px;
+    line-height: 30px;
+    color: #333;
+    border: 1px solid #d3d3d3;
+    background-color: #f2f2f2;
+    cursor: default;
+    .border-radius(3px);
+    i{
+      margin: 8px 5px 0 27px;
+      .sprite(@picture);
+      .icon-VIP-common-security;
+    }
+  }
+  p.format{
+    color: #888;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  p.preservation{
+    width: 60px;
+    text-align: center;
+    margin-top: 10px;
+    cursor: default;
+    .button-variant(#fff; #68bdda; #68bdda);
+    .button-size(0; 0; 14px; 30px; 3px);
+  }
+}
+
+.portraitboxR{
+  margin: 40px 0 0 30px;
+  width: 234px;
+  h3{
+    color: #333;
+  }
+  p.Smallprint{
+    color: #888;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+}
+
+//图片
+div.img-cont{
+  position: relative;
+  width: 470px;
+  height: 236px;
+  display: table;
+  text-align: center;
+  background: #f9f9f9;
+  border: 1px solid #e9eaec;
+  margin-top: 15px;
+  div.img-b{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 5;
+    img{
+      margin: 0 auto;
+    }
+  }
+}
+div.img-m-cont{
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+div.img-s-cont{
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+}
