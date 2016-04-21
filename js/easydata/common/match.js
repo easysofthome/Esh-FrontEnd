@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
 
   require('jquery');
-  var switchMatch = require('js/easydata/common/switchMatch');
+  var switchMatch = require('js/common/module/switchMatch');
 
   var placeholder = require('placeholder');
   // 重置按钮
