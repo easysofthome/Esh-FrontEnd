@@ -93,22 +93,58 @@
     .button-size(0; 0; 16px; 30px; 4px);
   }
 }
-.navR
+ul.navR
 {
   line-height: 100px;
 
   color: #fff;
-  a
+  margin-left: 53px;
+  li.menu
   {
-    color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    a{
+      color: #fff;
+    }
+    &:hover{
+      background: #22212e;
+      a,p{
+        color: #3ca1d7;
+      }
+      span{
+        color: #fff;
+      }
+    }
+    &.nav-more{
+      cursor: pointer;
+      ul{
+        display: none;
+        position: absolute;
+        top: 100px;
+        left:0;
+        width:100%;
+        li{
+          width: 100%;
+          text-align:center;
+          line-height: 50px;
+          background: #22212e;
+          a{
+            color: #fff;
+            display: block;
+          }
+          &:hover{
+            background: #303745;
+            a{color: #3ca1d7;}
+          }
+        }
+      }
+    }
   }
   .navmar
   {
-    margin-left: 100px;
-  }
-  .navmar_fir
-  {
-    margin-left: 87px;
+    padding: 0 50px;
   }
   .newsRedbox
   {
@@ -121,7 +157,7 @@
 
     position: absolute;
     top: 20px;
-    right: -18px;
+    right: 18px;
 
     text-align: center;
 
