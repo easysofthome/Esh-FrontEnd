@@ -1,5 +1,5 @@
-@import '../../../dev/mixins/mixins.less';
-@import '../../../sprite/easyPricing/fabric/sprite.less';
+@import '../../../../dev/mixins/mixins.less';
+@import '../../../../sprite/VIP/easydesign/increase/sprite.less';
 
 .mainbox{
   padding-bottom: 70px;
@@ -34,7 +34,7 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
+  .input_fabric,.dropdown_box,.fabric_width,.long_input,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
     border:1px solid #cdcfd1;
   .border-radius(5px);
     color: #333333;
@@ -61,7 +61,7 @@
     right: 0;
     bottom: 0;
     .sprite(@select);
-    .icon-easyPricing-fabric;
+    .icon-VIP-easydesign-increase;
   }
   .handle_two{
     margin-left: 10px;
@@ -92,7 +92,7 @@
   .plus{
     margin: 12px 5px 12px 5px;
     .sprite(@plus);
-    .icon-easyPricing-fabric;
+    .icon-VIP-easydesign-increase;
   }
   .reduceiput{
     width: 40px;
@@ -111,32 +111,34 @@
   .reduceimg{
         margin: 18px auto 0 auto;
         .sprite(@cut_back);
-        .icon-easyPricing-fabric;
+        .icon-VIP-easydesign-increase;
     }
     .increaseimg{
         margin:11px auto 0 auto;
         .sprite(@curr_increase);
-        .icon-easyPricing-fabric;
+        .icon-VIP-easydesign-increase;
     }
     .include{
       margin-top: 38px;
         .sprite(@include);
-        .icon-easyPricing-fabric;
+        .icon-VIP-easydesign-increase;
     }
   .increasebox{
     .border-radius(0 5px 5px 0);
     border: 1px solid #3ca1d7;
     background-color: #3ca1d7;
   }
-  .width_company,.width_company_none{
+  .width_company,.width_company_none,.long_input{
     position: relative;
     margin-left: 10px;
   }
-  .width_company_none{
+  .width_company_none,.remove_left{
     margin-left: 0;
   }
-  .remove_left{
+
+  .long_input{
     margin-left: 0;
+    width: 212px;
   }
   .fabric_width,.width_company,.width_company_none{
     width: 90px;
@@ -151,7 +153,7 @@
     top: 17px;
     right: 16px;
     .sprite(@down_arr);
-    .icon-easyPricing-fabric;
+    .icon-VIP-easydesign-increase;
   }
   .Single_box,.title_name,.title_density,.yarn_tit,.prompt,.ingredient_tit,.AddItem_tit{
     line-height: 40px;
