@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   require('switchable');
 
   $(function() {
-    $('#banner-box').switchable({
+    $('.banner-wrapper').switchable({
       triggers: '&bull;',
       putTriggers: 'insertAfter',
       effect: 'fade',

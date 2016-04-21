@@ -2,6 +2,10 @@ define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
 
+  var placehold = require('js/common/module/placehold');
+  placehold.init('#num>input');
+
+
   // input
   var form = $("#form-submit");
 
@@ -105,28 +109,6 @@ define(function (require, exports, module) {
       return flag;
   }
   /** /phone */
-  $('.placeholder,#num>input').on('click', function() {
-    if($(this).hasClass('placeholder')){
-      $(this).siblings('input').focus();
-    }else{
-      $('#num>input').focus();
-    }
-    $('#num>.placeholder').hide();
-  });
-  $('.placeholder,#num>input').on('focus', function() {
-    $('#num>.placeholder').hide();
-  });
-
-  $('#num>input').on('blur', function() {
-    if($(this).val() == ''){
-      if($(this).hasClass('placeholder')){
-        $(this).show();
-      }else{
-        $(this).siblings('div.placeholder').show();
-      }
-    }
-  });
-
 
   init();
 });

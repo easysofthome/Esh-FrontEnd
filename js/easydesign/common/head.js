@@ -2,7 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   // 搜索
   require('js/easydesign/common/search');
-  var switchSel = require('js/easydata/common/switchSel');
+  var switchSel = require('js/common/module/switchSel');
   switchSel.set('.sea-words','.sea-words>span','.xiala-box','.xiala-box>li','');
 
   $(function () {

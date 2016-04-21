@@ -13,7 +13,7 @@ define(function (require, exports, module) {
   // OffSet: 对称的margin-left和margin-right
   //
   // 调用：
-  // seajs.use("js/easydata/common/switchTab",function (switchTab) {
+  // seajs.use("js/common/module/switchTab",function (switchTab) {
   //    switchTab.set(".timeswitchbox","a","span",".cur",100);
   // });
   exports.set = function (Ul,Li,Line,CurName,Width,OffSet=0) {
