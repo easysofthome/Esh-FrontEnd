@@ -5,10 +5,10 @@ define(function (require, exports, module) {
   require('switchable');
 
   $(function() {
-    $('.index-box').switchable({
+    $('.banner-box').switchable({
       triggers: '&bull;',
       putTriggers: 'insertAfter',
-      effect: 'fade',
+      effect: 'scrollLeft',
       /* fade effect only supports steps == 1 */
       // steps: 1,
       easing: 'ease-in-out',

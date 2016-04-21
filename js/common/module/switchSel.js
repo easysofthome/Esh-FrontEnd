@@ -8,7 +8,7 @@ define(function (require, exports, module) {
   // BtnUl:列表的选择器
   // BtnLi:子项的选择器
   // BtnAfter:BtnTit比BtnLi中多出来的部分
-  exports.set = function (Btn,BtnTit,BtnUl,BtnLi,BtnAfter) {
+  module.exports.set = function (Btn,BtnTit,BtnUl,BtnLi,BtnAfter) {
     var btn = $(Btn);
     var btnTit = $(BtnTit);
     var btnUl = $(BtnUl);
