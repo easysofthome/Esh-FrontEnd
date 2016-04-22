@@ -79,4 +79,13 @@ easydesign                          易设计会员中心页面
   Flowers（花型）
   | Flowers                           我的花型
 
+  increase（添加）
+  | incefabr                          添加面料
+  | inceflow                          添加花型
+  | inceproduct                       添加成品
+
+  modify（修改编辑）
+  | modifyfabr                        修改面料
+  | modifyflow                        修改花型
+
   Rendering（渲染任务）
