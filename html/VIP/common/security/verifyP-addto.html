@@ -16,18 +16,23 @@
     <div class="clearfix">
       <span class="lf titilexingxi">手机号码：</span>
       <div class="lf veri_left">
-        <input type="text" class="phone" value="请输入手机号码"></div>
+        <span class="placeholder">请输入手机号码</span>
+        <input type="text" class="phone" value="" name="phone" id="phone"></div>
       <a href="#" class="lf codes">获取验证</a>
     </div>
     <div class="clearfix shurutop">
       <span class="lf titilexingxi">验证码：</span>
       <div class="lf veri_left">
-        <input type="text" class="codes_val" value="请输入验证码">
+        <span class="placeholder">请输入验证码</span>
+        <input type="text" class="codes_val" value="" name="authCode" id="authCode">
       </div>
     </div>
     <a href="#" class="save">确认</a>
   </div>
   </div>
   @@include('/VIP/common/footer.html')
+  <script type="text/javascript">
+    seajs.use('js/VIP/common/security/modifyPhone');
+  </script>
 </body>
 </html>

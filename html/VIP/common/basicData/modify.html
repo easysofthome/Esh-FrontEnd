@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="modifybox clearfix">
-    <p class="tit clearfix"><span class="lf">企业类型</span><i class="rg"></i></p>
+    <p class="tit clearfix"><span class="lf">企业类型</span><i class="rg" id="close"></i></p>
     <label class="lf modify clearfix">
       <input type="checkbox" class="lf int" name="facType" value="1"/>
       <span class="lf">纺纱厂</span>
@@ -50,5 +50,12 @@
       <span class="lf">包装材料厂</span>
     </label>
   </div>
+  <script src="/js/lib/jquery/jquery.js"></script>
+  <script>
+    var index = parent.layer.getFrameIndex(window.name);
+    $('#close').click(function(){
+      parent.layer.close(index);
+    });
+  </script>
 </body>
 </html>
