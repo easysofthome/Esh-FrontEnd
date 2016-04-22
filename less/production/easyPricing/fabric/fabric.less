@@ -34,7 +34,7 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.handle_two,.fabric_money{
+  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.fabric_money{
     border:1px solid #cdcfd1;
   .border-radius(5px);
     color: #333333;
@@ -43,7 +43,7 @@
     line-height: 38px;
     background-color: #fff;
   }
-  .handle_one,.handle_two{
+  .handle_one{
     padding:0 20px 0 20px;
     cursor: pointer;
     position: relative;
@@ -62,10 +62,18 @@
     bottom: 0;
     .sprite(@select);
     .icon-easyPricing-fabric;
+     display: none;
   }
-  .handle_two{
+    .handle_mag{
     margin-left: 10px;
   }
+  .handle_one:hover{
+    border: 1px solid #3ca1d7;
+  }
+  .handle_one:hover .select{
+    display: block;
+  }
+
   .yarn_butt{
     display:inline-block;
     width: 90px;
