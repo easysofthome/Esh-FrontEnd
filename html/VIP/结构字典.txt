@@ -74,7 +74,10 @@ easydesign                          易设计会员中心页面
   | Fabric                            我的面料
 
   finishedProduct（三维成品）
+  | complete                          核价清单
   | finishedProduct                   三维成品
+  | modify                            核价
+  | styleList                         款式清单
 
   Flowers（花型）
   | Flowers                           我的花型
@@ -89,3 +92,4 @@ easydesign                          易设计会员中心页面
   | modifyflow                        修改花型
 
   Rendering（渲染任务）
+  | Rendering                         渲染
