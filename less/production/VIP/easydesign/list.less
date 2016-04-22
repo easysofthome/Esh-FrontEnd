@@ -153,6 +153,23 @@ ul.case_list{
   div.sub{
     margin: 0 15px;
     padding: 15px 0;
+    div.progress-bar{
+      margin-top: 20px;
+      position: relative;
+      div.progressBar{
+        .sprite(@progressBar);
+        .icon-VIP-easydesign-list;
+        span{
+          .sprite(@progress);
+          .icon-VIP-easydesign-list;
+        }
+      }
+      div.progress{
+        position: absolute;
+        top: -23px;
+        left: 125px;
+      }
+    }
   }
 
   // 按钮
