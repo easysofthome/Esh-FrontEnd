@@ -3,225 +3,267 @@
 
 @import '../../../sprite/VIP/common/index/sprite.less';
 
+@import '../../../sprite/VIP/common/security/sprite.less';
+
 .indexbox
 {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 70px;
-    padding-bottom: 83px;
-    .indexL
-    {
-        width: 600px;
-    }
-    .indexR
-    {
-        width: 516px;
-    }
-    .index_tit
-    {
-        font-size: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 83px;
+  .indexL
+  {
+    width: 600px;
+  }
+  .indexR
+  {
+    width: 516px;
+  }
+  .index_tit
+  {
+    font-size: 20px;
 
-        padding-bottom: 8px;
+    padding-bottom: 8px;
 
-        border-bottom: 1px solid #d4d4d4;
-        color: #333;
-    }
-    .tit_bot{
-      margin-top: 60px;
-    }
-    .index_titN{
-        border-bottom: none;
-    }
+    border-bottom: 1px solid #d4d4d4;
+    color: #333;
+  }
+  .tit_bot{
+    margin-top: 60px;
+  }
+  .index_titN{
+    border-bottom: none;
+  }
 
-    // 左边
-    .indexL_top{
-      padding-bottom: 16px;
-      border-bottom: #d4d4d4 1px solid;
-    }
-    .area_tit,
-    .area_num,
-    .Company,
-    {
-        text-align: center;
-    }
-    .area
-    {
-        .sprite(@InformaArea);
-        .icon-VIP-common-index;
-        margin-top: 12px;
-        margin-right: 18px;
-    }
-    .arealast{
-      margin-right: 0;
-    }
-    .area_num
-    {
-        font-size: 30px;
+  // 左边
+  .indexL_top{
+    padding-bottom: 16px;
+    border-bottom: #d4d4d4 1px solid;
+  }
+  .area_tit,
+  .area_num,
+  .Company,
+  {
+    text-align: center;
+  }
+  .area
+  {
+    .sprite(@InformaArea);
+    .icon-VIP-common-index;
+    margin-top: 12px;
+    margin-right: 18px;
+  }
+  .arealast{
+    margin-right: 0;
+  }
+  .area_num
+  {
+    font-size: 30px;
 
-        color: #ec8b00;
-        margin-top: 7px;
-    }
-    .Company
-    {
-        font-size: 13px;
-        margin-top: 2px;
+    color: #ec8b00;
+    margin-top: 7px;
+  }
+  .Company
+  {
+    font-size: 13px;
+    margin-top: 2px;
 
-        color: #888;
-    }
-    .area_tit,
-    {
-        font-size: 16px;
+    color: #888;
+  }
+  .area_tit,
+  {
+    font-size: 16px;
 
-        margin-top: 33px;
-        color: #333;
+    margin-top: 33px;
+    color: #333;
+  }
+  a.btn_blue{
+    width: 110px;
+    line-height: 24px;
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    .border-radius(40px);
+    .button-variant(#fff; #38b5f8; #38b5f8);
+    .button-size(0; 0; 14px; 24px; 40px);
+  }
+
+
+
+  // 右边
+  .indexR_top
+  {
+    border-bottom: #d4d4d4 1px solid;
+  }
+  .tool
+  {
+    width: 86px;
+    font-size: 13px;
+    line-height: 32px;
+    margin: 21px 43px 0 0;
+    padding-bottom: 15px;
+    a{
+      color: #333;
     }
-    a.btn_blue{
-      width: 110px;
-      line-height: 24px;
+    span{
       display: block;
-      margin: 10px auto 0 auto;
       text-align: center;
-      .border-radius(40px);
-      .button-variant(#fff; #38b5f8; #38b5f8);
-      .button-size(0; 0; 14px; 24px; 40px);
     }
-
-
-
-    // 右边
-    .indexR_top
-    {
-      border-bottom: #d4d4d4 1px solid;
-    }
-    .tool
-    {
-        width: 86px;
-        font-size: 13px;
-        line-height: 32px;
-        margin: 21px 43px 0 0;
-        padding-bottom: 15px;
-        a{
-            color: #333;
-        }
-        span{
-            display: block;
-            text-align: center;
-        }
-    }
-    .toolicon
-    {
-        margin: 0 auto;
-    }
+  }
+  .toolicon
+  {
+    margin: 0 auto;
+  }
 }
 
 // 左下部分
 .indexL_bot{
-    .progressbar_s{
-        .sprite(@progressbar_g);
-        .icon-VIP-common-index;
-        i{
-           .sprite(@progressbar_o);
-            .icon-VIP-common-index;
-        }
+  .progressbar_s{
+    .sprite(@progressbar_g);
+    .icon-VIP-common-index;
+    i{
+       .sprite(@progressbar_o);
+      .icon-VIP-common-index;
     }
-    ul{
-        li{
-            position: relative;
-            top: 0;
-            left: 0;
-            height: 82px;
-            width: 354px;
-             b {
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 4;
-              width: 75px;
-              height: 100%;
-              //border-left: 2px solid #dce4ed;
-            }
-        }
-    }
-    .num_red{
-        color: #ff0000;
-        font-size: 14px;
-    }
-
-    .safty
-    {
-        font-size: 13px;
-        line-height: 32px;
-        margin: 5px 10px 0 0;
-        padding-top: 10px;
-        .safty_a{
-            width: 72px;
-            color: #333;
-        }
-        span{
-            display: block;
-            text-align: center;
-        }
-        .words{
-            font-size: 14px;
-            color: #333;
-            line-height: 24px;
-            width: 153px;
-            padding: 2px 0 2px 10px;
-            margin-top: 10px;
-            border-left: #e5e5e5 1px solid;
-        }
-    }
-    .safty_cur{
-        background-color: #fff;
-    }
-    .safty_last{
-        margin-right: 0;
-    }
-    .operation{
-        margin: 5px 10px 0 0;
-        line-height: 30px;
-        font-size: 16px;
-        text-align: right;
+  }
+  ul{
+    li{
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 82px;
+      width: 354px;
+       b {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
         width: 75px;
+        height: 100%;
+        //border-left: 2px solid #dce4ed;
+      }
     }
-    .alreadySet{
-        i{
-            margin: 9px 4px 0 0;
-            .sprite(@alreadySet);
-            .icon-VIP-common-index;
-        }
-        a{
-            color: #14b610;
-        }
+  }
+  .num_red{
+    color: #ff0000;
+    font-size: 14px;
+  }
+
+  .safty
+  {
+    font-size: 13px;
+    line-height: 32px;
+    margin: 5px 10px 0 0;
+    padding-top: 10px;
+    .safty_a{
+      width: 72px;
+      color: #333;
     }
-    .modify{
-        a{
-            color: #fc2e2e;
-        }
+    span{
+      display: block;
+      text-align: center;
     }
-    .phone_s
+    .words{
+      font-size: 14px;
+      color: #333;
+      line-height: 24px;
+      width: 153px;
+      padding: 2px 0 2px 10px;
+      margin-top: 10px;
+      border-left: #e5e5e5 1px solid;
+    }
+  }
+  .safty_cur{
+    background-color: #fff;
+  }
+  .safty_last{
+    margin-right: 0;
+  }
+  .operation{
+    margin: 5px 10px 0 0;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: right;
+    width: 75px;
+  }
+  //已设置
+  .correct
+  {
+    a{
+      color: #14b610;
+    }
+    i
     {
-        margin: 0 auto;
-        .sprite(@phone_s);
-        .icon-VIP-common-index;
+      margin: 9px 4px 0 0;
+      .sprite(@correct);
+      .icon-VIP-common-security;
     }
-    .realname_s
+  }
+  //未设置
+  .error
+  {
+    a{
+      color: #333;
+    }
+    i
     {
-        margin: 0 auto;
-        .sprite(@realname_s);
-        .icon-VIP-common-index;
+      margin: 9px 4px 0 0;
+      .sprite(@error);
+      .icon-VIP-common-security;
     }
-    .mailbox_s
-    {
-        margin: 0 auto;
-        .sprite(@mailbox_s);
-        .icon-VIP-common-index;
+  }
+  .modify{
+    a{
+      color: #fc2e2e;
     }
-    .password_s
-    {
-        margin: 0 auto;
-        .sprite(@password_s);
-        .icon-VIP-common-index;
-    }
+  }
+  .phone
+  {
+    margin: 0 auto;
+    .sprite(@phone);
+    .icon-VIP-common-index;
+  }
+  .realname
+  {
+    margin: 0 auto;
+    .sprite(@realname);
+    .icon-VIP-common-index;
+  }
+  .mailbox
+  {
+    margin: 0 auto;
+    .sprite(@mailbox);
+    .icon-VIP-common-index;
+  }
+  .password
+  {
+    margin: 0 auto;
+    .sprite(@password);
+    .icon-VIP-common-index;
+  }
+  .phone_no
+  {
+    margin: 0 auto;
+    .sprite(@phone_no);
+    .icon-VIP-common-index;
+  }
+  .realname_no
+  {
+    margin: 0 auto;
+    .sprite(@realname_no);
+    .icon-VIP-common-index;
+  }
+  .mailbox_no
+  {
+    margin: 0 auto;
+    .sprite(@mailbox_no);
+    .icon-VIP-common-index;
+  }
+  .password_no
+  {
+    margin: 0 auto;
+    .sprite(@password_no);
+    .icon-VIP-common-index;
+  }
 }

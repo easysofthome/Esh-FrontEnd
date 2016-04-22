@@ -1,5 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('layer');
+  require('js/VIP/common/basicData/layer');
   require('js/lib/validation/validation');
 
   // input

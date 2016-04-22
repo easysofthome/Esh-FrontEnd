@@ -1,5 +1,7 @@
-
+@import '../../../../sprite/VIP/common/account/sprite.less';
 @import '../../../../dev/mixins/mixins.less';
+@import './modify.less';
+
 
 .main_box{
   width: 1200px;
@@ -46,9 +48,11 @@
       margin-right: 10px;
     }
   }
-  a.btn_modify{
+  .btn_modify{
+    display: inline-block;
     color: #2355c8;
     &:hover{
+      cursor: pointer;
       color: #d4160f;
     }
   }

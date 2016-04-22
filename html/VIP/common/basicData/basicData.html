@@ -39,16 +39,17 @@
             </div>
             <div class="Inforbox clearfix">
               <span class="four">企业类</span>型：&nbsp;&nbsp;<span>纺纱厂</span>
-              　　　<a class="btn_modify" href="/html/VIP/common/basicData/modify.html">修改</a>
+              <div class="btn_modify" href="">修改</div>
             </div>
           </div>
         </div>
 
 
         <form action="" id="modify-baseData" method="post">
+          <!-- 隐藏表单,从数据库中读取工厂类型的值 value="1,3,6" -->
+          <input type="hidden" value="" name="facType" class="facType">
         <div class="contactbox">
           <div class="words"><span>联系方式</span></div>
-
           <div class="contact">
             <div class="contact_int clearfix">
               <p class="lf"><span class="two">邮</span>箱：&nbsp;&nbsp;</p>
