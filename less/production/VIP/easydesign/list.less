@@ -24,6 +24,7 @@
     line-height: 66px;
 
     margin-left: 20px;
+    display: inline;
 
     color: #333;
   }
@@ -49,6 +50,7 @@
     }
     p.type
     {
+      display: inline;
       width: 758px;
       margin-right: 20px;
     }
@@ -71,6 +73,134 @@
     a.cur
     {
       .button-variant(#fff; #e85d40; #e85d40);
+    }
+  }
+}
+
+//列表
+ul.case_list{
+  width: 854px;
+  li.rg_margin{
+    //右边距
+    margin-right: 19px;
+  }
+  li{
+    line-height: 24px;
+    width: 272px;
+    margin-top: 20px;
+    background-color: #fff;
+    -webkit-box-shadow:0 0 15px 1px #e0e0e0;
+    -moz-box-shadow:0 0 15px 1px #e0e0e0;
+    box-shadow:0 0 15px 1px #e0e0e0;
+  }
+
+  //li里的样式
+  a.pic{
+    display: block;
+    width: 252px;
+    height: 252px;
+    overflow: hidden;
+    margin: 10px;
+  }
+
+  div.released{
+    //已发布
+    margin: 0 15px;
+    a.name{
+      color: #333;
+      &:hover{
+        color: #ff4400;
+      }
+    }
+    //启用
+    .switch{
+      cursor: pointer;
+      .sprite(@switch-bg);
+      .icon-VIP-easydesign-list;
+      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bg.png');
+      span{
+        .sprite(@switch-lang);
+        .icon-VIP-easydesign-list;
+        .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-lang.png');
+      }
+    }
+    //停用
+    .switchno{
+      cursor: pointer;
+      .sprite(@switch-bgno);
+      .icon-VIP-easydesign-list;
+      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bgno.png');
+      span{
+        margin-left: -33px;
+        .sprite(@switch-lang);
+        .icon-VIP-easydesign-list;
+        .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-lang.png');
+      }
+    }
+
+    //未发布
+    a.edit{
+      color: #ff4400;
+      i{
+        margin: 4px 2px 0 0;
+        .sprite(@edit);
+        .icon-VIP-easydesign-list;
+      }
+    }
+  }
+
+  //下部分信息
+  div.sub{
+    margin: 0 15px;
+    padding: 15px 0;
+    div.progress-bar{
+      margin-top: 20px;
+      position: relative;
+      div.progressBar{
+        .sprite(@progressBar);
+        .icon-VIP-easydesign-list;
+        span{
+          .sprite(@progress);
+          .icon-VIP-easydesign-list;
+        }
+      }
+      div.progress{
+        position: absolute;
+        top: -23px;
+        left: 125px;
+      }
+    }
+  }
+
+  // 按钮
+  div.btnbox{
+    margin: 0 10px;
+    padding: 0 5px;
+    border-top: #e5e5e5 1px solid;
+    padding-bottom: 20px;
+    a.btn_delete1{
+      display: block;
+      width: 240px;
+      text-align: center;
+      margin-top: 10px;
+      .button-variant(#fff; #f7210b; #f7210b);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_delete2{
+      display: block;
+      width: 114px;
+      text-align: center;
+      margin-top: 10px;
+      .button-variant(#fff; #f7210b; #f7210b);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue{
+      display: block;
+      width: 114px;
+      text-align: center;
+      margin: 10px 11px 0 0;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
     }
   }
 }

@@ -4,37 +4,47 @@
 	<meta charset="utf-8">
 	<title>易家纺-电子商务平台|会员中心-登录密码修改</title>
 	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/security/security.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/security/modifyPwd.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	@@include('/VIP/common/nav.html')
 	<div class="main_box clearfix">
 		@@include('/VIP/common/security/securityL.html')
 		<div class="rg securityR securityRpwd">
-
-			<p class="quyutitle icon-huiyuanzhongxin-right">登录密码修改</p>
-			<div class="clearfix">
-				<span class="lf titilexingxi">当前密码：</span>
-				<div class="lf veri_left">
-					<input type="text" class="shuruchang" value="请输入密码"></div>
-			</div>
-			<div class="clearfix shurutop">
-				<span class="lf titilexingxi">新密码：</span>
-				<div class="lf veri_left">
-					<input type="text" class="shuruchang" value="请输入新密码">
-					<p class="prompt">密码必须为6-16位，且至少包含英文、数字和符号中的两种。新密码不能与旧密码相同。</p>
+			<form action="" id="modifyPwd" method="post">
+				<p class="quyutitle icon-huiyuanzhongxin-right">登录密码修改</p>
+				<div class="clearfix">
+					<span class="lf titilexingxi">当前密码：</span>
+					<div class="lf veri_left">
+						<span class="placeholder">请输入密码</span>
+						<input type="password" class="shuruchang" value="" name="curPwd" id="curPwd">
+						<div class="input-tip"></div>
+					</div>
 				</div>
-			</div>
+				<div class="clearfix shurutop">
+					<span class="lf titilexingxi">新密码：</span>
+					<div class="lf veri_left">
+						<span class="placeholder">请输入新密码</span>
+						<input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+						<div class="input-tip"></div>
+					</div>
+				</div>
 
-			<div class="clearfix shurutop">
-				<span class="lf titilexingxi">确认密码：</span>
-				<div class="lf veri_left">
-					<input type="text" class="shuruchang" value="请确认密码"></div>
-			</div>
-
-			<a href="#" class="save">确认修改</a>
+				<div class="clearfix shurutop">
+					<span class="lf titilexingxi">确认密码：</span>
+					<div class="lf veri_left">
+						<span class="placeholder">请确认密码</span>
+						<input type="password" class="shuruchang" value="" name="rePwd" id="rePwd">
+						<div class="input-tip"></div>
+					</div>
+				</div>
+				<button type="submit" href="#" class="save">确认修改</button>
+			</form>
 		</div>
 	</div>
 	@@include('/VIP/common/footer.html')
+	<script>
+		seajs.use('js/VIP/common/security/modifyPwd');
+	</script>
 </body>
 </html>

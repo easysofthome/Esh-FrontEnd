@@ -71,10 +71,25 @@ easydata                            易数椐会员中心页面
 
 easydesign                          易设计会员中心页面
   Fabric（面料）
+  | Fabric                            我的面料
 
   finishedProduct（三维成品）
+  | complete                          核价清单
+  | finishedProduct                   三维成品
+  | modify                            核价
+  | styleList                         款式清单
 
   Flowers（花型）
   | Flowers                           我的花型
 
+  increase（添加）
+  | incefabr                          添加面料
+  | inceflow                          添加花型
+  | inceproduct                       添加成品
+
+  modify（修改编辑）
+  | modifyfabr                        修改面料
+  | modifyflow                        修改花型
+
   Rendering（渲染任务）
+  | Rendering                         渲染
