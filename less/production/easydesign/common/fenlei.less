@@ -1,6 +1,8 @@
 
 @import '../../../sprite/easydesign/common/sprite.less';
 
+@import '../../../dev/mixins/mixins.less';
+
 .fenlei{
 	width: 1200px;
 	margin: 0 auto;
@@ -32,4 +34,21 @@
 			.icon-easydesign-common;
 		}
 	}
+	div.intbox{
+    width: 160px;
+    border: 1px solid #d1d1d1;
+    margin: 10px 0 0 40px;
+    .border-radius(3px);
+    input.int{
+      width: 108px;
+      line-height: 18px;
+      padding: 5px 10px;
+      border: 0;
+    }
+    i{
+      margin: 8px 0 0 8px;
+      .sprite(@searchgray);
+      .icon-easydesign-common;
+    }
+  }
 }
