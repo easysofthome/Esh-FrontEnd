@@ -3,12 +3,11 @@ define(function (require, exports, module) {
   require('js/lib/validation/validation');
 
   var placehold = require('js/common/module/placehold');
-  placehold.init('.veri_left>input');
+  placehold.init('.phone-box>input');
+  placehold.init('.authcode-box>input');
 
     // input
-    var form = $("#modifyPwd");
-    //密码
-    var form_pwd = $("#newPwd");
+    var form = $("#modifyPhone");
 
     var icons = {
         def: '<i class="i-def"></i>',
@@ -76,29 +75,30 @@ define(function (require, exports, module) {
                 //阻止表单提交
                 return false;
             },
-            onkeyup: false,
+            onkeyup: true,
             errorPlacement: function(error, element) {
-                error.appendTo( element.siblings('.input-tip') );
+                error.appendTo(element.siblings('.input-tip'));
             },
             rules: {
                 //密码
                 phone: {
                     required: true,
-                    length: 11
+                    minlength: 11,
+                    phone: true
                 },
-                authcode: {
+                authCode: {
                     required: true,
-                    length: 6
+                    minlength: 6
                 }
             },
             messages: {
-                curPwd: {
+                phone: {
                     required: icons.error + '请输入手机号码',
-                    length: icons.error + '手机号码长度有误'
+                    minlength: icons.error + '手机号码长度有误'
                 },
-                newPwd: {
+                authCode: {
                     required: icons.error + '请输入验证码',
-                    length: icons.error +'验证码长度有误'
+                    minlength: icons.error +'验证码长度有误'
                 }
             }
         });
@@ -118,6 +118,7 @@ define(function (require, exports, module) {
         var flag;
         var regPhone = new RegExp(reg[86]);
         if(regPhone.test(value)){
+            element.parent().find('.input-tip').html('');
             flag = true;
         }else{
             element.parent().find('.input-tip').html('<span class="error">' + icons.error + '格式有误' +'</span>');
