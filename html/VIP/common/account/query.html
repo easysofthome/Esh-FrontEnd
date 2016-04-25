@@ -120,6 +120,11 @@
 
   <script>
     seajs.use('js/VIP/common/account/query.js');
+    seajs.use('jquery',function ($) {
+      $('dl.classwords dt').on('click', function() {
+        $(this).parent().find('dd').toggle();
+      });
+    });
   </script>
 </body>
-  </html>
+</html>

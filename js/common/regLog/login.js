@@ -7,7 +7,7 @@ define(function (require, exports, module) {
 
 
   // 检查表单
-  window.formCheck = function(){
+  function preCheck(){
     var user = $('.user_box>input'),
         password = $('.password_box>input'),
         authcode = $('.authcode_box>input');
@@ -33,7 +33,8 @@ define(function (require, exports, module) {
       authcode.focus();
       return false;
     }
-    if(checkUser(user)){
+    if(!checkUser(user)){
+      return false;
       // $.$.ajax({
       //   url: '/path/to/file',
       //   type: 'default GET (Other values: POST)',
@@ -50,7 +51,7 @@ define(function (require, exports, module) {
       //   console.log("complete");
       // });
     }
-    return false;
+    return true;
   }
 //正则检查手机号和邮箱
   function checkUser (user) {
@@ -68,5 +69,7 @@ define(function (require, exports, module) {
     }
     return true;
   }
+
+  module.exports.preCheck = preCheck;
 
 });

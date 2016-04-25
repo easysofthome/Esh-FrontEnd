@@ -7,6 +7,15 @@ define(function (require, exports, module) {
 
   require('jquery');
 
+  $(document).ready(function () {
+    var input = $('.placeholder').siblings('input');
+    for (var i = input.length - 1; i >= 0; i--) {
+      if($(input[i]).val()!=''){
+        $(input[i]).siblings('.placeholder').hide();
+      }
+    };
+  });
+
   function init(obj) {
     $('.placeholder,'+obj).on('click focus',function  () {
       if($(this).hasClass('placeholder')){
@@ -22,7 +31,6 @@ define(function (require, exports, module) {
         $(this).siblings('.placeholder').show();
       }
     });
-
   }
 
   module.exports.init = init;

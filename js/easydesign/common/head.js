@@ -57,9 +57,11 @@ define(function (require, exports, module) {
       if($('.leibie_box').attr('show')=='true'){
         $('.leibie_box').animate({'height':'200px'},300);
         $('.leibie_box').attr('show','false');
+        $(this).html('展开');
       }else{
         $('.leibie_box').animate({'height':categoryHigh},300);
         $('.leibie_box').attr('show','true');
+        $(this).html('收起');
       }
     });
 
