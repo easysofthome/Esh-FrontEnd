@@ -22,8 +22,8 @@
     'jquery.twentytwenty': 'js/lib/jquery.twentytwenty/jquery.twentytwenty.js'
 
 };
-var comboSyntax =['&&', '&'];
 
+var comboSyntax =['&&', '&'];
 if (this.seajs) {
     seajs.config({
 
