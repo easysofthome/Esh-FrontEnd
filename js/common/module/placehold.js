@@ -17,7 +17,6 @@ define(function (require, exports, module) {
   });
 
   function init(obj) {
-
     $('.placeholder,'+obj).on('click focus',function  () {
       if($(this).hasClass('placeholder')){
         $(this).hide();
@@ -32,7 +31,6 @@ define(function (require, exports, module) {
         $(this).siblings('.placeholder').show();
       }
     });
-
   }
 
   module.exports.init = init;

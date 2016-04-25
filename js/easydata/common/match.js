@@ -1,4 +1,6 @@
 define(function (require, exports, module) {
+  // 提供重写接口
+  exports.overwrite;
 
   require('jquery');
   var switchMatch = require('js/common/module/switchMatch');
@@ -14,7 +16,6 @@ define(function (require, exports, module) {
   });
   //搜索按钮
   $('#search').on('click', function() {
-
     if($('#sel-country>input').val().trim() == ''){
       alert("请选择国家");
       $('#sel-country>input').focus();
@@ -26,7 +27,9 @@ define(function (require, exports, module) {
       $('#sel-pro .sel-pro').show();
       return;
     }
+    if(exports.overwrite) exports.overwrite();
   });
+
 
   // 选择匹配度、合作可能性、合作风险、生产淡旺季
     // $('#sel-match>input,#sel-possible>input,#sel-risk>input,.sel_season>input,.port>input').on('mouseover', function(event) {
