@@ -10,25 +10,45 @@
   @@include('/VIP/common/nav.html')
   <div class="main_box clearfix">
     @@include('/VIP/common/security/securityL.html')
-  <div class="rg securityRpwd securityR">
+    <div class="rg securityRpwd securityR">
+      <form action="" id="modifyMail" method="post">
+      <div class="security-box clearfix">
+        <p class="quyutitle icon-huiyuanzhongxin-right">邮箱验证</p>
 
-    <p class="quyutitle icon-huiyuanzhongxin-right">邮箱验证</p>
-
-    <div class="clearfix">
-      <span class="lf titilexingxi">您绑定的邮箱：</span>
-      <div class="lf veri_left">
-        <p class="mailbox">eshv****@esh123.com</p></div>
-      <a href="#" class="lf codes">获取验证</a>
-    </div>
-    <div class="clearfix shurutop">
-      <span class="lf titilexingxi">验证码：</span>
-      <div class="lf veri_left">
-        <input type="text" class="codes_val" value="请输入验证码">
+  <!--       <div class="lf phone-box clearfix">
+          <div class="lf">手机号码：</div>
+          <span class="placeholder">请输入手机号码</span>
+          <input type="text" class="phone lf" value="" name="phone" id="phone">
+          <a href="#" class="lf codes">获取验证</a>
+          <div class="input-tip"></div>
+        </div>
+        <div class="lf authcode-box clearfix">
+          <div class="lf titilexingxi">验证码：</div>
+          <span class="placeholder">请输入验证码</span>
+          <input type="text" class="codes_val" value="" name="authCode" id="authCode">
+          <div class="input-tip"></div>
+        </div> -->
+        <div class="lf email-box clearfix">
+          <span class="lf titilexingxi">您绑定的邮箱：</span>
+          <div class="lf veri_left">
+            <p class="mailbox">eshv****@esh123.com</p></div>
+          <a href="#" class="lf codes">获取验证</a>
+        </div>
+        <div class="clearfix shurutop">
+          <span class="lf titilexingxi">验证码：</span>
+          <div class="lf veri_left email">
+            <span class="placeholder">请输入验证码</span>
+            <input type="text" class="codes_val" value="">
+          </div>
+        </div>
+        <button type="submit"  class="save">确认更改</button>
       </div>
+    </form>
     </div>
-    <a href="#" class="save">确认更改</a>
-  </div>
   </div>
   @@include('/VIP/common/footer.html')
+  <script type="text/javascript">
+    seajs.use('js/VIP/common/security/addMail');
+  </script>
 </body>
 </html>

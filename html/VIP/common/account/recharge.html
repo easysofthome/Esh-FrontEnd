@@ -44,5 +44,12 @@
     </div>
   </div>
     @@include('/VIP/common/footer.html')
+<script>
+  seajs.use('jquery',function ($) {
+    $('dl.classwords dt').on('click', function() {
+      $(this).parent().find('dd').toggle();
+    });
+  });
+</script>
 </body>
-  </html>
+</html>
