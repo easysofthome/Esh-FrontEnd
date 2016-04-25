@@ -111,14 +111,14 @@
   .shurutop
   {
     margin-top: 20px;
+    margin-left: 14px;
   }
 
   .titilexingxi
   {
-       line-height: 34px;
-    width: 268px;
-    font-size: 14px;
-
+    line-height: 34px;
+    font-size: 18px;
+    margin-left: 18px;
     text-align: right;
   }
   .quyutitle,.quyutitle2
@@ -131,7 +131,6 @@
 
     color: #333;
 
-    .sprite(@titlebj);
   }
   .quyutitle2{
     margin-bottom: 30px;
@@ -146,11 +145,16 @@
     width: 280px;
     line-height: 38px;
     color: #ff9902;
-    display: block;
+    display: inline-block;
     text-align: center;
     font-size: 16px;
-    margin:30px 0 0 310px;
-
+    margin:30px auto 0 90px;
+    background: #fff;
+    transition: all .3s;
+    &:hover{
+      background: #f90;
+      color: #fff;
+    }
   }
 }
 
@@ -258,5 +262,56 @@
 
 }
 
+.security-box{
+  width: 450px;
+  margin: 0 auto;
+}
+.phone-box,.authcode-box{
+    position: relative;
+    .placeholder{
+      position: absolute;
+      top: 7px;
+      left: 103px;
+    }
+}
+.authcode-box{
+  margin-top: 20px;
+}
+
+
+span.placeholder{
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 15px;
+}
+
+.input-tip{
+  clear: both;
+  margin-left: 90px;
+  font-size: 14px;
+  .error{
+    color: red;
+  }
+  .i-pwd-weak{
+    margin-right: 10px;
+    vertical-align: text-bottom;
+    .sprite(@i-pwd-weak,inline-block);
+    .icon-VIP-common-RegLog;
+  }
+  .i-pwd-medium{
+    margin-right: 10px;
+    vertical-align: text-bottom;
+    .sprite(@i-pwd-medium,inline-block);
+    .icon-VIP-common-RegLog;
+  }
+  .i-pwd-strong{
+    margin-right: 10px;
+    vertical-align: text-bottom;
+    .sprite(@i-pwd-strong,inline-block);
+    .icon-VIP-common-RegLog;
+    
+  }
+}
 
 
