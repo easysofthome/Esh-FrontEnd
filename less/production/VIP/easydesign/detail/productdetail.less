@@ -1,0 +1,108 @@
+@import '../../../../dev/mixins/mixins.less';
+@import '../../../../sprite/VIP/easydesign/detail/sprite.less';
+.detailbox{
+  width: 340px;
+
+  .flowname{
+      width: 100px;
+      height:32px;
+      background-color: #508ce4;
+      line-height: 32px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+    }
+      h1{
+      font-size: 20px;
+      margin-left: 14px;
+      font-weight:normal;
+      color:#000000;
+    }
+    .deta_class,.deta_price{
+      margin-left: 14px;
+      font-size: 14px;
+      color:#666666;
+      margin-top: 20px;
+    }
+    .deta_price{
+      margin-top: 4px;
+    }
+    .text_red{
+        color:#fe6464;
+    }
+    .deta_info{
+      width: 320px;
+      border-top: 1px solid #d9d9d9;
+      margin:0 auto;
+      padding-top: 14px;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    .imgbox{
+          width: 50px;
+          height: 50px;
+          background-color: #000;
+          .border-radius(25px);
+          overflow: hidden;
+        }
+    .img_name,.flow_free{
+      line-height: 50px;
+          margin-left: 10px;
+           font-size: 16px;
+    }
+    .flow_free{
+      color: #28b28b;
+    }
+    .browse{
+    margin:6px 6px 0 0  ;
+    .sprite(@browse);
+    .icon-VIP-easydesign-detail;
+  }
+  .dianzang{
+    margin:0px 6px 0 0  ;
+    .sprite(@dianzang);
+    .icon-VIP-easydesign-detail;
+  }
+  .likebox{
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+  .derail_butt,.derail_buttver{
+    line-height: 34px;
+    padding: 0 20px 0 20px;
+    background-color: #01a1c8;
+    display: block;
+    .border-radius(5px);
+    color: #fff;
+
+  }
+  .derail_buttver{
+    margin-left: 20px;
+  }
+
+  .derail_buttbox{
+    margin: 10px 0  20px 0;
+  }
+  .modify{
+    width: 320px;
+    margin:0 auto;
+  }
+  .modify_tit{
+    font-size: 20px;
+    color:#666;
+  }
+  .modify_cont{
+    width: 318px;
+    margin-top: 10px;
+    border: 1px solid #cccccc;
+    .border-radius(5px);
+    color:#666666;
+    height: 240px;
+    resize:none;
+  }
+  .modify_butt,.modify_tit,.deta_info,h1{
+    margin-top: 20px;
+
+  }
+
+
+}
