@@ -1,0 +1,100 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.mainbox{
+  padding-bottom: 70px;
+}
+
+.fabrictitle{
+  padding-top: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  line-height: 18px;
+  .fabrictitle_left{
+    font-size: 18px;
+    padding-left: 10px;
+    border-left: 2px solid #3ca1d7;
+    color: #666666;
+    }
+  .fabrictitle_rg{
+    font-size: 12px;
+    a{
+      color: #666666;
+      &:hover{
+        color: #3ca1d7;
+      }
+    }
+  }
+}
+
+// 排列
+ul.arraybox{
+  width: 1220px;
+  margin: 20px auto 0 auto;
+  padding-bottom: 5px;
+  li.array{
+    background-color: #fff;
+    padding-bottom: 15px;
+    margin: 0 10px;
+    display: inline;
+    -webkit-box-shadow:0 0 15px 1px #e0e0e0;
+    -moz-box-shadow:0 0 15px 1px #e0e0e0;
+    box-shadow:0 0 15px 1px #e0e0e0;
+    .border-radius(3px);
+    .picture{
+      width: 265px;
+      height: 265px;
+      margin: 10px;
+    }
+    div.name{
+      margin: 0 15px;
+      line-height: 26px;
+      p.words{
+        width: 185px;
+        span{
+          margin-right: 20px;
+        }
+      }
+    }
+    div.dropbox{
+      margin: 10px 10px 0 10px;
+      border-top: #e5e5e5 1px solid;
+      width: 265px;
+      label.lab{
+        width: 76px;
+        margin: 11px 6px 0 6px;
+        cursor: pointer;
+        font-size: 12px;
+        input.int{
+          margin: 3px 5px 0 0;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    //按钮
+    a.btn_blue1{
+      display: block;
+      width: 254px;
+      text-align: center;
+      margin: 10px 0 0 16px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue2{
+      width: 120px;
+      text-align: center;
+      margin: 10px 14px 0 16px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_red{
+      width: 120px;
+      text-align: center;
+      margin-top: 10px;
+      .button-variant(#fff; #f7210b; #f7210b);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+  }
+}

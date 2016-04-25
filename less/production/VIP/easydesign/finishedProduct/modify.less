@@ -1,0 +1,299 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.mainbox{
+  padding-bottom: 70px;
+}
+
+.fabrictitle{
+  padding-top: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  line-height: 18px;
+  .fabrictitle_left{
+    font-size: 18px;
+    padding-left: 10px;
+    border-left: 2px solid #3ca1d7;
+    color: #666666;
+    }
+  .fabrictitle_rg{
+    font-size: 12px;
+    a{
+      color: #666666;
+      &:hover{
+        color: #3ca1d7;
+      }
+    }
+  }
+}
+
+
+
+
+// 核对修改参数
+.modifybox{
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  p.title{
+    font-size: 30px;
+    color: #303845;
+    text-align: center;
+    line-height: 90px;
+  }
+  p.reminder{
+    // 温馨提示
+    margin: 15px 0 0 30px;
+    font-size: 12px;
+    color: #ff0000;
+  }
+  // 核价方式及费率修改
+  div.ratebox{
+    margin: 40px 20px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: #e5e5e5 1px solid;
+    div.pricingbox{
+      margin-left: 42px;
+      label.lab{
+        margin: 15px 30px 0 0;
+        input.int{
+          margin: 2px 5px 0 0;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  //费率信息
+  div.information{
+    margin: 15px 20px 0 20px;
+    padding-bottom: 20px;
+    border-bottom: #e5e5e5 1px solid;
+    font-size: 16px;
+    ul.intbox{
+      margin: 15px 0 0 42px;
+      li.intli{
+        margin-right: 20px;
+        line-height: 40px;
+        display: inline;
+      }
+      li.GIFintli{
+        margin-right: 130px;
+      }
+      input.int{
+        width: 88px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin-left: 5px;
+        .border-radius(3px);
+      }
+    }
+    // LDP费率信息
+    div.LDP{
+      margin-left: 42px;
+    }
+    ul.LDPL,ul.LDPR{
+      width: 440px;
+      li.intli{
+        line-height: 50px;
+      }
+      p.name{
+        width: 88px;
+        margin-top: 20px;
+        text-align: right;
+        line-height: 40px;
+      }
+      input.int{
+        width: 88px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin: 20px 0 0 5px;
+        .border-radius(3px);
+      }
+    }
+    ul.LDPR{
+      width: 610px;
+      margin-left: 20px;
+      p.name{
+        width: 112px;
+      }
+    }
+  }
+  //选择款式工缴报价方式
+  form.radiobox{
+    margin: 15px 0 0 42px;
+    label.offer{
+      margin-right: 20px;
+    }
+    input.rad{
+      width: 20px;
+      height: 20px;
+      margin: 2px 5px 0 0;
+    }
+    p.reminder{
+      margin-top: 0;
+    }
+  }
+  form.radiocom{
+    padding: 0 20px;
+    margin: 0;
+    text-align: left;
+    label.offer{
+      margin-right: 0;
+    }
+    input.rad{
+      width: 20px;
+      height: 20px;
+      margin: 9px 5px 0 0;
+    }
+  }
+
+  // 按钮
+  .btnbox{
+    width: 320px;
+    margin: 0 auto;
+    padding: 30px 0 40px 0;
+    a.btn_gray{
+      width: 150px;
+      text-align: center;
+      margin-right: 20px;
+      .button-variant(#fff; #929698; #929698);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue{
+      width: 150px;
+      text-align: center;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
+  }
+
+}
+
+
+//核价结果
+div.resultbox{
+  margin: 30px 20px 0 20px;
+  padding-bottom: 70px;
+  font-size: 16px;
+}
+
+
+
+p.smalltitle{
+  // 小标题
+  margin-left: 42px;
+  font-size: 16px;
+  color: #333;
+  a.shrink{
+    color: #3ca1d7;
+    &:hover{
+      color: #ff6600;
+    }
+  }
+}
+.txt_red{
+  // 红色
+  color: #ff0000;
+}
+
+//表格
+table.tab{
+  width: 1074px;
+  text-align: center;
+  margin: 20px 0 0 42px;
+  border-top: #eaeaea 1px solid;
+  border-left: #eaeaea 1px solid;
+  td{
+    border-right: #eaeaea 1px solid;
+    border-bottom: #eaeaea 1px solid;
+    line-height: 36px;
+    a{
+      color: #3ca1d7;
+      &:hover{
+        color: #ff0000;
+      }
+    }
+    // 输入框
+    div.pricebox{
+      padding: 10px 0;
+      p.price{
+      line-height: 40px;
+      white-space:nowrap;
+      }
+      input.int{
+        width: 58px;
+        line-height: 16px;
+        padding: 10px;
+        border: #cdcfd1 1px solid;
+        margin: 0 8px 0 5px;
+        .border-radius(3px);
+      }
+    }
+    input.combina_int{
+      width: 58px;
+      line-height: 16px;
+      padding: 10px;
+      border: #cdcfd1 1px solid;
+      .border-radius(3px);
+    }
+  }
+
+  // 单品核价
+  // 款式尺码信息
+  td.style{
+    width: 146px;
+    padding: 20px 20px 14px 20px;
+    span{
+      margin-top: 4px;
+      display: block;
+    }
+  }
+  td.sty{
+    width: 175px;
+  }
+  td.fab_picture{
+    width: 146px;
+    padding: 20px;
+  }
+  td.fab_price{
+    width: 251px;
+    padding: 0 10px;
+  }
+  td.acc_price{
+    width: 170px;
+    padding: 0 10px;
+  }
+  td.acc_purpose{
+    width: 216px;
+    padding: 0 10px;
+    text-align: left;
+  }
+
+  //单品核价结果
+  td.re_sin_type{
+    width: 110px;
+    padding: 20px 10px;
+  }
+
+
+
+
+  // 标题样式
+  tr.tit{
+    background-color: #eaeaea;
+    td{
+      line-height: 50px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+  tr.tittwo{
+    background-color: #f8f8f8;
+    td{
+      line-height: 44px;
+    }
+  }
+}
