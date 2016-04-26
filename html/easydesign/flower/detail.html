@@ -7,6 +7,15 @@
   <link href="/css/production/easydesign/flower/detail.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+
+<a data-type="1" href="javaScript:void(0);" data-picid="8d6f70e4-1690-4f47-bf7e-c981f419b7b4" class="openPhoto">
+<div style="background-image: url(http://hx.easysofthome.com/FlowerLibrary/original/2014121818-73_4/1755360e-d12b-4e5e-963c-75a6596b0725.png?imageView/2/h/85&amp;e=1461653405&amp;token=9Edo-bSS6SAuwJL6i6jJ_FUEVg5TE8Fz-AStaDQj:rQ0J7PxiXdtvXtELWlph94znuuw=); width: 200px; height: 150px;">
+</div>
+<span>点击查看花型</span> </a>
+
+<div id="lightbox"></div>
+
+
   <div class="detailbox">
     <p class="flowname">花型信息</p>
     <h1>[花型名称]高度大气唯美花纹</h1>
@@ -102,6 +111,28 @@
       <img  src="../../../images/production/yisheji/listdetails/huabumainliao3.png"></div>
   </div>
   </div>
+
+
+
+
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script>
+    seajs.use('js/easydesign/flower/detail',function (detail) {
+      window.nTabs = detail.nTabs;
+      window.workTabs = detail.workTabs;
+      detail.photo({
+         url: 'http://easysofthome.com/UIDesign/ashx/DesignPhoto.ashx?action=index',
+         pageNum: '1',
+         pageView: 'slist',
+         mode: 1
+      });
+
+    });
+  </script>
 
 </body>
 </html>
