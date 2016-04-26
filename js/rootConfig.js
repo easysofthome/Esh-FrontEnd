@@ -1,7 +1,14 @@
 ﻿var alias = {
+    // common
+    'loginPanel': 'js/common/loginPanel/loginPanel',                        //登录弹窗
+    'headJs': 'js/common/headJs',
+    'urlParam': 'js/common/UrlParam.js',
+     'tools': 'js/common/tool/tool',
 
 //Lib
     'jquery': 'js/lib/jquery/jquery',    //基本库支持 ('js/lib/jquery/jquery-1.8.3')
+    //jquery cookie
+    '$.cookie': 'js/lib/jquery.cookie/jquery.cookie',
     'jquery.query': 'js/lib/jquery.query',               //url支持
     // 兼容
     'placeholder': 'js/lib/placeholder',                                       //placeholder兼容
@@ -12,7 +19,11 @@
     'Amcharts': 'js/lib/amcharts/amcharts.js',                               //报表图形依赖
     'serial': 'js/lib/amcharts/serial',                                       //报表图形
     //弹窗
+    'alertify': 'js/lib/alertify/alertify',             //提醒
     'layer': 'js/lib/layer/layer.min',      //弹窗
+    'lightbox': 'js/common/lightbox/lightbox',
+    //相册全屏
+    'fullscreen': 'js/lib/fullscreen/fullscreen',
     // 轮播、切换
     'switchable': 'js/lib/jquery.switchable/2.0/jquery.switchable.min',   //切换
     'fullPage': 'js/lib/jquery.fullPage/jquery.fullPage.min.js',          //全屏滚动
