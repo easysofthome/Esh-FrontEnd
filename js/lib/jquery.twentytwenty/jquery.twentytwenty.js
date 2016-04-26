@@ -21,6 +21,11 @@ define(function (require, exports, module) {
       var afterImg = container.find("img:last");
       container.append("<div class='twentytwenty-handle'></div>");
       var slider = container.find(".twentytwenty-handle");
+
+      var appendHtml = $('.simulation').find('.slide-left').prop("outerHTML");
+          appendHtml += $('.simulation').find('.slide-right').prop("outerHTML");
+      slider.append(appendHtml);
+
       slider.append("<span class='twentytwenty-" + beforeDirection + "-arrow'></span>");
       slider.append("<span class='twentytwenty-" + afterDirection + "-arrow'></span>");
       container.addClass("twentytwenty-container");

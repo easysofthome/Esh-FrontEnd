@@ -10,25 +10,48 @@
   @@include('/VIP/common/nav.html')
   <div class="main_box clearfix">
     @@include('/VIP/common/security/securityL.html')
-  <div class="rg securityRpwd securityR">
+      <div class="rg securityRpwd securityR">
+        <form action="" id="modifyMail" method="post">
+          <div class="security-box clearfix">
+          <p class="quyutitle icon-huiyuanzhongxin-right">设置邮箱</p>
 
+<<<<<<< HEAD
     <p class="quyutitle icon-huiyuanzhongxin-right">设置邮箱</p>
 
     <div class="clearfix">
       <span class="lf titilexingxi">邮箱：</span>
       <div class="lf veri_left">
         <input type="text" class="codes_val codes_addto" placeholder="请输入邮箱" /></div>
-      <a href="#" class="lf codes">获取验证</a>
+      <a href="#" class="lf codes">跳转邮箱</a>
     </div>
     <div class="clearfix shurutop">
       <span class="lf titilexingxi">验证码：</span>
       <div class="lf veri_left">
         <input type="text" class="codes_val" placeholder="请输入验证码" />
       </div>
+=======
+          <div class="clearfix email-box">
+            <div class="lf titilexingxi" style="margin-left: 50px;">邮箱：</div>
+            <span class="placeholder" style="left: 115px;">请输入邮箱</span>
+            <input type="text" class="lf codes_val codes_addto" name="mail" id="mail"/>
+            <a href="#" class="lf codes">获取验证</a>
+            <div class="input-tip"></div>
+          </div>
+          <div class="clearfix authcode-box shurutop">
+            <div class="lf titilexingxi">验证码：</div>
+            <span class="placeholder">请输入验证码</span>
+            <input type="text" class="codes_val"  name="authCode" id="authCode"/>
+            <div class="input-tip"></div>
+          </div>
+          <button type="submit" class="save">确定</button>
+        </div>
+      </form>
+>>>>>>> c9048429d1c66917a5ad620f31e0d9d454009bcc
     </div>
-    <a href="#" class="save">确定</a>
-  </div>
   </div>
   @@include('/VIP/common/footer.html')
+  <script type="text/javascript">
+    seajs.use('js/VIP/common/security/addMail');
+  </script>
 </body>
 </html>
