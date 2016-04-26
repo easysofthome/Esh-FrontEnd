@@ -47,7 +47,7 @@ define(function (require, exports, module) {
     // });
     switchMatch.initHover("#sel-match");
     switchMatch.initHover(".port");
-    switchMatch.initClick(".sel-match");
+    // switchMatch.initClick(".sel-match");
 
 
   // 添加、删除港口
