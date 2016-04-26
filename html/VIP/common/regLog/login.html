@@ -10,7 +10,7 @@
 
   <div class="logbox">
     <div class="header">
-       <div class="top clearfix">
+      <div class="top clearfix">
         <a href="#" class="lf butt_right" id="username">
           easysofthome <i>0</i>
         </a>
@@ -29,49 +29,61 @@
 
     <a href="#" class="loglog"></a>
     <div class="log_box clearfix">
-    <div class="log_left rg">
-      <form action="" method="post" onsubmit="return formCheck();">
-        <div class="user_box">
-          <span class="placeholder">请输入手机号或邮箱</span>
-          <input type="text" class="username" value="" >
-        </div>
-        <div class="password_box">
-          <span class="placeholder">请输入密码</span>
-          <input type="password" class="password" value="">
-        </div>
-        <div class="clearfix Codes_box">
-          <div class="authcode_box">
-            <span class="placeholder">请输入验证码</span>
-            <input type="text" class="Codes lf" value="">
+      <div class="log_left rg">
+        <form action="" method="post" onsubmit="return formCheck();">
+          <div class="user_box">
+            <span class="placeholder">请输入手机号或邮箱</span>
+            <input type="text" class="username" value="" >
+            <div class="clearfix user_prompt">
+              <span class="lf error"></span>
+              <span class="lf">请输入有效手机号或邮箱账号</span>
+            </div>
           </div>
-          <div class="Codes_cen rg"></div>
-        </div>
-        <a href="#" class="for_pass">忘记密码？</a>
-        <button href="#" class="butt_log" type="submit">登录</button>
-        <p class="clearfixb immediately_box">
-          <span class="lf status">还没有易家纺帐号？</span>
-          <a href="./register.html" class="lf">
-            <span class="lf immediately">立即注册</span>
-            <span  class="lf arr_rig"></span>
-          </a>
-        </p>
-      </form>
-    </div>
-    <div class="lf">
+          <div class="password_box">
+            <span class="placeholder">请输入密码</span>
+            <input type="password" class="password" value="">
+            <div class="clearfix user_prompt">
+              <span class="lf correct"></span>
+              <span class="lf">密码长度应是6-20位</span>
+            </div>
+          </div>
+          <div class=" Codes_box">
+            <div class="clearfix">
+              <div class="authcode_box">
+                <span class="placeholder">请输入验证码</span>
+                <input type="text" class="Codes lf" value=""></div>
+              <div class="Codes_cen rg"></div>
+            </div>
+            <div class="clearfix user_prompt">
+              <span class="lf correct"></span>
+              <span class="lf">验证码格式不正确</span>
+            </div>
+          </div>
+          <a href="#" class="for_pass">忘记密码？</a>
+          <button href="#" class="butt_log" type="submit">登录</button>
+          <p class="clearfixb immediately_box">
+            <span class="lf status">还没有易家纺帐号？</span>
+            <a href="./register.html" class="lf">
+              <span class="lf immediately">立即注册</span>
+              <span  class="lf arr_rig"></span>
+            </a>
+          </p>
+        </form>
+      </div>
+      <div class="lf">
 
         <div class="QRcode"></div>
 
-    </div>
+      </div>
     </div>
   </div>
 
   <script src="/js/common/seajs/sea-debug.js"></script>
-  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
-  <script src="/js/common/seajs/seajs-css.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script>
+-->
+<script src="/js/common/seajs/seajs-css.js"></script>
 
-  <script src="/js/rootConfig.js"></script>
-  <script>
-    seajs.use('/js/common/regLog/login');
-  </script>
+<script src="/js/rootConfig.js"></script>
+<script>seajs.use('/js/common/regLog/login');</script>
 </body>
 </html>

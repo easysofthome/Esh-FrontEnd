@@ -10,7 +10,7 @@
 * @module alertify
 * @version 0.3.11
 */
-define(['css/common/alertify/alertify.core.css', 'css/common/alertify/alertify.default.css'], function(require, exports, module) {
+define(['./alertify.core.css', './alertify.default.css'], function(require, exports, module) {
     (function(global, undefined) {
         "use strict";
 
@@ -620,7 +620,7 @@ define(['css/common/alertify/alertify.core.css', 'css/common/alertify/alertify.d
                     btnCancel = $("alertify-cancel") || undefined;
                     btnFocus = (_alertify.buttonFocus === "cancel") ? btnCancel : ((_alertify.buttonFocus === "none") ? $("alertify-noneFocus") : btnOK),
                         input = $("alertify-text") || undefined;
-                    //ToDo 
+                    //ToDo
                     radio = document.getElementsByName('isCheck') || undefined; //document.getElementsByClassName('radio1') || undefined;
                     form = $("alertify-form") || undefined;
                     // add placeholder value to the input field

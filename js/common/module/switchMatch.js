@@ -1,5 +1,20 @@
 define(function (require, exports, module) {
+  require('js/common/module/switchMatch.css');
   require('jquery');
+
+  setTop(getHeight());
+
+  function setTop (h) {
+    $('.esh-sel').css('top',h);
+  }
+
+  function getHeight(){
+    var obj = $('.esh-input');
+    var h = obj.height();
+    h += parseInt($('.esh-input').css('padding-top'));
+    h += parseInt($('.esh-input').css('padding-bottom'));
+    return h;
+  }
 
   // 鼠标经过
   module.exports.initHover = function (inputObj) {
@@ -16,10 +31,10 @@ define(function (require, exports, module) {
   }
 
   // 点击事件
-  module.exports.initClick = function (selObj) {
-    $(selObj + '>li').on('click', function(event) {
-      $(this).parent().hide();
-      $(this).parent().siblings('input').val($(this).text())
-    });
-  }
+  // module.exports.initClick = function (selObj) {
+  //   $(selObj + '>li').on('click', function(event) {
+  //     $(this).parent().hide();
+  //     $(this).parent().siblings('input').val($(this).text())
+  //   });
+  // }
 });

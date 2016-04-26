@@ -1,0 +1,22 @@
+.esh-sel{
+  display:none;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  /*top: 24px;*/
+  background: #fff;
+}
+.esh-sel li{
+  margin: 0;
+  padding: 5px 0;
+  color: #333;
+  line-height: 28px;
+  font-size: 14px;
+  cursor: pointer;
+  .border-radius(4px);
+  overflow: hidden;
+}
+.esh-sel li:hover{
+  background-color: #3CA1D7;
+  color: #fff;
+}
