@@ -93,3 +93,9 @@ easydesign                          易设计会员中心页面
 
   Rendering（渲染任务）
   | Rendering                         渲染
+
+
+
+easyPricing                          易核价会员中心页面
+  Fabric（我的面料核价）
+  | details
