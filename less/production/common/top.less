@@ -1,205 +1,131 @@
-@import '../../sprite/easydata/sprite.less';
-@import '../../../less/dev/mixins/mixins.less';
 
-.header{
-  width: 100%;
-  height: 112px;
-  text-align: center;
+@import '../../sprite/common/sprite.less';
+
+@import '../../dev/mixins/mixins.less';
+
+
+.header-top
+{
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
-  z-index: 99;
-  background: #fff;
-  .header-top{
-    height: 32px;
-    width: 100%;
-    background: #303845;
-    .header-top-wrap{
-      height: 32px;
-      width: 1200px;
-      margin: 0 auto;
-      a{
-        line-height: 32px;
-        color: #fff;
-        font-size: 12px;
-        &:hover{
-          color: #3ca1d7;
-        }
-      }
-      .user{
-        float:left;
-        .login,.vip-ser{
-          float: left;
-          margin-right: 30px;
-        }
-        .login{
-          margin-left: -10px;
-          a{
-            margin-left: 10px;
-          }
-        }
-        .vip-ser{
-          padding: 4px 10px;
-          line-height: 12px;
-          background: #f60;
-          margin: 5px 30px 5px 0;
-          .border-radius(4px);
-          &:hover{
-            color: #fff;
-          }
-        }
-        span.vip,span.service{
-            margin-right: 5px;
-            .icon-easydata;
-        }
-        span.vip{
-          .sprite(@icon-vip,inline-block);
-          .fixIe6pngTransparent('/images/icon/easydata/icon-vip.png');
-        }
-        span.service{
-          .sprite(@icon-ser,inline-block);
-          .fixIe6pngTransparent('/images/icon/easydata/icon-ser.png');
-        }
-      }
-      .menu{
-        width: 468px;
-        height: 32px;
-        float: right;
-        a{
-          margin-left: 30px;
-          span{
-          margin-right:5px;
-            .sprite(@icon-download,inline-block);
-            .icon-easydata;
-            .fixIe6pngTransparent('/images/icon/easydata/icon-download.png');
-          }
-          i{
-            margin-left:5px;
-            .triangle(#fff);
-          }
-        }
-        a.tri:hover i{
-          .triangleRotate(#fff);
-        }
-      }
-    }
-  }
-  .header-wrapper{
-    width: 1200px;
-    margin:0 auto;
-    .logo{
-      height: 80px;
-      float: left;
-      #header-logo{
-        margin-top: 17px;
-        .sprite(@logo);
-        .icon-easydata;
-        .fixIe6pngTransparent('/images/icon/easydata/logo.png');
-      }
-    }
-    .switch{
-      float: right;
-      width: 58px;
-      height: 24px;
-      margin-top: 27px;
-      margin-left: 23px;
-      cursor: pointer;
-      .sprite(@switch-bg);
-      .icon-easydata;
-      .fixIe6pngTransparent('/images/icon/easydata/switch-bg.png');
-      span{
-        margin-left: -33px;
-        .sprite(@switch-lang);
-        .icon-easydata;
-        .fixIe6pngTransparent('/images/icon/easydata/switch-lang.png');
 
-      }
-    }
-    .nav{
-      float: right;
-      position: relative;
-      .nav-li{
-        float:left;
-        height: 78px;
-        position: relative;
-        border-bottom: 2px solid #fff;
-        margin: 0 20px;
-        a{
-          display:block;
-          color:#666;
-          font-size: 16px;
-          padding: 27px 5px 27px 5px;
-        }
-      }
-    }
-    .nav1{
-      .nav-li{
-        &:hover,&.hover{
-          border-bottom: 2px solid #3ca1d7;
-          a{
-            color: #3ca1d7;
-          }
-        }
-      }
-      .cur{
-        border-bottom: 2px solid #3ca1d7;
-        a{
-          color: #3ca1d7;
-        }
-      }
-    }
-    .nav2{
-      margin-right: -20px;
-      .nav-li{
-        position: relative;
-        &.cur{
-          span{
-            width: 100%;
-            height: 2px;
-            left: 0;
-          }
-          a{
-            color: #3ca1d7;
-          }
-        }
-        &:hover{
-          a{color: #3ca1d7;}
-        }
-        span{
-          position: absolute;
-          top: 78px;
-          width: 0;
-          height: 0;
-          left: 50%;
-          background: #3ca1d7;
-        }
-      }
-    }
-  }
-  .header-sub{
-    display: none;
-    background: #6f7379;
-    position: absolute;
-    height: 40px;
-    width: 100%;
-    top: 112px;
-    left: 0;
-    z-index: 2;
-    ul{
-      width: 1200px;
-      margin: 0 auto;
-      li{
-        float: right;
-        margin-left:15px;
-        a{
-          color: #fff;
-          font-size: 14px;
-          line-height: 40px;
-          &:hover{
-            color: #3ca1d7;
-          }
-        }
-      }
-    }
-  }
+  width: 100%;
+  height: 32px;
+
+  text-align: center;
+
+  background: #303845;
+
 }
+
+.header-topVIP
+{
+  width: 100%;
+  height: 32px;
+
+  text-align: center;
+
+  background: #303845;
+
+}
+
+
+.header-top-wrap
+  {
+    width: 1200px;
+    height: 32px;
+    margin: 0 auto;
+    a
+    {
+      font-size: 12px;
+      line-height: 32px;
+
+      color: #fff;
+      &:hover
+      {
+        color: #3ca1d7;
+      }
+    }
+    .user
+    {
+      float: left;
+      .login,
+      .vip-ser
+      {
+        float: left;
+
+        margin-right: 30px;
+      }
+      .login
+      {
+        margin-left: -10px;
+        a
+        {
+          margin-left: 10px;
+        }
+      }
+      .vip-ser
+      {
+        line-height: 12px;
+
+        margin: 5px 30px 5px 0;
+        padding: 4px 10px;
+
+        background: #f60;
+
+        .border-radius(4px);
+        &:hover
+        {
+          color: #fff;
+        }
+      }
+      span.vip,
+      span.service
+      {
+        margin-right: 5px;
+
+        .icon-common;
+      }
+      span.vip
+      {
+        .sprite(@icon-vip,inline-block);
+        .fixIe6pngTransparent('/images/icon/common/icon-vip.png');
+      }
+      span.service
+      {
+        .sprite(@icon-ser,inline-block);
+        .fixIe6pngTransparent('/images/icon/common/icon-ser.png');
+      }
+    }
+    .menu
+    {
+      float: right;
+
+      width: 468px;
+      height: 32px;
+      a
+      {
+        margin-left: 30px;
+        span
+        {
+          margin-right: 5px;
+
+          .sprite(@icon-download,inline-block);
+          .icon-common;
+          .fixIe6pngTransparent('/images/icon/common/icon-download.png');
+        }
+        i
+        {
+          margin-left: 5px;
+
+          .triangle(#fff);
+        }
+      }
+      a.tri:hover i
+      {
+        .triangleRotate(#fff);
+      }
+    }
+  }
