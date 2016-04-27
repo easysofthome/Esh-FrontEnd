@@ -18,6 +18,8 @@
     // 图表
     'Amcharts': 'js/lib/amcharts/amcharts.js',                               //报表图形依赖
     'serial': 'js/lib/amcharts/serial',                                       //报表图形
+    // 表单
+    'customSelect': 'js/lib/jquery.customSelect/jquery.customSelect',         //自定义下拉菜单
     //弹窗
     'alertify': 'js/lib/alertify/alertify',             //提醒
     'layer': 'js/lib/layer/layer.min',      //弹窗
@@ -30,7 +32,12 @@
     'fullPageCss': 'js/lib/jquery.fullPage/jquery.fullPage.css',          //全屏滚动样式
     // 易设计图片对比
     'jquery.event.move': 'js/lib/jquery.event.move/jquery.event.move.js',
-    'jquery.twentytwenty': 'js/lib/jquery.twentytwenty/jquery.twentytwenty.js'
+    'jquery.twentytwenty': 'js/lib/jquery.twentytwenty/jquery.twentytwenty.js',
+
+    // seajs
+    'seajs-debug': 'js/common/seajs/sea-debug',
+    'seajs-style': 'js/common/seajs/seajs-style',
+    'seajs-log': 'js/common/seajs/seajs-log'
 
 };
 var comboSyntax =['&&', '&'];
@@ -44,14 +51,14 @@ if (this.seajs) {
 
         comboSyntax: this.comboSyntax,
         alias: this.alias
-        // comboExcludes:/.*.css/,
+        //comboExcludes:/.*.css/,
         // base: "http://static.easysofthome.com/Static/", //http://localhost:2323
         // preload: ['jquery'],
-        // alias: alias,
+        //alias: alias,
         // map: [
 
         // ],
-        // debug: true
+        //debug: true
     });
 
 } else {
