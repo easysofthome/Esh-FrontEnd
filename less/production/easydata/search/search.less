@@ -29,66 +29,66 @@
 
 /*下拉框样式*/
 .int_430{
-    margin-left: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
+  margin-left: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  .input-tri{
+    .triangle(#666);
+    position: absolute;
+    top: 19px;
+    right: 10px;
+  }
+  &:hover{
     .input-tri{
-      .triangle(#666);
-      position: absolute;
-      top: 19px;
-      right: 10px;
+      .triangleRotate(#666);
     }
-    &:hover{
-      .input-tri{
-        .triangleRotate(#666);
-      }
-    }
-    .sel-country{
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      z-index: 2;
-      width: 428px;
-      background-color: #fff;
-      border: 1px solid #cdcfd1;
-      color: #333;
-      ul.continent{
-        display: inline-block;
-        font-size: 16px;
-        li{
-          line-height:20px;
-          padding:6px 15px 6px 15px;
-          background: #eee;
-          &:hover,&.cur{
-            background: #3ca1d7;
-            cursor:pointer;
-            color: #fff;
-          }
+  }
+  .sel-country{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+    width: 428px;
+    background-color: #fff;
+    border: 1px solid #cdcfd1;
+    color: #333;
+    ul.continent{
+      display: inline-block;
+      font-size: 16px;
+      li{
+        line-height:20px;
+        padding:6px 15px 6px 15px;
+        background: #eee;
+        &:hover,&.cur{
+          background: #3ca1d7;
+          cursor:pointer;
+          color: #fff;
         }
       }
-      ul.country{
-        display:inline-block;
-        width: 335px;
-        float: right;
-        margin-top: 6px;
-        .country-ol{
-          display:none;
-          li{
-            float: left;
-            width: 25%;
-            font-size: 14px;
-            padding: 3px 0;
-            &:hover{
-              cursor: pointer;
-              color: #3ca1d7;
-            }
+    }
+    ul.country{
+      display:inline-block;
+      width: 335px;
+      float: right;
+      margin-top: 6px;
+      .country-ol{
+        display:none;
+        li{
+          float: left;
+          width: 25%;
+          font-size: 14px;
+          padding: 3px 0;
+          &:hover{
+            cursor: pointer;
+            color: #3ca1d7;
           }
         }
       }
     }
   }
+}
 
 
 // 按钮
@@ -164,8 +164,13 @@
     margin: 19px 10px 0 10px;
     background-color: #cdcfd1;
   }
-  .width338{
-    width: 338px;
+  div.width338{
+    div.int_430{
+      width: 360px;
+      input{
+        width: 338px;
+      }
+    }
   }
 
   .int_280a{
