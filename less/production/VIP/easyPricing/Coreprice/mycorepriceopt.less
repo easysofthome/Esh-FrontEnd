@@ -7,27 +7,36 @@
         width: 814px;
         margin: 0 auto;
         padding-top:16px;
-        .core_tit{
-            margin-left:4px;
-            font-size:20px;
-            line-height:20px;
-            color:#333;
-        }
-        .core_titbut,.core_titbut2{
-            display: block;
-            line-height:26px;
-            height:26px;
-            border:1px solid #4b7bc5;
-            font-size:14px;
-            padding:0 18px 0 18px;
-            color:#4b7bc5;
-            .border-radius(5px);
+        .species{
+            font-size: 16px;
+            line-height: 18px;
+            position: relative;
+            padding-bottom: 10px;
+            li:hover{
+                color:#ff6600;
+            }
+
+            li{
+                cursor: pointer;
+                width: 60px;
+                text-align: center;
+            }
+            .li_speci{
+                margin-left: 10px;
+            }
+            .bott_boreder{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: #ff6600;
+            }
         }
         .core_titbut2{
             margin-right:10px;
         }
         .core_databox{
-            margin:20px 0 0 0 ;
+            margin:10px 0 0 0 ;
         }
         .core_databox,.core_databox2{
             font-size:14px;
@@ -55,6 +64,7 @@
             margin-left:12px;
             li{
                 padding: 0 10px 0 10px;
+                text-align: center;
                 cursor: pointer;
             }
             .li_leftmar,.li_lefttopmar{
@@ -75,14 +85,14 @@
         }
         .collapse_box{
             margin: 20px auto 0 auto;
-            width: 110px;
+            width: 150px;
             height: 30px;
             cursor:pointer;
             .border-radius(5px 5px 0 0);
             background-color: #eeeeee;
-            .arr_top{
-                margin: 11px 4px 0 15px;
-                   .sprite(@arr_top);
+            .Choice{
+                margin: 11px 4px 0 18px;
+                   .sprite(@Choice);
                    .icon-VIP-easyPricing-Coreprice;
             }
             .collapse_text{
