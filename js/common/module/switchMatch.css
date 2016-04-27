@@ -1,9 +1,7 @@
-.esh-sel{
-  display:none;
+/*.esh-sel{
   width: 100%;
   position: absolute;
   right: 0;
-  /*top: 24px;*/
   background: #fff;
 }
 .esh-sel li{
@@ -19,4 +17,5 @@
 .esh-sel li:hover{
   background-color: #3CA1D7;
   color: #fff;
-}
+}*/
+

@@ -45,7 +45,7 @@ define(function (require, exports, module) {
     //   $(this).parent().hide();
     //   $(this).parent().siblings('input').val($(this).text())
     // });
-    switchMatch.initHover("#sel-match");
+    switchMatch.init("#esh-sel1");
     switchMatch.initHover(".port");
     // switchMatch.initClick(".sel-match");
 
