@@ -27,6 +27,70 @@
 }
 /** 滚动条样式  */
 
+/*下拉框样式*/
+.int_430{
+    margin-left: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    .input-tri{
+      .triangle(#666);
+      position: absolute;
+      top: 19px;
+      right: 10px;
+    }
+    &:hover{
+      .input-tri{
+        .triangleRotate(#666);
+      }
+    }
+    .sel-country{
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      z-index: 2;
+      width: 428px;
+      background-color: #fff;
+      border: 1px solid #cdcfd1;
+      color: #333;
+      ul.continent{
+        display: inline-block;
+        font-size: 16px;
+        li{
+          line-height:20px;
+          padding:6px 15px 6px 15px;
+          background: #eee;
+          &:hover,&.cur{
+            background: #3ca1d7;
+            cursor:pointer;
+            color: #fff;
+          }
+        }
+      }
+      ul.country{
+        display:inline-block;
+        width: 335px;
+        float: right;
+        margin-top: 6px;
+        .country-ol{
+          display:none;
+          li{
+            float: left;
+            width: 25%;
+            font-size: 14px;
+            padding: 3px 0;
+            &:hover{
+              cursor: pointer;
+              color: #3ca1d7;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
 // 按钮
 .btn{
     margin-left: 20px;
@@ -100,67 +164,7 @@
     margin: 19px 10px 0 10px;
     background-color: #cdcfd1;
   }
-  .int_430{
-    margin-left: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
-    .input-tri{
-      .triangle(#666);
-      position: absolute;
-      top: 19px;
-      right: 10px;
-    }
-    &:hover{
-      .input-tri{
-        .triangleRotate(#666);
-      }
-    }
-    .sel-country{
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      z-index: 2;
-      width: 428px;
-      background-color: #fff;
-      border: 1px solid #cdcfd1;
-      color: #333;
-      ul.continent{
-        display: inline-block;
-        font-size: 16px;
-        li{
-          line-height:20px;
-          padding:6px 15px 6px 15px;
-          background: #eee;
-          &:hover,&.cur{
-            background: #3ca1d7;
-            cursor:pointer;
-            color: #fff;
-          }
-        }
-      }
-      ul.country{
-        display:inline-block;
-        width: 335px;
-        float: right;
-        margin-top: 6px;
-        .country-ol{
-          display:none;
-          li{
-            float: left;
-            width: 25%;
-            font-size: 14px;
-            padding: 3px 0;
-            &:hover{
-              cursor: pointer;
-              color: #3ca1d7;
-            }
-          }
-        }
-      }
-    }
-  }
+
   .int_280a{
     width: 258px;
 
@@ -465,11 +469,14 @@
     border: 1px solid #cdcfd1;
     .border-radius(3px);
   }
-  span{
+  span.titwords{
       font-size: 14px;
       margin-right: 10px;
       margin-top: 8px;
     }
+  .int_430{
+    margin-left: 0;
+  }
   .tit_int01{
     margin-left: 20px;
     width: 414px;
