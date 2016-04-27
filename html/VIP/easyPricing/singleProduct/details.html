@@ -4,82 +4,255 @@
   <meta charset="utf-8">
   <title>易核价会员中心-易家纺电子商务服务平台|面料核价详情</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/easyPricing/Fabric/details.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/easyPricing/singleProduct/details.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   @@include('/VIP/common/nav.html')
   <div class="main_box">
-    <div class="detailsbox">
-      <p class="title">面料核价详情</p>
-      <div class="clearfix Row">
-        <div class="lf res_tit">起订量：</div>
-        <div class="lf res_con">5000-9999</div>
+
+    <div class="modifybox">
+      <p class="title">单品核价详情</p>
+
+      <!-- FOB费率信息 -->
+      <div class="information">
+        <p class="smalltitle">FOB费率信息</p>
+        <ul class="intbox clearfix">
+          <li class="intli lf">
+            <span class="txt_red">*</span>美元汇率：6.48
+          </li>
+          <li class="intli lf">
+            <span class="txt_red">*</span>增值税率：0.17
+          </li>
+          <li class="intli lf">
+            <span class="txt_red">*</span>退税率：0.16
+          </li>
+          <li class="intli lf">
+            <span class="txt_red">*</span>利润率：0.1
+          </li>
+          <li class="intli lf">
+            <span class="txt_red">*</span>内销利润率：0.1
+          </li>
+        </ul>
       </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">织造种类：</div>
-        <div class="lf res_con">提花布</div>
+
+      <!-- 海运费信息 -->
+      <div class="information">
+        <p class="smalltitle">海运费信息</p>
+        <ul class="intbox clearfix">
+          <li class="intli lf clearfix">起始港：上海</li>
+          <li class="intli lf clearfix GIFintli">
+            <span class="txt_red">*</span>20柜单价：666
+          </li>
+          <li class="intli lf clearfix">目的港：那瓦什瓦</li>
+          <li class="intli lf clearfix">
+            <span class="txt_red">*</span>40柜单价：666
+          </li>
+        </ul>
       </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">染织方法：</div>
-        <div class="lf res_con">染色</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">有效门幅(CM)：</div>
-        <div class="lf res_con">15</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">经纬密度(CM)：</div>
-        <div class="lf res_con">15*54</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">织物密度/平方英寸：</div>
-        <div class="lf res_con">175T/INCH</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">经纱1规格:</div>
-        <div class="lf res_con">
-          <span>成分： 全棉纱</span>
-          <span class="data_mar">粗细： 80S</span>
-          <span class="data_mar">股线： 1</span>
-          <span class="data_mar">成分比：  -</span>
+
+      <!-- LDP费率信息 -->
+      <div class="information">
+        <p class="smalltitle">LDP费率信息</p>
+        <div class="LDP clearfix">
+          <ul class="LDPL lf">
+            <li class="intli">中文描述：非针织或钩编其他化纤制床罩</li>
+            <li class="intli">参考代码：6304.1920</li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>出口税率：
+              </p>
+              <span class="lf result">0.065</span>
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>清关费用：
+              </p>
+              <span class="lf result">0.025</span>
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>利息：
+              </p>
+              <span class="lf result">0.015</span>
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>利润率：
+              </p>
+              <span class="lf result">0.1</span>
+            </li>
+          </ul>
+          <ul class="LDPR lf">
+            <li class="intli">
+              英文描述：Bedspreads non knitted or crocheted,of man made fiber,other
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">出口国家名称：</p>
+              <span class="lf result">USA
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>保险费率：
+              </p>
+              <span class="lf result">0.006</span>
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>信用风险：
+              </p>
+              <span class="lf result">0.0105</span>
+            </li>
+            <li class="intli clearfix">
+              <p class="lf name">
+                <span class="txt_red">*</span>佣金：
+              </p>
+              <span class="lf result">0.03</span>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">纬纱1规格:</div>
-        <div class="lf res_con">
-          <span>成分： 全棉纱</span>
-          <span class="data_mar">粗细： 80S</span>
-          <span class="data_mar">股线： 1</span>
-          <span class="data_mar">成分比：  -</span>
-        </div>
+
+      <!-- 款式尺码信息-->
+      <div class="information">
+        <p class="smalltitle">款式尺码信息</p>
+        <table class="tab" cellpadding="0" cellspacing="0">
+          <tr class="tit">
+            <td class="style">款式</td>
+            <td>单品类型</td>
+            <td>尺码</td>
+            <td>产品辅料</td>
+            <td>包装辅料</td>
+            <td>体积信息</td>
+          </tr>
+          <tr>
+            <td class="style">
+              <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
+              <span>打圆环浴帘</span>
+            </td>
+            <td>单品浴帘</td>
+            <td>72*72</td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a>
+            </td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a>
+            </td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/volume.html">查看修改</a>
+            </td>
+          </tr>
+        </table>
       </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">面料克重：</div>
-        <div class="lf res_con">136克/平方米</div>
+
+      <!-- 主要面料-->
+      <div class="information">
+        <p class="smalltitle">主要面料</p>
+        <table class="tab" cellpadding="0" cellspacing="0">
+          <tr class="tit">
+            <td>主要用途</td>
+            <td class="fab_picture">面料图片</td>
+            <td>面料编号</td>
+            <td>面料分类</td>
+            <td>面料克重</td>
+            <td>面料替换</td>
+            <td class="fab_price">门幅&价格</td>
+          </tr>
+          <tr>
+            <td class="fab_purpose">浴帘主体裁片</td>
+            <td class="fab_picture">
+              <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
+            </td>
+            <td>FD110600248</td>
+            <td>涤粘面料</td>
+            <td>207</td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/replaceFabric.html">替换面料</a>
+            </td>
+            <td class="fab_price">
+              <div class="pricebox clearfix">
+                <p class="lf price">
+                  <span class="txt_red">*</span>
+                  面料门幅：
+                </p>
+                <input class="int lf" type="text"value="150" />
+                <p class="lf price">厘米</p>
+              </div>
+              <div class="pricebox clearfix">
+                <p class="lf price">
+                  <span class="txt_red">*</span>
+                  面料价格：
+                </p>
+                <input class="int lf" type="text"value="15.64" />
+                <p class="lf price">元/米</p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">面料成分：</div>
-        <div class="lf res_con">棉100%</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">后处理费：</div>
-        <div class="lf res_con">
-          <span>丝光处理</span>
-          <span class="data_mar">PA涂层</span>
-        </div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">面料价格（人民币）：</div>
-        <div class="lf res_con">14.64元（每米）</div>
-      </div>
-      <div class="clearfix Row">
-        <div class="lf res_tit">面料价格（美元）：</div>
-        <div class="lf res_con">1.99元（每米）</div>
+
+      <!-- 主要辅料-->
+      <div class="information">
+        <p class="smalltitle">主要辅料</p>
+        <table class="tab" cellpadding="0" cellspacing="0">
+          <tr class="tit">
+            <td>辅料编号</td>
+            <td>辅料名称</td>
+            <td class="acc_purpose">用途</td>
+            <td>辅料用量</td>
+            <td class="acc_price">辅料单价</td>
+            <td>辅料成本（元）</td>
+            <td>辅料替换</td>
+          </tr>
+          <tr>
+            <td>AD110600027</td>
+            <td>浴帘无纺布衬条</td>
+            <td class="acc_purpose">浴帘衬条裁片</td>
+            <td>1.83 米</td>
+            <td class="acc_price">
+              <div class="pricebox clearfix">
+                <p class="lf price txt_red">*</p>
+                <input class="int intacc lf" type="text"value="150" />
+                <p class="lf price">元/米</p>
+              </div>
+            </td>
+            <td>0.366</td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/accessories.html">辅料替换</a>
+            </td>
+          </tr>
+          <tr>
+            <td>AD110600061</td>
+            <td>浴帘铜气眼</td>
+            <td class="acc_purpose">
+              <p>浴帘圆环</p>
+              <div class="pricebox clearfix">
+                <p class="lf price">
+                  <span class="txt_red">*</span>
+                  耗用数量
+                </p>
+                <input class="int intacc lf" type="text"value="12" />
+                <p class="lf price">个</p>
+              </div>
+            </td>
+            <td>1.83 米</td>
+            <td class="acc_price">
+              <div class="pricebox clearfix">
+                <p class="lf price txt_red">*</p>
+                <input class="int intacc lf" type="text"value="0.8" />
+                <p class="lf price">元/个</p>
+              </div>
+            </td>
+            <td>0.366</td>
+            <td>
+              <a target=_blank href="/html/easyPricing/pricing/accessories.html">辅料替换</a>
+            </td>
+          </tr>
+        </table>
       </div>
 
       <!-- 选择工厂 -->
-      <div class="fac_box">
-        <P class="tit">选择的工厂：</P>
+      <div class="fac_box fac_box_mar">
+        <p class="smalltitle">选择的工厂</p>
         <p class="clearfix fac">
           <span class="lf fac_tit">织造工缴工厂：</span>
           <span class="lf fac_name">杭州易上弘网络技术有限1</span>
@@ -109,8 +282,6 @@
     </div>
 
   </div>
-
   @@include('/VIP/common/footer.html')
-
 </body>
 </html>
