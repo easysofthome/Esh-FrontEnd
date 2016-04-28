@@ -18,10 +18,13 @@
         <div class="fabric_con">
           <div class="clearfix data_frm">
             <span class="lf title_name">起 订 量：</span>
-            <ul class="lf dropdown_box">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">0-1999米</li>
-            </ul>
+            <select class="lf" id="sel1">
+              <option value="">0-199米</option>
+              <option value="one">0-99米</option>
+              <option value="two">100-199米</option>
+              <option value="three">200-299米</option>
+              <option value="four">3000-399米</option>
+            </select>
           </div>
           <div class="clearfix rad_frm">
             <span class="lf title_name">织造种类：</span>
@@ -43,19 +46,21 @@
           <div class="clearfix data_frm">
             <span class="lf title_name">面料门幅：</span>
             <input type="text" class="lf fabric_width">
-            <ul class="lf width_company">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">厘米</li>
-            </ul>
+            <select class="lf" id="sel2">
+              <option value="">厘米</option>
+              <option value="">分米</option>
+              <option value="">米</option>
+            </select>
           </div>
           <div class=" data_frm">
             <div class="clearfix">
               <span class="lf title_name">纱线种类数量：</span>
               <span class="lf title_density">密度单位：</span>
-              <ul class="lf width_company_none">
-                <a href="#" class="down_arr"></a>
-                <li class="dropdown_content">厘米</li>
-              </ul>
+              <select class="lf" id="sel3">
+                <option value="">厘米</option>
+                <option value="">分米</option>
+                <option value="">米</option>
+              </select>
             </div>
             <div class="yarntype_box">
               <div class="clearfix yarndensity_box">
@@ -249,15 +254,17 @@
             <div class="clearfix">
               <span class="lf AddItem_tit">是否定位花：</span>
               <div class="lf Single_box">
-                <ul class="lf width_company_none">
-                  <a href="#" class="down_arr"></a>
-                  <li class="dropdown_content">厘米</li>
-                </ul>
+                <select class="lf" id="sel4">
+                  <option value="">厘米</option>
+                  <option value="">分米</option>
+                  <option value="">米</option>
+                </select>
                 <span class="lf title_name">起 订 量：</span>
-                <ul class="lf width_company_none">
-                  <a href="#" class="down_arr"></a>
-                  <li class="dropdown_content">厘米</li>
-                </ul>
+                <select class="lf" id="sel5">
+                  <option value="">厘米</option>
+                  <option value="">分米</option>
+                  <option value="">米</option>
+                </select>
 
               </div>
             </div>
@@ -346,10 +353,11 @@
           <div class="clearfix data_frm">
             <span class="lf title_name">汇率：</span>
 
-            <ul class="lf width_company remove_left">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">美元汇率</li>
-            </ul>
+            <select class="lf" id="sel5">
+              <option value="">美元汇率</option>
+              <option value="">英镑汇率</option>
+              <option value="">韩币汇率</option>
+            </select>
             <input type="text" class="lf fabric_money"></div>
 
           <div class="clearfix rad_frm">
@@ -376,5 +384,12 @@
       </div>
     </div>
     @@include('/easyPricing/common/footer2.html')
+<script>
+  seajs.use(['jquery','customSelect'],function ($,cus) {
+    $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
+    $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
+    $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
+  });
+</script>
   </body>
   </html>
