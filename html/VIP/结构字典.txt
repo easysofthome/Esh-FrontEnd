@@ -101,5 +101,12 @@ easyPricing                          易核价会员中心页面
   | details                            面料核价详情
   | Fabric                             面料核价
 
+  intelligence（智能核价助手）
+  | fiber                              添加化纤染色工缴
+
+  iWho（我选的工厂报价）
+  | iWho                               我选的工厂报价
+
   singleProduct（我的单品核价）
   | details                            单品核价详情
+  | singleProduct                      单品核价
