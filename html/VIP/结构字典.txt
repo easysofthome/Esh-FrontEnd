@@ -99,6 +99,7 @@ easydesign                          易设计会员中心页面
 easyPricing                          易核价会员中心页面
   Fabric（我的面料核价）
   | details                            面料核价详情
+  | Fabric                             面料核价
 
   singleProduct（我的单品核价）
   | details                            单品核价详情
