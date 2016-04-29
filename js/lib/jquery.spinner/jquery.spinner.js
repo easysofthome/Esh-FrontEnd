@@ -3,11 +3,11 @@ define(['js/lib/jquery.spinner/jquery.spinner.css', 'jquery'], function () {
         $.fn.spinner = function (opts) {
             return this.each(function () {
                 var defaults = {
-                    value: 0, //µ±Ç°Öµ
-                    min: 0, //×îĞ¡Öµ
-                    max: 999999, //×î´óÖµ
-                    addEvent: function () { }, //¼ÓºÅÊÂ¼ş
-                    cutEvent: function () { } //¼õºÅÊÂ¼ş
+                    value: 1, //å½“å‰å€¼
+                    min: 0, //æœ€å°å€¼
+                    max: 999999, //æœ€å¤§å€¼
+                    addEvent: function () { }, //åŠ å·äº‹ä»¶
+                    cutEvent: function () { } //å‡å·äº‹ä»¶
                 };
                 var options = $.extend(defaults, opts);
                 var keyCodes = { up: 38, down: 40 };

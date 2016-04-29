@@ -38,7 +38,7 @@ define(function (require, exports, module) {
     $(window).scroll(function() {
       top = $(window).scrollTop();
       if(top > 0){
-        $('.header').css('box-shadow','0px 0px 3px 2px #ddd');
+        $('.header').css('box-shadow','0px 2px 3px 2px #ddd');
       }else{
         $('.header').css('box-shadow','none');
       }

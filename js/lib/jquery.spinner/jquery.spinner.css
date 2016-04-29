@@ -1,12 +1,14 @@
 .spinner-sprite{
-	background: url('images/spinner.png') no-repeat; 
+	background: url('images/spinner.png') no-repeat;
 }
 .spinner {
-	height: 25px;
-	width: 75px;
+/*	height: 25px;
+	width: 75px;*/
+	height: 40px;
+	width: 120px;
 	overflow: hidden;
 	float:left;
-    margin: 0px 5px 0px 5px; 
+    margin: 0px 5px 0px 5px;
     *zoom:1;
 	-webkit-box-shadow: 0 3px 3px -4px #aaa;
 	-moz-box-shadow: 0 3px 3px -4px #aaa;
@@ -17,31 +19,36 @@
 	display: block;
 	float: left;
 	height: 100%;
-	line-height: 25px;
+	/*line-height: 25px;*/
+	line-height: 40px;
 	margin: 0
 }
 .spinner button {
 	border: none;
-	width: 23px;
+	/*width: 23px;*/
+	width: 39px;
 	color: #e5312a;
-	font: 22px Arial bold;
+	/*font: 22px Arial bold;*/
+	font: 37px Arial bold;
 	padding: 0;
 	outline: none
 }
-.spinner .decrease 
+.spinner .decrease
 {
-    background: url('images/spinner.png') no-repeat; 
-    background-position    : 0 -50px;
+    background: url('images/spinner.png') no-repeat;
+    /*background-position    : 0 -50px;*/
+    background-position    : 0 -80px;
 	cursor: pointer;
 	text-indent: -10000px
 }
-.spinner .decrease.disabled 
+.spinner .decrease.disabled
 {
-    background: url('images/spinner.png') no-repeat;
-	background-position: 0 -75px;
+  background: url('images/spinner.png') no-repeat;
+	/*background-position: 0 -75px;*/
+	background-position: 0 -120px;
 	cursor: default
 }
-.spinner .increase 
+.spinner .increase
 {
     background: url('images/spinner.png') no-repeat;
 	background-position: 0 0px;
@@ -51,24 +58,29 @@
 .spinner .increase.disabled
 {
     background: url('images/spinner.png') no-repeat;
-	background-position: 0 -125px;
+	/*background-position: 0 -125px;*/
+	background-position: 0 -200px;
 	cursor: default
 }
-.spinner .value 
+.spinner .value
 {
     background: url('images/spinner.png') no-repeat;
-	background-position: 0 -100px;
-	width: 24px;
-	height: 27px;
+	/*background-position: 0 -100px;*/
+	background-position: 0 -160px;
+/*	width: 24px;
+	height: 27px;*/
+	width: 40px;
+	height: 40px;
 	border: none;
 	font-family: Arial;
 	color: #ffffff;
 	padding: 0px
 }
-.spinner .value.passive 
+.spinner .value.passive
 {
     background: url('images/spinner.png') no-repeat;
-	background-position: 0 -25px;
+	/*background-position: 0 -25px;*/
+	background-position: 0 -40px;
 	color: #919191
 }
 .spinner .error, .spinner .invalid {
