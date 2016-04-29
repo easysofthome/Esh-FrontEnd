@@ -1,0 +1,107 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.main_box
+{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.rgbox{
+  width: 854px;
+}
+
+// 右边搜索
+.searchint
+{
+  margin-top: 40px;
+
+  background-color: #fff;
+  p.tit
+  {
+    font-size: 24px;
+    line-height: 70px;
+
+    margin-left: 20px;
+
+    color: #333;
+  }
+}
+
+// 右边列表
+div.rg_list
+{
+  width: 814px;
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  background-color: #fff;
+  div.list_box{
+    width: 699px;
+    border-right: #eeeeee 1px solid;
+    line-height: 36px;
+    .txt_gray{
+      color: #333;
+      font-size: 18px;
+    }
+    .txt_orange{
+      color: #f79226;
+      font-size: 20px;
+    }
+    //图片
+    div.picture-box{
+      width: 90px;
+      height: 90px;
+      overflow: hidden;
+      margin: 10px 24px 0 0;
+    }
+
+    div.container{
+      //款式   单品类型
+      p.tit{
+        margin-right: 50px;
+      }
+      //款式  尺码
+      ul.content{
+        li.Price{
+          width: 81px;
+          margin: 0 4px;
+          border-right: #eeeeee 1px solid;
+        }
+        li.borderno{
+          border: none;
+        }
+      }
+    }
+  }
+  div.btn{
+    margin-left: 16px;
+    a{
+      display: block;
+      width: 96px;
+      line-height: 30px;
+      text-align: center;
+      .border-radius(3px);
+    }
+    a.btn_blue{
+      margin-top: 2px;
+      color:#3ca1d7;
+      border: #3ca1d7 1px solid;
+      &:hover{
+        background-color: #3ca1d7;
+        color: #fff;
+      }
+    }
+    a.btn_red{
+      margin-top: 10px;
+      color:#f8210c;
+      border: #f8210c 1px solid;
+      &:hover{
+        background-color: #f8210c;
+        color: #fff;
+      }
+    }
+  }
+}
+

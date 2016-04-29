@@ -27,6 +27,70 @@
 }
 /** 滚动条样式  */
 
+/*下拉框样式*/
+.int_430{
+  margin-left: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  .input-tri{
+    .triangle(#666);
+    position: absolute;
+    top: 19px;
+    right: 10px;
+  }
+  &:hover{
+    .input-tri{
+      .triangleRotate(#666);
+    }
+  }
+  .sel-country{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+    width: 428px;
+    background-color: #fff;
+    border: 1px solid #cdcfd1;
+    color: #333;
+    ul.continent{
+      display: inline-block;
+      font-size: 16px;
+      li{
+        line-height:20px;
+        padding:6px 15px 6px 15px;
+        background: #eee;
+        &:hover,&.cur{
+          background: #3ca1d7;
+          cursor:pointer;
+          color: #fff;
+        }
+      }
+    }
+    ul.country{
+      display:inline-block;
+      width: 335px;
+      float: right;
+      margin-top: 6px;
+      .country-ol{
+        display:none;
+        li{
+          float: left;
+          width: 25%;
+          font-size: 14px;
+          padding: 3px 0;
+          &:hover{
+            cursor: pointer;
+            color: #3ca1d7;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 // 按钮
 .btn{
     margin-left: 20px;
@@ -41,6 +105,11 @@
   .btn_01{
     margin-left: 20px;
     .button-variant(#fff,#f97106,#f97106);
+    .button-size(0,44px,16px,40px,3px);
+  }
+  .btn_b{
+    margin-left: 20px;
+    .button-variant(#fff,#38b5f8,#38b5f8);
     .button-size(0,44px,16px,40px,3px);
   }
 .search_box{
@@ -95,67 +164,21 @@
     margin: 19px 10px 0 10px;
     background-color: #cdcfd1;
   }
-  .int_430{
-    margin-left: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
-    .input-tri{
-      .triangle(#666);
-      position: absolute;
-      top: 19px;
-      right: 10px;
-    }
-    &:hover{
-      .input-tri{
-        .triangleRotate(#666);
-      }
-    }
-    .sel-country{
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      z-index: 2;
-      width: 428px;
-      background-color: #fff;
-      border: 1px solid #cdcfd1;
-      color: #333;
-      ul.continent{
-        display: inline-block;
-        font-size: 16px;
-        li{
-          line-height:20px;
-          padding:6px 15px 6px 15px;
-          background: #eee;
-          &:hover,&.cur{
-            background: #3ca1d7;
-            cursor:pointer;
-            color: #fff;
-          }
-        }
-      }
-      ul.country{
-        display:inline-block;
-        width: 335px;
-        float: right;
-        margin-top: 6px;
-        .country-ol{
-          display:none;
-          li{
-            float: left;
-            width: 25%;
-            font-size: 14px;
-            padding: 3px 0;
-            &:hover{
-              cursor: pointer;
-              color: #3ca1d7;
-            }
-          }
-        }
+  div.width338{
+    div.int_430{
+      input{
+        width: 338px;
       }
     }
   }
+  div.width_in{
+    div.int_430{
+      input{
+        width: 285px;
+      }
+    }
+  }
+
   .int_280a{
     width: 258px;
 
@@ -393,14 +416,12 @@
   color: #666;
   border-top: #dedede 2px solid;
   .int_110{
-    height: 16px;
-    padding: 4px 10px;
+    height: 26px;
     .border-radius(3px);
-    width: 108px;
+    width: 130px;
     border: none;
-    &:hover{
-      // cursor: pointer;
-    }
+    //padding: 5px;
+    span{line-height: 26px;}
   }
   li{
     margin: 13px 20px 0 20px;
@@ -429,28 +450,7 @@
         .triangleRotate(#666);
       }
     }
-    .sel-risk,.sel-match,.sel-possible{
-      display:none;
-      width: 128px;
-      position: absolute;
-      right: 0;
-      top: 24px;
-      background: #fff;
-    }
-    li.risk,li.match,li.possible{
-      margin: 0;
-      padding: 5px 0;
-      color: #333;
-      line-height: 28px;
-      font-size: 14px;
-      cursor: pointer;
-      .border-radius(4px);
-      overflow: hidden;
-      &:hover{
-        background-color: #3CA1D7;
-        color: #fff;
-      }
-    }
+
   }
 }
 
@@ -481,11 +481,14 @@
     border: 1px solid #cdcfd1;
     .border-radius(3px);
   }
-  span{
+  span.titwords{
       font-size: 14px;
       margin-right: 10px;
       margin-top: 8px;
     }
+  .int_430{
+    margin-left: 0;
+  }
   .tit_int01{
     margin-left: 20px;
     width: 414px;
@@ -516,8 +519,5 @@
 //     .button-size(0,22px,16px,40px,3px);
 //   }
 // }
-
-
-
 
 

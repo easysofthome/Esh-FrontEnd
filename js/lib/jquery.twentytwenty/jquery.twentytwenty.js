@@ -1,3 +1,9 @@
+/**
+ * 禁用了拖动中间条
+ * 设置了偏移量
+ * 修改了截取属性clip
+ */
+
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/jquery.twentytwenty/twentytwenty.css');
@@ -36,9 +42,16 @@ define(function (require, exports, module) {
       overlay.append("<div class='twentytwenty-before-label'></div>");
       overlay.append("<div class='twentytwenty-after-label'></div>");
 
+      /* 自定义修改部分 */
+      var quarterW = (1/4) * $(window).width();
+      $('.twentytwenty-before').css('left',-quarterW);
+      $('.twentytwenty-after').css('left',quarterW);
+      /* 自定义修改部分 */
+
       var calcOffset = function(dimensionPct) {
         var w = beforeImg.width();
         var h = beforeImg.height();
+
         return {
           w: w+"px",
           h: h+"px",
@@ -49,10 +62,11 @@ define(function (require, exports, module) {
 
       var adjustContainer = function(offset) {
       	if (sliderOrientation === 'vertical') {
-      	  beforeImg.css("clip", "rect(0,"+offset.w+","+offset.ch+",0)");
+          beforeImg.css("clip", "rect(0,"+offset.w+","+offset.ch+",0)");
       	}
       	else {
-          beforeImg.css("clip", "rect(0,"+offset.cw+","+offset.h+",0)");
+          // beforeImg.css("clip", "rect(0,"+offset.cw+","+offset.h+",0)");
+          beforeImg.css("clip", "rect(0,"+(parseInt(offset.cw)+quarterW)+"px" +","+offset.h+","+quarterW+"px"+")");
     	}
         container.css("height", offset.h);
       };
@@ -88,17 +102,18 @@ define(function (require, exports, module) {
         container.removeClass("active");
       });
 
+      // 禁止调节宽度
       slider.on("move", function(e) {
-        if (container.hasClass("active")) {
-          sliderPct = (sliderOrientation === 'vertical') ? (e.pageY-offsetY)/imgHeight : (e.pageX-offsetX)/imgWidth;
-          if (sliderPct < 0) {
-            sliderPct = 0;
-          }
-          if (sliderPct > 1) {
-            sliderPct = 1;
-          }
-          adjustSlider(sliderPct);
-        }
+        // if (container.hasClass("active")) {
+        //   sliderPct = (sliderOrientation === 'vertical') ? (e.pageY-offsetY)/imgHeight : (e.pageX-offsetX)/imgWidth;
+        //   if (sliderPct < 0) {
+        //     sliderPct = 0;
+        //   }
+        //   if (sliderPct > 1) {
+        //     sliderPct = 1;
+        //   }
+        //   adjustSlider(sliderPct);
+        // }
       });
 
       container.find("img").on("mousedown", function(event) {

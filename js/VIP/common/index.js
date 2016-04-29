@@ -48,7 +48,7 @@ define(function (require, exports, module) {
         // 设置定时器来保持同步
         setTimeout(function () {
           $(_this).find('.operation').eq(toIndex).animate({
-          opacity: 1
+            opacity: 1
         },100);
         }, 500);
       }

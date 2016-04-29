@@ -1,0 +1,155 @@
+@import '../../../../less/dev/mixins/mixins.less';
+
+@import '../search/search.css';
+
+.main_box{
+  width: 100%;
+  background-color: #f2f3f5;
+  padding-top: 20px;
+}
+
+
+.distance_top{
+  margin-top: 112px;
+}
+
+//序号
+.list_sort,.list_sort02,.list_sort03,.list_sort04
+{
+  font-size: 16px;
+  line-height: 24px;
+
+  width: 54px;
+  height: 48px;
+  margin-top: 12px;
+
+  text-align: center;
+}
+.list_sort
+{
+  border: #f6492b 1px solid;
+  .sort_p01
+  {
+    font-style: italic;
+
+    color: #fff;
+    background-color: #f6492b;
+  }
+  .sort_p02
+  {
+    color: #f6492b;
+  }
+}
+.list_sort02
+{
+  border: #fda400 1px solid;
+  .sort_p01
+  {
+    font-style: italic;
+
+    color: #fff;
+    background-color: #fda400;
+  }
+  .sort_p02
+  {
+    color: #fda400;
+  }
+}
+.list_sort03
+{
+  border: #69c731 1px solid;
+  .sort_p01
+  {
+    font-style: italic;
+
+    color: #fff;
+    background-color: #69c731;
+  }
+  .sort_p02
+  {
+    color: #69c731;
+  }
+}
+.list_sort04
+{
+  border: #999999 1px solid;
+  .sort_p01
+  {
+    font-style: italic;
+
+    color: #fff;
+    background-color: #999999;
+  }
+  .sort_p02
+  {
+    color: #999999;
+  }
+}//
+
+ul.arrangement_box{
+	width: 1200px;
+	margin: 0 auto;
+	font-size: 14px;
+	margin-top: 25px;
+	li{
+		padding: 15px 20px;
+		border-bottom: #d9d9d9 1px solid;
+	}
+	li:hover{
+		background-color: #fafafa;
+	}
+
+	.content{
+		width: 920px;
+		margin: 10px 0 0 20px;
+		.company{
+			margin-top: 2px;
+			font-size: 18px;
+			color: #333;
+			display: block;
+		}
+		.company_content{
+			margin-top: 11px;
+			color: #666;
+			p{
+				margin-right: 100px;
+			}
+			span{
+				color: #ff6600;
+			}
+		}
+	}
+
+	//按钮
+	.btn_box{
+		.btn_buy{
+			width: 132px;
+			line-height: 30px;
+			border: #ff6600 1px solid;
+			color: #ff6600;
+			text-align: center;
+			display: block;
+			.transition(all 0.2s linear);
+			&:hover{
+				background-color: #f60;
+				color: #fff;
+			}
+		}
+		.btn_buy01{
+			margin-bottom: 10px;
+			border: #3ca1d7 1px solid;
+			color: #3ca1d7;
+			&:hover{
+				background-color: #3ca1d7;
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+
+// 与版权的距离70px
+.pad_bottom{
+  padding-bottom: 70px;
+}

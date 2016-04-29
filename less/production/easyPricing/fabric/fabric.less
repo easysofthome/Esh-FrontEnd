@@ -1,5 +1,10 @@
 @import '../../../dev/mixins/mixins.less';
 @import '../../../sprite/easyPricing/fabric/sprite.less';
+.ban-bg
+{
+    position: relative;
+    margin-top: 112px;
+}
 
 .mainbox{
   padding-bottom: 70px;
@@ -67,10 +72,13 @@
     .handle_mag{
     margin-left: 10px;
   }
-  .handle_one:hover{
+  .handle_one:hover,.selected{
     border: 1px solid #3ca1d7;
   }
   .handle_one:hover .select{
+    display: block;
+  }
+  .selected .select{
     display: block;
   }
 
@@ -154,15 +162,11 @@
     position: relative;
     width: 212px;
   }
-  .down_arr{
-    position: absolute;
-    top: 17px;
-    right: 16px;
-    .sprite(@down_arr);
-    .icon-easyPricing-fabric;
-  }
   .Single_box,.title_name,.title_density,.yarn_tit,.prompt,.ingredient_tit,.AddItem_tit{
     line-height: 40px;
+  }
+  .Single_box{
+    margin-top: 10px;
   }
   .ingredient_tit{
     width: 40px;

@@ -2,13 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>易核价-易家纺电子商务服务平台_单品核价</title>
+  <title>易核价-易家纺电子商务服务平台_套件核价</title>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/choice.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
+@@include('/common/top.html')
 @@include('/easyPricing/header.html')
+<div class="ban-bg">
+  <img width="100%" src="/images/production/easydesign/common/icon-bg02.png">
+</div>
 <div class="mainbox">
   <p class="fabrictitle clearfix">
     <span class="lf fabrictitle_left">套件核价</span>
@@ -53,8 +57,8 @@
   <!-- 类型 -->
   <div class="typebox clearfix">
     <p class="lf tit">套件类型：</p>
+    <a class="lf whole cur" href="#">全部</a>
     <ul class="type lf">
-      <li class="lf"><a class="type_a cur" href="#">全部</a></li>
       <li class="lf"><a class="type_a" href="#">餐垫件套</a></li>
       <li class="lf"><a class="type_a" href="#">杯垫六件套</a></li>
       <li class="lf"><a class="type_a" href="#">餐巾套件</a></li>
@@ -91,10 +95,10 @@
           <i class="lf"></i>
         </a>
       </div>
-    </div>
-    <div class="rg intbox">
-      <input class="int lf" type="text" placeholder="请输入款式名称" />
-      <i class="lf"></i>
+      <div class="lf intbox">
+        <input class="int lf" type="text" placeholder="请输入款式名称" />
+        <i class="lf"></i>
+      </div>
     </div>
   </div>
 
@@ -106,27 +110,27 @@
       </div>
       <p class="name">滚边枕头</p>
       <div class="dropbox clearfix">
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
@@ -182,5 +186,10 @@
   @@include('/easyPricing/common/next.html')
   </div>
   @@include('/easyPricing/common/footer2.html')
+  <script>
+    seajs.use(['jquery','FancyRadioCheckBox'],function ($,FancyRadioCheckBox){
+      FancyRadioCheckBox.init();
+    });
+  </script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
 <body>
   <!-- 头部、导航 -->
+  @@include('/common/top.html')
   @@include('/easydata/header1.html')
 
   <!-- 表格 -->
@@ -17,9 +18,20 @@
     <!-- 精确匹配国外潜在买家(已登录-数据库中有) -->
     <div class="search_box search_not clearfix">
       <div class="clearfix">
-        <input class="int_430 lf" type="text" placeholder="请选择国家"/>
-        <input class="int_430 lf" type="text" placeholder="请选择产品" />
+      <div class="width338 lf">
+        <div class="int_430" id="sel-country">
+          <input type="text" placeholder="请选择国家（只有中国是出口数据，其它国家都是进口数据）" value="">
+          <span class="input-tri"></span>
+        </div>
+      </div>
+      <div class="width338 lf">
+        <div class="int_430" id="sel-country">
+          <input type="text" placeholder="请选择产品" value="">
+          <span class="input-tri"></span>
+        </div>
+      </div>
         <a class="lf btn_01" href="#">查询</a>
+        <a class="lf btn_b" href="#">收藏</a>
         <a class="lf btn_00" href="#">重置</a>
       </div>
     </div>
@@ -101,7 +113,7 @@
           <span class="lf">最低价</span>
         </p>
       </div>
-      <div class="clearfix Margins">
+      <div class="clearfix Margins" id="set-table1">
         <div class="lf pricechangesbox">
           <ul class="vertical clearfix">
             <li class="lf price_data">年份</li>
@@ -187,18 +199,12 @@
             <li class="lf price_data highcolor">4.5</li>
             <li class="lf price_data highcolor">4.5</li>
             <li class="lf price_data highcolor">4.5</li>
-            <li class="lf price_data highcolor">4.5</li>
-            <li class="lf price_data highcolor">4.5</li>
-            <li class="lf price_data highcolor">4.5</li>
 
           </ul>
 
 
            <ul class="vert_data clearfix">
             <li class="lf price_data">2月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
@@ -233,16 +239,10 @@
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
 
           </ul>
            <ul class="vert_data clearfix">
             <li class="lf price_data">4月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
@@ -277,16 +277,10 @@
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
 
           </ul>
            <ul class="vert_data clearfix">
             <li class="lf price_data">6月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
@@ -321,16 +315,10 @@
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
 
           </ul>
            <ul class="vert_data clearfix">
             <li class="lf price_data">8月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
@@ -365,16 +353,10 @@
             <li class="lf price_data lowcolor">4.5</li>
             <li class="lf price_data lowcolor">4.5</li>
             <li class="lf price_data lowcolor">4.5</li>
-            <li class="lf price_data lowcolor">4.5</li>
-            <li class="lf price_data lowcolor">4.5</li>
-            <li class="lf price_data lowcolor">4.5</li>
 
           </ul>
            <ul class="vert_data clearfix">
             <li class="lf price_data">10月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
@@ -409,16 +391,10 @@
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
 
           </ul>
            <ul class="vert_data clearfix">
             <li class="lf price_data">12月</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
-            <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>
             <li class="lf price_data">4.5</li>

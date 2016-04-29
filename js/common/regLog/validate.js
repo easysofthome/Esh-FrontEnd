@@ -93,13 +93,13 @@ define(function (require, exports, module) {
                 default: break;
             }
         });
-        btn_getcode.bind('click', function(){
-            // if(!ishidden){
-            //     validateAuthCode();
-            // }else{
-                    // getPhoneCode();
-            // }
-        });
+        // btn_getcode.bind('click', function(){
+        //     // if(!ishidden){
+        //     //     validateAuthCode();
+        //     // }else{
+        //             // getPhoneCode();
+        //     // }
+        // });
 
     }
 /** /限制输入字符长度 **/
@@ -124,73 +124,73 @@ define(function (require, exports, module) {
             },
             rules: {
                 //用户名
-                regName: {
+                RegName: {
                     required: true,
                     user: true,
                     checkUser: true
                 },
                 //密码
-                pwd: {
+                Pwd: {
                     required: true,
                     rangelength: [6, 20],
                     strength: true,
                     same: '#form-account'
                 },
-                pwdRepeat: {
+                RePwd: {
                     required: true,
                     equalTo: '#form-pwd'
                 },
-                companyName:{
+                CompanyName:{
                     required: true
                 },
-                companyNameEn: {
+                CompanyNameEn: {
                     required: true
                 },
-                authCode: {
+                AuthCode: {
                     required: true,
                     minlength: 6
                 },
-                identity: {
+                Identity: {
                     required: true
                 },
-                companyType: {
+                CompanyType: {
                     required: true
                 },
-                agree: {
+                AgreeProtocol: {
                     required: true
                 }
             },
             messages: {
-                regName: {
+                RegName: {
                     required: icons.error + '请输入用户名',
                     rangelength: icons.error + '长度只能在{0}-{1}个字符之间'
                 },
-                pwd: {
+                Pwd: {
                     required: icons.error + '请输入密码',
                     rangelength: icons.error +
                     '长度只能在{0}-{1}个字符之间'
                 },
-                pwdRepeat: {
+                RePwd: {
                     required: icons.error + '请再次输入密码',
                     equalTo: icons.error + '两次密码输入不一致'
                 },
-                companyName:{
+                CompanyName:{
                     required: icons.error + '请输入公司名称'
                 },
-                companyNameEn: {
+                CompanyNameEn: {
                     required: icons.error + '请输入公司英文名称'
                 },
-                authCode: {
+                AuthCode: {
                     required: icons.error + '请输入验证码',
                     minlength: icons.error + '请输入六位验证码'
                 },
-                identity: {
+                Identity: {
                     required: icons.error + '请选择您的身份'
                 },
-                companyType: {
+                CompanyType: {
                     required: icons.error + '请选择您的企业类型'
                 },
-                agree: {
+                AgreeProtocol: {
                     required: icons.error + '请同意注册协议'
                 }
             }
@@ -207,20 +207,21 @@ define(function (require, exports, module) {
                 auth_code_tit.html("手机验证码：");
             }else{
                 auth_code_tit.html("邮箱验证码：");
-                checkEmail($(element),
-                    function () {
-                        var label_txt = isMobile ? '手机' : '邮箱';
-                        var validateCode = $('#validate-code');
-                        if (validateCode.hasClass('none')) {
-                            validateCode.removeClass('none');
-                            validateCode.find('.label').html("<b class='ftx04'>*</b>" + label_txt + '验证码');
-                        }
-                    },
-                    function function_name (element) {
-                        $(element).parent().find('.input-tip').html('<span>' + "该帐号已存在，立刻<a href='./Login.html'>登录</a>" + '</span>');
-                    }
-                );
+                // checkEmail($(element),
+                //     function () {
+                //         var label_txt = isMobile ? '手机' : '邮箱';
+                //         var validateCode = $('#validate-code');
+                //         if (validateCode.hasClass('none')) {
+                //             validateCode.removeClass('none');
+                //             validateCode.find('.label').html("<b class='ftx04'>*</b>" + label_txt + '验证码');
+                //         }
+                //     },
+                //     function function_name (element) {
+                //         $(element).parent().find('.input-tip').html('<span>' + "该帐号已存在，立刻<a href='./Login.html'>登录</a>" + '</span>');
+                //     }
+                // );
             }
+            return true;
         }, '');
         //密码
         $.validator.addMethod('strength', function (value, element, param) {
@@ -242,6 +243,7 @@ define(function (require, exports, module) {
         var flag = new Array();
         var regPhone = new RegExp(reg[86]);
         var regEmail = new RegExp(email);
+        flag[0] = false;
         if(regPhone.test(value)){
             flag[0] = true;
             flag[1] = 'phone';  //手机验证成功

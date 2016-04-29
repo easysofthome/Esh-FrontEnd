@@ -10,6 +10,7 @@
 
 <body>
   <!-- 头部、导航 -->
+  @@include('/common/top.html')
   @@include('/easydata/header1.html')
   <div class="main_box distance_top">
     <!-- 搜索 -->
@@ -219,47 +220,47 @@
         <ul class="sel-port">
           <li>
             <span class="port-name">青岛</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_qingDao">+</span>
           </li>
           <li>
             <span class="port-name">上海</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_shangHai">+</span>
           </li>
           <li>
             <span class="port-name">福建</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_fuJian">+</span>
           </li>
           <li>
             <span class="port-name">宁波</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_ningBo">+</span>
           </li>
           <li>
             <span class="port-name">广州</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_guangZhou">+</span>
           </li>
           <li>
             <span class="port-name">天津</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_tianJin">+</span>
           </li>
           <li>
             <span class="port-name">澳门</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_aoMen">+</span>
           </li>
           <li>
             <span class="port-name">重庆</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_chongQing"+</span>
           </li>
           <li>
             <span class="port-name">厦门</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_xiaMen">+</span>
           </li>
           <li>
             <span class="port-name">海口</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_haiKou">+</span>
           </li>
           <li>
             <span class="port-name">香港</span>
-            <span class="add-port">+</span>
+            <span class="add-port" id="opr_xiangGang">+</span>
           </li>
         </ul>
       </dd>
@@ -268,14 +269,13 @@
     <ul class="matchingDeg clearfix">
       <li class="lf">
         <span class="lf">匹配度</span>
-        <div id="sel-match" class="clearfix">
-          <input class="int_110 lf" type="text" placeholder="请选择"/>
-          <i></i>
-          <ol class="sel-match">
-            <li class="match">高</li>
-            <li class="match">中</li>
-            <li class="match">低</li>
-          </ol>
+        <div class="int_110 lf esh-sel" id="esh-sel1" inputId="input-match">
+          <span>请选择</span>
+          <ul class="none">
+            <li><a href="">高</a></li>
+            <li><a href="">中</a></li>
+            <li><a href="">低</a></li>
+          </ul>
         </div>
       </li>
 <!--       <li class="lf">

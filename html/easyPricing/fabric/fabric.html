@@ -7,30 +7,37 @@
     <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
 
   <body>
+    @@include('/common/top.html')
     @@include('/easyPricing/header.html')
-  @@include('/easyPricing/fabric/fabrictitle.html')
+    <div class="ban-bg">
+      <img width="100%" src="/images/production/easydesign/common/icon-bg02.png">
+    </div>
+    @@include('/easyPricing/fabric/fabrictitle.html')
     <div class="mainbox">
       <div class="fabricbox">
         <div class="fabric_con">
           <div class="clearfix data_frm">
             <span class="lf title_name">起 订 量：</span>
-            <ul class="lf dropdown_box">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">0-1999米</li>
-            </ul>
+            <select class="lf" id="sel1">
+              <option value="">0-199米</option>
+              <option value="one">0-99米</option>
+              <option value="two">100-199米</option>
+              <option value="three">200-299米</option>
+              <option value="four">3000-399米</option>
+            </select>
           </div>
           <div class="clearfix rad_frm">
             <span class="lf title_name">织造种类：</span>
             <div class="lf Single_box">
-              <label class="lf radio_rg">
-                <input name="Fruit" type="radio" class="lf radio_post" />
+              <label class="lf radio_rg label_radio">
+                <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                 <span class="lf">提花布</span>
               </label>
-              <label class="lf radio_rg">
+              <label class="lf radio_rg label_radio">
                 <input name="Fruit" type="radio" class="lf radio_post" />
                 <span class="lf">小提花</span>
               </label>
-              <label class="lf">
+              <label class="lf label_radio">
                 <input name="Fruit" type="radio" class="lf radio_post" />
                 <span class="lf">平纹、斜纹、缎纹</span>
               </label>
@@ -39,34 +46,37 @@
           <div class="clearfix data_frm">
             <span class="lf title_name">面料门幅：</span>
             <input type="text" class="lf fabric_width">
-            <ul class="lf width_company">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">厘米</li>
-            </ul>
+            <select class="lf" id="sel2">
+              <option value="">厘米</option>
+              <option value="">分米</option>
+              <option value="">米</option>
+            </select>
           </div>
           <div class=" data_frm">
             <div class="clearfix">
               <span class="lf title_name">纱线种类数量：</span>
               <span class="lf title_density">密度单位：</span>
-              <ul class="lf width_company_none">
-                <a href="#" class="down_arr"></a>
-                <li class="dropdown_content">厘米</li>
-              </ul>
+              <select class="lf" id="sel3">
+                <option value="">厘米</option>
+                <option value="">分米</option>
+                <option value="">米</option>
+              </select>
             </div>
             <div class="yarntype_box">
               <div class="clearfix yarndensity_box">
                 <div class="lf">
 
                   <div class="lf yarn_tit">经纱种类：</div>
-                  <div class="lf">
-                    <a href="#" class="lf reducebox">
-                      <span class="reduceimg"></span>
-                    </a>
-                    <span  class="lf reduceiput">1</span>
-                    <a href="#" class="lf increasebox">
-                      <span class="increaseimg"></span>
-                    </a>
-                  </div>
+                  <input type="text" class="lf" id="warp-spinner" />
+                    <!-- <div class="lf">
+                      <a href="#" class="lf reducebox">
+                        <span class="reduceimg"></span>
+                      </a>
+                      <span  class="lf reduceiput">1</span>
+                      <a href="#" class="lf increasebox">
+                        <span class="increaseimg"></span>
+                      </a>
+                    </div> -->
                 </div>
 
                 <div class="lf">
@@ -82,7 +92,7 @@
               </div>
               <ul class="clearfix">
                 <li class="lf yarn_para">
-                  <span class="lf para_tit">纬纱1：</span>
+                  <span class="lf para_tit">经纱1：</span>
                   <span class="lf include"></span>
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
@@ -94,10 +104,10 @@
                       <span class="lf input_fabric">80S</span>
                     </span>
                   </div>
-                  <a target=_blank href="/html/easyPricing/pricing/storehouse.html" class="yarn_butt lf">选择纱线</a>
+                  <div class="yarn_butt lf">选择纱线</div>
                 </li>
                 <li class="lf yarn_para2">
-                  <span class="lf para_tit">纬纱1：</span>
+                  <span class="lf para_tit">经纱2：</span>
                   <span class="lf include"></span>
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
@@ -109,7 +119,7 @@
                       <span class="lf input_fabric">80S</span>
                     </span>
                   </div>
-                  <a target=_blank href="/html/easyPricing/pricing/storehouse.html" class="yarn_butt lf">选择纱线</a>
+                  <div class="yarn_butt lf">选择纱线</div>
                 </li>
               </ul>
             </div>
@@ -118,20 +128,12 @@
               <div class="clearfix yarndensity_box">
                 <div class="lf">
 
-                  <div class="lf yarn_tit">经纱种类：</div>
-                  <div class="lf">
-                    <a href="#" class="lf reducebox">
-                      <span class="reduceimg"></span>
-                    </a>
-                    <span  class="lf reduceiput">1</span>
-                    <a href="#" class="lf increasebox">
-                      <span class="increaseimg"></span>
-                    </a>
-                  </div>
+                  <div class="lf yarn_tit">纬纱种类：</div>
+                  <input type="text" class="lf" id="abb-spinner" />
                 </div>
 
                 <div class="lf">
-                  <div class="lf yarn_tit">经密：</div>
+                  <div class="lf yarn_tit">纬密：</div>
                   <div class="lf">
                     <input type="text" class="density_input lf">
                     <span class="plus lf"></span>
@@ -155,10 +157,10 @@
                       <span class="lf input_fabric">80S</span>
                     </span>
                   </div>
-                  <a target=_blank href="/html/easyPricing/pricing/storehouse.html" class="yarn_butt lf">选择纱线</a>
+                  <div class="yarn_butt lf">选择纱线</div>
                 </li>
                 <li class="lf yarn_para2">
-                  <span class="lf para_tit">纬纱1：</span>
+                  <span class="lf para_tit">纬纱2：</span>
                   <span class="lf include"></span>
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient">
@@ -170,7 +172,7 @@
                       <span class="lf input_fabric">80S</span>
                     </span>
                   </div>
-                  <a target=_blank href="/html/easyPricing/pricing/storehouse.html" class="yarn_butt lf">选择纱线</a>
+                  <div class="yarn_butt lf">选择纱线</div>
                 </li>
               </ul>
             </div>
@@ -180,15 +182,15 @@
             <div class="clearfix">
               <span class="lf title_name">染料方法：</span>
               <div class="lf Single_box">
-                <label class="lf radio_rg">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">提花布</span>
                 </label>
-                <label class="lf radio_rg">
+                <label class="lf radio_rg label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">印花</span>
                 </label>
-                <label class="lf">
+                <label class="lf label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">色织</span>
                 </label>
@@ -198,15 +200,15 @@
               <div class="clearfix">
                 <span class="lf AddItem_tit">染料要求：</span>
                 <div class="lf Single_box">
-                  <label class="lf radio_rg">
-                    <input name="Fruit" type="radio" class="lf radio_post" />
+                  <label class="lf radio_rg label_radio">
+                    <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                     <span class="lf">染料印花</span>
                   </label>
-                  <label class="lf radio_rg">
+                  <label class="lf radio_rg label_radio">
                     <input name="Fruit" type="radio" class="lf radio_post" />
                     <span class="lf">涂料印花</span>
                   </label>
-                  <label class="lf">
+                  <label class="lf label_radio">
                     <input name="Fruit" type="radio" class="lf radio_post" />
                     <span class="lf">转移印花</span>
                   </label>
@@ -217,11 +219,11 @@
             <div class="clearfix">
               <span class="lf AddItem_tit">工艺要求：</span>
               <div class="lf Single_box">
-                <label class="lf radio_rg">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">平网印花</span>
                 </label>
-                <label class="lf radio_rg">
+                <label class="lf radio_rg label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">圆网印花</span>
                 </label>
@@ -232,11 +234,11 @@
             <div class="clearfix">
               <span class="lf AddItem_tit">色牢度等级：</span>
               <div class="lf Single_box">
-                <label class="lf radio_rg">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">色牢三级</span>
                 </label>
-                <label class="lf radio_rg">
+                <label class="lf radio_rg label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">色牢四级</span>
                 </label>
@@ -245,15 +247,17 @@
             <div class="clearfix">
               <span class="lf AddItem_tit">是否定位花：</span>
               <div class="lf Single_box">
-                <ul class="lf width_company_none">
-                  <a href="#" class="down_arr"></a>
-                  <li class="dropdown_content">厘米</li>
-                </ul>
+                <select class="lf" id="sel4">
+                  <option value="">厘米</option>
+                  <option value="">分米</option>
+                  <option value="">米</option>
+                </select>
                 <span class="lf title_name">起 订 量：</span>
-                <ul class="lf width_company_none">
-                  <a href="#" class="down_arr"></a>
-                  <li class="dropdown_content">厘米</li>
-                </ul>
+                <select class="lf" id="sel5">
+                  <option value="">厘米</option>
+                  <option value="">分米</option>
+                  <option value="">米</option>
+                </select>
 
               </div>
             </div>
@@ -261,15 +265,15 @@
           <div class="clearfix rad_frm">
             <span class="lf title_name">织造种类：</span>
             <div class="lf Single_box">
-              <label class="lf radio_rg">
-                <input name="Fruit" type="radio" class="lf radio_post" />
+              <label class="lf radio_rg label_radio">
+                <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                 <span class="lf">提花布</span>
               </label>
-              <label class="lf radio_rg">
+              <label class="lf radio_rg label_radio">
                 <input name="Fruit" type="radio" class="lf radio_post" />
                 <span class="lf">小提花</span>
               </label>
-              <label class="lf">
+              <label class="lf label_radio">
                 <input name="Fruit" type="radio" class="lf radio_post" />
                 <span class="lf">平纹、斜纹、缎纹</span>
               </label>
@@ -342,20 +346,21 @@
           <div class="clearfix data_frm">
             <span class="lf title_name">汇率：</span>
 
-            <ul class="lf width_company remove_left">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">美元汇率</li>
-            </ul>
+            <select class="lf" id="sel5">
+              <option value="">美元汇率</option>
+              <option value="">英镑汇率</option>
+              <option value="">韩币汇率</option>
+            </select>
             <input type="text" class="lf fabric_money"></div>
 
           <div class="clearfix rad_frm">
             <span class="lf title_name">织造种类：</span>
             <div class="lf Single_box">
-              <label class="lf radio_rg">
-                <input name="Fruit" type="radio" class="lf radio_post" />
+              <label class="lf radio_rg label_radio">
+                <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                 <span class="lf">选择易家纺工缴库核价</span>
               </label>
-              <label class="lf radio_rg">
+              <label class="lf radio_rg label_radio">
                 <input name="Fruit" type="radio" class="lf radio_post" />
                 <span class="lf">选择工厂报价核价</span>
               </label>
@@ -365,12 +370,68 @@
           </div>
         </div>
 
-        <p class="clearfix butt_box">
-          <a href="#" class="lf butt_pricing">返回</a>
-          <a target=_blank href="/html/easyPricing/pricing/result.html" class="rg butt_return">开始核价</a>
-        </p>
+        <div class="clearfix butt_box">
+          <a href="javascript:history.back();" class="lf butt_pricing">返回</a>
+          <div class="rg butt_return" id="startPrice">开始核价</div>
+        </div>
       </div>
     </div>
     @@include('/easyPricing/common/footer2.html')
+<script>
+  seajs.use(['jquery','customSelect','spinner','layer','FancyRadioCheckBox'],function ($,cus,spinner,layer,FancyRadioCheckBox) {
+    $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
+    $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
+    $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
+
+    $('#warp-spinner').spinner({min:1,max:2});
+    $('#abb-spinner').spinner({min:1,max:4});
+
+    FancyRadioCheckBox.init();
+
+    $('.handle_one').click(function() {
+      $(this).toggleClass('selected');
+    });
+
+
+    $('#startPrice').on('click', function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1000px', '617px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 650)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        iframe: {src: '../pricing/result.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+
+    $('.yarn_butt').on('click', function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1000px', '844px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 844)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        iframe: {src: '../pricing/storehouse.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+
+  });
+</script>
   </body>
   </html>

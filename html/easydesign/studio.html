@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  @@include('/common/top.html')
   @@include('/easydesign/header.html')
   @@include('/easydesign/Common/banner02.html')
   <div class="title clearfix">
@@ -17,7 +18,7 @@
   </div>
 
   <div class="fenlei">
-    <p class="clearfix">
+    <div class="clearfix">
       <span class="lf sp">排序方式：</span>
       <a class="lf clearfix current" href="#">
         <span class="lf">默认排序</span> <i class="lf"></i>
@@ -34,7 +35,11 @@
         <span class="lf">成品排序</span>
         <i class="lf"></i>
       </a>
-    </p>
+      <div class="lf intbox">
+        <input class="int lf" type="text" placeholder="请输入花型编号" />
+        <i class="lf"></i>
+      </div>
+    </div>
   </div>
 
   <div class="attentionbox clearfix">
