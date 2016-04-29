@@ -1,0 +1,31 @@
+.LIJIFABU {
+  width: 903px;
+  margin-top: 20px;
+  border: 1px #d6d6d6 solid;
+}
+.LIJIFABU .l-bottom-l {
+  float: left;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-bottom: 30px;
+}
+.LIJIFABU .l-bottom-l .zi {
+  font-size: 16px;
+  padding-bottom: 10px;
+  color: #333;
+}
+.LIJIFABU .l-bottom-r {
+  float: right;
+  margin-top: 30px;
+  margin-right: 20px;
+  background-color: #c30e23;
+}
+.LIJIFABU .l-bottom-r a {
+  float: left;
+  color: #fff;
+}
+.LIJIFABU .l-bottom-r img {
+  float: left;
+  margin-top: 18px;
+  margin-left: 10px;
+}

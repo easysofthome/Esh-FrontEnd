@@ -1,0 +1,185 @@
+.icon-yijingjia-index {
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 {
+  overflow: hidden;
+}
+.main-01 .main01center {
+  float: left;
+  display: inline;
+  margin-top: 20px;
+  margin-left: 234px;
+}
+.main-01 .main01center .ma01cen-top {
+  position: relative;
+  width: 670px;
+  height: 292px;
+  background-color: red;
+}
+.main-01 .main01center .ma01cen-top ul {
+  position: absolute;
+  right: 13px;
+  bottom: 10px;
+  overflow: hidden;
+}
+.main-01 .main01center .ma01cen-top ul li:hover {
+  background-position: -4px -62px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-top ul li {
+  float: left;
+  margin: 0 2px;
+  cursor: pointer;
+  background-position: -4px -40px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-top ul .dangqian {
+  background-position: -4px -62px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-bottom {
+  overflow: hidden;
+  width: 670px;
+}
+.main-01 .main01center .ma01cen-bottom dl {
+  display: inline;
+  float: left;
+  margin-top: 23px;
+  margin-right: 53px;
+  margin-left: 20px;
+  text-align: center;
+}
+.main-01 .main01center .ma01cen-bottom dl dt {
+  font-weight: bold;
+  width: 63px;
+  height: 50px;
+  margin: 0 auto;
+  background-position: center;
+}
+.main-01 .main01center .ma01cen-bottom dl .hangye {
+  background-position: -4px -142px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 63px;
+  height: 50px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-bottom dl .anquan {
+  background-position: -4px -200px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 63px;
+  height: 50px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-bottom dl .caozuo {
+  background-position: -4px -258px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 63px;
+  height: 50px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-bottom dl .yongjin-02 {
+  background-position: -4px -84px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 63px;
+  height: 50px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01center .ma01cen-bottom dl dd {
+  margin-top: 10px;
+}
+.main-01 .main01center .ma01cen-bottom dl dd p {
+  line-height: 22px;
+  color: #888;
+}
+.main-01 .main01center .ma01cen-bottom dl dd p span {
+  font-size: 18px;
+}
+.main-01 .main01center .ma01cen-bottom .dd01 {
+  width: 107px;
+}
+.main-01 .main01center .ma01cen-bottom .dd02 {
+  width: 92px;
+}
+.main-01 .main01center .ma01cen-bottom .dd03 {
+  width: 117px;
+}
+.main-01 .main01center .ma01cen-bottom .yongjin-01 {
+  width: 91px;
+  margin-right: 0;
+}
+.main-01 .main01right {
+  float: right;
+}
+.main-01 .main01right li {
+  width: 264px;
+  height: 134px;
+  margin-top: 20px;
+  border: 1px #d6d6d6 solid;
+}
+.main-01 .main01right li p {
+  line-height: 26px;
+  float: left;
+  margin-top: 40px;
+  margin-right: 12px;
+  color: #949494;
+}
+.main-01 .main01right li p span {
+  font-size: 20px;
+  color: #ff9600;
+}
+.main-01 .main01right li .pingtai-01 {
+  width: 66px;
+  height: 66px;
+  margin-top: 34px;
+  margin-left: 12px;
+}
+.main-01 .main01right li .lishi {
+  background-position: -4px -390px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 66px;
+  height: 66px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01right li .zuori {
+  background-position: -4px -464px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 66px;
+  height: 66px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}
+.main-01 .main01right li .renshu {
+  background-position: -4px -316px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 66px;
+  height: 66px;
+  background-image: url("/images/production/yijingjia/index/sprite-yijingjia-index.PNG");
+}

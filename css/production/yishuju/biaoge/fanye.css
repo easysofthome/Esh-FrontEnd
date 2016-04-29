@@ -1,0 +1,57 @@
+.wenzichengse {
+  color: #ff6600;
+}
+.wenzishenghui {
+  color: #333;
+}
+.wenziqianhui {
+  color: #888;
+}
+.wenzilanse {
+  color: #00a2c9;
+}
+.heiti {
+  color: #000;
+}
+.wenzihongse {
+  color: #dc1416;
+}
+.wenzilvse {
+  color: #10bb39;
+}
+.jiachu {
+  font-weight: bold;
+}
+.dahaozi {
+  font-size: 16px;
+}
+.xiaohaozi {
+  font-size: 13px;
+}
+.wenziyuzhong {
+  text-align: center;
+}
+.qujiachu {
+  font-weight: lighter;
+}
+.fanyebox {
+  font-size: 12px;
+  line-height: 28px;
+  color: #a1a1a1;
+  margin-left: 310px;
+}
+.fanyebox .fanyejuxingkuang {
+  border: 1px solid #dddddd;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+.fanyebox .baikuan {
+  border: 1px solid #fff;
+}
+.fanyebox .biankuanjuli {
+  margin-left: 7px;
+}
+.fanyebox .shengsekuang {
+  border: 1px solid #a1a1a1;
+}

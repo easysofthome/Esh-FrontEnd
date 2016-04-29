@@ -1,0 +1,197 @@
+.icon-VIP-common-account {
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.main_box {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+.yaoqing-main01 {
+  width: 854px;
+  margin-top: 40px;
+  padding-bottom: 30px;
+  background-color: #fff;
+}
+.yaoqing-main01 .p01 {
+  padding-top: 23px;
+  margin: 0 20px;
+  font-size: 24px;
+  color: #333;
+}
+.yaoqing-main01 .p02 {
+  margin: 14px 20px 0 20px;
+  color: #f43232;
+}
+.yaoqing-main01 .p03 {
+  padding: 10px;
+  border: #d9d9d9 1px solid;
+  margin: 13px 20px 0 20px;
+  color: #333;
+}
+.yaoqing-main01 .p03 .mar {
+  margin-top: 4px;
+}
+.yaoqing-main01 .p04 {
+  margin: 10px 20px 0 20px;
+}
+.yaoqing-main01 .p04 .bg-color {
+  width: 58px;
+  text-align: center;
+  color: #fff;
+  background-color: #37b5f9;
+  border-color: #37b5f9;
+  padding: 0 0;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 3px;
+}
+.yaoqing-main01 .p04 .bg-color:focus,
+.yaoqing-main01 .p04 .bg-color.focus {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #b3e3fd;
+}
+.yaoqing-main01 .p04 .bg-color:hover {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #72cbfb;
+}
+.yaoqing-main01 .p04 .bg-color:active,
+.yaoqing-main01 .p04 .bg-color.active {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #72cbfb;
+}
+.yaoqing-main01 .p04 .fenxiang {
+  margin-top: 1px;
+  margin-right: 4px;
+  background-position: -4px -138px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.yaoqing-main01 .p04 .icon-qq,
+.yaoqing-main01 .p04 .icon-sina,
+.yaoqing-main01 .p04 .icon-linkedin {
+  margin-top: 1px;
+  margin-right: 12px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.yaoqing-main01 .p04 .icon-qq {
+  margin-left: 7px;
+  background-position: -4px -90px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.yaoqing-main01 .p04 .icon-sina {
+  background-position: -4px -114px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.yaoqing-main01 .p04 .icon-linkedin {
+  background-position: -4px -66px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.yaoqing-main01 .p04 .icon-more {
+  margin-top: 1px;
+  margin-right: 5px;
+  background-position: -4px -162px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.cover {
+  padding: 10px 0;
+  margin-top: 20px;
+  background-color: #fff;
+  width: 854px;
+}
+.cover .headPor {
+  position: relative;
+  margin-left: 20px;
+  display: inline;
+}
+.cover .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cover .words {
+  font-size: 12px;
+  margin-left: 11px;
+}
+.cover .words-p01 {
+  margin-top: 10px;
+}
+.cover .words-p01 i {
+  margin-right: 6px;
+  background-position: -4px -186px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 11px;
+  height: 17px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.cover .words-p01 .span_mar {
+  margin-left: 11px;
+}
+.cover a.btn_follow {
+  margin: 10px 20px 0 0;
+  width: 121px;
+  color: #fff;
+  background-color: #37b5f9;
+  border-color: #37b5f9;
+  padding: 0 0;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 0;
+}
+.cover a.btn_follow:focus,
+.cover a.btn_follow.focus {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #b3e3fd;
+}
+.cover a.btn_follow:hover {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #72cbfb;
+}
+.cover a.btn_follow:active,
+.cover a.btn_follow.active {
+  color: #fff;
+  background-color: #50befa;
+  border-color: #72cbfb;
+}
+.cover a.btn_follow i {
+  margin-top: 7px;
+  margin-right: 3px;
+  margin-left: 20px;
+  background-position: -4px -42px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+.cover a.btn_follow span {
+  margin-left: 10px;
+}

@@ -1,0 +1,56 @@
+.icon-easydata-priceDet {
+  background-image: url("/images/production/easydata/priceDet/sprite-easydata-priceDet.PNG");
+}
+.tablebox {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.tablebox .table_cont {
+  width: 1160px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+}
+.tablebox .left_box {
+  width: 562px;
+}
+.tablebox .tab_tit {
+  font-size: 18px;
+  color: #000;
+}
+.tablebox .Margins {
+  margin-top: 30px;
+}
+.tablebox .tab_unit {
+  font-size: 14px;
+  line-height: 20px;
+  color: #888;
+}
+.tablebox .pricechangesbox01 {
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size: 14px;
+  color: #333;
+  line-height: 48px;
+  width: 561px;
+}
+.tablebox .vertical {
+  background-color: #f2f3f5;
+  font-size: 16px;
+}
+.tablebox .vert_data {
+  font-size: 14px;
+}
+.tablebox .vert_data:nth-child(odd) {
+  background: #f8f8f8;
+}
+.tablebox .unitprice {
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.tablebox .unitprice {
+  width: 186px;
+}

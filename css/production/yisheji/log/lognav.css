@@ -1,0 +1,25 @@
+.icon-yisheji-log {
+  background-image: url("/images/production/yisheji/log/sprite-yisheji-log.PNG");
+}
+.lognav_box {
+  width: 1190px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.lognav_box .logo {
+  background-position: -4px -120px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 354px;
+  height: 61px;
+}
+.lognav_box a {
+  color: #888;
+}
+.lognav_box .logtop_ann {
+  margin-top: 36px;
+  border: 1px solid #cccccc;
+  line-height: 22px;
+  padding: 0 20px;
+}

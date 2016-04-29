@@ -1,0 +1,169 @@
+.icon-VIP-common-nav {
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.navbox {
+  background-color: #303745;
+  background-image: url("/images/production/VIP/common/nav/blue_line.png");
+  background-position: top;
+  background-repeat: repeat-x;
+}
+.navbox .nav {
+  font-size: 16px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.navL {
+  width: 326px;
+  height: 100px;
+  background-color: #4a7bc4;
+}
+.navL .headPorbox {
+  display: inline;
+  margin: 10px 10px 0 20px;
+}
+.navL .headPorbox .headPor {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.navL .headPorbox .headPor span.mask-words {
+  line-height: 1;
+  padding: 32px 0;
+  display: none;
+  width: 100%;
+  height: 34px;
+  position: absolute;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  opacity: .6;
+}
+.navL .headPorbox .headPor img.headportrait {
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.navL .headPorbox .headPor img.mask {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.navL .headPorbox .headPor:hover span.mask-words {
+  display: block;
+}
+.navL .username {
+  color: #fff;
+  margin-top: 40px;
+}
+.navL .returnbtn {
+  width: 112px;
+  margin: 35px 0 0 24px;
+  text-align: center;
+  color: #fff;
+  background-color: #e85d40;
+  border-color: #e85d40;
+  padding: 0 0;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 4px;
+}
+.navL .returnbtn:focus,
+.navL .returnbtn.focus {
+  color: #fff;
+  background-color: #eb7057;
+  border-color: #f6beb2;
+}
+.navL .returnbtn:hover {
+  color: #fff;
+  background-color: #eb7057;
+  border-color: #ef8b77;
+}
+.navL .returnbtn:active,
+.navL .returnbtn.active {
+  color: #fff;
+  background-color: #eb7057;
+  border-color: #ef8b77;
+}
+ul.navR {
+  line-height: 100px;
+  color: #fff;
+  margin-left: 53px;
+}
+ul.navR li.menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  float: left;
+}
+ul.navR li.menu a {
+  color: #fff;
+}
+ul.navR li.menu:hover {
+  background: #22212e;
+}
+ul.navR li.menu:hover a,
+ul.navR li.menu:hover p {
+  color: #3ca1d7;
+}
+ul.navR li.menu:hover span {
+  color: #fff;
+}
+ul.navR li.menu.nav-more {
+  cursor: pointer;
+}
+ul.navR li.menu.nav-more ul {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+}
+ul.navR li.menu.nav-more ul li {
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  background: #22212e;
+}
+ul.navR li.menu.nav-more ul li a {
+  color: #fff;
+  display: block;
+}
+ul.navR li.menu.nav-more ul li:hover {
+  background: #303745;
+}
+ul.navR li.menu.nav-more ul li:hover a {
+  color: #3ca1d7;
+}
+ul.navR .navmar {
+  padding: 0 50px;
+}
+ul.navR .newsRedbox {
+  position: relative;
+}
+ul.navR .newsRed {
+  font-size: 13px;
+  line-height: 24px;
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  text-align: center;
+  background-position: -4px -69px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+ul.navR .zhiti_13 {
+  font-size: 13px;
+}

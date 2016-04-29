@@ -1,0 +1,290 @@
+.icon-easyPricing-fabric {
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+}
+.ban-bg {
+  position: relative;
+  margin-top: 112px;
+}
+.mainbox {
+  padding-bottom: 70px;
+}
+.fabricbox {
+  width: 1200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+.fabricbox .fabric_con {
+  padding-top: 10px;
+  width: 1150px;
+  margin: 0 auto;
+}
+.fabricbox .title_name,
+.fabricbox .title_density,
+.fabricbox .yarn_tit,
+.fabricbox .para_tit,
+.fabricbox .ingredient_tit,
+.fabricbox .AddItem_tit {
+  font-size: 16px;
+  text-align: right;
+}
+.fabricbox .para_tit {
+  line-height: 130px;
+  width: 80px;
+}
+.fabricbox .title_name {
+  width: 124px;
+}
+.fabricbox .data_frm,
+.fabricbox .rad_frm {
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.fabricbox .rad_frm {
+  padding: 10px 0 10px 0;
+}
+.fabricbox .input_fabric,
+.fabricbox .dropdown_box,
+.fabricbox .fabric_width,
+.fabricbox .width_company_none,
+.fabricbox .width_company,
+.fabricbox .reducebox,
+.fabricbox .reduceiput,
+.fabricbox .increasebox,
+.fabricbox .density_input,
+.fabricbox .handle_one,
+.fabricbox .fabric_money {
+  border: 1px solid #cdcfd1;
+  border-radius: 5px;
+  color: #333333;
+  padding-left: 10px;
+  height: 38px;
+  line-height: 38px;
+  background-color: #fff;
+}
+.fabricbox .handle_one {
+  padding: 0 20px 0 20px;
+  cursor: pointer;
+  position: relative;
+}
+.fabricbox .fabric_money {
+  margin-left: 10px;
+  width: 40px;
+}
+.fabricbox .current_handle {
+  border: 1px solid #3ca1d7;
+}
+.fabricbox .select {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-position: -4px -108px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 33px;
+  height: 27px;
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+  display: none;
+}
+.fabricbox .handle_mag {
+  margin-left: 10px;
+}
+.fabricbox .handle_one:hover {
+  border: 1px solid #3ca1d7;
+}
+.fabricbox .handle_one:hover .select {
+  display: block;
+}
+.fabricbox .yarn_butt {
+  display: inline-block;
+  width: 90px;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: #3ca1d7;
+  font-style: 16px;
+  border-radius: 5px;
+  margin: 40px 0 0 10px;
+}
+.fabricbox .density_input {
+  width: 68px;
+  padding: 0;
+  text-align: center;
+}
+.fabricbox .input_fabric {
+  width: 80px;
+  margin-left: 10px;
+}
+.fabricbox .plus {
+  margin: 12px 5px 12px 5px;
+  background-position: -4px -84px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+}
+.fabricbox .reduceiput {
+  width: 40px;
+  padding: 0;
+  text-align: center;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.fabricbox .reducebox,
+.fabricbox .increasebox {
+  width: 38px;
+  padding-left: 0;
+  background-color: #f7f7f7;
+  border-radius: 5px 0 0 5px;
+}
+.fabricbox .reduceimg {
+  margin: 18px auto 0 auto;
+  background-position: -4px -14px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+}
+.fabricbox .increaseimg {
+  margin: 11px auto 0 auto;
+  background-position: -4px -36px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+}
+.fabricbox .include {
+  margin-top: 38px;
+  background-position: -4px -143px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 11px;
+  height: 56px;
+  background-image: url("/images/production/easyPricing/fabric/sprite-easyPricing-fabric.PNG");
+}
+.fabricbox .increasebox {
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #3ca1d7;
+  background-color: #3ca1d7;
+}
+.fabricbox .width_company,
+.fabricbox .width_company_none {
+  position: relative;
+  margin-left: 10px;
+}
+.fabricbox .width_company_none {
+  margin-left: 0;
+}
+.fabricbox .remove_left {
+  margin-left: 0;
+}
+.fabricbox .fabric_width,
+.fabricbox .width_company,
+.fabricbox .width_company_none {
+  width: 90px;
+}
+.fabricbox .dropdown_box {
+  background-color: #fff;
+  position: relative;
+  width: 212px;
+}
+.fabricbox .Single_box,
+.fabricbox .title_name,
+.fabricbox .title_density,
+.fabricbox .yarn_tit,
+.fabricbox .prompt,
+.fabricbox .ingredient_tit,
+.fabricbox .AddItem_tit {
+  line-height: 40px;
+}
+.fabricbox .ingredient_tit {
+  width: 40px;
+}
+.fabricbox .yarn_tit {
+  width: 92px;
+  text-align: right;
+}
+.fabricbox .Single_box {
+  font-size: 14px;
+}
+.fabricbox .radio_rg {
+  padding-right: 20px;
+}
+.fabricbox .radio_post {
+  margin: 14px 4px 0 0;
+  display: inline-block;
+  *margin-top: 10px;
+}
+.fabricbox .yarntype_box,
+.fabricbox .wefttype_box {
+  width: 1102px;
+  margin: 14px auto 0 auto;
+  border: 1px dashed #e5e5e5;
+  padding-bottom: 20px;
+}
+.fabricbox .wefttype_box {
+  margin: 0 auto;
+  border-top: none;
+}
+.fabricbox .yarndensity_box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.fabricbox .prompt {
+  margin-left: 20px;
+  color: #ff0000;
+}
+.fabricbox .yarn_para,
+.fabricbox .yarn_para2 {
+  width: 350px;
+  margin-left: 20px;
+  background-color: #f7f7f7;
+  height: 130px;
+  border-radius: 5px;
+}
+.fabricbox .yarn_para2 {
+  margin-left: 5px;
+}
+.fabricbox .ingredient,
+.fabricbox .thickness {
+  margin-top: 20px;
+  display: block;
+}
+.fabricbox .thickness {
+  margin-top: 10px;
+}
+.fabricbox .AddItem {
+  margin-top: 10px;
+}
+.fabricbox .AddItem_tit {
+  width: 240px;
+}
+.fabricbox .butt_box {
+  width: 320px;
+  margin: 30px auto 0 auto;
+}
+.fabricbox .butt_pricing,
+.fabricbox .butt_return {
+  width: 150px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background-color: #929698;
+  border-radius: 5px;
+}
+.fabricbox .butt_return {
+  background-color: #3ca1d7;
+}

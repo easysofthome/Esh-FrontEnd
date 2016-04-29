@@ -1,0 +1,109 @@
+.icon-easydesign {
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.detailbox {
+  width: 340px;
+}
+.detailbox .flowname {
+  width: 100px;
+  height: 32px;
+  background-color: #508ce4;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+.detailbox h1 {
+  font-size: 20px;
+  margin-left: 14px;
+  margin-top: 20px;
+  font-weight: normal;
+  color: #000000;
+}
+.detailbox .deta_class,
+.detailbox .deta_price {
+  margin-left: 14px;
+  font-size: 14px;
+  color: #666666;
+  margin-top: 20px;
+}
+.detailbox .deta_price {
+  margin-top: 4px;
+}
+.detailbox .text_red {
+  color: #fe6464;
+}
+.detailbox .deta_info {
+  width: 320px;
+  border-top: 1px solid #d9d9d9;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  padding-top: 14px;
+}
+.detailbox .imgbox {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.detailbox .img_name,
+.detailbox .flow_free {
+  line-height: 50px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.detailbox .flow_free {
+  color: #28b28b;
+}
+.detailbox .browse {
+  margin: 6px 6px 0 0  ;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 11px;
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.detailbox .dianzang {
+  margin: 0px 6px 0 0  ;
+  background-position: -4px -199px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/easydesign/sprite-easydesign.PNG");
+}
+.detailbox .likebox {
+  margin-top: 10px;
+  padding-bottom: 12px;
+}
+.detailbox .flower_title {
+  color: #000;
+  font-size: 22px;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.detailbox .xiangshimianliao {
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.detailbox .xiangshimianliao .mianliaobox {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  overflow: hidden;
+}
+.detailbox .xiangshimianliao .miaoliaobianju {
+  margin-left: 10px;
+}
+.detailbox .mianliaoshangxia {
+  margin-top: 10px;
+}

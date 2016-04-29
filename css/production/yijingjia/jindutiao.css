@@ -1,0 +1,163 @@
+.icon-yijingjia-jindutiao {
+  background-image: url("/images/production/yijingjia/jindutiao/sprite-yijingjia-jindutiao.PNG");
+}
+.jingdutiao {
+  margin: 0 auto;
+  width: 1090px;
+  padding-top: 50px;
+}
+.jingdutiao li {
+  width: 25%;
+  float: left;
+}
+.jingdutiao .hongli {
+  background-position: -4px -84px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 272px;
+  height: 32px;
+}
+.jingdutiao .hongli span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 115px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -204px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiao .huili {
+  background-position: -4px -124px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 272px;
+  height: 32px;
+}
+.jingdutiao .huili span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 115px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -164px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiao .changhongli {
+  width: 50%;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 544px;
+  height: 32px;
+}
+.jingdutiao .changhongli span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 256px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -204px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiao .changhuili {
+  width: 50%;
+  background-position: -4px -44px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 544px;
+  height: 32px;
+}
+.jingdutiao .changhuili span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 256px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -164px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiao .zhonghongli {
+  width: 33.3%;
+  background-position: -4px -244px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 363px;
+  height: 32px;
+}
+.jingdutiao .zhonghongli span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 160px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -204px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiao .zhonghuili {
+  width: 33.3%;
+  background-position: -4px -284px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 363px;
+  height: 32px;
+}
+.jingdutiao .zhonghuili span {
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 160px;
+  text-align: center;
+  color: #fff;
+  background-position: -4px -164px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.jingdutiaowenzi {
+  margin: 0 auto;
+  width: 1090px;
+  margin-top: 10px;
+}
+.jingdutiaowenzi li {
+  font-size: 18px;
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #c40e24;
+}
+.jingdutiaowenzi .changli {
+  width: 50%;
+}
+.jingdutiaowenzi .zhongli {
+  width: 33.3%;
+}
+.jingdutiaowenzi .yanse {
+  color: #ccc;
+}

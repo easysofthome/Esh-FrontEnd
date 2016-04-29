@@ -1,0 +1,10 @@
+.analysis_report_box {
+  width: 100%;
+  background-color: #f2f3f5;
+}
+.analysis_report_box .margin_top_40 {
+  margin-top: 40px;
+}
+.analysis_report_box .margin_top_20 {
+  margin-top: 20px;
+}

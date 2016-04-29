@@ -1,0 +1,140 @@
+.list_li {
+  width: 1200px;
+  height: 90px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+}
+.list_li:hover {
+  -webkit-box-shadow: 0px 0px 19px 3px #ddd;
+  -moz-box-shadow: 0px 0px 19px 3px #ddd;
+  -ms-box-shadow: 0px 0px 19px 3px #ddd;
+  -o-box-shadow: 0px 0px 19px 3px #ddd;
+  box-shadow: 0px 0px 19px 3px #ddd;
+}
+.list_sort,
+.list_sort02,
+.list_sort03,
+.list_sort04 {
+  font-size: 16px;
+  line-height: 24px;
+  width: 54px;
+  height: 48px;
+  margin: 20px 0 0 10px;
+  text-align: center;
+}
+.list_sort {
+  border: #f6492b 1px solid;
+}
+.list_sort .sort_p01 {
+  font-style: italic;
+  color: #fff;
+  background-color: #f6492b;
+}
+.list_sort .sort_p02 {
+  color: #f6492b;
+}
+.list_sort02 {
+  border: #fda400 1px solid;
+}
+.list_sort02 .sort_p01 {
+  font-style: italic;
+  color: #fff;
+  background-color: #fda400;
+}
+.list_sort02 .sort_p02 {
+  color: #fda400;
+}
+.list_sort03 {
+  border: #69c731 1px solid;
+}
+.list_sort03 .sort_p01 {
+  font-style: italic;
+  color: #fff;
+  background-color: #69c731;
+}
+.list_sort03 .sort_p02 {
+  color: #69c731;
+}
+.list_sort04 {
+  border: #999999 1px solid;
+}
+.list_sort04 .sort_p01 {
+  font-style: italic;
+  color: #fff;
+  background-color: #999999;
+}
+.list_sort04 .sort_p02 {
+  color: #999999;
+}
+.list_name {
+  width: 525px;
+  margin-left: 10px;
+}
+.list_name .name_box {
+  margin-top: 16px;
+}
+.list_name .name {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #333;
+}
+.list_name .new {
+  font-size: 12px;
+  line-height: 15px;
+  width: 40px;
+  margin-top: 7px;
+  text-align: center;
+  color: #fff;
+  background-color: #f00;
+}
+.list_name .matching_box {
+  margin-top: 5px;
+}
+.list_name .matching {
+  font-size: 14px;
+  margin-right: 55px;
+  color: #999;
+}
+.list_money {
+  width: 190px;
+  height: 60px;
+  margin-top: 16px;
+  padding-right: 30px;
+  text-align: right;
+  border-left: 1px #dcdcdc dashed;
+}
+.list_money .money {
+  font-size: 14px;
+  line-height: 30px;
+  color: #999;
+}
+.money_rg {
+  border-right: 1px #dcdcdc dashed;
+}
+.list_btn .supp_butt {
+  font-size: 16px;
+  line-height: 38px;
+  display: block;
+  width: 118px;
+  margin-top: 25px;
+  margin-left: 18px;
+  text-align: center;
+  color: #3ca1d7;
+  border: 1px solid #3ca1d7;
+  transition: all .3s;
+  border-radius: 2px;
+}
+.list_btn .supp_butt:hover {
+  background: #3ca1d7;
+  color: #fff;
+}
+.red_txt,
+.orange_txt {
+  font-size: 20px;
+}
+.red_txt {
+  color: #f6492b;
+}
+.orange_txt {
+  color: #ff9000;
+}

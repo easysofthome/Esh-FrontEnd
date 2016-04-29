@@ -1,0 +1,28 @@
+.combox {
+  line-height: 22px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 8px;
+  text-align: center;
+  border: 1px solid #00a2c9;
+  background-color: #fff;
+}
+.combox a {
+  color: #00a2c9;
+}
+.com_chengse {
+  border: 1px solid #ff8a56;
+}
+.com_chengse a,
+.com_chengse a:hover {
+  color: #ff8a56;
+}
+.xiaocom {
+  width: 80px;
+}
+.dacom {
+  width: 140px;
+}
+.qujizhong {
+  margin: 8px 20px 0 0;
+}

@@ -1,0 +1,63 @@
+.main_box {
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+.mingxi {
+  font-size: 24px;
+  background-image: url('/images/production/VIP/common/account/title_line.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  margin: 0 20px;
+}
+.mingxi .current,
+.mingxi .mingxi_a {
+  margin-left: 40px;
+  padding: 0 10px 10px 10px;
+}
+.mingxi .current,
+.mingxi .mingxi_a:hover {
+  color: #4a7bc4;
+  border-bottom: 2px solid #4a7bc4;
+}
+.mingxi .mingxi_mar {
+  margin-left: 0;
+}
+div.billbox {
+  width: 854px;
+  background-color: #fff;
+  margin-top: 40px;
+  padding: 20px 0 60px 0;
+}
+div.billbox div.Inforbox {
+  line-height: 30px;
+  color: #333;
+  margin: 30px 20px 0 20px;
+}
+div.billbox div.Inforbox p.tit {
+  text-align: right;
+  width: 115px;
+}
+div.billbox div.Inforbox p.words {
+  width: 156px;
+}
+div.billbox div.scanningpart {
+  margin: 40px 0 0 60px;
+}
+div.billbox div.scanningpart p.tit {
+  font-size: 20px;
+  color: #333;
+  line-height: 60px;
+}
+div.billbox div.scanningpart div.License {
+  width: 600px;
+  height: 600px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #ddd;
+  display: table;
+}
+div.billbox div.scanningpart img {
+  display: inline-block;
+}

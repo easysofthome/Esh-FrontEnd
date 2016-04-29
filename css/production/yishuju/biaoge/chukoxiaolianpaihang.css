@@ -1,0 +1,132 @@
+.wenzichengse {
+  color: #ff6600;
+}
+.wenzishenghui {
+  color: #333;
+}
+.wenziqianhui {
+  color: #888;
+}
+.wenzilanse {
+  color: #00a2c9;
+}
+.heiti {
+  color: #000;
+}
+.wenzihongse {
+  color: #dc1416;
+}
+.wenzilvse {
+  color: #10bb39;
+}
+.jiachu {
+  font-weight: bold;
+}
+.dahaozi {
+  font-size: 16px;
+}
+.xiaohaozi {
+  font-size: 13px;
+}
+.wenziyuzhong {
+  text-align: center;
+}
+.qujiachu {
+  font-weight: lighter;
+}
+.combox {
+  line-height: 22px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 8px;
+  text-align: center;
+  border: 1px solid #00a2c9;
+  background-color: #fff;
+}
+.combox a {
+  color: #00a2c9;
+}
+.com_chengse {
+  border: 1px solid #ff8a56;
+}
+.com_chengse a,
+.com_chengse a:hover {
+  color: #ff8a56;
+}
+.xiaocom {
+  width: 80px;
+}
+.dacom {
+  width: 140px;
+}
+.qujizhong {
+  margin: 8px 20px 0 0;
+}
+.chukobox {
+  margin: 0 auto;
+  width: 998px;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  line-height: 40px;
+  /*出口销量的宽度*/
+  /*出口销量的宽度*/
+  /*采购产品明细*/
+  /*采购产品明细*/
+  /*采购商采购排行*/
+  /*采购商采购排行*/
+}
+.chukobox .right_biankuan {
+  border-right: 1px solid #dfdfdf;
+}
+.chukobox .huibeijing {
+  background-color: #eeeeee;
+}
+.chukobox .xuhaokuang {
+  width: 62px;
+}
+.chukobox .chukoguojiakuang {
+  width: 231px;
+}
+.chukobox .zhongshukuang {
+  width: 188px;
+}
+.chukobox .mingxikuang {
+  width: 135px;
+  _width: 132px;
+}
+.chukobox .cangpingmingchengkuang {
+  width: 325px;
+}
+.chukobox .chukobikuang {
+  width: 161px;
+}
+.chukobox .zhongpicikuang {
+  width: 149px;
+}
+.chukobox .caigoupaihangkuang {
+  width: 313px;
+}
+.chukobox .paihangbikuang {
+  width: 177px;
+}
+.chukobox .paihangzhongkuang {
+  width: 143px;
+}
+.chukobox .paihangpicikuang {
+  width: 163px;
+}
+.chukobox .tiaotihaodu {
+  height: 60px;
+}
+.chukobox .xiabiankuang {
+  border-bottom: 1px solid #dfdfdf;
+}
+.chukobox .biaotihanghao {
+  line-height: 6px;
+}
+.chukobox .comkuang_gao {
+  height: 40px;
+}
+.chukobox .baotihao {
+  height: 60px;
+}

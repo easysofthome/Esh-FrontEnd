@@ -1,0 +1,34 @@
+.next-box {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 65px;
+  margin-bottom: 65px;
+}
+.next-box .next {
+  margin-left: 381px;
+}
+.next-box .next a {
+  line-height: 28px;
+  margin-right: 7px;
+  text-align: center;
+  color: #a1a1a1;
+  border: 1px solid #ddd;
+  _vertical-align: middle;
+}
+.next-box .next .a01 {
+  padding: 0 8px;
+}
+.next-box .next .beg-end {
+  color: #508ce4;
+}
+.next-box .next .a02 {
+  width: 28px;
+  height: 28px;
+}
+.next-box .next .current {
+  color: #fd6464;
+  border: 1px solid #fff;
+}
+.next-box .next .a02:hover {
+  color: #fd6464;
+}

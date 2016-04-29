@@ -1,0 +1,41 @@
+.next-box,
+.next-box2 {
+  width: 445px;
+  margin: 30px auto 0 auto;
+}
+.next-box .next a,
+.next-box2 .next a {
+  line-height: 28px;
+  margin-right: 7px;
+  text-align: center;
+  color: #a1a1a1;
+  border: 1px solid #f2f3f5;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  _vertical-align: middle;
+}
+.next-box .next .a01,
+.next-box2 .next .a01 {
+  padding: 0 8px;
+}
+.next-box .next .beg-end,
+.next-box2 .next .beg-end {
+  color: #a1a1a1;
+}
+.next-box .next .a02,
+.next-box2 .next .a02 {
+  width: 28px;
+  height: 28px;
+}
+.next-box .next .current,
+.next-box2 .next .current {
+  color: #3ca1d7;
+  border: 1px solid #f2f3f5;
+}
+.next-box .next .a02:hover,
+.next-box2 .next .a02:hover {
+  color: #3ca1d7;
+}
+.next-box2 {
+  margin-top: 20px;
+}

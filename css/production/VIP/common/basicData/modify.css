@@ -1,0 +1,46 @@
+.icon-VIP-common-account {
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+div.modifybox {
+  width: 550px;
+  height: 190px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+div.modifybox p.tit {
+  margin: 0 20px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #3ca1d7;
+  margin-bottom: 10px;
+  background-image: url("/images/production/VIP/common/contact.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+div.modifybox p.tit span {
+  display: block;
+  width: 84px;
+  text-align: center;
+  border-bottom: #3ca1d7 1px solid;
+}
+div.modifybox p.tit i {
+  cursor: pointer;
+  margin-top: 10px;
+  background-position: -4px -18px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
+}
+div.modifybox label.modify {
+  margin: 10px 20px;
+  line-height: 16px;
+}
+div.modifybox label.modify input.int {
+  width: 16px;
+  height: 16px;
+  margin-right: 3px;
+}

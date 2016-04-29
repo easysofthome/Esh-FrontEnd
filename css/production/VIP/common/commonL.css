@@ -1,0 +1,382 @@
+.icon-VIP-common-nav {
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.icon-VIP-common-left {
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.safety {
+  width: 326px;
+  padding: 15px 0 11px 0;
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+.safety .txt_blue {
+  color: #37b5f9;
+}
+.safety .security {
+  font-size: 16px;
+  margin-left: 20px;
+  color: #333;
+}
+.safety .progressbar {
+  margin: 0 auto;
+  margin-top: 10px;
+  background-position: -4px -18px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 286px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .progress {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 143px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .progressblue {
+  background-position: -4px -32px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 143px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .vipbox {
+  margin-top: 20px;
+}
+.safety .vipwidth {
+  font-size: 13px;
+  display: inline;
+  width: 54px;
+  margin-left: 20px;
+}
+.safety .vipwidth a {
+  line-height: 32px;
+  color: #333;
+}
+.safety .vipwidth span {
+  display: block;
+  text-align: center;
+}
+.safety .phone {
+  margin: 0 auto;
+  background-position: -4px -101px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .realname {
+  margin: 0 auto;
+  background-position: -4px -381px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .mailbox {
+  margin: 0 auto;
+  background-position: -4px -181px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .password {
+  margin: 0 auto;
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .VIPtopmar {
+  margin-top: 15px;
+}
+.safety .VIP_top {
+  padding-bottom: 11px;
+}
+.safety .Light {
+  margin: 0 auto;
+  background-position: -4px -301px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.safety .phone {
+  background-position: -4px -101px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .realname {
+  background-position: -4px -381px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .mailbox {
+  background-position: -4px -181px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .password {
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .phone_no {
+  background-position: -4px -221px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .realname_no {
+  background-position: -4px -421px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .mailbox_no {
+  background-position: -4px -261px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .password_no {
+  background-position: -4px -141px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.safety .phone,
+.safety .phone_no,
+.safety .realname,
+.safety .realname_no,
+.safety .mailbox,
+.safety .mailbox_no,
+.safety .password,
+.safety .password_no {
+  margin: 0 auto;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.classbox {
+  width: 326px;
+}
+.classbox .classwords {
+  font-size: 16px;
+  border-top: #f2f3f5 1px solid;
+  border-left: 3px solid #fff;
+  background-color: #fff;
+}
+.classbox .classwords dt {
+  cursor: pointer;
+}
+.classbox .classwords a {
+  color: #333;
+}
+.classbox .classwords dd {
+  display: none;
+}
+.classbox .classwords dd:hover a span {
+  color: #4a7bc4;
+}
+.classbox .cur {
+  border-left: 3px solid #4a7bc4;
+  background-color: #ebebeb;
+}
+.classbox .cur a {
+  color: #4a7bc4;
+}
+.classbox .cur .bold {
+  font-weight: bold;
+}
+.classbox .class_a {
+  line-height: 50px;
+  display: block;
+  height: 50px;
+}
+.classbox .TELgray {
+  margin-top: 15px;
+  margin-right: 10px;
+  background-position: -4px -24px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.classbox .TELwhite {
+  margin-top: 15px;
+  margin-right: 10px;
+  background-position: -4px -52px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.classbox .current_ico {
+  padding-left: 64px;
+}
+.classbox .usergray {
+  margin-top: 15px;
+  margin-right: 10px;
+  background-position: -4px -80px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.classbox .userwhite {
+  margin-top: 15px;
+  margin-right: 10px;
+  background-position: -4px -108px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.classbox .sub_gray,
+.classbox .subset_cur {
+  margin-left: 94px;
+}
+.balanceVIP {
+  width: 286px;
+  padding: 20px 20px 0 20px;
+  background-color: #fff;
+}
+.balanceVIP .borbottom {
+  padding-bottom: 20px;
+  border-bottom: #f5f5f5 1px solid;
+}
+.balancebot {
+  padding-bottom: 20px;
+}
+.balancebox_no,
+.balancebox {
+  line-height: 30px;
+  width: 142px;
+  text-align: center;
+  border-right: #f5f5f5 1px solid;
+}
+.balancebox_no .balance,
+.balancebox .balance {
+  font-size: 16px;
+  color: #333;
+}
+.balancebox_no span.num,
+.balancebox span.num {
+  font-size: 24px;
+  color: #ec8b00;
+}
+.balancebox_no .txt_red,
+.balancebox .txt_red {
+  color: #4a7bc4;
+}
+.balancebox_no .txt_red:hover,
+.balancebox .txt_red:hover {
+  color: #e85d40;
+}
+.balancebox_no {
+  width: 143px;
+  border-right: none;
+}
+.classbox .subset_cur .subset {
+  display: inline;
+  margin: 26px 7px 0 0;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.classbox .sub_gray span {
+  color: #333;
+}
+.classbox .sub_gray .subset {
+  margin: 26px 7px 0 0;
+  background-position: -4px -14px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.hotlinebox {
+  width: 328px;
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: #fff;
+}
+.hotlinebox i.hotline {
+  margin-left: 20px;
+  background-position: -4px -174px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 257px;
+  height: 40px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.hotlinebox p.onlineser {
+  margin: 10px 0 0 20px;
+  color: #333;
+}
+.hotlinebox a.qq {
+  margin: 5px 0 0 20px;
+  background-position: -4px -136px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("/images/production/VIP/common/left/sprite-VIP-common-left.PNG");
+}
+.aboveNo {
+  margin-top: 10px;
+}

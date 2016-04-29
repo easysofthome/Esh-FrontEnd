@@ -1,0 +1,31 @@
+.icon-huiyuanzhongxin-left {
+  background-image: url("/images/production/huiyuanzhongxin/left/sprite-huiyuanzhongxin-left.PNG");
+}
+.yuebox {
+  width: 326px;
+  background-color: #FFF;
+  padding-bottom: 30px;
+}
+.yuebox .yidou,
+.yuebox .jiaoyijingeTOP {
+  padding: 20px 0 0 20px;
+}
+.yuebox .jiaoyijingeTOP {
+  padding-top: 16px;
+}
+.yuebox .chongzhiLEFT {
+  margin-left: 20px;
+}
+.yuebox .xian {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 296px;
+  height: 1px;
+  margin: 0 auto;
+  margin-top: 14px;
+}
+.dibianju {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,126 @@
+.zhuchebox {
+  width: 1190px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+.zhuchebox .zhuche_titlebox {
+  width: 1150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-bottom: 2px solid #189fed;
+}
+.zhuchebox .zhuche_titlebox .title_selected {
+  line-height: 30px;
+  width: 96px;
+  text-align: center;
+  color: #fff;
+  background-color: #189fed;
+}
+.zhuchebox .zhuche_titlebox .title_unselected {
+  line-height: 28px;
+  width: 94px;
+  text-align: center;
+  color: #444;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #fff;
+}
+.zhuchebox .title_bianju {
+  margin-left: 20px;
+}
+.zhuchebox .zhuche_listbox {
+  width: 1150px;
+  margin: 0 auto;
+  padding-top: 30px;
+  line-height: 40px;
+  padding-bottom: 30px;
+}
+.zhuchebox .zhuche_listbox .listboxlift {
+  width: 712px;
+  border-right: 1px solid #ddd;
+}
+.zhuchebox .zhuche_listbox .listtitle {
+  font-size: 14px;
+  line-height: 40px;
+  width: 80px;
+  padding-left: 20px;
+  color: #444;
+}
+.zhuchebox .zhuche_listbox .listtitlejianrong {
+  margin-left: 24px;
+}
+.zhuchebox .zhuche_listbox .listtitlejianrong2 {
+  margin: 0 2px;
+}
+.zhuchebox .zhuche_listbox .list_enter {
+  line-height: 38px;
+  width: 360px;
+  height: 38px;
+  margin-left: 16px;
+  padding-left: 10px;
+  color: #999;
+  border: 1px solid #ddd;
+}
+.zhuchebox .zhuche_listbox .list_enterduan {
+  width: 134px;
+}
+.zhuchebox .zhuche_listbox .huquyanchen {
+  border: 1px solid #ddd;
+  width: 104px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  color: #444;
+  margin: 5px 0  0 20px;
+}
+.zhuchebox .list_radio {
+  margin: 14px 4px 0 16px;
+  *margin-top: 12px;
+}
+.zhuchebox .list_shangxia {
+  margin-top: 20px;
+}
+.zhuchebox .lanse {
+  color: #0066cc;
+}
+.zhuchebox .tongyixieyi {
+  margin-left: 116px;
+  line-height: 13px;
+  *line-height: 18px;
+  _line-height: 20px;
+}
+.zhuchebox .zhucheann {
+  margin-left: 116px;
+  width: 362px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  background-color: #189fed;
+  color: #fff;
+}
+.zhuchebox .listboxright {
+  color: #444;
+  margin: 40px 0 0 40px;
+}
+.zhuchebox .listboxright .lijidenglu {
+  margin-left: 20px;
+  width: 108px;
+  height: 38px;
+  background-color: #ebeaea;
+  border: 1px solid #c8c8c8;
+  text-align: center;
+  color: #444;
+}
+.zhuchebox .listboxright .tequan {
+  line-height: 13px;
+}
+.zhuchebox .listboxright .tequangao {
+  margin-top: 46px;
+}
+.zhuchebox .listboxright .tequanjianju {
+  margin-top: 20px;
+  color: #666666;
+}
+.zhuchebox .listboxright .hongse {
+  color: #e02828;
+}

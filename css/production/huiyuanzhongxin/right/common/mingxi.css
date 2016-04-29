@@ -1,0 +1,21 @@
+.mingxi {
+  font-size: 24px;
+  background-image: url('/images/production/huiyuanzhongxin/right/title_line.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.mingxi .current,
+.mingxi .mingxi_a {
+  margin-left: 40px;
+  padding: 0 10px;
+  padding-bottom: 10px;
+  color: #666;
+}
+.mingxi .current,
+.mingxi .mingxi_a:hover {
+  color: #4a7bc4;
+  border-bottom: 2px solid #4a7bc4;
+}
+.mingxi .mingxi_mar {
+  margin-left: 0;
+}
