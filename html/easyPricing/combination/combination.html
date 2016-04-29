@@ -64,19 +64,19 @@
           <td class="td_int"><input class="combina_int" type="text" value="2" /></td>
           <td>
             <form action="" method="get" class="radiobox radiocom">
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*26</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*28</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*30</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*36</span>
               </label>
@@ -84,19 +84,19 @@
           </td>
           <td>
             <form action="" method="get" class="radiobox radiocom">
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*26</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*28</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*30</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*36</span>
               </label>
@@ -104,19 +104,19 @@
           </td>
           <td>
             <form action="" method="get" class="radiobox radiocom">
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*26</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*28</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*30</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*36</span>
               </label>
@@ -124,19 +124,19 @@
           </td>
           <td>
             <form action="" method="get" class="radiobox radiocom">
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*26</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*28</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*30</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*36</span>
               </label>
@@ -144,19 +144,19 @@
           </td>
           <td>
             <form action="" method="get" class="radiobox radiocom">
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*26</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*28</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" checked="checked"  />
                 <span>20*30</span>
               </label>
-              <label class="offer clearfix">
+              <label class="offer clearfix label_radio">
                 <input class="rad lf" name="Fruit" type="radio" value="" />
                 <span>20*36</span>
               </label>
@@ -175,5 +175,11 @@
 </div>
 
 @@include('/easyPricing/common/footer2.html')
+<script>
+  seajs.use(['jquery','FancyRadioCheckBox'],function ($,FancyRadioCheckBox){
+    FancyRadioCheckBox.init();
+  });
+
+</script>
 </body>
 </html>
