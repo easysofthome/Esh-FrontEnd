@@ -32,42 +32,51 @@
 // 右边列表
 div.rg_list
 {
-  width: 854px;
+  width: 814px;
   margin-top: 20px;
-  padding: 10px 0;
+  padding: 10px 20px;
 
   background-color: #fff;
-  ul.list_box{
-    width: 715px;
+  div.list_box{
+    width: 699px;
     border-right: #eeeeee 1px solid;
-    li{
-      margin-left: 20px;
-      line-height: 36px;
-      span.txt_gray{
-        color: #333;
-        font-size: 18px;
+    line-height: 36px;
+    .txt_gray{
+      color: #333;
+      font-size: 18px;
+    }
+    .txt_orange{
+      color: #f79226;
+      font-size: 20px;
+    }
+    //图片
+    div.picture-box{
+      width: 90px;
+      height: 90px;
+      overflow: hidden;
+      margin: 10px 24px 0 0;
+    }
+
+    div.container{
+      //款式   单品类型
+      p.tit{
+        margin-right: 50px;
       }
-      span.txt_orange{
-        color: #f79226;
-        font-size: 20px;
+      //款式  尺码
+      ul.content{
+        li.Price{
+          width: 81px;
+          margin: 0 4px;
+          border-right: #eeeeee 1px solid;
+        }
+        li.borderno{
+          border: none;
+        }
       }
-    }
-    li.list_one{
-      width: 136px;
-    }
-    li.list_two{
-      width: 167px;
-    }
-    li.list_three{
-      width: 142px;
-    }
-    li.list_four{
-      width: 190px;
     }
   }
   div.btn{
-    margin-left: 20px;
-    font-size: 16px;
+    margin-left: 16px;
     a{
       display: block;
       width: 96px;
