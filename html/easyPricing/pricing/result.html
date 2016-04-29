@@ -19,10 +19,16 @@
 
     <div class="btnbox clearfix">
       <a class="btn_blue lf" href="#">收藏核价</a>
-      <a class="btn_gray lf" href="#">关闭</a>
+      <a class="btn_gray lf close" href="#">关闭</a>
     </div>
 
   </div>
-
+  <script src="/js/lib/jquery/jquery.js"></script>
+  <script>
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.close,.btn_close').click(function(){
+      parent.layer.close(index);
+    });
+  </script>
 </body>
 </html>

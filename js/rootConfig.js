@@ -3,7 +3,7 @@
     'loginPanel': 'js/common/loginPanel/loginPanel',                        //登录弹窗
     'headJs': 'js/common/headJs',
     'urlParam': 'js/common/UrlParam.js',
-     'tools': 'js/common/tool/tool',
+    'tools': 'js/common/tool/tool',
 
 //Lib
     'jquery': 'js/lib/jquery/jquery',    //基本库支持 ('js/lib/jquery/jquery-1.8.3')
@@ -20,6 +20,8 @@
     'serial': 'js/lib/amcharts/serial',                                       //报表图形
     // 表单
     'customSelect': 'js/lib/jquery.customSelect/jquery.customSelect',         //自定义下拉菜单
+    'spinner': 'js/lib/jquery.spinner/jquery.spinner',                        //数字加减按钮
+    'FancyRadioCheckBox': 'js/lib/RadioAndCheckBox/FancyRadioCheckBox',
     //弹窗
     'alertify': 'js/lib/alertify/alertify',             //提醒
     'layer': 'js/lib/layer/layer.min',      //弹窗
