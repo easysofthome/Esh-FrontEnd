@@ -1,0 +1,86 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/easyPricing/sprite.less';
+
+//返回按钮
+div.searchint{
+  a.btn_return{
+    width: 98px;
+    line-height: 30px;
+    border: #a1a1a1 1px solid;
+    color: #a1a1a1;
+    font-size: 16px;
+    text-align: center;
+    margin: 19px 20px 0 0;
+    .border-radius(3px);
+    &:hover{
+      color: #f79226;
+      border: #f79226 1px solid;
+    }
+  }
+}
+
+
+
+//工厂报价详情
+div.rg_Det
+{
+  width: 854px;
+  padding: 10px 0;
+  line-height: 36px;
+  color: #a4aab7;
+
+  background-color: #303745;
+  .txt_white{
+    color: #fff;
+    font-size: 18px;
+  }
+  .txt_orange{
+    color: #f79226;
+    font-size: 20px;
+  }
+  div.list_box{
+    width: 700px;
+    p.tit{
+      padding-left: 20px;
+      a.letter{
+        margin: 9px 0 0 10px;
+        .sprite(@letter);
+        .icon-VIP-easyPricing;
+      }
+      a.browse{
+        margin: 11px 5px 0 10px;
+        .sprite(@browse);
+        .icon-VIP-easyPricing;
+      }
+    }
+    ul{
+      li{
+        margin-left: 20px;
+      }
+      li.list_one{
+        width: 108px;
+      }
+      li.list_two{
+        width: 142px;
+      }
+      li.list_three{
+        width: 120px;
+      }
+      li.list_four{
+        width: 164px;
+      }
+    }
+  }
+
+  div.money_box{
+    width: 114px;
+    padding-right: 40px;
+    text-align: right;
+    p.money{
+      color: #f79226;
+      font-size: 40px;
+    }
+  }
+}
