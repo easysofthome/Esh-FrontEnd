@@ -1,18 +1,45 @@
 define(function ( require, exports, module) {
 
   require('jquery');
-  var col1 = $('#set-table1 .vertical li').length-1;
-  var col2 = $('#set-table1 .vert_data:first li').length-1;
-  var width = $('.pricechangesbox').width()-60;
-  var w1 = width/col1;
-  var w2 = width/col2;
+  // var col1 = $('#set-table1 .vertical li').length-1;
+  // var col2 = $('#set-table1 .vert_data:first li').length-1;
+  // var width = $('.pricechangesbox').width()-60;
+  // var w1 = width/col1;
+  // var w2 = width/col2;
 
-  $('#set-table1 .vertical').each(function(index, el) {
-    $(this).find('li:gt(0)').css('width',w1-3);
+  // $('#set-table1 .vertical').each(function(index, el) {
+  //   $(this).find('li:gt(0)').css('width',w1-3);
+  // });
+  // $('#set-table1 .vert_data').each(function(index, el) {
+  //   $(this).find('li:gt(0)').css('width',w2-2);
+  // });
+
+
+
+  var cols = $('#set-table1 tr:eq(1) td').length-1;
+  var width = 1160-61;
+  var w = width/cols;
+
+
+  $('#set-table1 tr:gt(0)').each(function(index, el) {
+    $(this).find('td:gt(0)').attr('width',w);
   });
-  $('#set-table1 .vert_data').each(function(index, el) {
-    $(this).find('li:gt(0)').css('width',w2-2);
-  });
+
+  // var v = $('#set-table1 tr:eq(1)').find('td:eq(1)').width();
+  // var w2 = 1160 < $('.pricechangesbox').width() ? 1160 : $('.pricechangesbox').width();
+  $('#set-table1 table').css('width',1160);
+
+  // $('.pricechangesbox tr').each(function(index, el) {
+  //   $(this).find('td:eq(0)').attr('width',60);
+  // });
+  // var v = $('#set-table1 tr:eq(1)').find('td:eq(1)').width();
+  // alert(cols);
+  // alert(v);
+  // alert(cols*v+61);
+  // $('.pricechangesbox').css('width',cols*v+61);
+
+
+
 
 
   // var dataProvider1 = [
