@@ -113,27 +113,27 @@
       </div>
       <p class="name">滚边枕头</p>
       <div class="dropbox clearfix">
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
-        <label class="lab lf clearrfix">
+        <label class="lab lf clearrfix label_check">
           <input class="int lf" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
@@ -189,5 +189,11 @@
   @@include('/easyPricing/common/next.html')
   </div>
   @@include('/easyPricing/common/footer2.html')
+  <script>
+    seajs.use(['jquery','FancyRadioCheckBox'],function ($,FancyRadioCheckBox){
+      FancyRadioCheckBox.init();
+    });
+
+  </script>
 </body>
 </html>
