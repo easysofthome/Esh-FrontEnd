@@ -80,4 +80,85 @@ define(function (require, exports, module) {
         inputObj.val(Temp);
       }
     });
+
+
+
+    //为港口查询文本框绑定keyup事件
+    $(".sel-port").siblings('input').bind('keyup', function(event) {
+
+      doRefreshPortList();
+    });
+
+    //手动输入或删除港口时更新下拉列表状态
+    //胡庆龙   2016-4-29
+    function doRefreshPortList(){
+      //搜索值
+      var searchPortName = $(".sel-port").siblings('input').val();
+
+      var portNameList = {};
+      var inputNameArray = [];
+
+      //搜索框为空
+      if(searchPortName.length == 0 && searchPortName.split(",").length == 0){
+        return;
+      }
+      //搜索框只有一个港口
+      else if(searchPortName.length > 0 && searchPortName.split(",").length == 0){
+        inputNameArray.push(searchPortName);
+      }else{
+        inputNameArray = searchPortName.split(",");
+      }
+
+      //获取所有港口及‘-’或‘+’对应ID
+      $(".sel-port li").each(function(){
+          var name = $(this).find(".port-name").text();
+          var oprId = $(this).find(".add-port").attr("id");
+          portNameList[name] = oprId;
+
+      });
+
+      //更新下拉列表状态
+        refreshPortList(inputNameArray,portNameList,function(portNameOprId){
+           $("#"+portNameOprId).text("+");
+      },function(portNameOprId){
+           $("#"+portNameOprId).text("－");
+      });
+
+    }
+
+
+    //判断数组array的值是否为对象obj的key,如果不是执行回调函数callback_add，否则执行callback_del
+    //
+    function refreshPortList(array1,obj,callback_add,callback_del){
+
+      if(array1.length == 0 || typeof(obj) == "undefined"){
+        return;
+      }
+
+      for(var i = 0;i < array1.length;i++){
+
+          for(var k in obj) {
+
+            if(array1[i] == k){
+              continue;
+            }
+            //回调函数，如果输入框内没有相应港口名称，改为‘+’
+            callback_add(obj[k]);
+          }
+
+        }
+
+        for(var i = 0;i < array1.length;i++){
+           //回调函数，如果输入框内有相应港口名称，改为‘-’
+          callback_del(obj[array1[i]]);
+
+        }
+
+      }
+
+
+
+
+
+
 });
