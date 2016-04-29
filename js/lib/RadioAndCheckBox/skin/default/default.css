@@ -1,0 +1,33 @@
+﻿label
+{
+    display: block;
+    cursor: pointer;
+    line-height: 20px;
+    padding-bottom: 9px;
+    float: left;
+}
+.has-js .label_check, .has-js .label_radio
+{
+    padding: 0px 10px 0px 25px;
+}
+.has-js .label_radio
+{
+    background: url(radio-off.png) no-repeat;
+}
+.has-js .label_check
+{
+    background: url(check-off.png) no-repeat;
+}
+.has-js label.c_on
+{
+    background: url(check-on.png) no-repeat;
+}
+.has-js label.r_on
+{
+    background: url(radio-on.png) no-repeat;
+}
+.has-js .label_check input, .has-js .label_radio input
+{
+    position: absolute;
+    left: -9999px;
+}
