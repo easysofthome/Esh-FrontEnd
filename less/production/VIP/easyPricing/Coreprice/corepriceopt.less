@@ -1,4 +1,5 @@
 @import '../../../../dev/mixins/mixins.less';
+@import '../../../../sprite/VIP/easyPricing/Coreprice/sprite.less';
 .core_box{
     width:854px;
     background-color:#fff;
@@ -29,8 +30,8 @@
             margin:20px 0 0 0 ;
         }
         .core_databox,.core_databox2{
-            font-size:12px;
-            line-height:20px;
+            font-size:14px;
+            line-height:24px;
             color: #333333;
 
         }
@@ -38,7 +39,7 @@
             margin-top:8px;
         }
         .list_Complete,.list_Complete2{
-            padding: 0 6px 0 6px;
+            padding: 0 10px 0 10px;
 
         }
         .list_Complete2{
@@ -50,17 +51,17 @@
 
         .coredata_list{
 
-            width: 680px;
+            width: 670px;
             margin-left:12px;
             li{
-                padding: 0 6px 0 6px;
+                padding: 0 10px 0 10px;
                 cursor: pointer;
             }
             .li_leftmar,.li_lefttopmar{
                 margin-left: 12px;
             }
             .li_lefttopmar,.li_lefttopmarone{
-                margin-top: 4px;
+                margin-top: 6px;
             }
 
             li:hover{
@@ -71,6 +72,26 @@
         }
         .Clearleft{
             margin-left: 0px;
+        }
+        .collapse_box{
+            margin: 20px auto 0 auto;
+            width: 110px;
+            height: 30px;
+            cursor:pointer;
+            .border-radius(5px 5px 0 0);
+            background-color: #eeeeee;
+            .arr_top{
+                margin: 11px 4px 0 15px;
+                   .sprite(@arr_top);
+                   .icon-VIP-easyPricing-Coreprice;
+            }
+            .collapse_text{
+                line-height: 30px;
+                font-size: 14px;
+                margin-left: 2px;
+                color: #888888;
+            }
+
         }
     }
 

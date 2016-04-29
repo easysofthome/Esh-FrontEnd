@@ -1,0 +1,141 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/easyPricing/sprite.less';
+
+.main_box
+{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.rgbox{
+  width: 854px;
+}
+
+// 右边搜索
+.searchint
+{
+  margin-top: 40px;
+
+  background-color: #fff;
+  p.tit
+  {
+    font-size: 24px;
+    line-height: 70px;
+
+    margin-left: 20px;
+
+    color: #333;
+  }
+}
+
+// 右边列表
+div.rg_list
+{
+  width: 854px;
+  margin-top: 20px;
+  padding: 10px 0;
+  line-height: 36px;
+  position: relative;
+
+  background-color: #fff;
+  .txt_gray{
+    color: #333;
+    font-size: 18px;
+  }
+  .txt_orange{
+    color: #f79226;
+    font-size: 20px;
+  }
+  div.list_box{
+    width: 614px;
+    p.tit{
+      padding-left: 20px;
+      a.letter{
+        margin: 9px 0 0 10px;
+        .sprite(@letter);
+        .icon-VIP-easyPricing;
+      }
+      a.browse{
+        margin: 11px 5px 0 10px;
+        .sprite(@browse);
+        .icon-VIP-easyPricing;
+      }
+    }
+    ul{
+      li{
+        margin-left: 20px;
+      }
+      li.list_one{
+        width: 108px;
+      }
+      li.list_two{
+        width: 142px;
+      }
+      li.list_three{
+        width: 120px;
+      }
+      li.list_four{
+        width: 164px;
+      }
+    }
+  }
+
+  div.money_box{
+    border-right: #eeeeee 1px solid;
+    width: 91px;
+    padding-right: 10px;
+    text-align: right;
+    p.money{
+      color: #f79226;
+      font-size: 40px;
+    }
+  }
+
+  // 按钮
+  div.btn{
+    font-size: 16px;
+    margin-left: 20px;
+    position: relative;
+    a{
+      display: block;
+      width: 96px;
+      line-height: 30px;
+      text-align: center;
+      .border-radius(3px);
+    }
+    a.btn_blue{
+      margin-top: 2px;
+      color:#3ca1d7;
+      border: #3ca1d7 1px solid;
+    }
+    a.btn_red{
+      margin-top: 10px;
+      color:#f8210c;
+      border: #f8210c 1px solid;
+    }
+
+    span.news_bg{
+      position: absolute;
+      top: -8px;
+      right: -9px;
+      color: #fff;
+      line-height: 20px;
+      text-align: center;
+      .sprite(@news_bg);
+      .icon-VIP-easyPricing;
+    }
+  }
+
+  // NEW
+  div.NEW{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    .sprite(@new);
+    .icon-VIP-easyPricing;
+  }
+}
+
