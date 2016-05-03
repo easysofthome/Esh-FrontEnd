@@ -2,178 +2,249 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>易核价会员中心-易家纺电子商务服务平台|面料核价详情</title>
+  <title>易核价会员中心-易家纺电子商务服务平台|添加混纺印花工缴</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/easyPricing/Coreprice/printing.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <div class="dyeing">
-    <div class="dye_onerowbox">
-      <ul class="clearfix dye_onerow">
-        <li class="lf dey_che">
-          <input type="checkbox"></li>
-        <li class="lf dey_name">印花名称</li>
-        <li class="lf dye_wei">
-          <p class="dye_weimi">门幅(厘米)</p>
-          <p class="clearfix">
-            <span class="lf dye_weiqi">门幅启</span>
-            <span class="lf dye_weiqi">门幅止</span>
-          </p>
-        </li>
-        <li class="lf dey_colbox">价格(元/米)</li>
+  @@include('/VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('/VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <div class="core_box tit_top">
+        <div class="core_contbox">
+          <div class="clearfix">
+            <div class="core_tit lf">添加混纺印花工缴</div>
+            <a href="#" class="rg core_titbut">返回</a>
+            <a href="#" class="rg core_titbut2">模板下载</a>
+            <a href="#" class="rg core_titbut2">模板上传</a>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">定 &nbsp;&nbsp;位 &nbsp;&nbsp;花：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">否</li>
+              <li class="lf li_leftmar">是</li>
+            </ul>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">染 料 要 求：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">环保染料</li>
+            </ul>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">门 幅 启 止：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">0-160</li>
+              <li class="lf li_leftmar">161-195</li>
+              <li class="lf li_leftmar">196-310</li>
+            </ul>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">印 花 名 称：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">平网印花</li>
+              <li class="lf li_leftmar">圆网印花</li>
+            </ul>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">工 艺 要 求：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">平网印花</li>
+              <li class="lf li_leftmar">圆网印花</li>
+            </ul>
+          </div>
+          <div class="clearfix core_databox2">
+            <span class="lf coredata_tit">色牢度等级：</span>
+            <span class="lf list_Complete2">全部</span>
+            <ul class="lf coredata_list">
+              <li class="lf">色牢度3级</li>
+              <li class="lf li_leftmar">色牢度4级</li>
+            </ul>
+          </div>
+          <div class="clearfix collapse_box">
+          <span class="lf arr_top"></span>
+          <span class="lf collapse_text">收起选项</span>
+          </div>
+        </div>
+      </div>
 
-        <li class="lf dey_colbox">工艺要求</li>
-        <li class="lf dey_colbox">色牢度等级</li>
-        <li class="lf dey_colbox">染色要求</li>
-        <li class="lf dey_colbox">定位花</li>
-        <li class="lf dey_select">选择</li>
-      </ul>
-    </div>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
-    <ul class="clearfix dye_listlastbox">
-      <li class="lf deylist_che">
-        <input type="checkbox"></li>
-      <li class="lf dey_namezhi">圆网印花</li>
-      <li class="lf dyedata_weiqi">440</li>
-      <li class="lf dyedata_weiqi">167</li>
-      <li class="lf deydata_colbox">
-        <input type="text" class="deydata_inp" value="6.12"></li>
-      <li class="lf deydata_colbox">圆网印花</li>
-      <li class="lf deydata_colbox">色牢等级4级</li>
-      <li class="lf deydata_colbox">环保染色</li>
-      <li class="lf deydata_colbox">是</li>
-      <li class="lf dey_select">
-        <span class="deysel_buttbox">
-          <a href="#" class="deydata_butt lf">添加</a>
-          <a href="#" class="deydata_buttdet rg">确定</a>
-        </span>
-      </li>
-    </ul>
+      <div class="dyeing tab_top">
+        <div class="dye_onerowbox">
+          <ul class="clearfix dye_onerow">
+            <li class="lf dey_che">
+              <input type="checkbox"></li>
+            <li class="lf dey_name">印花名称</li>
+            <li class="lf dye_wei">
+              <p class="dye_weimi">门幅(厘米)</p>
+              <p class="clearfix">
+                <span class="lf dye_weiqi">门幅启</span>
+                <span class="lf dye_weiqi">门幅止</span>
+              </p>
+            </li>
+            <li class="lf dey_colbox">价格(元/米)</li>
 
-    <div class="clearfix batchbox">
-      <input type="checkbox" class="lf barchche">
-      <a href="#" class="batch_butt lf">提交报价</a>
-      <a href="#" class="batch_butt lf">清空报价</a>
-      <p class="lf batch_inc">调整价格：上调</p>
-      <input type="text" class="lf batch_inp">
-      <div class="lf batch_perce">%</div>
-      <p class="lf batch_inc">下调</p>
-      <input type="text" class="lf batch_inp">
-      <div class="lf batch_perce">%</div>
+            <li class="lf dey_colbox">工艺要求</li>
+            <li class="lf dey_colbox">色牢度等级</li>
+            <li class="lf dey_colbox">染色要求</li>
+            <li class="lf dey_colbox">定位花</li>
+            <li class="lf dey_select">选择</li>
+          </ul>
+        </div>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+        <ul class="clearfix dye_listlastbox">
+          <li class="lf deylist_che">
+            <input type="checkbox"></li>
+          <li class="lf dey_namezhi">圆网印花</li>
+          <li class="lf dyedata_weiqi">440</li>
+          <li class="lf dyedata_weiqi">167</li>
+          <li class="lf deydata_colbox">
+            <input type="text" class="deydata_inp" value="6.12"></li>
+          <li class="lf deydata_colbox">圆网印花</li>
+          <li class="lf deydata_colbox">色牢等级4级</li>
+          <li class="lf deydata_colbox">环保染色</li>
+          <li class="lf deydata_colbox">是</li>
+          <li class="lf dey_select">
+            <span class="deysel_buttbox">
+              <a href="#" class="deydata_butt lf">添加</a>
+              <a href="#" class="deydata_buttdet rg">确定</a>
+            </span>
+          </li>
+        </ul>
+
+        <div class="clearfix batchbox">
+          <input type="checkbox" class="lf barchche">
+          <a href="#" class="batch_butt lf">提交报价</a>
+          <a href="#" class="batch_butt lf">清空报价</a>
+          <p class="lf batch_inc">调整价格：上调</p>
+          <input type="text" class="lf batch_inp">
+          <div class="lf batch_perce">%</div>
+          <p class="lf batch_inc">下调</p>
+          <input type="text" class="lf batch_inp">
+          <div class="lf batch_perce">%</div>
+        </div>
+      </div>
+
     </div>
   </div>
+  @@include('/VIP/common/footer.html')
 </body>
 </html>

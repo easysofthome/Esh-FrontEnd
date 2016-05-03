@@ -102,6 +102,17 @@ easyPricing                          易核价会员中心页面
   | details                            自由核价详情
   | combination                        自由核价
 
+  Coreprice（添加工缴）
+  | aftertreatment                     添加染厂后处理费用
+  | collection                         添加款式工缴
+  | cotton                             添加棉织造工缴
+  | cottondyeing                       添加棉染色工缴
+  | dyeing                             添加化纤染色工缴
+  | fiber                              添加化纤色织工缴
+  | filler                             添加填充物辅料价格
+  | printing                           添加混纺印花工缴
+  | yarn                               添加纱织价格
+
   Fabric（面料核价）
   | details                            面料核价详情
   | Fabric                             面料核价
