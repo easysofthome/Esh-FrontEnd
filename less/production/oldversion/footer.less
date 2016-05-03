@@ -1,0 +1,152 @@
+
+@import '../../sprite/common/sprite.less';
+
+@import '../../dev/mixins/mixins.less';
+
+/** footer **/
+.foot_box
+{
+    width: 100%;
+
+    border-top: #e5e5e5 1px solid;
+    background-color: #303745;
+}
+.Cooper,.spacing{
+    width: 170px;
+}
+.spacing{
+    margin-left: 40px;
+}
+.footer-nav
+{
+    width: 1000px;
+    margin: 0 auto;
+
+    .dl-box
+    {
+        margin-top: 58px;
+        dt
+        {
+            font-size: 16px;
+
+            padding-bottom: 20px;
+
+            color: #fff;
+        }
+        dd
+        {
+            line-height: 30px;
+        }
+        a
+        {
+            color: #828998;
+            font-size: 14px;
+        }
+
+        .icon-qq
+        {
+            .sprite(@icon-qq);
+            .icon-common;
+            .fixIe6pngTransparent('/images/icon/common/icon-qq.png');
+        }
+        .icon-sina
+        {
+            .sprite(@icon-sina);
+            .icon-common;
+            .fixIe6pngTransparent('/images/icon/common/icon-sina.png');
+        }
+        .icon-linkedin
+        {
+            .sprite(@icon-linkedin);
+            .icon-common;
+            .fixIe6pngTransparent('/images/icon/common/icon-linkedin.png');
+        }
+        i
+        {
+            margin-top: 9px;
+            margin-right: 5px;
+        }
+    }
+    .about_rg{
+        margin-right: 40px;
+    }
+    .foot_last
+    {
+        margin-right: 23px;
+    }
+    .del_mar{
+        width: 400px;
+        margin-right: 10px;
+    }
+    .code
+    {
+        margin-top: 58px;
+        .sprite(@icon-code);
+        .icon-common;
+        .fixIe6pngTransparent('/images/icon/common/icon-code.png');
+    }
+    .Customer_Service
+    {
+        margin-top: 54px;
+        margin-right: 55px;
+        .onLine{
+            margin-top: 5px;
+            line-height: 26px;
+            color: #fff;
+            font-size: 12px;
+        }
+        .number
+        {
+            .sprite(@number-footer);
+            .icon-common;
+            .fixIe6pngTransparent('/images/icon/common/number-footer.png');
+        }
+        .foot_qq
+        {
+            .sprite(@foot_qq);
+            .icon-common;
+            .fixIe6pngTransparent('/images/icon/common/foot_qq.png');
+        }
+    }
+}
+
+.copyright
+{
+    line-height: 34px;
+
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-bottom: 30px;
+
+    text-align: center;
+    font-size: 14px;
+    color: #7a818f;
+}
+.copyright_01{
+    margin-top: 0;
+    padding-top: 30px;
+}
+/** footer **/
+
+/** footer2 **/
+.footerbox
+{
+  width: 100%;
+  padding-top: 30px;
+
+  background-color: #282d41;
+  .copyright
+  {
+    font-size: 14px;
+    line-height: 34px;
+
+    width: 1200px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #7a818f;
+  }
+}
+/** /footer2 **/
