@@ -1,0 +1,131 @@
+
+@import '../../sprite/common/sprite.less';
+
+@import '../../dev/mixins/mixins.less';
+
+
+.header-top
+{
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 32px;
+
+  text-align: center;
+
+  background: #303845;
+
+}
+
+.header-topVIP
+{
+  width: 100%;
+  height: 32px;
+
+  text-align: center;
+
+  background: #303845;
+
+}
+
+
+.header-top-wrap
+  {
+    width: 1000px;
+    height: 32px;
+    margin: 0 auto;
+    a
+    {
+      font-size: 12px;
+      line-height: 32px;
+
+      color: #fff;
+      &:hover
+      {
+        color: #3ca1d7;
+      }
+    }
+    .user
+    {
+      float: left;
+      .login,
+      .vip-ser
+      {
+        float: left;
+
+        margin-right: 30px;
+      }
+      .login
+      {
+        margin-left: -10px;
+        a
+        {
+          margin-left: 10px;
+        }
+      }
+      .vip-ser
+      {
+        line-height: 12px;
+
+        margin: 5px 30px 5px 0;
+        padding: 4px 10px;
+
+        background: #f60;
+
+        .border-radius(4px);
+        &:hover
+        {
+          color: #fff;
+        }
+      }
+      span.vip,
+      span.service
+      {
+        margin-right: 5px;
+
+        .icon-common;
+      }
+      span.vip
+      {
+        .sprite(@icon-vip,inline-block);
+        .fixIe6pngTransparent('/images/icon/common/icon-vip.png');
+      }
+      span.service
+      {
+        .sprite(@icon-ser,inline-block);
+        .fixIe6pngTransparent('/images/icon/common/icon-ser.png');
+      }
+    }
+    .menu
+    {
+      float: right;
+
+      width: 468px;
+      height: 32px;
+      a
+      {
+        margin-left: 30px;
+        span
+        {
+          margin-right: 5px;
+
+          .sprite(@icon-download,inline-block);
+          .icon-common;
+          .fixIe6pngTransparent('/images/icon/common/icon-download.png');
+        }
+        i
+        {
+          margin-left: 5px;
+
+          .triangle(#fff);
+        }
+      }
+      a.tri:hover i
+      {
+        .triangleRotate(#fff);
+      }
+    }
+  }
