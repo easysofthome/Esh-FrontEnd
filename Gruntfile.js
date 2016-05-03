@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     prefix: '@@',
     suffix: '',
     globals: {},
-    includesDir: 'D:\\esh-FrontEnd\\html',
+    includesDir: 'D:\\Esh-FrontEnd\\html',
     docroot: '.',
     encoding: 'utf-8'
   });
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
           prefix: '@@',
           suffix: '',
           globals: {},
-          includesDir: 'D:\\esh-FrontEnd\\html',
+          includesDir: 'D:\\Esh-FrontEnd\\html',
           docroot: '.',
           encoding: 'utf-8'
         },
