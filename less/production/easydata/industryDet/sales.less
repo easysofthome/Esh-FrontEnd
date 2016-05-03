@@ -1,0 +1,82 @@
+@import '../../../../less/dev/mixins/mixins.less';
+@import '../../../sprite/easydata/priceDet/sprite.less';
+.tablebox{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+   .border-radius(4px);
+   background-color: #fff;
+  .table_cont{
+    width: 1160px;
+    margin: 0px auto 0 auto;
+    padding-top: 30px;
+  }
+
+  .tab_tit{
+    font-size: 18px;
+    color:#000;
+  }
+  .Margins{
+    margin-top: 30px;
+
+  }
+  .tab_unit,.Spread_text{
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+  }
+  .Spread_text{
+    width: 72px;
+    margin-left: 20px;
+    color:#3ca1d7;
+  }
+
+  .pricechangesbox{
+    table-layout: fixed;
+       border-left: 1px solid #cccccc;
+    border-top:1px solid #cccccc;
+    font-size: 14px;
+    color:#333;
+    line-height: 48px;
+    width: 1159px;
+  }
+  //**出口价格每年的月度变化
+  .vertical{
+    background-color: #f2f3f5;
+    font-size: 16px;
+  }
+  .vert_data{
+    font-size: 14px;
+  }
+  .vert_data:nth-child(odd){
+    background: #f8f8f8;
+  }
+  td
+  {
+    overflow: hidden;
+    text-align: center;
+    border-right:  1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  .sales_year{
+    width: 162px;
+  }
+  .sales_yearnum{
+    width: 165px;
+  }
+  .Spread{
+    margin:6px 0 0 6px;
+    .sprite(@Spread);
+    .icon-easydata-priceDet;
+    .fixIe6pngTransparent('/images/icon/easydata/priceDet/Spread.png');
+  }
+
+  //连续6年所有产品销售总额变化情况
+
+
+
+  // 链接
+  .link00{
+    color: #333;
+  }
+}
