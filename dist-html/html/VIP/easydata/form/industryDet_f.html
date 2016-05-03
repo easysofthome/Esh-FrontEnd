@@ -9,45 +9,75 @@
 </head>
 
 <body>
-	<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>易家纺-电子商务平台|会员中心-内页导航</title>
-	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+	
 	<link href="/css/production/VIP/common/nav.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
 	<!-- 会员中心内页导航 -->
+	
+<link rel="stylesheet" href="/css/production/common/top.css">
+
+<!-- 解决IE 6 除a标签外不支持hover -->
+<!--[if lte IE 6]>
+  <style type="text/css">
+    body { behavior:url("/Static/assets/csshover3.htc"); }
+  </style>
+<![endif]-->
+
+  <div class="header-topVIP">
+    <div class="header-top-wrap">
+      <div class="user">
+        <div class="login">
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+        </div>
+        <a href="#" class="vip-ser"><span class="vip"></span>开通VIP会员</a>
+        <a href="#"><span class="service"></span>客户服务</a>
+      </div>
+      <div class="menu">
+        <a href="#">易家纺首页</a>
+        <a href="#">易数据</a>
+        <a href="#">易设计</a>
+        <a href="#">易核价</a>
+        <a href="#" class="tri"><span></span>易家纺软件下载区<i></i></a>
+      </div>
+    </div>
+  </div>
 	<div class="navbox">
 		<div class="nav clearfix">
 			<div class="navL lf clearfix">
 				<div class="headPorbox lf">
-					<div class="headPor">
-						<div class="mask">
-							<img width="80" hright="80" src="/images/production/VIP/common/nav/mask4a7.png"></div>
-						<img width="80" hright="80" src="/images/production/VIP/common/nav/headPor.png"></div>
+					<a class="headPor" href="/html/VIP/common/basicData/headportrait.html">
+						<span class="mask-words">编辑头像</span>
+						<img class="headportrait" src="/images/production/VIP/common/nav/headPor.png">
+						<img class="mask" src="/images/production/VIP/common/nav/mask4a7.png">
+
+					</a>
 				</div>
 				<div class="username lf">
 					<p>彼得的狗</p>
-					<a class="btn_formap" href="#">修改头像</a>
 				</div>
 				<a href="/html/VIP/common/index.html" class="lf returnbtn">返回会员首页</a>
 			</div>
-			<div class="lf navR clearfix">
-				<a href="/html/VIP/common/basicData/basicData.html" class="lf navmar_fir">基本资料</a>
-				<a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a>
-				<a href="/html/VIP/common/account/meaccount.html" class="lf navmar">账户管理</a>
-				<span class="lf navmar newsRedbox">
-					<a class="newsRed">22</a>
-					<a href="/html/VIP/common/news/news.html">消息中心</a>
-				</span>
-				<a href="#" class="lf navmar">服务列表</a>
-			</div>
+			<ul class="lf navR clearfix">
+				<li class="menu"><a href="/html/VIP/common/basicData/basicData.html" class="lf navmar">基本资料</a></li>
+				<li class="menu"><a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a></li>
+				<li class="menu"><a href="/html/VIP/common/account/recharge.html" class="lf navmar">账户管理</a></li>
+				<li class="menu">
+					<a href="/html/VIP/common/news/news.html" class="lf navmar newsRedbox">
+						<span class="newsRed">22</span>
+						<p>消息中心</p>
+					</a>
+				</li>
+				<li class="nav-more menu navmar">
+					<p>服务列表</p>
+					<ul>
+						<li><a href="/html/VIP/easydata/form/searchAbroad_r.html">易数据</a></li>
+						<li><a href="/html/VIP/easydesign/Flowers/Flowers.html">易设计</a></li>
+						<li><a href="/html/VIP/easyPricing/Fabric/Fabric.html">易核价</a></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
-</body>
-</html>
 	<div class="main_box clearfix">
 		<!doctype html>
 <html>
@@ -150,7 +180,7 @@
     <div class="classbox">
       <dl class="classwords cur">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf userwhite"></span>
             <span class="lf bold">精确匹配国外潜在买家</span>
           </a>
@@ -170,7 +200,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">准确了解全球价格行情</span>
           </a>
@@ -184,7 +214,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">密切监测国内外同行</span>
           </a>
@@ -204,7 +234,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">有效维护现有客户</span>
           </a>
@@ -226,7 +256,7 @@
     <div class="classbox" style="display: none;">
       <dl class="classwords cur">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf userwhite"></span>
             <span class="lf bold">精准匹配中国供应商</span>
           </a>
@@ -246,7 +276,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">随时跟踪价格走势</span>
           </a>
@@ -260,7 +290,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">密切关注竞争对手</span>
           </a>
@@ -280,7 +310,7 @@
       </dl>
       <dl class="classwords">
         <dt>
-          <a href="#" class="class_a clearfix current_ico">
+          <a class="class_a clearfix current_ico">
             <span class="lf usergray"></span>
             <span class="lf bold">及时监测供应商</span>
           </a>
@@ -318,7 +348,7 @@
   </div>
 </body>
 </html>
-		<div class="rg">
+		<div class="rg rgbox">
 			<!-- 右边搜索 -->
 			<div class="searchint">
 				<p class="tit">密切监测国内外同行</p>
@@ -463,15 +493,8 @@
 </html>
 		</div>
 	</div>
-	<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>易家纺-电子商务平台|会员中心-版权</title>
-  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/footer.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
+	  <link href="/css/production/VIP/common/footer.css" rel="stylesheet" type="text/css"/>
+
   <div class="footerbox">
     <!-- 版权 -->
     <div class="copyright">
@@ -480,6 +503,22 @@
       浙ICP备B2-20140102号
     </div>
   </div>
-</body>
+
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script>
+    seajs.use('js/VIP/common/head');
+  </script>
+  <script>
+    seajs.use('jquery',function ($) {
+      $('dl.classwords dt').on('click', function() {
+        $(this).parent().find('dd').toggle();
+      });
+    });
+  </script>
+
 </body>
 </html>

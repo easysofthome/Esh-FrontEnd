@@ -48,7 +48,7 @@ if (this.seajs) {
     seajs.config({
 
         local: "/static/",
-        base: "http://182.168.1.115:2323/",
+        base: "http://182.168.1.134:8180/",
         debug: true,
 
         comboSyntax: this.comboSyntax,

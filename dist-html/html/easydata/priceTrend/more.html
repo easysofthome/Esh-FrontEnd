@@ -9,8 +9,8 @@
 
 <body>
   <!-- 头部、导航 -->
-  <link rel="stylesheet" href="/css/production/easydata/top.css">
-<link rel="stylesheet" href="/css/production/easydata/global.css">
+  
+<link rel="stylesheet" href="/css/production/common/top.css">
 
 <!-- 解决IE 6 除a标签外不支持hover -->
 <!--[if lte IE 6]>
@@ -19,7 +19,6 @@
   </style>
 <![endif]-->
 
-<div class="header clearfix">
   <div class="header-top">
     <div class="header-top-wrap">
       <div class="user">
@@ -32,13 +31,24 @@
       </div>
       <div class="menu">
         <a href="#">易家纺首页</a>
-        <a href="#">易数据</a>
-        <a href="#">易设计</a>
-        <a href="#">易核价</a>
+        <a href="/html/easydata/index.html">易数据</a>
+        <a href="/html/easydesign/index.html">易设计</a>
+        <a href="/html/easyPricing/index.html">易核价</a>
         <a href="#" class="tri"><span></span>易家纺软件下载区<i></i></a>
       </div>
     </div>
   </div>
+  <link rel="stylesheet" href="/css/production/easydata/top.css">
+<link rel="stylesheet" href="/css/production/easydata/global.css">
+
+<!-- 解决IE 6 除a标签外不支持hover -->
+<!--[if lte IE 6]>
+  <style type="text/css">
+    body { behavior:url("/Static/assets/csshover3.htc"); }
+  </style>
+<![endif]-->
+
+<div class="header clearfix">
   <div class="header-wrapper clearfix">
     <a href="/html/easydata/index.html" class="logo">
       <span id="header-logo"></span>
@@ -222,6 +232,8 @@
   </div>
 
   <!-- 版权 -->
+  <link href="/css/production/easydata/footer.css" rel="stylesheet" type="text/css"/>
+
   <div class="footerbox">
     <!-- 版权 -->
     <div class="copyright">
@@ -232,7 +244,7 @@
   </div>
 
   <script src="/js/common/seajs/sea-debug.js"></script>
-  <!-- <script src="/Static/seajs/seajs-combo.js"></script> -->
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
   <script src="/js/common/seajs/seajs-css.js"></script>
 
   <script src="/js/rootConfig.js"></script>

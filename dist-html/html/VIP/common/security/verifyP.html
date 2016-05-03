@@ -2,50 +2,80 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>易家纺-电子商务平台|会员中心-首页</title>
+  <title>易家纺-电子商务平台|会员中心-新手机验证</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/security/security.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/security/verifyP.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>易家纺-电子商务平台|会员中心-内页导航</title>
-	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  
 	<link href="/css/production/VIP/common/nav.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
 	<!-- 会员中心内页导航 -->
+	
+<link rel="stylesheet" href="/css/production/common/top.css">
+
+<!-- 解决IE 6 除a标签外不支持hover -->
+<!--[if lte IE 6]>
+  <style type="text/css">
+    body { behavior:url("/Static/assets/csshover3.htc"); }
+  </style>
+<![endif]-->
+
+  <div class="header-topVIP">
+    <div class="header-top-wrap">
+      <div class="user">
+        <div class="login">
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+        </div>
+        <a href="#" class="vip-ser"><span class="vip"></span>开通VIP会员</a>
+        <a href="#"><span class="service"></span>客户服务</a>
+      </div>
+      <div class="menu">
+        <a href="#">易家纺首页</a>
+        <a href="#">易数据</a>
+        <a href="#">易设计</a>
+        <a href="#">易核价</a>
+        <a href="#" class="tri"><span></span>易家纺软件下载区<i></i></a>
+      </div>
+    </div>
+  </div>
 	<div class="navbox">
 		<div class="nav clearfix">
 			<div class="navL lf clearfix">
 				<div class="headPorbox lf">
-					<div class="headPor">
-						<div class="mask">
-							<img width="80" hright="80" src="/images/production/VIP/common/nav/mask4a7.png"></div>
-						<img width="80" hright="80" src="/images/production/VIP/common/nav/headPor.png"></div>
+					<a class="headPor" href="/html/VIP/common/basicData/headportrait.html">
+						<span class="mask-words">编辑头像</span>
+						<img class="headportrait" src="/images/production/VIP/common/nav/headPor.png">
+						<img class="mask" src="/images/production/VIP/common/nav/mask4a7.png">
+
+					</a>
 				</div>
 				<div class="username lf">
 					<p>彼得的狗</p>
-					<a class="btn_formap" href="#">修改头像</a>
 				</div>
 				<a href="/html/VIP/common/index.html" class="lf returnbtn">返回会员首页</a>
 			</div>
-			<div class="lf navR clearfix">
-				<a href="/html/VIP/common/basicData/basicData.html" class="lf navmar_fir">基本资料</a>
-				<a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a>
-				<a href="/html/VIP/common/account/meaccount.html" class="lf navmar">账户管理</a>
-				<span class="lf navmar newsRedbox">
-					<a class="newsRed">22</a>
-					<a href="/html/VIP/common/news/news.html">消息中心</a>
-				</span>
-				<a href="#" class="lf navmar">服务列表</a>
-			</div>
+			<ul class="lf navR clearfix">
+				<li class="menu"><a href="/html/VIP/common/basicData/basicData.html" class="lf navmar">基本资料</a></li>
+				<li class="menu"><a href="/html/VIP/common/security/security.html" class="lf navmar">安全管理</a></li>
+				<li class="menu"><a href="/html/VIP/common/account/recharge.html" class="lf navmar">账户管理</a></li>
+				<li class="menu">
+					<a href="/html/VIP/common/news/news.html" class="lf navmar newsRedbox">
+						<span class="newsRed">22</span>
+						<p>消息中心</p>
+					</a>
+				</li>
+				<li class="nav-more menu navmar">
+					<p>服务列表</p>
+					<ul>
+						<li><a href="/html/VIP/easydata/form/searchAbroad_r.html">易数据</a></li>
+						<li><a href="/html/VIP/easydesign/Flowers/Flowers.html">易设计</a></li>
+						<li><a href="/html/VIP/easyPricing/Fabric/Fabric.html">易核价</a></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
-</body>
-</html>
   <div class="main_box clearfix">
     <!doctype html>
 <html>
@@ -71,7 +101,7 @@
 					</a>
 				</li>
 				<li class="lf vipwidth">
-					<a href="/html/VIP/common/basicData/authentication.html">
+					<a href="/html/VIP/common/basicData/authenticaSucc.html">
 						<span class="realname"></span>
 						<span>实名认证</span>
 					</a>
@@ -100,14 +130,6 @@
           </a>
         </dt>
       </dl>
-      <dl class="classwords">
-        <dt>
-          <a href="/html/VIP/common/basicData/authentication.html" class="class_a clearfix current_ico">
-            <span class="lf usergray"></span>
-            <span class="lf bold">实名认证</span>
-          </a>
-        </dt>
-      </dl>
 		</div>
     <!doctype html>
 <html>
@@ -128,34 +150,31 @@
 	</div>
 </body>
 </html>
-  <div class="rg securityRpwd securityR">
+    <div class="rg securityRpwd securityR">
+      <form action="" id="modifyPhone" method="post">
+        <div class="security-box clearfix">
+          <p class="quyutitle2 icon-huiyuanzhongxin-right">设置手机号码</p>
+          <p class="note">注：新更换的手机将设为安全手机，可以用于接受信息、取回密码!</p>
+          <div class="lf phone-box clearfix">
+            <div class="lf">手机号码：</div>
+            <span class="placeholder">请输入手机号码</span>
+            <input type="text" class="phone lf" value="" name="phone" id="phone">
+            <a href="#" class="lf codes">获取验证</a>
+            <div class="input-tip"></div>
+          </div>
+          <div class="lf authcode-box clearfix">
+            <div class="lf titilexingxi">验证码：</div>
+            <span class="placeholder">请输入验证码</span>
+            <input type="text" class="codes_val" value="" name="authCode" id="authCode">
+            <div class="input-tip"></div>
+          </div>
+          <button type="submit" class="save">确认</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    <link href="/css/production/VIP/common/footer.css" rel="stylesheet" type="text/css"/>
 
-    <p class="quyutitle2 icon-huiyuanzhongxin-right">新手机验证</p>
-    <p class="note">注：新更换的手机将设为安全手机，可以用于接受信息、取回密码!</p>
-    <div class="clearfix">
-      <span class="lf titilexingxi">手机号码：</span>
-      <div class="lf veri_left">
-        <input type="text" class="phone" value="请输入新手机号码"></div>
-      <a href="#" class="lf codes">获取验证</a>
-    </div>
-    <div class="clearfix shurutop">
-      <span class="lf titilexingxi">验证码：</span>
-      <div class="lf veri_left">
-        <input type="text" class="codes_val" value="请输入新密码">
-      </div>
-    </div>
-    <a href="#" class="save">确认更改</a>
-  </div>
-  </div>
-  <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>易家纺-电子商务平台|会员中心-版权</title>
-  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/footer.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
   <div class="footerbox">
     <!-- 版权 -->
     <div class="copyright">
@@ -164,6 +183,25 @@
       浙ICP备B2-20140102号
     </div>
   </div>
-</body>
+
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script>
+    seajs.use('js/VIP/common/head');
+  </script>
+  <script>
+    seajs.use('jquery',function ($) {
+      $('dl.classwords dt').on('click', function() {
+        $(this).parent().find('dd').toggle();
+      });
+    });
+  </script>
+
+  <script>
+    seajs.use('js/VIP/common/security/modifyPhone');
+  </script>
 </body>
 </html>
