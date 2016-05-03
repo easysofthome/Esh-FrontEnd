@@ -1,0 +1,165 @@
+.icon-yituangou-Buy {
+  background-image: url("/images/production/yituangou/Buy/sprite-yituangou-Buy.PNG");
+}
+/*按钮的样式*/
+.Button {
+  line-height: 32px;
+  width: 100px;
+  text-align: center;
+  color: #fff;
+  background-color: #d42532;
+  _vertical-align: middle;
+  border-radius: 3px;
+}
+.SelectBuy-list-Frame {
+  width: 1190px;
+}
+.SelectBuy-list-Frame .SelectBuy-list {
+  position: relative;
+  float: left;
+  width: 381px;
+  margin-right: 20px;
+  border: #ddd 1px solid;
+  background-color: #fff;
+}
+.SelectBuy-list-Frame .SelectBuy-list .list-Figure {
+  position: relative;
+  margin-top: 9px;
+  margin-left: 9px;
+}
+.SelectBuy-list-Frame .SelectBuy-list .Transparent-50 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background-position: -4px -28px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 363px;
+  height: 30px;
+}
+.SelectBuy-list-Frame .SelectBuy-list .Countdown {
+  float: left;
+  margin-top: 7px;
+  margin-left: 118px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.SelectBuy-list-Frame .SelectBuy-list .Countdown-text {
+  font-size: 13px;
+  line-height: 30px;
+  float: left;
+  margin-left: 9px;
+  color: #fff;
+  _vertical-align: middle;
+}
+.SelectBuy-list-Frame .SelectBuy-list .NEW {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background-position: -4px -66px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.SelectBuy-list-Frame .SelectBuy-list01 {
+  float: right;
+  margin-right: 0;
+}
+.list-text01 {
+  font-size: 13px;
+  margin: 0 9px;
+  margin-top: 10px;
+  color: #888;
+}
+.list-text02 {
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+.list-text-left01 {
+  font-family: '宋体';
+  float: left;
+  color: #010101;
+}
+.list-text-left01:hover {
+  color: #d42532;
+}
+.list-text-right01 {
+  float: right;
+}
+.list-text-left02 {
+  float: left;
+}
+.list-text-left02 .left02-span01 {
+  font-family: 'Arial Regular';
+  font-size: 40px;
+}
+.list-text-left02 .list-hong {
+  color: #d42532;
+}
+.list-text-right02 {
+  font-size: 16px;
+  float: right;
+  width: 100px;
+  margin-top: 6px;
+}
+.list-text-right03 {
+  float: right;
+  margin-top: 23px;
+}
+.Buy02-list {
+  float: left;
+  width: 282px;
+  margin-right: 21px;
+  background-color: #fff;
+}
+.Buy02-list .Buy02-but {
+  width: 76px;
+}
+.Buy03-list {
+  float: left;
+  width: 222px;
+  margin-right: 20px;
+  background-color: #fff;
+}
+.Buy04-BuyTrailer {
+  font-family: '宋体';
+  font-size: 12px;
+  line-height: 22px;
+  width: 222px;
+  margin-top: -15px;
+  text-align: center;
+  color: #fff;
+  background-color: #999;
+  _vertical-align: middle;
+}
+.Buy05-list {
+  float: left;
+  width: 382px;
+  margin-right: 21px;
+  background-color: #fff;
+}
+.Buy06-list-Frame {
+  width: 282px;
+}
+.Buy07-list {
+  float: left;
+  width: 236px;
+  margin-right: 20px;
+  background-color: #fff;
+}
+.Buy-list {
+  margin-right: 20px;
+}
+.Buy-right {
+  float: right;
+  margin-right: 0;
+}

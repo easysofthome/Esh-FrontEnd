@@ -1,0 +1,140 @@
+.icon-yijingjia-log {
+  background-image: url("/images/production/yijingjia/log/sprite-yijingjia-log.PNG");
+}
+.logbox {
+  width: 1188px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  margin-top: 40px;
+  border: 1px solid #d6d6d6;
+}
+.logbox .logbox_left {
+  float: left;
+  margin: 56px 0 0 140px;
+  _margin-left: 70px;
+  background-position: -4px -81px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 480px;
+  height: 320px;
+}
+.logbox .logbox_right {
+  float: left;
+  width: 326px;
+  margin-top: 80px;
+  margin-left: 124px;
+  padding-bottom: 30px;
+  border: 1px solid #d6d6d6;
+}
+.logbox .logbox_right h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 18px 0 0 25px;
+  color: #333;
+}
+.logbox .logbox_right .yanzheng {
+  width: 278px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.logbox .logbox_right .yanzheng .yanzheng_img {
+  float: left;
+  padding-bottom: 2px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.logbox .logbox_right .yanzheng .tishi_wenzhi {
+  margin-left: 4px;
+  line-height: 18px;
+  float: left;
+  color: #c40e24;
+}
+.logbox .logbox_right .enterstyle {
+  width: 278px;
+  height: 38px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #e6e6e6;
+}
+.logbox .logbox_right .enterstyle .account_img {
+  float: left;
+  margin: 10px 10px 0 10px;
+  _margin-left: 5px;
+  background-position: -4px -28px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+.logbox .logbox_right .enterstyle .password_img {
+  float: left;
+  margin: 10px 10px 0 10px;
+  _margin-left: 5px;
+  background-position: -4px -53px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 20px;
+}
+.logbox .logbox_right .enterstyle input {
+  font-size: 12px;
+  line-height: 38px;
+  float: left;
+  width: 240px;
+  height: 38px;
+  color: #999;
+  border: 0;
+}
+.logbox .logbox_right .password {
+  margin-top: 20px;
+}
+.logbox .logbox_right .autologinbox {
+  font-size: 12px;
+  width: 278px;
+  margin: 0 auto;
+  margin-top: 14px;
+  color: #4c4c4c;
+}
+.logbox .logbox_right .autologinbox a {
+  float: right;
+  height: 14px;
+  color: #132a87;
+}
+.logbox .logbox_right .autologinbox label {
+  float: left;
+}
+.logbox .logbox_right .autologinbox label input {
+  height: 14px;
+  vertical-align: bottom;
+}
+.logbox .logbox_right .buttbox {
+  padding-top: 10px;
+  width: 278px;
+  margin: 0 auto;
+  margin-top: 14px;
+}
+.logbox .logbox_right .buttbox .butt_yanshi {
+  width: 126px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+.logbox .logbox_right .buttbox .butt_denglu {
+  float: left;
+  background-color: #c40e24;
+}
+.logbox .logbox_right .buttbox .butt_zhuci {
+  float: right;
+  background-color: #114e87;
+}

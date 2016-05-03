@@ -1,0 +1,117 @@
+.shezhi .correct i,
+.shezhi .error i {
+  margin-top: 4px;
+  margin-right: 4px;
+}
+.shezhi .correct {
+  color: #14b610;
+}
+.shezhi .correct i {
+  background-position: -4px -110px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.shezhi .error {
+  color: #333;
+}
+.shezhi .error i {
+  background-position: -4px -158px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.shezhi .margin_a {
+  margin-right: 15px;
+}
+.icon-huiyuanzhongxin-right {
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a12_box {
+  margin-top: 40px;
+}
+.a12_box .a12_main01 {
+  background-color: #303745;
+}
+.a12_box .a12_main01 .main01 {
+  width: 396px;
+  padding-top: 20px;
+  padding-bottom: 18px;
+  padding-left: 30px;
+}
+.a12_box .a12_main01 .main01_size {
+  font-size: 30px;
+  margin-top: 3px;
+  padding-bottom: 16px;
+}
+.a12_box .a12_main01 .border_rg {
+  border-right: 2px solid #f2f3f5;
+}
+.a12_box .a12_main01 .main01_a {
+  margin-right: 36px;
+  color: #cbcfd6;
+}
+.a12_main02 {
+  margin-top: 20px;
+  background-color: #fff;
+}
+.a12_main02 .main02_01 {
+  font-size: 20px;
+  line-height: 60px;
+  padding-left: 30px;
+  background-position: -4px -665px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 314px;
+  height: 60px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a12_main02 .main02_02 {
+  padding: 32px 0;
+  padding-right: 58px;
+  padding-left: 40px;
+}
+.a12_main02 .main02_02 .yisheji_icon,
+.a12_main02 .main02_02 .yishuju_icon {
+  font-weight: bold;
+}
+.a12_main02 .main02_02 .yisheji_icon i,
+.a12_main02 .main02_02 .yishuju_icon i {
+  margin-right: 10px;
+}
+.a12_main02 .main02_02 .yisheji_icon i {
+  background-position: -4px -417px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a12_main02 .main02_02 .yishuju_icon i {
+  background-position: -4px -459px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-image: url("/images/production/huiyuanzhongxin/right/sprite-huiyuanzhongxin-right.PNG");
+}
+.a12_main02 .main02_02 .words {
+  width: 370px;
+  margin-left: 66px;
+  font-size: 13px;
+}
+.a12_main02 .main02_02 .mar_top {
+  margin-top: 5px;
+}
+.a12_main02 .bor_top {
+  border-top: #ebebeb 1px solid;
+}

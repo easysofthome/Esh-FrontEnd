@@ -1,0 +1,47 @@
+.tab_box {
+  width: 980px;
+  margin: 20px auto 0 auto;
+  border: 1px solid #e1e1e1;
+  border-bottom: none;
+  border-right: none;
+  text-align: center;
+  line-height: 36px;
+  font-size: 12px;
+  background-color: #fff;
+}
+.tab_box .tr_tit {
+  color: #333;
+  background-color: #f7f7f7;
+}
+.tab_box td {
+  border-bottom: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+.tab_box .increase_but {
+  display: block;
+  background-color: #00a3c9;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+  height: 24px;
+  border-radius: 3px;
+  width: 80px;
+  margin: 0 auto;
+}
+.tab_box .but_xia {
+  margin-top: 10px;
+}
+.tab_box .inp_mon {
+  border: 1px solid #cccdcd;
+  height: 24px;
+  line-height: 24px;
+  width: 74px;
+  padding-left: 6px;
+}
+.tab_box .td_tail {
+  background-color: #fff;
+  width: 100px;
+}
+.tab_box .inp_box {
+  width: 150px;
+}

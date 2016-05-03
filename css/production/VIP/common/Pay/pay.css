@@ -1,0 +1,173 @@
+.icon-VIP-common-Pay {
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+}
+.pay_way {
+  font-size: 16px;
+  color: #999999;
+  line-height: 16px;
+}
+.pay_box {
+  padding-top: 10px;
+}
+.pay_box li {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  cursor: pointer;
+}
+.pay_box .zhifubao {
+  margin: 7px auto 0 auto;
+  background-position: -4px -121px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 76px;
+  height: 26px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+}
+.pay_box .yidou {
+  margin: 7px auto 0 auto;
+  background-position: -4px -87px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 76px;
+  height: 26px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+}
+.pay_box .select_pay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-position: -4px -58px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+  display: none;
+}
+.pay_box li:hover .select_pay {
+  display: block;
+}
+.pay_box li:hover {
+  border: 1px solid #ff5200;
+}
+.pay_box .zaixian {
+  margin: 7px auto 0 auto;
+  background-position: -4px -155px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 92px;
+  height: 28px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+}
+.pay_box .li_max {
+  margin-left: 10px;
+}
+.pay_box .arr_bom {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  background-position: -4px -30px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+}
+.dropdown_box {
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  width: 1120px;
+}
+.dropdown_box .dropdown_libox {
+  width: 1080px;
+  padding: 20px 0 20px 0;
+  margin: 0 auto;
+}
+.dropdown_box .dropdown_libox li {
+  background-position: -4px -232px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 202px;
+  height: 62px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+  position: relative;
+}
+.dropdown_box .dropdown_libox .Preferential_var {
+  margin-left: 16px;
+}
+.dropdown_box .seal {
+  background-position: -4px -191px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 33px;
+  height: 33px;
+  background-image: url("/images/production/VIP/common/Pay/sprite-VIP-common-Pay.PNG");
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: none;
+}
+.dropdown_box li:hover .seal {
+  display: block;
+}
+.Bean_box {
+  margin-top: 10px;
+}
+.Bean_box .yidou_name,
+.Bean_box .yidou_unit,
+.Bean_box .yidou_Surplus {
+  font-size: 14px;
+  margin-top: 3px;
+}
+.Bean_box .yidou_Surplus {
+  margin-left: 30px;
+}
+.Bean_box .yidou_unit {
+  margin-left: 4px;
+}
+.Bean_box .yidou_data,
+.Bean_box .yidou_surdata {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #fe6600;
+}
+.Bean_box .yidou_surdata {
+  margin-left: 0px;
+}
+.Bean_box .yidou_input {
+  width: 94px;
+  height: 24px;
+  line-height: 26px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  padding-left: 6px;
+}
+.whether {
+  margin: 7px 2px 0 0;
+}
+.bean_height {
+  margin-top: 0px;
+}
+.bean_butt {
+  margin-top: 20px;
+  width: 190px;
+  display: block;
+  text-align: center;
+  height: 38px;
+  line-height: 38px;
+  background-color: #fe6600;
+  color: #fff;
+}
+.bean_butt:hover {
+  background-color: #f75533;
+}

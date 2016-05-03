@@ -1,0 +1,48 @@
+.icon-yituangou-index {
+  background-image: url("/images/production/yituangou/index/sprite-yituangou-index.PNG");
+}
+.Sort {
+  float: left;
+}
+.Sort .Sort-a {
+  font-family: '宋体';
+  font-size: 13px;
+  line-height: 30px;
+  float: left;
+  padding-right: 15px;
+  color: #000;
+  background-color: #fff;
+  _vertical-align: middle;
+}
+.Sort .Sort-a span {
+  float: left;
+}
+.Sort .Sort-icon {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+.Sort .Comprehensive {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 11px;
+  height: 11px;
+}
+.Sort .Drop {
+  background-position: -4px -23px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 11px;
+}
+.Sort .Rise {
+  background-position: -4px -42px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 11px;
+}

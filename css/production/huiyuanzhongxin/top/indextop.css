@@ -1,0 +1,234 @@
+.icon-huiyuanzhongxin-top {
+  background-image: url("/images/production/huiyuanzhongxin/top/sprite-huiyuanzhongxin-top.PNG");
+}
+.indextop {
+  background-color: #303745;
+}
+.indextop .indextopbox {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 84px;
+}
+.indextop .gereninfbox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 346px;
+  margin-top: 12px;
+  margin-left: -173px;
+}
+.indextop .gereninfbox .shangbufu {
+  margin: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 13px;
+}
+.indextop .gereninfbox .xiabufeng {
+  padding: 0 10px;
+  padding-bottom: 24px;
+  padding-bottom: 15px;
+  background-image: url('/images/production/huiyuanzhongxin/top/a08_bg.png');
+}
+.indextop .gereninfbox .xiabufen_bottom {
+  background-position: -4px -46px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 346px;
+  height: 15px;
+  background-image: url("/images/production/huiyuanzhongxin/top/sprite-huiyuanzhongxin-top.PNG");
+}
+.indextop .gereninfbox .mingcheng {
+  padding-top: 20px;
+  text-align: center;
+}
+.indextop .gereninfbox .mingchengtop {
+  padding-top: 10px;
+}
+.indextop .gereninfbox .vipbufeng {
+  margin-top: 20px;
+}
+.indextop .gereninfbox .dianjihoubj {
+  background-color: #3e485c;
+}
+.indextop .gereninfbox .VIPboxwidth {
+  display: inline;
+  width: 54px;
+  margin-left: 20px;
+}
+.indextop .gereninfbox .VIP {
+  margin: 0 auto;
+  background-position: -4px -135px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .wuVIP {
+  margin: 0 auto;
+  background-position: -4px -335px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .shouji {
+  margin: 0 auto;
+  background-position: -4px -255px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .shiming {
+  margin: 0 auto;
+  background-position: -4px -215px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .youxiang {
+  margin: 0 auto;
+  background-position: -4px -295px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .mima {
+  margin: 0 auto;
+  background-position: -4px -175px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.indextop .gereninfbox .VIPname {
+  padding-top: 6px;
+  text-align: center;
+}
+.indextop .gereninfbox .VIPshangbianju {
+  margin-top: 12px;
+}
+.indextop .gereninfbox .anq_title {
+  margin-top: 26px;
+  margin-left: 20px;
+}
+.indextop .gereninfbox .jingdutiao {
+  margin: 0 auto;
+  margin-top: 12px;
+  background-position: -4px -32px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 286px;
+  height: 6px;
+}
+.indextop .gereninfbox .jingdu {
+  background-position: -4px -18px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 143px;
+  height: 6px;
+}
+.indextop .gereninfbox .touxiang {
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+.indextop .gereninfbox .fengshijianjianju {
+  margin-right: 40px;
+}
+.indextop .gereninfbox .touxiangbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: -4px -463px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.indextop .gereninfbox .touxiangbox2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: -4px -591px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.indextop .gereninfbox .detail {
+  margin-top: 14px;
+  text-align: center;
+  color: #c7c7c7;
+}
+.indextop .logobianju {
+  padding-top: 14px;
+}
+.indextop .logo {
+  background-position: -4px -101px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 216px;
+  height: 26px;
+}
+.indextop .tuichu {
+  line-height: 19px;
+  width: 38px;
+  margin-top: 3px;
+  margin-left: 14px;
+  text-align: center;
+  color: #afb1b6;
+  border: 1px solid #afb1b6;
+  border-radius: 4px;
+}
+.indextop .huanying {
+  line-height: 25px;
+  color: #afb1b6;
+}
+.indextop .nav_top {
+  margin-top: 50px;
+}
+.indextop .nav_left {
+  margin-left: 100px;
+}
+.indextop .nav_longleft {
+  margin-left: 425px;
+}
+.indextop .dingwei {
+  position: absolute;
+}
+.indextop .yuan {
+  line-height: 24px;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  text-align: center;
+  background-position: -4px -69px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.indextop .rela {
+  position: relative;
+}
+.indextop .zhiti_13 {
+  font-size: 13px;
+}

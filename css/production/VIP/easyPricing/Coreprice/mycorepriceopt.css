@@ -1,0 +1,109 @@
+.icon-VIP-easyPricing-Coreprice {
+  background-image: url("/images/production/VIP/easyPricing/Coreprice/sprite-VIP-easyPricing-Coreprice.PNG");
+}
+.core_box {
+  width: 854px;
+  background-color: #fff;
+}
+.core_box .core_contbox {
+  width: 814px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+.core_box .core_contbox .species {
+  font-size: 16px;
+  line-height: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.core_box .core_contbox .species li:hover {
+  color: #ff6600;
+}
+.core_box .core_contbox .species li {
+  cursor: pointer;
+  width: 60px;
+  text-align: center;
+}
+.core_box .core_contbox .species .li_speci {
+  margin-left: 10px;
+}
+.core_box .core_contbox .species .bott_boreder {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #ff6600;
+}
+.core_box .core_contbox .core_titbut2 {
+  margin-right: 10px;
+}
+.core_box .core_contbox .core_databox {
+  margin: 10px 0 0 0 ;
+}
+.core_box .core_contbox .core_databox,
+.core_box .core_contbox .core_databox2 {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333333;
+}
+.core_box .core_contbox .core_databox2 {
+  margin-top: 8px;
+}
+.core_box .core_contbox .list_Complete,
+.core_box .core_contbox .list_Complete2 {
+  padding: 0 10px 0 10px;
+}
+.core_box .core_contbox .list_Complete2 {
+  background-color: #e85d40;
+  color: #fff;
+  border-radius: 2px;
+}
+.core_box .core_contbox .coredata_list {
+  width: 670px;
+  margin-left: 12px;
+}
+.core_box .core_contbox .coredata_list li {
+  padding: 0 10px 0 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.core_box .core_contbox .coredata_list .li_leftmar,
+.core_box .core_contbox .coredata_list .li_lefttopmar {
+  margin-left: 12px;
+}
+.core_box .core_contbox .coredata_list .li_lefttopmar,
+.core_box .core_contbox .coredata_list .li_lefttopmarone {
+  margin-top: 6px;
+}
+.core_box .core_contbox .coredata_list li:hover {
+  background-color: #e85d40;
+  color: #fff;
+  border-radius: 2px;
+}
+.core_box .core_contbox .Clearleft {
+  margin-left: 0px;
+}
+.core_box .core_contbox .collapse_box {
+  margin: 20px auto 0 auto;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  background-color: #eeeeee;
+}
+.core_box .core_contbox .collapse_box .Choice {
+  margin: 11px 4px 0 18px;
+  background-position: -4px -38px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 12px;
+  background-image: url("/images/production/VIP/easyPricing/Coreprice/sprite-VIP-easyPricing-Coreprice.PNG");
+}
+.core_box .core_contbox .collapse_box .collapse_text {
+  line-height: 30px;
+  font-size: 14px;
+  margin-left: 2px;
+  color: #888888;
+}

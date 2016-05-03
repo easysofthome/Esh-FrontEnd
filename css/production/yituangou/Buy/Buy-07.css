@@ -1,0 +1,45 @@
+.icon-yituangou-tuangougeren {
+  background-image: url("/images/production/yituangou/tuangougeren/sprite-yituangou-tuangougeren.PNG");
+}
+.Buy-07-wenzi {
+  margin-top: 30px;
+  width: 1010px;
+  background-color: #a0cdeb;
+}
+.Buy-07-wenzi .wenzi {
+  float: left;
+  font-size: 18px;
+  line-height: 55px;
+  _vertical-align: middle;
+  color: #fff;
+  margin-left: 10px;
+}
+.Buy-07-wenzi .Buy-07-but {
+  float: right;
+  color: #4c4c4c;
+  font-size: 14px;
+  width: 86px;
+  line-height: 26px;
+  _vertical-align: middle;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+.Buy-07-wenzi .Buy-07-but span {
+  float: left;
+}
+.Buy-07-wenzi .Buy-07-but .update {
+  margin-left: 12px;
+  margin-top: 7px;
+  margin-right: 4px;
+  background-position: -4px -64px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+.Frame07-list {
+  margin-top: 30px;
+  width: 1010px;
+}

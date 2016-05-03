@@ -1,0 +1,72 @@
+.icon-easyPricing-pricing {
+  background-image: url("/images/production/easyPricing/pricing/sprite-easyPricing-pricing.PNG");
+}
+.progressBar {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 14px 0 24px 0;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 3px;
+}
+.progressBar ul.words li.width {
+  width: 144px;
+}
+.progressBar ul.words li.widththree {
+  width: 912px;
+}
+.progressBar ul.words li.widthfour {
+  width: 352px;
+  margin-left: 104px;
+}
+.progressBar ul.words li.widthfour2 {
+  width: 352px;
+  margin-right: 104px;
+}
+.progressBar ul.words li.txtblue {
+  color: #3ca1d7;
+}
+.progressBar ul.Step {
+  margin: 5px 0 0 60px;
+}
+.progressBar ul.Step li.barthree {
+  width: 504px;
+  height: 24px;
+}
+.progressBar ul.Step li.barfour {
+  width: 328px;
+  height: 24px;
+}
+.progressBar ul.Step li.bargray {
+  background-image: url("/images/production/easyPricing/pricing/bargray.png");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.progressBar ul.Step li.barblue {
+  background-image: url("/images/production/easyPricing/pricing/barblue.png");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.progressBar ul.Step li.barblue {
+  background-image: url("/images/production/easyPricing/pricing/barblue.png");
+}
+.progressBar ul.Step li.circle {
+  background-position: -4px -118px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/production/easyPricing/pricing/sprite-easyPricing-pricing.PNG");
+}
+.progressBar ul.Step li.txtwhite {
+  color: #fff;
+  background-position: -4px -86px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/production/easyPricing/pricing/sprite-easyPricing-pricing.PNG");
+}

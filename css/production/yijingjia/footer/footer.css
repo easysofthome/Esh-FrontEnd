@@ -1,0 +1,276 @@
+.icon-yijingjia-XIAOICO {
+  background-image: url("/images/production/yijingjia/XIAOICO/sprite-yijingjia-XIAOICO.PNG");
+}
+.icon-yijingjia-copyright {
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}
+.footerkuang {
+  margin-top: 40px;
+  overflow: hidden;
+  width: 100%;
+  border-top: solid 2px #c8c8c8;
+  border-bottom: solid 1px #e5e5e5;
+}
+.footerkuang .footer {
+  width: 1190px;
+  margin: 0 auto 0 auto;
+}
+.footerkuang .footer .footer-dl1 {
+  float: left;
+  padding-top: 24px;
+  padding-right: 92px;
+}
+.footerkuang .footer .footer-dl1 dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl1 dd {
+  padding-top: 16px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl1 dd a {
+  color: #666;
+}
+.footerkuang .footer .footer-dl1 dd a:hover {
+  color: #333;
+}
+.footerkuang .footer .footer-dl2 {
+  float: left;
+  padding-top: 24px;
+  padding-right: 80px;
+}
+.footerkuang .footer .footer-dl2 dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl2 dd {
+  padding-top: 16px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl2 dd a {
+  color: #666;
+}
+.footerkuang .footer .footer-dl2 dd a:hover {
+  color: #333;
+}
+.footerkuang .footer .footer-dl3 {
+  float: left;
+  width: 192px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.footerkuang .footer .footer-dl3 dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  text-align: center;
+  color: #666;
+}
+.footerkuang .footer .footer-dl3 dd {
+  margin-top: 16px;
+  background-position: -4px -184px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 191px;
+  height: 191px;
+  background-image: url("/images/production/yijingjia/XIAOICO/sprite-yijingjia-XIAOICO.PNG");
+}
+.footerkuang .footer .footer-dl4 {
+  float: left;
+  padding-top: 24px;
+  padding-left: 100px;
+}
+.footerkuang .footer .footer-dl4 dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl4 dd {
+  overflow: hidden;
+  width: 180px;
+  padding-top: 16px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl4 dd .tengxunweibo {
+  float: left;
+  background-position: -4px -78px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.footerkuang .footer .footer-dl4 dd .xinglangweibo {
+  float: left;
+  background-position: -4px -126px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.footerkuang .footer .footer-dl4 dd .wangyi {
+  float: left;
+  background-position: -4px -102px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.footerkuang .footer .footer-dl4 dd .in {
+  float: left;
+  background-position: -4px -30px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.footerkuang .footer .footer-dl4 dd .wenan {
+  line-height: 16px;
+  float: left;
+  margin-left: 4px;
+}
+.footerkuang .footer .footer-dl4 dd .wenan a {
+  color: #666;
+}
+.footerkuang .footer .footer-dl4 dd .wenan a:hover {
+  color: #333;
+}
+.footerkuang .footer .footer-dl5 {
+  float: left;
+  padding-top: 24px;
+}
+.footerkuang .footer .footer-dl5 dt {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #666;
+}
+.footerkuang .footer .footer-dl5 .dd1 {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 16px;
+  color: #c20d23;
+}
+.footerkuang .footer .footer-dl5 .dd2 {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  background-position: -4px -150px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 152px;
+  height: 26px;
+  background-image: url("/images/production/yijingjia/XIAOICO/sprite-yijingjia-XIAOICO.PNG");
+}
+.footerdaohang {
+  padding-top: 30px;
+  overflow: hidden;
+  width: 780px;
+  margin: 0 auto;
+}
+.footerdaohang li {
+  float: left;
+  color: #333333;
+}
+.footerdaohang li span {
+  margin-left: 12px;
+  margin-right: 12px;
+  color: #cacaca;
+}
+.footerdaohang li a {
+  color: #666;
+}
+.footerdaohang li a:hover {
+  color: #333;
+}
+.banp {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+.copyright {
+  padding-top: 20px;
+  overflow: hidden;
+  width: 900px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+.copyright li {
+  float: left;
+  width: 140px;
+}
+.copyright .li1 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 128px;
+  height: 44px;
+}
+.copyright .li2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -56px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 128px;
+  height: 44px;
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}
+.copyright .li3 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -108px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 128px;
+  height: 44px;
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}
+.copyright .li4 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -160px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 128px;
+  height: 44px;
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}
+.copyright .li5 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -212px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 107px;
+  height: 44px;
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}
+.copyright .li6 {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-position: -4px -264px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 136px;
+  height: 50px;
+  background-image: url("/images/production/yijingjia/copyright/sprite-yijingjia-copyright.PNG");
+}

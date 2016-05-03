@@ -1,0 +1,64 @@
+/*----------上部分按钮样式------------*/
+.icon-yishuju-UpperPart {
+  background-image: url("/images/production/yishuju/UpperPart/sprite-yishuju-UpperPart.PNG");
+}
+.Search-Search {
+  line-height: 24px;
+  margin-top: 10px;
+  padding: 0 10px;
+  color: #fff;
+  _vertical-align: middle;
+}
+.Search-Search i {
+  margin-top: 6px;
+  margin-right: 7px;
+}
+.Search-Search .Search {
+  background-position: -4px -112px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+.Search-Search .Reset {
+  background-position: -4px -133px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 14px;
+}
+.Search-Search .Collection {
+  background-position: -4px -52px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-Search .Contact {
+  background-position: -4px -72px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-Search .PayAttention {
+  background-position: -4px -92px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.Search-color-01 {
+  background-color: #00a2c9;
+}
+.Search-color-02 {
+  background-color: #888;
+}
+.Search-color-03 {
+  background-color: #f9a83f;
+}

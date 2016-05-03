@@ -1,0 +1,171 @@
+.icon-yituangou-Safety {
+  background-image: url("/images/production/yituangou/Safety/sprite-yituangou-Safety.PNG");
+}
+.icon-yituangou-tuangougeren {
+  background-image: url("/images/production/yituangou/tuangougeren/sprite-yituangou-tuangougeren.PNG");
+}
+.Safety-Frame {
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.mod-main {
+  font-family: '宋体';
+  font-size: 12px;
+  float: right;
+  width: 970px;
+  margin-bottom: 20px;
+  padding: 10px 20px 30px 20px;
+  color: #666;
+  background-color: #fff;
+}
+.mod-main .mt h3 {
+  line-height: 40px;
+  _vertical-align: middle;
+}
+.mod-main .mc {
+  line-height: 20px;
+  _vertical-align: middle;
+}
+.mod-main .saft-item-lists {
+  overflow: hidden;
+  margin-bottom: -31px;
+}
+.mod-main .warn-box {
+  padding: 5px;
+  background: #fffdee;
+}
+.mod-main strong {
+  font-weight: bold;
+}
+.mod-main .safe-rank05 {
+  margin-top: 5px;
+  margin-right: 10px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 90px;
+  height: 12px;
+}
+.mod-main .safe-rank05 .i-lvsetiao {
+  background-position: -4px -44px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 70px;
+  height: 12px;
+}
+.mod-main .u-safe .rank-text {
+  font-weight: 400;
+  margin-right: 5px;
+}
+.mod-main .ftx-02 {
+  color: #71b247;
+}
+.mod-main .ftx-04 {
+  color: #ff6c00;
+}
+.mod-main .ml10 {
+  margin-left: 10px;
+}
+.mod-main .safe-item {
+  display: inline-block;
+  display: block;
+  padding: 30px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.mod-main .safe-item .fore1 {
+  font-size: 18px;
+  width: 175px;
+  padding-left: 25px;
+  text-align: left;
+}
+.mod-main .safe-item .fore2 {
+  width: 590px;
+  padding-left: 15px;
+  border-left: 1px solid #e6e6e6;
+}
+.mod-main .safe-item .fore3 {
+  width: 140px;
+  text-align: center;
+}
+.mod-main .safe-item .fore3 a {
+  margin: 0 5px;
+}
+.mod-main .safe-item .fore1,
+.mod-main .safe-item .fore2,
+.mod-main .safe-item .fore3 {
+  line-height: 32px;
+  float: left;
+  height: 32px;
+}
+.mod-main .icon-01 {
+  background-position: -4px -46px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 24px;
+}
+.mod-main .icon-02 {
+  background-position: -4px -78px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 28px;
+}
+.mod-main .icon-01,
+.mod-main .icon-02 {
+  display: inline-block;
+  float: left;
+  margin-right: 33px;
+  margin-bottom: 10px;
+}
+.mod-main .ftx-03 {
+  color: #999;
+}
+.mod-main .ftx-01 {
+  color: #e4393c;
+}
+.mod-main .ftx-05 {
+  color: #005ea7;
+}
+.mod-main .ftx-05:hover {
+  color: #d52532;
+}
+.mod-main .icon-id01 {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+.mod-main .icon-id01d {
+  background-position: -4px -25px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+.mod-main .icon-id01,
+.mod-main .icon-id01d {
+  font-size: 0;
+  display: inline-block;
+}
+.mod-main .ftx-06 {
+  color: #666;
+}
+.mod-main .btn-7 {
+  line-height: 18px;
+  display: inline-block;
+  height: 18px;
+  padding: 2px 14px 3px;
+  color: #323333;
+  border: 1px solid #bfd6af;
+  background-color: #f5fbef;
+  border-radius: 2px;
+}

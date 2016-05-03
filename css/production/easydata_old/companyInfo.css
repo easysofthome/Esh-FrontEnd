@@ -1,0 +1,70 @@
+.icon-easydata_old {
+  background-image: url("/images/production/easydata_old/sprite-easydata_old.PNG");
+}
+.company-info-wrap {
+  width: 100%;
+  background-color: #F2F3F5;
+}
+.company-info-wrap .company-info-box {
+  margin: 40px auto 70px;
+  width: 1100px;
+  height: 370px;
+  padding: 30px 50px;
+  background-color: #fff;
+  color: #333;
+  position: relative;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 7px 7px #eee;
+  -moz-box-shadow: 0px 0px 7px 7px #eee;
+  -ms-box-shadow: 0px 0px 7px 7px #eee;
+  -o-box-shadow: 0px 0px 7px 7px #eee;
+  box-shadow: 0px 0px 7px 7px #eee;
+}
+.company-info-wrap .company-info-box .company-name {
+  font-size: 24px;
+}
+.company-info-wrap .company-info-box .company-info {
+  font-size: 14px;
+  line-height: 35px;
+}
+.company-info-wrap .company-info-box .money-num {
+  font-size: 62px;
+  color: #f60;
+}
+.company-info-wrap .company-info-box .company-loc {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+.company-info-wrap .company-info-box .company-loc span {
+  float: left;
+  margin-top: 3px;
+  margin-right: 7px;
+  background-position: -4px -211px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 18px;
+  background-image: url("/images/production/easydata_old/sprite-easydata_old.PNG");
+}
+.company-info-wrap .company-info-box .company-sites {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+}
+.company-info-wrap .company-info-box .company-sites span {
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+  background-position: -4px -185px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-image: url("/images/production/easydata_old/sprite-easydata_old.PNG");
+}
+.company-info-wrap .company-info-box .company-sites a {
+  color: #333;
+}

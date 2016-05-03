@@ -1,0 +1,524 @@
+.current_locationbox {
+  width: 1188px;
+  border: 1px solid #d6d6d6;
+  margin: 0 auto 0 auto;
+  padding-bottom: 17px;
+}
+.current_locationbox .current_location {
+  color: #333;
+  font-size: 14px;
+  margin: 17px 0 0 20px;
+}
+.current_locationbox .current_location li {
+  float: left;
+}
+.current_locationbox .current_location .location_juli {
+  margin: 0 6px;
+}
+.current_locationbox .current_location a {
+  color: #333;
+}
+.current_locationbox .current_location a:hover {
+  color: #c30d23;
+}
+.icon-yijingjia-fuwushang {
+  background-image: url("/images/production/yijingjia/fuwushang/sprite-yijingjia-fuwushang.PNG");
+}
+.arrangmentbox_qubiankuan {
+  border: 1px solid #d5d5d5;
+  border-top: none;
+}
+.arrangmentbox {
+  width: 903px;
+}
+.arrangmentbox .arrangment_withinbox {
+  width: 862px;
+  margin: 0 auto 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.arrangmentbox .arrangment_withinbox .within_way a {
+  line-height: 28px;
+  float: left;
+  padding: 0 16px;
+  color: #535353;
+  border: 1px solid #d5d5d5;
+  background-color: #ececec;
+}
+.arrangmentbox .arrangment_withinbox .within_way a span {
+  float: left;
+}
+.arrangmentbox .arrangment_withinbox .within_way a .sequence_img {
+  float: left;
+  margin-top: 10px;
+  margin-left: 6px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 9px;
+  height: 9px;
+}
+.arrangmentbox .arrangment_withinbox .within_way .li_color {
+  background-color: #fff;
+}
+.arrangmentbox .arrangment_withinbox .within_way .li_leftborder {
+  border-left: none;
+}
+.arrangmentbox .arrangment_withinbox .within_way .li_zhonghejuli {
+  padding: 0 18px;
+}
+.arrangmentbox .arrangment_withinbox .within_searchbox {
+  float: left;
+  width: 152px;
+  margin-left: 20px;
+}
+.arrangmentbox .arrangment_withinbox .within_searchbox .search_left {
+  float: left;
+  width: 121px;
+  border: 1px solid #d5d5d5;
+  border-right: none;
+}
+.arrangmentbox .arrangment_withinbox .within_searchbox .search_left input {
+  line-height: 28px;
+  width: 121px;
+  height: 28px;
+  color: #cacaca;
+  border: 0;
+  border: none;
+  *height: 26px;
+}
+.arrangmentbox .arrangment_withinbox .within_searchbox .search_right {
+  float: left;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d5d5d5;
+}
+.arrangmentbox .arrangment_withinbox .within_searchbox .search_right .right_img {
+  margin: 5px;
+  background-position: -4px -141px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.arrangmentbox .arrangment_withinbox .within_buttbox {
+  float: right;
+}
+.arrangmentbox .arrangment_withinbox .within_buttbox .butt {
+  line-height: 28px;
+  display: block;
+  float: left;
+  width: 83px;
+  height: 28px;
+  text-align: center;
+  color: #333;
+  border: 1px solid #d5d5d5;
+}
+.arrangmentbox .arrangment_withinbox .within_buttbox .butt_juli {
+  margin-left: 3px;
+}
+.arrangmentbox .arrangment_withinbox .within_buttbox .butt_color {
+  color: #bbb;
+}
+.businessbox {
+  margin-top: 20px;
+  font-size: 14px;
+  width: 903px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #d6d6d6;
+}
+.businessbox .business_logo {
+  float: left;
+  margin: 0 14px 0 20px;
+  _margin-left: 10px;
+}
+.businessbox .business_information {
+  float: left;
+  margin-top: 6px;
+}
+.businessbox .business_information .information_titlebox {
+  _width: 512px;
+}
+.businessbox .business_information .information_titlebox .titlebox_title {
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  color: #132b88;
+}
+.businessbox .business_information .information_titlebox .title_credit {
+  float: left;
+  padding-top: 2px;
+  padding-left: 20px;
+}
+.businessbox .business_information .information_titlebox .title_credit li {
+  float: left;
+  padding-left: 10px;
+  background-position: -4px -116px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 17px;
+}
+.businessbox .business_information .information_titlebox .title_credit .li_starhui {
+  float: left;
+  padding-left: 10px;
+  background-position: -4px -91px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 17px;
+}
+.businessbox .business_information .information_detailbox {
+  width: 512px;
+  margin-top: 10px;
+}
+.businessbox .business_information .information_detailbox .detail_contents {
+  float: left;
+  color: #666;
+}
+.businessbox .business_information .information_detailbox .detail_butt {
+  float: right;
+  color: #333;
+}
+.businessbox .business_information .information_detailbox .detail_butt:hover {
+  color: #c30d23;
+}
+.businessbox .business_information .information_operatingbox {
+  width: 512px;
+  padding-top: 12px;
+}
+.businessbox .business_information .information_operatingbox .operating_ldentity {
+  line-height: 22px;
+  float: left;
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #c30d23;
+  border: 1px solid #c30d23;
+}
+.businessbox .business_information .information_operatingbox .operating_record {
+  float: right;
+}
+.businessbox .business_information .information_operatingbox .operating_record li {
+  line-height: 24px;
+  float: left;
+}
+.businessbox .business_information .information_operatingbox .operating_record li span {
+  color: #c30d23;
+}
+.businessbox .business_information .information_operatingbox .operating_record .juli {
+  margin: 0 14px 0 14px;
+}
+.businessbox .ibusiness_buttbox {
+  float: left;
+  margin-left: 70px;
+  padding-top: 20px;
+}
+.businessbox .ibusiness_buttbox .butt_join {
+  width: 152px;
+  height: 30px;
+  border: 1px solid #efd88f;
+  background-color: #ffeeba;
+}
+.businessbox .ibusiness_buttbox .butt_join .join_img {
+  float: left;
+  margin: 6px 6px 0 26px;
+  background-position: -4px -167px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 22px;
+  height: 18px;
+  _margin-left: 13px;
+}
+.businessbox .ibusiness_buttbox .butt_join a {
+  line-height: 28px;
+  color: #947e3d;
+}
+.businessbox .ibusiness_buttbox .butt_style {
+  width: 70px;
+  height: 26px;
+  margin-top: 10px;
+  border: 1px solid #d0d0d0;
+  background-color: #eee;
+}
+.businessbox .ibusiness_buttbox a {
+  line-height: 24px;
+  float: left;
+  color: #a6a6a6;
+}
+.businessbox .ibusiness_buttbox .butt_imgstyle {
+  float: left;
+  margin: 7px 4px 0 7px;
+  _margin-left: 3.5px;
+}
+.businessbox .ibusiness_buttbox .butt_collect {
+  float: left;
+}
+.businessbox .ibusiness_buttbox .butt_collect .collect_img {
+  background-position: -4px -73px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+.businessbox .ibusiness_buttbox .butt_contact {
+  float: left;
+  margin-left: 10px;
+}
+.businessbox .ibusiness_buttbox .butt_contact .contact_img {
+  background-position: -4px -55px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+.netx_page {
+  float: right;
+  margin-right: 15px;
+  -margin-right: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.netx_page li {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #d5d5d5;
+  margin-right: 5px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #323232;
+}
+.netx_page .next {
+  width: 84px;
+}
+.netx_page .next_color {
+  background-color: #c40e24;
+  border: none;
+  color: #fff;
+}
+.equity_box {
+  width: 263px;
+  padding-bottom: 20px;
+  border: 1px #d5d5d5 solid;
+}
+.equity_box .equity_Textstyle {
+  line-height: 36px;
+  text-align: center;
+}
+.equity_box .equitu_title {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 14px;
+  color: #c30e23;
+}
+.equity_box .equitu_reason {
+  font-size: 20px;
+  color: #333;
+}
+.equity_box li {
+  margin-left: 20px;
+  padding-top: 24px;
+}
+.equity_box li .industry_picture_hangye {
+  float: left;
+  background-position: -4px -193px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 40px;
+}
+.equity_box li .industry_picture_wangluo {
+  float: left;
+  background-position: -4px -241px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 47px;
+}
+.equity_box li .industry_picture_safety {
+  float: left;
+  background-position: -4px -296px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.equity_box li .industry_picture_qian {
+  float: left;
+  background-position: -4px -354px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 51px;
+  height: 57px;
+}
+.equity_box li .industry_textbox {
+  float: left;
+  padding-left: 20px;
+}
+.equity_box li .industry_textbox .industry_textjuli {
+  margin-top: 4px;
+}
+.equity_box li .industry_textbox .industry_text {
+  font-size: 18px;
+}
+.icon-yijingjia-subscription {
+  background-image: url("/images/production/yijingjia/subscription/sprite-yijingjia-subscription.PNG");
+}
+.subscription_box {
+  margin-top: 20px;
+  width: 263px;
+  border: 1px #d5d5d5 solid;
+}
+.subscription_box .subscription_titlebox {
+  width: 220px;
+  margin: 20px auto 0 auto;
+}
+.subscription_box .subscription_titlebox .subscription_picture {
+  float: left;
+  background-position: -4px -63px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.subscription_box .subscription_titlebox .subscription_title {
+  float: left;
+  margin-left: 20px;
+  padding-top: 4px;
+}
+.subscription_box .subscription_titlebox .subscription_title .subscription_titletext {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.subscription_box .subscription_titlebox .subscription_title .subscription_explanation {
+  font-size: 13px;
+  color: #888;
+}
+.subscription_box .subscription_search {
+  width: 220px;
+  margin: 22px auto 0 auto;
+  padding-bottom: 20px;
+}
+.subscription_box .subscription_search .subscription_searchbox {
+  float: left;
+  width: 168px;
+  height: 28px;
+  border: 1px solid #d5d5d5;
+  border-right: none;
+}
+.subscription_box .subscription_search .subscription_searchbox .subscription_youxiang {
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 13px;
+}
+.subscription_box .subscription_search .subscription_searchbox .len {
+  float: left;
+  width: 142px;
+  height: 28px;
+  margin-left: 4px;
+  border: 0;
+  _margin-left: 2px;
+  _width: 140px;
+  line-height: 28px;
+  font-size: 13px;
+}
+.subscription_box .subscription_search .subscription_butt {
+  float: left;
+  cursor: pointer;
+  border: 0;
+  background-position: -4px -25px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 51px;
+  height: 30px;
+}
+.main-r-03 {
+  margin-top: 20px;
+}
+.main-r-03 a:hover {
+  color: #c30e23;
+}
+.main-r-03 p {
+  font-size: 16px;
+  line-height: 38px;
+  width: 223px;
+  margin: 0 auto;
+  color: #333;
+  border-bottom: 1px #d6d6d6 solid;
+  background-image: url('/images/production/yijingjia/chengpinbiaoshu/hong-shuxian.PNG');
+  background-repeat: no-repeat;
+  background-position: left center;
+  -vertical-align: middle;
+}
+.main-r-03 p span {
+  margin-left: 6px;
+}
+.main-r-03 div {
+  line-height: 32px;
+  width: 223px;
+  margin: 0 auto;
+  padding: 10px 0;
+  -vertical-align: middle;
+}
+.main-r-03 a {
+  display: block;
+  color: #666;
+}
+.zhaofuwushangbox {
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+.zhaofuwushangbox .zhaofuwushangbox_leftbox {
+  float: left;
+  width: 905px;
+}
+.zhaofuwushangbox .zhaofuwushangbox_leftbox .fuwushang_classificationbox {
+  border: 1px solid #d6d6d6;
+  padding-top: 18px;
+  padding-left: 20px;
+  padding-bottom: 18px;
+  font-size: 14px;
+  color: #333;
+}
+.zhaofuwushangbox .zhaofuwushangbox_leftbox .fuwushang_classificationbox .fuwushang_classification a {
+  float: left;
+  line-height: 24px;
+  padding: 0 10px;
+  margin-right: 4px;
+  color: #333;
+}
+.zhaofuwushangbox .zhaofuwushangbox_leftbox .fuwushang_classificationbox .fuwushang_classification .shengfeng_color,
+.zhaofuwushangbox .zhaofuwushangbox_leftbox .fuwushang_classificationbox .fuwushang_classification .shengfeng_weizhi:hover {
+  background-color: #c40e24;
+  color: #fff;
+}
+.zhaofuwushangbox .zhaofuwushangbox_leftbox .fuwushang_classificationbox .fuwushang_classification .shengfeng_weizhi {
+  margin-right: 20px;
+}
+.zhaofuwushangbox .zhaofuwushangbox_right {
+  float: right;
+  width: 265px;
+}

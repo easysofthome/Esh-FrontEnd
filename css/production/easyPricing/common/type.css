@@ -1,0 +1,35 @@
+div.typebox {
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  padding: 20px 0;
+}
+div.typebox p.tit {
+  width: 70px;
+  margin: 7px 0 0 20px;
+  display: inline;
+}
+div.typebox a.whole {
+  line-height: 26px;
+  padding: 0 10px;
+  border-radius: 3px;
+  margin: 7px 10px 0 10px;
+  display: block;
+  color: #666;
+}
+div.typebox ul.type {
+  width: 1042px;
+}
+div.typebox a.type_a {
+  line-height: 26px;
+  padding: 0 10px;
+  border-radius: 3px;
+  margin: 7px 10px 0 10px;
+  display: block;
+  color: #666;
+}
+div.typebox a.type_a:hover,
+div.typebox a.cur {
+  background-color: #3ca1d7;
+  color: #fff;
+}

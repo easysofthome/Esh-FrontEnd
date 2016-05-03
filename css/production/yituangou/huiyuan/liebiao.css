@@ -1,0 +1,140 @@
+.icon-yituangou-renzheng {
+  background-image: url("/images/production/yituangou/renzheng/sprite-yituangou-renzheng.PNG");
+}
+.biaoti {
+  font-size: 18px;
+  padding-bottom: 14px;
+  color: #444;
+}
+.liebiaobox {
+  font-size: 12px;
+  width: 1008px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.liebiaobox .huowu {
+  width: 33%;
+}
+.liebiaobox .qita {
+  width: 13%;
+}
+.liebiaobox .caozuo {
+  width: 14%;
+}
+.liebiaobox .cunhei {
+  color: #000;
+}
+.liebiaobox .qianhei {
+  color: #4d4d4d;
+}
+.liebiaobox .mianliaojuli {
+  margin-top: 16px;
+}
+.liebiaobox .dun {
+  background-position: -4px -48px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+}
+.liebiaobox .shijian {
+  background-position: -4px -77px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+}
+.liebiaobox .xing {
+  background-position: -4px -106px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+}
+.liebiaobox .renzhengjuli {
+  margin-top: 4px;
+}
+.liebiaobox .zhengrenjuli {
+  margin-right: 2px;
+  *margin-right: 6px;
+}
+.liebiaobox .com_chakan {
+  line-height: 28px;
+  width: 100px;
+  height: 28px;
+  margin-top: 41px;
+  margin-left: 22px;
+  text-align: center;
+  background-color: #50afef;
+  border-radius: 4px;
+}
+.liebiaobox .com_chakan a {
+  color: #fff;
+}
+.liebiaobox .com_chakangaodu {
+  margin-top: 6px;
+}
+.liebiaobox .com_chakangaodu2 {
+  margin-top: 36px;
+}
+.liebiaobox .com_chakanhui {
+  background-color: #a8a8a8;
+}
+.liebiaobox .sixing {
+  margin-left: 54px;
+  vertical-align: top;
+  background-position: -4px -25px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  width: 81px;
+  height: 15px;
+}
+.liebiaobox .tianjiaxiabiankuang {
+  border-bottom: 1px solid #e0e0e0;
+}
+.liebiaobox .wenzhijuzhong {
+  line-height: 20px;
+  text-align: center;
+}
+.liebiaobox .shujugaodu {
+  margin-top: 45px;
+}
+.liebiaobox .biejingse {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  background-color: #e1e1e1;
+}
+.liebiaobox .mianliaoxiangqi {
+  line-height: 24px;
+  margin-left: 18px;
+}
+.liebiaobox .biaozunyanse {
+  color: #999;
+}
+.liebiaobox .dingdanriqi {
+  margin-top: 18px;
+  margin-left: 36px;
+}
+.liebiaobox .riqijuli {
+  margin-left: 16px;
+}
+.liebiaobox .yonhuoxingxibox {
+  margin-top: 18px;
+  margin-left: 36px;
+  padding-bottom: 16px;
+}
+.liebiaobox .yonhuoxingxibox .mianliaotu {
+  background-position: -4px -135px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 77px;
+  height: 77px;
+}

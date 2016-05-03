@@ -1,0 +1,104 @@
+.icon-yituangou-BrandBuy {
+  background-image: url("/images/production/yituangou/BrandBuy/sprite-yituangou-BrandBuy.PNG");
+}
+.main-color {
+  padding-top: 14px;
+}
+.BrandBuy-Location {
+  width: 1190px;
+  margin: 0 auto;
+  background-color: #fff;
+  font-family: '宋体';
+}
+.BrandBuy-Location .Location-p {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  line-height: 50px;
+  _vertical-align: middle;
+  margin: 0 16px;
+  border-bottom: #f1f1f1 1px dashed;
+}
+.BrandBuy-Location .Location-p .hong {
+  color: #d52532;
+}
+.BrandBuy-Location .Location-Frame {
+  margin-left: 16px;
+  padding: 14px 0;
+  line-height: 20px;
+  _vertical-align: middle;
+  font-size: 12px;
+}
+.BrandBuy-Location .Location-Frame-left {
+  float: left;
+  color: #333;
+}
+.BrandBuy-Location .Location-Frame-left span {
+  float: left;
+}
+.BrandBuy-Location .Location-Frame-left .Location {
+  margin-right: 9px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.BrandBuy-Location .Location-Frame-right {
+  float: left;
+}
+.BrandBuy-Location .Location-Frame-right .Location-names {
+  float: left;
+  color: #666;
+  margin-left: 5px;
+  margin-right: 15px;
+  padding: 0 5px;
+}
+.BrandBuy-Location .Location-Frame-right .current,
+.BrandBuy-Location .Location-Frame-right .Location-names:hover {
+  color: #fff;
+  background-color: #d52532;
+  border-radius: 2px;
+}
+.BrandBuy-icon-Frame {
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.BrandBuy-icon-Frame .BrandBuy-icon {
+  width: 222px;
+  margin-right: 20px;
+  float: left;
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+.BrandBuy-icon-Frame .name-Frame {
+  margin: 0 2px;
+  margin-top: 12px;
+}
+.BrandBuy-icon-Frame .name-Frame .name {
+  font-size: 14px;
+  color: #333;
+}
+.BrandBuy-icon-Frame .name:hover {
+  color: #d52532;
+}
+.BrandBuy-icon-Frame .Details {
+  margin: 0 2px;
+  margin-top: 8px;
+  line-height: 18px;
+  _vertical-align: middle;
+  color: #878787;
+  font-family: '宋体';
+  font-size: 12px;
+}
+.BrandBuy-icon-Frame .Details a {
+  color: #333;
+}
+.BrandBuy-icon-Frame .BrandBuy-icon01 {
+  margin-right: 0;
+}
+.BrandBuy-icon-Frame01 {
+  margin-top: 20px;
+}

@@ -1,0 +1,229 @@
+.icon-VIP-common-nav {
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.navind_box {
+  background-color: #303745;
+  background-image: url('/images/production/VIP/common/nav/blue_line.png');
+  background-repeat: repeat-x;
+  background-position: top;
+}
+.navind_box .navind {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 84px;
+}
+.navind_box .nav_top {
+  font-size: 16px;
+  padding-top: 37px;
+}
+.navind_box .nav_top a {
+  color: #fff;
+}
+.navind_box .nav_left {
+  margin-left: 100px;
+}
+.navind_box .nav_longleft {
+  margin-left: 380px;
+}
+.navind_box .rela {
+  position: relative;
+}
+.navind_box .newsRed {
+  font-size: 13px;
+  line-height: 24px;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  text-align: center;
+  background-position: -4px -69px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 346px;
+  margin-left: -173px;
+}
+.Userinfbox p.identitybox {
+  font-size: 16px;
+  width: 120px;
+  margin-top: 7px;
+  text-align: center;
+  color: #c7c5c6;
+}
+.Userinfbox .upperpart {
+  margin: 0 10px;
+  padding: 20px 0 14px 103px;
+}
+.Userinfbox .upperpart .headPor {
+  position: relative;
+}
+.Userinfbox .upperpart .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Userinfbox .AfterClickBg {
+  background-color: #3e485c;
+}
+.Userinfbox .lowerpart {
+  padding: 0 10px;
+  padding-bottom: 24px;
+  padding-bottom: 15px;
+  background-image: url('/images/production/VIP/common/nav/a08_bg.png');
+}
+.Userinfbox .user {
+  font-size: 16px;
+  padding-top: 20px;
+  text-align: center;
+  color: #333;
+}
+.Userinfbox .usertop {
+  padding-top: 10px;
+}
+.Userinfbox .vipbox {
+  margin-top: 20px;
+}
+.Userinfbox .vipwidth {
+  font-size: 13px;
+  display: inline;
+  width: 54px;
+  margin-left: 20px;
+}
+.Userinfbox .vipwidth a {
+  line-height: 32px;
+  color: #333;
+}
+.Userinfbox .vipwidth span {
+  display: block;
+  text-align: center;
+}
+.Userinfbox .Light {
+  margin: 0 auto;
+  background-position: -4px -301px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .phone {
+  background-position: -4px -101px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .realname {
+  background-position: -4px -381px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .mailbox {
+  background-position: -4px -181px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .password {
+  background-position: -4px -341px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .phone_no {
+  background-position: -4px -221px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .realname_no {
+  background-position: -4px -421px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .mailbox_no {
+  background-position: -4px -261px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .password_no {
+  background-position: -4px -141px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.Userinfbox .phone,
+.Userinfbox .phone_no,
+.Userinfbox .realname,
+.Userinfbox .realname_no,
+.Userinfbox .mailbox,
+.Userinfbox .mailbox_no,
+.Userinfbox .password,
+.Userinfbox .password_no {
+  margin: 0 auto;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .VIPtopmar {
+  margin-top: 12px;
+}
+.Userinfbox .security {
+  margin-top: 26px;
+  margin-left: 20px;
+}
+.Userinfbox .progressbar {
+  margin: 0 auto;
+  margin-top: 12px;
+  background-position: -4px -18px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 286px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .progress {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 143px;
+  height: 6px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}
+.Userinfbox .lowerpart_bot {
+  background-position: -4px -46px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 346px;
+  height: 15px;
+  background-image: url("/images/production/VIP/common/nav/sprite-VIP-common-nav.PNG");
+}

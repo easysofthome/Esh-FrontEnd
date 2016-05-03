@@ -1,0 +1,99 @@
+.icon-yijingjia-Search {
+  background-image: url("/images/production/yijingjia/Search/sprite-yijingjia-Search.PNG");
+}
+a,
+img {
+  border: 0;
+}
+.topsearch {
+  margin-top: 10px;
+}
+.topsearch a:visited {
+  color: #333;
+}
+.topsearch a:active {
+  color: #333;
+}
+.topsearch a:link {
+  color: #333;
+}
+.topsearch a:hover {
+  color: #333;
+}
+.topsearch .a1 {
+  font-weight: bold;
+  color: #333;
+}
+.topsearch .a2 {
+  margin-left: 4px;
+}
+.topsearch .a3 {
+  margin-left: 16px;
+}
+.searchbox {
+  width: 480px;
+  height: 44px;
+}
+.searchbox .searchTxt {
+  position: relative;
+  z-index: 20;
+  float: left;
+  width: 398px;
+  height: 40px;
+  border: 2px solid #c40e24;
+  border-right: 0;
+  background: #eee;
+}
+.searchbox .searchTxt input {
+  font-size: 13px;
+  line-height: 40px;
+  float: left;
+  width: 298px;
+  height: 40px;
+  margin-left: 10px;
+  color: #666;
+  border: 0;
+  outline: medium none;
+  background: #eee;
+}
+.searchbox .searchTxt .searchMenu {
+  float: left;
+  overflow: hidden;
+}
+.searchbox .searchTxt .searchMenu .searchSelected {
+  width: 90px;
+  cursor: pointer;
+  color: #333;
+}
+.searchbox .searchTxt .searchMenu .searchSelected p {
+  font-size: 13px;
+  line-height: 38px;
+  float: left;
+  padding: 0 8px 0 14px;
+}
+.searchbox .searchTxt .searchMenu .searchSelected .searchSelectedtu {
+  float: left;
+  margin-top: 16px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 7px;
+  height: 5px;
+}
+.searchbox .searchBtn {
+  float: left;
+}
+.searchbox .searchBtn a {
+  font-size: 16px;
+  cursor: pointer;
+  text-indent: -9999px;
+  color: #fff;
+  border: 0;
+  background-position: -4px -30px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 80px;
+  height: 44px;
+}

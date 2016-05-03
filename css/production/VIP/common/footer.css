@@ -1,0 +1,16 @@
+.footerbox {
+  width: 100%;
+  padding: 30px 0 35px 0;
+  background-color: #282d41;
+}
+.footerbox .copyright {
+  font-size: 14px;
+  line-height: 34px;
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #7a818f;
+}
+.footerbox2 {
+  background-color: #282d41;
+}

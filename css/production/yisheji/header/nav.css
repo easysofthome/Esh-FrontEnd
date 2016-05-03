@@ -1,0 +1,69 @@
+.icon-yisheji-header {
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.head-nav {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #303745;
+}
+.nav {
+  width: 1200px;
+  margin: 0 auto;
+}
+.nav li {
+  position: relative;
+}
+.nav a {
+  line-height: 40px;
+  display: block;
+  height: 40px;
+  color: #fff;
+}
+.nav .nav02,
+.nav .current {
+  width: 126px;
+  text-align: center;
+}
+.nav .nav02 span,
+.nav .current span {
+  padding-left: 34px;
+}
+.nav .nav02 i {
+  width: 6px;
+  height: 4px;
+  margin-top: 18px;
+  margin-left: 12px;
+}
+.nav .current,
+.nav .nav02:hover {
+  background-image: url('/images/production/yisheji/header/nav-bg.png');
+}
+.nav .current i,
+.nav .nav02:hover i {
+  margin-top: 18px;
+  margin-left: 12px;
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 6px;
+  height: 4px;
+  background-image: url("/images/production/yisheji/header/sprite-yisheji-header.PNG");
+}
+.nav-xiala {
+  line-height: 32px;
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: 0;
+  width: 126px;
+  padding: 6px 0;
+  background-image: url('/images/production/yisheji/header/nav-bg.png');
+  _vertical-align: middle;
+}
+.nav-xiala a:hover {
+  background-image: url('/images/production/yisheji/header/nav-bg-current.png');
+}
+.nav-xiala a {
+  padding-left: 25px;
+}

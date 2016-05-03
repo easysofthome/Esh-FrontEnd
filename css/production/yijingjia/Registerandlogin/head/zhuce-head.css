@@ -1,0 +1,123 @@
+/*正文字体*/
+body {
+  font-family: '微软雅黑';
+  font-size: 13px;
+  color: #666;
+}
+/*页面宽度*/
+.width-body {
+  width: 1190px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rg {
+  float: right !important;
+}
+.lf {
+  float: left !important;
+}
+.none {
+  display: none ;
+}
+.block {
+  display: block ;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.ta-c {
+  text-align: center;
+}
+.hidden {
+  display: none ;
+}
+.icon-yijingjia-Registerandlogin {
+  background-image: url("/images/production/yijingjia/Registerandlogin/sprite-yijingjia-Registerandlogin.PNG");
+}
+.zhuce-logo a {
+  margin: 16px 0 18px 8px;
+  display: block;
+}
+.zhuce-yonghu a {
+  float: left;
+  font-size: 16px;
+}
+.zhuce-yonghu a span {
+  margin-top: 12px;
+  float: left;
+}
+.zhuce-yonghu a .icon-yijingjia-Registerandlogin {
+  margin-left: 253px;
+  margin-right: 10px;
+}
+.zhuce-yonghu .dang-hong {
+  color: #fff;
+  background-position: -4px -240px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 595px;
+  height: 49px;
+}
+.zhuce-yonghu .geren-bai {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 17px;
+}
+.zhuce-yonghu .geren-hui {
+  background-position: -4px -29px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 18px;
+  height: 17px;
+}
+.zhuce-yonghu .dang-hui {
+  color: #333;
+  background-position: -4px -297px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 595px;
+  height: 49px;
+}
+.zhuce-yonghu .qiye-hui {
+  background-position: -4px -79px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+.zhuce-yonghu .qiye-bai {
+  background-position: -4px -54px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 17px;
+  height: 17px;
+}

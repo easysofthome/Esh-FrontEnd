@@ -1,0 +1,196 @@
+.icon-yisheji-listdetails {
+  background-image: url("/images/production/yisheji/listdetails/sprite-yisheji-listdetails.PNG");
+}
+.listdetailsbox {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 62.5%;
+  height: 100%;
+  position: relative;
+}
+.listdetailsbox .leftjiant {
+  position: absolute;
+  background-image: url("/images/production/yisheji/listdetails/touming.png");
+  width: 6%;
+  top: 0;
+  left: 0;
+}
+.listdetailsbox .huaxing {
+  margin: 0 auto;
+}
+.listdetailsbox .rightjiant {
+  left: 76%;
+  *left: 76.0%;
+  _left: 77.1%;
+}
+.listdetailsbox .jiantou {
+  background-position: -4px -59px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 48px;
+  height: 88px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.listdetailsbox .jiantou2 {
+  background-position: -4px -155px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 48px;
+  height: 88px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.listdetailsbox .guangbi {
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 47px;
+  height: 47px;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.listdetailsbox .details_leftbox {
+  background-color: #000;
+  height: auto;
+  background-color: #12151a;
+  overflow: hidden;
+  width: 82%;
+}
+.listdetailsbox .details_rightbox {
+  width: 18%;
+  position: relative;
+  height: 926px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.listdetailsbox .details_rightbox .huaxinginfor {
+  width: 26%;
+  height: 32px;
+  background-color: #508ce4;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8em;
+}
+.listdetailsbox .details_rightbox .hongse {
+  color: #fe6464;
+}
+.listdetailsbox .details_rightbox h1 {
+  font-size: 2.4em;
+  margin-left: 5%;
+  margin-top: 20px;
+  font-weight: normal;
+  color: #000000;
+}
+.listdetailsbox .details_rightbox .xiangqing {
+  margin-left: 5%;
+  font-size: 1.6em;
+  color: #666666;
+  margin-top: 20px;
+}
+.listdetailsbox .details_rightbox .xiangqinggao {
+  margin-top: 4px;
+}
+.listdetailsbox .details_rightbox .gerenxingxi {
+  width: 92%;
+  border-top: 1px solid #d9d9d9;
+  height: 78px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.listdetailsbox .details_rightbox .gerenxingxi .imgbox {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  margin-top: 14px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.listdetailsbox .details_rightbox .gerenxingxi .tuqian {
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.listdetailsbox .details_rightbox .gerenxingxi .mingcheng {
+  margin-top: 26px;
+  margin-left: 10px;
+  font-size: 1.6em;
+}
+.listdetailsbox .details_rightbox .tishi {
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #dc2b2b;
+  width: 80%;
+  height: 60px;
+  font-size: 1.5em;
+}
+.listdetailsbox .details_rightbox .huangse {
+  color: #f09e25;
+}
+.listdetailsbox .details_rightbox .jiacu {
+  font-weight: bold;
+}
+.listdetailsbox .details_rightbox .lvse {
+  color: #46c14f;
+}
+.listdetailsbox .details_rightbox .annbox {
+  width: 90%;
+  margin: 0 auto;
+}
+.listdetailsbox .details_rightbox .annbox .ann {
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #5ab6ab;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.6em;
+}
+.listdetailsbox .details_rightbox .annbox .annzhong {
+  width: 50%;
+}
+.listdetailsbox .details_rightbox .annbox .annchang {
+  width: 60%;
+}
+.listdetailsbox .details_rightbox .annbox .annjianju {
+  margin-left: 10px;
+}
+.listdetailsbox .details_rightbox .annbox .huiseann {
+  background-color: #b1b1b1;
+}
+.listdetailsbox .details_rightbox .annbox .hongann {
+  background-color: #fd6464;
+}
+.listdetailsbox .details_rightbox .xiangshititle {
+  color: #000;
+  font-size: 2.2em;
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.listdetailsbox .details_rightbox .xiangshimianliao {
+  width: 86%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.listdetailsbox .details_rightbox .xiangshimianliao .mianliaobox {
+  width: 31%;
+  *width: 30.5%;
+  height: 80px;
+  background-color: #000;
+  overflow: hidden;
+}
+.listdetailsbox .details_rightbox .xiangshimianliao .miaoliaobianju {
+  margin-left: 3.5%;
+}
+.listdetailsbox .details_rightbox .mianliaoshangxia {
+  margin-top: 10px;
+}

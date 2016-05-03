@@ -1,0 +1,207 @@
+.main_box {
+  padding-bottom: 70px;
+}
+p.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px 0 30px 0;
+  color: #303845;
+}
+.fac_box {
+  line-height: 40px;
+  padding-left: 10px;
+  border-bottom: 1px solid #efefef;
+}
+.fac_box p.tit {
+  color: #333;
+}
+.fac_box p.fac span.fac_tit {
+  width: 120px;
+}
+.fac_box p.fac span.fac_name {
+  width: 240px;
+}
+.fac_box p.fac span.fac_money {
+  width: 200px;
+}
+.btnbox {
+  width: 320px;
+  margin: 0 auto;
+  padding: 30px 0 40px 0;
+}
+.btnbox a.btn_gray {
+  width: 150px;
+  text-align: center;
+  margin-right: 20px;
+  color: #fff;
+  background-color: #929698;
+  border-color: #929698;
+  padding: 0 0;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 3px;
+}
+.btnbox a.btn_gray:focus,
+.btnbox a.btn_gray.focus {
+  color: #fff;
+  background-color: #9fa3a4;
+  border-color: #d4d5d6;
+}
+.btnbox a.btn_gray:hover {
+  color: #fff;
+  background-color: #9fa3a4;
+  border-color: #b1b4b6;
+}
+.btnbox a.btn_gray:active,
+.btnbox a.btn_gray.active {
+  color: #fff;
+  background-color: #9fa3a4;
+  border-color: #b1b4b6;
+}
+.btnbox a.btn_blue {
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  background-color: #3ca1d7;
+  border-color: #3ca1d7;
+  padding: 0 0;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 3px;
+}
+.btnbox a.btn_blue:focus,
+.btnbox a.btn_blue.focus {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #a6d4ed;
+}
+.btnbox a.btn_blue:hover {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}
+.btnbox a.btn_blue:active,
+.btnbox a.btn_blue.active {
+  color: #fff;
+  background-color: #51abdb;
+  border-color: #6fb9e1;
+}
+.modifybox {
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+}
+.modifybox div.fac_box_mar {
+  margin: 0 20px;
+}
+.modifybox div.fac_box_mar p.fac {
+  padding-left: 42px;
+}
+.modifybox div.information {
+  margin: 15px 20px 0 20px;
+  padding-bottom: 20px;
+  border-bottom: #e5e5e5 1px solid;
+  font-size: 16px;
+}
+.modifybox div.information ul.intbox {
+  margin: 15px 0 0 42px;
+}
+.modifybox div.information ul.intbox li.intli {
+  margin-right: 20px;
+  line-height: 40px;
+  display: inline;
+  width: 200px;
+}
+.modifybox div.information ul.intbox li.GIFintli {
+  margin-right: 130px;
+}
+.modifybox div.information ul.intbox input.int {
+  width: 88px;
+  line-height: 16px;
+  padding: 10px;
+  border: #cdcfd1 1px solid;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+.modifybox div.information div.LDP {
+  margin-left: 42px;
+}
+.modifybox div.information ul.LDPL,
+.modifybox div.information ul.LDPR {
+  width: 440px;
+}
+.modifybox div.information ul.LDPL li.intli,
+.modifybox div.information ul.LDPR li.intli {
+  line-height: 50px;
+}
+.modifybox div.information ul.LDPL p.name,
+.modifybox div.information ul.LDPR p.name {
+  width: 88px;
+  text-align: right;
+}
+.modifybox div.information ul.LDPR {
+  width: 610px;
+  margin-left: 20px;
+}
+.modifybox div.information ul.LDPR p.name {
+  width: 112px;
+}
+p.smalltitle {
+  margin-left: 42px;
+  font-size: 16px;
+  color: #333;
+}
+.txt_red {
+  color: #ff0000;
+}
+table.tab {
+  width: 1074px;
+  text-align: center;
+  margin: 20px 0 0 42px;
+  border-top: #eaeaea 1px solid;
+  border-left: #eaeaea 1px solid;
+}
+table.tab td {
+  border-right: #eaeaea 1px solid;
+  border-bottom: #eaeaea 1px solid;
+  line-height: 36px;
+}
+table.tab td a {
+  color: #3ca1d7;
+}
+table.tab td.style {
+  width: 146px;
+  padding: 20px 20px 14px 20px;
+}
+table.tab td.style span {
+  margin-top: 4px;
+  display: block;
+}
+table.tab td.fab_picture {
+  width: 146px;
+  padding: 20px;
+}
+table.tab td.acc_purpose {
+  width: 216px;
+  padding: 0 10px;
+  text-align: left;
+}
+table.tab td.sui_style {
+  width: 146px;
+  padding: 20px;
+}
+table.tab tr.tit {
+  background-color: #eaeaea;
+}
+table.tab tr.tit td {
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+}
+table.tab tr.tittwo {
+  background-color: #f8f8f8;
+}
+table.tab tr.tittwo td {
+  line-height: 44px;
+}
