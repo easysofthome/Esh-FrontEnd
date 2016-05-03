@@ -1,0 +1,90 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/easyPricing/sprite.less';
+
+//通用样式
+div.popupbox{
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  font-size: 12px;
+  padding-bottom: 20px;
+  .border-radius(3px);
+  -webkit-box-shadow:0 0 15px 1px #e0e0e0;
+  -moz-box-shadow:0 0 15px 1px #e0e0e0;
+  box-shadow:0 0 15px 1px #e0e0e0;
+  p.title{
+    margin: 0 10px;
+    line-height: 52px;
+    font-size: 16px;
+    background-image: url("/images/production/easyPricing/pricing/grayline.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    a{
+      color: #666;
+      padding: 0 10px;
+      margin-right: 20px;
+    }
+    .cur,.herfa:hover{
+      color: #3ca1d7;
+      border-bottom: 2px solid #3ca1d7;
+    }
+    span.btn_close{
+      margin-top: 15px;
+      cursor: pointer;
+      .sprite(@btn_close);
+      .icon-VIP-easyPricing;
+    }
+  }
+}
+
+
+
+// 体积信息查看修改
+.volumebox{
+  width: 980px;
+  margin: 10px 10px 0 10px;
+  div.intbox{
+    width: 200px;
+    line-height: 30px;
+    margin: 10px 20px 10px 10px;
+    display: inline;
+    .border-radius(3px);
+    input.int{
+      width: 128px;
+      line-height: 18px;
+      padding: 5px 10px;
+      border: 1px solid #d1d1d1;
+      background-color: #fff;
+    }
+  }
+}
+
+
+//产品辅料信息
+table.tab_box
+{
+  font-size: 12px;
+  line-height: 36px;
+
+  width: 980px;
+  margin: 20px auto 0 auto;
+
+  text-align: center;
+
+  border: 1px solid #e1e1e1;
+  border-right: none;
+  border-bottom: none;
+  background-color: #fff;
+  .tr_tit
+  {
+    color: #333;
+    background-color: #f7f7f7;
+  }
+  td
+  {
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+  }
+}

@@ -221,6 +221,7 @@ define(function (require, exports, module) {
                 //     }
                 // );
             }
+            return true;
         }, '');
         //密码
         $.validator.addMethod('strength', function (value, element, param) {
@@ -242,6 +243,7 @@ define(function (require, exports, module) {
         var flag = new Array();
         var regPhone = new RegExp(reg[86]);
         var regEmail = new RegExp(email);
+        flag[0] = false;
         if(regPhone.test(value)){
             flag[0] = true;
             flag[1] = 'phone';  //手机验证成功

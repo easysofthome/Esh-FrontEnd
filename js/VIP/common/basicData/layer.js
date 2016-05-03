@@ -38,9 +38,6 @@ define(function (require, exports, module) {
         //   $('.facType').val(value);
         //   layer.close(layer1);
         // });
-        $('.modifybox .tit i').on('click',function () {
-          layer.close(layer1);
-        });
       }
 
     });

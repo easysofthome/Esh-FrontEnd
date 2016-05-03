@@ -96,8 +96,13 @@ easydesign                          易设计会员中心页面
 
 
 
+
 easyPricing                          易核价会员中心页面
-  Fabric（我的面料核价）
+  combination（自由核价）
+  | details                            自由核价详情
+  | combination                        自由核价
+
+  Fabric（面料核价）
   | details                            面料核价详情
   | Fabric                             面料核价
 
@@ -105,8 +110,24 @@ easyPricing                          易核价会员中心页面
   | fiber                              添加化纤染色工缴
 
   iWho（我选的工厂报价）
-  | iWho                               我选的工厂报价
+  | endProduct                         我选的工厂报价成品
+  | endProductDet                      我选的工厂报价成品内页
+  | Fabric                             我选的工厂报价面料
+  | FabricDet                          我选的工厂报价面料内页
 
-  singleProduct（我的单品核价）
+  singleProduct（单品核价）
   | details                            单品核价详情
+  | productacc                         产品辅料信息
   | singleProduct                      单品核价
+  | volume                             体积信息查看
+
+  suite（套件核价）
+  | details                            套件核价详情
+  | suite                              套件核价
+
+  whoI（谁选了我的报价）
+  | companyInfo                        公司信息
+  | endProduct                         谁选了我的报价成品
+  | endProductDet                      谁选了我的报价成品内页
+  | Fabric                             谁选了我的报价面料
+  | FabricDet                          谁选了我的报价面料内页

@@ -36,15 +36,22 @@ p.title{
   }
 }
 
-//按钮样式
-div.btn{
-  width: 150px;
-  margin: 30px auto 0 auto;
-  padding-bottom: 40px;
+// 按钮
+.btnbox{
+  width: 320px;
+  margin: 0 auto;
+  padding: 30px 0 40px 0;
+  a.btn_gray{
+    width: 150px;
+    text-align: center;
+    margin-right: 20px;
+    .button-variant(#fff; #929698; #929698);
+    .button-size(0; 0; 16px; 40px; 3px);
+  }
   a.btn_blue{
     width: 150px;
     text-align: center;
     .button-variant(#fff; #3ca1d7; #3ca1d7);
-    .button-size(0; 0; 16px; 40px; 5px);
+    .button-size(0; 0; 16px; 40px; 3px);
   }
 }

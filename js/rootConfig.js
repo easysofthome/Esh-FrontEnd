@@ -42,8 +42,8 @@
     'seajs-log': 'js/common/seajs/seajs-log'
 
 };
-var comboSyntax =['&&', '&'];
 
+var comboSyntax =['&&', '&'];
 if (this.seajs) {
     seajs.config({
 

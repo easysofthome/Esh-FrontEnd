@@ -1,7 +1,7 @@
 /**
  * 禁用了拖动中间条
  * 设置了偏移量
- * 修改了窃取属性clip
+ * 修改了截取属性clip
  */
 
 define(function (require, exports, module) {

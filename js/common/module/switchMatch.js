@@ -85,16 +85,10 @@ define(function (require, exports, module) {
     });
   }
 
-  module.exports.init = init;
+  exports.init = init;
 
-  module.exports.initHover = initHover;
+  exports.initHover = initHover;
 
-  module.exports.initClick = initClick;
-  // 点击事件
-  // module.exports.initClick = function (selObj) {
-  //   $(selObj + '>li').on('click', function(event) {
-  //     $(this).parent().hide();
-  //     $(this).parent().siblings('input').val($(this).text())
-  //   });
-  // }
+  exports.initClick = initClick;
+
 });

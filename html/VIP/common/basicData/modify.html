@@ -61,6 +61,7 @@
   <script>
     var index = parent.layer.getFrameIndex(window.name);
     $('#close').click(function(){
+      parent.location.reload();
       parent.layer.close(index);
     });
   </script>
