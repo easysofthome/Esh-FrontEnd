@@ -131,3 +131,7 @@ easyPricing                          易核价会员中心页面
   | endProductDet                      谁选了我的报价成品内页
   | Fabric                             谁选了我的报价面料
   | FabricDet                          谁选了我的报价面料内页
+
+  workersPay（智能核价助手）
+  | Fabric                             面料工缴
+  | finishedProduct                    成品工缴
