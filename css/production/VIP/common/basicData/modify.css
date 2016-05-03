@@ -35,6 +35,23 @@ div.modifybox p.tit i {
   height: 16px;
   background-image: url("/images/production/VIP/common/account/sprite-VIP-common-account.PNG");
 }
+div.modifybox .mod_buttbox {
+  width: 160px;
+  margin: 20px auto 0 auto;
+}
+div.modifybox .mod_buttbox .mod_buttlf,
+div.modifybox .mod_buttbox .mod_buttrg {
+  display: block;
+  border-radius: 3px;
+  line-height: 32px;
+  background-color: #3ca1d7;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 20px 0 20px;
+}
+div.modifybox .mod_buttbox .mod_buttrg {
+  background-color: #cbcbcb;
+}
 div.modifybox label.modify {
   margin: 10px 20px;
   line-height: 16px;

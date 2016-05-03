@@ -126,6 +126,7 @@ ul.navR li.menu.nav-more ul {
   top: 100px;
   left: 0;
   width: 100%;
+  z-index: 9999;
 }
 ul.navR li.menu.nav-more ul li {
   width: 100%;

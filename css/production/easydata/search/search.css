@@ -290,11 +290,11 @@
   margin: 19px 10px 0 10px;
   background-color: #cdcfd1;
 }
-.search_box div.width338 div.int_430 {
-  width: 360px;
-}
 .search_box div.width338 div.int_430 input {
   width: 338px;
+}
+.search_box div.width_in div.int_430 input {
+  width: 285px;
 }
 .search_box .int_280a {
   width: 258px;

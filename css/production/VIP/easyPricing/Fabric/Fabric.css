@@ -19,11 +19,12 @@
 div.rg_list {
   width: 854px;
   margin-top: 20px;
+  padding: 10px 0;
   background-color: #fff;
 }
 div.rg_list ul.list_box {
   width: 715px;
-  padding: 10px 0;
+  border-right: #eeeeee 1px solid;
 }
 div.rg_list ul.list_box li {
   margin-left: 20px;
@@ -48,4 +49,33 @@ div.rg_list ul.list_box li.list_three {
 }
 div.rg_list ul.list_box li.list_four {
   width: 190px;
+}
+div.rg_list div.btn {
+  margin-left: 20px;
+  font-size: 16px;
+}
+div.rg_list div.btn a {
+  display: block;
+  width: 96px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+}
+div.rg_list div.btn a.btn_blue {
+  margin-top: 2px;
+  color: #3ca1d7;
+  border: #3ca1d7 1px solid;
+}
+div.rg_list div.btn a.btn_blue:hover {
+  background-color: #3ca1d7;
+  color: #fff;
+}
+div.rg_list div.btn a.btn_red {
+  margin-top: 10px;
+  color: #f8210c;
+  border: #f8210c 1px solid;
+}
+div.rg_list div.btn a.btn_red:hover {
+  background-color: #f8210c;
+  color: #fff;
 }

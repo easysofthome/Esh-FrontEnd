@@ -91,10 +91,14 @@
 .fabricbox .handle_mag {
   margin-left: 10px;
 }
-.fabricbox .handle_one:hover {
+.fabricbox .handle_one:hover,
+.fabricbox .selected {
   border: 1px solid #3ca1d7;
 }
 .fabricbox .handle_one:hover .select {
+  display: block;
+}
+.fabricbox .selected .select {
   display: block;
 }
 .fabricbox .yarn_butt {
@@ -208,6 +212,9 @@
 .fabricbox .ingredient_tit,
 .fabricbox .AddItem_tit {
   line-height: 40px;
+}
+.fabricbox .Single_box {
+  margin-top: 10px;
 }
 .fabricbox .ingredient_tit {
   width: 40px;
