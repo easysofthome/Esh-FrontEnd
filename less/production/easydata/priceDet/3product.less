@@ -43,6 +43,7 @@
     color:#333;
     line-height: 48px;
     width: 1159px;
+    table-layout: fixed;
   }
   //**出口价格每年的月度变化
   .vertical{
@@ -55,15 +56,16 @@
   .vert_data:nth-child(odd){
     background: #f8f8f8;
   }
-  .prod_year,.price_data{
+  td{
     text-align: center;
     border-right:  1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
+    overflow: hidden;
   }
   .prod_year{
-    width: 325px;
     padding:0 20px 0 20px;
     text-align: left;
+    overflow: hidden;
   }
 
   .arrow{
