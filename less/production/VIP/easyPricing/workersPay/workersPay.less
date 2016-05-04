@@ -1,4 +1,8 @@
 
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../Coreprice/mycorepriceopt.less';
+
 .main_box
 {
   width: 1200px;
@@ -13,7 +17,6 @@
 .titbox
 {
   margin-top: 40px;
-  padding-bottom: 20px;
 
   background-color: #fff;
   p.tit
@@ -26,4 +29,20 @@
 
     color: #333;
   }
+  a.upload{
+    margin: 17px 20px 0 0;
+    .button-variant(#fff; #fd6464; #fd6464);
+    .button-size(0; 10px; 16px; 36px; 5px);
+  }
+}
+
+
+//表格上边距
+.tab-top{
+  margin-top: 20px;
+}
+
+//下填充
+.pad_bottom{
+  padding-bottom: 20px;
 }
