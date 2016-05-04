@@ -1,0 +1,29 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+div.mian_box{
+  width: 216px;
+  height: 229px;
+  overflow:hidden;
+  .border-radius(5px);
+  -webkit-box-shadow:0 0 15px 1px #e0e0e0;
+  -moz-box-shadow:0 0 15px 1px #e0e0e0;
+  box-shadow:0 0 15px 1px #e0e0e0;
+  p.title{
+    font-size: 16px;
+    color: #333;
+    margin: 20px 0 0 18px;
+  }
+  ul.news_box{
+    margin: 10px 0 0 11px;
+    padding-right: 18px;
+    a.news{
+      color: #666;
+      line-height: 34px;
+      &:hover{
+        color: #4b7bc5;
+      }
+    }
+  }
+}
+
