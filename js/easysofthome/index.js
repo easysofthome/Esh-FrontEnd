@@ -7,11 +7,20 @@ define(function (require, exports, module) {
   $(document).ready(function(){
     $('#section1,#section2').css('display','block');
     setWH();
+
   });
 
   // 窗口改变时
   $(window).resize(function() {
     setWH();
+
+    //调整小鼠标的位置
+    setTimeout(function(){
+      var myMouse = new littleMouse();
+      myMouse.setLittleMousePosition("section0_id","little_mouse");
+    }, 600);
+
+
   });
 
   // 初始化页的高度
@@ -31,6 +40,45 @@ define(function (require, exports, module) {
     $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
     $('#section2 .wrap').css('height',devHeight-282);
   }
+
+  //首页小鼠标定位操作
+  //胡庆龙 2016-05-4
+  var littleMouse=function(){
+    this.mix_bottom = 10;
+    this.m_bottom = 0;
+    this.m_left = 0;
+
+    //set小鼠标距离屏幕底部距离
+    this.setLittleMousePosition=function (canZhaoId,targetId){
+      var section0_top = $("#"+canZhaoId).offset().top;
+      var padding_top = parseInt($("#"+canZhaoId).css('padding-top').replace("px",""));
+      var padding_bottom = parseInt($("#"+canZhaoId).css('padding-bottom').replace("px",""));
+      var mouseHeight = $("#"+targetId).height();
+
+      var section0_height = $("#"+canZhaoId).height()+padding_top+padding_bottom;
+      var windowHeight = $(window).height();
+
+      var section0_bottom = windowHeight-(section0_top + section0_height);
+      var t_bottom = this.mix_bottom;
+       t_bottom = section0_bottom/2;
+      if(section0_bottom >=this.mix_bottom){
+          t_bottom = section0_bottom/2;
+      }
+      this.m_bottom = t_bottom;
+      if((this.m_bottom - mouseHeight)<0){
+        $("#"+targetId)[0].style.bottom = this.mix_bottom + "px";
+      }else{
+         $("#"+targetId)[0].style.bottom = (this.m_bottom - mouseHeight) + "px";
+      }
+
+    }
+
+   }
+
+
+
+
+
 
   require('animateColor');
   // 数字增长动画支持
@@ -95,6 +143,10 @@ define(function (require, exports, module) {
     $('.mousedown').on('click',function() {
       $.fn.fullpage.moveSectionDown();
     });
+
+    //调整小鼠标的位置
+    var myMouse = new littleMouse();
+    myMouse.setLittleMousePosition("section0_id","little_mouse");
 
   });
 })
