@@ -111,7 +111,7 @@
     <!-- LDP费率信息 -->
     <div class="information">
       <p class="smalltitle">
-        LDP费率信息　<a class="shrink" target=_blank href="/html/easyPricing/pricing/export.html">获取出口税率</a>
+        LDP费率信息　<a class="shrink" id="exportTariff">获取出口税率</a>
       </p>
       <div class="LDP clearfix">
         <ul class="LDPL lf">
@@ -182,9 +182,9 @@
           <td>枕头</td>
           <td>20*28</td>
           <td>2</td>
-          <td><a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a></td>
-          <td><a target=_blank href="/html/easyPricing/pricing/productacc.html">查看修改</a></td>
-          <td><a target=_blank href="/html/easyPricing/pricing/volume.html">查看修改</a></td>
+           <td><a id="product_view">查看修改</a></td>
+          <td><a id="packing_view">查看修改</a></td>
+          <td><a id="volume_view">查看修改</a></td>
         </tr>
       </table>
     </div>
@@ -211,7 +211,7 @@
           <td>FD110600032</td>
           <td>涤棉面料</td>
           <td>82</td>
-          <td><a target=_blank href="/html/easyPricing/pricing/replaceFabric.html">替换面料</a></td>
+          <td><a class="accessories_name">替换面料</a></td>
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
@@ -233,7 +233,7 @@
           <td>FD110600032</td>
           <td>涤棉面料</td>
           <td>82</td>
-          <td><a target=_blank href="/html/easyPricing/pricing/replaceFabric.html">替换面料</a></td>
+          <td><a class="accessories_name">替换面料</a></td>
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
@@ -255,7 +255,7 @@
           <td>FD110600032</td>
           <td>涤棉面料</td>
           <td>82</td>
-          <td><a target=_blank href="/html/easyPricing/pricing/replaceFabric.html">替换面料</a></td>
+          <td><a class="accessories_name">替换面料</a></td>
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
@@ -306,7 +306,7 @@
             </div>
           </td>
           <td>6.3</td>
-          <td><a target=_blank href="/html/easyPricing/pricing/accessories.html">辅料替换</a></td>
+          <td><a class="accessories_name">辅料替换</a></td>
         </tr>
       </table>
     </div>
@@ -336,5 +336,142 @@
 </div>
 
 @@include('/easyPricing/common/footer2.html')
+
+<script type="text/javascript">
+  seajs.use(['jquery','layer'],function($,layer){
+
+      //获取出口税率
+      $("#exportTariff").attr('href', 'javascript:void(0)');
+      $("#exportTariff").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '439px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 650)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/export.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+      //产品辅料 查看修改
+      $("#product_view").attr('href', 'javascript:void(0)');
+      $("#product_view").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '272px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 650)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/productacc.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+      //包装辅料 查看修改
+      $("#packing_view").attr('href', 'javascript:void(0)');
+      $("#packing_view").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '272px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 650)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/productacc.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+       //体积信息 查看修改
+      $("#volume_view").attr('href', 'javascript:void(0)');
+      $("#volume_view").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '190px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 650)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/volume.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+
+       //替换面料
+      $("#replaceFabric_id").attr('href', 'javascript:void(0)');
+      $("#replaceFabric_id").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '980px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 964)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/replaceFabric.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+
+      //辅料替换
+      $(".accessories_name").attr('href', 'javascript:void(0)');
+      $(".accessories_name").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '586px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 586)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          iframe: {src: '../pricing/accessories.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+  });
+
+
+
+</script>
 </body>
 </html>
