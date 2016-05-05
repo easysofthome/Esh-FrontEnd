@@ -1,13 +1,17 @@
 define(function (require, exports, module) {
 
   require('jquery');
+  var myTools = require('tools');
+
+
   // 颜色渐变支持
 
   // 窗口结构加载完成时
   $(document).ready(function(){
     $('#section1,#section2').css('display','block');
     setWH();
-
+   //浏览器版本过低，跳转到升级页面
+    validateLowBrowser();
   });
 
   // 窗口改变时
@@ -23,6 +27,18 @@ define(function (require, exports, module) {
 
   });
 
+  //低版本ie浏览器检测，并给出提示
+  function validateLowBrowser(){
+    if(myTools.browserHelp.isIE6||myTools.browserHelp.isIE7){
+      var isUpdate = confirm(
+        "您浏览器版本过低，继续浏览可能会影响您的体验，是否升级您的浏览器？");
+      if(isUpdate){
+        var downloadURL = "http://dl1sw.baidu.com/soft/9e/14917/IE10-Windows6.1-zh-cn.exe?version=3474208079";
+        window.location = downloadURL;
+      }
+    }
+  }
+
   // 初始化页的高度
   function setWH() {
     var devWidth = $(window).width();
@@ -34,7 +50,7 @@ define(function (require, exports, module) {
     $('#section0 .wrap').css('margin-left',w1+"px")
                         .css('margin-top',h1+"px")
                         .css('left',"50%")
-                        .css('top',"50%")
+                        .css('top',"50%");
 
     $('#section1 .othermodules').css('height',devHeight-160);
     $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
@@ -100,14 +116,15 @@ define(function (require, exports, module) {
 
       afterLoad: function(anchorLink, index){
         if(index == 1){
-          $('span.mousedown').show();
+          $('#little_mouse').show();
           $('.header').animate({backgroundColor: 'rgba(48,56,69,0)'},1000);
           $('.header a').animate({color: '#fff'},500);
         }
         if(index == 2){
           $('#data-num').html('0');
           $('#flower-type').html('0');
-          $('span.mousedown').show();
+
+          $('#little_mouse').hide();
 
           $('.header').animate({backgroundColor: '#303845'},1000);
           $('.header a').animate({color: '#fff'},500);
@@ -127,7 +144,8 @@ define(function (require, exports, module) {
           $('#flower-type').stop().animateNumber({ number: 20055 },1500);
         }
         if(index == 3){
-          $('span.mousedown').hide();
+
+          $('#little_mouse').hide();
           $('.header').animate({backgroundColor:'#303845'},1000);
           $('.header a').animate({color: '#fff'},500);
         }
