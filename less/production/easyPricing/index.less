@@ -13,7 +13,7 @@
     margin-top: 112px;
 }
 .banner-wrapper
-{   
+{
     position: relative;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@
             position: relative;
             top: 0;
             left: 0;
-          
+
         }
     }
 }
@@ -120,6 +120,22 @@ ul.switchable-triggers
     .cor_mar{
         margin-left: 20px;
     }
+    li:hover{
+        background: #3ca1d7;
+    }
+    li:hover .coreprice_tit_ico{
+        .sprite(@coreprice_icobai);
+    }
+    li:hover .coreprice_tit{
+        color:#fff;
+    }
+    li:hover .description{
+        color:#fff;
+    }
+    li:hover .coreprice_butt{
+        color: #3ca1d7;
+        background-color: #fff;
+    }
 
     li{
         width: 285px;
@@ -128,26 +144,18 @@ ul.switchable-triggers
         background-color: #fff;
         padding-bottom: 20px;
 
-        .coreprice_tit,.curr_coreprice_tit{
+        .coreprice_tit{
             font-size: 18px;
             line-height: 18px;
         }
-        .curr_coreprice_tit{
-            color: #fff;
-        }
+
         .coreprice_tit_ico{
             .sprite(@coreprice_ico);
             .icon-easyPricing;
             margin:30px auto 0 auto;
 
         }
-        .coreprice_icobai{
-            .sprite(@coreprice_icobai);
-            .icon-easyPricing;
-            margin:30px auto 0 auto;
-
-        }
-        .description,.curr_description{
+        .description{
             text-align: left;
             font-size: 14px;
             line-height: 24px;
@@ -155,10 +163,7 @@ ul.switchable-triggers
             margin:20px 0 0  16px;
             height: 160px;
         }
-        .curr_description{
-            color: #fff;
-        }
-        .coreprice_butt,.curr_coreprice_butt{
+        .coreprice_butt{
             display: block;
             margin:10px auto 0 auto;
             width: 218px;
@@ -169,15 +174,10 @@ ul.switchable-triggers
             color: #fff;
 
         }
-        .curr_coreprice_butt{
-            color: #3ca1d7;
-            background-color: #fff;
-        }
+
 
     }
-    .current_li{
-        background-color: #3ca1d7;
-    }
+
 
 }
 
