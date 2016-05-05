@@ -26,8 +26,6 @@ define(function (require, exports, module) {
         break;
     }
 
-    //初始化场景对比页
-    simulationFn.initAll();
 
     //将原页面中间拖动图标暂时隐藏
     $(".twentytwenty-handle").hide();
@@ -104,6 +102,12 @@ define(function (require, exports, module) {
       }
     });
   }
+
+  $(document).ready(function () {
+    //初始化场景对比页
+    simulationFn.initAll();
+
+  });
 
 
 
