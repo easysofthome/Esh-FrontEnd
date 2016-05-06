@@ -1,10 +1,39 @@
 @import '../../../dev/mixins/mixins.less';
 
 .factoryOffer{
-  padding: 20px 0;
+   padding:20px 0 20px 0;
+    border-bottom: 1px solid #e5e5e5;
   .title_name{
     width:124px;
     font-size: 16px;
+    line-height: 40px;
     text-align: right;
+  }
+  .factoryOffer_input{
+    border:1px solid #cdcfd1;
+    .border-radius(5px);
+    color: #333333;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #fff;
+    width: 300px;
+  }
+  .factoryOffer_butt{
+    display: block;
+    margin-left: 10px;
+    background-color: #3ca1d7;
+      font-size: 16px;
+    color:#fff;
+    padding: 0 20px;
+    line-height: 40px;
+    height: 40px;
+    .border-radius(5px);
+  }
+  .factoryOffer_prompt{
+    margin-left: 20px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #ff0000;
   }
 }
