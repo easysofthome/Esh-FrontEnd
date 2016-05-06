@@ -1,10 +1,12 @@
 
 @import '../../../dev/mixins/mixins.less';
 
+@import '../../../sprite/other/PC/sprite.less';
+
 .index-banner-box
 {
-  width: 408px;
-  height: 229px;
+  width: 402px;
+  height: 212px;
   position: relative;
   top: 0;
   left: 0;
@@ -15,23 +17,23 @@
   position: relative;
   top: 0;
   left: 0;
-  width: 408px;
-  height: 229px;
+  width: 402px;
+  height: 212px;
   overflow:hidden;
   .border-radius(5px);
   -webkit-box-shadow:0 0 15px 1px #e0e0e0;
   -moz-box-shadow:0 0 15px 1px #e0e0e0;
   box-shadow:0 0 15px 1px #e0e0e0;
   ul.banner-box{
-    width: 408px;
-    height:229px;
+    width: 402px;
+    height:212px;
     li.banner-li{
       float: left;
       position: relative;
       top: 0;
       left: 0;
-      width:408px;
-      height: 229px;
+      width:402px;
+      height: 212px;
 
     }
   }
@@ -46,25 +48,18 @@ ul.switchable-triggers
   margin: 0 0 0 -33px;
   li
   {
-    line-height: normal;
-
-    display: inline-block;
-    overflow: hidden;
-
-    width: 12px;
-    height: 12px;
     margin: 0 5px;
-
-    text-align: center;
-
-    background-color: #fff;
-
-    .border-radius(50%);
     cursor: pointer;
+
+    .sprite(@Carousel);
+    .icon-other-PC;
+    .fixIe6pngTransparent('/images/icon/other/PC/Carousel.png')
   }
   .current
   {
-    background-color: #ca0f0f;
+    .sprite(@Carousel_cur);
+    .icon-other-PC;
+    .fixIe6pngTransparent('/images/icon/other/PC/Carousel_cur.png')
   }
 }
 

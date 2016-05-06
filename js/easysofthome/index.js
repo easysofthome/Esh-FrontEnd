@@ -1,8 +1,6 @@
 define(function (require, exports, module) {
 
   require('jquery');
-  var myTools = require('tools');
-
 
   // 颜色渐变支持
 
@@ -10,8 +8,6 @@ define(function (require, exports, module) {
   $(document).ready(function(){
     $('#section1,#section2').css('display','block');
     setWH();
-   //浏览器版本过低，跳转到升级页面
-    validateLowBrowser();
   });
 
   // 窗口改变时
@@ -24,20 +20,8 @@ define(function (require, exports, module) {
       myMouse.setLittleMousePosition("section0_id","little_mouse");
     }, 600);
 
-
   });
 
-  //低版本ie浏览器检测，并给出提示
-  function validateLowBrowser(){
-    if(myTools.browserHelp.isIE6||myTools.browserHelp.isIE7){
-      var isUpdate = confirm(
-        "您浏览器版本过低，继续浏览可能会影响您的体验，是否升级您的浏览器？");
-      if(isUpdate){
-        var downloadURL = "http://dl1sw.baidu.com/soft/9e/14917/IE10-Windows6.1-zh-cn.exe?version=3474208079";
-        window.location = downloadURL;
-      }
-    }
-  }
 
   // 初始化页的高度
   function setWH() {
@@ -90,10 +74,6 @@ define(function (require, exports, module) {
     }
 
    }
-
-
-
-
 
 
   require('animateColor');
