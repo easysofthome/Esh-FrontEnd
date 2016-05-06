@@ -1,45 +1,31 @@
 @import '../../../less/dev/mixins/mixins.less';
 
 .next-box{
-  width: 1200px;
-  margin: 0 auto;
-  margin-top: 65px;
+  margin: 30px auto 0 auto;
+  text-align: center;
   .next{
-    margin-left: 381px;
     a{
-      line-height: 28px;
 
-      margin-right: 7px;
-
-      text-align: center;
-
-      color: #a1a1a1;
-      border: 1px solid #f2f3f5;
-      .border-radius(3px);
-
-      _vertical-align: middle;
-      &:hover{
-        border: 1px solid #ccc;
-      }
+      .border-radius(4px);
+      text-decoration: none;
+      display: inline-block;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 20px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      margin-left: 4px;
+      cursor: pointer;
     }
-    .a01{
-      padding: 0 8px;
-      background: #fff;
+    .current,a:hover{
+      color: #fff;
+      border: 1px solid #3ca1d7;
+      background-color: #3ca1d7;
     }
-    .beg-end{
-      color: #a1a1a1;
-    }
-    .a02{
-      width: 28px;
-      height: 28px;
-      background: #fff;
-    }
-    .current{
-      color: #3ca1d7;
-      background: #f2f3f5;
-    }
-    .a02:hover{
-      color: #3ca1d7;
+    .prohibit,.prohibit:hover{
+      background-color: #ddd;
+      color:#fff;
+      border: 1px solid #ddd;
     }
   }
 }
