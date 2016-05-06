@@ -1,13 +1,13 @@
 define(function (require, exports, module) {
 
   require('jquery');
+
   // 颜色渐变支持
 
   // 窗口结构加载完成时
   $(document).ready(function(){
     $('#section1,#section2').css('display','block');
     setWH();
-
   });
 
   // 窗口改变时
@@ -20,8 +20,8 @@ define(function (require, exports, module) {
       myMouse.setLittleMousePosition("section0_id","little_mouse");
     }, 600);
 
-
   });
+
 
   // 初始化页的高度
   function setWH() {
@@ -34,7 +34,7 @@ define(function (require, exports, module) {
     $('#section0 .wrap').css('margin-left',w1+"px")
                         .css('margin-top',h1+"px")
                         .css('left',"50%")
-                        .css('top',"50%")
+                        .css('top',"50%");
 
     $('#section1 .othermodules').css('height',devHeight-160);
     $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
@@ -76,10 +76,6 @@ define(function (require, exports, module) {
    }
 
 
-
-
-
-
   require('animateColor');
   // 数字增长动画支持
   require('animateNumber');
@@ -100,14 +96,15 @@ define(function (require, exports, module) {
 
       afterLoad: function(anchorLink, index){
         if(index == 1){
-          $('span.mousedown').show();
+          $('#little_mouse').show();
           $('.header').animate({backgroundColor: 'rgba(48,56,69,0)'},1000);
           $('.header a').animate({color: '#fff'},500);
         }
         if(index == 2){
           $('#data-num').html('0');
           $('#flower-type').html('0');
-          $('span.mousedown').show();
+
+          $('#little_mouse').hide();
 
           $('.header').animate({backgroundColor: '#303845'},1000);
           $('.header a').animate({color: '#fff'},500);
@@ -127,7 +124,8 @@ define(function (require, exports, module) {
           $('#flower-type').stop().animateNumber({ number: 20055 },1500);
         }
         if(index == 3){
-          $('span.mousedown').hide();
+
+          $('#little_mouse').hide();
           $('.header').animate({backgroundColor:'#303845'},1000);
           $('.header a').animate({color: '#fff'},500);
         }

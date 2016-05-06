@@ -1,0 +1,67 @@
+@import '../../sprite/easysofthome/sprite.less';
+@import '../../../less/dev/mixins/mixins.less';
+body{
+  background-color: #97ce68;
+  .browserIcon li a:hover{
+    cursor: pointer;
+  }
+  .dibanben{
+    margin: 200px auto 0 auto;
+    .sprite(@dibanben);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/dibanben.png');
+  }
+  .chrome{
+     margin:0 auto 0 auto;
+    .sprite(@chrome);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/chrome.png');
+
+  }
+  .Firefox{
+     margin:0 auto 0 auto;
+    .sprite(@Firefox);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/Firefox.png');
+
+  }
+  .opera{
+     margin:0 auto 0 auto;
+    .sprite(@opera);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/opera.png');
+
+  }
+  .ie{
+     margin:0 auto 0 auto;
+    .sprite(@ie);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/ie.png');
+
+  }
+  .browser_text{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+  }
+  .browser{
+    margin: 40px auto 0 auto;
+    width: 600px;
+    li{
+      width: 25%;
+    }
+  }
+  .browser_butt{
+    display: block;
+    .sprite(@browser);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('/images/icon/easysofthome/browser.png');
+    text-align: center;
+    color: #97ce68;
+    margin: 40px  auto 0 auto;
+    line-height: 34px;
+    font-size: 16px;
+  }
+}

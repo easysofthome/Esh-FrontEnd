@@ -6,6 +6,34 @@
   <title>首页-易家纺电子商务服务平台|家纺工厂|家纺生产|面料工厂|面料生产</title>
   <link href="/css/production/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easysofthome/index.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script>
+
+  seajs.use('tools',validateLowBrowser);
+
+  //低版本ie浏览器检测，并给出提示
+  function validateLowBrowser(myTools){
+    var str_url_search = window.location.search;
+    var isUpdate = false;
+    if(str_url_search){
+      var regx = /update=flase/;
+      var isUpdate = regx.exec(str_url_search);
+    }
+    if(isUpdate){
+      return;
+    }
+    if(myTools.browserHelp.isIE6||myTools.browserHelp.isIE7){
+       var downloadURL = "/html/easysofthome/version.html";
+       window.location = downloadURL;
+    }
+  }
+
+  </script>
+
+
 </head>
 
 <body>
@@ -297,16 +325,16 @@
           <dl class="dl-box rg del_mar " >
             <dt>合作伙伴</dt>
             <dd class="clearfix">
-              <a href="#" class="lf Cooper">中国流行色协会</a>
-              <a href="#" class="lf spacing">浙江大学</a>
+              <a class="lf Cooper">中国流行色协会</a>
+              <a class="lf spacing">浙江大学</a>
             </dd>
             <dd class="clearfix">
-              <a href="#" class="Cooper lf">中国家用纺织品行业协会</a>
-              <a href="#" class="lf spacing">英国利兹大学</a>
+              <a class="Cooper lf">中国家用纺织品行业协会</a>
+              <a class="lf spacing">英国利兹大学</a>
             </dd>
             <dd class="clearfix">
-              <a href="#" class="Cooper lf">中国对外经济贸易统计学会</a>
-              <a href="#" class="lf spacing">美国科罗拉多州立大学</a>
+              <a class="Cooper lf">中国对外经济贸易统计学会</a>
+              <a class="lf spacing">美国科罗拉多州立大学</a>
             </dd>
           </dl>
           <dl class="dl-box about_rg rg">
@@ -334,11 +362,8 @@
     <!--  /section2  -->
   </div>
 
-  <script src="/js/common/seajs/sea-debug.js"></script>
   <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
-  <script src="/js/common/seajs/seajs-css.js"></script>
 
-  <script src="/js/rootConfig.js"></script>
   <script type="text/javascript">
     seajs.use('js/easysofthome/index');
   </script>
