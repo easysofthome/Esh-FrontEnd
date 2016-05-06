@@ -1,40 +1,31 @@
 @import '../../../dev/mixins/mixins.less';
 
 .next-box{
-  width: 445px;
   margin: 30px auto 0 auto;
-  padding-bottom: 70px;
+  text-align: center;
   .next{
-    a{
-      line-height: 28px;
+    a.flip{
 
-      margin-right: 7px;
-
-      text-align: center;
-
-      color: #a1a1a1;
-      border: 1px solid #f2f3f5;
-      .border-radius(3px);
-      border: 1px solid #ccc;
-
-      _vertical-align: middle;
+      .border-radius(4px);
+      text-decoration: none;
+      display: inline-block;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 20px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      margin-left: 4px;
+      cursor: pointer;
     }
-    .a01{
-      padding: 0 8px;
+    a.current,a.flip:hover{
+      color: #fff;
+      border: 1px solid #3ca1d7;
+      background-color: #3ca1d7;
     }
-    .beg-end{
-      color: #a1a1a1;
-    }
-    .a02{
-      width: 28px;
-      height: 28px;
-    }
-    .current{
-      color: #3ca1d7;
-      border: 1px solid #f2f3f5;
-    }
-    .a02:hover{
-      color: #3ca1d7;
+    a.prohibit,a.prohibit:hover{
+      background-color: #ddd;
+      color:#fff;
+      border: 1px solid #ddd;
     }
   }
 }
