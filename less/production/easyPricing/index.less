@@ -2,14 +2,74 @@
 
 @import '../../sprite/easyPricing/sprite.less';
 @import '../../dev/mixins/mixins.less';
+.intelligent_box{
+    background-color: #ecf5ff;
+    .intelligent_infbox{
+        width: 1200px;
+        margin: 10px auto 0 auto;
+        text-align: left;
+        background-image: url("/images/production/easyPricing/round.PNG");
+        background-repeat:no-repeat;
+        background-position:23.5%;
+    }
+    .computer{
+            margin-top: 70px;
+            .sprite(@computer);
+            .icon-easyPricing;
+    }
+    .polygon{
+            margin-right: 12px;
+            .sprite(@polygon);
+            .icon-easyPricing;
+    }
+    .oper_cont{
+        margin-left: 10px;
+        font-size: 14px;
+        color: #888;
+    }
+    .oper_tit{
+        font-size: 18px;
+        color: #333;
+    }
+    .eady_oper,.eady_coll,.eady_comb,.eady_anytime,.eady_provide{
+        line-height: 22px;
+        margin: 62px 0 0 32px;
+    }
+    .eady_coll{
+        margin:62px 0 0 90px;
+    }
+    .eady_comb{
+        margin:62px 0 0 108px;
+    }
+    .eady_anytime{
+        margin:62px 0 0 92px;
+    }
+    .eady_provide{
+        margin:62px 0 0 42px;
+    }
+}
+.simulation_butt,.video_butt{
+    display: block;
+    width: 166px;
+    margin: 30px auto 0 auto;
+    color: #3ca1d7;
+    border: 1px solid #3ca1d7;
+    font-size: 16px;
+    line-height: 38px;
+    height: 38px;
+    .border-radius(5px);
 
+}
+.video_butt{
+    border: 1px solid #ff6600;
+    color: #ff6600;
+}
 .index-banner-box {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 500px;
-    background-color: #5ab6ab;
     margin-top: 112px;
 }
 .banner-wrapper
@@ -62,7 +122,7 @@ ul.switchable-triggers
 }
 ///banner
 
-.simulation_outbox,.effect_box{
+.simulation_outbox,.effect_box,.intelligent_box{
     text-align: center;
     padding: 60px 0 60px 0;
 
@@ -73,9 +133,28 @@ ul.switchable-triggers
 .studiobox{
     padding-bottom: 60px;
 }
-.effect_box{
+.intelligent_box{
     padding-bottom: 100px;
 }
+.effect_box{
+    padding-bottom: 0px;
+    background-color: #fff;
+    background-image: url("/images/production/easyPricing/video_ico.PNG");
+    background-repeat:no-repeat;
+    background-position:center 190px;
+}
+.video_comp,.video_icobutt2{
+     margin: 200px auto 0 auto;
+    .icon-easyPricing;
+}
+.video_comp{
+    .sprite(@video_comp);
+}
+.video_icobutt2{
+    .sprite(@video_icobutt2);
+
+}
+
 
 
 
@@ -186,56 +265,3 @@ ul.switchable-triggers
 
 
 
-.shipin-box
-{
-    width: 1200px;
-    margin: 60px auto 0 auto;
-    li
-    {
-        position: relative;
-        margin-right: 20px;
-    }
-    .zuihou-li{
-        margin-right: 0;
-    }
-    .a03
-    {
-        display: block;
-        overflow: hidden;
-
-        width: 285px;
-        height: 180px;
-
-        .border-radius(7px);
-    }
-    .a04
-    {
-        display: block;
-        position: absolute;
-        left: 10px;
-        bottom: -20px;
-        width: 265px;
-        line-height: 40px;
-        _vertical-align: middle;
-        background-color: #e7e7e7;
-        color: #333;
-        .border-radius(7px);
-        span{
-            margin-left: 15px;
-        }
-        i{
-            margin-right: 15px;
-            margin-top: 10px;
-            .sprite(@videohui);
-            .icon-easyPricing;
-        }
-    }
-    .a04:hover{
-        background-color: #e85d40;
-        color: #fff;
-        i{
-            .sprite(@videobai);
-            .icon-easyPricing;
-        }
-    }
-}
