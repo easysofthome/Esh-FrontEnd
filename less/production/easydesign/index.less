@@ -119,14 +119,22 @@ ul.switchable-triggers
     .icon-easydesign;
 }
 .video_icobutt,.video_icobutt2{
-    margin: 200px auto 0 auto;
+    
      .icon-easydesign;
 }
 .video_icobutt2{
+    position:absolute;
     .sprite(@video_icobutt2);
 }
 .video_icobutt{
+    position:relative;
+    display:block;
+    margin: 200px auto 0 auto;
+    text-indent:-9999px;
     .sprite(@video_icobutt);
+    width:124px;
+    height:124px;
+    background-position: 4px -990px;
 }
 .simulation_outbox,.studio-wrap{
     background-color: #dce4ed;
