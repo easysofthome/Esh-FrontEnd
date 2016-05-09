@@ -143,23 +143,32 @@ ul.switchable-triggers
     background-repeat:no-repeat;
     background-position:center 190px;
 }
-.video_comp,.video_icobutt2{
-    .icon-easyPricing;
-}
-.video_icobutt2,.video_icobutt{
-    margin: 200px auto 0 auto;
-}
+
+
 .video_comp{
     .sprite(@video_comp);
     margin: 30px auto 0 auto;
+    .icon-easyPricing;
 }
+
+.video_icobutt,.video_icobutt2{
+    .icon-easyPricing;
+}
+
 .video_icobutt2{
+    position:absolute;
     .sprite(@video_icobutt2);
 }
 .video_icobutt{
+    position:relative;
+    display:block;
+    margin: 200px auto 0 auto;
+    text-indent:-9999px;
     .sprite(@video_icobutt);
+    width:124px;
+    height:124px;
+    background-position: 3px -323px;
 }
-
 
 
 
