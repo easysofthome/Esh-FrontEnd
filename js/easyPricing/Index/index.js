@@ -22,10 +22,9 @@ define(function (require, exports, module) {
         api.nextBtn.toggleClass('disabled', currentIndex === api.length - 1);
       }
     });
-  });
 
-  //媒体图片鼠标划过特效
-  $(".video_icobutt").append('<span class="video_icobutt2"></span>');
+
+ $(".video_icobutt").append('<span class="video_tupian2"></span>');
   $(".video_icobutt2").css('opacity', 0);
   $(".video_icobutt").hover(function(){
   $(".video_icobutt2").stop().animate({opacity: '1'},600);
@@ -33,6 +32,12 @@ define(function (require, exports, module) {
   function(){
   $(".video_icobutt2").stop().animate({opacity: '0'},600);
   });
+
+
+  });
+
+
+
 
 
 });
