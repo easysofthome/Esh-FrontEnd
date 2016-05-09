@@ -16,7 +16,7 @@
 }
 
 .banner-wrapper
-{   
+{
     position: relative;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@
             left: 0;
             width:1200px;
             height: 500px;
-          
+
         }
     }
     .banner-btn
@@ -63,7 +63,7 @@
             .icon-yisheji-index;
         }
     }
-    
+
 }
 ul.switchable-triggers
 {
@@ -98,15 +98,44 @@ ul.switchable-triggers
 
 ///banner
 
-.simulation_outbox,.effect_box{
+.simulation_outbox,.effect_box,.tew_box{
     text-align: center;
     padding: 60px 0 60px 0;
 
 }
-.effect_box{
+.tew_box{
     padding-bottom: 100px;
 }
-
+.effect_box{
+    padding-bottom: 0px;
+    background-color: #fff;
+    background-image: url("/images/production/easydesign/video_ico.PNG");
+    background-repeat:no-repeat;
+    background-position:center 190px;
+}
+.video_comp{
+    .sprite(@video_comp);
+    margin: 30px auto 0 auto;
+    .icon-easydesign;
+}
+.video_icobutt,.video_icobutt2{
+    
+     .icon-easydesign;
+}
+.video_icobutt2{
+    position:absolute;
+    .sprite(@video_icobutt2);
+}
+.video_icobutt{
+    position:relative;
+    display:block;
+    margin: 200px auto 0 auto;
+    text-indent:-9999px;
+    .sprite(@video_icobutt);
+    width:124px;
+    height:124px;
+    background-position: 4px -990px;
+}
 .simulation_outbox,.studio-wrap{
     background-color: #dce4ed;
 }
@@ -493,60 +522,16 @@ ul.switchable-triggers
 }
 }
 
-.shipin-box
-{
-    width: 1200px;
-    margin: 60px auto 0 auto;
-    li
-    {
-        position: relative;
-        margin-right: 20px;
-    }
-    .zuihou-li{
-        margin-right: 0;
-    }
-    .a03
-    {
-        display: block;
-        overflow: hidden;
+.video_butt{
+    display: block;
+    width: 166px;
+    margin: 30px auto 0 auto;
 
-        width: 285px;
-        height: 180px;
+    font-size: 16px;
+    line-height: 38px;
+    height: 38px;
+    .border-radius(5px);
+      border: 1px solid #ff6600;
+    color: #ff6600;
 
-        .border-radius(7px);
-    }
-    .a04
-    {
-        display: block;
-        position: absolute;
-        left: 10px;
-        bottom: -20px;
-        width: 265px;
-        line-height: 40px;
-        _vertical-align: middle;
-        background-color: #e7e7e7;
-        color: #333;
-        .border-radius(7px);
-        span{
-            margin-left: 15px;
-        }
-        i{
-            margin-right: 15px;
-            margin-top: 10px;
-            .sprite(@videohui);
-            .icon-easydesign;
-        }
-    }
-    .a04:hover{
-        background-color: #e85d40;
-        color: #fff;
-        cursor: pointer;
-        i{
-            .sprite(@videobai);
-            .icon-easydesign;
-        }
-    }
-}
-.video{
-  .play-video(-140px)
 }
