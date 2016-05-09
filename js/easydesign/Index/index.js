@@ -52,13 +52,13 @@ define(function (require, exports, module) {
 
 
   //媒体图片鼠标划过特效
-  $(".video_icobutt").append('<span class="video_icobutt2"></span>');
-  $(".video_icobutt2").css('opacity', 0);
-  $(".video_icobutt").hover(function(){
-  $(".video_icobutt2").stop().animate({opacity: '1'},600);
+  $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
+  $(".video_icobutt_def2").css('opacity', 0);
+  $(".video_icobutt_def").hover(function(){
+  $(".video_icobutt_def2").stop().animate({opacity: '1'},600);
   },
   function(){
-  $(".video_icobutt2").stop().animate({opacity: '0'},600);
+  $(".video_icobutt_def2").stop().animate({opacity: '0'},600);
   });
    
    
