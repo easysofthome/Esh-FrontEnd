@@ -1,0 +1,6 @@
+download（下载页面）
+  | download               软件下载
+
+index                      首页
+
+version                    浏览器版本检测
