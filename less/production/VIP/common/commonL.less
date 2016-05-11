@@ -31,18 +31,24 @@
     margin: 0 auto;
     margin-top: 10px;
 
-    .sprite(@progressbar);
-    .icon-VIP-common-nav;
-  }
-  .progress
-  {
-    .sprite(@progress);
-    .icon-VIP-common-nav;
-  }
-  .progressblue
-  {
-    .sprite(@progressblue);
-    .icon-VIP-common-nav;
+    width: 286px;
+    height: 6px;
+    background-color: #d9d9d9;
+    .border-radius(40px);
+    .progress{
+      width: 30%;
+      height: 6px;
+      background-color: #f79226;
+      display: block;
+      .border-radius(40px);
+    }
+    .progressblue{
+      width: 50%;
+      height: 6px;
+      background-color: #37b5f9;
+      display: block;
+      .border-radius(40px);
+    }
   }
   .vipbox
   {

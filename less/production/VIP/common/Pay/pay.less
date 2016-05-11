@@ -28,20 +28,15 @@
          .sprite(@yidou);
         .icon-VIP-common-Pay;
     }
-    .select_pay{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        .sprite(@gouxian);
-        .icon-VIP-common-Pay;
-        display: none;
-    }
-    li:hover .select_pay{
-        display: block;
-
-    }
-    li:hover{
+    .current,li:hover{
         border:1px solid #ff5200;
+        .select_pay{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            .sprite(@gouxian);
+            .icon-VIP-common-Pay;
+        }
     }
     .zaixian{
         margin: 7px auto 0 auto;
