@@ -7,8 +7,8 @@ define(function (require, exports, module) {
   $(document).ready(function () {
     switch(location.search){
       case '?id1':
-        $('.simulation img').eq(0).attr('src','/images/production/easydesign/bedroom1.jpg');
-        $('.simulation img').eq(1).attr('src','/images/production/easydesign/bedroom2.jpg');
+        $('.simulation img').eq(0).attr('src','/images/production/easydesign/vrNewImg.jpg');
+        $('.simulation img').eq(1).attr('src','/images/production/easydesign/fabric_brown.jpg');
         break;
       case '?id2':
         $('.simulation img').eq(0).attr('src','/images/production/easydesign/bathroom1.jpg');
