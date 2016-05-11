@@ -1,0 +1,64 @@
+@import '../../../../less/dev/mixins/mixins.less';
+
+div.main-box{
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #333;
+  -webkit-box-shadow:0 0 15px 1px #e0e0e0;
+  -moz-box-shadow:0 0 15px 1px #e0e0e0;
+  box-shadow:0 0 15px 1px #e0e0e0;
+  .txt_blue{
+    color: #3ca2d7;
+  }
+  p.tit_d{
+    font-size: 18px;
+    text-align: center;
+    padding-top: 40px;
+  }
+  p.tit_s{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  div.container{
+    margin-top: 24px;
+  }
+  div.content-box{
+    margin-left: 40px;
+    width: 398px;
+    border: #cccccc 1px solid;
+    line-height: 30px;
+    .border-radius(5px);
+    padding: 20px 20px 40px 20px;
+    p.words_tit{
+      font-size: 18px;
+    }
+    div.content{
+      span.words_box{
+        width: 356px;
+      }
+    }
+  }
+
+
+  div.btn{
+    text-align: center;
+    padding: 30px 0 40px 0;
+    a.btn_blue,a.btn_red{
+      width: 160px;
+      height: 40px;
+      text-align: center;
+      display: inline-block;
+      .button-size(0; 0; 16px; 40px; 5px);
+    }
+    a.btn_blue{
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+    }
+    a.btn_red{
+      margin-left: 40px;
+      .button-variant(#fff; #da4a4d; #da4a4d);
+    }
+  }
+}
