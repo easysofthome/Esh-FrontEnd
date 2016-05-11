@@ -116,22 +116,7 @@
 
 
   // 实名认证
-  div.addto{
-    width: 222px;
-    height: 222px;
-    background-color: #f9f9f9;
-    border: dashed 1px #dddddd;
-    cursor: pointer;
-    text-align: center;
-    line-height: 222px;
-    font-size: 20px;
-    &:hover{
-      color: #5ec4f5;
-    }
-  }
-
   .queueList {
-    margin: 20px;
     .placeholder {
       position: relative;
       width: 180px;
@@ -140,6 +125,18 @@
       border: 1px dashed #ddd;
       text-align: center;
       overflow: hidden;
+      &:hover{
+        border-color: #39B6F9;
+        span.trans{
+          color: #39B6F9;
+        }
+        a.btn-add{
+          div.webuploader-pick{
+            .sprite(@addfile_h);
+            .icon-VIP-common-account;
+          }
+        }
+      }
 
       span.trans {
         position: absolute;
@@ -161,6 +158,10 @@
         -moz-text-shadow: 0 1px #fff;
         -webkit-text-shadow: 0 1px #fff;
         text-shadow: 0 1px #fff;
+        &:hover{
+          color: #00a2c9;
+          text-decoration: underline;
+        }
 
         div.webuploader-pick {
           display: block;
@@ -168,12 +169,9 @@
           left: 50%;
           top: 50%;
           margin: -35px 0 0 -30px;
+          background-position: 0 -50px;
           .sprite(@addfile);
           .icon-VIP-common-account;
-          &:hover{
-            .sprite(@addfile_h);
-            .icon-VIP-common-account;
-          }
         }
 
         div.filebox{
