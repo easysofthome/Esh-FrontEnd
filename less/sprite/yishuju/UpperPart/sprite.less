@@ -1,0 +1,32 @@
+@RedCross: -4px -4px 8px 8px;
+@Sort-on: -4px -20px 7px 8px;
+@Sort-Under: -4px -36px 7px 8px;
+@Collection: -4px -52px 12px 12px;
+@Contact: -4px -72px 12px 12px;
+@PayAttention: -4px -92px 12px 12px;
+@search: -4px -112px 13px 13px;
+@Reset: -4px -133px 12px 14px;
+@baobiao-icon: -4px -155px 20px 22px;
+@House: -4px -185px 34px 30px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yishuju-UpperPart {
+  background-image: url("/images/production/yishuju/UpperPart/sprite-yishuju-UpperPart.PNG");
+}

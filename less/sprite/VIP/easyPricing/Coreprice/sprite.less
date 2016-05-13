@@ -1,0 +1,25 @@
+@arr_bott: -4px -4px 14px 9px;
+@arr_top: -4px -21px 14px 9px;
+@Choice: -4px -38px 18px 12px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-easyPricing-Coreprice {
+  background-image: url("/images/production/VIP/easyPricing/Coreprice/sprite-VIP-easyPricing-Coreprice.PNG");
+}

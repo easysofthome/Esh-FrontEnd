@@ -1,0 +1,32 @@
+@currcut_back: -4px -4px 16px 2px;
+@cut_back: -4px -14px 16px 2px;
+@down_arr: -4px -24px 6px 4px;
+@cheng: -4px -36px 11px 11px;
+@curr_increase: -4px -55px 16px 16px;
+@increase: -4px -79px 16px 16px;
+@plus: -4px -103px 16px 16px;
+@select: -4px -127px 33px 27px;
+@tian_img: -4px -162px 65px 47px;
+@include: -4px -217px 11px 56px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-easydesign-increase {
+  background-image: url("/images/production/VIP/easydesign/increase/sprite-VIP-easydesign-increase.PNG");
+}

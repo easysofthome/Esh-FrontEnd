@@ -1,0 +1,29 @@
+@picture: -4px -4px 14px 14px;
+@correct: -4px -26px 16px 16px;
+@error: -4px -50px 16px 16px;
+@a06_touxiang: -4px -74px 46px 50px;
+@titlebj: -4px -132px 814px 50px;
+@a06_yinzhang: -4px -190px 97px 97px;
+@a06_kuang: -4px -295px 508px 249px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-common-security {
+  background-image: url("/images/production/VIP/common/security/sprite-VIP-common-security.PNG");
+}

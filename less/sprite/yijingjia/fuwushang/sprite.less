@@ -1,0 +1,35 @@
+@sequence: -4px -4px 9px 9px;
+@sequence1: -4px -21px 9px 9px;
+@sprite-yijingjia: -4px -38px 9px 9px;
+@contact: -4px -55px 10px 10px;
+@collect: -4px -73px 10px 10px;
+@star_hui: -4px -91px 18px 17px;
+@star_huang: -4px -116px 18px 17px;
+@search: -4px -141px 18px 18px;
+@join: -4px -167px 22px 18px;
+@hangye: -4px -193px 50px 40px;
+@wangluo: -4px -241px 50px 47px;
+@anq: -4px -296px 50px 50px;
+@qian: -4px -354px 51px 57px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yijingjia-fuwushang {
+  background-image: url("/images/production/yijingjia/fuwushang/sprite-yijingjia-fuwushang.PNG");
+}

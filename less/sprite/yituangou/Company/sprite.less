@@ -1,0 +1,27 @@
+@Open-button: -4px -4px 10px 6px;
+@retract-button: -4px -18px 10px 6px;
+@Collection: -4px -32px 13px 12px;
+@Share: -4px -52px 12px 12px;
+@Company-current: -4px -72px 132px 30px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yituangou-Company {
+  background-image: url("/images/production/yituangou/Company/sprite-yituangou-Company.PNG");
+}

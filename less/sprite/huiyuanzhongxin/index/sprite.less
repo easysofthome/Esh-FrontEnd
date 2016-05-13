@@ -1,0 +1,40 @@
+@tianjia: -4px -4px 12px 12px;
+@leftxianxiang: -4px -24px 73px 34px;
+@leftxianxianglong: -4px -66px 93px 34px;
+@rightxianxiang: -4px -108px 73px 34px;
+@rightxianxianglong: -4px -150px 93px 34px;
+@kezhong: -4px -192px 40px 40px;
+@hejia: -4px -240px 40px 40px;
+@huilv: -4px -288px 40px 40px;
+@chengben: -4px -336px 40px 40px;
+@cidian: -4px -384px 40px 40px;
+@danwei: -4px -432px 47px 40px;
+@data: -4px -480px 40px 40px;
+@haiguan: -4px -528px 40px 40px;
+@haiyunfei: -4px -576px 40px 40px;
+@shaxian: -4px -624px 40px 40px;
+@zhixiangcishuan: -4px -672px 40px 40px;
+@jiayi: -4px -720px 252px 252px;
+@yidou: -4px -980px 333px 333px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-huiyuanzhongxin-index {
+  background-image: url("/images/production/huiyuanzhongxin/index/sprite-huiyuanzhongxin-index.PNG");
+}
