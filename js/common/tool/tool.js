@@ -194,8 +194,24 @@ define(function (require, exports, module) {
             var textNode = document.createTextNode(cssText);
             style.appendChild(textNode);
         }
-        head.appendChild(style); //把创建的style元素插入到head中    
+        head.appendChild(style); //把创建的style元素插入到head中
     }
+
+     /** 手机号验证*/
+    function validtaePhoneNum (value) {
+        var reg = {
+            "86": "^(13|15|18|14|17)[0-9]{9}$"  //中国
+        };
+        var flag;
+        var regPhone = new RegExp(reg[86]);
+        if(regPhone.test(value)){
+            flag = true;
+        }else{
+            flag = false;
+        }
+        return flag;
+    }
+
 
     module.exports.addCSS = addCss;
     module.exports.cookieHelp = cookieHelp;
@@ -203,4 +219,6 @@ define(function (require, exports, module) {
     module.exports.browserHelp = browserHelp;
     module.exports.urlHelp = urlHelp;
     module.exports.addScriptHelp = addScriptHelp;
+    module.exports.validtaePhoneNum = validtaePhoneNum;
+
 });
