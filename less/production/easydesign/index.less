@@ -20,19 +20,19 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 1200px;
+
     margin: 0 auto;
     height: 500px;
     overflow:hidden;
     ul.banner-box{
-        width: 1200px;
+        width: 100%;
         height:500px;
         li.banner-li{
             float: left;
             position: relative;
             top: 0;
             left: 0;
-            width:1200px;
+
             height: 500px;
 
         }
@@ -44,7 +44,7 @@
 
         position: absolute;
         bottom: 146px;
-        left: 84px;
+        left: 23.3%;
 
         display: block;
 
@@ -54,13 +54,16 @@
         color: #fff;
         background-color: #fa9b36;
         .border-radius(100px);
-        i{
+        i,.i2{
             margin-top: 8px;
             margin-right: 18px;
             margin-left: 34px;
 
             .sprite(@bannner-sheji-btn);
             .icon-yisheji-index;
+        }
+        .i2{
+
         }
     }
 
@@ -117,6 +120,13 @@ ul.switchable-triggers
     .sprite(@video_comp);
     margin: 30px auto 0 auto;
     .icon-easydesign;
+    .video_cen{
+        margin: 50px auto 0 auto;
+        width: 750px;
+        height: 420px;
+        background-color: #000;
+        overflow: hidden;
+    }
 }
 .video_icobutt_def,.video_icobutt_def2{
 
@@ -129,14 +139,18 @@ ul.switchable-triggers
     position:absolute;
     .sprite(@video_icobutt2);
 }
+.video_box{
+    padding-top: 140px;
+}
 .video_icobutt_def{
     position:relative;
     display:block;
-    margin: 200px auto 0 auto;
+    margin: 0 auto 0 auto;
     text-indent:-9999px;
     .sprite(@video_icobutt);
     width:124px;
     height:124px;
+
     background-position: 4px -990px;
 }
 .simulation_outbox,.studio-wrap{
