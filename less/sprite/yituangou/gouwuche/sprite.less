@@ -1,0 +1,28 @@
+@jiantou: -4px -4px 6px 4px;
+@jiantou2: -4px -16px 6px 4px;
+@xzhong: -4px -28px 40px 40px;
+@zhifubao: -4px -76px 134px 52px;
+@wangcheng: -4px -136px 78px 78px;
+@tianjia: -4px -222px 80px 80px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yituangou-gouwuche {
+  background-image: url("/images/production/yituangou/gouwuche/sprite-yituangou-gouwuche.PNG");
+}

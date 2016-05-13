@@ -1,0 +1,26 @@
+@rgith: -4px -4px 180px 97px;
+@left: -4px -109px 181px 98px;
+@center1: -4px -215px 186px 101px;
+@center2: -4px -324px 188px 101px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-zhinengbaojia {
+  background-image: url("/images/production/zhinengbaojia/sprite-zhinengbaojia.PNG");
+}

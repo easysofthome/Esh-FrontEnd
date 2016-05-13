@@ -1,0 +1,29 @@
+@progress: -4px -4px 240px 6px;
+@progressBar: -4px -18px 240px 6px;
+@edit: -4px -32px 14px 14px;
+@btn_upload: -4px -54px 16px 16px;
+@switch-bg: -4px -78px 58px 24px;
+@switch-bgno: -4px -110px 58px 24px;
+@switch-lang: -4px -142px 91px 24px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-VIP-easydesign-list {
+  background-image: url("/images/production/VIP/easydesign/list/sprite-VIP-easydesign-list.PNG");
+}

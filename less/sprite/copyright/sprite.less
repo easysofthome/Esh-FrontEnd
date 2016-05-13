@@ -1,0 +1,28 @@
+@banq: -4px -4px 128px 44px;
+@banq1: -4px -56px 128px 44px;
+@banq3: -4px -108px 128px 44px;
+@banq4: -4px -160px 128px 44px;
+@banq5: -4px -212px 107px 44px;
+@banq6: -4px -264px 136px 50px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-copyright {
+  background-image: url("/images/production/copyright/sprite-copyright.PNG");
+}

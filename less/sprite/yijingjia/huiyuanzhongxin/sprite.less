@@ -1,0 +1,33 @@
+@zhanghu-xiala: -4px -4px 7px 4px;
+@anquan-hui: -4px -16px 50px 10px;
+@anquan-lv: -4px -34px 40px 10px;
+@vip-tu: -4px -52px 13px 19px;
+@zhanghu-guanli: -4px -79px 21px 20px;
+@xiaoxi: -4px -107px 21px 21px;
+@sou-ss: -4px -136px 24px 24px;
+@shuliang-shoucang: -4px -168px 40px 40px;
+@shuliang-toubiao: -4px -216px 40px 40px;
+@shuliang-fabiao: -4px -264px 40px 40px;
+@shuliang-zancun: -4px -312px 40px 40px;
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+.icon-yijingjia-huiyuanzhongxin {
+  background-image: url("/images/production/yijingjia/huiyuanzhongxin/sprite-yijingjia-huiyuanzhongxin.PNG");
+}
