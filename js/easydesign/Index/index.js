@@ -60,13 +60,13 @@ define(function (require, exports, module) {
   function(){
   $(".video_icobutt_def2").stop().animate({opacity: '0'},600);
   });
+   
+   
+    
+    
+  
 
-
-
-
-
-
-
+    
 
 
 
