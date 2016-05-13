@@ -126,6 +126,9 @@ define(function (require, exports, module) {
         }
         return flag;
     }
+
+
+
 /** /用户名验证 */
 
     init();

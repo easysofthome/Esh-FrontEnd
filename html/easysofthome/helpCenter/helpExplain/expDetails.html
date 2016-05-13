@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易核价-易家纺电子商务服务平台_首页</title>
+  <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easysofthome/helpCenter/helpExplain/account.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  @@include('/common/top.html')
+  @@include('/easysofthome/helpCenter/header.html')
+
+  <div class="main-top-box">
+    <div class="location-box clearfix">
+      <i class="lf home"></i>
+      <i class="lf next"></i>
+      <a class="lf words">帮助说明</a>
+    </div>
+  </div>
+
+  <div class="main-box clearfix">
+    <ul class="main_L lf">
+      <li><a class="leftnav" href="#">常见问题</a></li>
+      <li><a class="leftnav" href="#">注册登录</a></li>
+      <li><a class="leftnav" href="#">VIP专区</a></li>
+      <li><a class="leftnav current" href="/html/easysofthome/helpCenter/helpExplain/account.html">账户设置</a></li>
+    </ul>
+    <div class="main_R lf">
+      <p class="title-box">
+        <a class="title" href="/html/easysofthome/helpCenter/helpExplain/account.html">账户设置</a>
+        <i class="next"></i>
+        <span class="title">浏览器版本问题？</span>
+      </p>
+      <div class="Details-box">
+        <p class="words-tit">问题描述</p>
+        <p class="words">低版本的浏览器没有效果、页面布局有微小的差别。</p>
+        <img src="/images/production/easysofthome/helpCenter/Details_problem.png">
+      </div>
+      </p>
+      <div class="Details-box">
+        <p class="words-tit">解决方法</p>
+        <p class="words">建议浏览器版本，网站会为您提示是否升级。</p>
+        <img src="/images/production/easysofthome/helpCenter/Details_solve.png">
+      </div>
+    </div>
+  </div>
+
+  @@include('/common/footer.html')
+  <script>
+  seajs.use('js/easyPricing/Index/index',function(){ });
+
+  </script>
+</body>
+</html>

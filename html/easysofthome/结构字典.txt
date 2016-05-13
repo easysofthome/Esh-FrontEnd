@@ -3,6 +3,11 @@ download（下载页面）
   | download               软件下载
 
 helpCenter（帮助中心）
+  helpExplain（帮助说明）
+  | account                账户设置
+  | expDetails             帮助说明详情
+  | video                  视频中心
+
   index.html               帮助中心首页
 
 index                      首页

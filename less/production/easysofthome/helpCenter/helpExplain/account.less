@@ -1,0 +1,113 @@
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/easysofthome/helpCenter/sprite.less';
+
+// 通用样式
+div.main-top-box{
+  width: 100%;
+  margin-top: 112px;
+  padding-top: 17px;
+  height: 68px;
+  background-image: url("/images/production/easysofthome/helpCenter/inpage_top_bg.png");
+  background-repeat: repeat-x;
+  div.location-box{
+    width: 1200px;
+    margin: 0 auto;
+    i.home{
+      margin: 3px 0 0 20px;
+      .sprite(@icon_home);
+      .icon-easysofthome-helpCenter;
+    }
+    i.next{
+      margin: 6px 5px 0 6px;
+      .sprite(@icon_next);
+      .icon-easysofthome-helpCenter;
+    }
+    a.words{
+      font-size: 16px;
+      color: #888;
+    }
+  }
+}
+
+div.main-box{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+  ul.main_L{
+    width: 320px;
+    li{
+      padding-left: 60px;
+      a.leftnav{
+        line-height: 48px;
+        font-size: 18px;
+        color: #757e8f;
+      }
+      a.current,a.leftnav:hover{
+        color: #3ca1d7;
+      }
+    }
+  }
+  div.main_R{
+    width: 880px;
+    p.title-box{
+      line-height: 48px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: #e2e6ec 1px solid;
+      padding-bottom: 12px;
+      .title{
+        color: #3e485c;
+      }
+      i.next{
+        margin: 6px 5px 0 6px;
+        .sprite(@icon_next);
+        .icon-easysofthome-helpCenter;
+        display: inline-block;
+      }
+    }
+    // 通用样式
+
+
+    // 帮助说明
+    ul.container{
+      margin-top: 25px;
+      line-height: 40px;
+      li.rightnav{
+        width: 440px;
+        font-size: 18px;
+        i{
+          margin: 17px 6px 0 0;
+          .sprite(@oper_icon);
+          .icon-easysofthome-helpCenter;
+        }
+        p.words{
+          width: 416px;
+          a{
+            color: #666666;
+            &:hover{
+              color: #3ca1d7;
+            }
+          }
+        }
+      }
+    }
+    // 帮助说明
+
+
+    // 帮助说明详情
+    div.Details-box{
+      margin-top: 23px;
+      line-height: 44px;
+      font-size: 18px;
+      p.words-tit{
+        color: #707070;
+      }
+      p.words{
+        color: #404040;
+        padding-bottom: 30px;
+      }
+    }
+    // 帮助说明详情
+  }
+}
