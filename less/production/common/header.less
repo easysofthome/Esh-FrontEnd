@@ -1,0 +1,106 @@
+@import '../../sprite/common/sprite.less';
+@import '../../dev/mixins/mixins.less';
+
+
+.header{
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  position: fixed;
+  top: 32px;
+  left: 0;
+  z-index: 99;
+  background: #fff;
+  .header-wrapper{
+    width: 1200px;
+    margin:0 auto;
+    .logo{
+      height: 80px;
+      float: left;
+      #header-logo{
+        margin-top: 17px;
+        .sprite(@logo);
+        .icon-common;
+        .fixIe6pngTransparent('/images/icon/common/logo.png');
+      }
+    }
+    .switch{
+      float: right;
+      width: 58px;
+      height: 24px;
+      margin-top: 27px;
+      margin-left: 23px;
+      cursor: pointer;
+      .sprite(@switch-bg);
+      .icon-common;
+      .fixIe6pngTransparent('/images/icon/common/switch-bg.png');
+      span{
+        margin-left: -33px;
+        .sprite(@switch-lang);
+        .icon-common;
+        .fixIe6pngTransparent('/images/icon/common/switch-lang.png');
+
+      }
+    }
+    .nav{
+      float: right;
+      position: relative;
+      .nav-li{
+        float:left;
+        height: 78px;
+        position: relative;
+        border-bottom: 2px solid #fff;
+        margin: 0 20px;
+        a{
+          display:block;
+          color:#666;
+          font-size: 16px;
+          padding: 27px 5px 27px 5px;
+        }
+      }
+    }
+    .nav1{
+      .nav-li{
+        &:hover,&.hover{
+          border-bottom: 2px solid #3ca1d7;
+          a{
+            color: #3ca1d7;
+          }
+        }
+      }
+      .cur{
+        border-bottom: 2px solid #3ca1d7;
+        a{
+          color: #3ca1d7;
+        }
+      }
+    }
+    .nav2{
+      margin-right: -20px;
+      .nav-li{
+        position: relative;
+        &.cur{
+          span{
+            width: 100%;
+            height: 2px;
+            left: 0;
+          }
+          a{
+            color: #3ca1d7;
+          }
+        }
+        &:hover{
+          a{color: #3ca1d7;}
+        }
+        span{
+          position: absolute;
+          top: 78px;
+          width: 0;
+          height: 0;
+          left: 50%;
+          background: #3ca1d7;
+        }
+      }
+    }
+  }
+}

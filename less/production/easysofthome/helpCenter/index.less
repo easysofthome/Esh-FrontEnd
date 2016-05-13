@@ -1,0 +1,41 @@
+@import '../../../../less/dev/mixins/mixins.less';
+
+div.main-top-box{
+  width: 100%;
+  margin-top: 112px;
+  padding-top: 46px;
+  height: 184px;
+  background-image: url("/images/production/easysofthome/helpCenter/index/main_top_bg.png");
+  background-repeat: repeat-x;
+  p.title{
+    width: 1200px;
+    margin: 0 auto;
+    color: #3e485c;
+    font-size: 36px;
+    text-align: center;
+    line-height: 36px;
+  }
+  div.search-box{
+    width: 1200px;
+    margin: 36px auto 0 auto;
+    input.search{
+      width: 600px;
+      height: 18px;
+      padding: 16px 20px;
+      font-size: 18px;
+      line-height: 18px;
+      border: #c7c6ca 1px solid;
+      margin-left: 211px;
+      .border-left-radius(5px);
+    }
+    a.search-btn{
+      text-align: center;
+      width: 134px;
+      height: 52px;
+      .button-variant(#fff; #3ca1d7; #2c8abd);
+      .button-size(0; 0; 24px; 52px; 0);
+      border-left: none;
+      .border-right-radius(5px);
+    }
+  }
+}
