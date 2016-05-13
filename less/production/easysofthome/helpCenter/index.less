@@ -1,4 +1,6 @@
-@import '../../../../less/dev/mixins/mixins.less';
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easysofthome/helpCenter/sprite.less';
 
 div.main-top-box{
   width: 100%;
@@ -34,8 +36,212 @@ div.main-top-box{
       height: 52px;
       .button-variant(#fff; #3ca1d7; #2c8abd);
       .button-size(0; 0; 24px; 52px; 0);
-      border-left: none;
       .border-right-radius(5px);
+    }
+  }
+}
+
+// 通用小标题样式
+p.tit_s{
+  font-size: 20px;
+  font-weight: bold;
+  color: #484744;
+  padding-bottom: 20px;
+  border-bottom: #e6e6e6 1px solid;
+}
+
+// 帮助说明
+div.help-box{
+  width: 1200px;
+  margin: 22px auto 0 auto;
+  div.container{
+    margin-top: 6px;
+    a.problem,
+    a.video,
+    a.register,
+    a.VIP,
+    a.account,
+    a.recharge{
+      color: #b2b2b2;
+      width: 280px;
+      margin: 24px 20px 0 0;
+      div.words{
+        margin-left: 10px;
+        width: 208px;
+        line-height: 20px;
+        p.tit_name{
+          font-weight: bold;
+          font-size: 16px;
+          color: #666;
+          line-height: 22px;
+        }
+      }
+    }
+    a.problem{
+      i{
+        .sprite(@help_problem);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.video{
+      i{
+        .sprite(@help_video);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.register{
+      i{
+        .sprite(@help_register);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.VIP{
+      i{
+        .sprite(@help_VIP);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.account{
+      i{
+        .sprite(@help_account);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.recharge{
+      i{
+        .sprite(@help_recharge);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+  }
+}
+
+// 操作指南
+div.operation-box{
+  width: 1200px;
+  margin: 58px auto 0 auto;
+  li.content{
+    width: 380px;
+    margin: 30px 20px 0 0;
+    a.easydata,
+    a.easydesign,
+    a.easyPricing{
+      color: #4cb8e9;
+      font-size: 24px;
+      line-height: 52px;
+      i{
+        margin-right: 10px;
+      }
+    }
+    a.easydata{
+      i{
+        .sprite(@oper_easydata);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.easydesign{
+      i{
+        .sprite(@oper_easydesign);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    a.easyPricing{
+      i{
+        .sprite(@oper_easyPricing);
+        .icon-easysofthome-helpCenter;
+      }
+    }
+    ol.txt-box{
+      margin-top: 24px;
+      li.words-box{
+        width: 190px;
+        margin-top: 6px;
+        i{
+          margin: 7px 6px 0 0;
+          .sprite(@oper_icon);
+          .icon-easysofthome-helpCenter;
+        }
+        p.words{
+          width: 166px;
+          a{
+            color: #333;
+            &:hover{
+              color: #888;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 视频指南
+div.video-box{
+  width: 1200px;
+  margin: 58px auto 0 auto;
+  li.content{
+    width: 280px;
+    font-size: 18px;
+    margin: 30px 27px 0 0;
+    div.video_bg{
+      position: relative;
+      height: 180px;
+      .sprite(@video_icon);
+      .icon-easysofthome-helpCenter;
+      p.video_time{
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        color: #fff;
+      }
+    }
+    p.words{
+      color: #4c4c4c;
+      margin-top: 18PX;
+      text-align: center;
+    }
+  }
+  li.clear_right{
+    margin-right: 0;
+  }
+}
+
+// 查看更多按钮
+div.btn-box{
+  text-align: center;
+  margin-top: 56px;
+  a.btn_more{
+    width: 190px;
+    height: 62px;
+    line-height: 62px;
+    border: #3ca1d7 1px solid;
+    color: #3ca1d7;
+    font-size: 18px;
+    display: inline-block;
+    .border-radius(5px);
+    &:hover{
+      color: #fff;
+      background-color: #3ca1d7;
+    }
+  }
+}
+
+// 与我们联系
+div.contact-box{
+  width: 1200px;
+  margin: 58px auto 0 auto;
+  padding-bottom: 100px;
+  li.content{
+    margin-top: 60px;
+    width: 300px;
+    img{
+      margin-left: 80px;
+    }
+    p.words{
+      font-size: 20px;
+      text-align: center;
+      color: #929aa9;
+      margin-top: 80px;
     }
   }
 }
