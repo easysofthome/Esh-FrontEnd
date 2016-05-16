@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-
+  exports.overwrite;
   //选择产品
   $('#sel-pro').hover(function() {
     $('.sel-pro').show();
@@ -38,5 +38,6 @@ define(function (require, exports, module) {
   $('#sel-pro').on('click', '.level2 ul>li .final', function(event) {
     $('#sel-pro input').val($(this).html());
   });
-
+  if(exports.overwrite)
+    exports.overwrite();
 });
