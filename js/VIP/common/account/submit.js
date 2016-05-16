@@ -40,14 +40,17 @@ define(function (require, exports, module) {
               remitAccount: {
                   required: true,
                   // creditcard: true
-                  number: true
+                  number: true,
+                  maxlength:5
               },
               remitter: {
-                  required: true
+                  required: true,
+                  maxlength:20
               },
               num: {
                   required: true,
-                  number: true
+                  number: true,
+                  maxlength:30
               },
               dataTime:{
                   required: true
@@ -109,6 +112,8 @@ define(function (require, exports, module) {
       return flag;
   }
   /** /phone */
+
+
 
   init();
 });
