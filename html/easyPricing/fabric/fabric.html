@@ -7,11 +7,11 @@
     <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
 
   <body>
-    @@include('/common/top.html')
-    @@include('/easyPricing/header.html')
+    @@include('common/top.html')
+    @@include('easyPricing/header.html')
     <div class="ban-bg">
       <img width="100%" src="/images/production/easydesign/common/icon-bg02.png"></div>
-    @@include('/easyPricing/fabric/fabrictitle.html')
+    @@include('easyPricing/fabric/fabrictitle.html')
     <div class="mainbox">
       <div class="fabricbox">
         <div class="fabric_con">
@@ -387,7 +387,7 @@
       </div>
     </div>
   </div>
-  @@include('/easyPricing/common/footer2.html')
+  @@include('easyPricing/common/footer2.html')
   <script>
   seajs.use(['jquery','customSelect','spinner','layer','FancyRadioCheckBox'],function ($,cus,spinner,layer,FancyRadioCheckBox) {
     $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
