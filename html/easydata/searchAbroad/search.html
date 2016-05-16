@@ -10,8 +10,8 @@
 
 <body>
   <!-- 头部、导航 -->
-  @@include('/common/top.html')
-  @@include('/easydata/header1.html')
+  @@include('common/top.html')
+  @@include('easydata/header1.html')
   <div class="main_box distance_top">
     <!-- 搜索 -->
     <!-- 精确匹配国外潜在买家(已登录-数据库中有) -->
@@ -665,11 +665,11 @@
     </ul>
 
     <!-- 翻页 -->
-    <div class="pad_bottom">@@include('/easydata/next.html')</div>
+    <div class="pad_bottom">@@include('easydata/next.html')</div>
   </div>
 
   <!-- 版权 -->
-@@include('/easydata/footer2.html')
+@@include('easydata/footer2.html')
 
   <script>
     seajs.use('js/easydata/searchAbroad/search');
