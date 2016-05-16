@@ -213,6 +213,57 @@ define(function (require, exports, module) {
     }
 
 
+    /** 邮箱验证 */
+    function phoneRule (value) {
+      var email = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$"; //邮件
+      var flag;
+      var regMail = new RegExp(email);
+      if(regMail.test(value)){
+          flag = true;
+      }else{
+          flag = false;
+      }
+      return flag;
+    }
+
+    //验证码倒计时
+    function countdown(waitColdeClass,id,startNum,endNum,endText,callback){
+        $("#"+id).unbind("click");
+        var mySatartNum = parseInt(startNum);
+        var myEndNum = parseInt(endNum);
+        $("#"+id).addClass(waitColdeClass);
+        if(callback){callback();}
+        continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,callback);
+    }
+
+    function continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,callback){
+
+        var timer =window.setTimeout(function(){
+
+            $("#"+id).html(mySatartNum--);
+            //alert(mySatartNum);
+            if(mySatartNum <= myEndNum){
+                $("#"+id).attr("disabled",false);
+                $("#"+id).removeClass(waitColdeClass);
+                $("#"+id).html(endText);
+                mySatartNum = parseInt(startNum);
+                bindClick_countdown(waitColdeClass,id,mySatartNum,myEndNum,endText,callback);
+                return;
+            }else{
+                continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,callback);
+            }
+        },1000);
+    }
+
+    //绑定click
+    function bindClick_countdown(waitColdeClass,id,startNum,endNum,endText,callback){
+        $("#"+id).bind("click",function(){
+            countdown(waitColdeClass,id,startNum,endNum,endText,callback);
+
+        });
+    }
+
+
     module.exports.addCSS = addCss;
     module.exports.cookieHelp = cookieHelp;
     module.exports.dateHelp = dateHelp;
@@ -220,5 +271,9 @@ define(function (require, exports, module) {
     module.exports.urlHelp = urlHelp;
     module.exports.addScriptHelp = addScriptHelp;
     module.exports.validtaePhoneNum = validtaePhoneNum;
+    module.exports.phoneRule = phoneRule;
+    module.exports.bindClick_countdown = bindClick_countdown;
+
+
 
 });
