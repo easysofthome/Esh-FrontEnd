@@ -37,7 +37,8 @@ define(function (require, exports, module) {
 
   $('#sel-pro').on('click', '.level2 ul>li .final', function(event) {
     $('#sel-pro input').val($(this).html());
-  });
-  if(exports.overwrite)
+      if(exports.overwrite)
     exports.overwrite();
+  });
+
 });
