@@ -7,9 +7,9 @@
   <link href="/css/production/VIP/common/account/invitation.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  @@include('/VIP/common/nav.html')
+  @@include('VIP/common/nav.html')
   <div class="main_box clearfix">
-    @@include('/VIP/common/account/invitationL.html')
+    @@include('VIP/common/account/invitationL.html')
     <div class="rg">
       <div class="yaoqing-main01">
         <p class="p01">我要邀请的朋友</p>
@@ -23,7 +23,7 @@
           </p>
         </div>
         <div class="p04 clearfix">
-          <a class="lf bg-color" href="#">复制</a>
+          <a class="lf bg-color" id="copy_share" href="#">复制</a>
           <p class="rg clearfix"> <i class="lf fenxiang"></i>
             <span class="lf" style="color: #333;">分享:</span>
             <a class="lf icon-qq" href="#"></a>
@@ -143,9 +143,13 @@
           </div>
         </li>
       </ul>
-      @@include('/VIP/common/next.html')
+      @@include('VIP/common/next.html')
     </div>
   </div>
-  @@include('/VIP/common/footer.html')
+  @@include('VIP/common/footer.html')
+
+   <script>
+    seajs.use("js/VIP/common/account/invitation");
+  </script>
 </body>
 </html>
