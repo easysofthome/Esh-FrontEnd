@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
-  require('jquery');
   exports.overwrite;
+  require('jquery');
   //选择产品
   $('#sel-pro').hover(function() {
     $('.sel-pro').show();
