@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
+  var tools = require('tools');
 
   var placehold = require('js/common/module/placehold');
   placehold.init('.email-box>input');
@@ -19,6 +20,7 @@ define(function (require, exports, module) {
   };
 
   function init() {
+      tools.bindClick_countdown("waitcodes","getValidateCode",20,0,"重新发送");
       validate();
       bindEvent();
   }
@@ -123,6 +125,9 @@ define(function (require, exports, module) {
       }
       return flag;
   }
+
+
+
 /** /用户名验证 */
 
   init();
