@@ -104,16 +104,16 @@ define(function (require, exports, module) {
 
       // 禁止调节宽度
       slider.on("move", function(e) {
-        // if (container.hasClass("active")) {
-        //   sliderPct = (sliderOrientation === 'vertical') ? (e.pageY-offsetY)/imgHeight : (e.pageX-offsetX)/imgWidth;
-        //   if (sliderPct < 0) {
-        //     sliderPct = 0;
-        //   }
-        //   if (sliderPct > 1) {
-        //     sliderPct = 1;
-        //   }
-        //   adjustSlider(sliderPct);
-        // }
+        if (container.hasClass("active")) {
+          sliderPct = (sliderOrientation === 'vertical') ? (e.pageY-offsetY)/imgHeight : (e.pageX-offsetX)/imgWidth;
+          if (sliderPct < 0) {
+            sliderPct = 0;
+          }
+          if (sliderPct > 1) {
+            sliderPct = 1;
+          }
+          adjustSlider(sliderPct);
+        }
       });
 
       container.find("img").on("mousedown", function(event) {

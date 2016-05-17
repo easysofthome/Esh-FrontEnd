@@ -4,6 +4,9 @@ define(function (require, exports, module) {
   require('js/VIP/common/basicData/layer');
   require('js/lib/validation/validation');
 
+  var switchSel = require('js/common/module/switchSel');
+  switchSel.set('.select-box','.select-box>span','.select-ul','.select-ul>li','');
+
   // input
   var form = $("#modify-baseData");
 

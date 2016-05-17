@@ -11,25 +11,34 @@
 	<div class="main_box clearfix">
 		@@include('VIP/common/security/securityL.html')
 		<div class="rg securityR securityRpwd">
-
+<form action="" id="addLoginPwd" method="post">
 			<p class="quyutitle icon-huiyuanzhongxin-right">设置登录密码</p>
 			<div class="clearfix shurutop">
 				<span class="lf titilexingxi">密码：</span>
 				<div class="lf veri_left">
-					<input type="text" class="shuruchang" value="请输入密码">
-					<p class="prompt">密码必须为6-16位，且至少包含英文、数字和符号中的两种。新密码不能与旧密码相同。</p>
+					<span class="placeholder">请输入密码</span>
+					<input type="password" class="shuruchang" name="newPwd" id="newPwd">
+					<div class="input-tip"></div>
+
 				</div>
 			</div>
 
 			<div class="clearfix shurutop">
 				<span class="lf titilexingxi">确认密码：</span>
 				<div class="lf veri_left">
-					<input type="text" class="shuruchang" value="请确认密码"></div>
+					<span class="placeholder">请确认密码</span>
+					<input type="password" class="shuruchang" name="rePwd" id="rePwd">
+					<div class="input-tip"></div>
 			</div>
-
-			<a href="#" class="save">确认</a>
+			<button type="submit" href="#" class="save">确认</button>
+		</div>
+		</form>
 		</div>
 	</div>
 	@@include('VIP/common/footer.html')
+
+	<script>
+		seajs.use('js/VIP/common/security/modifyPwd-addto');
+	</script>
 </body>
 </html>

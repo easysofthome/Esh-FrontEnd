@@ -77,7 +77,7 @@ img{
   right:30px;
   ul{
     .selectFabricHeader span{
-      padding-left: 12px;
+
       line-height: 36px;
       text-align: center;
       color:#fff;
@@ -129,7 +129,7 @@ img{
 
  }
 
-  span{
+  span.download_soft{
       margin-top: 10px;
       padding-left: 10px;
       line-height: 36px;
@@ -146,5 +146,84 @@ img{
       }
     }
 
+  span.selectFabric_des{
+      margin-top: 10px;
+
+      line-height: 36px;
+      text-align: center;
+      color:#fff;
+      .sprite(@selectFabricHeader);
+      .icon-easydesign;
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricHeader.png');
+      color:#fff;
+
+    }
+
+
+
 
 }
+
+
+.selectFabric_left{
+  position: absolute;
+  display: block;
+  z-index: 9999;
+  width: 122px;
+  height: 440px;
+
+  ul{
+    .selectFabricHeader_left span{
+
+      line-height: 36px;
+      text-align: center;
+      color:#fff;
+      .sprite(@selectFabricTop);
+      .icon-easydesign;
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricTop.png');
+
+    }
+
+      .selectFabricList_left span{
+      text-align: center;
+      .sprite(@selectFabricbg);
+      .icon-easydesign;
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricbg.png');
+
+    }
+    span{
+      padding-left: 0px;
+    }
+    span img{
+      border:2px solid #a2a2a1;
+    }
+    span ul{
+      margin-top: 12px;
+    }
+
+    span ul li{
+      margin:0 auto;
+      text-align: center;
+      padding-top:10px;
+      padding-right:2px;
+      width:102px;
+      height:102px;
+    }
+
+    span ul li img{
+      pading:0;
+      width:100px;
+      height:100px;
+    }
+    span ul li img:hover{
+
+    }
+
+    span .selectedFabric img{
+      border:2px solid #fca474;
+    }
+  }
+
+
+
+ }
