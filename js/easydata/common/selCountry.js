@@ -15,7 +15,7 @@ define(function (require, exports, module) {
   });
 
   $('.country-ol li').click(function(event) {
-    $('#sel-country input').val($(this).html());
+    $('#sel-country input').val($.trim($(this).html()));
     $('.sel-country').hide();
   });
 });
