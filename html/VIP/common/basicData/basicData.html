@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    @@include('VIP/common/nav.html')
+    @@include('VIP/common/nav.html')/
 
     <div class="main_box clearfix">
       @@include('VIP/common/basicData/basicDataL.html')
@@ -80,11 +80,17 @@
               </div>
             </div>
             <div class="contact_int clearfix">
-              <p class="lf"><span class="three">所在</span>地：&nbsp;&nbsp;</p>
-              <div class="lf"><input type="text" class="choice"></div>
-              <div class="lf"><input type="text" class="choice"></div>
-              <div class="lf"><input type="text" class="choice"></div>
-              <div class="lf"><input type="text" class="choice"></div>
+
+             <p class="lf"> <span class="lf span_mar three">所在</span>地：&nbsp;</p>
+                <div class="select-box clearfix lf">
+                <span class="lf">全部</span> <i class="lf"></i>
+                  <ul class="select-ul">
+                    <li>上海</li>
+                    <li>杭州</li>
+                    <li>北京</li>
+                  </ul>
+
+               </div>
             </div>
             <div class="contact_int clearfix">
               <p class="lf"><span class="four">详细地</span>址：&nbsp;&nbsp;</p>

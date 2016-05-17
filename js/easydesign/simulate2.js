@@ -1,10 +1,42 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('jquery.event.move');
+  require('jquery.twentytwenty');
+
+
+
+   $('.simulation').twentytwenty();
+
+    $(document).ready(function () {
+        switch(location.search){
+          case '?id1':
+            $('.simulation img').eq(0).attr('src','/images/production/easydesign/bedroom1.jpg');
+            $('.simulation img').eq(1).attr('src','/images/production/easydesign/bedroom2.jpg');
+            break;
+          case '?id2':
+            $('.simulation img').eq(0).attr('src','/images/production/easydesign/bathroom1.jpg');
+            $('.simulation img').eq(1).attr('src','/images/production/easydesign/bathroom2.jpg');
+            break;
+          case '?id3':
+            $('.simulation img').eq(0).attr('src','/images/production/easydesign/drawing1.jpg');
+            $('.simulation img').eq(1).attr('src','/images/production/easydesign/drawing2.jpg');
+            break;
+          case '?id4':
+            $('.simulation img').eq(0).attr('src','/images/production/easydesign/kitchen1.jpg');
+            $('.simulation img').eq(1).attr('src','/images/production/easydesign/kitchen2.jpg');
+            break;
+          default:
+            break;
+        }
+      });
+
+
+
 
 
   //页面尺寸改变时场景标题定位
   $(window).resize(function() {
-    simulationFn.initPosition();
+    //simulationFn.initPosition();
   });
 
   //场景对比页
@@ -15,9 +47,9 @@ define(function (require, exports, module) {
   simulationFn.initAll = function(){
 
   //隐藏面料选择列表
-  this.swichFabricList();
+  // this.swichFabricList();
 
-  this.initPosition();
+  // this.initPosition();
 
   }
 
@@ -25,7 +57,6 @@ define(function (require, exports, module) {
   simulationFn.initPosition = function(){
     this.centerAlign("realSceneTitleId",30,30);
     this.centerAlign("vsMark",-60,0,-60);
-    this.centerAlign("selectFabricLeft",-152,30,0);
   }
 
   //居中定位,top值自定义
@@ -78,8 +109,7 @@ define(function (require, exports, module) {
 
     $(".simulation_all img").eq(0).attr("src", baseUrl + roomName +"/"+ roomName + "_vr.jpg");
     $(".simulation_all img").eq(1).attr("src",baseUrl + roomName +"/"+ roomName + "_01_real.jpg");
-    $("#fabricListview_left img").eq(0).attr("src",baseUrl + roomName +"/"+ roomName + "_fabric_real.png");
-    $(".selectFabricList_left span").css("height",134);
+
     loadFabricList(listId,fabricNum,roomName,baseUrl,callback);
 
   }
@@ -95,45 +125,48 @@ define(function (require, exports, module) {
         "<img src=\'"+baseUrl +roomName+"/"+roomName + "_0" + i + "_fabric.jpg\' /></li>");
     }
 
+
+
+
     callback(roomName);
   }
 
+//$('.simulation').twentytwenty();
+  // $(document).ready(function () {
 
-  $(document).ready(function () {
+  //   var fabricLisId = "fabricListview";
+  //   var baseUrl = "/images/production/easydesign/";
 
-    var fabricLisId = "fabricListview";
-    var baseUrl = "/images/production/easydesign/";
+  //   switch(location.search){
+  //     case '?id1':
+  //       simulationFn.loadRoomImg(fabricLisId,4,"bedroom",baseUrl,function(name){
+  //         simulationFn.switchSelectedFabric(name);
+  //       } );
+  //       break;
+  //     case '?id2':
+  //       simulationFn.loadRoomImg(fabricLisId,3,"bathroom",baseUrl,function(name){
+  //         simulationFn.switchSelectedFabric(name);
+  //       } );
 
-    switch(location.search){
-      case '?id1':
-        simulationFn.loadRoomImg(fabricLisId,4,"bedroom",baseUrl,function(name){
-          simulationFn.switchSelectedFabric(name);
-        } );
-        break;
-      case '?id2':
-        simulationFn.loadRoomImg(fabricLisId,3,"bathroom",baseUrl,function(name){
-          simulationFn.switchSelectedFabric(name);
-        } );
-
-        break;
-      case '?id3':
-       simulationFn.loadRoomImg(fabricLisId,3,"livingroom",baseUrl,function(name){
-          simulationFn.switchSelectedFabric(name);
-        } );
-        break;
-      case '?id4':
-       simulationFn.loadRoomImg(fabricLisId,3,"diningroom",baseUrl,function(name){
-          simulationFn.switchSelectedFabric(name);
-        } );
-        break;
-      default:
-        break;
-    }
+  //       break;
+  //     case '?id3':
+  //      simulationFn.loadRoomImg(fabricLisId,3,"livingroom",baseUrl,function(name){
+  //         simulationFn.switchSelectedFabric(name);
+  //       } );
+  //       break;
+  //     case '?id4':
+  //      simulationFn.loadRoomImg(fabricLisId,3,"diningroom",baseUrl,function(name){
+  //         simulationFn.switchSelectedFabric(name);
+  //       } );
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
     //初始化场景对比页
-    simulationFn.initAll();
+    //simulationFn.initAll();
 
 
-  });
+  // });
 
 });

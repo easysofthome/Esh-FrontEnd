@@ -242,3 +242,55 @@
 .error{
   color: red;
 }
+
+.select-box
+{
+  line-height: 28px;
+
+  position: relative;
+
+  width: 131px;
+  height: 28px;
+  margin-right: 13px;
+  margin-left: 5px;
+
+  border: 1px #cecece solid;
+
+  .border-radius(3px);
+  cursor: pointer;
+  &:hover{
+    i{.triangleRotate(#666);}
+  }
+  span
+  {
+    width: 90px;
+    margin-left: 15px;
+  }
+  i
+  {
+    margin-top: 15px;
+    .triangle(#666);
+  }
+  .select-ul
+  {
+    display: none;
+    position: absolute;
+    top: 29px;
+    left: -1px;
+    width: 131px;
+    border: 1px #d9d9d9 solid;
+    background-color: #fff;
+
+    li{
+      padding: 3px 0 3px 15px;
+      &:hover{
+        cursor: pointer;
+        background-color: #1e90ff;
+        color: #fff;
+      }
+    }
+
+
+
+  }
+}
