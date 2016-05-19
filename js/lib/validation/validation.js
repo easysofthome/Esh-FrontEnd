@@ -244,6 +244,7 @@ define(function () {
 				}
 			},
 			onfocusout: function (element, event) {
+
 				if (!this.checkable(element) && (element.name in this.submitted || !
 						this.optional(element))) {
 					this.element(element);

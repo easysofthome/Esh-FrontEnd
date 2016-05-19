@@ -37,11 +37,9 @@ define(function (require, exports, module) {
               error.appendTo( element.siblings('.input-tip') );
           },
           rules: {
-              remitAccount: {
+              fabricName: {
                   required: true,
-                  // creditcard: true
-                  number: true,
-                  maxlength:5
+                  maxlength:20
               },
               remitter: {
                   required: true,

@@ -1,3 +1,6 @@
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easyPricing/pricing/sprite.less';
 .result{
     width: 998px;
     margin: 0 auto;
@@ -22,4 +25,29 @@
          height: 40px;
         border-bottom: 1px solid #efefef;
     }
+
+    p.title{
+    margin: 0 10px;
+    line-height: 52px;
+    height:52px;
+    font-size: 16px;
+    background-image: url("/images/production/easyPricing/pricing/grayline.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    a{
+      color: #666;
+      padding: 0 10px;
+      margin-right: 20px;
+    }
+    .cur,.herfa:hover{
+      color: #3ca1d7;
+      border-bottom: 2px solid #3ca1d7;
+    }
+    span.btn_close{
+      margin-top: 15px;
+      cursor: pointer;
+      .sprite(@btn_close);
+      .icon-easyPricing-pricing;
+    }
+  }
 }

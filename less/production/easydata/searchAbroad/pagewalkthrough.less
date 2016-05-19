@@ -1,0 +1,65 @@
+@import '../../../sprite/easydata/searchAbroad/sprite.less';
+@import '../../../dev/mixins/mixins.less';
+
+
+
+  .guidelayer{
+    border:1px solid red;
+    position:relative;
+    width:630px;
+    height:260px;
+    margin:0;
+    padding:0;
+    }
+
+   .pClick{
+      position:absolute;
+      top: 90px;
+      right: -310px;
+    }
+
+
+  .desContent{
+      position:absolute;
+      top:160px;
+      left:450px;
+
+    }
+
+  .desContent span{
+      .sprite(@guideDes);
+      .icon-easydata-searchAbroad;
+      .fixIe6pngTransparent('/images/icon/easydata/searchAbroad/guideDes.png');
+      text-align: center;
+
+  }
+
+ .skipGuideDiv{
+    padding: 190px 200px 200px 140px;
+  }
+  .skipGuideDiv img{
+    &:hover{
+        cursor: pointer;
+      }
+  }
+
+
+ #jpWalkthrough #jpwTooltip .left{
+    background: url("/images/original/common/handPoint.gif") no-repeat scroll 0 0 transparent;
+    height: 40px;
+    right: -390px;
+    position: absolute;
+    top: 145px;
+    width: 100px;
+    display: block;
+    z-index: 1000;
+}
+
+#middleCenter{
+  &:hover{
+      cursor: pointer;
+    }
+}
+
+
+
