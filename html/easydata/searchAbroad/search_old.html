@@ -19,8 +19,8 @@
     <!-- 精确匹配国外潜在买家(已登录-数据库中有) -->
     <div class="search_box clearfix" style="display: none;">
       <div class="clearfix">
-        <input class="int_430 lf" type="text" placeholder="请选择国家"/>
-        <input class="int_430 lf" type="text" placeholder="请选择产品" />
+        <input class="int_430 lf" id="sel_country" type="text" placeholder="请选择国家"/>
+        <input class="int_430 lf" id="sel_pro" type="text" placeholder="请选择产品" />
         <a class="lf btn" href="#">精准匹配</a>
         <a class="lf btn_00" href="#">重置</a>
       </div>
@@ -671,12 +671,14 @@
   </div>
 
    <div id="walkthrough">
-    <div id="guide_step1" style="display:none;">
-    <p class="tooltipTitle">请选择国家下拉框</p>
-        <p>在选择国家下拉框中可选择不同国家进行精准匹配</p>
-        <br>
-        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
-  </div>
+    <div id="guide_step1" class="guideLayer" style="display:none;">
+      <div class="pClick">
+      <img src="/images/production/common/pleaseClicktoView.png" width="200px" height="30px"/>
+      </div>
+      <div class="desContent">
+      <span><div class="skipGuideDiv"><img id="skipGuideBtn" src="/images/production/common/skipGuide.png" width="84px" height="30px"/></div></span>
+      </div>
+    </div>
 
     <div id="guide_step2" class="guideLayer" style="display:none;">
       <div class="pClick">

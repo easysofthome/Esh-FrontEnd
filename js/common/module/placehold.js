@@ -10,7 +10,7 @@ define(function (require, exports, module) {
   $(document).ready(function () {
     var input = $('.placeholder').siblings('input');
     for (var i = input.length - 1; i >= 0; i--) {
-      if($(input[i]).val()!=''){
+      if($.trim($(input[i]).val()).length>0){
         $(input[i]).siblings('.placeholder').hide();
       }
     };
