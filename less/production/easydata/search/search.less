@@ -269,139 +269,10 @@
         }
       }
     }
-
-    }
-
-
-
-  // 精确匹配国外潜在买家(已登录-数据库中没有)
-  dl.fill{
-    border-top: 1px #dedede solid;
-    margin: 20px 20px 0 20px;
-  }
-  dl{
-    span{
-      margin-top: 29px;
-      font-size: 14px;
-      color: #333;
-    }
-    dd{
-      float:left;
-      margin-right: 30px;
-    }
-    dd.sel_season{
-      position: relative;
-      top: 0;
-      left: 0;
-      i{
-        .triangle(#666);
-        position: absolute;
-        top: 39px;
-        right: 10px;
-      }
-      &:hover i{
-        .triangleRotate(#666);
-      }
-      ul.short_season{
-
-        display:none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 2;
-        width: 120px;
-        height: 194px;
-        overflow-y: scroll;
-        .border-radius(4px);
-        text-align: center;
-        background: #fff;
-        li{
-          margin: 0;
-          padding: 5px 0;
-          color: #333;
-          line-height: 22px;
-          font-size: 14px;
-          cursor: pointer;
-          border-radius: 4px;
-          &:hover{
-            background-color: #3CA1D7;
-            color: #fff;
-          }
-        }
-      }
-    }
-    dd.port{
-      position: relative;
-      top: 0;
-      left: 0;
-      margin-right: 0;
-      input{
-        width: 242px;
-      }
-      i{
-        .triangle(#666);
-        position: absolute;
-        top: 39px;
-        right: 10px;
-      }
-      &:hover i{
-        .triangleRotate(#666);
-      }
-      ul.sel-port{
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 2;
-        width: 264px;
-        height: 194px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        .border-radius(4px);
-        background: #fff;
-        li{
-          position: relative;
-          top: 0;
-          left: 0;
-          padding: 5px 0 5px 10px;
-          color: #333;
-          line-height: 22px;
-          font-size: 14px;
-          border-radius: 4px;
-          &:hover,&:hover span.port-name{
-            background-color: #3CA1D7;
-            color: #fff;
-          }
-          &:hover span.add-port{
-            color: #fff;
-          }
-          span.add-port{
-            position:absolute;
-            top: 4px;
-            right: 15px;
-            margin-top: 0;
-            color: #555;
-            border: 1px solid #fff;
-            width: 24px;
-            height: 23px;
-            line-height:24px;
-            text-align:center;
-            &:hover{
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .int_280{
-    width: 182px;
-
-    margin-left: 10px;
-    margin-top: 20px;
   }
 }
+
+
 
 .search_not{
   border-bottom: none;
@@ -502,24 +373,131 @@
 }
 
 
+// 精确匹配国外潜在买家(已登录-数据库中没有)
+dl.fill{
+  border-top: 1px #dedede solid;
+  margin: 20px 20px 0 20px;
+}
+dl{
+  span{
+    margin-top: 29px;
+    font-size: 14px;
+    color: #333;
+  }
+  dd{
+    float:left;
+    margin-right: 30px;
+  }
+  dd.sel_season{
+    position: relative;
+    top: 0;
+    left: 0;
+    i{
+      .triangle(#666);
+      position: absolute;
+      top: 39px;
+      right: 10px;
+    }
+    &:hover i{
+      .triangleRotate(#666);
+    }
+    ul.short_season{
 
+      display:none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      z-index: 2;
+      width: 120px;
+      height: 194px;
+      overflow-y: scroll;
+      .border-radius(4px);
+      text-align: center;
+      background: #fff;
+      li{
+        margin: 0;
+        padding: 5px 0;
+        color: #333;
+        line-height: 22px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 4px;
+        &:hover{
+          background-color: #3CA1D7;
+          color: #fff;
+        }
+      }
+    }
+  }
+  dd.port{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 0;
+    input{
+      width: 242px;
+    }
+    i{
+      .triangle(#666);
+      position: absolute;
+      top: 39px;
+      right: 10px;
+    }
+    &:hover i{
+      .triangleRotate(#666);
+    }
+    ul.sel-port{
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      z-index: 2;
+      width: 264px;
+      height: 194px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      .border-radius(4px);
+      background: #fff;
+      li{
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 5px 0 5px 10px;
+        color: #333;
+        line-height: 22px;
+        font-size: 14px;
+        border-radius: 4px;
+        &:hover,&:hover span.port-name{
+          background-color: #3CA1D7;
+          color: #fff;
+        }
+        &:hover span.add-port{
+          color: #fff;
+        }
+        span.add-port{
+          position:absolute;
+          top: 4px;
+          right: 15px;
+          margin-top: 0;
+          color: #555;
+          border: 1px solid #fff;
+          width: 24px;
+          height: 23px;
+          line-height:24px;
+          text-align:center;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+input.int_280{
+  width: 182px;
 
-//密切监测国内外同行
-// .supplier_not{
-//   padding-top: 0;
-// }
-// .supplierbox{
-//   padding: 20px 0 ;
-//   .sup_btn{
-//     margin-left: 20px;
-//     .button-variant(#fff,#f97106,#f97106);
-//     .button-size(0,22px,16px,40px,3px);
-//   }
-//   .sup_btng{
-//     margin-left: 20px;
-//     .button-variant(#fff,#cbcbcb,#cbcbcb);
-//     .button-size(0,22px,16px,40px,3px);
-//   }
-// }
+  margin-left: 10px;
+  margin-top: 20px;
+}
 
 
