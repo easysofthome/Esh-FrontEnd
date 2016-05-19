@@ -7,15 +7,33 @@
   <link href="/css/production/other/PC/news.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <div class="mian_box">
-    <p class="title">易动态</p>
-    <ul class="news_box">
-      <li><a class="news" href="#">【新闻】 越南纺企困境的启示wwwwwwwwwwwwwwwwwwww</a></li>
-      <li><a class="news" href="#">【新闻】 越南纺企困境的启示</a></li>
-      <li><a class="news" href="#">【新闻】 越南纺企困境的启示</a></li>
-      <li><a class="news" href="#">【新闻】 越南纺企困境的启示</a></li>
-      <li><a class="news" href="#">【新闻】 越南纺企困境的启示</a></li>
-    </ul>
-  </div>
+   <div class="mian_box">
+        <p class="title">易动态</p>
+        <ul class="news_box" id="a1">
+            <li><a class="news" href="http://www.baidu.com">【新闻】 越南纺企困境的启示wwwwwwwwwwwwwwwwwwww</a></li>
+            <li><a class="news"href="http://www.baidu.com"  >【新闻】 越南纺企困境的启示</a></li>
+            <li><a class="news" href="http://www.baidu.com">【新闻】 越南纺企困境的启示</a></li>
+            <li><a class="news" href="http://www.baidu.com">【新闻】 越南纺企困境的启示</a></li>
+            <li><a class="news" href="http://www.baidu.com">【新闻】 越南纺企困境的启示</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var array =  document.getElementById("a1").getElementsByTagName("a");
+        for (var i = 0; i < array.length; i++)
+        {
+            array[i].onclick = function (evt) {
+                if (!evt) var evt = window.event
+                evt.cancelBubble = true;
+                  evt.preventDefault();
+                bound.OpenWeb(array[i].href);
+                return false;
+            }
+        }
+
+
+    </script>
+
+
+
 </body>
 </html>

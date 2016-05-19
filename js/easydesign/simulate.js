@@ -1,14 +1,11 @@
 define(function (require, exports, module) {
   require('jquery');
-  //require('jquery.event.move');
-  require('jquery.twentytwenty');
+
 
   //页面尺寸改变时场景标题定位
   $(window).resize(function() {
     simulationFn.initPosition();
   });
-
-
 
   //场景对比页
   //胡庆龙 2016-5-5
@@ -18,11 +15,9 @@ define(function (require, exports, module) {
   simulationFn.initAll = function(){
 
   //隐藏面料选择列表
-   this.swichFabricList();
+  this.swichFabricList();
 
-
-
-   this.initPosition();
+  this.initPosition();
 
   }
 
@@ -30,6 +25,7 @@ define(function (require, exports, module) {
   simulationFn.initPosition = function(){
     this.centerAlign("realSceneTitleId",30,30);
     this.centerAlign("vsMark",-60,0,-60);
+    this.centerAlign("selectFabricLeft",-152,30,0);
   }
 
   //居中定位,top值自定义
@@ -82,7 +78,8 @@ define(function (require, exports, module) {
 
     $(".simulation_all img").eq(0).attr("src", baseUrl + roomName +"/"+ roomName + "_vr.jpg");
     $(".simulation_all img").eq(1).attr("src",baseUrl + roomName +"/"+ roomName + "_01_real.jpg");
-
+    $("#fabricListview_left img").eq(0).attr("src",baseUrl + roomName +"/"+ roomName + "_fabric_real.png");
+    $(".selectFabricList_left span").css("height",134);
     loadFabricList(listId,fabricNum,roomName,baseUrl,callback);
 
   }
@@ -98,15 +95,10 @@ define(function (require, exports, module) {
         "<img src=\'"+baseUrl +roomName+"/"+roomName + "_0" + i + "_fabric.jpg\' /></li>");
     }
 
-      if(num == 2){
-        $(".selectFabricList span").css("height", "250px");
-      }
-
-
     callback(roomName);
   }
 
-//$('.simulation').twentytwenty();
+
   $(document).ready(function () {
 
     var fabricLisId = "fabricListview";
@@ -119,7 +111,7 @@ define(function (require, exports, module) {
         } );
         break;
       case '?id2':
-        simulationFn.loadRoomImg(fabricLisId,2,"bathroom",baseUrl,function(name){
+        simulationFn.loadRoomImg(fabricLisId,3,"bathroom",baseUrl,function(name){
           simulationFn.switchSelectedFabric(name);
         } );
 
@@ -141,8 +133,7 @@ define(function (require, exports, module) {
     //初始化场景对比页
     simulationFn.initAll();
 
-    //将原页面中间拖动图标暂时隐藏
-    $(".twentytwenty-handle").hide();
+
   });
 
 });
