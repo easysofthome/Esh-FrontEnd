@@ -337,7 +337,11 @@ define(function (require, exports, module) {
       var leftOffset = cleanValue($(opt.steps[_index].wrapper).offset().left);
       var transparentWidth = cleanValue($(opt.steps[_index].wrapper).innerWidth()) || cleanValue($(opt.steps[_index].wrapper).width());
       var transparentHeight = cleanValue($(opt.steps[_index].wrapper).innerHeight()) || cleanValue($(opt.steps[_index].wrapper).height());
+      var uWidth = opt.steps[_index].userWidth;
 
+      if(uWidth!=0&& uWidth != undefined){
+        transparentWidth = cleanValue(uWidth);
+      }
 
       //get all margin and make it gorgeous with the 'px', if it has no px, IE will get angry !!
       var marginTop = cssSyntax(opt.steps[_index].margin, 'top'),
@@ -533,228 +537,6 @@ define(function (require, exports, module) {
     }
   }
 
-
-
-
-
-  function buildWalkthroughAutoSize(userHeight) {
-    var opt = _activeWalkthrough;
-
-    //call onBeforeShow callback
-    if (_index == 0 && _firstTimeLoad) {
-      if (!onBeforeShow()) return;
-    }
-
-    if (opt.steps[_index].popup.type != 'modal' && opt.steps[_index].popup.type != 'nohighlight') {
-
-      $jpWalkthrough.html('');
-
-      //check if wrapper is not empty or undefined
-      if (opt.steps[_index].wrapper == '' || opt.steps[_index].wrapper == undefined) {
-        alert('Your walkthrough position is: "' + opt.steps[_index].popup.type + '" but wrapper is empty or undefined. Please check your "' + _activeId + '" wrapper parameter.');
-        return;
-      }
-
-      var topOffset = cleanValue($(opt.steps[_index].wrapper).offset().top);
-      var leftOffset = cleanValue($(opt.steps[_index].wrapper).offset().left);
-      var transparentWidth = cleanValue($(opt.steps[_index].wrapper).innerWidth()) || cleanValue($(opt.steps[_index].wrapper).width());
-      var transparentHeight = cleanValue(userHeight);
-
-
-      //get all margin and make it gorgeous with the 'px', if it has no px, IE will get angry !!
-      var marginTop = cssSyntax(opt.steps[_index].margin, 'top'),
-        marginRight = cssSyntax(opt.steps[_index].margin, 'right'),
-        marginBottom = cssSyntax(opt.steps[_index].margin, 'bottom'),
-        marginLeft = cssSyntax(opt.steps[_index].margin, 'left'),
-        roundedCorner = 30, //圆角
-        overlayClass = '',
-        killOverlay = '';
-
-
-      var overlayTopStyle = {
-        'height': cleanValue(parseInt(topOffset) - (parseInt(marginTop) + (roundedCorner)))
-      }
-      //左侧遮罩样式 = 高亮区域左边距 - 高亮区域marginleft - 背景圆角宽度
-      var overlayLeftStyle = {
-        'top': overlayTopStyle.height,
-        'width': cleanValue(parseInt(leftOffset) - (parseInt(marginLeft) + roundedCorner)),
-        'height': cleanValue(parseInt(transparentHeight) + (roundedCorner * 2) + parseInt(marginTop) + parseInt(marginBottom))
-      }
-
-
-      //check if use overlay
-      if (opt.steps[_index].overlay == undefined || opt.steps[_index].overlay) {
-        overlayClass = 'overlay';
-      } else {
-        overlayClass = 'noOverlay';
-        killOverlay = 'killOverlay';
-      }
-
-      var overlayTop = $('<div id="overlayTop" class="' + overlayClass + '"></div>').css(overlayTopStyle).appendTo($jpWalkthrough);
-      var overlayLeft = $('<div id="overlayLeft" class="' + overlayClass + '"></div>').css(overlayLeftStyle).appendTo($jpWalkthrough);
-
-      if (!opt.steps[_index].accessable) {
-
-        var highlightedAreaStyle = {
-          'top': overlayTopStyle.height,
-          'left': overlayLeftStyle.width,
-          'topCenter': {
-            'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight))
-          },
-          'middleLeft': {
-            'height': cleanValue(parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom))
-          },
-          'middleCenter': {
-            'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight)),
-            'height': cleanValue(parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom))
-          },
-          'middleRight': {
-            'height': cleanValue(parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom))
-          },
-          'bottomCenter': {
-            'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight))
-          }
-        }
-
-        var highlightedArea = $('<div id="highlightedArea"></div>').css(highlightedAreaStyle).appendTo($jpWalkthrough);
-
-        highlightedArea.html('<div>' +
-          '<div id="topLeft" class="' + killOverlay + '"></div>' +
-          '<div id="topCenter" class="' + killOverlay + '" style="width:' + highlightedAreaStyle.topCenter.width + ';"></div>' +
-          '<div id="topRight" class="' + killOverlay + '"></div>' +
-          '</div>' +
-
-        '<div style="clear: left;">' +
-          '<div id="middleLeft" class="' + killOverlay + '" style="height:' + highlightedAreaStyle.middleLeft.height + ';"></div>' +
-          '<div id="middleCenter" class="' + killOverlay + '" style="width:' + highlightedAreaStyle.middleCenter.width + ';height:' + highlightedAreaStyle.middleCenter.height + '">&nbsp;</div>' +
-          '<div id="middleRight" class="' + killOverlay + '" style="height:' + highlightedAreaStyle.middleRight.height + ';"></div>' +
-          '</div>' +
-
-        '<div style="clear: left;">' +
-          '<div id="bottomLeft" class="' + killOverlay + '"></div>' +
-          '<div id="bottomCenter" class="' + killOverlay + '" style="width:' + highlightedAreaStyle.bottomCenter.width + ';"></div>' +
-          '<div id="bottomRight" class="' + killOverlay + '"></div>' +
-          '</div>');
-      } else {
-
-        //if accessable
-        var highlightedAreaStyle = {
-          'top': overlayTopStyle.height,
-          'left': overlayLeftStyle.width,
-          'topCenter': {
-            'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight))
-          }
-        }
-
-        var accessableStyle = {
-
-          'topAccessable': {
-            'position': 'absolute',
-            'top': overlayTopStyle.height,
-            'left': overlayLeftStyle.width,
-            'topCenter': {
-              'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight))
-            }
-          },
-          'middleAccessable': {
-            'position': 'absolute',
-            'top': cleanValue(parseInt(overlayTopStyle.height) + roundedCorner),
-            'left': overlayLeftStyle.width,
-            'middleLeft': {
-              'height': cleanValue(parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom))
-            },
-            'middleRight': {
-              'height': cleanValue(parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom)),
-              'right': cleanValue(parseInt(transparentWidth) + roundedCorner + parseInt(marginRight) + parseInt(marginLeft))
-            }
-          },
-          'bottomAccessable': {
-            'left': overlayLeftStyle.width,
-            'top': cleanValue(parseInt(overlayTopStyle.height) + roundedCorner + parseInt(transparentHeight) + parseInt(marginTop) + parseInt(marginBottom)),
-            'bottomCenter': {
-              'width': cleanValue(parseInt(transparentWidth) + parseInt(marginLeft) + parseInt(marginRight))
-            }
-          }
-        }
-
-        var highlightedArea = $('<div id="topAccessable" style="position:' + accessableStyle.topAccessable.position + '; top:' + accessableStyle.topAccessable.top + ';left:' + accessableStyle.topAccessable.left + '">' +
-          '<div id="topLeft" class="' + killOverlay + '"></div>' +
-          '<div id="topCenter" class="' + killOverlay + '" style="width:' + accessableStyle.topAccessable.topCenter.width + '"></div>' +
-          '<div id="topRight" class="' + killOverlay + '"></div>' +
-          '</div>' +
-
-        '<div id="middleAccessable" class="' + killOverlay + '" style="clear: left;position:' + accessableStyle.middleAccessable.position + '; top:' + accessableStyle.middleAccessable.top + ';left:' + accessableStyle.middleAccessable.left + ';">' +
-          '<div id="middleLeft" class="' + killOverlay + '" style="height:' + accessableStyle.middleAccessable.middleLeft.height + ';"></div>' +
-          '<div id="middleRight" class="' + killOverlay + '" style="position:absolute;right:-' + accessableStyle.middleAccessable.middleRight.right + ';height:' + accessableStyle.middleAccessable.middleRight.height + ';"></div>' +
-          '</div>' +
-
-        '<div id="bottomAccessable" style="clear: left;position:absolute;left:' + accessableStyle.bottomAccessable.left + ';top:' + accessableStyle.bottomAccessable.top + ';">' +
-          '<div id="bottomLeft" class="' + killOverlay + '"></div>' +
-          '<div id="bottomCenter" class="' + killOverlay + '" style="width:' + accessableStyle.bottomAccessable.bottomCenter.width + ';"></div>' +
-          '<div id="bottomRight" class="' + killOverlay + '"></div>' +
-          '</div>').appendTo($jpWalkthrough);
-
-      } //end checking accessable
-
-      var highlightedAreaWidth = (opt.steps[_index].accessable) ? parseInt(accessableStyle.topAccessable.topCenter.width) + (roundedCorner * 2) : (parseInt(highlightedAreaStyle.topCenter.width) + (roundedCorner * 2));
-
-
-      var overlayRightStyle = {
-        'left': cleanValue(parseInt(overlayLeftStyle.width) + highlightedAreaWidth),
-        'height': overlayLeftStyle.height,
-        'top': overlayLeftStyle.top,
-        'width': cleanValue(windowWidth() - (parseInt(overlayLeftStyle.width) + highlightedAreaWidth))
-      }
-
-      var overlayRight = $('<div id="overlayRight" class="' + overlayClass + '"></div>').css(overlayRightStyle).appendTo($jpWalkthrough);
-
-      var overlayBottomStyle = {
-        'height': cleanValue($(document).height() - (parseInt(overlayTopStyle.height) + parseInt(overlayLeftStyle.height))),
-        'top': cleanValue(parseInt(overlayTopStyle.height) + parseInt(overlayLeftStyle.height))
-      }
-
-      var overlayBottom = $('<div id="overlayBottom" class="' + overlayClass + '"></div>').css(overlayBottomStyle).appendTo($jpWalkthrough);
-
-
-
-      if ($('#jpWalkthrough').length) {
-        $('#jpWalkthrough').remove();
-      }
-
-      $jpWalkthrough.appendTo('body').show();
-
-      if (opt.steps[_index].accessable) {
-        showTooltip(true);
-      } else {
-        showTooltip(false);
-      }
-
-
-    } else if (opt.steps[_index].popup.type == 'modal') {
-
-      if ($('#jpWalkthrough').length) {
-        $('#jpWalkthrough').remove();
-      }
-
-      if (opt.steps[_index].overlay == undefined || opt.steps[_index].overlay) {
-        showModal(true);
-      } else {
-        showModal(false);
-      }
-
-    } else {
-      if ($('#jpWalkthrough').length) {
-        $('#jpWalkthrough').remove();
-      }
-
-
-      if (opt.steps[_index].overlay == undefined || opt.steps[_index].overlay) {
-        noHighlight(true);
-      } else {
-        noHighlight(false);
-      }
-    }
-  }
 
   /*
    * SHOW MODAL
@@ -1469,6 +1251,7 @@ define(function (require, exports, module) {
       {
         wrapper: '', //an ID of page element HTML that you want to highlight
         margin: 0, //margin for highlighted area, may use CSS syntax i,e: '10px 20px 5px 30px'
+        userWidth:0,
         popup: {
           content: '', //ID content of the walkthrough
           type: 'modal', //tooltip, modal, nohighlight
