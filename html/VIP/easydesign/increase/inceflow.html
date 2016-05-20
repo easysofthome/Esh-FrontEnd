@@ -19,11 +19,11 @@
             <div class="lf long_input" >F42585623</div>
             <span class="lf prompt">注：花型编号自动生成，无需填写。</span>
           </div>
-          <div class="clearfix data_frm">
+          <div class="clearfix data_frm" id="num">
             <span class="lf title_name">花型名称：</span>
             <div class="lf veri_left">
               <span class="placeholder">请输入花型名称</span>
-              <input type="text" value="" class="long_input" name="flowerNameInput" id="flowerNameInput">
+              <input type="text" value="" class="lf long_input" name="flowerNameInput" id="flowerNameInput">
               <div class="input-tip"></div>
             </div>
           </div>
@@ -31,13 +31,12 @@
 
             <span class="lf title_name">规格型号：</span>
 
-            <div class="select-box clearfix lf">
-              <span class="lf">厘米</span> <i class="lf"></i>
-              <ul class="select-ul">
-                <li>米</li>
-                <li>分米</li>
-                <li>毫米</li>
-              </ul>
+            <div class="clearfix lf">
+              <select class="lf" id="type_num">
+                <option value="">厘米</option>
+                <option value="one">分米</option>
+                <option value="two">米</option>
+              </select>
             </div>
             <div class="lf veri_left">
             <input type="text" class="lf fabric_money" name="typeNum_1" id="typeNum_1" >
@@ -50,14 +49,13 @@
             </div>
 
           <div class="clearfix data_frm">
-            <span class="lf title_name">选择颜色分类：</span>
-          <div class="select-box_color clearfix lf">
-             <span class="lf">八色及以上花型</span> <i class="lf"></i>
-              <ul class="select-ul_color">
-                <li>红</li>
-                <li>黄蓝</li>
-                <li>紫色</li>
-              </ul>
+          <span class="lf title_name">选择颜色分类：</span>
+          <div class="clearfix lf">
+               <select class="lf" id="color_type">
+                <option value="">八色及以上花型</option>
+                <option value="one">十色及以上花型</option>
+                <option value="two">十二色及以上花型</option>
+              </select>
           </div>
           </div>
 
@@ -65,20 +63,26 @@
             <span class="lf title_name">花型描述：</span>
             <div class="lf Single_box">
               <div class="clearfix">
-                <label class="lf radio_rg">
+              <div>
+                <label class="lf radio_rg label_radio">
                   <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">普通花型 </span>
                 </label>
-                <label class="lf radio_rg">
+                </div>
+                <div>
+                <label class="lf radio_rg label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">纯条子花型 </span>
                 </label>
-                <label class="lf">
+                </div>
+                <div>
+                <label class="lf label_radio">
                   <input name="Fruit" type="radio" class="lf radio_post" />
                   <span class="lf">其他条子花型</span>
                 </label>
+                </div>
               </div>
-              <textarea name="textareaFlowcla" id="textareaFlowcla" class="textarea_flowcla"></textarea>
+              <textarea name="textareaFlowcla" id="textareaFlowcla" name="textareaFlowcla" class="textarea_flowcla"></textarea>
               <div class="input-tip"></div>
             </div>
           </div>
@@ -98,7 +102,7 @@
             <div class="clearfix unit_box">
               <span class="lf title_name">单元：</span>
               <div class="lf unitbox_wid">
-              <div class="lf handle_one">
+              <div class="lf handle_one selected">
                 <span class="select"></span>
                 条形方格
               </div>
@@ -151,7 +155,7 @@
             <div class="clearfix unit_box">
               <span class="lf title_name">组成：</span>
               <div class="lf unitbox_wid">
-              <div class="lf handle_one">
+              <div class="lf handle_one selected">
                 <span class="select"></span>
                  植物：植物外形、花
               </div>
@@ -184,7 +188,7 @@
             <div class="clearfix unit_box">
               <span class="lf title_name">风格：</span>
               <div class="lf unitbox_wid">
-              <div class="lf handle_one">
+              <div class="lf handle_one selected">
                 <span class="select"></span>
                 西方古典
               </div>
@@ -217,7 +221,7 @@
             <div class="clearfix unit_box">
               <span class="lf title_name">配色：</span>
               <div class="lf unitbox_wid">
-              <div class="lf handle_one">
+              <div class="lf handle_one selected">
                 <span class="select"></span>
                   鲜艳亮丽
               </div>
@@ -241,8 +245,8 @@
         </div>
 
         <p class="clearfix butt_box">
-          <a href="#" class="lf butt_pricing">保存</a>
-          <a target=_blank href="/html/easyPricing/Pop-ups/result.html" class="rg butt_return">保存并发布</a>
+           <input class="lf butt_pricing" type="submit" name="submit" id="submit" value="保存">
+           <input class="rg butt_return" type="submit" name="submit" id="submit" value="保存并发布">
         </p>
       </form>
       </div>

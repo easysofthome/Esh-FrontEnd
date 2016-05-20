@@ -22,11 +22,12 @@
               <div>
               <span class="title_name lf">面料名称：</span>
               <span class="placeholder">请输入面料名称</span>
-              <input type="text" name="fabricName" id="fabricName" class="if long_input">
+              <input type="text" name="fabricName" id="fabricName" class="lf long_input">
               <div class="input-tip"></div>
               </div>
           </div>
           <div class="clearfix data_frm">
+          <div>
             <span class="lf title_name">面料分类：</span>
              <select class="lf" id="fabric-type">
               <option value="">请选择面料分类</option>
@@ -35,9 +36,10 @@
               <option value="three">天鹅绒</option>
               <option value="four">法兰绒</option>
             </select>
-
+          </div>
           </div>
           <div class="clearfix data_frm">
+            <div>
             <span class="lf title_name">起 订 量：</span>
              <select class="lf" id="minimum_order_num">
               <option value="">0-199米</option>
@@ -46,6 +48,7 @@
               <option value="three">200-299米</option>
               <option value="four">3000-399米</option>
             </select>
+            </div>
           </div>
 
           <div class="clearfix rad_frm">
@@ -67,6 +70,7 @@
           </div>
           <div class=" data_frm">
             <div class="clearfix">
+            <div>
               <span class="lf title_name">纱线种类数量：</span>
               <span class="lf title_density">密度单位：</span>
               <select class="lf" id="density_unit">
@@ -74,6 +78,7 @@
               <option value="one">分米</option>
               <option value="two">米</option>
             </select>
+            </div>
             </div>
             <div class="yarntype_box">
               <div class="clearfix yarndensity_box">
@@ -91,20 +96,23 @@
                     </a>
                   </div> -->
                 </div>
-
+<div>
                 <div class="lf">
                   <div class="lf yarn_tit">经密：</div>
+
                   <div class="lf">
                     <input type="text" id="warpSpinnerNum1" name="warpSpinnerNum1" class="density_input lf">
                     <span class="plus lf"></span>
                     <input type="text" id="warpSpinnerNum2" name="warpSpinnerNum2" class="density_input lf">
                     <div class="input-tip">温馨提示：请分别对应输入不同纱线的经密。</div>
                   </div>
-                </div>
 
-              </div>
+                </div>
+              </div></div>
+              <div>
               <ul class="clearfix">
                 <li class="lf yarn_para">
+
                   <span class="lf para_tit">经纱1：</span>
                   <span class="lf include"></span>
                   <div class="lf" style="width: 142px;">
@@ -314,7 +322,11 @@
               </label>
             </div>
           </div>
+          <div>
           <div class="clearfix data_frm">
+            <div>
+            <div>
+            <div>
             <span class="lf title_name">经向花回尺寸：</span>
 
             <input type="text" id="warpFlowerSize" name="warpFlowerSize" class="lf width_company_none ">
@@ -324,7 +336,9 @@
               <option value="one">分米</option>
               <option value="two">米</option>
             </select>
-
+            </div>
+            </div>
+            <div>
             <span class="lf zonal_tit">纬向花回尺寸：</span>
 
             <input type="text" id="acrossFlowerSize" name="acrossFlowerSize" class="lf width_company_none ">
@@ -334,8 +348,11 @@
               <option value="one">分米</option>
               <option value="two">米</option>
             </select>
+            </div>
           </div>
+            </div>
           <div class="clearfix data_frm">
+          <div>
             <span class="lf title_name">汇率：</span>
              <select class="lf" id="exchange_rate">
               <option value="">美元汇率</option>
@@ -343,6 +360,7 @@
             </select>
             <input type="text" class="lf fabric_money" id="exchangeRate" name="exchangeRate">
             <div class="input-tip"></div>
+            </div>
             </div>
           <div class="clearfix data_frm">
             <span class="lf title_name">后处理费用：</span>
@@ -381,9 +399,11 @@
           </div>
 
           <div class="clearfix data_frm">
+          <div>
             <span class="lf title_name">备注信息：</span>
-            <textarea  class="textarea_sty" id="textRemarks"></textarea>
+            <textarea  class="lf textarea_sty" name="textRemarks" id="textRemarks"></textarea>
             <div class="input-tip"></div>
+          </div>
           </div>
           <div class="clearfix data_frm">
             <span class="lf title_name">面料图片：</span>
@@ -398,8 +418,8 @@
         </div>
 
         <p class="clearfix butt_box">
-          <a href="#" class="lf butt_pricing">保存</a>
-          <a href="#" class="rg butt_return">保存并发布</a>
+           <input class="lf butt_pricing" type="submit" name="submit" id="submit" value="保存">
+           <input class="rg butt_return" type="submit" name="submit" id="submit" value="保存并发布">
         </p>
 
         </form>
