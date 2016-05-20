@@ -99,30 +99,28 @@ function fraticLayer(){
   $('#overLayer_fratic_top span:eq(1)').css({'width':150,'top':'55px','right':'50px','position':'absolute','text-align':'center'});
 
 
-  $('#overLayer_fratic_top').bind('mouseover',function(){
-    $('#overLayer_fratic').fadeOut();
-    $('#overLayer_fratic_top').fadeOut();
-  });
-
-
-  $('.twentytwenty-overlay').bind('mouseout',function(){
-     $('#overLayer_fratic').fadeIn();
+  $('.twentytwenty-container').bind('mouseleave',function(){
+      $('#overLayer_fratic').fadeIn();
      $('#overLayer_fratic_top').fadeIn();
   });
 
-  $('.twentytwenty-overlay').css(':hover','cosur:pointer');
-  $('#overLayer_fratic_top').bind('click',function(){
+
+   $('#overLayer_fratic_top').bind('mouseover',function(){
+    $('#overLayer_fratic').fadeOut();
+    $('#overLayer_fratic_top').fadeOut();
 
   });
 
-  // /$('.twentytwenty-overlay').css();
+
+  $('.twentytwenty-container').bind('click',function(){
+      window.location = '/html/easydesign/simulationFabric.html';
+  });
 
 
 }
 
 $(document).ready(function () {
   fraticLayer();
-
 
 });
 
