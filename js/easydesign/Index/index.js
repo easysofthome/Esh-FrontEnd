@@ -68,7 +68,7 @@ define(function (require, exports, module) {
 
  $(".video_icobutt_def").bind('click',function(){
     $("#flashPlay").show();
-    //$(".video_icobutt_def").hide();
+
  });
 
  $("#flashPlay").hover(function(){
@@ -80,7 +80,51 @@ define(function (require, exports, module) {
  });
 
 
-//鼠标拉动效果
+//面料对比遮罩
+function fraticLayer(){
+  var zIndex = $('.twentytwenty-overlay').css('z-index');
+  //$('.twentytwenty-overlay').css({'z-index':'555'});
+  var top = $('.twentytwenty-overlay').offset().top;
+  var left = $('.twentytwenty-overlay').offset().left;
+   var width = $('.twentytwenty-overlay').width();
+   var height = $('.twentytwenty-overlay').height();
+
+
+  $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实场景所用面料</span><span>软件模拟所得面料</span></div></div>')
+  $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
+
+  $('#overLayer_fratic').css({'z-index':'555','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'9999','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic_top span:eq(0)').css({'width':150,'top':'55px','left':'50px','position':'absolute','text-align':'center'});
+  $('#overLayer_fratic_top span:eq(1)').css({'width':150,'top':'55px','right':'50px','position':'absolute','text-align':'center'});
+
+
+  $('#overLayer_fratic_top').bind('mouseover',function(){
+    $('#overLayer_fratic').fadeOut();
+    $('#overLayer_fratic_top').fadeOut();
+  });
+
+
+  $('.twentytwenty-overlay').bind('mouseout',function(){
+     $('#overLayer_fratic').fadeIn();
+     $('#overLayer_fratic_top').fadeIn();
+  });
+
+  $('.twentytwenty-overlay').css(':hover','cosur:pointer');
+  $('#overLayer_fratic_top').bind('click',function(){
+
+  });
+
+  // /$('.twentytwenty-overlay').css();
+
+
+}
+
+$(document).ready(function () {
+  fraticLayer();
+
+
+});
 
 
 
