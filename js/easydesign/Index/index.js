@@ -1,6 +1,11 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
+  require('jquery.event.move');
+  require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
+
+  $('.simulation-box').twentytwenty();
+  $('.twentytwenty-handle').css('left','600px');;
   require('js/easydesign/Index/banner');
   // 模拟效果
   require('js/easydesign/Index/simulation');
@@ -75,22 +80,7 @@ define(function (require, exports, module) {
  });
 
 
- function getFlashMovieObject(movieName)
-{
-  if (window.document[movieName])
-  {
-    return window.document[movieName];
-  }
-  if (navigator.appName.indexOf("Microsoft Internet")==-1)
-  {
-    if (document.embeds && document.embeds[movieName])
-      return document.embeds[movieName];
-  }
-  else // if (navigator.appName.indexOf("Microsoft Internet")!=-1)
-  {
-    return document.getElementById(movieName);
-  }
-}
+//鼠标拉动效果
 
 
 

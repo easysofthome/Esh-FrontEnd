@@ -79,8 +79,7 @@ define(function(require, exports, module) {
 
   //错误信息提示点
   var icons = {
-      def: '<i class="i-def"></i>',
-      error: '<i class="i-error"></i>',
+      error: '<i class="i-error"></i>'
   };
 
   function init() {
@@ -100,6 +99,9 @@ define(function(require, exports, module) {
               formSubmit(form);
               //阻止表单提交
               return false;
+          },
+          onfocusout:function(element){
+              $(element).valid();
           },
           onkeyup: true,
           errorPlacement: function(error, element) {
@@ -154,23 +156,23 @@ define(function(require, exports, module) {
               },
               warpSpinnerNum1: {
                   number: icons.error + '经密值只能是数字！',
-                  required: icons.error + '请输入经密值！',
+                  required: icons.error + '请输入第一个经密值！',
                   maxlength: icons.error + '经密值过大！'
               },
               warpSpinnerNum2: {
                   number: icons.error + '经密值只能是数字！',
-                  required: icons.error + '请输入经密值！',
+                  required: icons.error + '请输入第二个经密值！',
                   maxlength: icons.error + '经密值过大！'
 
               },
               abbSpinnerNum1: {
                   number: icons.error + '经密值只能是数字！',
-                  required: icons.error + '请输入经密值！',
+                  required: icons.error + '请输入第一个经密值！',
                   maxlength: icons.error + '经密值过大！'
               },
               abbSpinnerNum2: {
                   number: icons.error + '经密值只能是数字！',
-                  required: icons.error + '请输入经密值！',
+                  required: icons.error + '请输入第二个经密值！',
                   maxlength: icons.error + '经密值过大！'
               },
               warpFlowerSize:{
