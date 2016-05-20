@@ -39,6 +39,62 @@ define(function (require, exports, module) {
             }
        },
        {
+
+             wrapper: '#sel-pro', //高亮区域 class 或 id
+             margin: '0',         //最好别改
+             isTopFix: false,      //要高亮区域是否固定在顶部
+             appendScrollNum:0,
+             userWidth:710,
+             //引导说明文字图片区域
+             popup:
+             {
+               content: '#guide_step2',//引导元素id/class(提前在页面定义)
+               type: 'tooltip',      //类型
+               position: 'bottom',   //相对高亮区域的位置
+               offsetHorizontal: 0,  //水平位置
+               offsetVertical: 0,    //垂直位置
+               width: '630'
+             },
+             accessable:true,//是否与高亮区域内元素互动
+             lockScrolling: false//是否随滚动条移动
+             ,onLeave:function(){
+
+               return true;
+             },
+             onEnter:function(){
+                selectDropdownGuide("#sel-pro",'#sel-pro .sel-pro');
+                return true;
+            }
+       },
+       {
+
+             wrapper: '#sel-pro', //高亮区域 class 或 id
+             margin: '0',         //最好别改
+             isTopFix: false,      //要高亮区域是否固定在顶部
+             appendScrollNum:0,
+             userWidth:710,
+             //引导说明文字图片区域
+             popup:
+             {
+               content: '#guide_step2',//引导元素id/class(提前在页面定义)
+               type: 'tooltip',      //类型
+               position: 'bottom',   //相对高亮区域的位置
+               offsetHorizontal: 0,  //水平位置
+               offsetVertical: 0,    //垂直位置
+               width: '630'
+             },
+             accessable:true,//是否与高亮区域内元素互动
+             lockScrolling: false//是否随滚动条移动
+             ,onLeave:function(){
+
+               return true;
+             },
+             onEnter:function(){
+                selectDropdownGuide("#sel-pro",'#sel-pro .sel-pro');
+                return true;
+            }
+       },
+       {
              wrapper: '#guideToView', //高亮区域 class 或 id
              margin: '0',         //最好别改
              isTopFix: true,      //要高亮区域是否固定在顶部
@@ -76,7 +132,7 @@ define(function (require, exports, module) {
 
         },
         onAfterShow:function(){
-          selectDropdownGuide();
+          selectDropdownGuide("#sel-country",'#sel-country .sel-country');
           initStyle();
 
           firstLoadGuide();
@@ -139,38 +195,47 @@ define(function (require, exports, module) {
           }
       }
 
-      function selectDropdownGuide(){
+      function selectDropdownGuide(highLightId,dropListId){
           var overlayBottom_Top = $('#overlayBottom').offset().top ;
           var bottomAccessable_top = $('#bottomAccessable').offset().top;
+          var pointUp =  $('#jpwTooltip').offset().top;
 
-          $("#sel-country").hover(function(){
-            var num = $('#sel-country .sel-country').height();
+          //原数据
+          var middleLeft_old = $('#middleLeft').height();
+          var middleRight_old = $('#middleRight').height();
+          var overlayRight_old = $('#overlayRight').height();
+          var overlayLeft_old = $('#overlayLeft').height();
+          var overlayBottomh_old = $('#overlayBottom').height();
+          var overlayBottomt_old = $('#overlayBottom').offset().top;
+          var bottomAccessablet_old = $('#bottomAccessable').offset().top;
+
+          var num = 0;
+          $(highLightId).hover(function(){
+            num = $(dropListId).height();
             var bottomH = $(document).height() - (parseInt($('#overlayTop').height()) + parseInt(num));
-            //alert($('#overlayBottom').offset().top + 'ddd'+num);
-           // alert($('#bottomAccessable').offset().top + 'sss'+num);
 
             var overlayBottom_top_tmp = overlayBottom_Top + num;
             var bottomAccessable_top_tmp = bottomAccessable_top + num;
-            setLightH(num+30,bottomH,overlayBottom_top_tmp,bottomAccessable_top_tmp);
+            setLightH((num+40),(num+100),bottomH,overlayBottom_top_tmp,bottomAccessable_top_tmp);
+
+           $('#jpwTooltip').css('top',2*pointUp);
 
             //动画
             //$(this).stop().animate({});
           },function(){
-            var num = $('#sel-country').height();
-            //setLightH(num,bottomH);
+            setLightH(middleLeft_old,overlayRight_old,overlayBottomh_old,overlayBottomt_old,bottomAccessablet_old);
+
+              $('#jpwTooltip').css('top',pointUp);
 
             //$(this).stop().animate({});
-
           });
-
-
       }
 
-      function setLightH(num,bNum,overlayBottom_Top,bottomAccessable_top){
-        $('#middleLeft').height(num);
-        $('#middleRight').height(num);
-        $('#overlayRight').height(num+60);
-        $('#overlayLeft').height(num+60);
+      function setLightH(middleNum,overlayH,bNum,overlayBottom_Top,bottomAccessable_top){
+        $('#middleLeft').height(middleNum);
+        $('#middleRight').height(middleNum);
+        $('#overlayRight').height(overlayH);
+        $('#overlayLeft').height(overlayH);
         $('#overlayBottom').height(bNum);
         $('#overlayBottom').css('top',overlayBottom_Top);
 
