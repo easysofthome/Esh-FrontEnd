@@ -5,7 +5,7 @@ define(function (require, exports, module) {
   require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
 
   $('.simulation-box').twentytwenty();
-  $('.twentytwenty-handle').css('left','600px');;
+  $('.twentytwenty-handle').css('left','600px');
   require('js/easydesign/Index/banner');
   // 模拟效果
   require('js/easydesign/Index/simulation');
@@ -80,50 +80,60 @@ define(function (require, exports, module) {
  });
 
 
-//面料对比遮罩
+//面料对比遮罩及点击事件
 function fraticLayer(){
   var zIndex = $('.twentytwenty-overlay').css('z-index');
   //$('.twentytwenty-overlay').css({'z-index':'555'});
   var top = $('.twentytwenty-overlay').offset().top;
   var left = $('.twentytwenty-overlay').offset().left;
-   var width = $('.twentytwenty-overlay').width();
-   var height = $('.twentytwenty-overlay').height();
+  var width = $('.twentytwenty-overlay').width();
+  var height = $('.twentytwenty-overlay').height();
 
 
   $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实场景所用面料</span><span>软件模拟所得面料</span></div></div>')
   $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
 
-  $('#overLayer_fratic').css({'z-index':'555','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
-  $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'9999','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic').css({'z-index':'41','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
   $('#overLayer_fratic_top span:eq(0)').css({'width':150,'top':'55px','left':'50px','position':'absolute','text-align':'center'});
   $('#overLayer_fratic_top span:eq(1)').css({'width':150,'top':'55px','right':'50px','position':'absolute','text-align':'center'});
 
 
-  $('#overLayer_fratic_top').bind('mouseover',function(){
-    $('#overLayer_fratic').fadeOut();
-    $('#overLayer_fratic_top').fadeOut();
-  });
-
-
-  $('.twentytwenty-overlay').bind('mouseout',function(){
-     $('#overLayer_fratic').fadeIn();
+  $('.twentytwenty-container').bind('mouseleave',function(){
+      $('#overLayer_fratic').fadeIn();
      $('#overLayer_fratic_top').fadeIn();
   });
 
-  $('.twentytwenty-overlay').css(':hover','cosur:pointer');
-  $('#overLayer_fratic_top').bind('click',function(){
+
+   $('#overLayer_fratic_top').bind('mouseover',function(){
+    $('#overLayer_fratic').fadeOut();
+    $('#overLayer_fratic_top').fadeOut();
 
   });
 
-  // /$('.twentytwenty-overlay').css();
+
+  $('.twentytwenty-container').bind('click',function(){
+      window.location = '/html/easydesign/simulationFabric.html';
+  });
 
 
 }
 
+
+//易家纺设计资源库 点击切换效果
+function switchSourceLib(){
+  $('.tew_box .exp_butt li').bind('click',function(){
+      var currentIndex = $(this).index();
+      $('.tew_box .exp_butt li').removeClass('curr_li');
+      $(this).addClass('curr_li');
+      $('.tew_box .exo_conbox').hide();
+      $('.tew_box .exo_conbox').eq(currentIndex).fadeIn(500);
+  });
+}
+
 $(document).ready(function () {
   fraticLayer();
-
-
+  switchSourceLib();
 });
 
 
