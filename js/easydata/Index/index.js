@@ -31,27 +31,33 @@ define(function (require, exports, module) {
     });
 
 
-       // module drawer
-      $('[control=false] li a').css("display","block");
-      $('[control=true] li').hover(
-        function() {
-          $(this).stop().css('z-index','2').animate({'height':'440px'},500);
-          $(this).find('a').stop().delay(300).fadeIn();
-        },
-        function () {
-          $(this).stop().css('z-index','1').animate({'height':'210px'},300);
-          $(this).find('a').stop().fadeOut();
-        }
-      );
-      $('.module-ul li a').hover(
-        function() {
-          $(this).fadeOut().fadeIn(300);
-        },function () {
-        }
-      );
+      //鼠标滑过特效
+      function hoverAnimate(){
+        // module drawer
+
+        $('[control=false] li a').css("display","block");
+        $('[control=true] li').hover(
+          function() {
+            $(this).stop().css('z-index','2').animate({'height':'440px'},500);
+            $(this).find('a').stop().delay(300).fadeIn();
+          },
+          function () {
+            $(this).stop().css('z-index','1').animate({'height':'210px'},300);
+            $(this).find('a').stop().fadeOut();
+          }
+        );
+        $('.module-ul li a').hover(
+          function() {
+            $(this).fadeOut().fadeIn(300);
+          },function () {
+          }
+        );
+
+      }
 
 
 
+      hoverAnimate();
 
 
   });

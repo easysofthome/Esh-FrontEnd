@@ -108,7 +108,9 @@ define(function (require, exports, module) {
          scrollToTarget(0,function(){
             buildWalkthrough();
             if (_index == 0 && _firstTimeLoad) {
-            if (!onAfterShow()) return;
+              //修改第一次加载也执行onEnter
+            if (!onAfterShow()&& !onEnter()) return;
+
           }
          });
         showCloseButton();
@@ -197,11 +199,14 @@ define(function (require, exports, module) {
 
       _index = 0;
       if (!(onRestart(e))) return;
-      if (!(onEnter(e))) return;
+
 
       scrollToTarget(0,function(){
          buildWalkthrough();
+         if (!(onEnter(e))) return;
       });
+
+
 
     },
 
@@ -270,11 +275,14 @@ define(function (require, exports, module) {
 
       if (!onLeave(e)) return;
       _index = parseInt(_index) + 1;
-      if (!onEnter(e)) return;
+
 
       scrollToTarget(0,function(){
         buildWalkthrough();
+        if (!onEnter(e)) return;
       });
+
+
 
     },
 
@@ -283,12 +291,13 @@ define(function (require, exports, module) {
 
       if (!onLeave(e)) return;
       _index = parseInt(_index) - 1;
-      if (!onEnter(e)) return;
-
 
       scrollToTarget(0,function(){
         buildWalkthrough();
+        if (!onEnter(e)) return;
       });
+
+
     },
 
     getOptions: function(activeWalkthrough) {
@@ -317,7 +326,6 @@ define(function (require, exports, module) {
 
   function buildWalkthrough() {
     var opt = _activeWalkthrough;
-
     //call onBeforeShow callback
     if (_index == 0 && _firstTimeLoad) {
       if (!onBeforeShow()) return;
@@ -338,10 +346,16 @@ define(function (require, exports, module) {
       var transparentWidth = cleanValue($(opt.steps[_index].wrapper).innerWidth()) || cleanValue($(opt.steps[_index].wrapper).width());
       var transparentHeight = cleanValue($(opt.steps[_index].wrapper).innerHeight()) || cleanValue($(opt.steps[_index].wrapper).height());
       var uWidth = opt.steps[_index].userWidth;
+      var uMarginTop = opt.steps[_index].userMarginTop;
 
       if(uWidth!=0&& uWidth != undefined){
         transparentWidth = cleanValue(uWidth);
       }
+
+      if(uMarginTop!=0&& uMarginTop != undefined){
+        topOffset = cleanValue($(opt.steps[_index].wrapper).offset().top + uMarginTop);
+      }
+
 
       //get all margin and make it gorgeous with the 'px', if it has no px, IE will get angry !!
       var marginTop = cssSyntax(opt.steps[_index].margin, 'top'),
@@ -692,6 +706,13 @@ define(function (require, exports, module) {
         arrowLeft = '';
         break;
     }
+    var userArrowTop = opt.steps[_index].popup.userArrowTop;
+    if(userArrowTop != -9999){
+      $('#jpwTooltip span.' + opt.steps[_index].popup.position).css({
+      'top': cleanValue(userArrowTop)
+    });
+    }
+
 
     $('#jpwTooltip span.' + opt.steps[_index].popup.position).css({
       'left': cleanValue(arrowLeft)
@@ -817,7 +838,6 @@ define(function (require, exports, module) {
   function scrollToTarget(Snum,callback) {
 
     var options = _activeWalkthrough;
-
     if (options.steps[_index].autoScroll || options.steps[_index].autoScroll == undefined) {
       if (options.steps[_index].popup.position != 'modal') {
 
@@ -1225,12 +1245,11 @@ define(function (require, exports, module) {
     } else if (typeof method === 'object' || !method) {
 
       methods.init.apply(this, arguments);
-
       // render the overlay on it has a default walkthrough set to show onload
       // 测试用
     //  if (_hasDefault && _counter < 2) {
         setTimeout(function() {
-         // alert("dd");
+
           methods.renderOverlay();
         }, 500);
      // }
@@ -1251,7 +1270,8 @@ define(function (require, exports, module) {
       {
         wrapper: '', //an ID of page element HTML that you want to highlight
         margin: 0, //margin for highlighted area, may use CSS syntax i,e: '10px 20px 5px 30px'
-        userWidth:0,
+        userWidth:0,   //手动设置高亮区宽度，如果值为0，则默认为要高亮显示的元素的宽度
+        userMarginTop:0,//高亮区marginTop 如果值为0，则默认为要高亮显示的元素的top值
         popup: {
           content: '', //ID content of the walkthrough
           type: 'modal', //tooltip, modal, nohighlight
@@ -1261,8 +1281,9 @@ define(function (require, exports, module) {
           width: '320', //default width for each step,
           draggable: false, // set true to set walkthrough draggable,
           contentRotation: 0, //content rotation : i.e: 0, 90, 180, 270 or whatever value you add. minus sign (-) will be CCW direction
-          isTopFix:false,
-          appendScrollNum:0
+          isTopFix:false,     //高亮区是否固定在顶部
+          appendScrollNum:0,  //追加滚动距离
+          userArrowTop:-9999  //默认-9999不修改箭头的top值，否则修改
         },
         overlay: true,
         accessable: false, //if true - you can access html element such as form input field, button etc

@@ -202,7 +202,7 @@
       <a class="lf btn" href="#" id="search">精准匹配</a>
       <a class="lf btn_00" href="#" id="reset">重置</a>
     </div>
-    <dl class="fill clearfix">
+    <dl class="fill clearfix" id="vip_searchParam">
       <dd class="clearfix">
         <input class="int_280 rg" type="text" placeholder="希望销售金额"/>
         <span class="rg">金额</span>
@@ -215,7 +215,7 @@
         <input class="int_280 rg" type="text" placeholder="请输入美元价格"/>
         <span class="rg">产品最低价</span>
       </dd>
-      <dd class="port clearfix">
+      <dd class="port clearfix" id="vip_search_portName_ul">
         <input class="int_280 rg" type="text" placeholder="请输入港口名称"/>
         <span class="rg">港口</span>
         <i></i>
@@ -684,17 +684,24 @@
          <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
         <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
   </div>
+  <div id="guide_step3" style="display:none;">
+    <p class="tooltipTitle">请填写更详细的匹配条件</p>
+        <p>填写更详细的匹配条件，可以更精确的找到国外潜在买家</p>
+        <br>
+         <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
+  </div>
+  <div id="guide_step4" style="display:none;">
+    <p class="tooltipTitle">点击查看</p>
+        <p>点击查看，可了解更多公司相关信息</p>
+        <br>
+         <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+        <a href="javascript:;" class="close-step" style="float:right;">完成</a>
+  </div>
 
 
 
-    <div id="guide_step3" class="guideLayer" style="display:none;">
-      <div class="pClick">
-      <img src="/images/production/common/pleaseClicktoView.png" width="200px" height="30px"/>
-      </div>
-      <div class="desContent">
-      <span><div class="skipGuideDiv"><img id="skipGuideBtn" src="/images/production/common/skipGuide.png" width="84px" height="30px"/></div></span>
-      </div>
-    </div>
+
 
   </div>
 

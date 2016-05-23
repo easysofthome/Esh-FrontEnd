@@ -2,10 +2,11 @@
 
 @import '../../dev/mixins/mixins.less';
 
-body,html,.simulation,.twentytwenty-wrapper{
+body,html,.simulation{
   width: 100%;
   height: 100%;
 }
+
 .simulation_all{
   width:100%;
   height:100%;
@@ -26,36 +27,13 @@ body,html,.simulation,.twentytwenty-wrapper{
     left:50%;
     top:0px;
   }
+
+   .simulationFabricImg img{
+      width:100%;
+      height:100%;
+    }
 }
 
-.twentytwenty-container {
-  margin: 0 auto;
-  font-family: arial;
-}
-img{
-  width:100%;
-  height: 100%;
-}
-
-.vrSceneTitle{
-  position: absolute;
-  display: block;
-  z-index: 9999;
-  top: 30px;
-  left: 30px;
-  width: 194px;
-  height: 36px;
-
-  span{
-    padding-left: 10px;
-    line-height: 36px;
-    text-align: center;
-    color:#fff;
-    .sprite(@vrScene);
-    .icon-easydesign;
-    .fixIe6pngTransparent('/images/icon/easydesign/vrScene.png');
-  }
-}
 
 .realSceneTitle{
   position: absolute;
@@ -113,9 +91,9 @@ img{
 
       .selectFabricList span{
       text-align: center;
-      .sprite(@selectFabricbg);
+      .sprite(@selectFabricbg_470);
       .icon-easydesign;
-      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricbg.png');
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricbg_470.png');
 
     }
     span{
@@ -184,68 +162,8 @@ img{
 
 
 
+
+
 }
 
 
-.selectFabric_left{
-  position: absolute;
-  display: block;
-  z-index: 9999;
-  width: 122px;
-  height: 440px;
-
-  ul{
-    .selectFabricHeader_left span{
-
-      line-height: 36px;
-      text-align: center;
-      color:#fff;
-      .sprite(@selectFabricHeader);
-      .icon-easydesign;
-      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricHeader.png');
-
-    }
-
-      .selectFabricList_left span{
-      text-align: center;
-      .sprite(@selectFabricbg);
-      .icon-easydesign;
-      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricbg.png');
-
-    }
-    span{
-      padding-left: 0px;
-    }
-    span img{
-      border:2px solid #a2a2a1;
-    }
-    span ul{
-      margin-top: 12px;
-    }
-
-    span ul li{
-      margin:0 auto;
-      text-align: center;
-      padding-top:10px;
-      padding-right:2px;
-      width:102px;
-      height:102px;
-    }
-
-    span ul li img{
-      pading:0;
-      width:100px;
-      height:100px;
-    }
-    span ul li img:hover{
-
-    }
-
-    span .selectedFabric img{
-      border:2px solid #fca474;
-    }
-  }
-
-
-
- }
