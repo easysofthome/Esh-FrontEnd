@@ -3,15 +3,6 @@ define(function (require, exports, module) {
   require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
 
 
-
-  $(document).ready(function(){
-
-     //页面引导功能
-    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
-
-
-  });
-
   //检验用户身份
   function showUserGuideByIdentity(){
     var str_url_search = window.location.search;
@@ -124,7 +115,7 @@ define(function (require, exports, module) {
            }
 
             ],
-            onLoad: true,     //只在页面第一次加载时执行
+            onLoad: false,     //只在页面第一次加载时执行
             name: 'Walkthrough',
             onClose: function(){
               removeStyle();
@@ -258,7 +249,7 @@ define(function (require, exports, module) {
            }
 
             ],
-            onLoad: true,     //只在页面第一次加载时执行
+            onLoad: false,     //true只在页面第一次加载时执行
             name: 'Walkthrough',
             onClose: function(){
               removeStyle();
@@ -386,5 +377,13 @@ define(function (require, exports, module) {
     $(window).resize(function() {
         $('body').pagewalkthrough('renderOverlay');
     });
+
+
+    $(document).ready(function(){
+     //页面引导功能
+    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
+
+
+  });
 
 })

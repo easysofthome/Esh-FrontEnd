@@ -45,6 +45,7 @@ define(function (require, exports, module) {
 
     //init method
     init: function(options) {
+
       var options = $.extend({}, $.fn.pagewalkthrough.options, options);
       var that = this;
 
@@ -59,6 +60,7 @@ define(function (require, exports, module) {
         _elements.push(elementId);
 
         //check if onLoad and this is first time load
+       // / alert(options.onLoad);
         if (options.onLoad) {
           _counter++;
         }
@@ -893,7 +895,7 @@ define(function (require, exports, module) {
 
   function showCloseButton() {
     if (!$('jpwClose').length) {
-      $('body').append('<div id="jpwClose"><a href="javascript:;" title="Click here to close"><span></span><br>关闭</a></div>');
+      $('body').append('<div id="jpwClose"><a href="javascript:;" title="点击关闭引导页"><span></span><br>关闭</a></div>');
     }
   }
 
@@ -1248,10 +1250,10 @@ define(function (require, exports, module) {
       // render the overlay on it has a default walkthrough set to show onload
       // 测试用
     //  if (_hasDefault && _counter < 2) {
-        setTimeout(function() {
 
-          methods.renderOverlay();
-        }, 500);
+
+        methods.renderOverlay();
+
      // }
 // 测试用
     } else {

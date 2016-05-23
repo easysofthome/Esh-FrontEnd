@@ -3,26 +3,6 @@ define(function (require, exports, module) {
   require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
 
 
-
-  $(document).ready(function(){
-
-     //页面引导功能
-    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
-
-
-
-  });
-
-function MoveBox(obj) {
-    var divTop = $(obj).offset().top;
-    var divLeft = $(obj).offset().left;
-    $(obj).css({ "position": "absolute", "z-index": "500", "left": divLeft + "px", "top": divTop + "px" });
-    $(obj).animate({ "left": ($("#fixLeftMid").offset().left - $("#fixLeftMid").width()) + "px", "top": ($(document).scrollTop() + 30) + "px", "width": "100px", "height": "70px" }, 500, function () {
-        $(obj).animate({ "left": $("#fixLeftMid").offset().left + "px", "top": $("#fixLeftMid").offset().top + "px" }, 500).fadeTo(0, 0.1).hide(0);
-    });
-}
-
-
   //检验用户身份
   function showUserGuideByIdentity(){
     var str_url_search = window.location.search;
@@ -77,10 +57,11 @@ function MoveBox(obj) {
             }
        }
         ],
-        onLoad: true,     //只在页面第一次加载时执行
+        onLoad: false,     //只在页面第一次加载时执行
         name: 'WalkthroughIndex',
         onClose: function(){
           resetStyle();
+          MoveBox('#toQuikStart');
           return true;
         },
         onCookieLoad: function(){
@@ -112,13 +93,20 @@ function MoveBox(obj) {
         $('.close-step').live('click', function(e){
             resetStyle();
             $.pagewalkthrough('close');
-            MoveBox('#jpWalkthrough');
-
+            MoveBox('#toQuikStart');
 
         });
 
 
-
+      function MoveBox(obj) {
+        var divTop = $(obj).offset().top;
+        var divLeft = $(obj).offset().left;
+        $(obj).css({ "position": "absolute", "z-index": "500", "left": divLeft + "px", "top": divTop + "px" });
+        $(obj).animate({ "left": ($("#fixLeftMid").offset().left - $("#fixLeftMid").width()) + "px", "top": ($("#fixLeftMid").offset().top+ 30) + "px", "width": "100px", "height": "70px" }, 500,
+          function () {
+          $(obj).animate({ "left": $("#fixLeftMid").offset().left + "px", "top": $("#fixLeftMid").offset().top + "px" }, 500).fadeTo(0, 0.1).hide(0);
+        });
+      }
 
       //计算无滚动条的页面宽度
       function windowWidth() {
@@ -187,12 +175,17 @@ function MoveBox(obj) {
 
 
 
-$(window).resize(function() {
-        // /$('body').pagewalkthrough('renderOverlayNew');
-});
+  $(window).resize(function() {
+          // /$('body').pagewalkthrough('renderOverlayNew');
+  });
 
 
+ $(document).ready(function(){
 
+     //页面引导功能
+    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
+
+  });
 
 
 
