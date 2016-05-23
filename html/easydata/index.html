@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/css/production/easydata/global.css">
   <link rel="stylesheet" href="/css/production/easydata/index.css">
+  <link href="/css/production/common/pagewalkthrough.css" type="text/css" rel="stylesheet"/>
   <title>易数椐首页-易家纺电子商务服务平台</title>
 </head>
 <body>
@@ -20,8 +21,8 @@
     <!-- 未登录状态:control=true -->
     <!-- 登录状态: 对应的ul增加.show类，相反的增加.disable类 -->
       <ul class="module-ul module-ul1" control="true">
-        <li class="module-li1">
-          <div class="icon icon-1"></div>
+        <li class="module-li1" id="extra_abroad_buyer">
+          <div id="img_li1" class="icon icon-1"></div>
           <p class="mod-tit">精确匹配国外潜在买家</p>
           <p class="mod-cont">易家纺整合各国官方政府的真实、权威的家纺面料和成品进口数据，帮助您按产品和国家精准寻找到您的潜在客户，并轻松了解到该客户家纺产品的采购比例、采购周期、采购量价以及供应商构成等，方便您进行精准营销。</p>
           <a href="/html/easydata/searchAbroad/search.html">点击查看</a>
@@ -217,9 +218,24 @@
     </div>
   </div><!-- rank-wrapper -->
 
+
+
+   <div id="walkthrough">
+    <div id="guide_step1" style="display:none;">
+
+    <p class="tooltipTitle">精确匹配国外潜在买家</p>
+        <p>点击查看，可通过条件精确匹配到国外潜在买家</p>
+        <br>
+        <a href="javascript:;" class="close-step" style="float:right;">跳过引导页</a>
+  </div>
+
+
+
+  </div>
+
   @@include('easydata/footer.html')
   <script>
-    seajs.use('js/easydata/Index/index');
+    seajs.use(['js/easydata/Index/index','js/easydata/Index/pagewalkthrough']);
   </script>
 </body>
 </html>
