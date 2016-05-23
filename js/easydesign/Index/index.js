@@ -5,7 +5,7 @@ define(function (require, exports, module) {
   require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
 
   $('.simulation-box').twentytwenty();
-  $('.twentytwenty-handle').css('left','600px');;
+  $('.twentytwenty-handle').css('left','600px');
   require('js/easydesign/Index/banner');
   // 模拟效果
   require('js/easydesign/Index/simulation');
@@ -16,6 +16,10 @@ define(function (require, exports, module) {
 
   $(document).ready(function () {
     $('.exo_conbox li').append("<div class='top-line'></div><div class='right-line'></div><div class='bottom-line'></div><div class='left-line'></div>");
+    var w = $(window).width();
+    $('.banner-li').css("width",w);
+    $('.banner-wrapper').css("height",w/3.84);
+
   });
 
   var top;
@@ -89,8 +93,7 @@ function fraticLayer(){
    var width = $('.twentytwenty-overlay').width();
    var height = $('.twentytwenty-overlay').height();
 
-
-  $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实场景所用面料</span><span>软件模拟所得面料</span></div></div>')
+$('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实场景所用面料</span><span>软件模拟所得面料</span></div></div>')
   $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
 
   $('#overLayer_fratic').css({'z-index':'555','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
