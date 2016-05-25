@@ -148,9 +148,6 @@ define(function (require, exports, module) {
             if (!onAfterShow()) return;
           }
          });
-        showCloseButton();
-
-
 
         // setTimeout(function() {
         //   //call onAfterShow callback
@@ -160,41 +157,6 @@ define(function (require, exports, module) {
         onCookieLoad(_globalWalkthrough);
       }
     },
-    renderOverlayAutoSize: function(sizeNum) {
-
-      //if each walkthrough has onLoad = true, throw warning message to the console
-      if (_counter > 1) {
-        debug('Warning: Only first walkthrough will be shown onLoad as default');
-      }
-
-      //get cookie load
-      _isCookieLoad = getCookie('_walkthrough-' + _activeId);
-      _isCookieLoad = undefined;//测试用
-      //check if first time walkthrough
-      if (_isCookieLoad == undefined) {
-        _isWalkthroughActive = true;
-         scrollToTarget(0,function(){
-            buildWalkthroughAutoSize(sizeNum);
-            if (_index == 0 && _firstTimeLoad) {
-            if (!onAfterShow()) return;
-          }
-         });
-        showCloseButton();
-
-
-
-        // setTimeout(function() {
-        //   //call onAfterShow callback
-
-        // }, 100);
-      } else { //check when user used to close the walkthrough to call the onCookieLoad callback
-        onCookieLoad(_globalWalkthrough);
-      }
-    },
-
-
-
-
 
     restart: function(e) {
       if (_index == 0) return;

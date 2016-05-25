@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  var quickPanel = require('js/common/quickPanel');
 
 
   //检验用户身份
@@ -119,6 +120,7 @@ define(function (require, exports, module) {
             name: 'Walkthrough',
             onClose: function(){
               removeStyle();
+              quickPanel.MoveBox();
               return true;
             },
             onCookieLoad: function(){
@@ -253,6 +255,7 @@ define(function (require, exports, module) {
             name: 'Walkthrough',
             onClose: function(){
               removeStyle();
+              quickPanel.MoveBox();
               return true;
             },
             onCookieLoad: function(){
@@ -285,6 +288,7 @@ define(function (require, exports, module) {
       $('.close-step').live('click', function(e){
           $.pagewalkthrough('close');
           removeStyle();
+          quickPanel.MoveBox();
 
       });
 
@@ -380,6 +384,11 @@ define(function (require, exports, module) {
 
 
     $(document).ready(function(){
+       //点击右侧引导页快捷入口，打开引导页
+      $('#userGuide').bind('click',function(){
+          $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
+      });
+
      //页面引导功能
     $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
 
