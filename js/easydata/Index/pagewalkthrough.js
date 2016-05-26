@@ -1,26 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
-
-
-
-  $(document).ready(function(){
-
-     //页面引导功能
-    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
-
-
-
-  });
-
-function MoveBox(obj) {
-    var divTop = $(obj).offset().top;
-    var divLeft = $(obj).offset().left;
-    $(obj).css({ "position": "absolute", "z-index": "500", "left": divLeft + "px", "top": divTop + "px" });
-    $(obj).animate({ "left": ($("#fixLeftMid").offset().left - $("#fixLeftMid").width()) + "px", "top": ($(document).scrollTop() + 30) + "px", "width": "100px", "height": "70px" }, 500, function () {
-        $(obj).animate({ "left": $("#fixLeftMid").offset().left + "px", "top": $("#fixLeftMid").offset().top + "px" }, 500).fadeTo(0, 0.1).hide(0);
-    });
-}
+  var quickPanel = require('js/common/quickPanel');
 
 
   //检验用户身份
@@ -45,6 +26,7 @@ function MoveBox(obj) {
 
   }
 
+//////////////////////////引导页参数配置////////////////////////////////
 
    //vip用户引导项
    var walkthrough_VIPUser = {
@@ -77,10 +59,11 @@ function MoveBox(obj) {
             }
        }
         ],
-        onLoad: true,     //只在页面第一次加载时执行
+        onLoad: false,     //只在页面第一次加载时执行
         name: 'WalkthroughIndex',
         onClose: function(){
           resetStyle();
+          quickPanel.MoveBox();
           return true;
         },
         onCookieLoad: function(){
@@ -94,13 +77,13 @@ function MoveBox(obj) {
 
   };
 
+//////////////////////////引导页按钮控制 ////////////////////////////////
 
-        //页面引导功能
-
+        //上一页
         $('.prev-step').live('click', function(e){
             $.pagewalkthrough('prev',e);
         });
-
+        //下一页
         $('.next-step').live('click', function(e){
             $.pagewalkthrough('next',e);
         });
@@ -108,17 +91,22 @@ function MoveBox(obj) {
         $('.restart-step').live('click', function(e){
             $.pagewalkthrough('restart',e);
         });
-
+        //关闭
         $('.close-step').live('click', function(e){
             resetStyle();
             $.pagewalkthrough('close');
-            MoveBox('#jpWalkthrough');
-
+             quickPanel.MoveBox();
 
         });
 
+        function skipGuide(){
+         $('#jpWalkthrough #skipGuideBtn').bind("click",function(){
+               $.pagewalkthrough('close');
+               resetStyle();
+          });
+      }
 
-
+//////////////////////////引导页样式////////////////////////////////
 
       //计算无滚动条的页面宽度
       function windowWidth() {
@@ -129,7 +117,7 @@ function MoveBox(obj) {
           $(".module-ul1").find('li').eq(0).css({'z-index':'2','height':'440px','color':'#ffffff','background-color':'#3CA1D7'});
           $(".module-ul1").find('li').eq(0).find('a').css({'color':'#ffffff','border':'1px solid #ffffff','display':'block'});
           $(".module-ul2").find('li').eq(1).css({'z-index':'0'});
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1165px'});
+          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
 
           $(".module-ul1").find('li').eq(0).unbind('hover');
 
@@ -142,19 +130,19 @@ function MoveBox(obj) {
          $(".module-ul1").find('li').eq(0).find('a').removeAttr('style');
          $(".module-ul1").find('li').eq(0).css({'z-index':'1','height':'210px'});
 
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1057px'});
+          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
           //重新绑定鼠标滑过特效
           $('[control=false] li a').css("display","block");
           $('[control=true] li').hover(
             function() {
               $(this).stop().css('z-index','2').animate({'height':'440px'},500);
               $(this).find('a').stop().delay(300).fadeIn();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1165px'});
+              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
             },
             function () {
               $(this).stop().css('z-index','1').animate({'height':'210px'},300);
               $(this).find('a').stop().fadeOut();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1057px'});
+              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
             }
           );
           $('.module-ul li a').hover(
@@ -166,12 +154,6 @@ function MoveBox(obj) {
 
       }
 
-      function skipGuide(){
-         $('#jpWalkthrough #skipGuideBtn').bind("click",function(){
-               $.pagewalkthrough('close');
-               resetStyle();
-          });
-      }
 
       function firstLoadGuide(){
           var offsetW = $(document).width() ;
@@ -182,17 +164,24 @@ function MoveBox(obj) {
       }
 
 
+//////////////////////////页面加载与窗口变化////////////////////////////////
+
+  $(window).resize(function() {
+      $('body').pagewalkthrough('renderOverlayNew');
+  });
 
 
+ $(document).ready(function(){
 
+     //点击右侧引导页快捷入口，打开引导页
+    $('#userGuide').bind('click',function(){
+          $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
+      });
 
+     //页面引导功能
+    $('#walkthrough').pagewalkthrough(showUserGuideByIdentity());
 
-$(window).resize(function() {
-        // /$('body').pagewalkthrough('renderOverlayNew');
-});
-
-
-
+  });
 
 
 
