@@ -10,6 +10,10 @@
 
 <body>
   <div class="main-box">
+  <p class="title clearfix">
+      <span class="rg btn_close"></span>
+  </p>
+
     <p class="tit_d">请先下载“易家纺设计软件”，成功安装后即可开始您的设计之旅</p>
     <p class="tit_s"><span class="txt_blue">适用系统环境：</span>WinXP/Vista/Win7/Win8/Win10</p>
 
@@ -60,6 +64,16 @@
       <a class="btn_red" href="#">暂时不下载</a>
     </div>
   </div>
+ <script src="/js/lib/jquery/jquery.js"></script>
+  <script>
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.close,.btn_close').click(function(){
+      parent.layer.close(index);
+    });
 
+    $('.btn a').bind('click',function(){
+       parent.layer.close(index);
+    });
+  </script>
 </body>
 </html>
