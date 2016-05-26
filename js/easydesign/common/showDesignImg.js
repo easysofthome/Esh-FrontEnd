@@ -1,6 +1,9 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/easydesign/common/jquery.fullscreen');
+
+  //当前显示图片索引
+  var curIndex = 0;
+ // require('js/easydesign/common/jquery.fullscreen');
   var baseUrl = '/images/production/easydesign/designFabrics/';
   var objJson = {'objFabricImg':
     [{'src':baseUrl+'bedroom_02_fabric.jpg'},
@@ -31,21 +34,27 @@ define(function (require, exports, module) {
 
     }
 
-    $('#j-lb-pic').attr('src',objJson.objFabricImg_full[0].src);
 
+    setBigImg(objJson,0);
+  }
+
+  //加载第n张图片
+  function setBigImg(objJson,index){
+
+    curIndex = index;
+    setNextOrPrev(index,objJson.objFabricImg_full.length);
+
+    $('#j-lb-pic').attr('src',objJson.objFabricImg_full[index].src);
 
     //获取图片的原始尺寸
-    $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[0].src).load(function() {
+    $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[index].src).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     });
-
-
-
   }
 
-
+  //设置页面尺寸及top left值 可以自适应页面大小
   function setConstrainImg(image,imgObj,parentDiv,leftSide){
     var winH = $(window).height();
     var winW = $(window).width();
@@ -83,12 +92,14 @@ define(function (require, exports, module) {
     $('#j-lb-main').height(winH);
     $('#j-side-cnt').height(winH);
 
-    $(parentDiv).animate({'top':tmpTop,'left':tmpLeft});
+    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
     $(parentDiv).css({'width':w,'height':h});
 
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
   }
 
+
+  //全屏功能
   function clickFullScreen(){
     $('#j-lb-fullscreen').bind('click',function(){
 
@@ -111,10 +122,67 @@ define(function (require, exports, module) {
   }
 
 
+  //下一张图片
+  function nextImg(objJson){
+
+    if(curIndex >= objJson.objFabricImg_full.length-1){
+
+      return false;
+    }
+    curIndex ++;
+    setBigImg(objJson,curIndex);
+  }
+
+   //上一张图片
+  function prevImg(objJson){
+
+    if(curIndex <= 0){
+
+      return false;
+    }
+    curIndex --;
+    setBigImg(objJson,curIndex);
+  }
+
+  //绑定上一张下一张事件
+  function bindScrollBigImg(){
+
+    $('.ctrl-next').bind('click',function(){
+        nextImg(objJson);
+    });
+
+    $('.ctrl-prev').bind('click',function(){
+        prevImg(objJson);
+    });
+  }
+
+  //第一张  最后一张 控制链接显示与否
+  function setNextOrPrev(index,length){
+
+    $('.ctrl-prev').show();
+    $('.ctrl-next').show();
+    if(index<=0){
+      $('.ctrl-prev').hide();
+    }
+    if(index>=(length-1)){
+      $('.ctrl-next').hide();
+    }
+  }
+
+  //为相似花型绑定click事件
+  function similarFlowersClick(){
+      $('#j-resemble li').bind('click',function(){
+           setBigImg(objJson,1);
+      });
+  }
+
+
   $(document).ready(function () {
+    bindScrollBigImg();
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
-    clickFullScreen();
+    similarFlowersClick();
+    //clickFullScreen();
   });
 
   $(window).resize(function(event) {
