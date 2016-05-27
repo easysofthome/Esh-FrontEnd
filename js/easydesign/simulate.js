@@ -56,6 +56,7 @@ define(function (require, exports, module) {
   simulationFn.swichFabricList = function(){
     $(".selectFabricHeader").click(function(){
        $(".selectFabricList").slideToggle();
+       $(".desSelectFabric").slideToggle();
     });
   }
 

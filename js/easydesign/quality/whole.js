@@ -10,11 +10,11 @@ define(function (require, exports, module) {
     });
 
 
-   $('#westernClassical').bind('click',function(){
-        if($('#comprise').css('display')=='none'){
-          $('#comprise').removeClass('none');
+   $('#widthPrice150Title').bind('click',function(){
+        if($('#widthPrice150').css('display')=='none'){
+          $('#widthPrice150').removeClass('none');
         }else{
-          $('#comprise').addClass('none');
+          $('#widthPrice150').addClass('none');
         }
     });
 
