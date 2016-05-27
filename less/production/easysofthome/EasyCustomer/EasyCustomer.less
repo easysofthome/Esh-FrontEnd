@@ -1,0 +1,178 @@
+
+@import '../../../dev/mixins/mixins.less';
+
+@import '../../../sprite/easysofthome/EasyCustomer/sprite.less';
+
+.main-box{
+  padding-bottom: 70px;
+}
+
+// 通用小标题样式
+.title-box{
+  width: 100%;
+  text-align: center;
+  margin: 34px auto;
+  h1{
+    color: #333;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    height: 126px;
+    background: url(/images/original/easysofthome/EasyCustomer/title-l.png) left top no-repeat;
+    .fixIe6pngTransparent('/images/original/easysofthome/EasyCustomer/title-l.png');
+    padding-left: 120px;
+    line-height: 126px;
+    margin: 0 auto;
+    display: inline-block;
+    span{
+      background: url(/images/original/easysofthome/EasyCustomer/title-r.png) 100% center no-repeat;
+      .fixIe6pngTransparent('/images/original/easysofthome/EasyCustomer/title-r.png');
+      display: inline-block;
+      padding-right: 52px;
+    }
+  }
+}
+
+
+// banner
+.banner-box{
+  width: 100%;
+  height: 380px;
+  position: relative;
+  .banner{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -960px;
+  }
+}
+
+
+// 诚意呈现   积分兑换   功能限制
+.words-box{
+  margin: 0 auto;
+  width: 1200px;
+  padding-top: 26px;
+  div.works{
+    color: #333;
+    font-size: 18px;
+    line-height: 38px;
+  }
+}
+.cleartop{
+  padding-top: 0;
+}
+
+
+// 参与方式
+.participatein-box{
+  margin: 0 auto;
+  width: 1200px;
+  padding-top: 26px;
+  div.content-box{
+    text-align: center;
+    width: 1200px;
+    padding: 40px 0;
+    background-color: #fffef0;
+  }
+  div.content{
+    font-size: 24px;
+    color: #5d6b90;
+    font-weight: bold;
+    display: inline-block;
+    div.First-step{
+      i{
+        .sprite(@First_step);
+        .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/First_step.png');
+      }
+    }
+    div.Second-step{
+      i{
+        .sprite(@Second_step);
+        .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/Second_step.png');
+      }
+    }
+    div.Third-step{
+      i{
+        .sprite(@Third_step);
+        .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/Third_step.png');
+      }
+    }
+    div.First-step,div.Second-step,div.Third-step{
+      i{
+        .icon-easysofthome-EasyCustomer;
+        display: inline-block;
+      }
+      p.name{
+        margin-top: 17px;
+        line-height: 24px;
+      }
+    }
+    span.excessive{
+      margin: 65px 54px 0 54px;
+      .sprite(@icon_excessive);
+      .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/icon_excessive.png');
+      .icon-easysofthome-EasyCustomer;
+    }
+  }
+}
+
+
+// 获得奖励
+.reward-box{
+  margin: 0 auto;
+  width: 1200px;
+  padding-top: 26px;
+  div.content-l,div.content-r{
+    width: 600px;
+    background-color: #fef9b7;
+    i{
+      .icon-easysofthome-EasyCustomer;
+    }
+    div.content{
+      margin-left: 20px;
+      p.name{
+        font-size: 20px;
+        color: #ff6c46;
+        font-weight: bold;
+        margin-top: 20px;
+        span{
+          font-size: 14px;
+        }
+      }
+      p.text{
+        color: #333;
+        margin-top: 5px;
+      }
+    }
+  }
+  div.content-l{
+    i{
+      .sprite(@invitation);
+      .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/invitation.png');
+    }
+  }
+  div.content-r{
+    i{
+      .sprite(@Be_invited);
+      .fixIe6pngTransparent('/images/icon/easysofthome/EasyCustomer/Be_invited.png');
+    }
+  }
+  div.works{
+    text-align: center;
+    font-size: 18px;
+    color: #ffb940;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 26px;
+  }
+  div.btn-box{
+    text-align: center;
+    margin-top: 26px;
+    a.btn{
+      display: inline-block;
+      .button-variant(#fff; #ff6c46; #ff6c46);
+      .button-size(0; 30px; 18px; 42px; 5px);
+    }
+  }
+}
