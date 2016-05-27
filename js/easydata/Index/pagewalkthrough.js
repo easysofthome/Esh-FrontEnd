@@ -46,7 +46,7 @@ define(function (require, exports, module) {
                position: 'right',   //相对高亮区域的位置
                offsetHorizontal: 0,  //水平位置
                offsetVertical: 90,    //垂直位置
-               width: '400'
+               width: '520'
              },
              accessable:true,//是否与高亮区域内元素互动
              lockScrolling: false,//是否随滚动条移动
