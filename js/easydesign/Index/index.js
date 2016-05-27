@@ -157,10 +157,67 @@ function switchSourceLib(){
   });
 }
 
+function startVideo(flashPlay){
+
+    flashPlay.append('<object id="flashPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="766" height="750">'+
+        '<param name="movie" value="flash3985.swf" />'+
+        '<param name="quality" value="high" />'+
+        '<embed src="flash3985.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="766" height="750"></embed>'+
+        '</object>)');
+}
+
+function stopVideo(flashPlay){
+  flashPlay.html('');
+}
+
+function bindVideoClick(){
+   var flashPlay = $(window.frames['playVideo'].document).find("#flashPlay");
+
+  $('.video_icobutt_def').bind('click',function(){
+
+      if(flashPlay.find('#flashPlayer').length > 0){
+        alert(document.getElementById('flashPlayer').playState);
+          stopVideo(flashPlay);
+          flashPlay.find('img').show();
+         // $('.video_icobutt_def').show();
+          $('#videoLayer').css({'opacity':0.4,'filter':'alpha(opacity=40)'});
+
+      }else{
+          startVideo(flashPlay);
+          flashPlay.find('img').hide();
+          //$('.video_icobutt_def').hide();
+          $('#videoLayer').css({'opacity':0,'filter':'alpha(opacity=0)'});
+      }
+
+  });
+
+}
+
+function bindVideoHover(){
+   var flashPlay = $(window.frames['playVideo'].document).find("#flashPlay");
+
+
+  $('#videoLayer').bind('mouseover',function(){
+      //$('.video_icobutt_def').show();
+       $('#videoLayer').css({'opacity':0.4,'filter':'alpha(opacity=40)'});
+
+  });
+  $('#videoLayer').bind('mouseleave',function(){
+      if(flashPlay.find('#flashPlayer').length > 0){
+          //$('.video_icobutt_def').hide();
+          $('#videoLayer').css({'opacity':0,'filter':'alpha(opacity=0)'});
+      }
+
+  });
+
+}
+
 
 
 
 $(document).ready(function () {
+  //bindVideoClick();
+ // bindVideoHover();
   fraticLayer();
   switchSourceLib();
 });
