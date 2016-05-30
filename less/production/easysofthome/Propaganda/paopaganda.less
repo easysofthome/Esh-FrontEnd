@@ -4,29 +4,40 @@
     width: 70%;
     margin: 0 auto;
     .pro_topbox{
-        font-size: 60px;
-        line-height: 50px;
         border-bottom: 2px solid #dcdcdc;
-        color: #CCCCCC;
         text-indent: 30px;
-        padding: 10px 0 20px;
-        font-family: "黑体", "微软雅黑";
+        padding: 10px 0 20px 40px;
+        .video_logo{
+            .sprite(@videologo );
+            .icon-easysofthome;
+        }
     }
     h1{
         font-size: 38px;
         font-family: "微软雅黑", "宋体";
         font-weight: 300;
-        text-indent: 30px;
+        text-align: center;
         color: #3ca1d7;
         line-height: 40px;
         padding: 0;
-        margin: 10px 0 20px;
+        margin: 40px 0 0px;
     }
     .video_box{
-        width: 750px;
+        width: 700px;
         height: 420px;
-        margin:60px auto 0 auto;
+        margin:20px auto 0 auto;
 
+    }
+    .video_code{
+        .sprite(@videocode);
+        .icon-easysofthome;
+        margin: 20px auto 0 auto;
+    }
+    .code_text{
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        margin-top:5px;
     }
     .pro_bott{
         width: 100%;
