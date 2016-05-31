@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>易家纺-电子商务平台|面料核价</title>
+    <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
 
@@ -88,7 +89,7 @@
                 <div class="lf">
                   <input type="text" id="warpSpinnerNum1" name="warpSpinnerNum1" class="density_input lf">
                   <span class="plus lf"></span>
-                  <input type="text" id="warpSpinnerNum2" name="warpSpinnerNum2" class="density_input lf">
+                  <input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="warpSpinnerNum2" class="density_input lf">
                   <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
                   <div class="input-tip"></div>
               </div>
@@ -141,7 +142,7 @@
                 <div class="lf">
                   <input type="text" id="abbSpinnerNum1" name="abbSpinnerNum1" class="density_input lf">
                   <span class="plus lf"></span>
-                  <input type="text" id="abbSpinnerNum2" name="abbSpinnerNum2" class="density_input lf">
+                  <input type="text" id="abbSpinnerNum2" errorMsgPosition="rightTop" name="abbSpinnerNum2" class="density_input lf">
                   <div class="input-tip">温馨提示：请分别对应输入不同纱线的经密。</div>
 
                 </div>
@@ -358,7 +359,7 @@
             <option value="">英镑汇率</option>
             <option value="">韩币汇率</option>
           </select>
-          <input type="text" name="exchangeRate" class="lf fabric_money">
+          <input type="text" name="exchangeRate" errorMsgPosition="right" class="lf fabric_money">
           <div class="input-tip"></div>
           </div>
         <div class="clearfix rad_frm">
@@ -385,13 +386,13 @@
             </div>
           <div class="clearfix factoryOffer">
             <span class="lf title_name">染色工缴工厂：</span>
-            <input type="text" id="factoryPrice2" name="factoryPrice2" class="factoryOffer_input lf">
+            <input type="text" id="factoryPrice2" errorMsgPosition="rightTop" name="factoryPrice2" class="factoryOffer_input lf">
             <a href="#" class="lf factoryOffer_butt">选择工厂报价</a>
             <div class="input-tip">温馨提示：（非必选）如果染色工缴未有工厂报价，则默认使用易家纺库工缴价！</div>
           </div>
           <div class="clearfix factoryOffer">
             <span class="lf title_name">其它后处理工厂：</span>
-            <input type="text" id="factoryPrice3" name="factoryPrice3" class="factoryOffer_input lf">
+            <input type="text" id="factoryPrice3" errorMsgPosition="rightBottom" name="factoryPrice3" class="factoryOffer_input lf">
             <a href="#" class="lf factoryOffer_butt">选择工厂报价</a>
             <div class="input-tip">
               温馨提示：（非必选）如果未有其他后处理工厂报价，则默认使用易家纺库价格！
