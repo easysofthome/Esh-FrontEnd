@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>易核价-易家纺电子商务服务平台_单品核价</title>
+   <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
@@ -280,8 +282,8 @@
             <div class="pricebox clearfix">
             <p class="lf price"><span class="txt_red">*</span>耗用数量</p>
               <input class="int intacc lf" type="text" id="useEndNum" name="useEndNum" value="12" />
-              <div class="input-tip"></div>
               <p class="lf price">个</p>
+               <div class="input-tip"></div>
             </div>
           </td>
           <td>1.83 米</td>
@@ -290,6 +292,7 @@
               <p class="lf price txt_red">*</p>
               <input class="int intacc lf" id="yuanPerNum" name="yuanPerNum" type="text"value="0.8" />
               <p class="lf price">元/个</p>
+              <div class="input-tip"></div>
             </div>
           </td>
           <td>0.366</td>
@@ -313,12 +316,13 @@
             <span class="lf">选择工厂报价核价</span>
           </label>
           </div>
-        </div>
+          <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
+      </div>
       <div class="clearfix factoryOffer marginleft">
         <span class="lf title_name">款式工缴报价工厂：</span>
         <input type="text" id="factoryOffer" name="factoryOffer" class="factoryOffer_input lf">
         <a href="#" class="lf factoryOffer_butt">选择工厂报价</a>
-        <div class="input-tip">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</div>
+        <div class="input-tip"></div>
 
       </div>
     </div>
@@ -333,8 +337,7 @@
 </div>
 
 @@include('easyPricing/common/footer2.html')
-
-
+<script>seajs.use('js/easyPricing/singlePro/modify');</script>
 
 </body>
 </html>

@@ -106,6 +106,20 @@
     </ul>
     @@include('/easyPricing/common/next2.html')
   </div>
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+  <script src="/js/rootConfig.js"></script>
+  <script type="text/javascript">
 
+seajs.use(['jquery'],function($){
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.close,.btn_close,.btn_gray.lf').click(function(){
+      parent.layer.close(index);
+    });
+  });
+
+
+</script>
 </body>
 </html>

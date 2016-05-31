@@ -38,9 +38,11 @@
 
   <!-- 单品核价结果 -->
   <div class="modifybox">
+   <form method="post" id="completeForm" action="">
     <p class="title">单品核价结果</p>
     <!-- 单品核价结果 -->
     <div class="resultbox">
+
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit tittwo">
           <td class="re_sin_type" rowspan="2">款式</td>
@@ -104,13 +106,15 @@
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" type="text"value="150" />
+              <input class="int lf" id="fabricWidth" name="fabricWidth" type="text"value="150" />
               <p class="lf price">厘米</p>
+              <div class="input-tip"></div>
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" type="text"value="15.64" />
+              <input class="int lf" id="fabricPrice" name="fabricPrice" type="text" value="15.64" />
               <p class="lf price">元/米</p>
+              <div class="input-tip"></div>
             </div>
           </td>
         </tr>
@@ -120,11 +124,14 @@
     <!-- 按钮 -->
     <div class="btnbox clearfix">
       <a class="lf btn_gray" href="/html/easyPricing/singleProduct/modify.html">返　回</a>
-      <a class="lf btn_blue" href="#">收藏核价结果</a>
+      <a class="lf btn_blue" id="collectPricingResult" href="#">收藏核价结果</a>
     </div>
+    </form>
   </div>
 </div>
 
 @@include('easyPricing/common/footer2.html')
+<script>seajs.use('js/easyPricing/singlePro/complete');</script>
+
 </body>
 </html>

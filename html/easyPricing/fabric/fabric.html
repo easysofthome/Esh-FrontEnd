@@ -44,6 +44,7 @@
             </div>
           </div>
           <div class="clearfix data_frm">
+          <div>
             <span class="lf title_name">面料门幅：</span>
             <input type="text" id="fabricWidth" name="fabricWidth" class="lf fabric_width">
             <select class="lf handle_mag" id="sel2" >
@@ -52,6 +53,7 @@
               <option value="">米</option>
             </select>
              <div class="input-tip"></div>
+          </div>
           </div>
           <div class=" data_frm">
             <div class="clearfix">
@@ -87,7 +89,8 @@
                   <input type="text" id="warpSpinnerNum1" name="warpSpinnerNum1" class="density_input lf">
                   <span class="plus lf"></span>
                   <input type="text" id="warpSpinnerNum2" name="warpSpinnerNum2" class="density_input lf">
-                   <div class="input-tip">温馨提示：请分别对应输入不同纱线的经密。</div>
+                  <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
+                  <div class="input-tip"></div>
               </div>
 
             </div>
@@ -406,25 +409,6 @@
     </div>
   </div>
   @@include('easyPricing/common/footer2.html')
-  <script>
-  seajs.use(['jquery','customSelect','spinner','FancyRadioCheckBox','js/easyPricing/fabric/fabric'],function ($,cus,spinner,FancyRadioCheckBox) {
-    $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
-    $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
-    $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
-
-    $('#warp-spinner').spinner({min:1,max:2});
-    $('#abb-spinner').spinner({min:1,max:4});
-
-    FancyRadioCheckBox.init();
-
-    $('.handle_one').click(function() {
-      $(this).toggleClass('selected');
-    });
-
-
-
-
-  });
-</script>
+  <script>seajs.use('js/easyPricing/fabric/fabric');</script>
   </body>
   </html>
