@@ -1,29 +1,41 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/validation/validation');
   require('js/lib/tip/jquery.poshytip');
+  require('js/lib/validation/validation');
 
-////////////////////////////提示框 tip///////////////////////////////////
-function showTip(obj,msg){
+////////////////////////////错误提示框 tip///////////////////////////////////
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 
  $(obj).poshytip({
       className: 'tip-violet',
       content: msg,
       showOn: 'none',
       alignTo: 'target',
-      alignX: 'inner-left',
-      alignY: 'top',
-      offsetX: 0,
-      offsetY: 10
+      alignX: alignX,
+      alignY: alignY,
+      offsetX: offsetX,
+      offsetY: offsetY
     });
 
   $(obj).poshytip('show');
 }
 
-
-
-
+function setMsgPosition(obj,msg,direction){
+  switch(direction){
+    case "right":
+      showTip(obj,msg,"right","center",5,0);
+      break;
+    case "rightTop":
+      showTip(obj,msg,"inner-left","top",50,5);
+      break;
+    case "rightBottom":
+      showTip(obj,msg,"inner-left","bottom",0,5);
+      break;
+    default:
+      showTip(obj,msg,"inner-left","top",0,10);
+  }
+}
 
 
 ////////////////////////////弹出层///////////////////////////////////
@@ -195,10 +207,9 @@ function showTip(obj,msg){
               $(element).valid();
           },
           errorPlacement: function(error, element) {
-           // alert(error.text());
             $(element).poshytip('destroy');
             if(error.text().trim().length > 0){
-                showTip(element,error.text());
+                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
             }
 
               return true;

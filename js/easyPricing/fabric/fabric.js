@@ -3,8 +3,42 @@ define(function(require, exports, module) {
     require('layer');
     require('spinner');
     require('customSelect');
-    var FancyRadioCheckBox = require('FancyRadioCheckBox');
+    require('js/lib/tip/jquery.poshytip');
     require('js/lib/validation/validation');
+
+////////////////////////////错误提示框 tip///////////////////////////////////
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+ $(obj).poshytip({
+      className: 'tip-violet',
+      content: msg,
+      showOn: 'none',
+      alignTo: 'target',
+      alignX: alignX,
+      alignY: alignY,
+      offsetX: offsetX,
+      offsetY: offsetY
+    });
+
+  $(obj).poshytip('show');
+}
+
+function setMsgPosition(obj,msg,direction){
+  switch(direction){
+    case "right":
+      showTip(obj,msg,"right","center",5,0);
+      break;
+    case "rightTop":
+      showTip(obj,msg,"inner-left","top",50,5);
+      break;
+    case "rightBottom":
+      showTip(obj,msg,"inner-left","bottom",0,5);
+      break;
+    default:
+      showTip(obj,msg,"inner-left","top",0,5);
+  }
+}
+
 
 ////////////////////////////表单样式///////////////////////////////////
     $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
@@ -13,8 +47,6 @@ define(function(require, exports, module) {
 
     $('#warp-spinner').spinner({min:1,max:2});
     $('#abb-spinner').spinner({min:1,max:4});
-
-    FancyRadioCheckBox.init();
 
     $('.handle_one').click(function() {
       $(this).toggleClass('selected');
@@ -96,15 +128,17 @@ var startPriceLayer = {
              return false;
           },
           onfocusout:function(element){
-              //修正的一个奇怪的bug，有时候错误信息不显示
-              if($('.input-tip').find('span').length>0){
-                $('.input-tip').find('span').show();
-              }
               $(element).valid();
           },
           errorPlacement: function(error, element) {
-              error.appendTo(element.siblings('.input-tip') );
+             $(element).poshytip('destroy');
+              if(error.text().trim().length > 0){
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
               return true;
+          },
+          success:function(element){
+              $(element).poshytip('destroy');
           },
           rules: {
               fabricWidth: {
