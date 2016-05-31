@@ -2,33 +2,10 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/lib/validation/validation');
-  require('js/lib/tip/jquery.poshytip');
-
-////////////////////////////提示框 tip///////////////////////////////////
-function showTip(obj,msg){
-
- $(obj).poshytip({
-      className: 'tip-violet',
-      content: msg,
-      showOn: 'none',
-      alignTo: 'target',
-      alignX: 'inner-left',
-      alignY: 'top',
-      offsetX: 0,
-      offsetY: 10
-    });
-
-  $(obj).poshytip('show');
-}
-
-
-
-
 
 
 ////////////////////////////弹出层///////////////////////////////////
-
-  //获取出口税率
+      //获取出口税率
       $("#exportTariff").attr('href', 'javascript:void(0)');
       $("#exportTariff").bind("click",function(){
         $.layer({
@@ -160,10 +137,10 @@ function showTip(obj,msg){
 
 
   // form
-  var form = $("#pricingModifyForm");
+  var form = $("#combinationModifyForm");
 
   $('#btnStartPrice').on('click', function() {
-        form.submit();
+          form.submit();
 
   });
 
@@ -188,26 +165,21 @@ function showTip(obj,msg){
               //提交表单
             // formSubmit(form);
               //阻止表单提交
-             window.location = "/html/easyPricing/singleProduct/complete.html";
+             window.location = "/html/easyPricing/combination/complete.html";
              return false;
           },
           onfocusout:function(element){
+               //修正的一个奇怪的bug，有时候错误信息不显示
+              if($('.input-tip').find('span').length>0){
+                $('.input-tip').find('span').show();
+              }
               $(element).valid();
           },
+          onkeyup: true,
           errorPlacement: function(error, element) {
-           // alert(error.text());
-            $(element).poshytip('destroy');
-            if(error.text().trim().length > 0){
-                showTip(element,error.text());
-            }
-
-              return true;
+              error.appendTo(element.siblings('.input-tip') );
           },
-          success:function(element){
-              $(element).poshytip('destroy');
-          }
-          ,
-           rules: {
+          rules: {
               USARate: {
                   number:true,
                   required: true,
@@ -287,32 +259,27 @@ function showTip(obj,msg){
                   required: true,
                   maxlength:8
               },
-              fabricWidth: {
+              fabricWidth_a: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              fabricPrice: {
+              fabricPrice_a: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              yuanPerM: {
+              fabricWidth_b: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              yuanPerNum: {
+              fabricPrice_b: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              useEndNum: {
-                  number:true,
-                  required: true,
-                  maxlength:8
-              },
-              factoryOffer: {
+              factoryOffer : {
                   number:true,
                   maxlength:8
               }
@@ -398,29 +365,24 @@ function showTip(obj,msg){
                   required: '利润率不能为空！',
                   maxlength:'输入数值过长！'
               },
-              fabricWidth: {
+              fabricWidth_a: {
                   number:'请输入数字！',
                   required: '面料门幅不能为空！',
                   maxlength:'输入数值过长！'
               },
-              fabricPrice: {
+              fabricPrice_a: {
                   number:'请输入数字！',
                   required: '面料价格不能为空！',
                   maxlength:'输入数值过长！'
               },
-              yuanPerM: {
+              fabricWidth_b: {
                   number:'请输入数字！',
-                  required: '辅料单价(元/米)不能为空！',
+                  required: '面料门幅不能为空！',
                   maxlength:'输入数值过长！'
               },
-              yuanPerNum: {
+              fabricPrice_b: {
                   number:'请输入数字！',
-                  required: '辅料单价(元/个)不能为空！',
-                  maxlength:'输入数值过长！'
-              },
-              useEndNum: {
-                  number:'请输入数字！',
-                  required: '耗用数量不能为空！',
+                  required: '面料价格不能为空！',
                   maxlength:'输入数值过长！'
               },
               factoryOffer: {
@@ -428,7 +390,6 @@ function showTip(obj,msg){
                   maxlength:'输入数值过长！'
               }
           }
-
       });
   }
 
