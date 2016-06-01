@@ -118,7 +118,10 @@ define(function (require, exports, module) {
                 //阻止表单提交
                 return false;
             },
-            onkeyup: false,
+             onfocusout:function(element){
+              $('.input-tip span').css('display','block');
+              $(element).valid();
+            },
             errorPlacement: function(error, element) {
                 error.appendTo( element.siblings('.input-tip') );
             },
@@ -141,10 +144,12 @@ define(function (require, exports, module) {
                     equalTo: '#form-pwd'
                 },
                 CompanyName:{
-                    required: true
+                    required: true,
+                    chCompanyName:true
                 },
                 CompanyNameEn: {
-                    required: true
+                    required: true,
+                    enCompanyName:true
                 },
                 AuthCode: {
                     required: true,
@@ -233,6 +238,15 @@ define(function (require, exports, module) {
             var target = $(param);
             return value !== target.val();
         }, icons.error + '密码与用户名相似，有被盗风险，请更换密码');
+
+        $.validator.addMethod('enCompanyName', function (value, element, param) {
+            return this.optional(element) || EnCompanyNameRule($(element), value);
+        }, '');
+         $.validator.addMethod('chCompanyName', function (value, element, param) {
+            return this.optional(element) || ChCompanyNameRule($(element), value);
+        }, '');
+
+
     }
 /** 用户名验证 */
     function userRule (element, value) {
@@ -252,7 +266,47 @@ define(function (require, exports, module) {
             flag[1] = 'email';  //邮箱验证成功
         }
         if(!flag[0]){
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '格式有误' +'</span>');
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的手机号或邮箱地址' +'</span>');
+        }else{
+            element.parent().find('.input-tip').html('');
+        }
+        return flag;
+    }
+
+    //验证企业英文名称
+    function EnCompanyNameRule(element, value){
+        var reg = /^[a-z]{2,50}([a-z\.\s\,\(\)-（）]{0,50})$/i;
+        var flag = false;
+        if($.trim(value).lenght == 0){
+            flag = false;
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '企业英文名称不能为空' +'</span>');
+            return flag;
+        }
+        if(reg.test(value)){
+            flag = true;
+        }
+        if(!flag){
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的企业英文名称' +'</span>');
+        }else{
+            element.parent().find('.input-tip').html('');
+        }
+        return flag;
+    }
+
+     //验证企业中文名称
+    function ChCompanyNameRule(element, value){
+        var reg = /^[\u4e00-\u9fa5]{2,50}$/;
+        var flag = false;
+        if($.trim(value).lenght == 0){
+            flag = false;
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '企业中文名称不能为空' +'</span>');
+            return flag;
+        }
+        if(reg.test(value)){
+            flag = true;
+        }
+        if(!flag){
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的企业中文名称' +'</span>');
         }else{
             element.parent().find('.input-tip').html('');
         }

@@ -113,32 +113,47 @@
       </div>
       <p class="name">滚边枕头</p>
       <div class="dropbox clearfix">
+      <form method="post" id="choiceForm" action="">
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_a" name="spam[]" type="checkbox" checked="checked" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_b" name="spam[]" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_c" name="spam[]" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_d" name="spam[]" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_e" name="spam[]" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div>
         <label class="lab lf clearrfix label_check">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" id="spam_f" name="spam[]" type="checkbox" />
           <span class="words lf">70*72</span>
         </label>
+        </div>
+        <div class="input-tip" id="messageBox"></div>
+        </form>
       </div>
-      <a class="btn" href="/html/easyPricing/singleProduct/modify.html">下一步</a>
+      <a class="btn" id="btnNext" href="javascript:void(0)">下一步</a>
     </li>
     <li class="lf array">
       <div class="picture">
@@ -189,11 +204,6 @@
   @@include('easyPricing/common/next.html')
   </div>
   @@include('easyPricing/common/footer2.html')
-  <script>
-    seajs.use(['jquery','FancyRadioCheckBox'],function ($,FancyRadioCheckBox){
-      FancyRadioCheckBox.init();
-    });
-
-  </script>
+  <script>seajs.use('js/easyPricing/singlePro/choice');</script>
 </body>
 </html>

@@ -4,6 +4,22 @@ define(function (require, exports, module) {
   require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
 
+  ///////////////////////表单样式初始化//////////////////////////////////
+  var FancyRadioCheckBox = require('FancyRadioCheckBox');
+  FancyRadioCheckBox.init();
+
+  var evTimeStamp = 0;
+  $('.lab').on('click', function() {
+    var now = +new Date();
+    if (now - evTimeStamp < 100) {
+      return;
+    }
+    evTimeStamp = now;
+
+    $('.modifybox').find('.information').eq($(this).index()).toggle();
+  });
+
+
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 
@@ -37,10 +53,9 @@ function setMsgPosition(obj,msg,direction){
   }
 }
 
-
 ////////////////////////////弹出层///////////////////////////////////
 
-  //获取出口税率
+      //获取出口税率
       $("#exportTariff").attr('href', 'javascript:void(0)');
       $("#exportTariff").bind("click",function(){
         $.layer({
@@ -126,8 +141,8 @@ function setMsgPosition(obj,msg,direction){
 
 
        //替换面料
-      $(".replaceFabric_name").attr('href', 'javascript:void(0)');
-      $(".replaceFabric_name").bind("click",function(){
+      $("#replaceFabric_id").attr('href', 'javascript:void(0)');
+      $("#replaceFabric_id").bind("click",function(){
         $.layer({
           type:2,
           title: false,
@@ -172,10 +187,10 @@ function setMsgPosition(obj,msg,direction){
 
 
   // form
-  var form = $("#pricingModifyForm");
+  var form = $("#suiteModifyForm");
 
   $('#btnStartPrice').on('click', function() {
-        form.submit();
+          form.submit();
 
   });
 
@@ -200,7 +215,7 @@ function setMsgPosition(obj,msg,direction){
               //提交表单
             // formSubmit(form);
               //阻止表单提交
-             window.location = "/html/easyPricing/singleProduct/complete.html";
+             window.location = "/html/easyPricing/suite/complete.html";
              return false;
           },
           onfocusout:function(element){
@@ -209,16 +224,14 @@ function setMsgPosition(obj,msg,direction){
           errorPlacement: function(error, element) {
             $(element).poshytip('destroy');
             if(error.text().trim().length > 0){
-                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+                setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
             }
-
-              return true;
+            //error.appendTo(element.siblings('.input-tip') );
           },
           success:function(element){
               $(element).poshytip('destroy');
-          }
-          ,
-           rules: {
+          },
+          rules: {
               USARate: {
                   number:true,
                   required: true,
@@ -298,32 +311,47 @@ function setMsgPosition(obj,msg,direction){
                   required: true,
                   maxlength:8
               },
-              fabricWidth: {
+              fabricWidth_a: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              fabricPrice: {
+              fabricPrice_a: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              yuanPerM: {
+              fabricWidth_b: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              yuanPerNum: {
+              fabricPrice_b: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              useEndNum: {
+              fabricWidth_c: {
                   number:true,
                   required: true,
                   maxlength:8
               },
-              factoryOffer: {
+              fabricPrice_c: {
+                  number:true,
+                  required: true,
+                  maxlength:8
+              },
+              yuanPerKg: {
+                  number:true,
+                  required: true,
+                  maxlength:8
+              },
+              fillingWeight : {
+                  number:true,
+                  required: true,
+                  maxlength:8
+              },
+              factoryOffer : {
                   number:true,
                   maxlength:8
               }
@@ -409,29 +437,44 @@ function setMsgPosition(obj,msg,direction){
                   required: '利润率不能为空！',
                   maxlength:'输入数值过长！'
               },
-              fabricWidth: {
+              fabricWidth_a: {
                   number:'请输入数字！',
                   required: '面料门幅不能为空！',
                   maxlength:'输入数值过长！'
               },
-              fabricPrice: {
+              fabricPrice_a: {
                   number:'请输入数字！',
                   required: '面料价格不能为空！',
                   maxlength:'输入数值过长！'
               },
-              yuanPerM: {
+              fabricWidth_b: {
                   number:'请输入数字！',
-                  required: '辅料单价(元/米)不能为空！',
+                  required: '面料门幅不能为空！',
                   maxlength:'输入数值过长！'
               },
-              yuanPerNum: {
+              fabricPrice_b: {
                   number:'请输入数字！',
-                  required: '辅料单价(元/个)不能为空！',
+                  required: '面料价格不能为空！',
                   maxlength:'输入数值过长！'
               },
-              useEndNum: {
+              fabricWidth_c: {
                   number:'请输入数字！',
-                  required: '耗用数量不能为空！',
+                  required: '面料门幅不能为空！',
+                  maxlength:'输入数值过长！'
+              },
+              fabricPrice_c: {
+                  number:'请输入数字！',
+                  required: '面料价格不能为空！',
+                  maxlength:'输入数值过长！'
+              },
+              yuanPerKg: {
+                  number:'请输入数字！',
+                  required: '辅料单价(元/公斤)不能为空',
+                  maxlength:'输入数值过长！'
+              },
+              fillingWeight: {
+                  number:'请输入数字！',
+                  required: '填充重量不能为空',
                   maxlength:'输入数值过长！'
               },
               factoryOffer: {
@@ -439,7 +482,6 @@ function setMsgPosition(obj,msg,direction){
                   maxlength:'输入数值过长！'
               }
           }
-
       });
   }
 
