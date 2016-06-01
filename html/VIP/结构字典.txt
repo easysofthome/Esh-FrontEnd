@@ -28,6 +28,7 @@ common                              会员中心通用页面
   | register                          注册
 
   security（文件夹）
+  | childAccount                      子账号管理
   | modifyPwd-addto                   设置登录密码
   | modifyPwd                         登录密码修改
   | security                          安全管理
