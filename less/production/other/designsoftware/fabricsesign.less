@@ -1,0 +1,54 @@
+@import '../../../dev/mixins/mixins.less';
+@import '../../../sprite/other/designsoftware/sprite.less';
+
+.fabricsesign_box{
+  width: 454px;
+  font-size: 12px;
+  .fabricsesign_titbox,.classif_box{
+    width: 434px;
+    margin:0 auto;
+  }
+  .classification{
+    background-color: #567fb7;
+    height: 36px;
+
+  }
+  .classif_text{
+    line-height: 36px;
+    color:#fff;
+  }
+  .spread{
+    .sprite(@spread);
+    .icon-other-designsoftware;
+    margin:12px 0 0 4px;
+  }
+  .fabricsesign_tit{
+    line-height: 36px;
+
+    color: #4c4c4c;
+    padding-right: 10px;
+    border-right: 1px solid #e6e6e6;
+  }
+  .fabricsesign_buttbox{
+    margin-top: 5px;
+    width: 200px;
+    background-color: #e0e0e0;
+    height: 24px;
+    line-height: 24px;
+    .border-radius(6px);
+  }
+  .fabricsesign_butt{
+      margin-left: 10px;
+      border: none;
+      background-color: #e0e0e0;
+      height: 24px;
+      line-height: 24px;
+      width: 162px;
+      color: #999999;
+    }
+    .fabricsesign_buttico{
+      margin: 4px 10px 0 0;
+      .sprite(@search_ico);
+      .icon-other-designsoftware;
+    }
+}
