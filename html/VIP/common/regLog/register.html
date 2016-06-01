@@ -5,25 +5,27 @@
   <title>易家纺-电子商务平台|注册</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/RegLog/registered.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/common/autocomplete/autocomplete.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
   <div class="logbox">
     <div class="header">
        <div class="top clearfix">
-        <a href="#" class="lf butt_right" id="username">
+        <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">
           easysofthome <i>0</i>
         </a>
-        <a href="#" class="lf butt_right" id="login">登录</a>
-        <a href="#" class="lf butt_right" id="register">注册</a>
-        <a href="#" class="lf butt_right">开通VIP会员</a>
-        <a href="#" class="lf butt_right">客服服务</a>
+        <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
+        <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
+        <a href="/html/VIP/common/Pay/renewals.html" class="lf butt_right">开通VIP会员</a>
+        <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
         <a href="#" class="rg butt_right">国际版</a>
-        <a href="#" class="rg butt_right">易家纺下载区</a>
-        <a href="#" class="rg butt_right">易核价</a>
-        <a href="#" class="rg butt_right">易设计</a>
-        <a href="#" class="rg butt_right">易数据</a>
-        <a href="#" class="rg butt_right">易家纺首页</a>
+        <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
+        <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
+        <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
+        <a href="/html/easydesign/index.html" class="rg butt_right">易设计</a>
+        <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
+        <a href="/html/easysofthome/index.html" class="rg butt_right">易家纺首页</a>
       </div>
     </div>
 
@@ -49,7 +51,8 @@
           <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
           <div class="lf input_left2">
             <input type="text" class="input_codes" id="authCode" name="AuthCode">
-            <a href="#" class="butt_cides rg" id="getCode">获取验证码</a>
+            <a href="javascript:void(0)" class="butt_cides lf" id="getValidateCode">获取验证码</a>
+            <span class="validateCodeTip">活码已发送<br/>请查收(2小时有效)</span>
             <div class="input-tip"></div>
           </div>
         </div>
@@ -80,14 +83,16 @@
 
         <div class="clearfix padding">
           <span class="men_tit lf">企业中文名：</span>
-          <div class="lf input_left">
-            <input type="text" class="input_style" id="company-name" name="CompanyName">
+          <div class="lf input_left password_box">
+            <span class="placeholder">不能包含英文</span>
+            <input type="text" class="input_style"  id="company-name" name="CompanyName">
             <div class="input-tip"></div>
           </div>
         </div>
         <div class="clearfix padding">
           <span class="men_tit lf">企业英文名：</span>
-          <div class="lf input_left">
+          <div class="lf input_left password_box">
+            <span class="placeholder">不能包含中文</span>
             <input type="text" class="input_style" id="company-name-en" name="CompanyNameEn">
             <div class="input-tip"></div>
           </div>

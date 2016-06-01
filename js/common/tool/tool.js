@@ -231,7 +231,8 @@ define(function (require, exports, module) {
         $("#"+id).unbind("click");
         var mySatartNum = parseInt(startNum);
         var myEndNum = parseInt(endNum);
-        $("#"+id).addClass(waitColdeClass);
+        $("#"+id).css("background-color", "#B3B3B3");
+        $(".validateCodeTip").show();
         if(callback){callback();}
         continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,callback);
     }
@@ -243,8 +244,8 @@ define(function (require, exports, module) {
             $("#"+id).html(mySatartNum--);
             //alert(mySatartNum);
             if(mySatartNum <= myEndNum){
-                $("#"+id).attr("disabled",false);
-                $("#"+id).removeClass(waitColdeClass);
+                $("#"+id).css("background-color", "#00a2ca");
+                $(".validateCodeTip").hide();
                 $("#"+id).html(endText);
                 mySatartNum = parseInt(startNum);
                 bindClick_countdown(waitColdeClass,id,mySatartNum,myEndNum,endText,callback);
@@ -256,8 +257,17 @@ define(function (require, exports, module) {
     }
 
     //绑定click
-    function bindClick_countdown(waitColdeClass,id,startNum,endNum,endText,callback){
+    function bindClick_countdown(waitColdeClass,id,startNum,endNum,endText,phoneId,callback){
         $("#"+id).bind("click",function(){
+            if(phoneId){
+            $("#"+phoneId).trigger("focus");
+            $("#"+phoneId).trigger("focusout");
+            if($("#"+phoneId).parent().find('.input-tip span').text().length>0){
+                return;
+            }
+
+
+        }
             countdown(waitColdeClass,id,startNum,endNum,endText,callback);
 
         });

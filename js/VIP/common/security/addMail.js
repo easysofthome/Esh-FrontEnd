@@ -78,7 +78,10 @@ define(function (require, exports, module) {
               //阻止表单提交
               return false;
           },
-          onkeyup: true,
+          onfocusout:function(element){
+            $('.input-tip span').css('display','block');
+              $(element).valid();
+          },
           errorPlacement: function(error, element) {
               error.appendTo(element.siblings('.input-tip'));
           },
@@ -99,7 +102,7 @@ define(function (require, exports, module) {
               },
               authCode: {
                   required: icons.error + '请输入验证码',
-                  minlength: icons.error +'验证码长度有误'
+                  minlength: icons.error +'请输入六位验证码'
               }
           }
       });

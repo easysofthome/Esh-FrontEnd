@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易核价-易家纺电子商务服务平台_单品核价</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -38,6 +39,7 @@
 
   <!-- 核对修改参数 -->
   <div class="modifybox">
+   <form method="post" id="suiteModifyForm" action="">
     <p class="title">核价信息参数核对修改</p>
     <!-- 核价方式及费率修改　 -->
     <div class="ratebox">
@@ -46,15 +48,15 @@
       </p>
       <div class="pricingbox clearfix">
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" type="checkbox" checked="checked"/>
           <span class="words lf">FOB核价</span>
         </label>
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" type="checkbox" checked="checked"/>
           <span class="words lf">GIF核价</span>
         </label>
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" />
+          <input class="int lf" type="checkbox" checked="checked"/>
           <span class="words lf">LDP核价</span>
         </label>
         <p class="lf reminder">温馨提示：如果您需要核CIF或者LDP价格，请您勾选CIF核价或者LDP核价，勾选完成后填写相应的参数信息。</p>
@@ -66,23 +68,28 @@
       <ul class="intbox clearfix">
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>美元汇率：</p>
-          <input class="int lf" type="text" value="6.48" />
+          <input class="int lf" type="text" value="6.48" id="USARate" name="USARate"/>
+          <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>增值税率：</p>
-          <input class="int lf" type="text" value="0.17" />
+          <input class="int lf" type="text" id="educationalTariff" name="educationalTariff" value="0.17" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>退税率：：</p>
-          <input class="int lf" type="text" value="0.16" />
+          <input class="int lf" type="text" id="RefundRate" name="RefundRate" value="0.16" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>利润率：</p>
-          <input class="int lf" type="text" value="0.1" />
+          <input class="int lf" type="text" id="profitRate" name="profitRate" value="0.1" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>内销利润率：</p>
-          <input class="int lf" type="text" value="0.1" />
+          <input class="int lf" type="text" id="domesticProfit" name="domesticProfit"   value="0.1" />
+           <div class="input-tip"></div>
         </li>
       </ul>
     </div>
@@ -92,26 +99,30 @@
       <ul class="intbox clearfix">
         <li class="intli lf clearfix">
           <p class="lf">起始港：</p>
-          <input class="int lf" type="text" />
+          <input class="int lf" id="startPort" name="startPort" type="text" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix GIFintli">
           <p class="lf"><span class="txt_red">*</span>20柜单价：</p>
-          <input class="int lf" type="text" />
+          <input class="int lf" id="twentyCounterPerPrice" name="twentyCounterPerPrice" type="text" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf">目的港：</p>
-          <input class="int lf" type="text" />
+          <input class="int lf" id="endPort" name="endPort" type="text" />
+           <div class="input-tip"></div>
         </li>
         <li class="intli lf clearfix">
           <p class="lf"><span class="txt_red">*</span>40柜单价：</p>
-          <input class="int lf" type="text" />
+          <input class="int lf" id="fortyCounterPerPrice" name="fortyCounterPerPrice" type="text" />
+           <div class="input-tip"></div>
         </li>
       </ul>
     </div>
     <!-- LDP费率信息 -->
     <div class="information">
       <p class="smalltitle">
-        LDP费率信息　<a class="shrink" id="exportTariff">获取出口税率</a>
+        LDP费率信息　<a id="exportTariff" class="shrink">获取出口税率</a>
       </p>
       <div class="LDP clearfix">
         <ul class="LDPL lf">
@@ -119,38 +130,46 @@
           <li class="intli">参考代码：6304.1920</li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>出口税率：</p>
-            <input class="int lf" type="text"value="0.065" />
+            <input class="int lf" type="text" id="exportTariff" errorMsgPosition="right" name="exportTariff" value="0.065" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>清关费用：</p>
-            <input class="int lf" type="text"value="0.025" />
+            <input class="int lf" type="text" id="CustomsClearanceFee" errorMsgPosition="right" name="CustomsClearanceFee" value="0.025" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>利息：</p>
-            <input class="int lf" type="text"value="0.015" />
+            <input class="int lf" type="text" id="interest" errorMsgPosition="right" name="interest" value="0.015" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>利润率：</p>
-            <input class="int lf" type="text"value="0.1" />
+            <input class="int lf" type="text" errorMsgPosition="right" id="exportProfitRate" name="exportProfitRate" value="0.1" />
+             <div class="input-tip"></div>
           </li>
         </ul>
         <ul class="LDPR lf">
           <li class="intli">英文描述：Bedspreads non knitted or crocheted,of man made fiber,other</li>
           <li class="intli clearfix">
             <p class="lf name">出口国家名称：</p>
-            <input class="int lf" type="text"value="USA" />
+            <input class="int lf" type="text" errorMsgPosition="right" id="exportCountry" name="exportCountry" value="USA" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>保险费率：</p>
-            <input class="int lf" type="text"value="0.006" />
+            <input class="int lf" type="text" errorMsgPosition="right" id="premiumRate" name="premiumRate" value="0.006" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>信用风险：</p>
-            <input class="int lf" type="text"value="0.0105" />
+            <input class="int lf" type="text" errorMsgPosition="right" id="creditRisk" name="creditRisk" value="0.0105" />
+             <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>佣金：</p>
-            <input class="int lf" type="text"value="0.03" />
+            <input class="int lf" type="text" errorMsgPosition="right" id="commision" name="commision" value="0.03" />
+             <div class="input-tip"></div>
           </li>
         </ul>
       </div>
@@ -215,13 +234,15 @@
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" type="text"value="150" />
+              <input class="int lf" id="fabricWidth_a" errorMsgPosition="rightTop" name="fabricWidth_a" type="text" value="150" />
               <p class="lf price">厘米</p>
+              <div class="input-tip"></div>
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" type="text"value="15.64" />
+              <input class="int lf" id="fabricPrice_a" errorMsgPosition="rightTop" name="fabricPrice_a" type="text" value="15.64" />
               <p class="lf price">元/米</p>
+              <div class="input-tip"></div>
             </div>
           </td>
         </tr>
@@ -237,13 +258,15 @@
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" type="text"value="150" />
+              <input class="int lf" id="fabricWidth_b" errorMsgPosition="rightTop" name="fabricWidth_b" type="text" value="150" />
               <p class="lf price">厘米</p>
+              <div class="input-tip"></div>
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" type="text"value="15.64" />
+              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightBottom" name="fabricPrice_b" type="text" value="15.64" />
               <p class="lf price">元/米</p>
+              <div class="input-tip"></div>
             </div>
           </td>
         </tr>
@@ -259,13 +282,15 @@
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" type="text"value="150" />
+              <input class="int lf" id="fabricWidth_c" errorMsgPosition="rightTop" name="fabricWidth_c" type="text" value="150" />
               <p class="lf price">厘米</p>
+              <div class="input-tip"></div>
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" type="text"value="15.64" />
+              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightBottom" name="fabricPrice_c" type="text" value="15.64" />
               <p class="lf price">元/米</p>
+              <div class="input-tip"></div>
             </div>
           </td>
         </tr>
@@ -293,16 +318,18 @@
             <p>枕头填充重量</p>
             <div class="pricebox clearfix">
             <p class="lf price"><span class="txt_red">*</span>填充重量</p>
-              <input class="int intacc lf" type="text"value="12" />
+              <input class="int intacc lf" id="fillingWeight" name="fillingWeight" type="text"value="12" />
               <p class="lf price">个</p>
+              <div class="input-tip"></div>
             </div>
           </td>
           <td>0.7 公斤</td>
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
-              <input class="int intacc lf" type="text"value="0.9" />
+              <input class="int intacc lf" id="yuanPerKg" name="yuanPerKg" type="text"value="0.9" />
               <p class="lf price">元/公斤</p>
+              <div class="input-tip"></div>
             </div>
           </td>
           <td>6.3</td>
@@ -312,171 +339,41 @@
     </div>
 
     <!-- 选择款式工缴报价方式 -->
-    <div class="information">
-      <p class="smalltitle">选择款式工缴报价方式</p>
-      <form action="" method="get" class="radiobox clearfix">
-        <label class="lf offer clearfix">
-          <input class="rad lf" name="Fruit" type="radio" value="" />
-          <span>选择易家纺工缴库核价</span>
-        </label>
-        <label class="lf offer clearfix">
-          <input class="rad lf" name="Fruit" type="radio" checked="checked" value="" />
-          <span>选择工厂报价核价</span>
-        </label>
-        <p class="lf reminder">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
-      </form>
+     <div class="information">
+
+     <div class="clearfix factoryOffer marginleft">
+         <div class="clearfix factoryOfferCss factoryOfferCss">选择款式工缴报价方式：</div>
+          <div class="factoryOfferCssSub">
+          <label class="lf radio_rg label_radio">
+            <input class="radio_post lf" name="Fruit" type="radio" value="" />
+            <span class="lf">选择易家纺工缴库核价</span>
+          </label>
+          <label class="lf radio_rg label_radio">
+            <input class="lf radio_post" name="Fruit" type="radio" checked="checked" value="" />
+            <span class="lf">选择工厂报价核价</span>
+          </label>
+          </div>
+          <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
+      </div>
       <div class="clearfix factoryOffer marginleft">
         <span class="lf title_name">款式工缴报价工厂：</span>
-        <input type="text" class="factoryOffer_input lf">
-        <a href="#" class="lf factoryOffer_butt">选择工厂报价</a>
+        <input type="text" id="factoryOffer" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
+        <a href="/html/easyPricing/pricing/selectQuotation.html" class="lf factoryOffer_butt">选择工厂报价</a>
+        <div class="input-tip"></div>
+
       </div>
     </div>
 
     <!-- 按钮 -->
     <div class="btnbox clearfix">
       <a class="lf btn_gray" href="/html/easyPricing/suite/choice.html">返　回</a>
-      <a class="lf btn_blue" href="/html/easyPricing/suite/complete.html">开始核价</a>
+      <a class="lf btn_blue" id="btnStartPrice" href="javascript:void(0)">开始核价</a>
     </div>
+    </form>
   </div>
 </div>
 
 @@include('easyPricing/common/footer2.html')
-
-<script type="text/javascript">
-  seajs.use(['jquery','layer'],function($,layer){
-
-      //获取出口税率
-      $("#exportTariff").attr('href', 'javascript:void(0)');
-      $("#exportTariff").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '439px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/export.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-      //产品辅料 查看修改
-      $("#product_view").attr('href', 'javascript:void(0)');
-      $("#product_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '272px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/productacc.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-      //包装辅料 查看修改
-      $("#packing_view").attr('href', 'javascript:void(0)');
-      $("#packing_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '272px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/productacc.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-       //体积信息 查看修改
-      $("#volume_view").attr('href', 'javascript:void(0)');
-      $("#volume_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '190px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/volume.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-
-       //替换面料
-      $("#replaceFabric_id").attr('href', 'javascript:void(0)');
-      $("#replaceFabric_id").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '980px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 964)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/replaceFabric.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-
-      //辅料替换
-      $(".accessories_name").attr('href', 'javascript:void(0)');
-      $(".accessories_name").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '586px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 586)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          iframe: {src: '../pricing/accessories.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-  });
-
-
-
-</script>
+<script>seajs.use('js/easyPricing/suite/modify');</script>
 </body>
 </html>
