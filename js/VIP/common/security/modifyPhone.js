@@ -1,8 +1,8 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
-
   var placehold = require('js/common/module/placehold');
+  var tools = require('tools');
   placehold.init('.phone-box>input');
   placehold.init('.authcode-box>input');
 
@@ -18,6 +18,7 @@ define(function (require, exports, module) {
     };
 
     function init() {
+        tools.bindClick_countdown("waitcodes","getValidateCode",20,0,"重新发送","phone");
         validate();
         bindEvent();
     }
@@ -75,7 +76,10 @@ define(function (require, exports, module) {
                 //阻止表单提交
                 return false;
             },
-            onkeyup: true,
+             onfocusout:function(element){
+              $('.input-tip span').css('display','block');
+              $(element).valid();
+            },
             errorPlacement: function(error, element) {
                 error.appendTo(element.siblings('.input-tip'));
             },
@@ -98,7 +102,7 @@ define(function (require, exports, module) {
                 },
                 authCode: {
                     required: icons.error + '请输入验证码',
-                    minlength: icons.error +'验证码长度有误'
+                    minlength: icons.error +'请输入六位验证码'
                 }
             }
         });
@@ -121,7 +125,7 @@ define(function (require, exports, module) {
             element.parent().find('.input-tip').html('');
             flag = true;
         }else{
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '格式有误' +'</span>');
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '手机号码格式不正确，请重新输入' +'</span>');
             flag = false;
         }
         return flag;
