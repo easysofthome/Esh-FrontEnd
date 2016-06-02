@@ -4,41 +4,38 @@
 	<meta charset="utf-8">
 	<title>易家纺-电子商务平台|会员中心-设置登录密码</title>
 	<link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/security/modifyPwd-addto.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/production/VIP/common/security/modifyPwd-addto.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	@@include('VIP/common/nav.html')
 	<div class="main_box clearfix">
 		@@include('VIP/common/security/securityL.html')
 		<div class="rg securityR securityRpwd">
-<form action="" id="addLoginPwd" method="post">
-			<p class="quyutitle icon-huiyuanzhongxin-right">设置登录密码</p>
-			<div class="clearfix shurutop">
-				<span class="lf titilexingxi">密码：</span>
-				<div class="lf veri_left">
-					<span class="placeholder">请输入密码</span>
-					<input type="password" class="shuruchang" name="newPwd" id="newPwd">
-					<div class="input-tip"></div>
+			<form action="" id="addLoginPwd" method="post">
+				<p class="quyutitle icon-huiyuanzhongxin-right">设置登录密码</p>
+				<div class="clearfix shurutop">
+					<span class="lf titilexingxi">密码：</span>
+					<div class="lf veri_left">
+						<span class="placeholder">请输入密码</span>
+						<input type="password" class="shuruchang" name="newPwd" id="newPwd">
+						<div class="input-tip"></div>
 
+					</div>
 				</div>
-			</div>
 
-			<div class="clearfix shurutop">
-				<span class="lf titilexingxi">确认密码：</span>
-				<div class="lf veri_left">
-					<span class="placeholder">请确认密码</span>
-					<input type="password" class="shuruchang" name="rePwd" id="rePwd">
-					<div class="input-tip"></div>
-			</div>
-			<button type="submit" href="#" class="save">确认</button>
-		</div>
-		</form>
+				<div class="clearfix shurutop">
+					<span class="lf titilexingxi">确认密码：</span>
+					<div class="lf veri_left">
+						<span class="placeholder">请确认密码</span>
+						<input type="password" class="shuruchang" name="rePwd" id="rePwd">
+						<div class="input-tip"></div>
+					</div>
+				</div>
+				<button type="submit" href="#" class="save">确认</button>
+			</form>
 		</div>
 	</div>
 	@@include('VIP/common/footer.html')
-
-	<script>
-		seajs.use('js/VIP/common/security/modifyPwd-addto');
-	</script>
+	<script>seajs.use('js/VIP/common/security/modifyPwd-addto');</script>
 </body>
 </html>
