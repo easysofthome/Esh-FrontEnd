@@ -223,7 +223,7 @@ function setMsgPosition(obj,msg,direction){
           },
           errorPlacement: function(error, element) {
             $(element).poshytip('destroy');
-            if(error.text().trim().length > 0){
+            if(error.text().length > 0){
                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
             }
             //error.appendTo(element.siblings('.input-tip') );

@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var layer1 = $.layer({
       type: 2,
       title: false,
-      area: ['550px', '200px'],
+      area: ['1000px', '200px'],
       border: [5, 0.3, '#000'],
       shade: [0.8, '#000'],
       shadeClose: true,
