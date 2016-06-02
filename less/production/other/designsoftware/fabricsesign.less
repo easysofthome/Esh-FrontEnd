@@ -3,8 +3,9 @@
 
 .fabricsesign_box{
   width: 454px;
+  background-color: #fafafa;
   font-size: 12px;
-  .fabricsesign_titbox,.classif_box{
+  .fabricsesign_titbox,.classif_box,.options_box{
     width: 434px;
     margin:0 auto;
   }
@@ -50,5 +51,89 @@
       margin: 4px 10px 0 0;
       .sprite(@search_ico);
       .icon-other-designsoftware;
+    }
+    .classif_butt{
+      line-height: 24px;
+      background-color: #57afb7;
+      padding: 0 6px;
+      .border-radius(4px);
+      color: #fff;
+      margin-top: 6px;
+    }
+    .options{
+      background-color: #f5f5f5;
+    }
+    .options_rowbox{
+      padding-top: 6px;
+      line-height: 24px;
+    }
+    .options_tit{
+      color: #666;
+      margin-top: 4px;
+    }
+    .options_comp,.clioptions_comp{
+      padding: 0 6px;
+      margin:4px 0 0 4px;
+      color: #333;
+      cursor: pointer;
+      .border-radius(4px);
+    }
+    .clioptions_comp{
+      background-color: #ff6600;
+      color:#fff;
+    }
+    .options_conbox{
+      color: #333;
+      width: 330px;
+      li:hover{
+        background-color: #ff6600;
+        color:#fff;
+      }
+      .cli_li{
+        background-color: #ff6600;
+        color:#fff;
+      }
+      li{
+        padding: 0 6px;
+        margin:4px 0 0 4px;
+        cursor: pointer;
+        white-space:nowrap;
+        .border-radius(4px);
+      }
+    }
+    .shrink_box{
+      cursor: pointer;
+      margin: 10px auto 0 auto;
+      background-color: #e6e6e6;
+      width: 120px;
+      height: 30px;
+      .border-radius(6px 6px 0 0);
+      font-size: 12px;
+      line-height: 30px;
+      .arrow_top{
+        margin:10px 4px 0 22px;
+        .sprite(@arrow_top);
+        .icon-other-designsoftware;
+      }
+    }
+    .content_box{
+      li{
+        margin:12px 0 0 14px;
+        width: 134px;
+        height: 100px;
+        background-color: #fff;
+        overflow: hidden;
+        .border-radius(6px);
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        .img_box{
+          height: 78px;
+          overflow: hidden;
+        }
+        .img_text{
+          margin-left: 10px;
+        }
+      }
     }
 }
