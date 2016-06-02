@@ -248,7 +248,7 @@ define(function (require, exports, module) {
 
 
     }
-/** 用户名验证 */
+    /** 用户名验证 */
     function userRule (element, value) {
         var reg = {
             "86": "^(13|15|18|14|17)[0-9]{9}$"  //中国

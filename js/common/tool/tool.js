@@ -273,7 +273,19 @@ define(function (require, exports, module) {
         });
     }
 
+    //全选
+    function selectAllOrNone_ck(checkboxName,flag){
+        $("input:checkbox[name='"+checkboxName+"']").attr("checked",flag);
+    }
 
+    //验证正数 不包含0
+    function validatePositiveNum(value){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
+        return reg.test(value);
+    }
+
+
+    module.exports.selectAllOrNone_ck = selectAllOrNone_ck;
     module.exports.addCSS = addCss;
     module.exports.cookieHelp = cookieHelp;
     module.exports.dateHelp = dateHelp;
@@ -283,6 +295,7 @@ define(function (require, exports, module) {
     module.exports.validtaePhoneNum = validtaePhoneNum;
     module.exports.phoneRule = phoneRule;
     module.exports.bindClick_countdown = bindClick_countdown;
+    module.exports.validatePositiveNum = validatePositiveNum;
 
 
 
