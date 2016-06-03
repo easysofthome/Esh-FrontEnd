@@ -284,6 +284,17 @@ define(function (require, exports, module) {
         var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
         return reg.test(value);
     }
+     //验证数字
+    function validateNum(value){
+        var reg = new RegExp("^[\-]?[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+    //验证数字
+    function validateNumPointNum(value,pointNum){
+        var reg = eval('/^[\-]?[0-9]+\.{0,1}[0-9]{0,'+pointNum+'}$/');
+        return reg.test(value);
+    }
 
     ///////////////////////////////////// 银行卡号Luhm校验////////////////////////////////////////////
      //Description:  银行卡号Luhm校验
@@ -389,6 +400,10 @@ define(function (require, exports, module) {
     module.exports.bindClick_countdown = bindClick_countdown;
     module.exports.validatePositiveNum = validatePositiveNum;
     module.exports.bankCoardCheck = bankCoardCheck;
+    module.exports.validateNum = validateNum;
+    module.exports.validateNumPointNum = validateNumPointNum;
+
+
 
 
 
