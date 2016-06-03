@@ -15,15 +15,19 @@
           <div class="security-box clearfix">
           <p class="quyutitle icon-huiyuanzhongxin-right">设置邮箱</p>
           <div class="clearfix email-box">
-            <div class="lf titilexingxi" style="margin-left: 50px;">邮箱：</div>
+            <div>
+            <div class="lf titilexingxi margin_L50" >邮箱：</div>
             <span class="placeholder" style="left: 115px;">请输入邮箱</span>
             <input type="text" class="lf codes_val codes_addto" name="mail" id="mail"/>
-            <a href="#" class="lf codes">获取验证</a>
+            <a href="javascript:void(0)" id="getValidateCode" class="lf codes">获取验证</a>
+            <span class="validateCodeTip">验证码已发送请查收(2小时有效)</span>
             <div class="input-tip"></div>
+            </div>
           </div>
+
           <div class="clearfix authcode-box shurutop">
             <div class="lf titilexingxi">验证码：</div>
-            <span class="placeholder">请输入验证码</span>
+            <span class="placeholder margin_L13">请输入验证码</span>
             <input type="text" class="codes_val"  name="authCode" id="authCode"/>
             <div class="input-tip"></div>
           </div>
