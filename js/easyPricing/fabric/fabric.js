@@ -57,14 +57,14 @@ function setMsgPosition(obj,msg,direction){
 var startPriceLayer = {
         type: 2,
         title: false,
-        area: ['1000px', '617px'],
+        area: ['1020px', '650px'],
         border: [5, 0.3, '#000'],
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 650)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
-        iframe: {src: '../pricing/result.html'},
+        iframe: {src: '/html/easyPricing/pricing/result.html'},
         success: function () {
 
         }
@@ -77,14 +77,34 @@ var startPriceLayer = {
       $.layer({
         type: 2,
         title: false,
-        area: ['1000px', '844px'],
+        area: ['1020px', '874px'],
         border: [5, 0.3, '#000'],
         shade: [0.8, '#000'],
         shadeClose: true,
-        offset: [($(window).height() - 844)/2+'px',''],
+        offset: [($(window).height() - 874)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
-        iframe: {src: '../pricing/storehouse.html'},
+        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+
+    //选择织造工缴工厂报价
+    $('.factoryOffer_butt').on('click', function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1000px', '270px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 270)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
         success: function () {
 
         }

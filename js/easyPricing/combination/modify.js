@@ -44,11 +44,11 @@ function setMsgPosition(obj,msg,direction){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '439px'],
+          area: ['1000px', '450px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           iframe: {src: '../pricing/export.html'},
@@ -69,7 +69,7 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           iframe: {src: '../pricing/productacc.html'},
@@ -90,7 +90,7 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           iframe: {src: '../pricing/productacc.html'},
@@ -111,7 +111,7 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 190)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           iframe: {src: '../pricing/volume.html'},
@@ -133,7 +133,7 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 964)/2+'px',''],
+          offset: [($(window).height() - 980)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           iframe: {src: '../pricing/replaceFabric.html'},
@@ -145,26 +145,28 @@ function setMsgPosition(obj,msg,direction){
       });
 
 
-      //辅料替换
-      $(".accessories_name").attr('href', 'javascript:void(0)');
-      $(".accessories_name").bind("click",function(){
+      //选择织造工缴工厂报价
+      $(".factoryOffer_butt").attr('href', 'javascript:void(0)');
+      $(".factoryOffer_butt").bind("click",function(){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '586px'],
+          area: ['1000px', '260px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 586)/2+'px',''],
+          offset: [($(window).height() - 260)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
-          iframe: {src: '../pricing/accessories.html'},
+          iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
           success: function (layero, index) {
 
 
           }
         });
       });
+
+
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
