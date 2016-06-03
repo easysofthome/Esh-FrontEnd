@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
-
+  var tools = require('tools');
   var placehold = require('js/common/module/placehold');
   placehold.init('.phone-box>input');
   placehold.init('.authcode-box>input');
@@ -18,10 +18,11 @@ define(function (require, exports, module) {
     };
 
     function init() {
+        tools.bindClick_countdown("waitcodes","getValidateCode",20,0,"重新发送","phone");
         validate();
         bindEvent();
     }
-/** 限制输入字符长度 **/
+    /** 限制输入字符长度 **/
     function getStringLength (str) {
         if(!str){
             return;
@@ -75,15 +76,18 @@ define(function (require, exports, module) {
                 //阻止表单提交
                 return false;
             },
-            onkeyup: true,
+             onfocusout:function(element){
+              $('.input-tip span').css('display','block');
+              $(element).valid();
+            },
             errorPlacement: function(error, element) {
-                error.appendTo(element.siblings('.input-tip'));
+               if(error.text().length==0)return;
+              element.siblings('.input-tip').html(error);
             },
             rules: {
                 //密码
                 phone: {
                     required: true,
-                    minlength: 11,
                     phone: true
                 },
                 authCode: {
@@ -93,12 +97,11 @@ define(function (require, exports, module) {
             },
             messages: {
                 phone: {
-                    required: icons.error + '请输入手机号码',
-                    minlength: icons.error + '手机号码长度有误'
+                    required: icons.error + '请输入手机号码！'
                 },
                 authCode: {
-                    required: icons.error + '请输入验证码',
-                    minlength: icons.error +'验证码长度有误'
+                    required: icons.error + '请输入验证码！',
+                    minlength: icons.error +'请输入六位验证码！'
                 }
             }
         });
@@ -121,7 +124,7 @@ define(function (require, exports, module) {
             element.parent().find('.input-tip').html('');
             flag = true;
         }else{
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '格式有误' +'</span>');
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '手机号码格式不正确，请重新输入！' +'</span>');
             flag = false;
         }
         return flag;

@@ -102,7 +102,7 @@ define(function (require, exports, module) {
 				});
 				var tempInputVal = "";
 				input.bind("change paste keyup", function(e){
-					if($.trim(tempInputVal) == $.trim(input.val())) return;
+					if(tempInputVal == input.val()) return;
 					if(e.which != 13 && e.which != 27
 							&& e.which != 38 && e.which != 40){
 						currentProposals = [];
@@ -117,8 +117,11 @@ define(function (require, exports, module) {
 									var element = $('<li></li>')
 										.html(params.hints[test])
 										.addClass('proposal')
+										.hover(function(){
+											input.val($(this).text());
+										})
 										.click(function(){
-											input.val($(this).html());
+											//执行不到 先触发 blur 元素已经被清空 click无法触发 可以用timeout延迟blur触发时间
 											proposalList.empty();
 											params.onSubmit(input.val());
 										})
@@ -138,7 +141,7 @@ define(function (require, exports, module) {
 
 				input.blur(function(e){
 					currentSelection = -1;
-					//proposalList.empty();
+					proposalList.empty();
 					params.onBlur();
 				});
 

@@ -81,13 +81,13 @@ define(function (require, exports, module) {
               $(element).valid();
             },
             errorPlacement: function(error, element) {
-                error.appendTo(element.siblings('.input-tip'));
+                if(error.text().length==0)return;
+              element.siblings('.input-tip').html(error);
             },
             rules: {
                 //密码
                 phone: {
                     required: true,
-                    minlength: 11,
                     phone: true
                 },
                 authCode: {
@@ -97,12 +97,11 @@ define(function (require, exports, module) {
             },
             messages: {
                 phone: {
-                    required: icons.error + '请输入手机号码',
-                    minlength: icons.error + '手机号码长度有误'
+                    required: icons.error + '请输入手机号码！'
                 },
                 authCode: {
-                    required: icons.error + '请输入验证码',
-                    minlength: icons.error +'请输入六位验证码'
+                    required: icons.error + '请输入验证码！',
+                    minlength: icons.error +'请输入六位验证码！'
                 }
             }
         });
@@ -125,7 +124,7 @@ define(function (require, exports, module) {
             element.parent().find('.input-tip').html('');
             flag = true;
         }else{
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '手机号码格式不正确，请重新输入' +'</span>');
+            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '手机号码格式不正确，请重新输入！ ' +'</span>');
             flag = false;
         }
         return flag;

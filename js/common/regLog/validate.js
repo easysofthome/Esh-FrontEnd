@@ -114,8 +114,9 @@ define(function (require, exports, module) {
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
-                formSubmit(form);
+               // formSubmit(form);
                 //阻止表单提交
+
                 return false;
             },
              onfocusout:function(element){
@@ -153,7 +154,7 @@ define(function (require, exports, module) {
                 },
                 AuthCode: {
                     required: true,
-                    minlength: 6
+                    rangelength:[6,6]
                 },
                 Identity: {
                     required: true
@@ -187,7 +188,7 @@ define(function (require, exports, module) {
                 },
                 AuthCode: {
                     required: icons.error + '请输入验证码',
-                    minlength: icons.error + '请输入六位验证码'
+                    rangelength: icons.error + '验证码只能是六位'
                 },
                 Identity: {
                     required: icons.error + '请选择您的身份'

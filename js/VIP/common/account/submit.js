@@ -1,11 +1,107 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
-
+  require('js/lib/laydate/laydate');
+  var tool = require('tools');
   var placehold = require('js/common/module/placehold');
   placehold.init('#num>input');
 
+/////////////////////////////////// 日期选择 //////////////////////////////////////////
+laydate({
+    elem: '#dataTime',
+    event: 'focus',
+    format: 'YYYY/MM/DD', // 分隔符可以任意定义，该例子表示只显示年月
+    festival: true, //显示节日
+    choose: function(datas){ //选择日期完毕的回调
+        //alert('得到：'+datas);
+    }
+});
+$('.laydate_box').hide();
+$('#dataTime').bind('focus',function(){
+  laydate();
+  $('.laydate_box').show();
+});
 
+/////////////////////////////////// 文本框输入提示 （银行卡） //////////////////////////////////////////
+
+function createTip(id){
+
+  var width = $("#"+id).width();
+  var height = $("#"+id).height();
+  var tipH = 30;
+  $(document.body).append('<div id="input_tip"> </div>');
+   $('#input_tip').css({'width':width-5,'height':tipH,'display': 'none',
+    'background-color': '#FFFDCA','border': '1px solid #FACF66','color': '#F73200',
+    'font-size': '26px','overflow': 'hidden','padding': '4px 8px','text-overflow': 'ellipsis',
+    'white-space': 'nowrap','font-family': 'Microsoft YaHei, SimHei','font-weight': '700','position':'absolute'});
+
+ $('#input_tip').append('<div id="input_tip_text">12365 </div>');
+ $('#input_tip_text').css({
+      'overflow': 'hidden',
+      'text-overflow': 'ellipsis',
+      'white-space': 'nowrap',
+      'background-color': '#FFFDCA',
+      'color': '#F73200',
+      'font-size': '16px',
+      'padding': '6px 4px'
+    });
+ inputTipAutoSize(id);
+}
+
+function inputTipAutoSize(id){
+  var height = $("#"+id).height();
+  var top = $("#"+id).offset().top;
+  var left = $("#"+id).offset().left;
+  $('#input_tip').css({'top':(top-height+10),'left':left});
+}
+
+function synchroUserInputText(id){
+  var inputVal = $('#'+id).val();
+  $('#input_tip_text').text(formatInput(inputVal));
+}
+
+function formatInput(text){
+  var val = '';
+  if(!text) return val;
+  var array = text.split('');
+  var ret = '';
+  var split_str = ' ';
+  for(var i=0;i<array.length;i++){
+    if(i % 4 == 0){
+      ret += split_str;
+    }
+    ret +=array[i];
+  }
+  return ret;
+}
+
+function initInputTip(id){
+   createTip(id);
+  $('#'+id).bind('change paste keyup',function(){
+      $('#input_tip').show();
+      synchroUserInputText(id);
+  });
+
+  $('#'+id).bind('blur',function(){
+      $('#input_tip').hide();
+  });
+
+
+}
+
+
+ //页面尺寸改变时场景标题定位
+  $(window).resize(function() {
+      inputTipAutoSize('bankCard');
+  });
+
+   $(document).ready(function () {
+      initInputTip('bankCard');
+   });
+
+
+
+/////////////////////////////////// 表单验证 //////////////////////////////////////////
   // input
   var form = $("#form-submit");
 
@@ -32,26 +128,24 @@ define(function (require, exports, module) {
               //阻止表单提交
               return false;
           },
-          onkeyup: false,
+          onfocusout:function(element){
+              $('.input-tip span').css('display','block');
+              $(element).valid();
+          },
           errorPlacement: function(error, element) {
-              error.appendTo( element.siblings('.input-tip') );
+              element.siblings('.input-tip').html(error);
           },
           rules: {
-              fabricName: {
+              bankCard:{
                   required: true,
-                  maxlength:20
+                  bankCardRule:true
               },
               remitter: {
-                  required: true,
-                  maxlength:20
+                  maxlength:10
               },
-              num: {
-                  required: true,
+              Amount: {
                   number: true,
-                  maxlength:30
-              },
-              dataTime:{
-                  required: true
+                  max:500000
               },
               phone: {
                   required: true,
@@ -62,36 +156,35 @@ define(function (require, exports, module) {
               }
           },
           messages: {
-              remitAccount: {
-                  required: icons.error + '请输入汇款人银行账号',
-                  number: icons.error + '账号格式错误'
+              bankCard: {
+                  required: icons.error + '请输入汇款人银行账号！'
               },
               remitter: {
-                  required: icons.error + '请输入汇款人姓名'
+                  maxlength: icons.error + '汇款人姓名过长！'
               },
-              num: {
-                  required: icons.error + '请输入汇款金额',
-                  number: icons.error + '金额格式错误'
-              },
-              dataTime:{
-                  required: icons.error + '请选择汇款时间'
+              Amount: {
+                  number: icons.error + '汇款金额格式错误！',
+                  max: icons.error + '汇款金额需小于50W！'
               },
               phone: {
-                  required: icons.error + '请填写联系人手机号'
+                  required: icons.error + '请填写联系人手机号！'
               },
               remark: {
-                  required: icons.error + '备注信息不能超过200个字符'
+                  maxlength: icons.error + '备注信息不能超过200个字符！'
               }
           }
       });
   }
   // 添加验证规则
   function addrules() {
-      var flag;
+
       $.validator.addMethod('phone', function (value, element, param) {
           return this.optional(element) || (phoneRule($(element),value));
       }, '');
 
+      $.validator.addMethod('bankCardRule', function (value, element, param) {
+          return this.optional(element) || (bankCardRule($(element),value));
+      }, '');
   }
   /** phone */
   function phoneRule (element, value) {
@@ -102,15 +195,26 @@ define(function (require, exports, module) {
 
       if(!regPhone.test(value)){
           flag = true;
-          element.siblings('.input-tip').html('<span class="error">' + icons.error + '您输入的手机号码格式错误' +'</span>');
+          element.siblings('.input-tip').html('<span class="error">' + icons.error + '您输入的手机号码格式错误！' +'</span>');
       }else{
           flag = false;
           element.siblings('.input-tip').html('');
       }
       return flag;
   }
-  /** /phone */
-
+  /** 银行卡验证*/
+  function bankCardRule (element, value) {
+      var flag = false;
+      var msg = tool.bankCoardCheck(value);
+      if(msg.length>0){
+          flag = true;
+          element.siblings('.input-tip').html('<span class="error">' + icons.error + msg +'</span>');
+      }else{
+           flag = false;
+          element.siblings('.input-tip').html('');
+      }
+      return flag;
+  }
 
 
   init();

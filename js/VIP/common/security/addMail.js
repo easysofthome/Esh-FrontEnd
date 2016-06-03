@@ -20,7 +20,7 @@ define(function (require, exports, module) {
   };
 
   function init() {
-      tools.bindClick_countdown("waitcodes","getValidateCode",20,0,"重新发送");
+      tools.bindClick_countdown("waitcodes","getValidateCode",20,0,"重新发送","mail");
       validate();
       bindEvent();
   }
@@ -83,7 +83,8 @@ define(function (require, exports, module) {
               $(element).valid();
           },
           errorPlacement: function(error, element) {
-              error.appendTo(element.siblings('.input-tip'));
+              if(error.text().length==0)return;
+              element.siblings('.input-tip').html(error);
           },
           rules: {
               //密码
@@ -98,11 +99,11 @@ define(function (require, exports, module) {
           },
           messages: {
               mail: {
-                  required: icons.error + '请输入邮箱号码'
+                  required: icons.error + '请输入邮箱号码！'
               },
               authCode: {
-                  required: icons.error + '请输入验证码',
-                  minlength: icons.error +'请输入六位验证码'
+                  required: icons.error + '请输入验证码！',
+                  minlength: icons.error +'请输入六位验证码！'
               }
           }
       });
@@ -111,11 +112,11 @@ define(function (require, exports, module) {
   function addrules() {
 
       $.validator.addMethod('mail', function (value, element, param) {
-          return this.optional(element) || (phoneRule($(element),value));
+          return this.optional(element) || (mailRule($(element),value));
       }, '');
   }
 /** 邮箱验证 */
-  function phoneRule (element, value) {
+  function mailRule (element, value) {
       var email = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$"; //邮件
       var flag;
       var regMail = new RegExp(email);
@@ -123,7 +124,7 @@ define(function (require, exports, module) {
           element.parent().find('.input-tip').html('');
           flag = true;
       }else{
-          element.parent().find('.input-tip').html('<span class="error">' + icons.error + '格式有误' +'</span>');
+          element.parent().find('.input-tip').html('<span class="error">' + icons.error + '邮箱格式不正确，请重新输入！' +'</span>');
           flag = false;
       }
       return flag;
