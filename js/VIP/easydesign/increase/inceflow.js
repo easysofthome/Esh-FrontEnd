@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     require('jquery');
-
+    require('js/lib/tip/jquery.poshytip');
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
     var placehold = require('js/common/module/placehold');
     var cus = require('customSelect');
@@ -21,6 +21,38 @@ define(function(require, exports, module) {
           $(this).toggleClass('selected');
     });
 
+////////////////////////////错误提示框 tip///////////////////////////////////
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+ $(obj).poshytip({
+      className: 'tip-violet',
+      content: msg,
+      showOn: 'none',
+      alignTo: 'target',
+      alignX: alignX,
+      alignY: alignY,
+      offsetX: offsetX,
+      offsetY: offsetY
+    });
+
+  $(obj).poshytip('show');
+}
+
+function setMsgPosition(obj,msg,direction){
+  switch(direction){
+    case "right":
+      showTip(obj,msg,"right","center",5,0);
+      break;
+    case "rightTop":
+      showTip(obj,msg,"inner-left","top",50,5);
+      break;
+    case "rightBottom":
+      showTip(obj,msg,"inner-left","bottom",0,5);
+      break;
+    default:
+      showTip(obj,msg,"inner-left","top",0,5);
+  }
+}
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
@@ -97,14 +129,21 @@ define(function(require, exports, module) {
                 //提交表单
                 formSubmit(form);
                 //阻止表单提交
+                //$.layer(startPriceLayer);
                 return false;
             },
             onfocusout:function(element){
               $(element).valid();
             },
-            onkeyup: false,
             errorPlacement: function(error, element) {
-                error.appendTo( element.siblings('.input-tip') );
+              $(element).poshytip('destroy');
+              if(error.text().length > 0){
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
+              return true;
+            },
+            success:function(element){
+              $(element).poshytip('destroy');
             },
             rules: {
                 flowerNameInput: {
@@ -129,7 +168,7 @@ define(function(require, exports, module) {
             },
             messages: {
                 flowerNameInput: {
-                    required: icons.error + '请输入当花型名称！',
+                    required: icons.error + '请输入花型名称！',
                     maxlength: icons.error + '花型名称过长！'
                 },
                 typeNum_1: {
