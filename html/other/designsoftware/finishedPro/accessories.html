@@ -9,9 +9,9 @@
 <body>
   <div class="finishedPro-box">
     <!-- 顶部 -->
-    <div class="finishedPro-top">
+    <div class="finishedPro-top" style="position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop));">
       <div class="top-box clearfix">
-        <a class="title cur lf" href="#">全部辅料</a>
+        <a class="title cur lf" href="#">免费辅料</a>
         <div class="search-box rg clearfix">
           <input class="lf search" type="text" placeholder="请输入辅料编号" />
           <i class="lf"></i>
@@ -34,7 +34,7 @@
     </div>
 
     <!-- 列表 -->
-    <div class="list-box">
+    <div class="list-box next-no">
       <ul class="list-ul clearfix">
         <li class="list-li lf">
           <div class="picture">
@@ -42,7 +42,6 @@
           </div>
           <div class="words clearfix">
             <span class="lf">AD130900367</span>
-            <span class="rg" style="margin-right: 10px;">详情</span>
           </div>
         </li>
         <li class="list-li lf">
@@ -188,20 +187,6 @@
       </ul>
     </div>
 
-    <!-- 底部翻页 -->
-    <div class="finishedPro-next">
-      <div class="clearfix next-box">
-        <a class="next lf" href="#">上一页</a>
-        <a class="num cur lf" href="#">1</a>
-        <a class="num lf" href="#">2</a>
-        <a class="num lf" href="#">3</a>
-        <a class="num lf" href="#">4</a>
-        <a class="next lf" href="#">下一页</a>
-        <span class="words lf">跳转到：</span>
-        <input type="text" class="int lf" />
-        <a class="go lf" href="#">GO</a>
-      </div>
-    </div>
   </div>
 </body>
 </html>
