@@ -3,6 +3,7 @@
 
 @import '../../../../sprite/other/designsoftware/sprite.less';
 
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-attachment:fixed;}
 .finishedPro-box{
   width: 100%;
   background-color: #f2f2f2;
@@ -12,9 +13,6 @@
 // 顶部
 div.finishedPro-top{
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   div.top-box{
     height: 50px;
     background-color: #567fb7;
@@ -46,6 +44,7 @@ div.finishedPro-top{
         margin: 9px 0 0 6px;
         .sprite(@search_ico);
         .icon-other-designsoftware;
+        .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
       }
     }
   }
@@ -99,6 +98,7 @@ div.finishedPro-top{
         margin:10px 4px 0 22px;
         .sprite(@arrow_top);
         .icon-other-designsoftware;
+        .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_top.png');
       }
     }
   }
@@ -115,6 +115,7 @@ div.list-box{
       -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       margin-left: 1.7%;
+      display: inline;
       width: 14.6%;
       .picture{
         img{
@@ -142,15 +143,16 @@ div.list-box{
 }
 
 div.Unfolded-top{
-  margin-top: 129px;
+  margin-top: 221px;
+}
+
+div.next-no{
+  padding-bottom: 40px;
 }
 
 
 // 底部翻页
 div.finishedPro-next{
-  position: fixed;
-  bottom: 0;
-  left: 0;
   text-align: center;
   width: 100%;
   background-color: #fff;
