@@ -29,14 +29,14 @@ function createTip(id){
   var width = $("#"+id).width();
   var height = $("#"+id).height();
   var tipH = 30;
-  $(document.body).append('<div id="input_tip"> </div>');
-   $('#input_tip').css({'width':width-5,'height':tipH,'display': 'none',
+  $(document.body).append('<div id="input_tip_'+id+'"> </div>');
+   $('#input_tip_'+id).css({'width':width-5,'height':tipH,'display': 'none',
     'background-color': '#FFFDCA','border': '1px solid #FACF66','color': '#F73200',
     'font-size': '26px','overflow': 'hidden','padding': '4px 8px','text-overflow': 'ellipsis',
     'white-space': 'nowrap','font-family': 'Microsoft YaHei, SimHei','font-weight': '700','position':'absolute'});
 
- $('#input_tip').append('<div id="input_tip_text">12365 </div>');
- $('#input_tip_text').css({
+ $('#input_tip_'+id).append('<div id="input_tip_text_'+id+'"></div>');
+ $('#input_tip_text_'+id).css({
       'overflow': 'hidden',
       'text-overflow': 'ellipsis',
       'white-space': 'nowrap',
@@ -52,38 +52,51 @@ function inputTipAutoSize(id){
   var height = $("#"+id).height();
   var top = $("#"+id).offset().top;
   var left = $("#"+id).offset().left;
-  $('#input_tip').css({'top':(top-height+10),'left':left});
+  $('#input_tip_'+id).css({'top':(top-height+10),'left':left});
 }
 
-function synchroUserInputText(id){
+function synchroUserInputText(id,tag){
   var inputVal = $('#'+id).val();
-  $('#input_tip_text').text(formatInput(inputVal));
+  $('#input_tip_text_'+id).text(formatInput(inputVal,tag));
 }
 
-function formatInput(text){
+function formatInput(text,tag){
   var val = '';
   if(!text) return val;
   var array = text.split('');
   var ret = '';
   var split_str = ' ';
-  for(var i=0;i<array.length;i++){
-    if(i % 4 == 0){
-      ret += split_str;
+  if(tag=="bankcard"||!tag){
+    for(var i=0;i<array.length;i++){
+      if(i % 4 == 0){
+        ret += split_str;
+      }
+      ret +=array[i];
     }
-    ret +=array[i];
+  }else if(tag=="phone"){
+     for(var i=0;i<array.length;i++){
+      if(i==3){
+         ret += split_str;
+       }else if((i-3) % 4 == 0){
+        ret += split_str;
+
+       }
+      ret +=array[i];
+    }
   }
+
   return ret;
 }
 
-function initInputTip(id){
+function initInputTip(id,tag){
    createTip(id);
   $('#'+id).bind('change paste keyup',function(){
-      $('#input_tip').show();
-      synchroUserInputText(id);
+      $('#input_tip_'+id).show();
+      synchroUserInputText(id,tag);
   });
 
   $('#'+id).bind('blur',function(){
-      $('#input_tip').hide();
+      $('#input_tip_'+id).hide();
   });
 
 
@@ -93,10 +106,12 @@ function initInputTip(id){
  //页面尺寸改变时场景标题定位
   $(window).resize(function() {
       inputTipAutoSize('bankCard');
+      inputTipAutoSize('phone');
   });
 
    $(document).ready(function () {
       initInputTip('bankCard');
+      initInputTip('phone','phone');
    });
 
 
@@ -215,6 +230,26 @@ function initInputTip(id){
       }
       return flag;
   }
+
+  //将金额格式化成#.##格式
+  function formatAmount(obj){
+    var val = $(obj).val();
+    if(val.length==0)return;
+    if(tool.validateNum_plus(val)){
+      if(val==0){
+        $(obj).val('0.00');
+      }else{
+        $(obj).val(Math.floor(val*100)/100);
+      }
+
+    }
+
+  }
+
+   $('#Amount').bind('blur',function(){
+     formatAmount(this);
+
+    });
 
 
   init();

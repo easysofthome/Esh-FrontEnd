@@ -290,9 +290,21 @@ define(function (require, exports, module) {
         return reg.test(value);
     }
 
-    //验证数字
+     //验证数字
+    function validateNum_plus(value){
+        var reg = new RegExp("^[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+    //验证数字 可以是负数 小数 正数
     function validateNumPointNum(value,pointNum){
         var reg = eval('/^[\-]?[0-9]+\.{0,1}[0-9]{0,'+pointNum+'}$/');
+        return reg.test(value);
+    }
+
+    //验证数字
+    function validatePositiveInt(value){
+        var reg = new RegExp("^[1-9]\d*$");
         return reg.test(value);
     }
 
@@ -324,6 +336,9 @@ define(function (require, exports, module) {
             errorMsg = "银行卡号长度必须在16到19之间！";
             return errorMsg;
         }
+        return errorMsg;
+
+        //暂时不进行luhm验证
         var lastNum=bankno.substr(bankno.length-1,1);//取出最后一位（与luhm进行比较）
 
         var first15Num=bankno.substr(0,bankno.length-1);//前15或18位
@@ -402,7 +417,8 @@ define(function (require, exports, module) {
     module.exports.bankCoardCheck = bankCoardCheck;
     module.exports.validateNum = validateNum;
     module.exports.validateNumPointNum = validateNumPointNum;
-
+    module.exports.validateNum_plus = validateNum_plus;
+    module.exports.validatePositiveInt = validatePositiveInt;
 
 
 

@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/tip/jquery.poshytip');
+  var tool = require('tools');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
   function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
@@ -36,7 +37,7 @@ define(function (require, exports, module) {
   }
 
 ////////////////////////////表单验证///////////////////////////////////
-  //验证易豆格式
+   //验证易豆格式
   function checkeYiDou(inputObj){
       var isUserYiDou = $('#useYiDou_ck').attr("checked");
       if(!isUserYiDou) return;
@@ -44,13 +45,13 @@ define(function (require, exports, module) {
       var that = inputObj;
       var flag = true;
       $(that).poshytip('destroy');
-      if($(that).val().length == 0 || $(that).val() == 0){
+      if($(that).val().length == 0){
         $(that).trigger('focus');
-        setMsgPosition(that,'易豆个数不能为空或0！',$(that).attr("errorMsgPosition"));
+        setMsgPosition(that,'易豆个数不能为空！','$(that).attr("errorMsgPosition")');
         flag = false;
-      }else if(!reg.test($(that).val())){
+      }else if(!tool.validatePositiveInt($(that).val())){
         $(that).trigger('focus');
-        setMsgPosition(that,'请输入易豆个数，不能为负数或0！',$(that).attr("errorMsgPosition"));
+        setMsgPosition(that,'易豆个数只能是大于0的整数！',$(that).attr("errorMsgPosition"));
          flag = false;
       }else if($(that).val().length>15){
         $(that).trigger('focus');

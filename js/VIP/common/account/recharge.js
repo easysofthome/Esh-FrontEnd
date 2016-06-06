@@ -43,13 +43,13 @@ define(function (require, exports, module) {
       var that = inputObj;
       var flag = true;
       $(that).poshytip('destroy');
-      if($(that).val().length == 0 || $(that).val() == 0){
+      if($(that).val().length == 0){
         $(that).trigger('focus');
-        setMsgPosition(that,'充值金额不能为空或0！','$(that).attr("errorMsgPosition")');
+        setMsgPosition(that,'充值金额不能为空！','$(that).attr("errorMsgPosition")');
         flag = false;
       }else if(!tool.validatePositiveNum($(that).val())){
         $(that).trigger('focus');
-        setMsgPosition(that,'充值金额不能为负数！',$(that).attr("errorMsgPosition"));
+        setMsgPosition(that,'充值金额必须是大于0的数字！',$(that).attr("errorMsgPosition"));
          flag = false;
       }else if($(that).val().length>15){
         $(that).trigger('focus');
