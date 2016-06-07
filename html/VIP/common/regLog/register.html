@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|注册</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/RegLog/registered.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/common/autocomplete/autocomplete.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -50,7 +51,7 @@
         <div class="clearfix padding">
           <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
           <div class="lf input_left2">
-            <input type="text" class="input_codes" id="authCode" name="AuthCode">
+            <input type="text" class="input_codes" errorMsgPosition="rightBottom" id="authCode" name="AuthCode">
             <a href="javascript:void(0)" class="butt_cides lf" id="getValidateCode">获取验证码</a>
             <span class="validateCodeTip">活码已发送<br/>请查收(2小时有效)</span>
             <div class="input-tip clearfix"></div>
@@ -157,7 +158,7 @@
           </div>
         </div>
         <div class="clearfix agree">
-          <input type="checkbox" name="AgreeProtocol" value="2" class="lf check_agree">
+          <input type="checkbox" name="AgreeProtocol" errorMsgPosition="bottom" value="2" class="lf check_agree">
           <span class="lf check_agreetext">我已阅读并同意</span>
           <a href="#" class="bule_color lf" id="protocol">《易家纺用户注册协议》</a>
           <a href="#" class="bule_color lf" id="promise">《隐私承诺》</a>

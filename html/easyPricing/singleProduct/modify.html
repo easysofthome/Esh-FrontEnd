@@ -229,13 +229,13 @@
           <td class="fab_price">
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" type="text" id="fabricWidth" name="fabricWidth" value="150" />
+              <input class="int lf" type="text" id="fabricWidth" errorMsgPosition="rightTop" name="fabricWidth" value="150" />
                <div class="input-tip"></div>
               <p class="lf price">厘米</p>
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" type="text" errorMsgPosition="rightBottom" id="fabricPrice" name="fabricPrice" value="15.64" />
+              <input class="int lf" type="text" errorMsgPosition="rightTop" id="fabricPrice" name="fabricPrice" value="15.64" />
                <div class="input-tip"></div>
               <p class="lf price">元/米</p>
             </div>
@@ -266,7 +266,7 @@
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
-              <input class="int intacc lf" id="yuanPerM" errorMsgPosition="rightBottom" name="yuanPerM" type="text"value="150" />
+              <input class="int intacc lf" id="yuanPerM" errorMsgPosition="rightTop" name="yuanPerM" type="text"value="150" />
                <div class="input-tip"></div>
               <p class="lf price">元/米</p>
             </div>
@@ -290,7 +290,7 @@
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
-              <input class="int intacc lf" id="yuanPerNum" errorMsgPosition="rightBottom" name="yuanPerNum" type="text"value="0.8" />
+              <input class="int intacc lf" id="yuanPerNum" errorMsgPosition="rightTop" name="yuanPerNum" type="text"value="0.8" />
               <p class="lf price">元/个</p>
               <div class="input-tip"></div>
             </div>
@@ -308,19 +308,19 @@
          <div class="clearfix factoryOfferCss factoryOfferCss">选择款式工缴报价方式：</div>
           <div class="factoryOfferCssSub">
           <label class="lf radio_rg label_radio">
-            <input class="radio_post lf" name="Fruit" type="radio" value="" />
+            <input class="radio_post lf" name="Fruit" id="easySoftHomePrice_rad" checked="true" type="radio" value="" />
             <span class="lf">选择易家纺工缴库核价</span>
           </label>
           <label class="lf radio_rg label_radio">
-            <input class="lf radio_post" name="Fruit" type="radio" checked="checked" value="" />
+            <input class="lf radio_post" name="Fruit" id="factoryPrice_rad" type="radio" value="" />
             <span class="lf">选择工厂报价核价</span>
           </label>
           </div>
           <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
       </div>
-      <div class="clearfix factoryOffer marginleft">
+      <div class="clearfix factoryOffer marginleft factoryOffer-box">
         <span class="lf title_name">款式工缴报价工厂：</span>
-        <input type="text" id="factoryOffer" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
+        <input type="text" id="factoryOffer" readonly="true" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
         <a href="" class="lf factoryOffer_butt">选择工厂报价</a>
         <div class="input-tip"></div>
 

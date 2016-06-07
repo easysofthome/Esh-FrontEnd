@@ -264,7 +264,7 @@
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightBottom" name="fabricPrice_b" type="text" value="15.64" />
+              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightTop" name="fabricPrice_b" type="text" value="15.64" />
               <p class="lf price">元/米</p>
               <div class="input-tip"></div>
             </div>
@@ -288,7 +288,7 @@
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightBottom" name="fabricPrice_c" type="text" value="15.64" />
+              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightTop" name="fabricPrice_c" type="text" value="15.64" />
               <p class="lf price">元/米</p>
               <div class="input-tip"></div>
             </div>
@@ -345,19 +345,19 @@
          <div class="clearfix factoryOfferCss factoryOfferCss">选择款式工缴报价方式：</div>
           <div class="factoryOfferCssSub">
           <label class="lf radio_rg label_radio">
-            <input class="radio_post lf" name="Fruit" type="radio" value="" />
+            <input class="radio_post lf" name="Fruit" type="radio" id="easySoftHomePrice_rad" checked="checked" value="" />
             <span class="lf">选择易家纺工缴库核价</span>
           </label>
           <label class="lf radio_rg label_radio">
-            <input class="lf radio_post" name="Fruit" type="radio" checked="checked" value="" />
+            <input class="lf radio_post" name="Fruit" type="radio" id="factoryPrice_rad" value="" />
             <span class="lf">选择工厂报价核价</span>
           </label>
           </div>
           <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
       </div>
-      <div class="clearfix factoryOffer marginleft">
+      <div class="clearfix factoryOffer marginleft factoryOffer-box">
         <span class="lf title_name">款式工缴报价工厂：</span>
-        <input type="text" id="factoryOffer" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
+        <input type="text" id="factoryOffer" readonly="true" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
         <a href="/html/easyPricing/pricing/selectQuotation.html" class="lf factoryOffer_butt">选择工厂报价</a>
         <div class="input-tip"></div>
 
