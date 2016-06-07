@@ -52,7 +52,9 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                         wrapSelectWidth=options.width;
                     }
 
-                    var $wrapSelect = $('<div class="wrapSelect" style="float: left"></div>');
+                    var $wrapSelect = $('<div id="wrapSelect_'+$select.attr('id')+'" style="position:relative;float: left;padding-right:10px;height:40px;width:'+(options.width)+'"></div>');
+
+                    // /$('#wrapSelect_'+$select.attr('id')).width(options.width+20);
                     $select.wrap($wrapSelect);
                     $select.after(customSelectSpan.append(customSelectInnerSpan));
 
@@ -89,9 +91,7 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                             });
 
                             var selectBoxHeight = customSelectSpan.outerHeight();
-                            $('.wrapSelect').height(selectBoxHeight);
 
-                            $('.wrapSelect').width(customSelectSpan.outerWidth());
                             // alert(selectBoxHeight);
                             if ($select.attr('disabled')) {
                                 customSelectSpan.addClass(getClass('Disabled'));
@@ -112,6 +112,7 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                                 height: selectBoxHeight,
                                 fontSize: customSelectSpan.css('font-size')
                             });
+                            $('#wrapSelect_'+$select.attr('id')).height(selectBoxHeight);
 
                         })
                         .on('change.customSelect', function () {
