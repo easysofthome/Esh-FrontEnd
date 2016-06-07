@@ -47,7 +47,7 @@ define(function (require, exports, module) {
       $(that).poshytip('destroy');
       if($(that).val().length == 0){
         $(that).trigger('focus');
-        setMsgPosition(that,'易豆个数不能为空！','$(that).attr("errorMsgPosition")');
+        setMsgPosition(that,'易豆个数不能为空！',$(that).attr("errorMsgPosition"));
         flag = false;
       }else if(!tool.validatePositiveInt($(that).val())){
         $(that).trigger('focus');

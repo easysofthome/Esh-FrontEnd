@@ -47,9 +47,9 @@ define(function (require, exports, module) {
         $(that).trigger('focus');
         setMsgPosition(that,'充值金额不能为空！','$(that).attr("errorMsgPosition")');
         flag = false;
-      }else if(!tool.validatePositiveNum($(that).val())){
+      }else if(!tool.validateNumPointNum_plus($(that).val(),2)){
         $(that).trigger('focus');
-        setMsgPosition(that,'充值金额必须是大于0的数字！',$(that).attr("errorMsgPosition"));
+        setMsgPosition(that,'充值金额必须是大于0的整数或者两位以内的小数！',$(that).attr("errorMsgPosition"));
          flag = false;
       }else if($(that).val().length>15){
         $(that).trigger('focus');

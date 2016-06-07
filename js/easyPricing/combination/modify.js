@@ -219,27 +219,32 @@ function setMsgPosition(obj,msg,direction){
               USARate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               educationalTariff: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               RefundRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               profitRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               domesticProfit: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               startPort: {
                   maxlength:20
@@ -247,7 +252,8 @@ function setMsgPosition(obj,msg,direction){
               twentyCounterPerPrice: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               endPort: {
                   maxlength:20
@@ -255,12 +261,14 @@ function setMsgPosition(obj,msg,direction){
               fortyCounterPerPrice: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportTariff: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportCountry: {
                   maxlength:20
@@ -268,56 +276,67 @@ function setMsgPosition(obj,msg,direction){
               premiumRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               CustomsClearanceFee: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               creditRisk: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               interest: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               commision: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportProfitRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricWidth_a: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricPrice_a: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricWidth_b: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricPrice_b: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               factoryOffer : {
                   number:true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               }
 
           },
@@ -430,7 +449,18 @@ function setMsgPosition(obj,msg,direction){
   }
 
 
+//核价方式：选择易家纺工缴库核价   选择工厂报价核价
+$(document).ready(function(){
+  $('.factoryOffer-box').hide();
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('.factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('.factoryOffer-box').show();
+  });
 
+
+});
 
 
 
