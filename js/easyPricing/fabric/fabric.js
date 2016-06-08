@@ -1,9 +1,10 @@
 define(function(require, exports, module) {
     require('jquery');
+    require('js/lib/tip/jquery.poshytip');
     require('layer');
     require('spinner');
     require('customSelect');
-    require('js/lib/tip/jquery.poshytip');
+    
     require('js/lib/validation/validation');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
@@ -64,6 +65,7 @@ var startPriceLayer = {
         offset: [($(window).height() - 650)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
+        fix : false,
         iframe: {src: '/html/easyPricing/pricing/result.html'},
         success: function () {
 
@@ -84,6 +86,7 @@ var startPriceLayer = {
         offset: [($(window).height() - 874)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
+        fix : false,
         iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
         success: function () {
 
@@ -104,6 +107,7 @@ var startPriceLayer = {
         offset: [($(window).height() - 270)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
+        fix : false,
         iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
         success: function () {
 

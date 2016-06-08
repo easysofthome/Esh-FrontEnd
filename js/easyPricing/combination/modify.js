@@ -51,6 +51,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/export.html'},
           success: function (layero, index) {
 
@@ -60,8 +61,15 @@ function setMsgPosition(obj,msg,direction){
       });
 
       //产品辅料 查看修改
-      $("#product_view").attr('href', 'javascript:void(0)');
-      $("#product_view").bind("click",function(){
+      var src = "";
+      $(".productaccModify,.packageModify,.volumeModify").hover(function(){
+        src = $(this).attr("href");
+        $(this).attr('href', 'javascript:void(0)');
+      },function(){
+        $(this).attr("href",src);
+      });
+      
+      $(".productaccModify").bind("click",function(){
         $.layer({
           type:2,
           title: false,
@@ -72,7 +80,8 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
-          iframe: {src: '../pricing/productacc.html'},
+          fix : false,
+          iframe: {src: src},
           success: function (layero, index) {
 
 
@@ -81,8 +90,7 @@ function setMsgPosition(obj,msg,direction){
       });
 
       //包装辅料 查看修改
-      $("#packing_view").attr('href', 'javascript:void(0)');
-      $("#packing_view").bind("click",function(){
+      $(".packageModify").bind("click",function(){
         $.layer({
           type:2,
           title: false,
@@ -93,7 +101,8 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
-          iframe: {src: '../pricing/productacc.html'},
+          fix : false,
+          iframe: {src: src},
           success: function (layero, index) {
 
 
@@ -102,8 +111,7 @@ function setMsgPosition(obj,msg,direction){
       });
 
        //体积信息 查看修改
-      $("#volume_view").attr('href', 'javascript:void(0)');
-      $("#volume_view").bind("click",function(){
+      $(".volumeModify").bind("click",function(){
         $.layer({
           type:2,
           title: false,
@@ -114,7 +122,8 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 190)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
-          iframe: {src: '../pricing/volume.html'},
+          fix : false,
+          iframe: {src: src},
           success: function (layero, index) {
 
 
@@ -136,6 +145,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 980)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/replaceFabric.html'},
           success: function (layero, index) {
 
@@ -158,6 +168,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 260)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
           success: function (layero, index) {
 

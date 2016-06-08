@@ -98,19 +98,19 @@ $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100
 
   $('#overLayer_fratic').css({'z-index':'41','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
   $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
-  $('#overLayer_fratic_top span:eq(0)').css({'width':150,'top':'55px','left':'50px','position':'absolute','text-align':'left'});
-  $('#overLayer_fratic_top span:eq(1)').css({'width':150,'top':'55px','right':'50px','position':'absolute','text-align':'right'});
+  $('#overLayer_fratic_top span:eq(0)').css({'width':150,'bottom':'17px','left':'20px','position':'absolute','text-align':'left','line-height': '20px'});
+  $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px','position':'absolute','text-align':'right','line-height': '20px'});
 
 
   $('.twentytwenty-container').bind('mouseleave',function(){
-      $('#overLayer_fratic').fadeIn();
-     $('#overLayer_fratic_top').fadeIn();
+      $('#overLayer_fratic').show();
+     $('#overLayer_fratic_top').show();
   });
 
 
    $('#overLayer_fratic_top').bind('mouseover',function(){
-    $('#overLayer_fratic').fadeOut();
-    $('#overLayer_fratic_top').fadeOut();
+    $('#overLayer_fratic').hide();
+    $('#overLayer_fratic_top').hide();
 
   });
 

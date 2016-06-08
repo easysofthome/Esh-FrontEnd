@@ -16,7 +16,7 @@ define(function (require, exports, module) {
       area: ['924px', '500px'],
       border: [5, 0.3, '#000'],
       shadeClose: true,
-      offset: [($(window).height() - 174)/2+'px',''],
+      offset: [($(window).height() - 500)/2+'px',''],
       // closeBtn: [0, false], //去掉默认关闭按钮
       shift: 'top',
       page: {
@@ -37,7 +37,7 @@ define(function (require, exports, module) {
       area: ['924px', '500px'],
       border: [5, 0.3, '#000'],
       shadeClose: true,
-      offset: [($(window).height() - 174)/2+'px',''],
+      offset: [($(window).height() - 500)/2+'px',''],
       // closeBtn: [0, false], //去掉默认关闭按钮
       shift: 'top',
       page: {
