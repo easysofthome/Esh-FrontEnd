@@ -127,7 +127,7 @@ function setMsgPosition(obj,msg,direction){
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
-                formSubmit(form);
+                //formSubmit(form);
                 //阻止表单提交
                 //$.layer(startPriceLayer);
                 return false;
@@ -142,7 +142,7 @@ function setMsgPosition(obj,msg,direction){
               }
               return true;
             },
-            success:function(element){
+            success:function(error, element){
               $(element).poshytip('destroy');
             },
             rules: {
@@ -153,13 +153,15 @@ function setMsgPosition(obj,msg,direction){
                 typeNum_1: {
                     required: true,
                     number: true,
-                    maxlength: 10
+                    maxlength: 10,
+                    gt:0
 
                 },
                 typeNum_2: {
                     required: true,
                     number: true,
-                    maxlength: 10
+                    maxlength: 10,
+                    gt:0
 
                 },
                textareaFlowcla: {
@@ -190,7 +192,16 @@ function setMsgPosition(obj,msg,direction){
     }
 
 
+
     //加载表单验证函数
     init();
+
+
+    $(document).ready(function(){
+         $('#saveAndsubmit').bind('click',function(){
+            form.submit();
+        });
+
+    });
 
 });
