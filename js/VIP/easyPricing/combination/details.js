@@ -25,6 +25,7 @@ define(function (require, exports, module) {
           offset: [($(window).height() - 206)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: href},
           success: function (layero, index) {
 

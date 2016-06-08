@@ -68,6 +68,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/export.html'},
           success: function (layero, index) {
 
@@ -89,6 +90,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -107,9 +109,10 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -128,9 +131,10 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 190)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/volume.html'},
           success: function (layero, index) {
 
@@ -153,6 +157,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 964)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/replaceFabric.html'},
           success: function (layero, index) {
 
@@ -175,6 +180,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 600)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/accessories.html'},
           success: function (layero, index) {
 
@@ -196,6 +202,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 260)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: ' /html/easyPricing/pricing/selectQuotation.html'},
           success: function (layero, index) {
 

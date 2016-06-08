@@ -53,6 +53,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/export.html'},
           success: function (layero, index) {
 
@@ -74,6 +75,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 270)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -95,6 +97,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -116,6 +119,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 190)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/volume.html'},
           success: function (layero, index) {
 
@@ -138,6 +142,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 964)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/replaceFabric.html'},
           success: function (layero, index) {
 
@@ -160,6 +165,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 600)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/accessories.html'},
           success: function (layero, index) {
 
@@ -181,6 +187,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 270)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
           success: function (layero, index) {
 

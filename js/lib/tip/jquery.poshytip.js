@@ -22,7 +22,7 @@ define(function (require, exports, module) {
 	$.Poshytip = function(elm, options) {
 		this.$elm = $(elm);
 		this.opts = $.extend({}, $.fn.poshytip.defaults, options);
-		this.$tip = $(['<div class="',this.opts.className,'">',
+		this.$tip = $(['<div style="z-index:'+options.zIndex+'" class="',this.opts.className,'">',
 				'<div class="tip-inner tip-bg-image"></div>',
 				'<div class="tip-arrow tip-arrow-top tip-arrow-right tip-arrow-bottom tip-arrow-left"></div>',
 			'</div>'].join(''));
@@ -96,7 +96,16 @@ define(function (require, exports, module) {
 			this.reset();
 			this.update();
 			this.display();
+      this.hide_timeOut(this);
 		},
+    hide_timeOut:function(that){
+      if(this.opts.hide_timeOut){
+        setTimeout(function(){ 
+          that.hide();
+        }, 2000);
+        
+      }
+    },
 		hide: function() {
 			if (this.disabled || !this.$tip.data('active'))
 				return;
@@ -389,6 +398,8 @@ define(function (require, exports, module) {
 
 	// default settings
 	$.fn.poshytip.defaults = {
+    zIndex:98,
+    hide_timeOut:false,
 		content: 		'[title]',	// content to display ('[title]', 'string', element, function(updateCallback){...}, jQuery)
 		className:		'tip-yellow',	// class for the tips
 		bgImageFrameSize:	10,		// size in pixels for the background-image (if set in CSS) frame around the inner content of the tip

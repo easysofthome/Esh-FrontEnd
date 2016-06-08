@@ -52,6 +52,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 650)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/similarSingle.html'},
 
           success: function (layero, index) {

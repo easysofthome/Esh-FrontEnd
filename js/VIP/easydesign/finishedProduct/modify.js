@@ -53,6 +53,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 650)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/export.html'},
           success: function (layero, index) {
 
@@ -74,6 +75,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 650)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -95,6 +97,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 650)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -116,6 +119,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 650)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/volume.html'},
           success: function (layero, index) {
 
@@ -138,6 +142,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 964)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/replaceFabric.html'},
           success: function (layero, index) {
 
@@ -160,6 +165,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 586)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '/html/easyPricing/pricing/accessories.html'},
           success: function (layero, index) {
 

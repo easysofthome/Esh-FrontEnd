@@ -11,7 +11,7 @@ define(function (require, exports, module) {
       border: [5, 0.3, '#000'],
       shade: [0.8, '#000'],
       shadeClose: true,
-      offset: [($(window).height() - 400)/2+'px',''],
+      offset: [($(window).height() - 200)/2+'px',''],
       closeBtn: [0, false], //去掉默认关闭按钮
       shift: 'top',
       // page: {
