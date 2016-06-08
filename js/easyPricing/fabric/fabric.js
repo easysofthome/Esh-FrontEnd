@@ -164,44 +164,53 @@ var startPriceLayer = {
               fabricWidth: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               warpSpinnerNum1: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               warpSpinnerNum2: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               abbSpinnerNum1: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               abbSpinnerNum2: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               exchangeRate: {
                   required: true,
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice1: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice2: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice3: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               }
           },
           messages: {
@@ -254,6 +263,18 @@ var startPriceLayer = {
   }
 
 
+//核价方式：选择易家纺工缴库核价   选择工厂报价核价
+$(document).ready(function(){
+  $('.factoryOffer-box').hide();
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('.factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('.factoryOffer-box').show();
+  });
+
+
+});
 
 
 init();

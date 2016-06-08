@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     require('js/lib/tip/jquery.poshytip');
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
     var placehold = require('js/common/module/placehold');
-    var cus = require('customSelect');
+    require('customSelect');
 
     require('js/lib/validation/validation');
     placehold.init('input');

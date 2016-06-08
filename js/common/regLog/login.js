@@ -2,6 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
+  require('js/lib/synchroInputText');
   var placehold = require('js/common/module/placehold');
   placehold.init('.user_box>input,.password_box>input,.authcode_box>input');
 
@@ -34,10 +35,20 @@ function setMsgPosition(obj,msg,direction){
       showTip(obj,msg,"inner-left","bottom",0,5);
       break;
     default:
-      showTip(obj,msg,"inner-left","top",0,0);
+      showTip(obj,msg,"inner-left","bottom",0,0);
   }
 }
 
+
+/////////////////////////////////// 文本框输入提示 （银行卡、手机号） //////////////////////////////////////////
+    //tag为如何格式化，例如手机号是### #### ####
+   $(document).ready(function () {
+    $('#userName').inputTip({
+      tag:'userName',
+      marginTop:5,
+      width:$('#userName').width()
+    });
+   });
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
