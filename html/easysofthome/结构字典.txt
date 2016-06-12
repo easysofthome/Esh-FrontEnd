@@ -1,3 +1,7 @@
+AboutUs（关于我们）
+  | AboutUs                关于易家纺
+  | CompanyHonor           公司资质
+
 download（下载页面）
   | configure              下载配置
   | download               软件下载

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>帮助中心-易家纺电子商务服务平台_首页</title>
+  <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easysofthome/AboutUs/AboutUs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("AboutUs-L").style.height = document.getElementById("AboutUs-R").offsetHeight+"px";
+    }
+</script>
+</head>
+<body>
+  @@include('common/top.html')
+  @@include('easysofthome/AboutUs/header.html')
+
+  <div class="AboutUs-box">
+    <!-- 定位链接 -->
+    <div class="title-box clearfix">
+      <a class="link lf" href="/html/easysofthome/index.html">易家纺首页</a>
+      <i class="lf">></i>
+      <a class="link lf" href="/html/easysofthome/AboutUs/AboutUs.html">关于我们</a>
+      <i class="lf">></i>
+      <span class="lf">公司资质</span>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="AboutUs-main clearfix">
+      <!-- 左边导航 -->
+      <ul class="AboutUs-L lf" id="AboutUs-L">
+        <li class="nav-L">
+          <a href="/html/easysofthome/AboutUs/AboutUs.html">关于易家纺</a>
+        </li>
+        <li class="nav-L cur">
+          <a href="/html/easysofthome/AboutUs/CompanyHonor.html">公司资质</a>
+        </li>
+        <li class="nav-L">
+          <a href="#">知识产权</a>
+        </li>
+        <li class="nav-L">
+          <a href="#">媒体报道</a>
+        </li>
+      </ul>
+
+      <!-- 右边内容 -->
+      <div class="AboutUs-R lf" id="AboutUs-R">
+        <div class="tab">
+          <p class="tit">Company honor</p>
+          <p class="tit">公司资质</p>
+        </div>
+        <ul class="honor-box">
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_ese.jpg" width="220" height="140">
+            <p class="words">浙江省重点电子商务服务企业</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_kpf.jpg" width="220" height="140">
+            <p class="words">浙江省重点公共外贸平台</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_registration.jpg" width="220" height="140">
+            <p class="words">软件产品登记证书</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/001.jpg" width="220" height="140">
+            <p class="words">软件企业认定证书</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_eat.jpg" width="220" height="140">
+            <p class="words">中国对外经济贸易统计学会会员单位</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_hti.jpg" width="220" height="140">
+            <p class="words">中国家用纺织行业协会理事单位</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_fc.jpg" width="220" height="140">
+            <p class="words">中国流行色协会会员单位</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_zheda.jpg" width="220" height="140">
+            <p class="words">浙江大学战略合作伙伴</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_lees.jpg" width="220" height="140">
+            <p class="words">英国利兹大学战略合作伙伴</p>
+          </li>
+          <li class="honor lf">
+            <img src="/images/original/easysofthome/AboutUs/h_cs.jpg" width="220" height="140">
+            <p class="words">美国科罗拉多州立大学战略合作伙伴</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  @@include('common/footer.html')
+  <script>
+  seajs.use('js/easyPricing/Index/index',function(){ });
+
+  </script>
+</body>
+</html>
