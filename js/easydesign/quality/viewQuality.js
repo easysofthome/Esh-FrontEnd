@@ -1,39 +1,20 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('js/lib/jquery.snipe/jquery.snipe');
 
   //当前显示图片索引
   var curIndex = 0;
  // require('js/easydesign/common/jquery.fullscreen');
   var baseUrl = '/images/production/easydesign/designFabrics/';
-  var objJson = {'objFabricImg':
-    [{'src':baseUrl+'bedroom_02_fabric.jpg'},
-    {'src':baseUrl+'bedroom_03_fabric.jpg'},
-    {'src':baseUrl+'bedroom_04_fabric.jpg'},
-    {'src':baseUrl+'bedroom_fabric_real.png'},
-    {'src':baseUrl+'flower.png'},
-    {'src':baseUrl+'icon-huaxing-21.png'},
-    {'src':baseUrl+'icon-huaxing-22.png'},
-    {'src':baseUrl+'icon-huaxing-23.png'}],
+  var objJson = {
     'objFabricImg_full':
-    [{'src':baseUrl+'1755360e-d12b-4e5e-963c-75a6596b0725.png'},
-    {'src':baseUrl+'6e1868ac-eb4f-44a1-a148-a3244701c0c5.png'}]
+    [{'src':baseUrl+'767171c0-3b5f-4f63-8832-72ef851c57e4.jpg'},
+    {'src':baseUrl+'c7ad1773-b42b-444f-b549-1c0f576f10f0.jpg'}]
   };
 
   var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){
-
-    if(!objJson) return;
-    if(objJson.objFabricImg.length <=0) return;
-
-    for(var i=0;i<objJson.objFabricImg.length;i++){
-      $('#j-resemble').append(' <li class="resembleLi">'+
-        '<a class="list" href="javaScript:void(0);" data-picid="">'+
-        '<div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
-          objJson.objFabricImg[i].src+');"> </div></a></li>');
-
-    }
-
 
     setBigImg(objJson,0);
   }
@@ -46,16 +27,23 @@ define(function (require, exports, module) {
 
     $('#j-lb-pic').attr('src',objJson.objFabricImg_full[index].src);
 
+
     //获取图片的原始尺寸
     $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[index].src).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
+      $('#j-lb-pic').snipe({
+        bounds: [10,-10,-10,10],
+        image: objJson.objFabricImg_full[index].src
     });
+    });
+    });
+
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
-  function setConstrainImg(image,imgObj,parentDiv,leftSide){
+  function setConstrainImg(image,imgObj,parentDiv,leftSide,callback){
     var winH = $(window).height();
     var winW = $(window).width();
 
@@ -96,6 +84,7 @@ define(function (require, exports, module) {
     $(parentDiv).css({'width':w,'height':h});
 
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
+    callback();
   }
 
 
@@ -156,6 +145,18 @@ define(function (require, exports, module) {
     });
   }
 
+  //第一张  最后一张 控制链接显示与否
+  function setNextOrPrev(index,length){
+
+    $('.ctrl-prev').show();
+    $('.ctrl-next').show();
+    if(index<=0){
+      $('.ctrl-prev').hide();
+    }
+    if(index>=(length-1)){
+      $('.ctrl-next').hide();
+    }
+  }
 
   //鼠标滚轮，上一张、下一张
   function mousewheel(){
@@ -175,33 +176,19 @@ define(function (require, exports, module) {
     });
   }
 
-  //第一张  最后一张 控制链接显示与否
-  function setNextOrPrev(index,length){
 
-    $('.ctrl-prev').show();
-    $('.ctrl-next').show();
-    if(index<=0){
-      $('.ctrl-prev').hide();
-    }
-    if(index>=(length-1)){
-      $('.ctrl-next').hide();
-    }
-  }
 
-  //为相似花型绑定click事件
-  function similarFlowersClick(){
-      $('#j-resemble li').bind('click',function(){
-           setBigImg(objJson,1);
-      });
-  }
 
 
   $(document).ready(function () {
     bindScrollBigImg();
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
-    similarFlowersClick();
     mousewheel();
+
+
+
+
     //clickFullScreen();
   });
 

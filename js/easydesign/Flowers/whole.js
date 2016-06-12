@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     $(document).ready(function () {
 
       $('.flowlist .flowerimg').bind('click',function(e){
-      var url = '../../easydesign/showDesignImg.html';
+      var url = '/html/easydesign/Flowers/viewFlower.html';
       window.open(url);
     });
 

@@ -127,7 +127,7 @@ function setMsgPosition(obj,msg,direction){
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
-                //formSubmit(form);
+                formSubmit(form);
                 //阻止表单提交
                 //$.layer(startPriceLayer);
                 return false;
