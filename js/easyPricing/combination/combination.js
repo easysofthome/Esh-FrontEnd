@@ -4,6 +4,21 @@ define(function (require, exports, module) {
   require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
 
+  // 删除按钮
+  var numArray = {1:'一',2:'二',3:'三',4:'四'};
+  $('.resultbox').on('click', 'a', function(event) {
+
+    var index = $(this).parent().index();
+    $('tr.tit td').eq(index).remove();
+    $('tr:eq(1) td').eq(index).remove();
+
+    for (var i = 0 ;i < $('tr.tit td').length - 4; i++) {
+      $('tr.tit td').eq(i+4).html('第'+ numArray[i+2] +'尺码 <a href="javascript:;">[删除]</a>');
+    };
+  });
+
+
+
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 

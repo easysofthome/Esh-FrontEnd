@@ -4,7 +4,7 @@ define(function(require, exports, module) {
     require('layer');
     require('spinner');
     require('customSelect');
-    
+
     require('js/lib/validation/validation');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
@@ -46,8 +46,65 @@ function setMsgPosition(obj,msg,direction){
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
-    $('#warp-spinner').spinner({min:1,max:2});
-    $('#abb-spinner').spinner({min:1,max:4});
+    $('#warp-spinner')
+      .spinner({
+        min:1,
+        max:2,
+        addEvent: function () {
+          $('#yarn-ul').append('<li class="lf yarn_para">'
+            + '<span class="lf para_tit">经纱2：</span>'
+            + '<span class="lf include"></span>'
+            + '<div class="lf" style="width: 142px;">'
+              + '<span class="clearfix ingredient" >'
+                + '<span class="lf ingredient_tit">成分</span>'
+                + '<span class="lf input_fabric">全棉纱</span>'
+              + '</span>'
+              + '<span class="clearfix thickness">'
+              + '<span class="clearfix thickness">'
+                + '<span class="lf ingredient_tit">粗细</span>'
+                + '<span class="lf input_fabric">80S</span>'
+              + '</span>'
+            + '</div>'
+            + '<div class="yarn_butt lf">选择纱线</div>'
+          + '</li>');
+          $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
+            + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="warpSpinnerNum2" class="density_input lf">'
+          );
+        },
+        cutEvent: function () {
+          $('#yarn-ul li:last').remove();
+          $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
+        }
+      });
+
+    $('#abb-spinner').spinner({
+      min:1,
+      max:4,
+      addEvent:function () {
+        var num = $('#abb-ul li').length+1;
+        $('#abb-ul').append('<li class="lf yarn_para">'
+          + '<span class="lf para_tit">纬纱'+ num +'：</span>'
+          + '<span class="lf include"></span>'
+          + '<div class="lf" style="width: 142px;">'
+            + '<span class="clearfix ingredient">'
+              + '<span class="lf ingredient_tit">成分</span>'
+              + '<span class="lf input_fabric">全棉纱</span>'
+            + '</span>'
+            + '<span class="clearfix thickness">'
+              + '<span class="lf ingredient_tit">粗细</span>'
+              + '<span class="lf input_fabric">80S</span>'
+            + '</span>'
+          + '</div>'
+          + '<div class="yarn_butt lf">选择纱线</div>'
+          + '</li>');
+        $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
+          + '<input type="text" id="abbSpinnerNum2" errorMsgPosition="rightTop" name="abbSpinnerNum2" class="density_input lf">');
+      },
+      cutEvent:function () {
+        $('#abb-ul li:last').remove();
+        $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
+      }
+    });
 
     $('.handle_one').click(function() {
       $(this).toggleClass('selected');
