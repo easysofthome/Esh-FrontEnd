@@ -26,6 +26,15 @@ define(function (require, exports, module) {
     });
   });
 
+//////////////////////////////////身份 选择//////////////////////////////////////
+function userIdentity(){
+  $('input[name="identity"]').bind('click',function(){
+    var tag = $(this).attr('id');
+    $('#factory_sel,#trafficker_sel,#importer_sel,#stockist_sel').hide();
+    $('#'+tag+'_sel').show();
+  });
+}
+
 
 //////////////////////////////////文本框输入提示 （银行卡、手机号）//////////////////////////////////////
 
@@ -34,6 +43,6 @@ define(function (require, exports, module) {
       tag:'',
       marginTop:0
     });
-
+  userIdentity();
    });
 });
