@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
 
   require('jquery');
+  require('layer');
 
   // 颜色渐变支持
 
@@ -147,4 +148,25 @@ define(function (require, exports, module) {
     myMouse.setLittleMousePosition("section0_id","little_mouse");
 
   });
+
+
+  //弹出层
+   $('#startDesign').on('click', function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1000px', '504px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 504)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        iframe: {src: '/html/easysofthome/download/configure.html'},
+        success: function () {
+
+        }
+
+      });
+    });
 })

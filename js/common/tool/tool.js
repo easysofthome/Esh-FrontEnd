@@ -213,6 +213,264 @@ define(function (require, exports, module) {
     }
 
 
+    /** 邮箱验证 */
+    function phoneRule (value) {
+      var email = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$"; //邮件
+      var flag;
+      var regMail = new RegExp(email);
+      if(regMail.test(value)){
+          flag = true;
+      }else{
+          flag = false;
+      }
+      return flag;
+    }
+
+    //验证码倒计时
+    function countdown(waitColdeClass,id,startNum,endNum,endText,phoneId,callback){
+        $("#"+id).unbind("click");
+        var mySatartNum = parseInt(startNum);
+        var myEndNum = parseInt(endNum);
+        $("#"+id).css("background-color", "#B3B3B3");
+        $(".validateCodeTip").show();
+        if(callback){callback();}
+        continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,phoneId,callback);
+    }
+
+    function continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,phoneId,callback){
+
+        var timer =window.setTimeout(function(){
+
+            $("#"+id).html(mySatartNum--);
+            //alert(mySatartNum);
+            if(mySatartNum <= myEndNum){
+                $("#"+id).css("background-color", "#00a2ca");
+                $(".validateCodeTip").hide();
+                $("#"+id).html(endText);
+                mySatartNum = parseInt(startNum);
+                bindClick_countdown(waitColdeClass,id,mySatartNum,myEndNum,endText,phoneId,callback);
+                return;
+            }else{
+                continueTimer(waitColdeClass,id,mySatartNum,startNum,myEndNum,endText,phoneId,callback);
+            }
+        },1000);
+    }
+
+    //绑定click
+    function bindClick_countdown(waitColdeClass,id,startNum,endNum,endText,phoneId,callback){
+        $("#"+id).bind("click",function(){
+            if(phoneId){
+               // $("#"+phoneId).trigger("focus");
+                //$("#"+phoneId).trigger("focusout");
+                if(!$("#"+phoneId).valid()){
+
+                    return;
+                }
+
+
+        }
+            countdown(waitColdeClass,id,startNum,endNum,endText,phoneId,callback);
+
+        });
+    }
+
+    //全选
+    function selectAllOrNone_ck(checkboxName,flag){
+        $("input:checkbox[name='"+checkboxName+"']").attr("checked",flag);
+    }
+
+    //验证正数 不包含0、负数
+    function validatePositiveNum(value){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
+        return reg.test(value);
+    }
+     //验证数字包含负数 0
+    function validateNum(value){
+        var reg = new RegExp("^[\-]?[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+     //验证数字 不包含负数 包含0、整数、小数
+    function validateNum_plus(value){
+        var reg = new RegExp("^[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+    //验证数字 可以是负数 小数 正数 ,自定义小数位数
+    function validateNumPointNum(value,pointNum){
+        var reg = eval('/^[\-]?[0-9]+\.{0,1}[0-9]{0,'+pointNum+'}$/');
+        return reg.test(value);
+    }
+
+    //验证数字 可以 小数 正数 ,自定义小数位数
+    function validateNumPointNum_plus(value,pointNum){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
+        if (isNaN(value)) {
+            return false;
+        }
+
+        var s = value.toString();
+        if(s.indexOf('.')>0){
+            if(((s.length-1)-s.indexOf('.'))>pointNum){
+                return false;
+            }
+        }
+        if(!reg.test(value)){
+
+            return false;
+        }
+
+        return true;
+    }
+
+    //验证数字 可以是负数 小数 正数
+    function validateAllNum(value){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[0-9][0-9]*))$");
+        return reg.test(value);
+    }
+
+    //验证数字
+    function validatePositiveInt(value){
+        var reg = new RegExp("^[1-9]\d*$");
+        return reg.test(value);
+    }
+
+    ///////////////////////////////////// 银行卡号Luhm校验////////////////////////////////////////////
+     //Description:  银行卡号Luhm校验
+
+    //Luhm校验规则：16位银行卡号（19位通用）:
+
+    // 1.将未带校验位的 15（或18）位卡号从右依次编号 1 到 15（18），位于奇数位号上的数字乘以 2。
+    // 2.将奇位乘积的个十位全部相加，再加上所有偶数位上的数字。
+    // 3.将加法和加上校验位能被 10 整除。
+    function bankCoardCheck(bankno){
+        var errorMsg = "";
+
+        var num = /^\d*$/;  //全数字
+        if (!num.exec(bankno)) {
+            errorMsg = "银行卡号必须全为数字！";
+            return errorMsg;
+        }
+
+        //开头6位
+        var strBin="10,18,30,35,37,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,60,62,65,68,69,84,87,88,94,95,98,99";
+        if (strBin.indexOf(bankno.substring(0, 2))== -1) {
+            errorMsg = "银行卡号开头6位不符合规范！";
+            return errorMsg;
+        }
+
+        if (bankno.length < 16 || bankno.length > 19) {
+            errorMsg = "银行卡号长度必须在16到19之间！";
+            return errorMsg;
+        }
+        return errorMsg;
+
+        //暂时不进行luhm验证
+        var lastNum=bankno.substr(bankno.length-1,1);//取出最后一位（与luhm进行比较）
+
+        var first15Num=bankno.substr(0,bankno.length-1);//前15或18位
+        var newArr=new Array();
+        for(var i=first15Num.length-1;i>-1;i--){    //前15或18位倒序存进数组
+            newArr.push(first15Num.substr(i,1));
+        }
+        var arrJiShu=new Array();  //奇数位*2的积 <9
+        var arrJiShu2=new Array(); //奇数位*2的积 >9
+
+        var arrOuShu=new Array();  //偶数位数组
+        for(var j=0;j<newArr.length;j++){
+            if((j+1)%2==1){//奇数位
+                if(parseInt(newArr[j])*2<9)
+                arrJiShu.push(parseInt(newArr[j])*2);
+                else
+                arrJiShu2.push(parseInt(newArr[j])*2);
+            }
+            else //偶数位
+            arrOuShu.push(newArr[j]);
+        }
+
+        var jishu_child1=new Array();//奇数位*2 >9 的分割之后的数组个位数
+        var jishu_child2=new Array();//奇数位*2 >9 的分割之后的数组十位数
+        for(var h=0;h<arrJiShu2.length;h++){
+            jishu_child1.push(parseInt(arrJiShu2[h])%10);
+            jishu_child2.push(parseInt(arrJiShu2[h])/10);
+        }
+
+        var sumJiShu=0; //奇数位*2 < 9 的数组之和
+        var sumOuShu=0; //偶数位数组之和
+        var sumJiShuChild1=0; //奇数位*2 >9 的分割之后的数组个位数之和
+        var sumJiShuChild2=0; //奇数位*2 >9 的分割之后的数组十位数之和
+        var sumTotal=0;
+        for(var m=0;m<arrJiShu.length;m++){
+            sumJiShu=sumJiShu+parseInt(arrJiShu[m]);
+        }
+
+        for(var n=0;n<arrOuShu.length;n++){
+            sumOuShu=sumOuShu+parseInt(arrOuShu[n]);
+        }
+
+        for(var p=0;p<jishu_child1.length;p++){
+            sumJiShuChild1=sumJiShuChild1+parseInt(jishu_child1[p]);
+            sumJiShuChild2=sumJiShuChild2+parseInt(jishu_child2[p]);
+        }
+        //计算总和
+        sumTotal=parseInt(sumJiShu)+parseInt(sumOuShu)+parseInt(sumJiShuChild1)+parseInt(sumJiShuChild2);
+
+        //计算Luhm值
+        var k= parseInt(sumTotal)%10==0?10:parseInt(sumTotal)%10;
+        var luhm= 10-k;
+
+        if(lastNum==luhm){
+            errorMsg = "";
+            return errorMsg;
+        }else{
+            errorMsg = "无效的银行卡号，请重新输入！";
+            return errorMsg;
+        }
+    }
+
+////////////////////////////////格式化书数字///////////////////////////////////////
+     //强制保留2位小数，如：2，会在2后面补上00.即2.00
+    function toDecimal2(x) {
+        var f = parseFloat(x);
+        if (isNaN(f)) {
+            return false;
+        }
+        var f = Math.floor(x*100)/100;
+        var s = f.toString();
+        var rs = s.indexOf('.');
+        if (rs < 0) {
+            rs = s.length;
+            s += '.';
+        }
+        while (s.length <= rs + 2) {
+            s += '0';
+        }
+        return s;
+    }
+
+     //如果小数位数大于2，保留2位小数，如：2.333，会即2.33 不四舍五入
+     //如果小数位数小于2，如为2.3结果仍为2.3 不强制补0 不四舍五入
+    function toKeepDecimal2(x) {
+        var f = parseFloat(x);
+        if (isNaN(f)) {
+            return false;
+        }
+        var f = Math.floor(x*100)/100;alert(f);
+        var s = f.toString();
+        var rs = s.lastIndexOf('.');
+        if (rs < 2) {
+            return x;
+        }
+        while (s.length <= rs + 2) {
+            s += '0';
+        }
+        return s;
+    }
+
+
+
+
+    module.exports.selectAllOrNone_ck = selectAllOrNone_ck;
     module.exports.addCSS = addCss;
     module.exports.cookieHelp = cookieHelp;
     module.exports.dateHelp = dateHelp;
@@ -220,5 +478,23 @@ define(function (require, exports, module) {
     module.exports.urlHelp = urlHelp;
     module.exports.addScriptHelp = addScriptHelp;
     module.exports.validtaePhoneNum = validtaePhoneNum;
+    module.exports.phoneRule = phoneRule;
+    module.exports.bindClick_countdown = bindClick_countdown;
+    module.exports.validatePositiveNum = validatePositiveNum;
+    module.exports.bankCoardCheck = bankCoardCheck;
+    module.exports.validateNum = validateNum;
+    module.exports.validateNumPointNum = validateNumPointNum;
+    module.exports.validateNum_plus = validateNum_plus;
+    module.exports.validatePositiveInt = validatePositiveInt;
+    module.exports.toDecimal2 = toDecimal2;
+    module.exports.validateAllNum = validateAllNum;
+    module.exports.toKeepDecimal2 = toKeepDecimal2;
+    module.exports.validateNumPointNum_plus = validateNumPointNum_plus;
+
+
+
+
+
+
 
 });

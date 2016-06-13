@@ -8,28 +8,32 @@
 </head>
 <body>
   @@include('common/top.html')
-@@include('easyPricing/header.html')
-   <div class="index-banner-box">
+  @@include('easyPricing/header.html')
+  <div class="index-banner-box">
     <div class="banner-wrapper">
       <ul class="clearfix banner-box">
         <li class="banner-li">
-        <a href="#">
-        <img src="/images/production/easyPricing/banner.png"   >
-        </a>
+          <a href="#">
+            <img src="/images/production/easyPricing/banner.png"   ></a>
         </li>
         <li class="banner-li">
-        <a href="#">
-          <div class="aa"><img src="/images/production/easyPricing/banner2.png"   ></div>
-
+          <a href="/html/easyPricing/fabric/fabric.html">
+            <div class="aa">
+              <img src="/images/production/easyPricing/banner2.png"   ></div>
           </a>
         </li>
-
+        <li class="banner-li">
+          <a href="/html/easyPricing/singleProduct/choice.html">
+            <div class="aa">
+              <img src="/images/production/easyPricing/banner3.png"   ></div>
+          </a>
+        </li>
       </ul>
     </div>
     <ul class="switchable-triggers">
       <li class="current lf"></li>
       <li class="lf"></li>
-
+      <li class="lf"></li>
     </ul>
   </div>
 
@@ -44,7 +48,7 @@
     <ul class="coreprice clearfix">
       <li class="lf">
         <p class="coreprice_tit">面料核价</p>
-        <span class="coreprice_tit_ico"></span>
+        <span class="coreprice_tit_ico1"></span>
         <div class="description">
           您可以按照您的面料的基本信息，与我们
           <br/>
@@ -52,15 +56,13 @@
           <br/>
           到您的面料准确的核价数据。该核价方式
           <br/>
-          得出的数据更准确，但灵活性小，适用范
-          <br/>
-          围不够广。
+          得出的数据更准确。
         </div>
         <a href="/html/easyPricing/fabric/fabric.html" class="coreprice_butt">我要核价</a>
       </li>
       <li class="lf cor_mar">
         <p class="coreprice_tit">单品核价</p>
-        <span class="coreprice_tit_ico"></span>
+        <span class="coreprice_tit_ico2"></span>
         <div class="description">
           您可以任意选择各个大类中的一个或多个
           <br/>
@@ -76,7 +78,7 @@
       </li>
       <li class="lf cor_mar">
         <p class="coreprice_tit">套件核价</p>
-        <span class="coreprice_tit_ico"></span>
+        <span class="coreprice_tit_ico3"></span>
         <div class="description">
           您可以选择已经存在的套件组合，也可以
           <br/>
@@ -94,7 +96,7 @@
       </li>
       <li class="lf cor_mar">
         <p class="coreprice_tit">自由组合</p>
-        <span class="coreprice_tit_ico"></span>
+        <span class="coreprice_tit_ico4"></span>
         <div class="description">
           您可以任意选择各个大类中的一个或多个
           <br/>
@@ -152,30 +154,24 @@
     </div>
   </div>
   <div class="effect_box">
-  <div class="video_ico"></div>
+    <div class="video_ico"></div>
     <div class="sim_titlebox">
       <span class="title_left"></span>
       <span class="title_rg"></span>
       <p class="sim_title">易核价视频介绍</p>
 
     </div>
-    <p class="sim_exp">请您耐心看完我们的视频，让您更加了解易设计！</p>
+    <p class="sim_exp">请您耐心看完我们的视频，让您更加了解易核价！</p>
 
-    <a href="#" class="video_butt">立即播放</a>
-    <div class="video_comp">
-      <div class="video_cen">
-<object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 height=210 width=750><param name="movie" value="http://sucai.flashline.cn/flash4/yinyue/1266908082_64342.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><embed src="http://sucai.flashline.cn/flash4/yinyue/1266908082_64342.swf" quality=high pluginspage="#" type="application/x-shockwave-flash" width="100%" height="100%" wmode="transparent"></embed></object>
+  <!--   <a href="#" class="video_butt">立即播放</a> -->
+    <div class="video_comp" >
+     <iframe id="playVideo" name="" src="video.html" width="750px" height="420" marginheight="0" marginwidth="0" style="border:0px" frameborder="0" scrolling="no"></iframe>
 
+        </div>
 
-      </div>
     </div>
   </div>
-
-
-    @@include('easyPricing/common/footer.html')
-    <script>
-  seajs.use('js/easyPricing/Index/index',function(){ });
-
-  </script>
-   </body>
+  @@include('easyPricing/common/footer.html')
+  <script>seajs.use('js/easyPricing/Index/index',function(){ });</script>
+</body>
 </html>

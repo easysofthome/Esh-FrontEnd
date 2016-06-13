@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易核价-易家纺电子商务服务平台_自由组合核价</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -58,10 +59,15 @@
         <tr>
           <td class="re_sin_type">
             <img src="/images/production/easyPricing/pricing/array_picture.png" width="110" height="110" />
-            <a target=_blank href="/html/easyPricing/pricing/similarSingle.html">更改单品款式</a>
+            <a target=_blank href="#" id="modifySingleStyle">更改单品款式</a>
           </td>
           <td>枕头</td>
-          <td class="td_int"><input class="combina_int" type="text" value="2" /></td>
+          <td class="td_int">
+           <form action="" method="post" id="combinationForm">
+            <input class="combina_int" id="proNum" name="proNum" type="text" value="2" />
+            <div class="input-tip"></div>
+          </form>
+          </td>
           <td class="td_free_size">
             <form action="" method="get" class="radiobox radiocom">
               <label class="offer clearfix label_radio lab_mar">
@@ -169,17 +175,13 @@
     <!-- 按钮 -->
     <div class="btnbox clearfix">
       <a class="lf btn_gray" href="/html/easyPricing/combination/choice.html">返　回</a>
-      <a class="lf btn_blue" href="/html/easyPricing/combination/modify.html">下一步</a>
+      <a class="lf btn_blue" id="btnNext" href="javascript:void(0)">下一步</a>
     </div>
   </div>
 </div>
 
 @@include('easyPricing/common/footer2.html')
-<script>
-  seajs.use(['jquery','FancyRadioCheckBox'],function ($,FancyRadioCheckBox){
-    FancyRadioCheckBox.init();
-  });
+<script>seajs.use('js/easyPricing/combination/combination');</script>
 
-</script>
 </body>
 </html>

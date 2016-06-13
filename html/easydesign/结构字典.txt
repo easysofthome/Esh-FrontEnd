@@ -5,6 +5,7 @@ Flowers                    花型库
   | whole                  全部花型库
   | free                   免费花型库
   | VIP                    VIP花型库
+  | Knowledgemap           易识图
 
 Fabric                     面料库
 

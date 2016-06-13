@@ -45,6 +45,17 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                     if ($select.hasClass("hasCustomSelect")) {
                         return;
                     }
+                    //解决火狐兼容性 加个div父容器
+                    var wrapSelectWidth = 0;
+                    var wrapSelecHeight = 0;
+                    if (options.width != 0) {
+                        wrapSelectWidth=options.width;
+                    }
+
+                    var $wrapSelect = $('<div id="wrapSelect_'+$select.attr('id')+'" style="position:relative;float: left;padding-right:10px;height:40px;width:'+(options.width)+'"></div>');
+
+                    // /$('#wrapSelect_'+$select.attr('id')).width(options.width+20);
+                    $select.wrap($wrapSelect);
                     $select.after(customSelectSpan.append(customSelectInnerSpan));
 
                     customSelectSpan.addClass(prefix);
@@ -54,6 +65,9 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                     if (options.mapStyle) {
                         customSelectSpan.attr('style', $select.attr('style'));
                     }
+
+                    $select.css({'z-index':2});
+                    customSelectSpan.css({'position':'absolute'});
 
                     $select
                         .addClass('hasCustomSelect')
@@ -78,6 +92,7 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
 
                             var selectBoxHeight = customSelectSpan.outerHeight();
 
+                            // alert(selectBoxHeight);
                             if ($select.attr('disabled')) {
                                 customSelectSpan.addClass(getClass('Disabled'));
                             } else {
@@ -97,6 +112,8 @@ define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
                                 height: selectBoxHeight,
                                 fontSize: customSelectSpan.css('font-size')
                             });
+                            $('#wrapSelect_'+$select.attr('id')).height(selectBoxHeight);
+
                         })
                         .on('change.customSelect', function () {
                             customSelectSpan.addClass(getClass('Changed'));

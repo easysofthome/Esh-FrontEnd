@@ -1,8 +1,15 @@
 @import '../../../../dev/mixins/mixins.less';
 @import '../../../../sprite/VIP/easydesign/increase/sprite.less';
 
-.mainbox{
+.mainbox{butt_box
   padding: 20px 0 130px 0;
+}
+
+.input-tip{
+  color: red;
+  float: left;
+  margin-left: 15px;
+  line-height: 40px;
 }
 .fabricbox{
   width: 1200px;
@@ -26,6 +33,7 @@
     font-size: 18px;
     color:#333333;
     margin-left: 76px;
+    padding-bottom: 10px;
   }
 
   .title_name,.title_density,.yarn_tit,.para_tit,.ingredient_tit,.AddItem_tit,.zonal_tit{
@@ -50,7 +58,17 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.long_input,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.fabric_money{
+  .keyword-box{
+    border: 0;
+    padding: 0;
+    .title_name{
+      margin-left: 32px;
+    }
+    .Single_box{
+      width: 920px;
+    }
+  }
+  .input_fabric,.dropdown_box,.fabric_width,.long_input,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.fabric_money{
     border:1px solid #cdcfd1;
     .border-radius(5px);
     color: #333333;
@@ -63,12 +81,12 @@
       border:1px solid #cdcfd1;
       .border-radius(5px);
       color: #333333;
-      width: 970px;
+      width: 900px;
       height: 140px;
       resize:none;
   }
   .textarea_flowcla{
-    margin: 4px 0 10px 0;
+    margin: 20px 0 10px 0;
     display: block;
   }
   .fabr_imgbox{
@@ -92,12 +110,7 @@
       font-size: 16px;
     }
   }
-  .handle_one{
-    padding:0 20px 0 20px;
-    cursor: pointer;
-
-  }
-  .Locate,.handle_one{
+  .Locate{
     position: relative;
   }
   .Multiply{
@@ -108,32 +121,6 @@
   .fabric_money{
     margin-left: 10px;
     width: 40px;
-  }
-  .select{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    .sprite(@select);
-    .icon-VIP-easydesign-increase;
-    display: none;
-  }
-  .placeholder{
-    position: absolute;
-    top: 10px;
-    color:#cacbcc;
-    left: 10px;
-  }
-  .handle_mag{
-    margin-left: 10px;
-  }
-  .handle_top{
-    margin-top: 10px;
-  }
-  .handle_one:hover{
-    border: 1px solid #3ca1d7;
-  }
-  .handle_one:hover .select{
-    display: block;
   }
 
   .yarn_butt{
@@ -241,10 +228,18 @@
   .radio_rg{
     padding-right:20px;
   }
+  .label_radio{
+    margin-top: 10px;
+  }
   .radio_post{
     margin:14px 4px 0 0;
     display: inline-block;
     *margin-top:10px;
+  }
+  .checkbox_post{
+    width: 18px;
+    height: 18px;
+    margin:14px 4px 0 0;
   }
   .yarntype_box,.wefttype_box{
     width: 1102px;
@@ -256,11 +251,8 @@
     margin:0 auto;
     border-top:none;
   }
-  .yarndensity_box,.unit_box{
+  .yarndensity_box{
     padding-top: 20px;
-  }
-  .unitbox_wid{
-    width: 1020px;
   }
 
   .yarndensity_box
@@ -300,17 +292,18 @@
     width: 240px;
   }
   .butt_box{
-    width: 320px;
     margin: 30px auto 0 auto;
+    text-align: center;
   }
   .butt_pricing,.butt_return{
     width: 150px;
     line-height: 40px;
     font-size: 16px;
     color:#fff;
-    text-align: center;
     background-color: #929698;
-     .border-radius(5px);
+    .border-radius(5px);
+    margin: 0 10px;
+    display: inline-block;
 
   }
   .butt_return{
@@ -416,6 +409,37 @@
   }
 }
 }
+
+#num{
+  position: relative;
+  top: 0;
+  left: 0;
+  .placeholder{
+    position: absolute;
+    top: 30px;
+    left: 130px;
+    font-size: 15px;
+    color: #888;
+  }
+}
+
+#num_incepro{
+  position: relative;
+  top: 0;
+  left: 0;
+  .placeholder{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 15px;
+    color: #888;
+  }
+}
+
+.checkboxPad{
+  padding: 12px 12px 0px 0px;
+}
+
 
 
 

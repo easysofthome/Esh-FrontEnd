@@ -233,9 +233,10 @@
 
 .phone-box,.authcode-box{
     position: relative;
+    line-height: 36px;
+    width:650px;
     .placeholder{
       position: absolute;
-      top: 7px;
       left: 103px;
     }
 }
@@ -245,7 +246,6 @@
 
 span.placeholder{
   position: absolute;
-  top: 8px;
   left: 12px;
   font-size: 15px;
 }
@@ -274,8 +274,15 @@ span.placeholder{
     vertical-align: text-bottom;
     .sprite(@i-pwd-strong,inline-block);
     .icon-VIP-common-RegLog;
-    
+
   }
 }
 
-
+.phone-box .validateCodeTip {
+    float: left;
+    width: 200px;
+    font-size: 12px;
+    margin: 0px 0px 0 8px;
+    display: none;
+    line-height: 34px;
+}

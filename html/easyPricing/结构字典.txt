@@ -23,6 +23,7 @@ pricing                          易核价（弹窗页面）
   | factory                       工厂报价纱线库
   | productacc                    产品辅料信息
   | replaceFabric                 替换面料
+  | selectQuotation               选择工厂报价
   | similarSingle                 同类单品选择
   | storehouse                    易家纺纱线库（精细选择）
   | streamline                    易家纺纱线库（简易选择）

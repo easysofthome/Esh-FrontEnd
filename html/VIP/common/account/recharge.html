@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|会员中心-充值</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/account/meaccount.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/Pay/Pay.css" rel="stylesheet" type="text/css"/>
@@ -21,21 +22,30 @@
         <div class="moneybox clearfix">
           <p class="balance lf">易豆余额：<span class="txt_oga">0.00</span> 元</p>
           <div class="money lf clearfix">
+
+
             <span class="lf">充值金额：</span>
-            <input class="lf int" type="text" />
+            <input class="lf int" id="rechargeNum" type="text" />
             <span class="lf">元</span>
+
           </div>
         </div>
         <div class="recharge">
           <div class="pay_way">选择支付方式：</div>
           <ul class="clearfix pay_box">
             <li class="lf current">
-              <span class="zhifubao"></span>
-              <span class="select_pay"></span>
+            <label>
+            <input name="Fruit" type="radio" value="" checked="checked" class="lf radio_clas" />
+              <span class="zhifubao lf"></span>
+
+               </label>
             </li>
             <li class="li_max lf">
-              <span class="zaixian"></span>
-              <span class="select_pay"></span>
+            <label>
+             <input name="Fruit" type="radio" value="" class="lf radio_clas" />
+              <span class="zaixian lf"></span>
+
+               </label>
             </li>
           </ul>
           <a href="#" class="bean_butt">确认支付</a>
@@ -44,5 +54,6 @@
     </div>
   </div>
     @@include('VIP/common/footer.html')
+    <script>seajs.use('js/VIP/common/account/recharge');</script>
 </body>
 </html>

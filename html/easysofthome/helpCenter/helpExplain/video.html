@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>易核价-易家纺电子商务服务平台_首页</title>
+  <title>帮助中心-易家纺电子商务服务平台_视频中心</title>
   <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easysofthome/helpCenter/helpExplain/video.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  @@include('/common/top.html')
-  @@include('/easysofthome/helpCenter/header.html')
+  @@include('common/top.html')
+  @@include('easysofthome/helpCenter/header.html')
 
   <div class="main-top-box">
     <div class="location-box clearfix">
@@ -16,12 +16,14 @@
       <i class="lf next"></i>
       <a class="lf words">视频中心</a>
     </div>
+     <p class="video_tit">易设计操作视频</p>
   </div>
 
   <div class="main-box">
+
     <div class="clearfix">
       <div class="main_L lf">
-        <img src="/images/production/easysofthome/helpCenter/video_d.png">
+        <iframe id="playVideo" name=" " src="videoqian.html" width="805px" height="448px" marginheight="0" marginwidth="0" style="border:0px" frameborder="0" scrolling="no"></iframe>
       </div>
       <div class="main_R lf">
         <p class="title-box">
@@ -81,7 +83,7 @@
     </div>
   </div>
 
-  @@include('/common/footer.html')
+  @@include('common/footer.html')
   <script>
   seajs.use('js/easyPricing/Index/index',function(){ });
 

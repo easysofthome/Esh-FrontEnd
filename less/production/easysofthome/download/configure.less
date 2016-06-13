@@ -1,5 +1,5 @@
 @import '../../../../less/dev/mixins/mixins.less';
-
+@import '../../../sprite/easysofthome/sprite.less';
 div.main-box{
   width: 1000px;
   margin: 0 auto;
@@ -14,7 +14,6 @@ div.main-box{
   p.tit_d{
     font-size: 18px;
     text-align: center;
-    padding-top: 40px;
   }
   p.tit_s{
     font-size: 16px;
@@ -61,4 +60,24 @@ div.main-box{
       .button-variant(#fff; #da4a4d; #da4a4d);
     }
   }
+}
+
+.main-box .title {
+    margin: 0 10px;
+    line-height: 52px;
+    font-size: 16px;
+    // .sprite(@grayline);
+    // .icon-easysofthome;
+    // .fixIe6pngTransparent('/images/icon/easysofthome/grayline.png');
+}
+
+.main-box .title .btn_close {
+    margin-top: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+
+    .sprite(@btn_close);
+    .icon-easysofthome;
+    .fixIe6pngTransparent('../../../../../images/icon/easysofthome/btn_close.PNG');
 }

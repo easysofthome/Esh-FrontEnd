@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|会员中心-邮箱验证</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/security/verifyM.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -33,14 +34,15 @@
           <span class="lf titilexingxi">您绑定的邮箱：</span>
           <div class="lf veri_left">
             <p class="mailbox">eshv****@esh123.com</p></div>
-          <a href="#" class="lf codes">获取验证</a>
+          <a href="#" class="lf codes" id="getValidateCode">获取验证</a>
+          <span class="validateCodeTip">验证码已发送请查收(2小时有效)</span>
         </div>
         <div class="clearfix shurutop">
           <span class="lf titilexingxi">验证码：</span>
           <div class="lf veri_left email">
             <span class="placeholder">请输入验证码</span>
-            <input type="text" class="codes_val" name="authCode" id="authCode" value="">
-             <div class="input-tip"></div>
+            <input type="text" class="codes_val lf" name="authCode" id="authCode" value="">
+             <div class="input-tip lf"></div>
           </div>
         </div>
         <button type="submit"  class="save">确认更改</button>

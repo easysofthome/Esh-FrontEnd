@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|会员中心-新手机验证</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/security/verifyP.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -16,11 +17,14 @@
           <p class="quyutitle2 icon-huiyuanzhongxin-right">设置手机号码</p>
           <p class="note">注：新更换的手机将设为安全手机，可以用于接受信息、取回密码!</p>
           <div class="lf phone-box clearfix">
-            <div class="lf">手机号码：</div>
+          <div>
+            <div class="lf lineH_30">手机号码：</div>
             <span class="placeholder">请输入手机号码</span>
             <input type="text" class="phone lf" value="" name="phone" id="phone">
-            <a href="#" class="lf codes">获取验证</a>
+            <a href="javascript:void(0)" id="getValidateCode" class="lf codes">获取验证</a>
+            <span class="validateCodeTip">验证码已发送请查收(2小时有效)</span>
             <div class="input-tip"></div>
+            </div>
           </div>
           <div class="lf authcode-box clearfix">
             <div class="lf titilexingxi">验证码：</div>

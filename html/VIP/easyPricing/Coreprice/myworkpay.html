@@ -5,7 +5,7 @@
     <div class="dye_onerowbox">
       <ul class="clearfix dye_onerow">
         <li class="lf dey_che">
-          <input type="checkbox"></li>
+          <input type="checkbox" name="priceItiem_ckAll"></li>
 
         <li class="lf dey_colbox">定位花</li>
         <li class="lf dey_spec">印花名称</li>
@@ -18,7 +18,7 @@
     </div>
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -32,7 +32,7 @@
   </ul>
       <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -47,7 +47,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -62,7 +62,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -77,7 +77,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -92,7 +92,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -107,7 +107,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -122,7 +122,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -137,7 +137,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -152,7 +152,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -167,7 +167,7 @@
 
     <ul class="clearfix dye_listbox">
       <li class="lf deylist_che">
-        <input type="checkbox"></li>
+        <input type="checkbox" name="priceItiem_ck"></li>
       <li class="lf dey_colbox">是</li>
       <li class="lf dey_spec">圆网印花</li>
       <li class="lf dey_spec">圆网印花</li>
@@ -181,15 +181,15 @@
   </ul>
 
 
-  <div class="clearfix batchbox">
-    <input type="checkbox" class="lf barchche">
-    <a href="#" class="batch_butt lf">提交报价</a>
-    <a href="#" class="batch_butt lf">清空报价</a>
+  <div class="clearfix batchbox" name="priceItiem_ckAll">
+    <input type="checkbox" name="priceItiem_ckAll" class="lf barchche">
+    <a href="javascript:void(0)" class="batch_butt lf" id="batchSubmit">提交报价</a>
+    <a href="javascript:void(0)" class="batch_butt lf" id="batchDelete">批量删除</a>
     <p class="lf batch_inc">调整价格：上调</p>
-    <input type="text" class="lf batch_inp">
+    <input type="text" id="batch_inc_up" name="batch_inc_up" class="lf batch_inp">
     <div class="lf batch_perce">%</div>
-    <p class="lf batch_inc">下调</p>
-    <input type="text" class="lf batch_inp">
+    <p class="lf batch_inc" >下调</p>
+    <input type="text" id="batch_inc_down" name="batch_inc_down" class="lf batch_inp">
     <div class="lf batch_perce">%</div>
   </div>
 </div>

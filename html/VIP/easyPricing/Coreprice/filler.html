@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>易核价会员中心-易家纺电子商务服务平台|添加填充物辅料价格</title>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/easyPricing/Coreprice/filler.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -56,7 +57,7 @@
         <div class="dye_onerowbox">
           <ul class="clearfix dye_onerow">
             <li class="lf dey_che">
-              <input type="checkbox"></li>
+              <input type="checkbox" name="priceItiem_ckAll"></li>
 
             <li class="lf dey_colbox">成分名称</li>
             <li class="lf dey_spec">规格</li>
@@ -69,7 +70,7 @@
         </div>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -86,7 +87,7 @@
         </ul>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -103,7 +104,7 @@
         </ul>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -121,7 +122,7 @@
 
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -138,7 +139,7 @@
         </ul>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -155,7 +156,7 @@
         </ul>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -172,7 +173,7 @@
         </ul>
         <ul class="clearfix dye_listbox">
           <li class="lf deylist_che">
-            <input type="checkbox"></li>
+            <input type="checkbox" name="priceItiem_ck"></li>
           <li class="lf dey_colbox">DPTB-0870</li>
           <li class="lf dey_spec">记忆海绵C198阻燃</li>
           <li class="lf dey_spec">35密度1.5cm厚/m2</li>
@@ -189,19 +190,21 @@
         </ul>
 
         <div class="clearfix batchbox">
-          <input type="checkbox" class="lf barchche">
-          <a href="#" class="batch_butt lf">提交报价</a>
-          <a href="#" class="batch_butt lf">清空报价</a>
+          <input type="checkbox" name="priceItiem_ckAll" class="lf barchche">
+          <a href="javascript:void(0)" class="batch_butt lf" id="batchSubmit">提交报价</a>
+          <a href="javascript:void(0)" class="batch_butt lf" id="batchDelete">批量删除</a>
           <p class="lf batch_inc">调整价格：上调</p>
-          <input type="text" class="lf batch_inp">
+          <input type="text" class="lf batch_inp" id="batch_inc_up" name="batch_inc_up">
           <div class="lf batch_perce">%</div>
           <p class="lf batch_inc">下调</p>
-          <input type="text" class="lf batch_inp">
+          <input type="text" class="lf batch_inp" id="batch_inc_down" name="batch_inc_down">
           <div class="lf batch_perce">%</div>
         </div>
       </div>
     </div>
   </div>
   @@include('VIP/common/footer.html')
+<script>seajs.use('js/VIP/easyPricing/Coreprice/filler');</script>
+  </script>
 </body>
 </html>

@@ -6,6 +6,28 @@ body,html,.simulation,.twentytwenty-wrapper{
   width: 100%;
   height: 100%;
 }
+.simulation_all{
+  width:100%;
+  height:100%;
+  display:block;
+  maring:0;
+  position:relative;
+  .simulation_left{
+    width:50%;
+    height:100%;
+    position: absolute;
+    left:0px;
+    top:0px;
+  }
+  .simulation_right{
+    width:50%;
+    height:100%;
+    position: absolute;
+    left:50%;
+    top:0px;
+  }
+}
+
 .twentytwenty-container {
   margin: 0 auto;
   font-family: arial;
@@ -74,16 +96,16 @@ img{
   width: 122px;
   height: 440px;
   top:30px;
-  right:30px;
+  right:60px;
   ul{
     .selectFabricHeader span{
 
       line-height: 36px;
       text-align: center;
       color:#fff;
-      .sprite(@selectFabricTop);
+      .sprite(@selectFabricHeader);
       .icon-easydesign;
-      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricTop.png');
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricHeader.png');
       &:hover{
         cursor:pointer;
       }
@@ -178,9 +200,9 @@ img{
       line-height: 36px;
       text-align: center;
       color:#fff;
-      .sprite(@selectFabricTop);
+      .sprite(@selectFabricHeader);
       .icon-easydesign;
-      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricTop.png');
+      .fixIe6pngTransparent('/images/icon/easydesign/selectFabricHeader.png');
 
     }
 
@@ -227,3 +249,7 @@ img{
 
 
  }
+
+.desSelectFabric{
+  position:absolute;width:25px;overflow:hidden;top:78px;right:35px;text-align:center;
+}

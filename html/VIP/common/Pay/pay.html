@@ -1,5 +1,12 @@
-
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|会员中心-我要邀请的朋友</title>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/Pay/Pay.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
 
   <div class="pay_way">选择支付方式：</div>
   <ul class="clearfix pay_box">
@@ -44,14 +51,14 @@
       </div>
       <div class="clearfix Bean_box bean_height">
         <label>
-          <input type="checkbox" name="category" value="" class="lf whether" />
+          <input type="checkbox" id="useYiDou_ck" name="category" checked="checked" value="" class="lf whether" />
           <span class="yidou_name lf">是否使用易豆</span>
         </label>
         <span class="yidou_Surplus lf">剩余易豆：</span>
         <span class="yidou_surdata lf">600</span>
         <span class="lf yidou_unit">易豆</span>
         <span class="yidou_Surplus lf">使用易豆：</span>
-        <input type="text" class="yidou_input lf">
+        <input type="text" errorMsgPosition="rightBottom"  class="yidou_input lf">
         <span class="lf yidou_unit">易豆</span>
       </div>
       <div class="clearfix Bean_box bean_height">
@@ -63,4 +70,6 @@
     </div>
   </div>
 
-  <a href="#" class="bean_butt">确认支付</a>
+  <a href="javascript:void(0)" class="bean_butt">确认支付</a>
+  </body>
+  </html>

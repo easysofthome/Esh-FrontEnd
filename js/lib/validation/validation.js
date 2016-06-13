@@ -244,6 +244,7 @@ define(function () {
 				}
 			},
 			onfocusout: function (element, event) {
+
 				if (!this.checkable(element) && (element.name in this.submitted || !
 						this.optional(element))) {
 					this.element(element);
@@ -358,7 +359,9 @@ define(function () {
 			max: $.validator.format(
 				"Please enter a value less than or equal to {0}."),
 			min: $.validator.format(
-				"Please enter a value greater than or equal to {0}."),
+				"请输入大于等于{0}的数字！"),
+			gt:$.validator.format(
+				"请输入大于{0}的数字！"),
 			step: $.validator.format("Please enter a multiple of {0}.")
 		},
 		autoCreateRanges: false,
@@ -1258,6 +1261,10 @@ define(function () {
 			max: function (value, element, param) {
 				return this.optional(element) || value <= param;
 			},
+			gt: function (value, element, param) {
+				return this.optional(element) || value > param;
+			},
+
 			// http://jqueryvalidation.org/range-method/
 			range: function (value, element, param) {
 				return this.optional(element) || (value >= param[0] && value <= param[

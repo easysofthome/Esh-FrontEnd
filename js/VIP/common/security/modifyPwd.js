@@ -1,10 +1,49 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
-
+  require('js/lib/tip/jquery.poshytip');
   var placehold = require('js/common/module/placehold');
+
+////////////////////////////文本框占位符///////////////////////////////////
   placehold.init('.veri_left>input');
 
+////////////////////////////错误提示框 tip///////////////////////////////////
+  function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+   $(obj).poshytip({
+        className: 'tip-violet',
+        content: msg,
+        showOn: 'none',
+        alignTo: 'target',
+        alignX: alignX,
+        alignY: alignY,
+        offsetX: offsetX,
+        offsetY: offsetY
+      });
+
+    $(obj).poshytip('show');
+  }
+
+  function setMsgPosition(obj,msg,direction){
+    switch(direction){
+      case "right":
+        showTip(obj,msg,"right","center",5,0);
+        break;
+      case "rightTop":
+        showTip(obj,msg,"inner-left","top",50,5);
+        break;
+      case "rightBottom":
+        showTip(obj,msg,"inner-right","bottom",-15,5);
+        break;
+      case "bottom":
+        showTip(obj,msg,"inner-left","bottom",-17,5);
+        break;
+      default:
+        showTip(obj,msg,"right","center",5,0);
+    }
+  }
+
+/////////////////////////////////// 表单验证 //////////////////////////////////////////
     // input
     var form = $("#modifyPwd");
     //密码
@@ -67,7 +106,7 @@ define(function (require, exports, module) {
 
 /** 表单验证 */
     var validator;
-
+    var validatorTip = {'msg':'addMethod'};
     function validate() {
         addrules();
         validator = form.validate({
@@ -79,9 +118,17 @@ define(function (require, exports, module) {
                 //阻止表单提交
                 return false;
             },
-            onkeyup: false,
+            onfocusout:function(element){
+                $(element).valid();
+            },
             errorPlacement: function(error, element) {
-                error.appendTo( element.siblings('.input-tip') );
+                if(error.text().length==0)return;
+                $(element).poshytip('destroy');
+                setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+            },
+            success:function(error, element){
+                if($(element).attr('id')== 'newPwd') return;
+                $(element).poshytip('destroy');
             },
             rules: {
                 //密码
@@ -101,16 +148,16 @@ define(function (require, exports, module) {
             },
             messages: {
                 curPwd: {
-                    required: icons.error + '请输入当前密码'
+                    required: icons.error + '请输入当前密码！'
                 },
                 newPwd: {
-                    required: icons.error + '请输入新密码',
-                    rangelength: icons.error + '密码长度只能在{0}-{1}个字符之间',
-                    same: icons.error + '新密码不能与旧密码相同。'
+                    required: icons.error + '请输入新密码！',
+                    rangelength: icons.error + '密码长度只能在{0}-{1}个字符之间！',
+                    same: icons.error + '新密码不能与旧密码相同！'
                 },
                 rePwd: {
-                    required: icons.error + '请再次输入新密码',
-                    equalTo: icons.error + '两次密码输入不一致'
+                    required: icons.error + '请再次输入新密码！',
+                    equalTo: icons.error + '两次密码输入不一致！'
                 }
             }
         });
@@ -118,16 +165,15 @@ define(function (require, exports, module) {
     //验证规则
     function addrules() {
         $.validator.addMethod('same', function (value, element, param) {
-            var target = $(param);
-            return value !== target.val();
-        }, icons.error + '新密码不能与旧密码相同');
+           return this.optional(element) || samePwd($(element), value,param);
+        },'');
 
         //密码
         $.validator.addMethod('strength', function (value, element, param) {
             return this.optional(element) || pwdStrengthRule($(element), value);
         // 避免重复验证(存在按键绑定验证checkPwd())
         //}, icons.weak + '有被盗风险,建议使用字母、数字和符号两种及以上组合');
-        }, '');
+        },'');
     }
 
 /** 密码 **/
@@ -180,21 +226,22 @@ define(function (require, exports, module) {
         "654321", "1234567890", "a123456"
     ];
     var pwdStrength = {
-        1: {
+       1: {
             reg: /^.*([\W_])+.*$/i,
             msg: icons.weak + '有被盗风险,建议使用字母、数字和符号两种及以上组合'
         },
         2: {
             reg: /^.*([a-zA-Z])+.*$/i,
-            msg: icons.medium + '安全强度适中，可以使用三种以上的组合来提高安全强度'
+            msg: icons.medium + '<span style="color:green">安全强度适中，可以使用三种以上的组合来提高安全强度</span>'
         },
         3: {
             reg: /^.*([0-9])+.*$/i,
-            msg: icons.strong + '你的密码很安全'
+            msg: icons.strong + '<span style="color:green">你的密码很安全</span>'
         }
     };
 
     function pwdStrengthRule(element, value) {
+        $(element).poshytip('destroy');
         var level = 0;
         var typeCount=0;
         var flag = true;
@@ -217,6 +264,7 @@ define(function (require, exports, module) {
                 level=2;
             }else{
                 level=1;
+                flag = false;
             }
         }else if(typeCount==2){
             if(valueLength<11&&valueLength>5){
@@ -230,23 +278,38 @@ define(function (require, exports, module) {
                 level=3;
             }
         }
-
         if ($.inArray(value, weakPwds) !== -1) {
-            flag = false;
+           // flag = false;
         }
         if (flag && level > 0) {
-            element.parent().removeClass('form-item-error').addClass(
-                'form-item-valid');
+
         } else {
-            element.parent().addClass('form-item-error').removeClass(
-                'form-item-valid');
+
         }
         if (pwdStrength[level] !== undefined) {
-            // pwdStrength[level]>3?pwdStrength[level]=3:pwdStrength[level];
-            element.parent().find('.input-tip').html('<span>' + pwdStrength[level].msg + '</span>');
+
+            setMsgPosition(element,pwdStrength[level].msg,$(element).attr("errorMsgPosition"));
         }
         return flag;
     }
+
+    function samePwd(element, value, param){
+        $(element).poshytip('destroy');
+        var msg = '';
+        var flag = false;
+        var target = $(param);
+        if(value !== target.val()){
+            flag = true;
+        }
+         if(!flag){
+            msg = '新密码不能与旧密码相同！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
+        }else{
+           //element.parent().find('.input-tip').html('');
+        }
+        return flag;
+    }
+
     /** 按键抬起时检查密码 **/
     function checkPwd() {
         form_pwd.on('keyup', function (e) {
@@ -255,6 +318,7 @@ define(function (require, exports, module) {
         });
     }
 /** 密码 **/
+
 
     init();
 

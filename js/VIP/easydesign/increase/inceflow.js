@@ -1,31 +1,74 @@
 define(function(require, exports, module) {
-  require('jquery');
+    require('jquery');
+    require('js/lib/tip/jquery.poshytip');
+    var FancyRadioCheckBox = require('FancyRadioCheckBox');
+    var placehold = require('js/common/module/placehold');
+    require('customSelect');
+
+    require('js/lib/validation/validation');
+    placehold.init('input');
 
 
-  var switchSel = require('js/common/module/switchSel');
-  var placehold = require('js/common/module/placehold');
-   require('js/lib/validation/validation');
-  placehold.init('#name>input');
+    //下拉框
+    $('#type_num').customSelect({width:"50px",padding:"12px 5px"});
+    $('#color_type').customSelect({width:"140px",padding:"12px 5px"});
 
-  switchSel.set('.select-box','.select-box>span','.select-ul','.select-ul>li','');
-  switchSel.set('.select-box_color','.select-box_color>span','.select-ul_color','.select-ul_color>li','');
+    //加载单选按钮样式
+    FancyRadioCheckBox.init();
 
+    //选中样式
+    $('.handle_one').click(function() {
+          $(this).toggleClass('selected');
+    });
+
+////////////////////////////错误提示框 tip///////////////////////////////////
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+ $(obj).poshytip({
+      className: 'tip-violet',
+      content: msg,
+      showOn: 'none',
+      alignTo: 'target',
+      alignX: alignX,
+      alignY: alignY,
+      offsetX: offsetX,
+      offsetY: offsetY
+    });
+
+  $(obj).poshytip('show');
+}
+
+function setMsgPosition(obj,msg,direction){
+  switch(direction){
+    case "right":
+      showTip(obj,msg,"right","center",5,0);
+      break;
+    case "rightTop":
+      showTip(obj,msg,"inner-left","top",50,5);
+      break;
+    case "rightBottom":
+      showTip(obj,msg,"inner-left","bottom",0,5);
+      break;
+    default:
+      showTip(obj,msg,"inner-left","top",0,5);
+  }
+}
+
+/////////////////////////////// 表单验证部分 ///////////////////////////////////
 
     // input
     var form = $("#inceflowForm");
 
 
     var icons = {
-        error: '<i class="i-error"></i>',
-        weak: '<i class="i-pwd-weak"></i>',
-        medium: '<i class="i-pwd-medium"></i>',
-        strong: '<i class="i-pwd-strong"></i>'
+        error: '<i class="i-error"></i>'
     };
 
     function init() {
         validate();
-        bindEvent();
+        //bindEvent();
     }
+
 /** 限制输入字符长度 **/
     function getStringLength (str) {
         if(!str){
@@ -44,12 +87,14 @@ define(function(require, exports, module) {
         }
         return bytesCount;
     }
+
     function resetStringLength (length,_id) {
         _id='#'+_id;
         while(getStringLength($(_id).val())>length){
                 $(_id).val($(_id).val().substring(0,$(_id).val().length-1));
         }
     }
+
     function bindEvent () {
         $('textarea,input[type=text]').bind('input', function() {
             var _id = $(this).attr('id');
@@ -70,7 +115,8 @@ define(function(require, exports, module) {
             }
         });
     }
-/** /限制输入字符长度 **/
+
+
 
 /** 表单验证 */
     var validator;
@@ -83,47 +129,79 @@ define(function(require, exports, module) {
                 //提交表单
                 formSubmit(form);
                 //阻止表单提交
+                //$.layer(startPriceLayer);
                 return false;
             },
-            onkeyup: false,
+            onfocusout:function(element){
+              $(element).valid();
+            },
             errorPlacement: function(error, element) {
-                error.appendTo( element.siblings('.input-tip') );
+              $(element).poshytip('destroy');
+              if(error.text().length > 0){
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
+              return true;
+            },
+            success:function(error, element){
+              $(element).poshytip('destroy');
             },
             rules: {
-
                 flowerNameInput: {
-                    required: true
+                    required: true,
+                    maxlength:20
                 },
                 typeNum_1: {
                     required: true,
-                    rangelength: [1,5],
-                    num: true
+                    number: true,
+                    maxlength: 10,
+                    gt:0
 
                 },
                 typeNum_2: {
                     required: true,
-                    rangelength: [1,5],
-                    num: true
-                }
+                    number: true,
+                    maxlength: 10,
+                    gt:0
+
+                },
+               textareaFlowcla: {
+                  maxlength: 400
+               }
             },
             messages: {
                 flowerNameInput: {
-                    required: icons.error + '请输入当花型名称'
+                    required: icons.error + '请输入花型名称！',
+                    maxlength: icons.error + '花型名称过长！'
                 },
                 typeNum_1: {
-                    required: icons.error + '请输入数值',
-                    rangelength: icons.error + '数字长度只能在{0}-{1}个字符之间',
-                    num: icons.error + '请输入数字。'
+                    required: icons.error + '请输入第一个数值！',
+                    number: icons.error + '请输入数字！',
+                    maxlength: icons.error + '第一个数值过长！'
+
                 },
                 typeNum_2: {
-                    required: icons.error + '请输入数值',
-                    rangelength: icons.error + '数字长度只能在{0}-{1}个字符之间',
-                    num: icons.error + '请输入数字。'
+                    required: icons.error + '请输入第二个数值！',
+                    number: icons.error + '请输入数字！',
+                    maxlength: icons.error + '第二个数值过长！'
+                },
+                textareaFlowcla: {
+                    maxlength: icons.error + '描述文字最多400个字符！'
                 }
             }
         });
     }
 
+
+
+    //加载表单验证函数
     init();
+
+
+    $(document).ready(function(){
+         $('#saveAndsubmit').bind('click',function(){
+            form.submit();
+        });
+
+    });
 
 });

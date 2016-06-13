@@ -67,7 +67,6 @@
 .index-banner-box
 {
     width: 100%;
-    height: 500px;
     background-color: #5ab6ab;
     margin-top: 112px;
     position: relative;
@@ -80,20 +79,21 @@
     position: relative;
     top: 0;
     left: 0;
-
+   height:500px;
     margin: 0 auto;
-    height: 500px;
+
     overflow:hidden;
     ul.banner-box{
         width: 100%;
-        height:500px;
+
         li.banner-li{
             float: left;
             position: relative;
             top: 0;
             left: 0;
-
-            height: 500px;
+            img{
+                width: 100%;
+            }
 
         }
     }
@@ -121,9 +121,7 @@
 
 
         }
-        .i2{
 
-        }
     }
 
 }
@@ -243,8 +241,17 @@ ul.switchable-triggers
     li:hover{
         background: #3ca1d7;
     }
-    li:hover .coreprice_tit_ico{
-        .sprite(@coreprice_icobai);
+    li:hover .coreprice_tit_ico1{
+        .sprite(@i_FabricOn);
+    }
+    li:hover .coreprice_tit_ico2{
+        .sprite(@i_SingleProductOn);
+    }
+    li:hover .coreprice_tit_ico3{
+        .sprite(@i_SuiteOn);
+    }
+    li:hover .coreprice_tit_ico4{
+        .sprite(@i_combinationOn);
     }
     li:hover .coreprice_tit{
         color:#fff;
@@ -269,8 +276,26 @@ ul.switchable-triggers
             line-height: 18px;
         }
 
-        .coreprice_tit_ico{
-            .sprite(@coreprice_ico);
+        .coreprice_tit_ico1{
+            .sprite(@i_Fabric);
+            .icon-easyPricing;
+            margin:30px auto 0 auto;
+
+        }
+        .coreprice_tit_ico2{
+            .sprite(@i_SingleProduct);
+            .icon-easyPricing;
+            margin:30px auto 0 auto;
+
+        }
+        .coreprice_tit_ico3{
+            .sprite(@i_Suite);
+            .icon-easyPricing;
+            margin:30px auto 0 auto;
+
+        }
+        .coreprice_tit_ico4{
+            .sprite(@i_combination);
             .icon-easyPricing;
             margin:30px auto 0 auto;
 

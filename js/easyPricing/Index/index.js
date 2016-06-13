@@ -21,7 +21,11 @@ define(function (require, exports, module) {
         api.prevBtn.toggleClass('disabled', currentIndex === 0);
         api.nextBtn.toggleClass('disabled', currentIndex === api.length - 1);
       }
+
     });
+     var w = $(window).width();
+    $('.banner-li').css("width",w);
+    $('.banner-wrapper').css("height",w/3.84);
   });
 
   //媒体图片鼠标划过特效

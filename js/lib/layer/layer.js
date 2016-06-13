@@ -300,6 +300,7 @@ $, win, ready = {
         } else {
             that.offsetTop = parseFloat(config.offset[0] || 0) / 100 * win.height();
         }
+        if(that.offsetTop<0){that.offsetTop=0;}
         that.offsetTop = that.offsetTop + config.border[0] + (config.fix ? 0 : win.scrollTop());
         if (config.offset[1].indexOf("px") != -1) {
             that.offsetLeft = parseFloat(config.offset[1]) + config.border[0];
@@ -650,11 +651,29 @@ $, win, ready = {
             });
         }
 
+        var clickCloseTip = {
+                  content: '点击灰色区域，关闭弹出框',
+                  alignTo:'cursor',
+                  slide: false,
+                  followCursor:true,
+                  showOn:'hover',
+                  zIndex:layer.zIndex,
+                  className: 'tip-violet',
+                  fade:false,
+                  showTimeout:0,
+                  hideTimeout:0,
+                  hide_timeOut:true
 
+                };
+        
         if (that.config.shadeClose) {
             $('#xubox_shade' + that.index).on('click', function () {
+                $('#xubox_shade' + that.index).poshytip('destroy');
                 layer.close(that.index);
             });
+
+            //灰色区域点击关闭 提示
+            $('#xubox_shade' + that.index).poshytip(clickCloseTip);
         }
 
         //最小化
