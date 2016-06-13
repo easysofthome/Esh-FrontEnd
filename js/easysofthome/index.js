@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
-
   require('jquery');
+  require('js/lib/tip/jquery.poshytip');
   require('layer');
 
   // 颜色渐变支持

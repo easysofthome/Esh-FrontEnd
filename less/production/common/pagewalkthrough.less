@@ -213,46 +213,45 @@
 #middleLeft #middleRight #bottomLeft #bottomRight #topLeft #topRight{
     z-index: 1;
 }
-
+/********右侧快捷入口********/
 .floatPanel{
   position:fixed;
-  width:36px;
-  height:94px;
+  width:54px;
+  height:119px;
   right:10px;
   top:50%;
-  border:1px solid #ddd;
   z-index:10;
   overflow: hidden;
-  span{
-    .sprite(@float_panel_bg);
+  .top_arrow{
+    .sprite(@top);
     .icon-common;
-    .fixIe6pngTransparent('/images/icon/common/float_panel_bg.png');
-    a{
-        width: 34px;
-        font-size: 12px;
-        color: #ff6600;
-        letter-spacing: 1px;
-        text-align: center;
-        overflow: hidden;
-        &:hover{
+    .fixIe6pngTransparent('/images/icon/common/top.png');
+    text-align: center;
+    overflow: hidden;
+    &:hover{
+        .sprite(@topOn);
         cursor: pointer;
         text-decoration: underline;
-      }
+        .fixIe6pngTransparent('/images/icon/common/topOn.png');
     }
-    .arrow{
-      height: 29px;
-      line-height: 29px;
-      display: block;
-
-    }
-    .userGuide{
-      margin-left: 2px;
-       height: 36px;
-      line-height: 36px;
-      display: block;
 
 
+  }
+
+  .quickGuide{
+    .sprite(@guide);
+    .icon-common;
+    .fixIe6pngTransparent('/images/icon/common/guide.png');
+    color: #ff6600;
+    text-align: center;
+    overflow: hidden;
+    &:hover{
+        .sprite(@guideOn);
+        cursor: pointer;
+        text-decoration: underline;
+        .fixIe6pngTransparent('/images/icon/common/guideOn.png');
     }
+
   }
 }
 /********字体********/
@@ -263,6 +262,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
 
 
 

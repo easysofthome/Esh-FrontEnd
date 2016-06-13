@@ -31,6 +31,8 @@ define(function (require, exports, module) {
 
   });
 
+/////////////////////////////////////////////弹出层/////////////////////////////////////////////////
+
   $('.videoDiv').on('click',function () {
     $.layer({
         type: 2,
@@ -60,31 +62,10 @@ define(function (require, exports, module) {
   });
 
 
-  //媒体图片鼠标划过特效
-  $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
-  $(".video_icobutt_def2").css('opacity', 0);
-  $(".video_icobutt_def").hover(function(){
-  $(".video_icobutt_def2").stop().animate({opacity: '1'},600);
-  },
-  function(){
-  $(".video_icobutt_def2").stop().animate({opacity: '0'},600);
-  });
-
- $(".video_icobutt_def").bind('click',function(){
-    $("#flashPlay").show();
-
- });
-
- $("#flashPlay").hover(function(){
-    $(".video_icobutt_def").show();
-
- },function(){
-     $(".video_icobutt_def").hide();
-
- });
 
 
-//面料对比遮罩及点击事件
+
+/////////////////////////////////////////////面料对比遮罩及点击事件/////////////////////////////////////////////////
 function fraticLayer(){
   var zIndex = $('.twentytwenty-overlay').css('z-index');
   //$('.twentytwenty-overlay').css({'z-index':'555'});
@@ -129,6 +110,7 @@ $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100
   bindClickSimulationFabric();
 }
 
+
 function bindClickSimulationFabric (){
   $('.twentytwenty-container').bind('click',function(){
       window.open('/html/easydesign/simulationFabric.html');
@@ -145,8 +127,7 @@ function fraticLayer_resize(){
 
 }
 
-
-//易家纺设计资源库 点击切换效果
+/////////////////////////////////////////////易家纺设计资源库 点击切换效果///////////////////////////////
 function switchSourceLib(){
   $('.tew_box .exp_butt li').bind('click',function(){
       var currentIndex = $(this).index();
@@ -156,6 +137,33 @@ function switchSourceLib(){
       $('.tew_box .exo_conbox').eq(currentIndex).fadeIn(500);
   });
 }
+
+
+
+////////////////////////////////媒体图片鼠标划过特效 暂时未应用//////////////////////////////////
+  $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
+  $(".video_icobutt_def2").css('opacity', 0);
+  $(".video_icobutt_def").hover(function(){
+  $(".video_icobutt_def2").stop().animate({opacity: '1'},600);
+  },
+  function(){
+  $(".video_icobutt_def2").stop().animate({opacity: '0'},600);
+  });
+
+ $(".video_icobutt_def").bind('click',function(){
+    $("#flashPlay").show();
+
+ });
+
+ $("#flashPlay").hover(function(){
+    $(".video_icobutt_def").show();
+
+ },function(){
+     $(".video_icobutt_def").hide();
+
+ });
+
+
 
 function startVideo(flashPlay){
 
@@ -213,7 +221,7 @@ function bindVideoHover(){
 }
 
 
-
+////////////////////////////////页面加载事件及页面尺寸改变事件//////////////////////////////////
 
 $(document).ready(function () {
   //bindVideoClick();

@@ -10,17 +10,14 @@
 
 <body>
   <div class="main-box">
-    <div class="banner-box">
-      <img src="/images/original/easysofthome/download/banner_PC.png">
-      <img style="display: none;" src="/images/original/easysofthome/download/banner_APP.png">
-      <div class="top-box">
+  <div class="top-box">
         <div class="top clearfix">
           <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">easysofthome<i>0</i></a>
           <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
           <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
           <a href="/html/VIP/common/Pay/purchase.html" class="lf butt_right">开通VIP会员</a>
           <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
-          <a href="#" class="rg butt_right">国际版</a>
+          <a href="/html/easysofthome/English.html" class="rg butt_right">国际版</a>
           <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
           <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
           <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
@@ -28,8 +25,29 @@
           <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
           <a href="/html/easysofthome/index.html" class="rg butt_right">易家纺首页</a>
         </div>
-      </div>
     </div>
+      <div class="index-banner-box">
+        <div class="banner-wrapper" style="">
+          <ul class="clearfix banner-box" style="">
+            <li class="banner-li" style="">
+              <a href="javascript:void(0)">
+                <img src="/images/original/easysofthome/download/banner_PC.png">
+              </a>
+              </li>
+            <li class="banner-li" style="">
+              <a href="javascript:void(0)">
+                  <img src="/images/original/easysofthome/download/banner_APP.png">
+              </a>
+            </li>
+          </ul>
+        </div>
+    <ul class="switchable-triggers">
+      <li class="lf current"></li>
+      <li class="lf"></li>
+
+    </ul>
+  </div>
+
   </div>
 
   <div class="content-box clearfix">
@@ -81,12 +99,7 @@
       </div>
     </div>
   </div>
-
-  <div class="footer-box">
-    版权所有  2013-2016 杭州易上弘网络技术有限公司 本站建议您使用IE8以上版本的浏览器，分辨率为1280*1024
-    <br/>
-    增值电信业务经营许可证：浙ICP备B2-20140102号
-  </div>
-
+@@include('easysofthome/common/footer.html')
+<script>seajs.use('js/easysofthome/download/download');</script>
 </body>
 </html>

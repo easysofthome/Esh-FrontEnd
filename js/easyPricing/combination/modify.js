@@ -68,7 +68,7 @@ function setMsgPosition(obj,msg,direction){
       },function(){
         $(this).attr("href",src);
       });
-      
+
       $(".productaccModify").bind("click",function(){
         $.layer({
           type:2,
@@ -170,6 +170,27 @@ function setMsgPosition(obj,msg,direction){
           shift: 'top',
           fix : false,
           iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+       //产品辅料 新增(双层layer)
+     $("#showAddLayer").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '594px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 594)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
           success: function (layero, index) {
 
 

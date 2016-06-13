@@ -1,0 +1,63 @@
+
+@import '../../sprite/easysofthome/English/sprite.less';
+
+body{
+  background: #F1F1F1;
+  margin:0px auto;
+  padding:0px;
+  overflow:hidden;
+}
+img{
+  border:0px;
+}
+.mainbox{
+  width:96%;
+  margin:auto;
+  position:absolute;
+  top:50%;
+  margin-top:-250px;
+}
+.nrbox{
+  width:481px;
+  margin:0px auto;
+}
+.nrbox_img{
+  .sprite(@buding);
+  .icon-easysofthome-English;
+  margin-bottom:20px;
+}
+.nrbox_link{
+  width:100%;margin:0px auto;
+  a{
+    color:#00a2c9;
+    font-size:16px;
+    text-decoration:none;
+    text-align:center;
+    margin-right:80px;
+  }
+  .a{
+    i{
+      .sprite(@MicroSignal);
+      .icon-easysofthome-English;
+    }
+  }
+  .b{
+    i{
+      .sprite(@sina);
+      .icon-easysofthome-English;
+    }
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+  .c{
+    margin-right: 0;
+    i{
+      .sprite(@mailbox);
+      .icon-easysofthome-English;
+    }
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+}

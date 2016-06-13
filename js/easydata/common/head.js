@@ -52,7 +52,7 @@ define(function (require, exports, module) {
   $('.switch').on('click',function () {
     if($(this).find('span').css('marginLeft') == '-33px'){
       $(this).find('span').animate({marginLeft: '1px'},300,function () {
-        window.location.href = "./en/";
+        window.open("/html/easysofthome/English.html",'newwindow');
       });
     }else{
       $(this).find('span').animate({marginLeft: '-33px'},300);
