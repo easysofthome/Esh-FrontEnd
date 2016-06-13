@@ -1,0 +1,138 @@
+<html>
+<head>
+<title></title>
+<link href="/css/production/easydesign/global.css" rel="stylesheet" type="text/css"/>
+<script src="/js/lib/panoramaShow/AC_OETags.js" language="javascript"></script>
+
+
+</head>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+var requiredMajorVersion = 9;
+
+var requiredMinorVersion = 0;
+
+var requiredRevision = 28;
+
+ -->
+</script>
+</head>
+
+<body>
+<script language="JavaScript" type="text/javascript">
+
+
+
+  var options = "";
+  var url=window.location;
+  options = url.search.replace(/^\?/, '');
+
+  function getParam(url) {
+        var ret = {};
+        var seg = url.search.replace(/^\?/, '').split('&');
+        var len = seg.length;
+        var i = 0;
+        var s;
+        for (; i < len; i++) {
+            if (!seg[i]) {
+                continue;
+            }
+            s = seg[i].split('=');
+            ret[s[0]] = s[1];
+        }
+        return ret;
+}
+
+var sUlr = getParam(url);
+var width = sUlr['width'];
+var height = sUlr['height'];
+
+  // options = "panorama="+paramobj.params.panorama+"&"+paramobj.params.focus+"&pan="+paramobj.params.pan+"&start="+paramobj.params.start+"&infoText="+paramobj.params.infoText;
+
+
+
+
+
+<!--
+// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+// Version check based upon the values defined in globals
+var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+
+// Check to see if a player with Flash Product Install is available and the version does not meet the requirements for playback
+if ( hasProductInstall && !hasRequestedVersion ) {
+  var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+  var MMredirectURL = window.location;
+    document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+    var MMdoctitle = document.title;
+
+  AC_FL_RunContent(
+    "src", "/js/lib/panoramaShow/playerProductInstall",
+    "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
+    "menu","false",
+    "width", width,
+    "height", height,
+    "align", "middle",
+    "id", "Main",
+    "quality", "high",
+    "bgcolor", "#333333",
+    "name", "Main",
+    "allowFullScreen","true",
+    "allowScriptAccess","sameDomain",
+    "type", "application/x-shockwave-flash",
+    "pluginspage", "http://www.adobe.com/go/getflashplayer"
+  );
+} else if (hasRequestedVersion) {
+  AC_FL_RunContent(
+      "src", "/js/lib/panoramaShow/rmpanoplayer",
+      "FlashVars",options,
+      "menu","false",
+      "width", width,
+      "height", height,
+      "align", "middle",
+      "id", "Main",
+      "quality", "high",
+      "bgcolor", "#333333",
+      "name", "Main",
+      "allowFullScreen","true",
+      "allowScriptAccess","sameDomain",
+      "type", "application/x-shockwave-flash",
+      "pluginspage", "http://www.adobe.com/go/getflashplayer"
+  );
+  } else {  // flash is too old or we can't detect the plugin
+    var alternateContent = '为了您正常观看，请安装flash'
+    + '<a href=http://www.adobe.com/go/getflash/>点击安装</a>';
+    document.write(alternateContent);  // insert non-flash content
+  }
+
+
+// -->
+</script>
+<noscript>
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+      id="Main" width="600" height="400"
+      codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+      <param name="movie" value="/js/lib/panoramaShow/rmpanoplayer.swf" />
+      <param name="FlashVars" value="panorama=*.jpg&focus=350&pan=180&start=true&infoText=" />
+      <param name="quality" value="high" />
+      <param name="bgcolor" value="#333333" />
+      <param name="allowFullScreen" value="true" />
+      <param name="allowScriptAccess" value="sameDomain" />
+      <embed src="/js/lib/panoramaShow/rmpanoplayer.swf" quality="high" bgcolor="#333333"
+        FlashVar="panorama=img/01.jpg&focus=350&pan=180&start=true&infoText=花园别墅样板房---餐厅"
+        width="600" height="400" name="Main" align="middle"
+        play="true"
+        loop="false"
+        quality="high"
+        allowFullScreen="true"
+        allowScriptAccess="sameDomain"
+        type="application/x-shockwave-flash"
+        pluginspage="http://www.adobe.com/go/getflashplayer">
+      </embed>
+  </object>
+</noscript>
+</body>
+</html>
