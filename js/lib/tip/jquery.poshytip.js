@@ -5,7 +5,7 @@
  */
 define(function (require, exports, module) {
 (function($) {
-
+	var hideTimer;
 	var tips = [],
 		reBgImage = /^url\(["']?([^"'\)]*)["']?\);?$/i,
 		rePNG = /\.png$/i,
@@ -100,13 +100,16 @@ define(function (require, exports, module) {
 		},
     hide_timeOut:function(that){
       if(this.opts.hide_timeOut){
-        setTimeout(function(){ 
+        hideTimer = setTimeout(function(){
           that.hide();
         }, 2000);
-        
+
       }
     },
 		hide: function() {
+			if(hideTimer){
+				clearTimeout(hideTimer);
+			}
 			if (this.disabled || !this.$tip.data('active'))
 				return;
 
