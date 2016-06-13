@@ -17,16 +17,14 @@ define(function (require, exports, module) {
 
     //快捷入口,页面右侧 可快捷到顶部 底部
     $(document).ready(function(){
-
         $("#quickToTop").click(function(){
             $('body,html').animate({scrollTop:0},1000);
             return false;
         });
-
-         $("#quickToBottom").click(function(){
-            $('body,html').animate({scrollTop: $('.copyright').offset().top},1000);
-            return false;
-        });
+        //  $("#quickToBottom").click(function(){
+        //     $('body,html').animate({scrollTop: $('.copyright').offset().top},1000);
+        //     return false;
+        // });
     });
 
 
