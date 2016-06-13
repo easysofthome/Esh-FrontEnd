@@ -1,15 +1,14 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/jquery.snipe/jquery.snipe');
 
   //当前显示图片索引
   var curIndex = 0;
  // require('js/easydesign/common/jquery.fullscreen');
-  var baseUrl = '/images/production/easydesign/designFabrics/';
+  var baseUrl = '\/images\/production\/easydesign\/designFabrics\/';
   var objJson = {
     'objFabricImg_full':
-    [{'src':baseUrl+'767171c0-3b5f-4f63-8832-72ef851c57e4.jpg'},
-    {'src':baseUrl+'c7ad1773-b42b-444f-b549-1c0f576f10f0.jpg'}]
+    [{'src':baseUrl+'panorama_1.jpg','width':'3500','height':'3500'},
+    {'src':baseUrl+'panorama_2.jpg','width':'3000','height':'1500'}]
   };
 
   var objImg = {};
@@ -25,31 +24,20 @@ define(function (require, exports, module) {
     curIndex = index;
     setNextOrPrev(index,objJson.objFabricImg_full.length);
 
-    $('#j-lb-pic').attr('src',objJson.objFabricImg_full[index].src);
-
 
     //获取图片的原始尺寸
-    $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[index].src).load(function() {
-    objImg.w = this.width;
-    objImg.h = this.height;
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-       snipe_len('j-lb-pic',curIndex);
-      });
-    });
 
-  }
+    objImg.w = objJson.objFabricImg_full[index].width;
+    objImg.h = objJson.objFabricImg_full[index].height;
+    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+    var options = "panorama="+objJson.objFabricImg_full[index].src+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
 
-  function snipe_len(id,index){
-      //图片放大镜
-      $('#'+id).snipe({
-        bounds: [10,-10,-10,10],
-        image: objJson.objFabricImg_full[index].src,
-        draggable:true
-      });
+    $('#panoramaShow').attr('src',"/html/easydesign/scene/panoramaShow.html?"+options);
+
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
-  function setConstrainImg(image,imgObj,parentDiv,leftSide,callback){
+  function setConstrainImg(image,imgObj,parentDiv,leftSide){
     var winH = $(window).height();
     var winW = $(window).width();
 
@@ -76,8 +64,16 @@ define(function (require, exports, module) {
     var tmpTop = 0;
     var tmpLeft =0;
 
-    if((winW-w)!=0){
+    if((winW-leftSide_w-w)>0){
         tmpLeft = (winW-leftSide_w-w)/2;
+    }else{
+      w = w-leftSide_w;
+    }
+
+     if((winH-60-h)>0){
+        tmpTop = (winH-60-h)/2;
+    }else{
+       h = h-65;
     }
 
     //$('#j-side-cnt').height(winH);
@@ -86,11 +82,12 @@ define(function (require, exports, module) {
     $('#j-lb-main').height(winH);
     $('#j-side-cnt').height(winH);
 
-    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
-    $(parentDiv).css({'width':w,'height':h});
 
-    $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
-    callback();
+    $(parentDiv).css({'top':0,'left':0});
+    $(parentDiv).css({'width':'100%','height':'100%'});
+
+    $('#panoramaShow').css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
+
   }
 
 
@@ -124,6 +121,7 @@ define(function (require, exports, module) {
 
       return false;
     }
+
     curIndex ++;
     setBigImg(objJson,curIndex);
   }
@@ -167,7 +165,7 @@ define(function (require, exports, module) {
   //鼠标滚轮，上一张、下一张
   function mousewheel(){
      // jquery 兼容的滚轮事件
-    $(document).on("mousewheel DOMMouseScroll", function (e) {
+    $(window,document).on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
@@ -184,32 +182,23 @@ define(function (require, exports, module) {
 
 
 
+  /////////////////////////全景图/////////////////////////////////////
+
+
+
 
 
   $(document).ready(function () {
     bindScrollBigImg();
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
-
-    if(document.all){
-        document.onselectstart= function(){return false;}; //for ie
-    }else{
-        document.onmousedown= function(){return false;};
-        document.onmouseup= function(){return true;};
-    }
-    document.onselectstart = new Function('event.returnValue=false;');
    // mousewheel();
-
-
-
 
     //clickFullScreen();
   });
 
   $(window).resize(function(event) {
-      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-       snipe_len('j-lb-pic',curIndex);
-      });
+      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
   });
 
 });

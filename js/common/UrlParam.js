@@ -51,7 +51,7 @@
         var _result = myUrl.port + myUrl.path + "?";
         if (myUrl.protocol && myUrl.host) {
             _result = myUrl.protocol + "://" + myUrl.host + ":" + myUrl.port + myUrl.path + "?";
-        } 
+        }
         for (var p in myUrl.params) {
             _result += (p + "=" + myUrl.params[p] + "&");
         }
@@ -83,7 +83,7 @@
         var _result = myUrl.port + myUrl.path + "?";
         if (myUrl.protocol && myUrl.host) {
             _result = myUrl.protocol + "://" + myUrl.host + ":" + _result;
-        } 
+        }
         for (var p in myUrl.params) {
             _result += (p + "=" + myUrl.params[p] + "&");
         }
@@ -122,5 +122,8 @@
         return null; //返回参数值
 
     };
+
+
+    exports.parseURL = parseURL;
 
 });
