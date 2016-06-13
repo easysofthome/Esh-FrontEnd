@@ -20,7 +20,7 @@ define(function (require, exports, module) {
 
   //加载第n张图片
   function setBigImg(objJson,index){
-
+    $('#j-lb-picwp').hide();
     curIndex = index;
     setNextOrPrev(index,objJson.objFabricImg_full.length);
 
@@ -33,6 +33,7 @@ define(function (require, exports, module) {
     var options = "panorama="+objJson.objFabricImg_full[index].src+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
 
     $('#panoramaShow').attr('src',"/html/easydesign/scene/panoramaShow.html?"+options);
+    $('#j-lb-picwp').show();
 
   }
 
@@ -162,12 +163,8 @@ define(function (require, exports, module) {
     }
   }
 
-  //鼠标滚轮，上一张、下一张
-  function mousewheel(){
-     // jquery 兼容的滚轮事件
-    $(window,document).on("mousewheel DOMMouseScroll", function (e) {
-
-      var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+  function operImgBymousewheel(e){
+     var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
       if (delta > 0){
@@ -177,8 +174,28 @@ define(function (require, exports, module) {
           // 向下滚
          nextImg(objJson);
       }
-    });
   }
+
+  //鼠标滚轮，上一张、下一张
+  function mousewheel(){
+
+    // if(document.getElementById("panoramaShow").contentWindow.body.attachEvent){alert();
+    //    document.frames["panoramaShow"].contentWindow.document.attachEvent('onmousewheel',function(){
+    //     operImgBymousewheel(e);
+    //   });
+
+    //  }
+
+         // jquery 兼容的滚轮事件
+    $(document).on("mousewheel DOMMouseScroll", function (e) {
+        operImgBymousewheel(e);
+      });
+
+
+    }
+
+
+
 
 
 
@@ -192,7 +209,7 @@ define(function (require, exports, module) {
     bindScrollBigImg();
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
-   // mousewheel();
+    mousewheel();
 
     //clickFullScreen();
   });

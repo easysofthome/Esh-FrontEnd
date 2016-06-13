@@ -198,7 +198,7 @@ define(function (require, exports, module) {
         document.onmouseup= function(){return true;};
     }
     document.onselectstart = new Function('event.returnValue=false;');
-   // mousewheel();
+    mousewheel();
 
 
 
