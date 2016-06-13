@@ -9,8 +9,9 @@ define(function (require, exports, module) {
     size: 200,
     animation: null,
     image: null,
-    cursor: 'none',
+    cursor: 'move',
     bounds: [],
+    draggable:false,
     css: {
       borderRadius: 200,
       width: 200,
@@ -47,6 +48,27 @@ define(function (require, exports, module) {
       return (this.left < x && x < this.right) && (this.top < y && y < this.bottom);
     };
 
+    Bounds.prototype.containsLen = function(x, y, objLen) {
+      var flag = true;
+      if(this.left > objLen.offset().left){
+        objLen.css({'left':this.left});
+        flag = false;
+      }
+      if(objLen.offset().left+objLen.width() > this.right){
+        objLen.css({'left':this.right-objLen.width()});
+        flag = false;
+      }
+      if(this.top > objLen.offset().top){
+        objLen.css({'top':this.top});
+        flag = false;
+      }
+      if(objLen.offset().top+objLen.height() > this.bottom){
+        objLen.css({'top':this.bottom-objLen.height()});
+        flag = false;
+      }
+      return flag;
+    };
+
     return Bounds;
 
   })();
@@ -70,9 +92,16 @@ define(function (require, exports, module) {
         }
       });
       this.el.data('snipe', this);
-      this.lens = $('<div>').addClass(this.settings["class"]).css('display', 'none').appendTo('body');
+      if($('#snipe_len').length){
+        $('#snipe_len').remove();
+      }
+      this.lens = $('<div id="snipe_len" style="-moz-user-select:none;-webkit-user-select:none;user-select:none">').addClass(this.settings["class"]).css('display', 'none').appendTo('body');
+
+      this.rate = 0.5;
       this.ratioX = 1;
       this.ratioY = 1;
+      this.x_space = 0;
+      this.y_space = 0;
       this.ratioEl = $('<img>').attr('src', this.settings.image);
       this.ratioEl.one('load', function() {
         return _this.calculateRatio.call(_this);
@@ -81,9 +110,8 @@ define(function (require, exports, module) {
           return $(this).load();
         }
       });
-      this.el.bind('mousemove', function(e) {
-        return _this.onMouseMove(e);
-      });
+
+
       return this.el;
     }
 
@@ -109,6 +137,9 @@ define(function (require, exports, module) {
     };
 
     Snipe.prototype.run = function() {
+      if(this.settings.draggable){
+        return this.init();
+      }
       return this.hide();
     };
 
@@ -120,20 +151,81 @@ define(function (require, exports, module) {
       return this.run();
     };
 
+
+
     Snipe.prototype.onMouseMove = function(e) {
-      var backgroundX, backgroundY;
       if (!(this.bounds != null) && this.lens.not(':animated')) {
         return;
       } else {
-        if (!this.bounds.contains(e.pageX, e.pageY)) {
-          this.hide();
+        if (!this.bounds.containsLen(e.pageX, e.pageY, this.lens)) {
+          if(this.settings.draggable){
+            return;
+          }
+           this.hide();
         }
       }
-      backgroundX = -((e.pageX - this.offset.left) * this.ratioX - this.settings.size * .5);
-      backgroundY = -((e.pageY - this.offset.top) * this.ratioY - this.settings.size * .5);
-      return this.lens.css({
-        left: e.pageX - this.settings.size * .5,
-        top: e.pageY - this.settings.size * .5,
+      // backgroundX = -((e.pageX - this.offset.left) * this.ratioX - this.settings.size * .5);
+      // backgroundY = -((e.pageY - this.offset.top) * this.ratioY - this.settings.size * .5);
+
+
+      //   left: e.pageX - this.settings.size * .5,
+      //   top: e.pageY - this.settings.size * .5,
+      //   backgroundPosition: "" + backgroundX + "px " + backgroundY + "px"
+      // });
+
+      this.lens.css({
+        left: e.pageX-this.x_space,
+        top: e.pageY-this.y_space
+      });
+      this.lenImg(this.ratioX,this.ratioY);
+
+    };
+
+    Snipe.prototype.lenImg=function(ratioX,ratioY){
+      var backgroundX, backgroundY;
+      backgroundX = -((this.lens.offset().left - this.offset.left) * ratioX + this.settings.size);
+      backgroundY = -((this.lens.offset().top - this.offset.top) * ratioY + this.settings.size);
+      this.lens.css({
+        backgroundPosition: "" + backgroundX + "px " + backgroundY + "px"
+      });
+    }
+
+     //鼠标滚轮，放大缩小
+  Snipe.prototype.mousewheel=function(){
+     // jquery 兼容的滚轮事件
+    $(document).on("mousewheel DOMMouseScroll", function (e) {
+
+      var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+
+      if (delta > 0){
+          // 向上滚
+         this.rate *= 0.9;
+         this.lenImg(this.rate*this.ratioX,this.rate*this.ratioY);
+      }else if (delta < 0){
+          // 向下滚
+         this.rate *= 0.9;
+         this.lenImg(this.rate*this.ratioX,this.rate*this.ratioY);
+      }
+    });
+  }
+
+
+    Snipe.prototype.init = function(e) {
+      this.show();
+      var backgroundX, backgroundY;
+
+      //backgroundX = -((e.pageX - this.offset.left) * this.ratioX - this.settings.size * .5);
+      //backgroundY = -((e.pageY - this.offset.top) * this.ratioY - this.settings.size * .5);
+
+      this.lens.css({
+        left: this.offset.left+this.el[0].width-this.settings.size-30,
+        top: this.offset.top+30
+      });
+
+       backgroundX = -((this.lens.offset().left - this.offset.left) * this.ratioX + this.settings.size);
+       backgroundY = -((this.lens.offset().top - this.offset.top) * this.ratioY + this.settings.size);
+       this.lens.css({
         backgroundPosition: "" + backgroundX + "px " + backgroundY + "px"
       });
     };
@@ -149,11 +241,26 @@ define(function (require, exports, module) {
         animation = true;
       }
       this.makeBounds();
-      this.el.unbind('mousemove');
-      this.el.unbind('mouseover');
-      this.body.bind('mousemove', function(e) {
-        return _this.onMouseMove(e);
-      });
+
+      if(!this.settings.draggable){
+         moveEvent(_this);
+      }else{
+        this.lens.unbind('mousedown');
+        this.lens.bind('mousedown',function(e){
+           //$('.flowname').text( _this.lens.left+ "__"+e.pageY);
+           _this.x_space = e.pageX - $(this).offset().left;
+           _this. y_space = e.pageY - $(this).offset().top;
+           moveEvent(_this);
+        })
+
+        this.lens.bind('mouseup',function(){
+            removeMoveEvent(_this);
+        });
+        this.lens.bind('mouseout',function(){
+            removeMoveEvent(_this);
+        });
+      }
+
       this.lens.show().css({
         opacity: 1,
         cursor: this.settings.css.cursor
@@ -161,13 +268,30 @@ define(function (require, exports, module) {
       return this;
     };
 
+    //鼠标移动事件
+    function moveEvent(_this){
+
+        _this.lens.unbind('mousemove');
+        _this.lens.unbind('mouseover');
+        _this.lens.bind('mousemove', function(e) {
+
+          return _this.onMouseMove(e);
+        });
+
+    }
+
+    function removeMoveEvent(that){
+        that.lens.unbind('mousemove');
+        that.lens.unbind('mouseover');
+    }
+
     Snipe.prototype.hide = function(animation) {
       var _this = this;
       if (animation == null) {
         animation = true;
       }
       this.el.bind('mouseover', function(e) {
-        return _this.show();
+        //return _this.show();
       });
       this.body.unbind('mousemove');
       this.lens.css({

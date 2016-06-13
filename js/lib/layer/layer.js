@@ -629,7 +629,7 @@ $, win, ready = {
     Class.pt.callback = function () {
         var that = this, layerE = that.layerE, config = that.config, dialog = config.dialog;
         that.openLayer();
-        that.config.success(layerE);
+        that.config.success(layerE,that.index);
         layer.ie6 && that.IE6(layerE);
 
         layerE.find('.xubox_close').on('click', function () {
@@ -651,6 +651,7 @@ $, win, ready = {
             });
         }
 
+        //手动添加功能 鼠标处于灰色区域时，弹出提示框 依赖于 poshytip插件
         var clickCloseTip = {
                   content: '点击灰色区域，关闭弹出框',
                   alignTo:'cursor',
@@ -665,7 +666,7 @@ $, win, ready = {
                   hide_timeOut:true
 
                 };
-        
+
         if (that.config.shadeClose) {
             $('#xubox_shade' + that.index).on('click', function () {
                 $('#xubox_shade' + that.index).poshytip('destroy');

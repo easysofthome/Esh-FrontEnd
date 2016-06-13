@@ -78,8 +78,6 @@ function setMsgPosition(obj,msg,direction){
           fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
-
-
           }
         });
       });
@@ -175,7 +173,7 @@ function setMsgPosition(obj,msg,direction){
       });
 
       //选择织造工缴工厂报价
-      $(".factoryOffer_butt").attr('href', 'javascript:void(0)');
+
       $(".factoryOffer_butt").bind("click",function(){
         $.layer({
           type:2,
@@ -196,7 +194,26 @@ function setMsgPosition(obj,msg,direction){
         });
       });
 
+     //产品辅料 新增(双层layer)
+     $("#showAddLayer").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '594px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 594)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
+          success: function (layero, index) {
 
+
+          }
+        });
+      });
 
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////

@@ -33,13 +33,19 @@ define(function (require, exports, module) {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-      $('#j-lb-pic').snipe({
-        bounds: [10,-10,-10,10],
-        image: objJson.objFabricImg_full[index].src
-    });
-    });
+       snipe_len('j-lb-pic',curIndex);
+      });
     });
 
+  }
+
+  function snipe_len(id,index){
+      //图片放大镜
+      $('#'+id).snipe({
+        bounds: [10,-10,-10,10],
+        image: objJson.objFabricImg_full[index].src,
+        draggable:true
+      });
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -184,6 +190,14 @@ define(function (require, exports, module) {
     bindScrollBigImg();
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
+
+    if(document.all){
+        document.onselectstart= function(){return false;}; //for ie
+    }else{
+        document.onmousedown= function(){return false;};
+        document.onmouseup= function(){return true;};
+    }
+    document.onselectstart = new Function('event.returnValue=false;');
     mousewheel();
 
 
@@ -193,7 +207,9 @@ define(function (require, exports, module) {
   });
 
   $(window).resize(function(event) {
-      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
+       snipe_len('j-lb-pic',curIndex);
+      });
   });
 
 });
