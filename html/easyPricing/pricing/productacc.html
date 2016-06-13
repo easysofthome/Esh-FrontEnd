@@ -27,6 +27,7 @@
       <a class="btn_gray lf" href="#">关闭</a>
     </div>
   </div>
+
 <script src="/js/lib/jquery/jquery.js"></script>
   <script>
     var index = parent.layer.getFrameIndex(window.name);
@@ -34,9 +35,9 @@
       parent.layer.close(index);
     });
 
-
-
-
+    $('#addBtn').bind('click',function(){
+     $('#showAddLayer', parent.document).trigger('click');
+    });
   </script>
 </body>
 </html>
