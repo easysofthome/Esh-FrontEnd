@@ -46,6 +46,7 @@ function setMsgPosition(obj,msg,direction){
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
+// 经纱纬纱事件
     $('#warp-spinner')
       .spinner({
         min:1,
@@ -110,6 +111,14 @@ function setMsgPosition(obj,msg,direction){
       $(this).toggleClass('selected');
     });
 
+    //染织方法
+    $('#dyed-method label').on('click', function() {
+
+      var index = $(this).index();
+      $('.AddItem .js-tab').hide();
+      $('.AddItem .js-tab').eq(index).show();
+    });
+
 ////////////////////////////弹出层///////////////////////////////////
 
 var startPriceLayer = {
@@ -130,9 +139,29 @@ var startPriceLayer = {
 
       }
 
+    // 经纱种类选择纱线
+    $('#yarn-ul').on('click', '.yarn_butt' , function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1020px', '874px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 874)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        success: function () {
 
+        }
 
-    $('.yarn_butt').on('click', function() {
+      });
+    });
+
+    // 纬纱种类选择纱线
+    $('#abb-ul').on('click', '.yarn_butt' , function() {
       $.layer({
         type: 2,
         title: false,
