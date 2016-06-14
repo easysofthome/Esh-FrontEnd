@@ -18,38 +18,52 @@
     <div class="volumebox">
       <div class="container clearfix">
         <div class="intbox lf">
-          <span class="lf">类型：</span>
-          <input class="int lf" type="text" value="pp棉" />
+          <span class="lf title_name">类型：</span>
+            <select class="lf" id="sel1">
+              <option value="">填充240g/m2</option>
+              <option value="one">填充400g/m2</option>
+            </select>
         </div>
         <div class="intbox lf">
-          <span class="lf">填充物：</span>
-          <input class="int lf" type="text" value="化纤棉" />
+          <span class="lf title_name">填充物：</span>
+          <select class="lf" id="sel2">
+              <option value="">羽绒</option>
+              <option value="one">化纤棉</option>
+          </select>
         </div>
         <div class="intbox lf">
-          <span class="lf">宽x长：</span>
-          <input class="int lf" type="text" value="20x30" />
+          <span class="lf title_name">宽x长：</span>
+           <select class="lf" id="sel3">
+            <option value="">88x92</option>
+            <option value="one">110x96</option>
+          </select>
         </div>
         <div class="intbox lf">
-          <span class="lf">每箱数量：</span>
-          <input class="int lf" type="text" value="2" />
+          <span class="lf title_name">每箱数量：</span>
+          <select class="lf" id="sel4">
+            <option value="">1</option>
+            <option value="one">2</option>
+          </select>
+        </div>
+        <div class="intbox lf" >
+         <input class="lf checkint ck_height" type="checkbox" /><span class="lf title_name">是否含防潮袋</span>
         </div>
       </div>
     </div>
-    <label class="labbox clearfix">
-      <input class="lf checkint" type="checkbox" /><span class="lf">是否含防潮袋</span>
-    </label>
+
     <div class="btnbox clearfix">
       <a class="btn_blue lf" href="#">保存</a>
       <a class="btn_gray lf" href="#">关闭</a>
     </div>
 
   </div>
-<script src="/js/lib/jquery/jquery.js"></script>
-  <script>
-    var index = parent.layer.getFrameIndex(window.name);
-    $('.close,.btn_close,.btn_gray.lf').click(function(){
-      parent.layer.close(index);
-    });
-  </script>
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+ <script>
+    seajs.use('js/easyPricing/pricing/volume');
+</script>
 </body>
 </html>

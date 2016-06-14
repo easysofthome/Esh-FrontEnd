@@ -4,11 +4,13 @@
   <meta charset="utf-8">
   <title>易核价-易家纺电子商务服务平台_产品辅料信息（弹窗）</title>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
   <div class="popupbox">
+  <form method="post" id="sproductaccForm" action="">
     <p class="title clearfix">
       <a class="cur lf">产品辅料信息</a>
       <span class="rg btn_close"></span>
@@ -23,21 +25,21 @@
       </label>
     </div>
     <div class="btnbox clearfix">
-      <a class="btn_blue lf" href="#">保存</a>
-      <a class="btn_gray lf" href="#">关闭</a>
+      <a class="btn_blue lf" id="btnSave" href="javascript:void(0)">保存</a>
+      <a class="btn_gray lf" href="javascript:void(0)">关闭</a>
     </div>
+    </form>
   </div>
+  <script src="/js/common/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
+  <script src="/js/common/seajs/seajs-css.js"></script>
 
-<script src="/js/lib/jquery/jquery.js"></script>
+  <script src="/js/rootConfig.js"></script>
+ <script>
+    seajs.use('js/easyPricing/pricing/productacc');
+  </script>
   <script>
-    var index = parent.layer.getFrameIndex(window.name);
-    $('.close,.btn_close,.btn_gray.lf').click(function(){
-      parent.layer.close(index);
-    });
 
-    $('#addBtn').bind('click',function(){
-     $('#showAddLayer', parent.document).trigger('click');
-    });
   </script>
 </body>
 </html>
