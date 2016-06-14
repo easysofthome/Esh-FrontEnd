@@ -74,7 +74,9 @@ function setMsgPosition(obj,msg,direction){
         },
         cutEvent: function () {
           $('#yarn-ul li:last').remove();
+          $('#warp_num_box input:last').poshytip('destroy');
           $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
+
         }
       });
 
@@ -99,10 +101,11 @@ function setMsgPosition(obj,msg,direction){
           + '<div class="yarn_butt lf">选择纱线</div>'
           + '</li>');
         $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
-          + '<input type="text" id="abbSpinnerNum2" errorMsgPosition="rightTop" name="abbSpinnerNum2" class="density_input lf">');
+          + '<input type="text" id="abbSpinnerNum'+num+'" name="abbSpinnerNum'+num+'" class="density_input lf">');
       },
       cutEvent:function () {
         $('#abb-ul li:last').remove();
+        $('#abb_num_box input:last').poshytip('destroy');
         $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
       }
     });
@@ -281,6 +284,16 @@ var startPriceLayer = {
                   maxlength:10,
                   gt:0
               },
+              abbSpinnerNum3: {
+                  number:true,
+                  required: true,
+                  maxlength:10
+              },
+              abbSpinnerNum4: {
+                  number:true,
+                  required: true,
+                  maxlength:10
+              },
               exchangeRate: {
                   required: true,
                   number: true,
@@ -310,25 +323,35 @@ var startPriceLayer = {
                   maxlength: icons.error + '面料门幅值过长！'
               },
               warpSpinnerNum1: {
-                  number: icons.error + '第一个经密值只能是数字！',
-                  required: icons.error + '请输入第一个经密值！',
+                  number: icons.error + '经密值只能是数字！',
+                  required: icons.error + '请输入经密值！',
                   maxlength: icons.error + '经密值过大！'
               },
               warpSpinnerNum2: {
-                  number: icons.error + '第二个经密值只能是数字！',
-                  required: icons.error + '请输入第二个经密值！',
+                  number: icons.error + '经密值只能是数字！',
+                  required: icons.error + '请输入经密值！',
                   maxlength: icons.error + '经密值过大！'
 
               },
               abbSpinnerNum1: {
-                  number: icons.error + '第一个纬密值只能是数字！',
-                  required: icons.error + '请输入第一个经密值！',
-                  maxlength: icons.error + '经密值过大！'
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
               },
               abbSpinnerNum2: {
-                  number: icons.error + '第二个纬密值只能是数字！',
-                  required: icons.error + '请输入第二个经密值！',
-                  maxlength: icons.error + '经密值过大！'
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
+              },
+              abbSpinnerNum3: {
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
+              },
+              abbSpinnerNum4: {
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
               },
               exchangeRate:{
                   required: icons.error + '请输入汇率！',
