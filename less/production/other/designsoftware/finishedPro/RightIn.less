@@ -1,15 +1,15 @@
-@import '../../../dev/mixins/mixins.less';
-@import '../../../sprite/other/designsoftware/sprite.less';
+@import '../../../../dev/mixins/mixins.less';
+@import '../../../../sprite/other/designsoftware/sprite.less';
 
 .fabricsesign_box
 {
+  position: relative;
   font-size: 12px;
 
   width: 400px;
 
   background-color: #fafafa;
   .classif_box,
-  .options_box
   {
     width: 380px;
     margin: 0 auto;
@@ -25,14 +25,6 @@
     line-height: 36px;
 
     color: #fff;
-  }
-  .spread
-  {
-    margin: 12px 0 0 4px;
-
-    .sprite(@spread);
-    .icon-other-designsoftware;
-    .fixIe6pngTransparent('/images/icon/other/designsoftware/spread.png');
   }
   .fabricsesign_buttbox{
     margin: 6px 10px 0 0;
@@ -67,7 +59,7 @@
     line-height: 24px;
 
     margin-top: 6px;
-    padding: 0 6px;
+    padding: 0 13px;
 
     color: #fff;
     background-color: #57afb7;
@@ -77,6 +69,14 @@
   .options
   {
     background-color: #f5f5f5;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    padding-bottom: 10px;
+    .options_box{
+      width: 360px;
+      padding: 0 30px 0 10px;
+    }
   }
   .options_rowbox
   {
@@ -109,7 +109,7 @@
   }
   .options_conbox
   {
-    width: 280px;
+    width: 260px;
 
     color: #333;
 
@@ -148,8 +148,8 @@
 
       background-color: #fff;
       -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 
       .border-radius(6px);
       .img_box
@@ -162,6 +162,31 @@
       {
         margin-left: 10px;
       }
+    }
+  }
+
+  // 展开收起按钮
+  .btn-box{
+    position: absolute;
+    top: 86px;
+    right: 0;
+    display: block;
+    background-color: #457ce6;
+    width: 30px;
+    color: #fff;
+    line-height: 15px;
+    padding: 15px 0;
+    .border-left-radius(5px);
+    .words{
+      width: 16px;
+      margin-left: 9px;
+      display: block;
+    }
+    i{
+      margin: 10px 0 0 10px;
+      .sprite(@arrow_stop);
+      .icon-other-designsoftware;
+      .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_stop.png');
     }
   }
 }
