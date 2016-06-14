@@ -1,7 +1,7 @@
 @import '../../../../dev/mixins/mixins.less';
 @import '../../../../sprite/VIP/easydesign/increase/sprite.less';
 
-.mainbox{butt_box
+.mainbox{
   padding: 20px 0 130px 0;
 }
 
@@ -297,17 +297,13 @@
   }
   .butt_pricing,.butt_return{
     width: 150px;
-    line-height: 40px;
-    font-size: 16px;
-    color:#fff;
-    background-color: #929698;
-    .border-radius(5px);
     margin: 0 10px;
     display: inline-block;
-
+    .button-variant(#fff; #929698; #929698);
+    .button-size(0; 0; 16px; 40px; 5px);
   }
   .butt_return{
-    background-color: #3ca1d7;
+    .button-variant(#fff; #3ca1d7; #3ca1d7);
   }
 
 
@@ -439,7 +435,3 @@
 .checkboxPad{
   padding: 12px 12px 0px 0px;
 }
-
-
-
-
