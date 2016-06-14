@@ -111,6 +111,14 @@ function setMsgPosition(obj,msg,direction){
       $(this).toggleClass('selected');
     });
 
+    //染织方法
+    $('#dyed-method label').on('click', function() {
+
+      var index = $(this).index();
+      $('.AddItem .js-tab').hide();
+      $('.AddItem .js-tab').eq(index).show();
+    });
+
 ////////////////////////////弹出层///////////////////////////////////
 
 var startPriceLayer = {
@@ -131,8 +139,7 @@ var startPriceLayer = {
 
       }
 
-
-
+    // 经纱种类选择纱线
     $('#yarn-ul').on('click', '.yarn_butt' , function() {
       $.layer({
         type: 2,
@@ -153,8 +160,29 @@ var startPriceLayer = {
       });
     });
 
+    // 纬纱种类选择纱线
+    $('#abb-ul').on('click', '.yarn_butt' , function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1020px', '874px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 874)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+
     //选择织造工缴工厂报价
-    $('#abb-ul').on('click', '.factoryOffer_butt' , function() {
+    $('.factoryOffer_butt').on('click', function() {
       $.layer({
         type: 2,
         title: false,
