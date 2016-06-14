@@ -46,6 +46,7 @@ function setMsgPosition(obj,msg,direction){
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
+// 经纱纬纱事件
     $('#warp-spinner')
       .spinner({
         min:1,
@@ -132,7 +133,7 @@ var startPriceLayer = {
 
 
 
-    $('.yarn_butt').on('click', function() {
+    $('#yarn-ul').on('click', '.yarn_butt' , function() {
       $.layer({
         type: 2,
         title: false,
@@ -153,7 +154,7 @@ var startPriceLayer = {
     });
 
     //选择织造工缴工厂报价
-    $('.factoryOffer_butt').on('click', function() {
+    $('#abb-ul').on('click', '.factoryOffer_butt' , function() {
       $.layer({
         type: 2,
         title: false,
