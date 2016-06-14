@@ -9,7 +9,7 @@
 <body>
   <div class="finishedPro-box">
     <!-- 顶部 -->
-    <div class="finishedPro-top" style="position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop));">
+    <div class="finishedPro-top" style="* position:absolute;* bottom:auto;top:expression(eval(document.documentElement.scrollTop));">
       <div class="top-box clearfix">
         <a class="title cur lf" href="#">免费面料</a>
         <a class="title lf" href="#">我上传的面料</a>
@@ -258,7 +258,8 @@
     </div>
 
     <!-- 底部翻页 -->
-    <div class="finishedPro-next" style="position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));">
+    <div class="finishedPro-next" style="* position:absolute;* bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+">
       <div class="clearfix next-box">
         <a class="next lf" href="#">上一页</a>
         <a class="num cur lf" href="#">1</a>
