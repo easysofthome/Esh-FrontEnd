@@ -5,7 +5,7 @@
 
 * html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-attachment:fixed;}
 body{
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
 }
 .finishedPro-box{
   width: 100%;
@@ -56,6 +56,9 @@ div.finishedPro-top{
   }
 
   .classification-box{
+    position: relative;
+    top: 0;
+    left: 0;
     padding-left: 2.2%;
     line-height: 24px;
     background-color: #fff;
@@ -87,24 +90,32 @@ div.finishedPro-top{
 
   // 展开收起
   .Unfolded-box{
-    padding-bottom: 0;
+    overflow: hidden;
+    padding-bottom: 40px;
     -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    .shrink_box{
-      cursor: pointer;
-      margin: 10px auto 0 auto;
-      background-color: #e6e6e6;
-      width: 120px;
-      height: 30px;
-      .border-radius(6px 6px 0 0);
-      font-size: 12px;
-      line-height: 30px;
-      .arrow_top{
-        margin:10px 4px 0 22px;
-        .sprite(@arrow_top);
-        .icon-other-designsoftware;
-        .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_top.png');
+    .shrink-wrapper{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-left: -60px;
+      background: #fff;
+      .shrink_box{
+        cursor: pointer;
+        margin: 10px auto 0 auto;
+        background-color: #e6e6e6;
+        width: 120px;
+        height: 30px;
+        .border-radius(6px 6px 0 0);
+        font-size: 12px;
+        line-height: 30px;
+        .arrow_top{
+          margin:10px 4px 0 22px;
+          .sprite(@arrow_top);
+          .icon-other-designsoftware;
+          .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_top.png');
+        }
       }
     }
   }
