@@ -329,7 +329,7 @@ define(function (require, exports, module) {
         return reg.test(value);
     }
 
-    //验证数字
+    //大于0的整数
     function validatePositiveInt(value){
         var reg = new RegExp("^[1-9]\d*$");
         return reg.test(value);

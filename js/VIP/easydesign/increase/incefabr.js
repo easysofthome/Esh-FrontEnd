@@ -174,6 +174,16 @@ var startPriceLayer = {
                   required: true,
                   maxlength:10
               },
+              abbSpinnerNum3: {
+                  number:true,
+                  required: true,
+                  maxlength:10
+              },
+              abbSpinnerNum4: {
+                  number:true,
+                  required: true,
+                  maxlength:10
+              },
               warpFlowerSize: {
                   required: true,
                   number:true,

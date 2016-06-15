@@ -110,11 +110,11 @@ function setMsgPosition(obj,msg,direction){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '190px'],
+          area: ['1000px', '200px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 190)/2+'px',''],
+          offset: [($(window).height() - 200)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,

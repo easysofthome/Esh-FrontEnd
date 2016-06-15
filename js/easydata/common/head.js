@@ -49,15 +49,19 @@ define(function (require, exports, module) {
   // });
   /** /登录状态的导航  */
   /** 却换中英文 **/
-  $('.switch').on('click',function () {
-    if($(this).find('span').css('marginLeft') == '-33px'){
+    $('.switch').on('click',function () {
+      // if($(this).find('span').css('marginLeft') == '-33px'){
+      //   $(this).find('span').animate({marginLeft: '1px'},300,function () {
+      //     window.open("/html/easysofthome/English.html",'newwindow');
+      //   });
+      // }else{
+      //   $(this).find('span').animate({marginLeft: '-33px'},300);
+      // }
       $(this).find('span').animate({marginLeft: '1px'},300,function () {
         window.open("/html/easysofthome/English.html",'newwindow');
+        $('.switch span').animate({marginLeft: '-33px'});
       });
-    }else{
-      $(this).find('span').animate({marginLeft: '-33px'},300);
-    }
-  });
+    });
   /** /却换中英文 **/
 
 });
