@@ -87,13 +87,24 @@ ul.case_list{
     margin-right: 19px;
   }
   li{
+    position: relative;
+    top: 0;
+    left: 0;
     line-height: 24px;
     width: 272px;
+    height: 398px;
     margin-top: 20px;
     background-color: #fff;
     -webkit-box-shadow:0 0 15px 1px #e0e0e0;
     -moz-box-shadow:0 0 15px 1px #e0e0e0;
     box-shadow:0 0 15px 1px #e0e0e0;
+    .case_wrapper{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      .btnbox{display:none;}
+    }
   }
 
   //li里的样式
@@ -156,6 +167,7 @@ ul.case_list{
     margin: 0 15px;
     padding: 15px 0;
     div.progress-bar{
+      display: none;
       margin-top: 20px;
       position: relative;
       div.progressBar{

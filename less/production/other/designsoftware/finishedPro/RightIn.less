@@ -5,10 +5,9 @@
 {
   position: relative;
   font-size: 12px;
-
   width: 400px;
-
   background-color: #fafafa;
+  overflow: hidden;
   .classif_box,
   {
     width: 380px;
@@ -183,6 +182,12 @@
       display: block;
     }
     i{
+      margin: 10px 0 0 10px;
+      .sprite(@arrow_open);
+      .icon-other-designsoftware;
+      .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_open.png');
+    }
+    i.open{
       margin: 10px 0 0 10px;
       .sprite(@arrow_stop);
       .icon-other-designsoftware;
