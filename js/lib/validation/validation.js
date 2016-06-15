@@ -1234,6 +1234,10 @@ define(function () {
 			digits: function (value, element) {
 				return this.optional(element) || /^\d+$/.test(value);
 			},
+			//正整数
+			positiveInt:function (value, element) {
+				return this.optional(element) || /^[1-9]\d*$/.test(value);
+			},
 			// http://jqueryvalidation.org/minlength-method/
 			minlength: function (value, element, param) {
 				var length = $.isArray(value) ? value.length : this.getLength(value,

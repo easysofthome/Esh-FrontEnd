@@ -9,7 +9,7 @@
 <body>
   <table class="tab_box" cellspacing="0">
     <tr class="tr_tit">
-      <td>全选/全不选</td>
+      <td><input id="sel_all" type="checkbox" value="" /></td>
       <td>辅料名称</td>
       <td>单价(元)</td>
       <td>耗用数量</td>
@@ -28,11 +28,11 @@
       </td>
       <td>印刷布标</td>
       <td class="inp_box">
-        <input type="text" class="inp_mon"></td>
+        <input type="text" name="priceValid_1" id="priceValid_1" class="priceValid inp_mon"></td>
       <td class="inp_box">
-        <input type="text" class="inp_mon"></td>
+        <input type="text" name="quantityValid_1" id="quantityValid_1" class="quantityValid inp_mon"></td>
       <td>枚</td>
-      <td>0.06</td>
+      <td id="finalCost_1">0.06</td>
       <td>0</td>
       <td>1000</td>
     </tr>
@@ -42,11 +42,11 @@
       </td>
       <td>印刷布标</td>
       <td class="inp_box">
-        <input type="text" class="inp_mon"></td>
+        <input type="text" name="priceValid_2" id="priceValid_2" class="priceValid inp_mon"></td>
       <td class="inp_box">
-        <input type="text" class="inp_mon"></td>
+        <input type="text" name="quantityValid_2" id="quantityValid_2" class="quantityValid inp_mon"></td>
       <td>枚</td>
-      <td>0.06</td>
+      <td id="finalCost_2">0.06</td>
       <td>0</td>
       <td>1000</td>
     </tr>

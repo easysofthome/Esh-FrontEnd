@@ -7,79 +7,73 @@
     <link href="/css/production/VIP/easydesign/increase/incefabr.css" rel="stylesheet" type="text/css"/>
 
   <body>
-  @@include('VIP/common/nav.html')
+    @@include('VIP/common/nav.html')
     <div class="mainbox">
       <div class="fabricbox">
-      <form action="" id="inceproductForm" method="post">
-        <div class="fabric_con">
-          <div class="flower_title">添加成品</div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">成品编号：</span>
-            <div class="lf long_input" >F42585623</div>
-            <span class="lf prompt">注：成品编号自动生成，无需填写。</span>
-          </div>
-          <div class="clearfix data_frm" id="num_incepro">
-            <span class="lf title_name">成品名称：</span>
-            <div class="lf Locate" id="name">
-              <span class="placeholder">请输入成品名称</span>
-              <input type="text" id="fabricProName" name="fabricProName" class="lf long_input">
-              <div class="input-tip"></div>
+        <form action="" id="inceproductForm" method="post">
+          <div class="fabric_con">
+            <div class="flower_title">添加成品</div>
+            <div class="clearfix data_frm">
+              <span class="lf title_name">成品编号：</span>
+              <div class="lf long_input" >F42585623</div>
+              <span class="lf prompt">注：成品编号自动生成，无需填写。</span>
+            </div>
+            <div class="clearfix data_frm" id="num_incepro">
+              <span class="lf title_name">成品名称：</span>
+              <div class="lf Locate" id="name">
+                <span class="placeholder">请输入成品名称</span>
+                <input type="text" id="fabricProName" name="fabricProName" class="lf long_input">
+                <div class="input-tip"></div>
               </div>
-          </div>
-
-
-
-
-          <div class="clearfix rad_frm">
-            <span class="lf title_name">场景类型：</span>
-            <div class="lf Single_box">
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
-                <span class="lf">简单场景</span>
-              </label>
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
-                <span class="lf">展厅场景</span>
-              </label>
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
-                <span class="lf">浴室</span>
-              </label>
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
-                <span class="lf">卧室</span>
-              </label>
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
-                <span class="lf">客厅</span>
-              </label>
-              <label class="lf label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
-                <span class="lf">餐厅</span>
-              </label>
             </div>
-          </div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">成品图片：</span>
-            <div class="lf fabr_imgbox">
-              <a href="#" class="fabr_img">
-                <span class="tian_img"></span>
-                <p class="fabrimg_text">点击添加图片</p>
-              </a>
-              <p class="fabr_prompt">注：成品只能上传 jpg或jpeg</p>
+
+            <div class="clearfix rad_frm">
+              <span class="lf title_name">场景类型：</span>
+              <div class="lf Single_box">
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
+                  <span class="lf">简单场景</span>
+                </label>
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" class="lf radio_post" />
+                  <span class="lf">展厅场景</span>
+                </label>
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" class="lf radio_post" />
+                  <span class="lf">浴室</span>
+                </label>
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" class="lf radio_post" />
+                  <span class="lf">卧室</span>
+                </label>
+                <label class="lf radio_rg label_radio">
+                  <input name="Fruit" type="radio" class="lf radio_post" />
+                  <span class="lf">客厅</span>
+                </label>
+                <label class="lf label_radio">
+                  <input name="Fruit" type="radio" class="lf radio_post" />
+                  <span class="lf">餐厅</span>
+                </label>
+              </div>
             </div>
+            <div class="clearfix data_frm">
+              <span class="lf title_name">成品图片：</span>
+              <div class="lf fabr_imgbox">
+                <a href="#" class="fabr_img">
+                  <span class="tian_img"></span>
+                  <p class="fabrimg_text">点击添加图片</p>
+                </a>
+                <p class="fabr_prompt">注：成品只能上传 jpg或jpeg</p>
+              </div>
+            </div>
+
           </div>
 
-
-
-        </div>
-
-
-       <p class="butt_box">
-         <input class="butt_pricing" type="submit" name="submit" id="submit" value="保存">
-         <input class="butt_return" type="submit" name="submit" id="submit" value="保存并发布">
-      </p>
-      </form>
+          <p class="butt_box">
+            <a class="butt_pricing" href="#">保存</a>
+            <a class="butt_return" href="#">保存并发布</a>
+          </p>
+        </form>
       </div>
     </div>
     @@include('VIP/common/footer.html')
