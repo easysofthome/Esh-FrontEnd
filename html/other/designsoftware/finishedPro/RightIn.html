@@ -149,7 +149,7 @@
             <li class="lf">门幅280cm价格</li>
           </ul>
         </div>
-        <div class="options_rowbox clearfix">
+        <div class="options_rowbox clearfix" style="display:none;">
           <span class="lf options_tit">面料价格：</span>
           <span class="lf clioptions_comp">全部</span>
           <ul class="lf options_conbox">
@@ -170,6 +170,27 @@
     </a>
   </div>
 
+  <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>
+    $('.options_rowbox:eq(4)').on('click', '.options_conbox li,.clioptions_comp', function() {
+      $('.options_rowbox:last').show();
+    });
+    $('.options_rowbox:eq(4)').on('click', '.clioptions_comp', function() {
+      $('.options_rowbox:last').hide();
+    });
+    $('.btn-box').on('click', function() {
+      var htmlObj = $(this).find('span');
+      if(htmlObj.html()=='收起分类'){
+        $('.fabricsesign_box .options').animate({'right': '-400px'});
+        htmlObj.html('展开分类');
+        $(this).css('background','#f60').find('i').toggleClass('open');
+      }else{
+        $('.fabricsesign_box .options').animate({'right': '0'});
+        htmlObj.html('收起分类');
+        $(this).css('background','#457ce6').find('i').toggleClass('open');
+      }
 
+    });
+  </script>
 </body>
 </html>
