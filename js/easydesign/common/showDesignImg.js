@@ -201,19 +201,19 @@ define(function (require, exports, module) {
 
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
-    initPage(objJson);
-    // $.ajax({
-    //   type: 'get',
-    //   url: 'Flower/AjaxDetail',
-    //   data: params ,
-    //   dataType: 'json',
-    //   success: function(data){
-    //     initPage(data);
-    //   },
-    //   error : function() {
-    //     console.log('---花型详情页异常---');
-    //   }
-    // });
+   // initPage(objJson);
+    $.ajax({
+      type: 'get',
+      url: 'Flower/AjaxDetail',
+      data: params ,
+      dataType: 'json',
+      success: function(data){
+        initPage(data);
+      },
+      error : function() {
+        console.log('---花型详情页异常---');
+      }
+    });
 
       //接口
 
