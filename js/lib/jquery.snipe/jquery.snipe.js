@@ -11,7 +11,8 @@ define(function (require, exports, module) {
     image: null,
     cursor: 'move',
     bounds: [],
-    draggable:false,
+    moveable:false,
+    visible:true,
     css: {
       borderRadius: 200,
       width: 200,
@@ -96,12 +97,14 @@ define(function (require, exports, module) {
         $('#snipe_len').remove();
       }
       this.lens = $('<div id="snipe_len" style="-moz-user-select:none;-webkit-user-select:none;user-select:none">').addClass(this.settings["class"]).css('display', 'none').appendTo('body');
-
       this.rate = 0.5;
       this.ratioX = 1;
       this.ratioY = 1;
       this.x_space = 0;
       this.y_space = 0;
+      this.native_height = 0;
+      this.native_width  = 0;
+      this.scaling = 0.3;
       this.ratioEl = $('<img>').attr('src', this.settings.image);
       this.ratioEl.one('load', function() {
         return _this.calculateRatio.call(_this);
@@ -110,8 +113,11 @@ define(function (require, exports, module) {
           return $(this).load();
         }
       });
-
-
+       if(this.settings.visible){
+        this.lens.show();
+      }else{
+        this.lens.hide();
+      }
       return this.el;
     }
 
@@ -137,7 +143,7 @@ define(function (require, exports, module) {
     };
 
     Snipe.prototype.run = function() {
-      if(this.settings.draggable){
+      if(this.settings.moveable){
         return this.init();
       }
       return this.hide();
@@ -146,6 +152,8 @@ define(function (require, exports, module) {
     Snipe.prototype.calculateRatio = function() {
       this.ratioX = this.ratioEl[0].width / this.el[0].width;
       this.ratioY = this.ratioEl[0].height / this.el[0].height;
+      this.native_width = this.ratioEl[0].width;
+      this.native_height = this.ratioEl[0].height;
       this.ratioEl.remove();
       this.lens.css(this.settings.css);
       return this.run();
@@ -154,30 +162,35 @@ define(function (require, exports, module) {
 
 
     Snipe.prototype.onMouseMove = function(e) {
+      var _this = this;
       if (!(this.bounds != null) && this.lens.not(':animated')) {
         return;
       } else {
         if (!this.bounds.containsLen(e.pageX, e.pageY, this.lens)) {
-          if(this.settings.draggable){
+          if(this.settings.moveable){
             return;
           }
            this.hide();
         }
       }
-      // backgroundX = -((e.pageX - this.offset.left) * this.ratioX - this.settings.size * .5);
-      // backgroundY = -((e.pageY - this.offset.top) * this.ratioY - this.settings.size * .5);
+     
+        this.lens.css({
+          left: e.pageX-this.x_space,
+          top: e.pageY-this.y_space
+        });
 
 
-      //   left: e.pageX - this.settings.size * .5,
-      //   top: e.pageY - this.settings.size * .5,
-      //   backgroundPosition: "" + backgroundX + "px " + backgroundY + "px"
-      // });
+        var magnify_offset = _this.el.offset(),
+            mx = _this.settings.size/2+_this.lens.offset().left-magnify_offset.left,
+            my = _this.settings.size/2+_this.lens.offset().top-magnify_offset.top;
 
-      this.lens.css({
-        left: e.pageX-this.x_space,
-        top: e.pageY-this.y_space
+        var rx = Math.round(mx /  _this.el[0].width * _this.native_width - _this.settings.size / 2) * -1,
+            ry = Math.round(my /  _this.el[0].height * _this.native_height - _this.settings.size / 2) * -1,
+            bgp = rx + "px " + ry + "px";
+
+       _this.lens.css({
+          backgroundPosition: bgp
       });
-      this.lenImg(this.ratioX,this.ratioY);
 
     };
 
@@ -190,26 +203,55 @@ define(function (require, exports, module) {
       });
     }
 
-     //鼠标滚轮，放大缩小
+  //鼠标移动到放大镜上面，滚动鼠标滚轮，放大缩小
   Snipe.prototype.mousewheel=function(){
-     // jquery 兼容的滚轮事件
-    $(document).on("mousewheel DOMMouseScroll", function (e) {
-
+    var _this = this;
+    //解绑document滚轮事件
+    this.lens.on("mouseenter",function(event) {
+      $(document).unbind("mousewheel DOMMouseScroll");
+    });
+     //绑定放大镜滚轮事件
+    this.lens.on("mousewheel DOMMouseScroll", function (e) {
+      // cross-browser wheel delta
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+      // Gets the image scaling height and width.
+      _this.native_height += (_this.native_height * _this.scaling * delta);
+      _this.native_width += (_this.native_width * _this.scaling * delta);
 
-      if (delta > 0){
-          // 向上滚
-         this.rate *= 0.9;
-         this.lenImg(this.rate*this.ratioX,this.rate*this.ratioY);
-      }else if (delta < 0){
-          // 向下滚
-         this.rate *= 0.9;
-         this.lenImg(this.rate*this.ratioX,this.rate*this.ratioY);
+      // The image can't smaller than the original.
+      if (_this.native_height < _this.el[0].height) {
+          _this.native_height = _this.el[0].height;
       }
+
+      if (_this.native_width < _this.el[0].width) {
+          _this.native_width = _this.el[0].width;
+      }
+
+      _this.lens.css('background-size', _this.native_width + "px " + _this.native_height + "px");
+      _this.lens.css('-moz-background-size', _this.native_width + "px " + _this.native_height + "px");
+      _this.lens.css('-webkit-background-size', _this.native_width + "px " + _this.native_height + "px");
+
+      var magnify_offset = _this.el.offset(),
+          mx = _this.settings.size/2+_this.lens.offset().left-magnify_offset.left,
+          my = _this.settings.size/2+_this.lens.offset().top-magnify_offset.top;
+
+      //console.log("native_height: " + delta + " native_width: " + my);
+
+      var rx = Math.round(mx / _this.el[0].width * _this.native_width - _this.settings.size / 2) * -1,
+          ry = Math.round(my / _this.el[0].height * _this.native_height - _this.settings.size / 2) * -1,
+          bgp = rx + "px " + ry + "px";
+
+       _this.lens.css({
+          backgroundPosition: bgp
+      });
+
+      //_this.lenImg(_this.ratioX,_this.ratioY);
     });
   }
 
+
+    
 
     Snipe.prototype.init = function(e) {
       this.show();
@@ -242,7 +284,7 @@ define(function (require, exports, module) {
       }
       this.makeBounds();
 
-      if(!this.settings.draggable){
+      if(!this.settings.moveable){
          moveEvent(_this);
       }else{
         this.lens.unbind('mousedown');
@@ -259,6 +301,10 @@ define(function (require, exports, module) {
         this.lens.bind('mouseout',function(){
             removeMoveEvent(_this);
         });
+      if(!this.browserHelp().isIE8){
+        this.mousewheel();
+      }
+        
       }
 
       this.lens.show().css({
@@ -267,6 +313,15 @@ define(function (require, exports, module) {
       });
       return this;
     };
+
+    Snipe.prototype.browserHelp = function(){
+      var c = window.navigator.userAgent.toLowerCase();
+      var b = c.match(/msie ([\d.]+)/) ? c.match(/msie ([\d.]+)/)[1] : undefined;
+      var h = b && parseInt(b) == 8;
+      return {
+        isIE8: h
+      };
+    }
 
     //鼠标移动事件
     function moveEvent(_this){
