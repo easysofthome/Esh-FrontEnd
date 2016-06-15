@@ -3,16 +3,21 @@ define(function (require, module, exports) {
   require('jquery');
 
   /** 却换中英文 **/
-  $('.switch').on('click',function () {
-    if($(this).find('span').css('marginLeft') == '-33px'){
+    $('.switch').on('click',function () {
+      // if($(this).find('span').css('marginLeft') == '-33px'){
+      //   $(this).find('span').animate({marginLeft: '1px'},300,function () {
+      //     window.open("/html/easysofthome/English.html",'newwindow');
+      //   });
+      // }else{
+      //   $(this).find('span').animate({marginLeft: '-33px'},300);
+      // }
       $(this).find('span').animate({marginLeft: '1px'},300,function () {
         window.open("/html/easysofthome/English.html",'newwindow');
+        $('.switch span').animate({marginLeft: '-33px'});
       });
-    }else{
-      $(this).find('span').animate({marginLeft: '-33px'},300);
-    }
-  });
+    });
   /** /却换中英文 **/
+
   /** @type {void} 鼠标滚动增加阴影 */
   // var top = $(window).scrollTop();
   // $(window).scroll(function() {

@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
 
   require('jquery');
+  require('animateColor');
 
   $('.case_list li').hover(
     function (event) {
@@ -18,5 +19,18 @@ define(function (require, exports, module) {
       $(this).find('.btnbox').css('opacity', '0');
     }
   );
+
+  $('.switch,.switchno').on('click', function() {
+    var obj = $(this).find('span');
+    var mL = parseInt(obj.css('marginLeft'));
+    if(mL == -33){
+      obj.animate({'marginLeft':'0'},300);
+      $(this).animate({'backgroundColor': '#3CA1D7'},300);
+    }
+    if(mL == 0){
+      obj.animate({'marginLeft':'-33px'},300);
+      $(this).animate({'backgroundColor': '#AFAFAF'},300);
+    }
+  });
 
 });
