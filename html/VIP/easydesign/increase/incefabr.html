@@ -84,38 +84,21 @@
               <div class="yarntype_box">
                 <div class="clearfix yarndensity_box">
                   <div class="lf">
-
-                    <div class="lf yarn_tit">经纱成分：</div>
+                    <div class="lf yarn_tit">经纱种类：</div>
                     <input type="text" class="lf" id="warp-spinner" />
-                    <!--  <div class="lf">
-                    <a href="#" class="lf reducebox">
-                      <span class="reduceimg"></span>
-                    </a>
-                    <span  class="lf reduceiput">1</span>
-                    <a href="#" class="lf increasebox">
-                      <span class="increaseimg"></span>
-                    </a>
                   </div>
-                  -->
-                </div>
-                <div>
+
                   <div class="lf">
                     <div class="lf yarn_tit">经密：</div>
-
-                    <div class="lf">
+                    <div class="lf" id="warp_num_box">
                       <input type="text" id="warpSpinnerNum1" name="warpSpinnerNum1" class="density_input lf">
-                      <span class="plus lf"></span>
-                      <input type="text" id="warpSpinnerNum2" name="warpSpinnerNum2" errorMsgPosition="rightBottom" class="density_input lf">
-                      <div class="input-tip">温馨提示：请分别对应输入不同纱线的经密。</div>
+                      <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
+                      <div class="input-tip"></div>
                     </div>
-
                   </div>
                 </div>
-              </div>
-              <div>
-                <ul class="clearfix">
+                <ul class="clearfix" id="yarn-ul">
                   <li class="lf yarn_para">
-
                     <span class="lf para_tit">经纱1：</span>
                     <span class="lf include"></span>
                     <div class="lf" style="width: 142px;">
@@ -128,46 +111,29 @@
                         <span class="lf input_fabric">80S</span>
                       </span>
                     </div>
-                    <a href="javascript:void(0)" class="yarn_butt lf">选择纱线</a>
-                  </li>
-                  <li class="lf yarn_para2">
-                    <span class="lf para_tit">经纱1：</span>
-                    <span class="lf include"></span>
-                    <div class="lf" style="width: 142px;">
-                      <span class="clearfix ingredient" >
-                        <span class="lf ingredient_tit">成分</span>
-                        <span class="lf input_fabric">全棉纱</span>
-                      </span>
-                      <span class="clearfix thickness">
-                        <span class="lf ingredient_tit">粗细</span>
-                        <span class="lf input_fabric">80S</span>
-                      </span>
-                    </div>
-                    <a href="javascript:void(0)" class="yarn_butt lf">选择纱线</a>
+                    <div class="yarn_butt lf">选择纱线</div>
                   </li>
                 </ul>
               </div>
-
               <div class="wefttype_box">
                 <div class="clearfix yarndensity_box">
                   <div class="lf">
 
-                    <div class="lf yarn_tit">纬纱成分：</div>
+                    <div class="lf yarn_tit">纬纱种类：</div>
                     <input type="text" class="lf" id="abb-spinner" />
                   </div>
 
                   <div class="lf">
                     <div class="lf yarn_tit">纬密：</div>
-                    <div class="lf">
+                    <div class="lf" id="abb_num_box">
                       <input type="text" id="abbSpinnerNum1" name="abbSpinnerNum1" class="density_input lf">
-                      <span class="plus lf"></span>
-                      <input type="text" id="abbSpinnerNum2" errorMsgPosition="rightBottom" name="abbSpinnerNum2" class="density_input lf">
-                      <div class="input-tip">温馨提示：请分别对应输入不同纱线的经密。</div>
+                      <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的纬密。</span>
+                      <div class="input-tip"></div>
                     </div>
                   </div>
 
                 </div>
-                <ul class="clearfix">
+                <ul class="clearfix" id="abb-ul">
                   <li class="lf yarn_para">
                     <span class="lf para_tit">纬纱1：</span>
                     <span class="lf include"></span>
@@ -181,34 +147,18 @@
                         <span class="lf input_fabric">80S</span>
                       </span>
                     </div>
-                    <a href="javascript:void(0)" class="yarn_butt lf">选择纱线</a>
-                  </li>
-                  <li class="lf yarn_para2">
-                    <span class="lf para_tit">纬纱1：</span>
-                    <span class="lf include"></span>
-                    <div class="lf" style="width: 142px;">
-                      <span class="clearfix ingredient">
-                        <span class="lf ingredient_tit">成分</span>
-                        <span class="lf input_fabric">全棉纱</span>
-                      </span>
-                      <span class="clearfix thickness">
-                        <span class="lf ingredient_tit">粗细</span>
-                        <span class="lf input_fabric">80S</span>
-                      </span>
-                    </div>
-                    <a href="javascript:void(0)" class="yarn_butt lf">选择纱线</a>
+                    <div class="yarn_butt lf">选择纱线</div>
                   </li>
                 </ul>
               </div>
-            </div>
 
             <div class="clearfix rad_frm">
-              <div class="clearfix">
+              <div class="clearfix" id="dyed-method">
                 <span class="lf title_name">染织方法：</span>
                 <div class="lf Single_box">
                   <label class="lf radio_rg label_radio">
                     <input name="Fruit2" type="radio" checked="checked" class="lf radio_post" />
-                    <span class="lf">提花布</span>
+                    <span class="lf">染色</span>
                   </label>
                   <label class="lf radio_rg label_radio">
                     <input name="Fruit2" type="radio" class="lf radio_post" />
@@ -221,93 +171,122 @@
                 </div>
               </div>
               <div class="AddItem">
-                <div class="clearfix">
-                  <span class="lf AddItem_tit">染料要求：</span>
-                  <div class="lf Single_box">
-                    <label class="lf radio_rg label_radio">
-                      <input name="Fruit3" type="radio" checked="checked" class="lf radio_post" />
-                      <span class="lf">染料印花</span>
-                    </label>
-                    <label class="lf radio_rg label_radio">
-                      <input name="Fruit3" type="radio" class="lf radio_post" />
-                      <span class="lf">涂料印花</span>
-                    </label>
-                    <label class="lf label_radio">
-                      <input name="Fruit3" type="radio" class="lf radio_post" />
-                      <span class="lf">转移印花</span>
-                    </label>
+                <!-- 标签内容一 -->
+                <div class="js-tab">
+                  <div class="clearfix">
+                    <span class="lf AddItem_tit">染色属性：</span>
+                    <div class="lf Single_box">
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit3" type="radio" checked="checked" class="lf radio_post" />
+                        <span class="lf">浅色</span>
+                      </label>
+                      <label class="lf label_radio">
+                        <input name="Fruit3" type="radio" class="lf radio_post" />
+                        <span class="lf">中色</span>
+                      </label>
+                      <label class="lf label_radio">
+                        <input name="Fruit3" type="radio" class="lf radio_post" />
+                        <span class="lf">深色</span>
+                      </label>
+                      <label class="lf label_radio">
+                        <input name="Fruit3" type="radio" class="lf radio_post" />
+                        <span class="lf">漂白</span>
+                      </label>
+                      <label class="lf label_radio">
+                        <input name="Fruit3" type="radio" class="lf radio_post" />
+                        <span class="lf">鲜艳色</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="clearfix">
-                <span class="lf AddItem_tit">工艺要求：</span>
-                <div class="lf Single_box">
-                  <label class="lf radio_rg label_radio">
-                    <input name="Fruit4" type="radio" checked="checked" class="lf radio_post" />
-                    <span class="lf">平网印花</span>
-                  </label>
-                  <label class="lf radio_rg label_radio">
-                    <input name="Fruit4" type="radio" class="lf radio_post" />
-                    <span class="lf">圆网印花</span>
-                  </label>
-
+                <!-- /标签内容一 -->
+                <!-- 标签内容二 -->
+                <div class="js-tab" style="display:none;">
+                  <div class="clearfix">
+                    <span class="lf AddItem_tit">染料要求：</span>
+                    <div class="lf Single_box">
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit4" type="radio" checked="checked" class="lf radio_post" />
+                        <span class="lf">染料印花</span>
+                      </label>
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit4" type="radio" class="lf radio_post" />
+                        <span class="lf">涂料印花</span>
+                      </label>
+                      <label class="lf label_radio">
+                        <input name="Fruit4" type="radio" class="lf radio_post" />
+                        <span class="lf">转移印花</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="clearfix">
+                    <span class="lf AddItem_tit">工艺要求：</span>
+                    <div class="lf Single_box">
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit5" type="radio" checked="checked" class="lf radio_post" />
+                        <span class="lf">平网印花</span>
+                      </label>
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit5" type="radio" class="lf radio_post" />
+                        <span class="lf">圆网印花</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="clearfix">
+                    <span class="lf AddItem_tit">色牢度等级：</span>
+                    <div class="lf Single_box">
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit6" type="radio" checked="checked" class="lf radio_post" />
+                        <span class="lf">色牢三级</span>
+                      </label>
+                      <label class="lf radio_rg label_radio">
+                        <input name="Fruit6" type="radio" class="lf radio_post" />
+                        <span class="lf">色牢四级</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="clearfix">
+                    <div class="lf Single_box">
+                      <span class="lf AddItem_tit" >是否定位花：</span>
+                      <select class="lf" id="sel4">
+                        <option value="">是</option>
+                        <option value="">否</option>
+                      </select>
+                      <span class="lf title_name">印花色数：</span>
+                      <select class="lf" id="sel5">
+                        <option value="">2</option>
+                        <option value="one">3</option>
+                        <option value="two">4</option>
+                        <option value="three">5</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div class="clearfix">
-                <span class="lf AddItem_tit">色牢度等级：</span>
-                <div class="lf Single_box">
-                  <label class="lf radio_rg label_radio">
-                    <input name="Fruit5" type="radio" checked="checked" class="lf radio_post" />
-                    <span class="lf">色牢三级</span>
-                  </label>
-                  <label class="lf radio_rg label_radio">
-                    <input name="Fruit5" type="radio" class="lf radio_post" />
-                    <span class="lf">色牢四级</span>
-                  </label>
-                </div>
-              </div>
-              <div class="clearfix Single_box">
-                <span class="lf AddItem_tit">是否定位花：</span>
-                <div class="lf">
-                  <select class="lf" id="isFixedPosition">
-                    <option value="">是</option>
-                    <option value="one">否</option>
-
-                  </select>
-                  <span class="lf title_name">印花色数：</span>
-                  <select class="lf" id="flowerColor_num">
-                    <option value="">2</option>
-                    <option value="one">3</option>
-                    <option value="two">4</option>
-                    <option value="three">5</option>
-                  </select>
-
-                </div>
+                <!-- /标签内容二 -->
               </div>
             </div>
+
             <div class="clearfix rad_frm">
               <span class="lf title_name">染色属性：</span>
               <div class="lf Single_box">
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit6" type="radio" checked="checked" class="lf radio_post" />
+                  <input name="Fruit7" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">浅色</span>
                 </label>
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit6" type="radio" class="lf radio_post" />
+                  <input name="Fruit7" type="radio" class="lf radio_post" />
                   <span class="lf">中色</span>
                 </label>
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit6" type="radio" class="lf radio_post" />
+                  <input name="Fruit7" type="radio" class="lf radio_post" />
                   <span class="lf">深色</span>
                 </label>
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit6" type="radio" class="lf radio_post" />
+                  <input name="Fruit7" type="radio" class="lf radio_post" />
                   <span class="lf">漂白</span>
                 </label>
                 <label class="lf label_radio">
-                  <input name="Fruit6" type="radio" class="lf radio_post" />
+                  <input name="Fruit7" type="radio" class="lf radio_post" />
                   <span class="lf">鲜艳色</span>
                 </label>
               </div>
@@ -316,11 +295,11 @@
               <span class="lf title_name">适用范围：</span>
               <div class="lf Single_box">
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit7" type="radio" checked="checked" class="lf radio_post" />
+                  <input name="Fruit8" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">面布</span>
                 </label>
                 <label class="lf label_radio">
-                  <input name="Fruit7" type="radio" class="lf radio_post" />
+                  <input name="Fruit8" type="radio" class="lf radio_post" />
                   <span class="lf">里布</span>
                 </label>
               </div>
