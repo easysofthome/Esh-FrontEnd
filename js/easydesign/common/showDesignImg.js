@@ -1,21 +1,17 @@
 define(function (require, exports, module) {
   require('jquery');
 
-  //当前显示图片索引
-  var curIndex = 0;
  // require('js/easydesign/common/jquery.fullscreen');
-  //var baseUrl = '';
-  var objJson = {'objFabricImg':
-    [{'src':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','link':''},
-    {'src':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','link':''},
-    {'src':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','link':''},
-    {'src':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','link':''},
-    {'src':'/images/production/easydesign/designFabrics/flower.png','link':''},
-    {'src':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','link':''},
-    {'src':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','link':''},
-    {'src':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','link':''}],
-    'objFabricImg_full':
-    [{'src':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','nextImgURL':'','preImgURL':''}]
+  var objJson = {'FlowerStyleSimilarList':
+    [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/flower.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
   };
 
 
@@ -24,30 +20,28 @@ define(function (require, exports, module) {
   function loadOtherFabrics(objJson){
 
     if(!objJson) return;
-    if(objJson.objFabricImg.length <=0) return;
+    if(objJson.FlowerStyleSimilarList.length <=0) return;
 
-    for(var i=0;i<objJson.objFabricImg.length;i++){
+    for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
       $('#j-resemble').append(' <li class="resembleLi">'+
-        '<a class="list" href="'+objJson.objFabricImg[i].link+'" data-picid="">'+
+        '<a class="list" href="'+objJson.FlowerStyleSimilarList[i].ImgLink+'" data-picid="">'+
         '<div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
-          objJson.objFabricImg[i].src+');"> </div></a></li>');
+          objJson.FlowerStyleSimilarList[i].ImgUrl+');"> </div></a></li>');
 
     }
 
 
-    setBigImg(objJson,curIndex);
+    setBigImg(objJson);
   }
 
   //加载第n张图片
-  function setBigImg(objJson,index){
-
-    curIndex = index;
+  function setBigImg(objJson){
     setNextOrPrev(objJson);
 
-    $('#j-lb-pic').attr('src',objJson.objFabricImg_full[curIndex].src);
+    $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
 
     //获取图片的原始尺寸
-    $("<img/>").attr("src", objJson.objFabricImg_full[curIndex].src).load(function() {
+    $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
@@ -124,21 +118,21 @@ define(function (require, exports, module) {
 
   //下一张图片
   function nextImg(objJson){
-    var bigImg = objJson.objFabricImg_full[curIndex];
-    if(!bigImg.nextImgURL||bigImg.nextImgURL.length==0){
+    var bigImg = objJson;
+    if(!bigImg.NextPageUrl || bigImg.NextPageUrl.length==0){
       return false;
     }
-    setBigImg(objJson,curIndex);
+    setBigImg(objJson);
   }
 
    //上一张图片
   function prevImg(objJson){
 
-    var bigImg = objJson.objFabricImg_full[curIndex];
-    if(!bigImg.preImgURL||bigImg.preImgURL.length==0){
+    var bigImg = objJson;
+    if(!bigImg.PrevPageUrl ||bigImg.PrevPageUrl.length==0){
       return false;
     }
-    setBigImg(objJson,curIndex);
+    setBigImg(objJson);
   }
 
   //绑定上一张下一张事件
@@ -146,11 +140,11 @@ define(function (require, exports, module) {
 
     $('.ctrl-next').bind('click',function(){
 
-       window.open(objJson.objFabricImg_full[curIndex].nextImgURL);
+       window.open(objJson.NextPageUrl,'_self');
     });
 
     $('.ctrl-prev').bind('click',function(){
-       window.open(objJson.objFabricImg_full[curIndex].preImgURL);
+       window.open(objJson.PrevPageUrl,'_self');
     });
   }
 
@@ -165,26 +159,25 @@ define(function (require, exports, module) {
 
       if (delta > 0){
           // 向上滚
-         prevImg(objJson);
+         window.open(objJson.NextPageUrl,'_self');
       }else if (delta < 0){
           // 向下滚
-         nextImg(objJson);
+         window.open(objJson.PrevPageUrl,'_self');
       }
     });
   }
 
   //第一张  最后一张 控制链接显示与否
   function setNextOrPrev(objJson){
-
+    var bigImg = objJson;
     $('.ctrl-prev').show();
     $('.ctrl-next').show();
-    if(!objJson.objFabricImg_full[curIndex].hasPre){
 
-      $('.ctrl-prev').hide();
-    }
-     if(!objJson.objFabricImg_full[curIndex].hasNext){
-
+    if(!bigImg.NextPageUrl || bigImg.NextPageUrl.length==0){
       $('.ctrl-next').hide();
+    }
+    if(!bigImg.PrevPageUrl ||bigImg.PrevPageUrl.length==0){
+      $('.ctrl-prev').hide();
     }
   }
 
@@ -207,8 +200,23 @@ define(function (require, exports, module) {
 
 
   $(document).ready(function () {
+    var params = window.location.search.replace(/^\?/, '');
+    initPage(objJson);
+    // $.ajax({
+    //   type: 'get',
+    //   url: 'Flower/AjaxDetail',
+    //   data: params ,
+    //   dataType: 'json',
+    //   success: function(data){
+    //     initPage(data);
+    //   },
+    //   error : function() {
+    //     console.log('---花型详情页异常---');
+    //   }
+    // });
+
       //接口
-      initPage(objJson);
+
 
   });
 
