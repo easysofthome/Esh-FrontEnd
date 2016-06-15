@@ -20,8 +20,10 @@ define(function (require, exports, module) {
   }
 
   $('.nav-more').hover(function() {
+    $(this).find('i').toggleClass('service-open');
     $(this).find('ul').slideDown(100);
   }, function() {
+    $(this).find('i').toggleClass('service-open');
     $(this).find('ul').slideUp(100);
   });
 
