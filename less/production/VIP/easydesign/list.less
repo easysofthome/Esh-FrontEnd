@@ -125,24 +125,26 @@ ul.case_list{
         color: #ff4400;
       }
     }
-    //启用
+    //停用
     .switch{
+      width: 58px;
+      .border-radius(12px);
       cursor: pointer;
-      .sprite(@switch-bg);
-      .icon-VIP-easydesign-list;
-      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bg.png');
+      background: #3CA1D7;
+      overflow: hidden;
       span{
         .sprite(@switch-lang);
         .icon-VIP-easydesign-list;
         .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-lang.png');
       }
     }
-    //停用
+    //启用
     .switchno{
+      width: 58px;
+      .border-radius(12px);
       cursor: pointer;
-      .sprite(@switch-bgno);
-      .icon-VIP-easydesign-list;
-      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bgno.png');
+      background: #AFAFAF;
+      overflow: hidden;
       span{
         margin-left: -33px;
         .sprite(@switch-lang);
@@ -208,6 +210,14 @@ ul.case_list{
       .button-variant(#fff; #f7210b; #f7210b);
       .button-size(0; 0; 16px; 40px; 3px);
     }
+    a.btn_delete3{
+      display: block;
+      width: 70px;
+      text-align: center;
+      margin: 10px 8px;
+      .button-variant(#fff; #f7210b; #f7210b);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
     a.btn_blue{
       display: block;
       width: 114px;
@@ -215,6 +225,13 @@ ul.case_list{
       margin: 10px 11px 0 0;
       .button-variant(#fff; #3ca1d7; #3ca1d7);
       .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue1{
+      display: block;
+      text-align: center;
+      margin:10px 5px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0px; 10px; 16px; 40px; 3px);
     }
   }
 }
