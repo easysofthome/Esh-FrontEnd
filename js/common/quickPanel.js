@@ -13,10 +13,25 @@ define(function (require, exports, module) {
         });
       }
 
+      function toTopDisplay(){
+        var scrollTop = document.body.scrollTop;
+        console.log(scrollTop);
+        if(scrollTop<=100){
+          $('#quickToTop').fadeOut();
+        }else{
+          $('#quickToTop').fadeIn();
+        }
+      }
+
+      $(window).scroll(function(){
+          toTopDisplay();
+      });
+
 
 
     //快捷入口,页面右侧 可快捷到顶部 底部
     $(document).ready(function(){
+        toTopDisplay();
         $("#quickToTop").click(function(){
             $('body,html').animate({scrollTop:0},1000);
             return false;

@@ -49,20 +49,31 @@ define(function (require, exports, module) {
 
     });
 
-    // 收起按钮
-    var categoryHigh = 0;
+    
     $(document).ready(function () {
+      
+    });
+    var categoryHigh = 0;
+    function resetHight(){
+      // 收起按钮
+      categoryHigh = 0;
       $('.leibie').each(function(index, el) {
+       if($(this).css('display')=='none') {
+        return;
+       }
+        
         categoryHigh = categoryHigh + $(this).height() + parseInt($(this).css('margin-top'));
       });
-      if(categoryHigh < 300) $('.Collapse').hide();
-    });
+      if(categoryHigh <= 50) $('.Collapse').hide();
+    }
+
     $('.Collapse').on('click', function() {
       if($('.leibie_box').attr('show')=='true'){
-        $('.leibie_box').animate({'height':'200px'},300);
+        $('.leibie_box').animate({'height':'50px'},300);
         $('.leibie_box').attr('show','false');
         $(this).html('展开');
       }else{
+        resetHight();
         $('.leibie_box').animate({'height':categoryHigh},300);
         $('.leibie_box').attr('show','true');
         $(this).html('收起');
