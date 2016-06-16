@@ -17,9 +17,9 @@ define(function(require, exports, module) {
     FancyRadioCheckBox.init();
 
     //选中样式
-    $('.handle_one').click(function() {
-          $(this).toggleClass('selected');
-    });
+    // $('.handle_one').click(function() {
+    //     $(this).toggleClass('selected');
+    // });
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){

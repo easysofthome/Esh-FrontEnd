@@ -117,10 +117,6 @@ function setMsgPosition(obj,msg,direction){
       }
     });
 
-    $('.handle_one').click(function() {
-      $(this).toggleClass('selected');
-    });
-
     //染织方法
     $('#dyed-method label').on('click', function() {
 
@@ -134,8 +130,8 @@ function setMsgPosition(obj,msg,direction){
 
   //选中样式
   $('.handle_one').click(function() {
-      $(this).toggleClass('selected');
-    });
+    $(this).toggleClass('selected');
+  });
 
   //占位符
   placehold.init('input');
