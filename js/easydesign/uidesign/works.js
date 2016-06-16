@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
 
     $(document).ready(function () {
-
+      $('.Collapse').hide();
       $('.flowlist .flowerimg').bind('click',function(e){
       var url = '/html/easydesign/uidesign/viewWorks.html';
       window.open(url);

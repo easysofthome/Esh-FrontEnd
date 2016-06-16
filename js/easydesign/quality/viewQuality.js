@@ -13,6 +13,7 @@ define(function (require, exports, module) {
   };
 
   var objImg = {};
+  var display = true;
   //动态加载数据
   function loadOtherFabrics(objJson){
 
@@ -29,22 +30,45 @@ define(function (require, exports, module) {
 
 
     //获取图片的原始尺寸
-    $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[index].src).load(function() {
+    $("<img/>").attr("src", 'http://'+window.location.host+objJson.objFabricImg_full[index].src).bind('load',function() {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
        snipe_len('j-lb-pic',curIndex);
+     
       });
+    }).each(function() {
+        //解决IE8不重复加载的问题
+        if (this.complete) {
+          return $(this).load();
+        }
     });
 
   }
 
+  //显示\隐藏放大镜
+  $('.snipe_len_tool').bind('click',function(){
+    var isShow = $('#snipe_len').css('display');
+    if(isShow != 'none'){
+      $('#snipe_len').hide();
+      $(this).find('span p').text('点击显示放大镜');
+      display = false;
+    }else{
+      $('#snipe_len').show();
+      $(this).find('span p').text('点击隐藏放大镜');
+      display = true;
+    }
+    
+  })
+
+  //图片放大镜
   function snipe_len(id,index){
       //图片放大镜
       $('#'+id).snipe({
         bounds: [10,-10,-10,10],
         image: objJson.objFabricImg_full[index].src,
-        draggable:true
+        moveable:true,
+        visible:display
       });
   }
 
@@ -164,11 +188,10 @@ define(function (require, exports, module) {
     }
   }
 
-  //鼠标滚轮，上一张、下一张
-  function mousewheel(){
-     // jquery 兼容的滚轮事件
+  //鼠标滚轮事件
+  function mousewheelEvent(){
+    // jquery 兼容
     $(document).on("mousewheel DOMMouseScroll", function (e) {
-
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
@@ -180,6 +203,20 @@ define(function (require, exports, module) {
          nextImg(objJson);
       }
     });
+  }
+
+  //鼠标滚轮，上一张、下一张
+  function mousewheel(){
+    //每次鼠标在document中是，重新绑定滚轮事件（鼠标在放大镜中时，此事件失效）
+    $('#j-lb-pic-ctrl,#j-lb-picwp,#j-lb-pic').bind('mouseover',function(event) {
+        mousewheelEvent();
+    });
+
+    //每次鼠标在document中是，重新绑定滚轮事件（鼠标在放大镜中时，此事件失效）
+    $('#snipe_len').bind('mouseleave',function(event) {
+      mousewheelEvent();
+    });
+
   }
 
 
@@ -208,7 +245,7 @@ define(function (require, exports, module) {
 
   $(window).resize(function(event) {
       setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-       snipe_len('j-lb-pic',curIndex);
+        snipe_len('j-lb-pic',curIndex);
       });
   });
 
