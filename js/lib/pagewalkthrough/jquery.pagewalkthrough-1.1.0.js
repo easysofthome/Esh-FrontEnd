@@ -6,6 +6,7 @@
  * Issue, Feature & Bug Support: erwin.yusrizal@gmail.com
  ***/
 define(function (require, exports, module) {
+  require('./pagewalkthrough.css');
 ;(function($, window, document, undefined) {
 
   /**

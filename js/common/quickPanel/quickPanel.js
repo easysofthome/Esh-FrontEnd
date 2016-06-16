@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-
+    require('./quickPanel.css');
     //关闭引导页后创建引导页快捷入口动画
       module.exports.MoveBox = function() {
         $('body').prepend('<div id="toQuikStart" style="width:80%;height:80%;opacity: 0.3;filter: alpha(opacity=30);background: #000"></div>');
@@ -13,8 +13,9 @@ define(function (require, exports, module) {
         });
       }
 
-      function toTopDisplay(){
-        var scrollTop = document.body.scrollTop;
+
+      function quickTopDisplay(){
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
         console.log(scrollTop);
         if(scrollTop<=100){
           $('#quickToTop').fadeOut();
@@ -24,14 +25,14 @@ define(function (require, exports, module) {
       }
 
       $(window).scroll(function(){
-          toTopDisplay();
+          quickTopDisplay();
       });
 
 
 
     //快捷入口,页面右侧 可快捷到顶部 底部
     $(document).ready(function(){
-        toTopDisplay();
+        quickTopDisplay();
         $("#quickToTop").click(function(){
             $('body,html').animate({scrollTop:0},1000);
             return false;

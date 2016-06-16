@@ -1,0 +1,231 @@
+#jpwOverlay {
+  background: url("./imagesoverlay.png") repeat;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#jpWalkthrough .overlay {
+  background: url("./images/overlay.png") repeat;
+  position: absolute;
+  z-index: 9999;
+}
+#jpWalkthrough .noOverlay {
+  background: none;
+  position: absolute;
+  z-index: 9999;
+}
+#jpWalkthrough #overlayTop {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#jpWalkthrough #overlayLeft {
+  left: 0;
+}
+#jpWalkthrough #highlightedArea {
+  position: absolute;
+}
+#jpWalkthrough #overlayBottom {
+  width: 100%;
+  left: 0;
+}
+#jpWalkthrough #topAccessable,
+#jpWalkthrough #middleAccessable,
+#jpWalkthrough #bottomAccessable {
+  z-index: 9999;
+}
+#jpWalkthrough #highlightedArea #topLeft,
+#jpWalkthrough #topAccessable #topLeft {
+  background: url("./images/rounded.png") no-repeat left top;
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #topCenter,
+#jpWalkthrough #topAccessable #topCenter {
+  background: url("./images/borderTop.png") repeat-x 0 0;
+  height: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #topRight,
+#jpWalkthrough #topAccessable #topRight {
+  background: url("./images/rounded.png") no-repeat right top;
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #middleLeft,
+#jpWalkthrough #middleAccessable #middleLeft {
+  background: url("./images/borderLeft.png") repeat-y left top;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #middleCenter,
+#jpWalkthrough #middleAccessable #middleCenter {
+  background: transparent;
+  float: left;
+  overflow: hidden;
+}
+#jpWalkthrough #highlightedArea #middleRight,
+#jpWalkthrough #middleAccessable #middleRight {
+  background: url("./images/borderRight.png") repeat-y right top;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #bottomLeft,
+#jpWalkthrough #bottomAccessable #bottomLeft {
+  background: url("./images/rounded.png") no-repeat left bottom;
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #bottomCenter,
+#jpWalkthrough #bottomAccessable #bottomCenter {
+  background: url("./images/borderBottom.png") repeat-x 0 bottom;
+  height: 30px;
+  float: left;
+}
+#jpWalkthrough #highlightedArea #bottomRight,
+#jpWalkthrough #bottomAccessable #bottomRight {
+  background: url("./images/rounded.png") no-repeat right bottom;
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+/*** tooltip ***/
+#jpWalkthrough #jpwTooltip {
+  overflow: visible;
+  padding: 10px;
+  background: none;
+}
+#jpWalkthrough #jpwTooltip #tooltipWrapper {
+  overflow: visible;
+}
+#jpWalkthrough #jpwTooltip #bottom-scratch {
+  background: url("./images/scratch-border.png") no-repeat left top;
+  width: 358px;
+  height: 42px;
+  display: block;
+  top: 25px;
+  clear: both;
+}
+#jpWalkthrough #jpwTooltip .draggable-area {
+  display: block;
+  width: 44px;
+  height: 40px;
+  position: absolute;
+  top: -35px;
+  right: -30px;
+  background: url("./images/drag.png") no-repeat;
+  z-index: 10000;
+}
+/*** tooltip position ***/
+#jpWalkthrough #jpwTooltip .top {
+  background: url("./images/arrow-bottom.png") no-repeat scroll 0 0 transparent;
+  bottom: -86px;
+  height: 86px;
+  left: 130px;
+  position: absolute;
+  width: 75px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .right {
+  background: url("./images/arrow-left.png") no-repeat scroll 0 0 transparent;
+  height: 56px;
+  left: -105px;
+  position: absolute;
+  top: 35px;
+  width: 105px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .bottom {
+  background: url("./images/arrow-top.png") no-repeat scroll 0 0 transparent;
+  height: 86px;
+  left: 130px;
+  position: absolute;
+  top: -86px;
+  width: 75px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .left {
+  background: url("./images/arrow-right.png") no-repeat scroll 0 0 transparent;
+  height: 56px;
+  position: absolute;
+  right: -105px;
+  top: 35px;
+  width: 105px;
+  display: block;
+  z-index: 1000;
+}
+/*** close button ***/
+#jpwClose {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 10000;
+}
+#jpwClose a {
+  text-align: center;
+  font-family: 'blackboard';
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  font-weight: lighter;
+}
+#jpwClose a:hover {
+  color: #7EFF00;
+}
+#jpwClose a span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 44px;
+  height: 40px;
+  background: url("./images/close.png") no-repeat;
+}
+#jpWalkthrough .killOverlay {
+  background-image: none !important;
+  background-color: none !important;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner {
+  font-family: 'blackboard';
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner a {
+  color: #fff;
+  font-size: 18px;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner a:hover {
+  color: #7EFF00;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner .tooltipTitle {
+  font-size: 50px;
+  line-height: 70px;
+}
+#middleLeft #middleRight #bottomLeft #bottomRight #topLeft #topRight {
+  z-index: 1;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner .content {
+  font-size: 25px;
+  margin-left:10px;
+}
+
+
+/********字体********/
+@font-face {
+  font-family: 'blackboard';
+  src: url('/css/production/Fonts/kaTong.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+

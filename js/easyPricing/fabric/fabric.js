@@ -204,6 +204,11 @@ var startPriceLayer = {
 
       });
     });
+/////////////////////////////// 关闭引导层 ///////////////////////////////////
+function closeGuideLayer(){
+  $.pagewalkthrough('close');
+  $(document.body).css("overflow","");
+}
 
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
@@ -236,6 +241,7 @@ var startPriceLayer = {
           submitHandler: function (form) {
               //提交表单
             // formSubmit(form);
+            closeGuideLayer();
               //阻止表单提交
             $.layer(startPriceLayer);
              return false;

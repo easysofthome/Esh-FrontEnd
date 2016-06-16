@@ -1,0 +1,57 @@
+/********右侧快捷入口********/
+.floatPanel {
+  position: fixed;
+  width: 54px;
+  height: 119px;
+  right: 10px;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+}
+.floatPanel .top_arrow {
+  background-repeat: no-repeat;
+  display: block;
+  width: 54px;
+  height: 59px;
+  background-image: url("./images/top.png");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="./images/top.png");
+  _background: none;
+  text-align: center;
+  overflow: hidden;
+}
+.floatPanel .top_arrow:hover {
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 54px;
+  height: 59px;
+  cursor: pointer;
+  text-decoration: underline;
+  background-image: url("./images/topOn.png");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="./images/topOn.png");
+  _background: none;
+}
+.floatPanel .quickGuide {
+  background-repeat: no-repeat;
+  display: block;
+  width: 54px;
+  height: 60px;
+  background-image: url("./images/guide.png");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="./images/guide.png");
+  _background: none;
+  color: #ff6600;
+  text-align: center;
+  overflow: hidden;
+}
+.floatPanel .quickGuide:hover {
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 54px;
+  height: 60px;
+  cursor: pointer;
+  text-decoration: underline;
+  background-image: url("./images/guideOn.png");
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="./images/guideOn.png");
+  _background: none;
+}

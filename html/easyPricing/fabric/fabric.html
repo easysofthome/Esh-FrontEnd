@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  <!-- 右侧快捷面板 -->
+   <div id="fixLeftMid" class="floatPanel">
+    <span id="quickToTop" class="top_arrow"></span>
+    <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
+    </div>
     @@include('common/top.html')
     @@include('easyPricing/header.html')
     <div class="ban-bg">
@@ -19,6 +24,8 @@
       <div class="fabricbox">
         <form action="" id="fabricForm" method="post">
           <div class="fabric_con">
+          <!-- 用户引导 第一步 -->
+            <div id="hLight_step1">
             <div class="clearfix data_frm">
               <span class="lf title_name">起 订 量：</span>
               <select class="lf" id="sel1">
@@ -58,6 +65,9 @@
                 <div class="input-tip"></div>
               </div>
             </div>
+            </div>
+            <!-- 用户引导 第二步 -->
+            <div id="hLight_step2">
             <div class=" data_frm">
               <div class="clearfix">
                 <span class="lf title_name">纱线种类数量：</span>
@@ -102,7 +112,10 @@
                   </li>
                 </ul>
               </div>
-
+              </div>
+              </div>
+              <!-- 用户引导 第三步 -->
+               <div id="hLight_step3">
               <div class="wefttype_box">
                 <div class="clearfix yarndensity_box">
                   <div class="lf">
@@ -140,7 +153,8 @@
                 </ul>
               </div>
             </div>
-
+          <!-- 用户引导 第四步 -->
+          <div id="hLight_step4">
             <div class="clearfix rad_frm">
               <div class="clearfix" id="dyed-method">
                 <span class="lf title_name">染织方法：</span>
@@ -336,7 +350,9 @@
                 防绒涂层
               </div>
             </div>
-
+             </div>
+            <!-- 用户引导 第五步 -->
+            <div id="hLight_step5">
             <div class="clearfix data_frm">
               <span class="lf title_name">汇率：</span>
 
@@ -381,19 +397,49 @@
                 <div class="input-tip">温馨提示：（非必选）如果未有其他后处理工厂报价，则默认使用易家纺库价格！</div>
               </div>
             </div>
-          </div>
+
 
           <div class="clearfix butt_box">
             <a href="javascript:history.back();" class="lf butt_pricing">返回</a>
             <div class="rg butt_return" id="startPrice">开始核价</div>
           </div>
-
+          </div>
+           </div>
         </form>
-
       </div>
-
+    </div>
+    <!--引导层-->
+    <div id="walkthrough">
+      <div id="guide_step1" style="display:none;">
+        <p class="tooltipTitle">面料核价<i class="content">第一步</i></p>
+        <br>
+        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
+      </div>
+      <div id="guide_step2" style="display:none;">
+        <p class="tooltipTitle">面料核价<i class="content">第二步</i></p>
+        <br>
+        <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
+      </div>
+       <div id="guide_step3" style="display:none;">
+        <p class="tooltipTitle">面料核价<i class="content">第三步</i></p>
+        <br>
+        <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
+      </div>
+      <div id="guide_step4" style="display:none;">
+        <p class="tooltipTitle">面料核价<i class="content">第四步</i></p>
+        <br>
+        <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+        <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
+      </div>
+       <div id="guide_step5" style="display:none;">
+        <p class="tooltipTitle">面料核价<i class="content">点击开始核价，完成操作</i></p>
+        <br>
+        <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
+      </div>
     </div>
     @@include('easyPricing/common/footer2.html')
-    <script>seajs.use('js/easyPricing/fabric/fabric');</script>
+    <script>seajs.use(['js/easyPricing/fabric/fabric','js/easyPricing/fabric/pagewalkthrough']);</script>
   </body>
  </html>

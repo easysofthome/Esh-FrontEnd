@@ -2,6 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   require('js/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
   var quickPanel = require('js/common/quickPanel/quickPanel');
+  require('js/lib/validation/validation');
 
 
   //检验用户身份
@@ -35,7 +36,7 @@ define(function (require, exports, module) {
             [
             {
 
-                 wrapper: '#sel-country', //高亮区域 class 或 id
+                 wrapper: '#hLight_step1', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
                  appendScrollNum:0,
@@ -44,7 +45,7 @@ define(function (require, exports, module) {
                  {
                    content: '#guide_step1',//引导元素id/class(提前在页面定义)
                    type: 'tooltip',      //类型
-                   position: 'bottom',   //相对高亮区域的位置
+                   position: 'top',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
                    width: '730'
@@ -62,7 +63,7 @@ define(function (require, exports, module) {
            },
            {
 
-                 wrapper: '#sel-pro', //高亮区域 class 或 id
+                 wrapper: '#hLight_step2', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
                  appendScrollNum:0,
@@ -83,34 +84,7 @@ define(function (require, exports, module) {
                    return true;
                  },
                  onEnter:function(){
-                    selectDropdownGuide("#sel-pro",'#sel-pro .sel-pro');
-                    return true;
-                }
-           },
-           {
-
-                 wrapper: '#guideToView', //高亮区域 class 或 id
-                 margin: '0',         //最好别改
-                 isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:0,
-                 //引导说明文字图片区域
-                 popup:
-                 {
-                   content: '#guide_step4',//引导元素id/class(提前在页面定义)
-                   type: 'tooltip',      //类型
-                   position: 'left',   //相对高亮区域的位置
-                   offsetHorizontal: 0,  //水平位置
-                   offsetVertical: 90,    //垂直位置
-                   width: '730',
-                   userArrowTop:-40
-                 },
-                 accessable:true,//是否与高亮区域内元素互动
-                 lockScrolling: false//是否随滚动条移动
-                 ,onLeave:function(){
-
-                   return true;
-                 },
-                 onEnter:function(){
+                    selectDropdownGuide(20);
                     return true;
                 }
            }
@@ -127,7 +101,7 @@ define(function (require, exports, module) {
 
             },
             onAfterShow:function(){
-              selectDropdownGuide("#sel-country",'#sel-country .sel-country');
+             electDropdownGuide(20);
               initStyle();
               firstLoadGuide();
               skipGuide();
@@ -143,7 +117,7 @@ define(function (require, exports, module) {
             [
             {
 
-                 wrapper: '#sel-country', //高亮区域 class 或 id
+                 wrapper: '#hLight_step1', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
                  appendScrollNum:0,
@@ -152,7 +126,7 @@ define(function (require, exports, module) {
                  {
                    content: '#guide_step1',//引导元素id/class(提前在页面定义)
                    type: 'tooltip',      //类型
-                   position: 'bottom',   //相对高亮区域的位置
+                   position: 'top',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
                    width: '700'
@@ -164,17 +138,15 @@ define(function (require, exports, module) {
                    return true;
                  },
                  onEnter:function(){
-                    selectDropdownGuide("#sel-country",'#sel-country .sel-country');
                     return true;
                 }
            },
            {
 
-                 wrapper: '#sel-pro', //高亮区域 class 或 id
+                 wrapper: '#hLight_step2', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:0,
-                 userWidth:710,
+                 appendScrollNum:150,
                  //引导说明文字图片区域
                  popup:
                  {
@@ -188,20 +160,20 @@ define(function (require, exports, module) {
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
                  ,onLeave:function(){
+
                    return true;
                  },
                  onEnter:function(){
-                    selectDropdownGuide("#sel-pro",'#sel-pro .sel-pro');
+
                     return true;
                 }
            },
            {
 
-                 wrapper: '#vip_searchParam', //高亮区域 class 或 id
+                 wrapper: '#hLight_step3', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:0,
-                 userMarginTop:10,
+                 appendScrollNum:150,
                  //引导说明文字图片区域
                  popup:
                  {
@@ -218,34 +190,59 @@ define(function (require, exports, module) {
                    return true;
                  },
                  onEnter:function(){
-                    selectDropdownGuide("#vip_search_portName_ul",'#vip_searchParam .sel-port');
+                    selectDropdownGuide('#hLight_step3','#hLight_step3 .increase,#hLight_step3 .decrease','');
                     return true;
                 }
            },
            {
 
-                 wrapper: '#guideToView', //高亮区域 class 或 id
+                 wrapper: '#hLight_step4', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:0,
+                 appendScrollNum:250,
                  //引导说明文字图片区域
                  popup:
                  {
                    content: '#guide_step4',//引导元素id/class(提前在页面定义)
                    type: 'tooltip',      //类型
-                   position: 'left',   //相对高亮区域的位置
+                   position: 'bottom',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
-                   offsetVertical: 90,    //垂直位置
-                   width: '700',
-                   userArrowTop:-40
+                   offsetVertical: 0,    //垂直位置
+                   width: '700'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
                  ,onLeave:function(){
-
                    return true;
                  },
                  onEnter:function(){
+                    selectDropdownGuide('#hLight_step4','#dyed-method .label_radio','');
+                    return true;
+                }
+           },
+           {
+
+                 wrapper: '#hLight_step5', //高亮区域 class 或 id
+                 margin: '0',         //最好别改
+                 isTopFix: false,      //要高亮区域是否固定在顶部
+                 appendScrollNum:250,
+                 //引导说明文字图片区域
+                 popup:
+                 {
+                   content: '#guide_step5',//引导元素id/class(提前在页面定义)
+                   type: 'tooltip',      //类型
+                   position: 'top',   //相对高亮区域的位置
+                   offsetHorizontal: 0,  //水平位置
+                   offsetVertical: 0,    //垂直位置
+                   width: '700'
+                 },
+                 accessable:true,//是否与高亮区域内元素互动
+                 lockScrolling: false//是否随滚动条移动
+                 ,onLeave:function(){
+                   return true;
+                 },
+                 onEnter:function(){
+                    selectDropdownGuide('#hLight_step5','#easySoftHomePrice_rad, #factoryPrice_rad','top','');
                     return true;
                 }
            }
@@ -278,7 +275,14 @@ define(function (require, exports, module) {
       });
 
       $('.next-step').live('click', function(e){
-          $.pagewalkthrough('next',e);
+          var activeP = $.pagewalkthrough('getOptions', true);
+          var cIndex = $.pagewalkthrough('currIndex');
+          wrapperId = activeP.steps[cIndex].wrapper;
+          var pass = $(wrapperId).find('input[type=text]').valid();
+          if(pass){
+             $.pagewalkthrough('next',e);
+          }
+
       });
 
       $('.restart-step').live('click', function(e){
@@ -306,7 +310,6 @@ define(function (require, exports, module) {
       }
 
       function removeStyle(){
-         $('.main-menu ul li a#open-extra').removeClass('active');
          $(document.body).css("overflow","");
 
       }
@@ -328,7 +331,7 @@ define(function (require, exports, module) {
       }
 
       //高亮区点击拉框时，高亮区高度随下拉框增减
-      function selectDropdownGuide(highLightId,dropListId){
+      function selectDropdownGuide(select1,select2,contentPositon){
           var overlayBottom_Top = $('#overlayBottom').offset().top ;
           var bottomAccessable_top = $('#bottomAccessable').offset().top;
           var pointUp =  $('#jpwTooltip').offset().top;
@@ -341,28 +344,26 @@ define(function (require, exports, module) {
           var overlayBottomh_old = $('#overlayBottom').height();
           var overlayBottomt_old = $('#overlayBottom').offset().top;
           var bottomAccessablet_old = $('#bottomAccessable').offset().top;
-
+          var highLightH_old = $(select1).height();
           var num = 0;
 
-          $(highLightId).hover(function(){
-            num = $(dropListId).height();
+          $(select2).bind('click',function(){
+
+            num = $(select1).height() - highLightH_old;
             var bottomH = $(document).height() - (parseInt($('#overlayTop').height()) + parseInt(num));
 
             var overlayBottom_top_tmp = overlayBottom_Top + num;
             var bottomAccessable_top_tmp = bottomAccessable_top + num;
             setLightH((num+middleLeft_old),(num+overlayRight_old),bottomH,overlayBottom_top_tmp,bottomAccessable_top_tmp);
+            if(contentPositon!='top'){
+               $('#jpwTooltip').css('top',(pointUp+num));
+            }
 
-           $('#jpwTooltip').css('top',(pointUp + num));
 
             //动画
             //$(this).stop().animate({});
-          },function(){
-           setLightH(middleLeft_old,overlayRight_old,overlayBottomh_old,overlayBottomt_old,bottomAccessablet_old);
-
-           $('#jpwTooltip').css('top',pointUp);
-
-
           });
+
       }
 
       function setLightH(middleNum,overlayH,bNum,overlayBottom_Top,bottomAccessable_top){

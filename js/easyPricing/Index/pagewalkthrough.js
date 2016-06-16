@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
-  var quickPanel = require('js/common/quickPanel');
+  require('js/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  var quickPanel = require('js/common/quickPanel/quickPanel');
 
 
   //检验用户身份
@@ -34,7 +34,7 @@ define(function (require, exports, module) {
     steps:
         [
         {
-             wrapper: '#extra_abroad_buyer', //高亮区域 class 或 id
+             wrapper: '#corepriceGuide', //高亮区域 class 或 id
              margin: '0',         //最好别改
              isTopFix: false,      //要高亮区域是否固定在顶部
              appendScrollNum:0,
@@ -114,44 +114,11 @@ define(function (require, exports, module) {
       }
 
       function initStyle(){
-          $(".module-ul1").find('li').eq(0).css({'z-index':'2','height':'440px','color':'#ffffff','background-color':'#3CA1D7'});
-          $(".module-ul1").find('li').eq(0).find('a').css({'color':'#ffffff','border':'1px solid #ffffff','display':'block'});
-          $(".module-ul2").find('li').eq(1).css({'z-index':'0'});
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
-
-          $(".module-ul1").find('li').eq(0).unbind('hover');
-
       }
 
       function resetStyle(){
          $('.main-menu ul li a#open-extra').removeClass('active');
          $(document.body).css("overflow","");
-         $(".module-ul1").find('li').eq(0).removeAttr('style');
-         $(".module-ul1").find('li').eq(0).find('a').removeAttr('style');
-         $(".module-ul1").find('li').eq(0).css({'z-index':'1','height':'210px'});
-
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
-          //重新绑定鼠标滑过特效
-          $('[control=false] li a').css("display","block");
-          $('[control=true] li').hover(
-            function() {
-              $(this).stop().css('z-index','2').animate({'height':'440px'},500);
-              $(this).find('a').stop().delay(300).fadeIn();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
-            },
-            function () {
-              $(this).stop().css('z-index','1').animate({'height':'210px'},300);
-              $(this).find('a').stop().fadeOut();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
-            }
-          );
-          $('.module-ul li a').hover(
-            function() {
-              $(this).fadeOut().fadeIn(300);
-            },function () {
-            }
-          );
-
       }
 
 
