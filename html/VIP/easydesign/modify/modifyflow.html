@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>易家纺-电子商务平台|易设计会员中心-修改花型</title>
+    <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/VIP/easydesign/increase/incefabr.css" rel="stylesheet" type="text/css"/>
 
@@ -10,212 +11,139 @@
   @@include('VIP/common/nav.html')
     <div class="mainbox">
       <div class="fabricbox">
-        <div class="fabric_con">
-          <div class="flower_title">修改花型</div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">花型编号：</span>
-            <div class="lf long_input" >F42585623</div>
-            <span class="lf prompt">注：花型编号自动生成，无需填写。</span>
-          </div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">花型名称：</span>
-            <div class="lf Locate" id="name">
-              <span class="placeholder">请输入花型名称</span>
-              <input type="text" class="long_input"></div>
-          </div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">规格型号：</span>
+        <form action="" id="inceflowForm" method="post">
+          <div class="fabric_con">
+            <div class="flower_title">修改花型</div>
+            <div class="clearfix data_frm">
 
-            <ul class="lf width_company_none ">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">厘米</li>
-            </ul>
-            <input type="text" class="lf fabric_money">
-            <span class="Multiply lf"></span>
-            <input type="text" class="lf fabric_money"></div>
+              <span class="lf title_name">花型编号：</span>
+              <div class="lf long_input" >F42585623</div>
+              <span class="lf prompt">注：花型编号自动生成，无需填写。</span>
+            </div>
+            <div class="clearfix data_frm" id="num">
+              <span class="lf title_name">花型名称：</span>
+              <div class="lf veri_left">
+                <span class="placeholder">请输入花型名称</span>
+                <input type="text" value="" class="lf long_input" name="flowerNameInput" id="flowerNameInput">
+                <div class="input-tip"></div>
+              </div>
+            </div>
+            <div class="clearfix data_frm">
 
-          <div class="clearfix data_frm">
-            <span class="lf title_name">选择颜色分类：</span>
-            <ul class="lf dropdown_box">
-              <a href="#" class="down_arr"></a>
-              <li class="dropdown_content">八色及以上花型</li>
-            </ul>
-          </div>
+              <span class="lf title_name">规格型号：</span>
 
-          <div class="clearfix rad_frm">
-            <span class="lf title_name">花型描述：</span>
-            <div class="lf Single_box">
-              <div class="clearfix">
-                <label class="lf radio_rg">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
-                  <span class="lf">普通花型 </span>
-                </label>
-                <label class="lf radio_rg">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
-                  <span class="lf">纯条子花型 </span>
-                </label>
-                <label class="lf">
-                  <input name="Fruit" type="radio" class="lf radio_post" />
-                  <span class="lf">其他条子花型</span>
-                </label>
+              <div class="clearfix lf">
+                <select class="lf" id="type_num">
+                  <option value="">厘米</option>
+                  <option value="one">分米</option>
+                  <option value="two">米</option>
+                </select>
               </div>
-              <textarea  class="textarea_flowcla"></textarea>
-            </div>
-          </div>
-          <div class="clearfix data_frm">
-            <span class="lf title_name">花型图片：</span>
-            <div class="lf fabr_imgbox">
-              <a href="#" class="fabr_img">
-                <span class="tian_img"></span>
-                <p class="fabrimg_text">点击添加图片</p>
-              </a>
-              <p class="fabr_prompt">注：花型只能上传 jpg或jpeg</p>
-            </div>
-          </div>
+              <div class="lf veri_left">
+                <input type="text" class="lf fabric_money" name="typeNum_1" id="typeNum_1" >
 
-          <div class="data_frm">
-            <div class="Key_words">选择关键词</div>
-            <div class="clearfix unit_box">
-              <span class="lf title_name">单元：</span>
-              <div class="lf handle_one">
-                <span class="select"></span>
-                条形方格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                条格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                经向条形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                纬向条形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                条形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                三角格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                独花
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                正方格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                长方格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                菱形格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                多边形和点阵
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                凌乱
-              </div>
-            </div>
-            <div class="clearfix unit_box">
-              <span class="lf title_name">组成：</span>
-              <div class="lf handle_one">
-                <span class="select"></span>
-                 植物：植物外形、花
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                动物：动物外形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                其他自然元素外形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                几何图形
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                平直线条
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                曲线
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                字符
-              </div>
-            </div>
-            <div class="clearfix unit_box">
-              <span class="lf title_name">风格：</span>
-              <div class="lf handle_one">
-                <span class="select"></span>
-                西方古典
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                东方古典
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                其他民族古典
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                工笔装饰风格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                现代自由风格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                可爱卡通风格
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                公认特定风格（圣诞、腰果花、凤尾花…）
-              </div>
-            </div>
-            <div class="clearfix unit_box">
-              <span class="lf title_name">配色：</span>
-              <div class="lf handle_one">
-                <span class="select"></span>
-                  鲜艳亮丽
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                怀旧
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                经典
-              </div>
-              <div class="lf handle_one  handle_mag">
-                <span class="select"></span>
-                柔和
+                <span class="Multiply lf"></span>
+                <input type="text" class="lf fabric_money" name="typeNum_2" id="typeNum_2">
+
+                <div class="input-tip"></div>
               </div>
             </div>
 
-          </div>
+            <div class="clearfix data_frm">
+              <span class="lf title_name">选择颜色分类：</span>
+              <div class="clearfix lf">
+                <select class="lf" id="color_type">
+                  <option value="">八色及以上花型</option>
+                  <option value="one">十色及以上花型</option>
+                  <option value="two">十二色及以上花型</option>
+                </select>
+              </div>
+            </div>
 
+            <div class="clearfix rad_frm">
+              <span class="lf title_name">花型描述：</span>
+              <div class="lf Single_box">
+                <div class="clearfix">
+                  <div>
+                    <label class="lf radio_rg label_radio">
+                      <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
+                      <span class="lf">普通花型</span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="lf radio_rg label_radio">
+                      <input name="Fruit" type="radio" class="lf radio_post" />
+                      <span class="lf">纯条子花型</span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="lf label_radio">
+                      <input name="Fruit" type="radio" class="lf radio_post" />
+                      <span class="lf">其他条子花型</span>
+                    </label>
+                  </div>
+                </div>
+                <textarea name="textareaFlowcla" errorMsgPosition="rightBottom" id="textareaFlowcla" name="textareaFlowcla" class="textarea_flowcla"></textarea>
+                <div class="input-tip"></div>
+              </div>
+            </div>
+
+            <div class="clearfix data_frm">
+              <span class="lf title_name">花型图片：</span>
+              <div class="lf fabr_imgbox">
+                <a href="#" class="fabr_img">
+                  <span class="tian_img"></span>
+                  <p class="fabrimg_text">点击添加图片</p>
+                </a>
+                <p class="fabr_prompt">注：花型只能上传 jpg或jpeg</p>
+              </div>
+            </div>
+
+            <div class="data_frm">
+              <div class="Key_words">选择关键词</div>
+              <div class="clearfix rad_frm keyword-box">
+                <span class="lf title_name">花型风格：</span>
+                <div class="lf Single_box">
+                  <label class="lf radio_rg label_radio">
+                    <input name="FlowerType" type="radio" checked="checked" class="lf radio_post" />
+                    <span class="lf">圣诞节日</span>
+                  </label>
+                  <label class="lf radio_rg label_radio">
+                    <input name="FlowerType" type="radio" class="lf radio_post" />
+                    <span class="lf">西方古典</span>
+                  </label>
+                  <label class="lf label_radio"><!-- 最后一个没有右边距radio_rg -->
+                    <input name="FlowerType" type="radio" class="lf radio_post" />
+                    <span class="lf">东方古典</span>
+                  </label>
+                </div>
+              </div>
+              <div class="clearfix rad_frm keyword-box">
+                <span class="lf title_name">风格组成：</span>
+                <div class="lf Single_box">
+                  <label class="lab lf clearrfix">
+                    <input name="composition" type="checkbox" class="lf checkbox_post" />
+                    <span class="lf checkboxPad">动物</span>
+                  </label>
+                  <label class="lab lf clearrfix">
+                    <input name="composition" type="checkbox" class="lf checkbox_post" />
+                    <span class="lf checkboxPad">植物</span>
+                  </label>
+                  <label class="lab lf clearrfix"><!-- 最后一个没有右边距radio_rg -->
+                    <input name="composition" type="checkbox" class="lf checkbox_post" />
+                    <span class="lf checkboxPad">圣诞老人</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <p class="butt_box">
+              <a class="butt_pricing" href="#">保存</a>
+              <a class="butt_return" href="#">保存并发布</a>
+            </p>
+          </div>
+        </form>
         </div>
-
-        <p class="clearfix butt_box">
-          <a href="#" class="lf butt_pricing">保存</a>
-          <a target=_blank href="/html/easyPricing/Pop-ups/result.html" class="rg butt_return">保存并发布</a>
-        </p>
       </div>
     </div>
     @@include('VIP/common/footer.html')
@@ -225,6 +153,6 @@
   <script src="/js/common/seajs/seajs-css.js"></script>
 
   <script src="/js/rootConfig.js"></script>
-  <script>seajs.use('js/VIP/easydesign/increase/incefabr');</script>
+  <script>seajs.use('js/VIP/easydesign/increase/inceflow');</script>
   </body>
   </html>
