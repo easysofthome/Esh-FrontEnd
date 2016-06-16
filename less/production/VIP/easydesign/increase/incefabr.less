@@ -68,7 +68,9 @@
       width: 920px;
     }
   }
-  .input_fabric,.dropdown_box,.fabric_width,.long_input,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.fabric_money{
+  .input_fabric,.dropdown_box,.fabric_width,.long_input,
+  .width_company_none,.width_company,.reducebox,
+  .reduceiput,.increasebox,.density_input,.fabric_money,.handle_one{
     border:1px solid #cdcfd1;
     .border-radius(5px);
     color: #333333;
@@ -110,7 +112,13 @@
       font-size: 16px;
     }
   }
-  .Locate{
+  .handle_one{
+    padding:0 20px 0 20px;
+    cursor: pointer;
+
+  }
+  
+  .Locate,.handle_one{
     position: relative;
   }
   .Multiply{
@@ -121,6 +129,31 @@
   .fabric_money{
     margin-left: 10px;
     width: 40px;
+  }
+  .select{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    .sprite(@select);
+    .icon-VIP-easydesign-increase;
+    display: none;
+  }
+  .selected span{
+
+    display: block;
+  }
+
+  .handle_mag{
+    margin-left: 10px;
+  }
+  .handle_top{
+    margin-top: 10px;
+  }
+  .handle_one:hover,.selected{
+    border: 1px solid #3ca1d7;
+  }
+  .handle_one:hover .select{
+    display: block;
   }
 
   .yarn_butt{
