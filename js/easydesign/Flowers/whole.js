@@ -7,7 +7,6 @@ define(function (require, exports, module) {
       window.open(url);
     });
 
-
      $('#westernClassical').bind('click',function(){
           if($('#comprise').css('display')=='none'){
             $('#comprise').removeClass('none');

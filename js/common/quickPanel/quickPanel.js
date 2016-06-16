@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-
+    require('./quickPanel.css');
     //关闭引导页后创建引导页快捷入口动画
       module.exports.MoveBox = function() {
         $('body').prepend('<div id="toQuikStart" style="width:80%;height:80%;opacity: 0.3;filter: alpha(opacity=30);background: #000"></div>');
