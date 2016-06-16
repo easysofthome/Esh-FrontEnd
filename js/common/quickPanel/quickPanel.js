@@ -13,8 +13,10 @@ define(function (require, exports, module) {
         });
       }
 
-      function toTopDisplay(){
-        var scrollTop = document.body.scrollTop;
+
+      function quickTopDisplay(){
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        console.log(scrollTop);
         if(scrollTop<=100){
           $('#quickToTop').fadeOut();
         }else{
@@ -23,14 +25,14 @@ define(function (require, exports, module) {
       }
 
       $(window).scroll(function(){
-          toTopDisplay();
+          quickTopDisplay();
       });
 
 
 
     //快捷入口,页面右侧 可快捷到顶部 底部
     $(document).ready(function(){
-        toTopDisplay();
+        quickTopDisplay();
         $("#quickToTop").click(function(){
             $('body,html').animate({scrollTop:0},1000);
             return false;
