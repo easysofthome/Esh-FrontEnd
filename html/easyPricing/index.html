@@ -7,6 +7,10 @@
   <link href="/css/production/easyPricing/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div id="fixLeftMid" class="floatPanel">
+  <span id="quickToTop" class="top_arrow"></span>
+  <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
+</div>
   @@include('common/top.html')
   @@include('easyPricing/header.html')
   <div class="index-banner-box">
@@ -46,7 +50,7 @@
     </div>
     <p class="sim_exp">实时更新原材料价格、海运费价格、货币汇率，工厂备书各类工缴价格，保障核价的精准度。</p>
     <ul class="coreprice clearfix">
-      <li class="lf">
+      <li class="lf" id="corepriceGuide">
         <p class="coreprice_tit">面料核价</p>
         <span class="coreprice_tit_ico1"></span>
         <div class="description">
@@ -171,7 +175,16 @@
 
     </div>
   </div>
+  <!--引导页-->
+  <div id="walkthrough">
+    <div id="guide_step1" style="display:none;">
+    <p class="tooltipTitle">易家纺软件模拟效果</p>
+        <p>点击我要核价，获取更精准的面料核价数据</p>
+        <br>
+        <a href="javascript:;" class="close-step" style="float:right;">跳过引导页</a>
+    </div>
+  </div>
   @@include('easyPricing/common/footer.html')
-  <script>seajs.use('js/easyPricing/Index/index',function(){ });</script>
+  <script>seajs.use(['js/easyPricing/Index/index','js/easyPricing/Index/pagewalkthrough']);</script>
 </body>
 </html>
