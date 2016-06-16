@@ -11,7 +11,7 @@ define(function (require, exports, module) {
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'','PrevPageUrl':''
   };
 
 
@@ -201,19 +201,19 @@ define(function (require, exports, module) {
 
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
-   // initPage(objJson);
-    $.ajax({
-      type: 'get',
-      url: 'Flower/AjaxDetail',
-      data: params ,
-      dataType: 'json',
-      success: function(data){
-        initPage(data);
-      },
-      error : function() {
-        console.log('---花型详情页异常---');
-      }
-    });
+    initPage(objJson);
+    // $.ajax({
+    //   type: 'get',
+    //   url: 'Flower/AjaxDetail',
+    //   data: params ,
+    //   dataType: 'json',
+    //   success: function(data){
+    //     initPage(data);
+    //   },
+    //   error : function() {
+    //     console.log('---花型详情页异常---');
+    //   }
+    // });
 
       //接口
 
