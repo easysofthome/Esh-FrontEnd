@@ -1,3 +1,0 @@
-easydesign（文件夹）       易设计（不要或修改的部分）
-  | studiowrap              工作室
-  | Keywords                分类关键词选择
