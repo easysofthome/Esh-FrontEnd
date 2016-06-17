@@ -8,6 +8,11 @@
   z-index: 10;
   overflow: hidden;
 }
+
+.floatPanel .top_arrow_div{
+  width: 54px;
+  height: 59px;
+}
 .floatPanel .top_arrow {
   background-repeat: no-repeat;
   display: block;
