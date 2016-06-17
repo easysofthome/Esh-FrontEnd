@@ -203,7 +203,7 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
    // initPage(objJson);
     $.ajax({
-      type: 'get',
+      type: 'post',
       url: 'Flower/AjaxDetail',
       data: params ,
       dataType: 'json',
