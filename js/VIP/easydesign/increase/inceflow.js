@@ -197,11 +197,11 @@ function setMsgPosition(obj,msg,direction){
     init();
 
 
-    // $(document).ready(function(){
-    //      $('.butt_return').bind('click',function(){
-    //         form.submit();
-    //     });
+    $(document).ready(function(){
+         $('.butt_return').bind('click',function(){
+            form.submit();
+        });
 
-    // });
+    });
 
 });
