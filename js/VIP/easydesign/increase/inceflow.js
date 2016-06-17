@@ -121,15 +121,15 @@ function setMsgPosition(obj,msg,direction){
 /** 表单验证 */
     var validator;
 
-    function validate() {
-        validator = form.validate({
+    function validate(callback) {
+       validator = form.validate({
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
                 //formSubmit(form);
                 //阻止表单提交
-                //$.layer(startPriceLayer);
+                callback();
                 return false;
             },
             onfocusout:function(element){
@@ -194,7 +194,7 @@ function setMsgPosition(obj,msg,direction){
 
 
     //加载表单验证函数
-    init();
+   //init();
 
 
     $(document).ready(function(){
@@ -203,5 +203,7 @@ function setMsgPosition(obj,msg,direction){
         });
 
     });
+
+    exports.validate = validate;
 
 });
