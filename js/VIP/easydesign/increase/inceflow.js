@@ -129,7 +129,9 @@ function setMsgPosition(obj,msg,direction){
                 //提交表单
                 //formSubmit(form);
                 //阻止表单提交
-                callback();
+                if(callback){
+                    callback();
+                }
                 return false;
             },
             onfocusout:function(element){
@@ -194,7 +196,7 @@ function setMsgPosition(obj,msg,direction){
 
 
     //加载表单验证函数
-   //init();
+   init();
 
 
     $(document).ready(function(){
