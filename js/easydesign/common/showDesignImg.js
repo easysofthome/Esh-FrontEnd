@@ -204,8 +204,8 @@ define(function (require, exports, module) {
    // initPage(objJson);
     $.ajax({
       type: 'post',
-      url: '/Flower/AjaxDetail',
-      data: params ,
+      url: '/Flower/AjaxDetail?'+params,
+      data: '' ,
       dataType: 'json',
       success: function(data){
         initPage(data);
