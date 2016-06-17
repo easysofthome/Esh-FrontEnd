@@ -224,8 +224,9 @@
 /********字体********/
 @font-face {
   font-family: 'blackboard';
-  src: url('/css/production/Fonts/kaTong.ttf');
+  src: url('./Fonts/kaTong.ttf');
   font-weight: normal;
   font-style: normal;
 }
+
 
