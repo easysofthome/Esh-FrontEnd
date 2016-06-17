@@ -16,7 +16,6 @@ define(function (require, exports, module) {
 
       function quickTopDisplay(){
         var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        console.log(scrollTop);
         if(scrollTop<=100){
           $('#quickToTop').fadeOut();
         }else{
