@@ -20,6 +20,7 @@ define(function (require, exports, module) {
   function loadOtherFabrics(objJson){
 
     if(!objJson) return;
+    setBigImg(objJson);
     if(objJson.FlowerStyleSimilarList.length <=0) return;
 
     for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
@@ -31,7 +32,7 @@ define(function (require, exports, module) {
     }
 
 
-    setBigImg(objJson);
+
   }
 
   //加载第n张图片
