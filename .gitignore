@@ -1,0 +1,6 @@
+node_modules
+/Gruntfile.js
+/js/rootConfig.js
+/css
+/less/sprite
+/images/production

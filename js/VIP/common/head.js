@@ -1,8 +1,14 @@
 define(function (require, exports, module) {
   require('jquery');
 
-  var screenH = $(window).height();
+  var screenH;
   $(document).ready(function () {
+    screenH = $(window).height();
+    setHeight(screenH);
+  });
+
+  $(window).resize(function () {
+    screenH = $(window).height();
     setHeight(screenH);
   });
 
