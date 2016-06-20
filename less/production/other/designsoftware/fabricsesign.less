@@ -1,11 +1,14 @@
 @import '../../../dev/mixins/mixins.less';
 @import '../../../sprite/other/designsoftware/sprite.less';
 
+body{
+    background-color: #fafafa;
+}
 .fabricsesign_box{
   width: 454px;
-  background-color: #fafafa;
+
   font-size: 12px;
-  .fabricsesign_titbox,.classif_box,.options_box{
+  .classif_box,.options_box{
     width: 434px;
     margin:0 auto;
   }
@@ -23,17 +26,11 @@
     .icon-other-designsoftware;
     margin:12px 0 0 4px;
   }
-  .fabricsesign_tit{
-    line-height: 36px;
 
-    color: #4c4c4c;
-    padding-right: 10px;
-    border-right: 1px solid #e6e6e6;
-  }
   .fabricsesign_buttbox{
-    margin-top: 5px;
+    margin: 6px 0 0 70px;
     width: 200px;
-    background-color: #e0e0e0;
+    background-color: #fff;
     height: 24px;
     line-height: 24px;
     .border-radius(6px);
@@ -41,7 +38,7 @@
   .fabricsesign_butt{
       margin-left: 10px;
       border: none;
-      background-color: #e0e0e0;
+      background-color: #fff;
       height: 24px;
       line-height: 24px;
       width: 162px;
@@ -117,6 +114,7 @@
       }
     }
     .content_box{
+      margin-top: 10px;
       li{
         margin:12px 0 0 14px;
         width: 134px;
@@ -145,7 +143,7 @@ div.finishedPro-next{
   width: 100%;
   line-height: 28px;
   font-size: 12px;
-  margin-top: 110px;
+  margin-top: 50px;
   .next-box{
     width: 428px;
     padding: 20px 0;

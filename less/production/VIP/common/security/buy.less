@@ -1,0 +1,207 @@
+@import '../../../../sprite/VIP/common/Pay/sprite.less';
+@import '../../../../dev/mixins/mixins.less';
+
+.main_box{
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.mingxi
+{
+  font-size: 24px;
+
+  background-image: url('/images/production/VIP/common/account/title_line.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  margin: 0 20px;
+  .current,
+  .mingxi_a
+  {
+    margin-left: 40px;
+    padding: 0 10px 10px 10px;
+  }
+  .current,
+  .mingxi_a:hover
+  {
+    color: #4a7bc4;
+    border-bottom: 2px solid #4a7bc4;
+  }
+  .mingxi_mar
+  {
+    margin-left: 0;
+  }
+}
+
+.title_box
+{
+  margin-top: 40px;
+  padding: 20px 0 23px 0;
+
+  background-color: #fff;
+  width: 854px;
+  .main02
+  {
+    margin: 25px 20px 0 20px;
+    span.txt_red{
+      color: #fc2e2e;
+      margin-top: 5px;
+    }
+    .main02_mar
+    {
+      color: #1673fe;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    div.btn-box{
+      margin-top: 15px;
+      a.btn{
+        margin-right: 20px;
+        color: #333;
+        background-color: #f0efef;
+        padding: 0 10px;
+        line-height: 24px;
+        border: 1px solid #e5e3e3;
+        .border-radius(3px);
+        &:hover{
+          background-color: #f5f2f2;
+        }
+      }
+    }
+  }
+}
+.buy_box{
+  background-color: #fff;
+  width: 854px;
+  margin-top:20px;
+  padding-bottom: 40px;
+  .buy{
+    padding-top:30px;
+    width: 814px;
+    margin:0 auto;
+  }
+  .buy_quanbox{
+    margin-top:20px;
+  }
+  .buy_tit,.buy_payment{
+    font-size: 18px;
+    color: #999999;
+    line-height: 18px;
+  }
+  .buy_payment{
+    margin-top: 20px;
+  }
+  .buy_quantit,.unitprice,.unit{
+    font-size: 16px;
+    line-height: 32px;
+    color: #666;
+  }
+  .unit{
+    margin-left: 4px;
+  }
+  .buy_quantit{
+    margin-left: 40px;
+  }
+  .buy_inp{
+    border: 1px solid #cdcfd1;
+    .border-radius(3px);
+    line-height: 30px;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+  }
+  .pay_box{
+    padding-top: 10px;
+    li{
+        width: 150px;
+        height: 40px;
+        // border:1px solid #e5e5e5;
+        position: relative;
+        cursor:pointer;
+    }
+    .zhifubao{
+        margin: 7px auto 0 auto;
+         .sprite(@zhifubao);
+        .icon-VIP-common-Pay;
+    }
+    .yidou{
+        margin: 7px auto 0 auto;
+         .sprite(@yidou);
+        .icon-VIP-common-Pay;
+    }
+    .zaixian{
+        margin: 7px auto 0 auto;
+         .sprite(@zaixian);
+        .icon-VIP-common-Pay;
+    }
+    .radio_clas{
+        margin: 12px 4px 0 0;
+    }
+    .li_max{
+        margin-left: 10px;
+    }
+    .arr_bom{
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        .sprite(@arr_bom);
+        .icon-VIP-common-Pay;
+    }
+
+}
+.dropdown_libox{
+    .border-radius(5px);
+    background-color: #e6e6e6;
+    width: 814px;
+    margin: 10px auto 0 auto;
+    padding-bottom: 10px;
+    .Bean_box{
+        padding-top: 20px;
+    }
+    .whether{
+        margin:7px 2px 0 0;
+        }
+    .yidou_name,.yidou_unit{
+            font-size: 14px;
+            margin-top: 3px;
+        }
+    .yidou_name{
+          margin-left: 20px;
+        }
+    .yidou_unit{
+            margin-left: 4px;
+        }
+    .yidou_data,.yidou_surdata{
+            margin-left: 10px;
+            font-size:20px;
+            color:#fe6600;
+        }
+    .yidou_surdata{
+            margin-left: 0px;
+        }
+    .bean_height{
+          padding-top: 4px;
+        }
+}
+    .save{
+    border: 1px solid #ff9900;
+    .border-radius(3px);
+    width: 280px;
+    line-height: 38px;
+    color: #ff9902;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin:30px 0 0 310px;
+    background: #fff;
+    transition: all .3s;
+    &:hover{
+      background: #f90;
+      color: #fff;
+    }
+  }
+
+}
+
+
