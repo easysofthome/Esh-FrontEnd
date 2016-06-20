@@ -11,13 +11,13 @@
   <body>
   <!-- 右侧快捷面板 -->
    <div id="fixLeftMid" class="floatPanel">
-    <span id="quickToTop" class="top_arrow"></span>
+    <div class="top_arrow_div"><span id="quickToTop" class="top_arrow"></span></div>
     <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
     </div>
     @@include('common/top.html')
     @@include('easyPricing/header.html')
     <div class="ban-bg">
-      <img width="100%" src="/images/original/easyPricing/common/icon-fabric.png">
+      <img width="100%" src="/images/production/easyPricing/common/icon-fabric.png">
     </div>
     @@include('easyPricing/fabric/fabrictitle.html')
     <div class="mainbox">
@@ -56,7 +56,7 @@
             <div class="clearfix data_frm">
               <div>
                 <span class="lf title_name">面料门幅：</span>
-                <input type="text" id="fabricWidth" name="fabricWidth" class="lf fabric_width">
+                <input type="text" id="fabricWidth" name="" class="lf fabric_width">
                 <select class="lf handle_mag" id="sel2" >
                   <option value="">厘米</option>
                   <option value="">分米</option>
@@ -88,7 +88,7 @@
                   <div class="lf">
                     <div class="lf yarn_tit">经密：</div>
                     <div class="lf" id="warp_num_box">
-                      <input type="text" id="warpSpinnerNum1" name="warpSpinnerNum1" class="density_input lf">
+                      <input type="text" id="warpSpinnerNum1" name="" class="density_input lf">
                       <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
                       <div class="input-tip"></div>
                     </div>
@@ -127,7 +127,7 @@
                   <div class="lf">
                     <div class="lf yarn_tit">纬密：</div>
                     <div class="lf" id="abb_num_box">
-                      <input type="text" id="abbSpinnerNum1" name="abbSpinnerNum1" class="density_input lf">
+                      <input type="text" id="abbSpinnerNum1" name="" class="density_input lf">
                       <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的纬密。</span>
                       <div class="input-tip"></div>
                     </div>
@@ -361,7 +361,7 @@
                 <option value="">英镑汇率</option>
                 <option value="">韩币汇率</option>
               </select>
-              <input type="text" name="exchangeRate" errorMsgPosition="right" class="lf fabric_money">
+              <input type="text" name="" id="exchangeRate" errorMsgPosition="right" class="lf fabric_money">
               <div class="input-tip"></div>
             </div>
             <div class="clearfix rad_frm">

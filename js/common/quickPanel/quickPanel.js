@@ -12,38 +12,36 @@ define(function (require, exports, module) {
           $(obj).fadeTo(600, 0.2).hide(0);
         });
       }
-
-
       function quickTopDisplay(){
         var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        console.log(scrollTop);
         if(scrollTop<=100){
           $('#quickToTop').fadeOut();
         }else{
           $('#quickToTop').fadeIn();
         }
       }
-
-      $(window).scroll(function(){
-          quickTopDisplay();
-      });
-
-
-
-    //快捷入口,页面右侧 可快捷到顶部 底部
-    $(document).ready(function(){
-        quickTopDisplay();
+      function fixQuickPanel(){
+         var top = ($(window).height()-$('#fixLeftMid').height())/2;
+         $('#fixLeftMid').css('top',top);
+      }
+      function initQuickPanel(){
+         quickTopDisplay();
+         fixQuickPanel();
         $("#quickToTop").click(function(){
             $('body,html').animate({scrollTop:0},1000);
             return false;
         });
-        //  $("#quickToBottom").click(function(){
-        //     $('body,html').animate({scrollTop: $('.copyright').offset().top},1000);
-        //     return false;
-        // });
+      }
+
+    //快捷入口,页面右侧 可快捷到顶部 底部
+    $(document).ready(function(){
+      initQuickPanel();
+
     });
 
-
+    $(window).scroll(function(){
+          quickTopDisplay();
+      });
 
 
 

@@ -48,7 +48,7 @@ define(function (require, exports, module) {
                    position: 'top',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '730'
+                   width: '400'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
@@ -129,7 +129,7 @@ define(function (require, exports, module) {
                    position: 'top',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '700'
+                   width: '300'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
@@ -155,7 +155,7 @@ define(function (require, exports, module) {
                    position: 'bottom',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '700'
+                   width: '300'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
@@ -182,7 +182,7 @@ define(function (require, exports, module) {
                    position: 'bottom',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '700'
+                   width: '300'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
@@ -208,7 +208,7 @@ define(function (require, exports, module) {
                    position: 'bottom',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '700'
+                   width: '300'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
@@ -234,7 +234,7 @@ define(function (require, exports, module) {
                    position: 'top',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
-                   width: '700'
+                   width: '450'
                  },
                  accessable:true,//是否与高亮区域内元素互动
                  lockScrolling: false//是否随滚动条移动
