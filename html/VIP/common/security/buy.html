@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|会员中心-我的账户</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/VIP/common/security/addccount.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/security/buy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   @@include('VIP/common/nav.html')
@@ -20,56 +20,53 @@
             提示：1、VIP用户可以免费设置四个子账号。2、子账号不可删除，请在添加子账号时确认清楚。3、如需增加子账号，
             <a class="main02_mar" href="#">可购买</a>
           </span>
-          <div class="btn-box clearfix">
-            <a class="btn lf" href="#">添加</a>
-            <a class="btn lf" href="#">启用</a>
-            <a class="btn lf" href="#">禁用</a>
-            <a class="btn lf" href="#">密码还原</a>
-          </div>
+
         </div>
       </div>
-      <div class="add_box">
-        <div class="clearfix shurutop">
-          <span class="lf titilexingxi">子账号名称：</span>
-          <div class="lf veri_left">
-            <span class="placeholder">请输入账号名</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
-            <div class="input-tip"></div>
+      <div class="buy_box">
+        <div class="buy">
+          <p class="buy_tit">购买子账号</p>
+          <div class="clearfix buy_quanbox">
+            <span class="lf unitprice">购买单价：</span>
+            <span class="lf unitprice">100易豆(元)</span>
+            <span class="lf buy_quantit">购买数量：</span>
+            <input type="text" class="buy_inp lf">
+            <span class="lf unit">个</span>
           </div>
+          <p class="buy_payment">付款方式</p>
+          <ul class="clearfix pay_box">
+            <li class="lf current">
+              <span class="zhifubao"></span>
+              <span class="select_pay"></span>
+            </li>
+            <li class="li_max lf">
+              <span class="zaixian"></span>
+              <span class="select_pay"></span>
+            </li>
+            <li class="li_max lf">
+              <span class="yidou"></span>
+              <span class="select_pay"></span>
+              <span class="arr_bom"></span>
+            </li>
+          </ul>
+
         </div>
-        <div class="clearfix enter_top">
-          <span class="lf titilexingxi">所属部门：</span>
-          <div class="lf veri_left">
-            <span class="placeholder">请输入部门</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
-            <div class="input-tip"></div>
+        <div class="dropdown_libox">
+          <div class="clearfix Bean_box">
+            <span class="yidou_name lf">应付价格：</span>
+            <span class="yidou_data lf">1500</span>
+            <span class="lf yidou_unit">易豆</span>
+            <span class="lf yidou_unit">（1易豆=1元）</span>
           </div>
-        </div>
-          <div class="clearfix enter_top">
-          <span class="lf titilexingxi">密码：</span>
-          <div class="lf veri_left">
-            <span class="placeholder">请输入有效密码</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
-            <div class="input-tip"></div>
+          <div class="clearfix  bean_height">
+            <span class="yidou_name lf">实付金额：</span>
+            <span class="yidou_data lf">1500</span>
+            <span class="yidou_unit lf">易豆</span>
+
           </div>
+
         </div>
-          <div class="clearfix enter_top">
-          <span class="lf titilexingxi">确认密码：</span>
-          <div class="lf veri_left">
-            <span class="placeholder">请确认密码</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
-            <div class="input-tip"></div>
-          </div>
-        </div>
-        <div class="clearfix enter_top">
-          <span class="lf titilexingxi">备注：</span>
-          <div class="lf veri_left">
-            <span class="placeholder">添加备注</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
-            <div class="input-tip"></div>
-          </div>
-        </div>
-        <button type="submit" href="#" class="save">确认添加</button>
+<button type="submit" href="#" class="save">确认付款</button>
       </div>
     </div>
 
