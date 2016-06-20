@@ -116,6 +116,14 @@ function setMsgPosition(obj,msg,direction){
         });
     }
 
+    function validateUpLoadImg(){
+        $($('#filePicker')[0]).poshytip('destroy');
+        if(!($('.filelist li img').attr('src'))){
+            setMsgPosition($('#filePicker')[0],'请上传花型图片！',$('#filePicker').attr("errorMsgPosition"));
+            return false;
+        }
+        return true;
+    }
 
 
 /** 表单验证 */
@@ -126,8 +134,9 @@ function setMsgPosition(obj,msg,direction){
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
-                //提交表单
-                //formSubmit(form);
+                if(!validateUpLoadImg()){
+                    return false;
+                }
                 //阻止表单提交
                 if(callback){
                     callback();
@@ -192,7 +201,6 @@ function setMsgPosition(obj,msg,direction){
             }
         });
     }
-
 
 
     //加载表单验证函数
