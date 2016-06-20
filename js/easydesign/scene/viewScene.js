@@ -7,7 +7,7 @@ define(function (require, exports, module) {
   var baseUrl = '\/images\/production\/easydesign\/designFabrics\/';
   var objJson = {
     'objFabricImg_full':
-    [{'src':baseUrl+'panorama_1.jpg','width':'3500','height':'3500'},
+    [{'src':baseUrl+'panorama_3.jpg','width':'3500','height':'3500'},
     {'src':baseUrl+'panorama_2.jpg','width':'3000','height':'1500'}]
   };
 
