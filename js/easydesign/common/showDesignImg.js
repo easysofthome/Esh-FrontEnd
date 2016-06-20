@@ -202,10 +202,11 @@ define(function (require, exports, module) {
 
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
+    var baseURL = $('hidAjaxUrl').val();
    // initPage(objJson);
     $.ajax({
       type: 'post',
-      url: '/Flower/AjaxDetail?'+params,
+      url: baseURL+'?'+params,
       data: '' ,
       dataType: 'json',
       success: function(data){
@@ -216,7 +217,7 @@ define(function (require, exports, module) {
       }
     });
 
-      //接口
+
 
 
   });
