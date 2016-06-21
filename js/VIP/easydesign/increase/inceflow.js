@@ -136,7 +136,7 @@ function setMsgPosition(obj,msg,direction){
             submitHandler: function (form) {
                 if(!validateUpLoadImg()){
                     return false;
-                }
+                }alert();
                 //阻止表单提交
                 if(callback){
                     callback();
@@ -204,7 +204,7 @@ function setMsgPosition(obj,msg,direction){
 
 
     //加载表单验证函数
-  // init();
+  init();
 
 
     $(document).ready(function(){
@@ -214,6 +214,6 @@ function setMsgPosition(obj,msg,direction){
 
     });
 
-    exports.validate = validate;
+    module.exports.validate = validate;
 
 });
