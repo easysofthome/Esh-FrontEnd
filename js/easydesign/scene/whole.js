@@ -4,10 +4,14 @@ define(function (require, exports, module) {
 
     $(document).ready(function () {
       $('.Collapse').hide();
-      $('.flowlist .flowerimg').bind('click',function(e){
-      var url = '/html/easydesign/scene/viewScene.html';
-      window.open(url);
-    });
+      if($('.flowlist a').attr('href')=="#"||!($('.flowlist a').attr('href'))){
+        $('.flowlist .flowerimg').bind('click',function(e){
+          var url = '/html/easydesign/scene/viewScene.html';
+          window.open(url);
+        });
+      }
+
+
   });
 
 });
