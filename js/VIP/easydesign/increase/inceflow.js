@@ -204,7 +204,7 @@ function setMsgPosition(obj,msg,direction){
 
 
     //加载表单验证函数
-  init();
+  //init();
 
 
     $(document).ready(function(){
