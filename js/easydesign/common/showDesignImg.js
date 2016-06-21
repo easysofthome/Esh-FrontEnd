@@ -202,7 +202,8 @@ define(function (require, exports, module) {
 
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
-    var baseURL = $('hidAjaxUrl').val();
+    var baseURL = $('#hidAjaxUrl').val();
+    var curImgUrl = $('#hidCurrentImgUrl').val();
    // initPage(objJson);
     $.ajax({
       type: 'post',
@@ -210,6 +211,7 @@ define(function (require, exports, module) {
       data: '' ,
       dataType: 'json',
       success: function(data){
+        data.CurrentImgUrl= curImgUrl;
         initPage(data);
       },
       error : function() {

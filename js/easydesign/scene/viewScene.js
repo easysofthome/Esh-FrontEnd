@@ -27,8 +27,10 @@ define(function (require, exports, module) {
 
     //获取图片的原始尺寸
 
-    objImg.w = objJson.objFabricImg_full[index].width;
-    objImg.h = objJson.objFabricImg_full[index].height;
+    // objImg.w = objJson.objFabricImg_full[index].width;
+    // objImg.h = objJson.objFabricImg_full[index].height;
+    objImg.w=1580;
+    objImg.h=877;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     var options = "panorama="+objJson.objFabricImg_full[index].src+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
 
@@ -42,40 +44,40 @@ define(function (require, exports, module) {
     var winH = $(window).height();
     var winW = $(window).width();
 
-    var w = image.w;
-    var h = image.h;
-    var l_w_ratio = h/w;
-    var w_l_ratio = w/h;
+    // var w = image.w;
+    // var h = image.h;
+    // var l_w_ratio = h/w;
+    // var w_l_ratio = w/h;
     var leftSide_w = $(leftSide).width();
 
-    if($(leftSide).css('display') == 'none'){
-        leftSide_w = 0;
-    }
+    // if($(leftSide).css('display') == 'none'){
+    //     leftSide_w = 0;
+    // }
 
-    if(h>winH&&l_w_ratio>=1){
-        h = winH;
-        w = winH*w_l_ratio;
+    // if(h>winH&&l_w_ratio>=1){
+    //     h = winH;
+    //     w = winH*w_l_ratio;
 
-    }else if(w>winW&&l_w_ratio<=1){
+    // }else if(w>winW&&l_w_ratio<=1){
 
-        w = winW;
-        h = winW*l_w_ratio;
-    }
+    //     w = winW;
+    //     h = winW*l_w_ratio;
+    // }
 
-    var tmpTop = 0;
-    var tmpLeft =0;
+    // var tmpTop = 0;
+    // var tmpLeft =0;
 
-    if((winW-leftSide_w-w)>0){
-        tmpLeft = (winW-leftSide_w-w)/2;
-    }else{
-      w = w-leftSide_w;
-    }
+    // if((winW-leftSide_w-w)>0){
+    //     tmpLeft = (winW-leftSide_w-w)/2;
+    // }else{
+    //   w = w-leftSide_w;
+    // }
 
-     if((winH-60-h)>0){
-        tmpTop = (winH-60-h)/2;
-    }else{
-       h = h-65;
-    }
+    //  if((winH-60-h)>0){
+    //     tmpTop = (winH-60-h)/2;
+    // }else{
+    //    h = h-65;
+    // }
 
     //$('#j-side-cnt').height(winH);
 
@@ -86,8 +88,8 @@ define(function (require, exports, module) {
 
     $(parentDiv).css({'top':0,'left':0});
     $(parentDiv).css({'width':'100%','height':'100%'});
-
-    $('#panoramaShow').css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
+    console.log(winW);
+    $('#panoramaShow').css({'top':10,'left':10,'width':winW-leftSide_w-20,'height':winH-80});
 
   }
 
