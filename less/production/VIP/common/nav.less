@@ -114,13 +114,22 @@ ul.navR
     }
     &.nav-more{
       cursor: pointer;
-      i.service{
+      p{margin-right:2px;}
+      i{
         position: absolute;
         top: 47px;
         right: 22px;
         .sprite(@service_open);
         .icon-VIP-common-nav;
         .fixIe6pngTransparent('/images/icon/VIP/common/nav/service_open.png');
+      }
+      i.service-open{
+        position: absolute;
+        top: 47px;
+        right: 22px;
+        .sprite(@service_close);
+        .icon-VIP-common-nav;
+        .fixIe6pngTransparent('/images/icon/VIP/common/nav/service_close.png');
       }
       ul{
         display: none;

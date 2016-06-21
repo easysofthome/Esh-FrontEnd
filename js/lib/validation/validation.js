@@ -118,15 +118,15 @@ define(function () {
 						$.extend(existingRules, $.validator.normalizeRule(argument));
 						// Remove messages from rules, but allow them to be set separately
 						delete existingRules.messages;
-						staticRules[element.name] = existingRules;
+						staticRules[element.id] = existingRules;
 						if (argument.messages) {
-							settings.messages[element.name] = $.extend(settings.messages[element
-								.name], argument.messages);
+							settings.messages[element.id] = $.extend(settings.messages[element
+								.id], argument.messages);
 						}
 						break;
 					case "remove":
 						if (!argument) {
-							delete staticRules[element.name];
+							delete staticRules[element.id];
 							return existingRules;
 						}
 						filtered = {};
@@ -244,15 +244,14 @@ define(function () {
 				}
 			},
 			onfocusout: function (element, event) {
-
-				if (!this.checkable(element) && (element.name in this.submitted || !
+				if (!this.checkable(element) && (element.id in this.submitted || !
 						this.optional(element))) {
 					this.element(element);
 				}
 				var iserror = $(element).parent().hasClass('form-item-error');
 				var issuccess = $(element).parent().hasClass('form-item-valid');
 				if (!iserror) {
-					if (element.name == 'pwd' && element.value !== '') {
+					if (element.id == 'pwd' && element.value !== '') {
 						return;
 					}
 					$(element).parent().next().find('span').html('');
@@ -265,7 +264,7 @@ define(function () {
 						$(element).parent().next().find('span').html('');
 					}
 				}
-				if (element.name == 'phone') {
+				if (element.id == 'phone') {
 					var element = $(element);
 					if (element.data("isbind") == "unbind" && !iserror && $(element).val()!='') {
 						element.parent().addClass('phone-binded');
@@ -275,7 +274,7 @@ define(function () {
 						element.parent().removeClass('phone-binded');
 					}
 				}
-				if (element.name == 'authCode') {
+				if (element.id == 'authCode') {
 					$('#authCode').parent().removeClass('form-item-valid');
 				}
 			},
@@ -308,10 +307,10 @@ define(function () {
 			},
 			onclick: function (element) {
 				// Click on selects, radiobuttons and checkboxes
-				if (element.name in this.submitted) {
+				if (element.id in this.submitted) {
 					this.element(element);
 					// Or option elements, check parent select in that case
-				} else if (element.parentNode.name in this.submitted) {
+				} else if (element.parentNode.id in this.submitted) {
 					this.element(element.parentNode);
 				}
 			},
@@ -359,7 +358,9 @@ define(function () {
 			max: $.validator.format(
 				"Please enter a value less than or equal to {0}."),
 			min: $.validator.format(
-				"Please enter a value greater than or equal to {0}."),
+				"请输入大于等于{0}的数字！"),
+			gt:$.validator.format(
+				"请输入大于{0}的数字！"),
 			step: $.validator.format("Please enter a multiple of {0}.")
 		},
 		autoCreateRanges: false,
@@ -441,15 +442,15 @@ define(function () {
 					checkElement = this.validationTargetFor(cleanElement),
 					result = true;
 				if (checkElement === undefined) {
-					delete this.invalid[cleanElement.name];
+					delete this.invalid[cleanElement.id];
 				} else {
 					this.prepareElement(checkElement);
 					this.currentElements = $(checkElement);
 					result = this.check(checkElement, eventType) !== false;
 					if (result) {
-						this.invalid[checkElement.name] = false;
+						this.invalid[checkElement.id] = false;
 					} else {
-						this.invalid[checkElement.name] = true;
+						this.invalid[checkElement.id] = true;
 					}
 				}
 				// Add aria-invalid status for screen readers
@@ -475,7 +476,7 @@ define(function () {
 					}
 					// Remove items from success list
 					this.successList = $.grep(this.successList, function (element) {
-						return !(element.name in errors);
+						return !(element.id in errors);
 					});
 				}
 				if (this.settings.showErrors) {
@@ -536,8 +537,8 @@ define(function () {
 			// Note that this method assumes that you have
 			// already called `validate()` on your form
 			isValidElement: function (element) {
-				return this.invalid[element.name] === undefined ? undefined : !this.invalid[
-					element.name];
+				return this.invalid[element.id] === undefined ? undefined : !this.invalid[
+					element.id];
 			},
 			size: function () {
 				return this.errorList.length;
@@ -557,7 +558,7 @@ define(function () {
 			findLastActive: function () {
 				var lastActive = this.lastActive;
 				return lastActive && $.grep(this.errorList, function (n) {
-						return n.element.name === lastActive.name;
+						return n.element.id === lastActive.id;
 					}).length === 1 && lastActive;
 			},
 			elements: function () {
@@ -568,7 +569,7 @@ define(function () {
 					"input, select, textarea, [contenteditable]").not(
 					":submit, :reset, :image, :disabled").not(this.settings.ignore).filter(
 					function () {
-						var name = this.name || $(this).attr("name"); // For contenteditable
+						var name = this.id || $(this).attr("id"); // For contenteditable
 						if (!name && validator.settings.debug && window.console) {
 							console.error("%o has no name assigned", this);
 						}
@@ -716,12 +717,12 @@ define(function () {
 				return undefined;
 			},
 			defaultMessage: function (element, method) {
-				return this.findDefined(this.customMessage(element.name, method), this
+				return this.findDefined(this.customMessage(element.id, method), this
 						.customDataMessage(element, method),
 					// 'title' is never undefined, so handle empty string as undefined
 					!this.settings.ignoreTitle && element.title || undefined, $.validator
 						.messages[method], "<strong>Warning: No message defined for " +
-					element.name + "</strong>");
+					element.id + "</strong>");
 			},
 			formatAndAdd: function (element, rule) {
 				var message = this.defaultMessage(element, rule.method),
@@ -736,8 +737,8 @@ define(function () {
 					element: element,
 					method: rule.method
 				});
-				this.errorMap[element.name] = message;
-				this.submitted[element.name] = message;
+				this.errorMap[element.id] = message;
+				this.submitted[element.id] = message;
 			},
 			addWrapper: function (toToggle) {
 				if (this.settings.wrapper) {
@@ -839,11 +840,11 @@ define(function () {
 						}
 						$(element).attr("aria-describedby", describedBy);
 						// If this element is grouped, then assign to all elements in the same group
-						group = this.groups[element.name];
+						group = this.groups[element.id];
 						if (group) {
 							$.each(this.groups, function (name, testgroup) {
 								if (testgroup === group) {
-									$("[name='" + this.escapeCssMeta(name) + "']", this.currentForm)
+									$("[id='" + this.escapeCssMeta(name) + "']", this.currentForm)
 										.attr("aria-describedby", error.attr("id"));
 								}
 							});
@@ -884,7 +885,7 @@ define(function () {
 			validationTargetFor: function (element) {
 				// If radio/checkbox, validate first element in group instead
 				if (this.checkable(element)) {
-					element = this.findByName(element.name);
+					element = this.findByName(element.id);
 				}
 				// Always apply ignore filter
 				return $(element).not(this.settings.ignore)[0];
@@ -893,7 +894,7 @@ define(function () {
 				return (/radio|checkbox/i).test(element.type);
 			},
 			findByName: function (name) {
-				return $(this.currentForm).find("[name='" + this.escapeCssMeta(name) +
+				return $(this.currentForm).find("[id='" + this.escapeCssMeta(name) +
 				"']");
 			},
 			getStringLength:function(str){
@@ -921,7 +922,7 @@ define(function () {
 						return $("option:selected", element).length;
 					case "input":
 						if (this.checkable(element)) {
-							return this.findByName(element.name).filter(":checked").length;
+							return this.findByName(element.id).filter(":checked").length;
 						}
 				}
 				return this.getStringLength(value);
@@ -947,10 +948,10 @@ define(function () {
 					"dependency-mismatch";
 			},
 			startRequest: function (element) {
-				if (!this.pending[element.name]) {
+				if (!this.pending[element.id]) {
 					this.pendingRequest++;
 					$(element).parent().addClass(this.settings.pendingClass);
-					this.pending[element.name] = true;
+					this.pending[element.id] = true;
 				}
 			},
 			stopRequest: function (element, valid) {
@@ -959,7 +960,7 @@ define(function () {
 				if (this.pendingRequest < 0) {
 					this.pendingRequest = 0;
 				}
-				delete this.pending[element.name];
+				delete this.pending[element.id];
 				$(element).parent().removeClass(this.settings.pendingClass);
 				if (valid && this.pendingRequest === 0 && this.formSubmitted && this.form()) {
 					$(this.currentForm).submit();
@@ -1090,7 +1091,7 @@ define(function () {
 			var rules = {},
 				validator = $.data(element.form, "validator");
 			if (validator.settings.rules) {
-				rules = $.validator.normalizeRule(validator.settings.rules[element.name]) || {};
+				rules = $.validator.normalizeRule(validator.settings.rules[element.id]) || {};
 			}
 			return rules;
 		},
@@ -1232,6 +1233,10 @@ define(function () {
 			digits: function (value, element) {
 				return this.optional(element) || /^\d+$/.test(value);
 			},
+			//正整数
+			positiveInt:function (value, element) {
+				return this.optional(element) || /^[1-9]\d*$/.test(value);
+			},
 			// http://jqueryvalidation.org/minlength-method/
 			minlength: function (value, element, param) {
 				var length = $.isArray(value) ? value.length : this.getLength(value,
@@ -1259,6 +1264,10 @@ define(function () {
 			max: function (value, element, param) {
 				return this.optional(element) || value <= param;
 			},
+			gt: function (value, element, param) {
+				return this.optional(element) || value > param;
+			},
+
 			// http://jqueryvalidation.org/range-method/
 			range: function (value, element, param) {
 				return this.optional(element) || (value >= param[0] && value <= param[
@@ -1298,8 +1307,8 @@ define(function () {
 				}
 				var previous = this.previousValue(element),
 					validator, data, optionDataString;
-				if (!this.settings.messages[element.name]) {
-					this.settings.messages[element.name] = {};
+				if (!this.settings.messages[element.id]) {
+					this.settings.messages[element.id] = {};
 				}
 				param = typeof param === "string" && {
 					url: param
@@ -1315,10 +1324,10 @@ define(function () {
 				validator = this;
 				this.startRequest(element);
 				data = {};
-				data[element.name] = value;
+				data[element.id] = value;
 				$.ajax($.extend(true, {
 					mode: "abort",
-					port: "validate" + element.name,
+					port: "validate" + element.id,
 					dataType: "json",
 					data: data,
 					success: function (response) {
@@ -1333,12 +1342,12 @@ define(function () {
 							validator.prepareElement(element);
 							validator.formSubmitted = submitted;
 							validator.successList.push(element);
-							delete validator.invalid[element.name];
+							delete validator.invalid[element.id];
 							validator.showErrors();
 						} else {
 							errors = {};
-							errors[element.name] = '';
-							validator.invalid[element.name] = true;
+							errors[element.id] = '';
+							validator.invalid[element.id] = true;
 						}
 						previous.valid = valid;
 						validator.stopRequest(element, valid);

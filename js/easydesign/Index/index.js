@@ -31,6 +31,8 @@ define(function (require, exports, module) {
 
   });
 
+/////////////////////////////////////////////弹出层/////////////////////////////////////////////////
+
   $('.videoDiv').on('click',function () {
     $.layer({
         type: 2,
@@ -60,7 +62,85 @@ define(function (require, exports, module) {
   });
 
 
-  //媒体图片鼠标划过特效
+
+
+
+/////////////////////////////////////////////面料对比遮罩及点击事件/////////////////////////////////////////////////
+function fraticLayer(){
+  var zIndex = $('.twentytwenty-overlay').css('z-index');
+  //$('.twentytwenty-overlay').css({'z-index':'555'});
+  var top = $('.twentytwenty-overlay').offset().top;
+  var left = $('.twentytwenty-overlay').offset().left;
+  var width = $('.twentytwenty-overlay').width();
+  var height = $('.twentytwenty-overlay').height();
+
+$('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实面料照片</span><span>易家纺面料模拟效果</span></div></div>')
+  $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
+
+  $('#overLayer_fratic').css({'z-index':'41','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
+  $('#overLayer_fratic_top span:eq(0)').css({'width':150,'bottom':'17px','left':'20px','position':'absolute','text-align':'left','line-height': '20px'});
+  $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px','position':'absolute','text-align':'right','line-height': '20px'});
+
+
+  $('.twentytwenty-container').bind('mouseleave',function(){
+      $('#overLayer_fratic').show();
+     $('#overLayer_fratic_top').show();
+  });
+
+
+   $('#overLayer_fratic_top').bind('mouseover',function(){
+    $('#overLayer_fratic').hide();
+    $('#overLayer_fratic_top').hide();
+
+  });
+
+
+ $(".twentytwenty-handle").bind('movestart',function(){
+      $('.twentytwenty-container').unbind('click');
+ });
+
+ $(".twentytwenty-handle").bind('moveend',function(){
+  setTimeout(function(){
+      bindClickSimulationFabric();
+  }, 800);
+
+ });
+
+  bindClickSimulationFabric();
+}
+
+
+function bindClickSimulationFabric (){
+  $('.twentytwenty-container').bind('click',function(){
+      window.open('/html/easydesign/simulationFabric.html');
+  });
+}
+
+function fraticLayer_resize(){
+  var top = $('.twentytwenty-overlay').offset().top;
+  var left = $('.twentytwenty-overlay').offset().left;
+  $('#overLayer_fratic').css({'top':top,'left':left});
+  $('#overLayer_fratic_top').css({'top':top,'left':left});
+  $('#overLayer_fratic_top span:eq(0)').css({'top':'55px','left':'50px'});
+  $('#overLayer_fratic_top span:eq(1)').css({'top':'55px','right':'50px'});
+
+}
+
+/////////////////////////////////////////////易家纺设计资源库 点击切换效果///////////////////////////////
+function switchSourceLib(){
+  $('.tew_box .exp_butt li').bind('click',function(){
+      var currentIndex = $(this).index();
+      $('.tew_box .exp_butt li').removeClass('curr_li');
+      $(this).addClass('curr_li');
+      $('.tew_box .exo_conbox').hide();
+      $('.tew_box .exo_conbox').eq(currentIndex).fadeIn(500);
+  });
+}
+
+
+
+////////////////////////////////媒体图片鼠标划过特效 暂时未应用//////////////////////////////////
   $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
   $(".video_icobutt_def2").css('opacity', 0);
   $(".video_icobutt_def").hover(function(){
@@ -84,78 +164,6 @@ define(function (require, exports, module) {
  });
 
 
-//面料对比遮罩及点击事件
-function fraticLayer(){
-  var zIndex = $('.twentytwenty-overlay').css('z-index');
-  //$('.twentytwenty-overlay').css({'z-index':'555'});
-  var top = $('.twentytwenty-overlay').offset().top;
-  var left = $('.twentytwenty-overlay').offset().left;
-  var width = $('.twentytwenty-overlay').width();
-  var height = $('.twentytwenty-overlay').height();
-
-$('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实面料照片</span><span>易家纺面料模拟效果</span></div></div>')
-  $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
-
-  $('#overLayer_fratic').css({'z-index':'41','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
-  $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
-  $('#overLayer_fratic_top span:eq(0)').css({'width':150,'top':'55px','left':'50px','position':'absolute','text-align':'left'});
-  $('#overLayer_fratic_top span:eq(1)').css({'width':150,'top':'55px','right':'50px','position':'absolute','text-align':'right'});
-
-
-  $('.twentytwenty-container').bind('mouseleave',function(){
-      $('#overLayer_fratic').fadeIn();
-     $('#overLayer_fratic_top').fadeIn();
-  });
-
-
-   $('#overLayer_fratic_top').bind('mouseover',function(){
-    $('#overLayer_fratic').fadeOut();
-    $('#overLayer_fratic_top').fadeOut();
-
-  });
-
-
- $(".twentytwenty-handle").bind('movestart',function(){
-      $('.twentytwenty-container').unbind('click');
- });
-
- $(".twentytwenty-handle").bind('moveend',function(){
-  setTimeout(function(){
-      bindClickSimulationFabric();
-  }, 800);
-
- });
-
-  bindClickSimulationFabric();
-}
-
-function bindClickSimulationFabric (){
-  $('.twentytwenty-container').bind('click',function(){
-      window.open('/html/easydesign/simulationFabric.html');
-  });
-}
-
-function fraticLayer_resize(){
-  var top = $('.twentytwenty-overlay').offset().top;
-  var left = $('.twentytwenty-overlay').offset().left;
-  $('#overLayer_fratic').css({'top':top,'left':left});
-  $('#overLayer_fratic_top').css({'top':top,'left':left});
-  $('#overLayer_fratic_top span:eq(0)').css({'top':'55px','left':'50px'});
-  $('#overLayer_fratic_top span:eq(1)').css({'top':'55px','right':'50px'});
-
-}
-
-
-//易家纺设计资源库 点击切换效果
-function switchSourceLib(){
-  $('.tew_box .exp_butt li').bind('click',function(){
-      var currentIndex = $(this).index();
-      $('.tew_box .exp_butt li').removeClass('curr_li');
-      $(this).addClass('curr_li');
-      $('.tew_box .exo_conbox').hide();
-      $('.tew_box .exo_conbox').eq(currentIndex).fadeIn(500);
-  });
-}
 
 function startVideo(flashPlay){
 
@@ -213,7 +221,7 @@ function bindVideoHover(){
 }
 
 
-
+////////////////////////////////页面加载事件及页面尺寸改变事件//////////////////////////////////
 
 $(document).ready(function () {
   //bindVideoClick();

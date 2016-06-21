@@ -24,13 +24,17 @@ define(function (require, exports, module) {
     /** /登录状态的导航  */
     /** 却换中英文 **/
     $('.switch').on('click',function () {
-      if($(this).find('span').css('marginLeft') == '-33px'){
-        $(this).find('span').animate({marginLeft: '1px'},300,function () {
-          window.location.href = "./en/";
-        });
-      }else{
-        $(this).find('span').animate({marginLeft: '-33px'},300);
-      }
+      // if($(this).find('span').css('marginLeft') == '-33px'){
+      //   $(this).find('span').animate({marginLeft: '1px'},300,function () {
+      //     window.open("/html/easysofthome/English.html",'newwindow');
+      //   });
+      // }else{
+      //   $(this).find('span').animate({marginLeft: '-33px'},300);
+      // }
+      $(this).find('span').animate({marginLeft: '1px'},300,function () {
+        window.open("/html/easysofthome/English.html",'newwindow');
+        $('.switch span').animate({marginLeft: '-33px'});
+      });
     });
     /** /却换中英文 **/
     /** @type {void} 鼠标滚动增加阴影 */
@@ -45,20 +49,31 @@ define(function (require, exports, module) {
 
     });
 
-    // 收起按钮
-    var categoryHigh = 0;
+    
     $(document).ready(function () {
+      
+    });
+    var categoryHigh = 0;
+    function resetHight(){
+      // 收起按钮
+      categoryHigh = 0;
       $('.leibie').each(function(index, el) {
+       if($(this).css('display')=='none') {
+        return;
+       }
+        
         categoryHigh = categoryHigh + $(this).height() + parseInt($(this).css('margin-top'));
       });
-      if(categoryHigh < 300) $('.Collapse').hide();
-    });
+      if(categoryHigh <= 50) $('.Collapse').hide();
+    }
+
     $('.Collapse').on('click', function() {
       if($('.leibie_box').attr('show')=='true'){
-        $('.leibie_box').animate({'height':'200px'},300);
+        $('.leibie_box').animate({'height':'50px'},300);
         $('.leibie_box').attr('show','false');
         $(this).html('展开');
       }else{
+        resetHight();
         $('.leibie_box').animate({'height':categoryHigh},300);
         $('.leibie_box').attr('show','true');
         $(this).html('收起');

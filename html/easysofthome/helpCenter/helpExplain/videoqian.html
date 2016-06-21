@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link href="/css/production/common/video-js.min.css" rel="stylesheet">
+  <link href="/js/lib/videojs/video-js.min.css" rel="stylesheet">
    <link href="/css/production/common/position.css" rel="stylesheet">
 
 
@@ -11,8 +11,8 @@
 <body>
 
   <video id="my-video" class="video-js" controls preload="auto" width="805px" height="448px"
-  poster="../../../../images/production/common/MY_VIDEO_POSTER.jpg" data-setup="{}">
-    <source src="../../../common/cpsj.mp4" type='video/mp4'>
+  poster="/images/production/common/MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src="/video/cpsj.mp4" type='video/mp4'>
 
     <p class="vjs-no-js">
       您的浏览器版本过低，为了顺利观看视频，请升级浏览器
@@ -24,7 +24,7 @@
 
   <script src="/js/common/seajs/seajs-css.js"></script>
   <script src="/js/rootConfig.js"></script>
-  <script>seajs.use('/js/common/video.min.js');</script>
+  <script>seajs.use('/js/lib/videojs/video.min.js');</script>
 
 </body>
 </html>

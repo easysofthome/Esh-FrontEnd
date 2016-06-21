@@ -1,9 +1,0 @@
-@charset "utf-8";
-/* prettyCheckbox */
-label.radio .holder{height:62px;background:url(../../images/production/yijingjia/radio.gif) 0 -1px no-repeat;}
-label.checked .holder,label.checked:hover .holder{top:-42px!important;}
-label.list{float:left;clear:left;margin:0 0 5px 0;}
-label.inline{float:left;margin:0 10px 0 0;}
-input.hiddenCheckbox{position:absolute;left:-10000px;}
-label.prettyCheckbox .holderWrap{display:block;float:left;position:relative;margin-right:5px;overflow:hidden;}
-label.prettyCheckbox .holder{display:block;position:absolute;top:0;left:0;}

@@ -260,12 +260,12 @@ define(function (require, exports, module) {
     function bindClick_countdown(waitColdeClass,id,startNum,endNum,endText,phoneId,callback){
         $("#"+id).bind("click",function(){
             if(phoneId){
-            $("#"+phoneId).trigger("focus");
-            $("#"+phoneId).trigger("focusout");
-            if($("#"+phoneId).parent().find('.input-tip .error').text().length>0){
+               // $("#"+phoneId).trigger("focus");
+                //$("#"+phoneId).trigger("focusout");
+                if(!$("#"+phoneId).valid()){
 
-                return;
-            }
+                    return;
+                }
 
 
         }
@@ -279,9 +279,59 @@ define(function (require, exports, module) {
         $("input:checkbox[name='"+checkboxName+"']").attr("checked",flag);
     }
 
-    //验证正数 不包含0
+    //验证正数 不包含0、负数
     function validatePositiveNum(value){
         var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
+        return reg.test(value);
+    }
+     //验证数字包含负数 0
+    function validateNum(value){
+        var reg = new RegExp("^[\-]?[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+     //验证数字 不包含负数 包含0、整数、小数
+    function validateNum_plus(value){
+        var reg = new RegExp("^[0-9]+\.{0,1}[0-9]*$");
+        return reg.test(value);
+    }
+
+    //验证数字 可以是负数 小数 正数 ,自定义小数位数
+    function validateNumPointNum(value,pointNum){
+        var reg = eval('/^[\-]?[0-9]+\.{0,1}[0-9]{0,'+pointNum+'}$/');
+        return reg.test(value);
+    }
+
+    //验证数字 可以 小数 正数 ,自定义小数位数
+    function validateNumPointNum_plus(value,pointNum){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
+        if (isNaN(value)) {
+            return false;
+        }
+
+        var s = value.toString();
+        if(s.indexOf('.')>0){
+            if(((s.length-1)-s.indexOf('.'))>pointNum){
+                return false;
+            }
+        }
+        if(!reg.test(value)){
+
+            return false;
+        }
+
+        return true;
+    }
+
+    //验证数字 可以是负数 小数 正数
+    function validateAllNum(value){
+        var reg = new RegExp("^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[0-9][0-9]*))$");
+        return reg.test(value);
+    }
+
+    //大于0的整数
+    function validatePositiveInt(value){
+        var reg = new RegExp("^[1-9]\d*$");
         return reg.test(value);
     }
 
@@ -313,6 +363,9 @@ define(function (require, exports, module) {
             errorMsg = "银行卡号长度必须在16到19之间！";
             return errorMsg;
         }
+        return errorMsg;
+
+        //暂时不进行luhm验证
         var lastNum=bankno.substr(bankno.length-1,1);//取出最后一位（与luhm进行比较）
 
         var first15Num=bankno.substr(0,bankno.length-1);//前15或18位
@@ -375,6 +428,46 @@ define(function (require, exports, module) {
         }
     }
 
+////////////////////////////////格式化书数字///////////////////////////////////////
+     //强制保留2位小数，如：2，会在2后面补上00.即2.00
+    function toDecimal2(x) {
+        var f = parseFloat(x);
+        if (isNaN(f)) {
+            return false;
+        }
+        var f = Math.floor(x*100)/100;
+        var s = f.toString();
+        var rs = s.indexOf('.');
+        if (rs < 0) {
+            rs = s.length;
+            s += '.';
+        }
+        while (s.length <= rs + 2) {
+            s += '0';
+        }
+        return s;
+    }
+
+     //如果小数位数大于2，保留2位小数，如：2.333，会即2.33 不四舍五入
+     //如果小数位数小于2，如为2.3结果仍为2.3 不强制补0 不四舍五入
+    function toKeepDecimal2(x) {
+        var f = parseFloat(x);
+        if (isNaN(f)) {
+            return false;
+        }
+        var f = Math.floor(x*100)/100;alert(f);
+        var s = f.toString();
+        var rs = s.lastIndexOf('.');
+        if (rs < 2) {
+            return x;
+        }
+        while (s.length <= rs + 2) {
+            s += '0';
+        }
+        return s;
+    }
+
+
 
 
     module.exports.selectAllOrNone_ck = selectAllOrNone_ck;
@@ -389,6 +482,18 @@ define(function (require, exports, module) {
     module.exports.bindClick_countdown = bindClick_countdown;
     module.exports.validatePositiveNum = validatePositiveNum;
     module.exports.bankCoardCheck = bankCoardCheck;
+    module.exports.validateNum = validateNum;
+    module.exports.validateNumPointNum = validateNumPointNum;
+    module.exports.validateNum_plus = validateNum_plus;
+    module.exports.validatePositiveInt = validatePositiveInt;
+    module.exports.toDecimal2 = toDecimal2;
+    module.exports.validateAllNum = validateAllNum;
+    module.exports.toKeepDecimal2 = toKeepDecimal2;
+    module.exports.validateNumPointNum_plus = validateNumPointNum_plus;
+
+
+
+
 
 
 

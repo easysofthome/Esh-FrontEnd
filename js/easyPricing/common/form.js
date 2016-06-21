@@ -5,6 +5,8 @@ define(function (require, exports, module) {
   var FancyRadioCheckBox = require('FancyRadioCheckBox');
   FancyRadioCheckBox.init();
 
+
+///////////////使用时间戳防止冒泡//////////////////////
   var evTimeStamp = 0;
   $('.lab').on('click', function() {
     var now = +new Date();

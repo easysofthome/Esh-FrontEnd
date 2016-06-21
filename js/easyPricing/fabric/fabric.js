@@ -1,9 +1,10 @@
 define(function(require, exports, module) {
     require('jquery');
+    require('js/lib/tip/jquery.poshytip');
     require('layer');
     require('spinner');
     require('customSelect');
-    require('js/lib/tip/jquery.poshytip');
+
     require('js/lib/validation/validation');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
@@ -45,11 +46,80 @@ function setMsgPosition(obj,msg,direction){
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
-    $('#warp-spinner').spinner({min:1,max:2});
-    $('#abb-spinner').spinner({min:1,max:4});
+// 经纱纬纱事件
+    $('#warp-spinner')
+      .spinner({
+        min:1,
+        max:2,
+        addEvent: function () {
+          $('#yarn-ul').append('<li class="lf yarn_para">'
+            + '<span class="lf para_tit">经纱2：</span>'
+            + '<span class="lf include"></span>'
+            + '<div class="lf" style="width: 142px;">'
+              + '<span class="clearfix ingredient" >'
+                + '<span class="lf ingredient_tit">成分</span>'
+                + '<span class="lf input_fabric">全棉纱</span>'
+              + '</span>'
+              + '<span class="clearfix thickness">'
+              + '<span class="clearfix thickness">'
+                + '<span class="lf ingredient_tit">粗细</span>'
+                + '<span class="lf input_fabric">80S</span>'
+              + '</span>'
+            + '</div>'
+            + '<div class="yarn_butt lf">选择纱线</div>'
+          + '</li>');
+          $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
+            + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="warpSpinnerNum2" class="density_input lf">'
+          );
+        },
+        cutEvent: function () {
+          $('#yarn-ul li:last').remove();
+          $('#warp_num_box input:last').poshytip('destroy');
+          $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
+
+        }
+      });
+
+    $('#abb-spinner').spinner({
+      min:1,
+      max:4,
+      addEvent:function () {
+        var num = $('#abb-ul li').length+1;
+        $('#abb-ul').append('<li class="lf yarn_para">'
+          + '<span class="lf para_tit">纬纱'+ num +'：</span>'
+          + '<span class="lf include"></span>'
+          + '<div class="lf" style="width: 142px;">'
+            + '<span class="clearfix ingredient">'
+              + '<span class="lf ingredient_tit">成分</span>'
+              + '<span class="lf input_fabric">全棉纱</span>'
+            + '</span>'
+            + '<span class="clearfix thickness">'
+              + '<span class="lf ingredient_tit">粗细</span>'
+              + '<span class="lf input_fabric">80S</span>'
+            + '</span>'
+          + '</div>'
+          + '<div class="yarn_butt lf">选择纱线</div>'
+          + '</li>');
+        $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
+          + '<input type="text" id="abbSpinnerNum'+num+'" name="abbSpinnerNum'+num+'" class="density_input lf">');
+      },
+      cutEvent:function () {
+        $('#abb-ul li:last').remove();
+        $('#abb_num_box input:last').poshytip('destroy');
+        $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
+      }
+    });
 
     $('.handle_one').click(function() {
       $(this).toggleClass('selected');
+    });
+
+    //染织方法
+    $('#dyed-method label').on('click', function() {
+
+      var index = $(this).index();
+      $('.AddItem .js-tab').hide();
+      $('.AddItem .js-tab').eq(index).show();
     });
 
 ////////////////////////////弹出层///////////////////////////////////
@@ -57,40 +127,88 @@ function setMsgPosition(obj,msg,direction){
 var startPriceLayer = {
         type: 2,
         title: false,
-        area: ['1000px', '617px'],
+        area: ['1020px', '650px'],
         border: [5, 0.3, '#000'],
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 650)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
-        iframe: {src: '../pricing/result.html'},
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/result.html'},
         success: function () {
 
         }
 
       }
 
-
-
-    $('.yarn_butt').on('click', function() {
+    // 经纱种类选择纱线
+    $('#yarn-ul').on('click', '.yarn_butt' , function() {
       $.layer({
         type: 2,
         title: false,
-        area: ['1000px', '844px'],
+        area: ['1020px', '874px'],
         border: [5, 0.3, '#000'],
         shade: [0.8, '#000'],
         shadeClose: true,
-        offset: [($(window).height() - 844)/2+'px',''],
+        offset: [($(window).height() - 874)/2+'px',''],
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
-        iframe: {src: '../pricing/storehouse.html'},
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
         success: function () {
 
         }
 
       });
     });
+
+    // 纬纱种类选择纱线
+    $('#abb-ul').on('click', '.yarn_butt' , function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1020px', '874px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 874)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+
+    //选择织造工缴工厂报价
+    $('.factoryOffer_butt').on('click', function() {
+      $.layer({
+        type: 2,
+        title: false,
+        area: ['1000px', '270px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 270)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        fix : false,
+        iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
+        success: function () {
+
+        }
+
+      });
+    });
+/////////////////////////////// 关闭引导层 ///////////////////////////////////
+function closeGuideLayer(){
+  $.pagewalkthrough('close');
+  $(document.body).css("overflow","");
+}
 
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
@@ -123,6 +241,7 @@ var startPriceLayer = {
           submitHandler: function (form) {
               //提交表单
             // formSubmit(form);
+            closeGuideLayer();
               //阻止表单提交
             $.layer(startPriceLayer);
              return false;
@@ -144,24 +263,39 @@ var startPriceLayer = {
               fabricWidth: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               warpSpinnerNum1: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               warpSpinnerNum2: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               abbSpinnerNum1: {
                   number:true,
                   required: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               abbSpinnerNum2: {
+                  number:true,
+                  required: true,
+                  maxlength:10,
+                  gt:0
+              },
+              abbSpinnerNum3: {
+                  number:true,
+                  required: true,
+                  maxlength:10
+              },
+              abbSpinnerNum4: {
                   number:true,
                   required: true,
                   maxlength:10
@@ -169,19 +303,23 @@ var startPriceLayer = {
               exchangeRate: {
                   required: true,
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice1: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice2: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               },
               factoryPrice3: {
                   number: true,
-                  maxlength:10
+                  maxlength:10,
+                  gt:0
               }
           },
           messages: {
@@ -191,25 +329,35 @@ var startPriceLayer = {
                   maxlength: icons.error + '面料门幅值过长！'
               },
               warpSpinnerNum1: {
-                  number: icons.error + '第一个经密值只能是数字！',
-                  required: icons.error + '请输入第一个经密值！',
+                  number: icons.error + '经密值只能是数字！',
+                  required: icons.error + '请输入经密值！',
                   maxlength: icons.error + '经密值过大！'
               },
               warpSpinnerNum2: {
-                  number: icons.error + '第二个经密值只能是数字！',
-                  required: icons.error + '请输入第二个经密值！',
+                  number: icons.error + '经密值只能是数字！',
+                  required: icons.error + '请输入经密值！',
                   maxlength: icons.error + '经密值过大！'
 
               },
               abbSpinnerNum1: {
-                  number: icons.error + '第一个纬密值只能是数字！',
-                  required: icons.error + '请输入第一个经密值！',
-                  maxlength: icons.error + '经密值过大！'
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
               },
               abbSpinnerNum2: {
-                  number: icons.error + '第二个纬密值只能是数字！',
-                  required: icons.error + '请输入第二个经密值！',
-                  maxlength: icons.error + '经密值过大！'
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
+              },
+              abbSpinnerNum3: {
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
+              },
+              abbSpinnerNum4: {
+                  number: icons.error + '纬密值只能是数字！',
+                  required: icons.error + '请输入纬密值！',
+                  maxlength: icons.error + '纬密值过大！'
               },
               exchangeRate:{
                   required: icons.error + '请输入汇率！',
@@ -234,6 +382,18 @@ var startPriceLayer = {
   }
 
 
+//核价方式：选择易家纺工缴库核价   选择工厂报价核价
+$(document).ready(function(){
+  $('.factoryOffer-box').hide();
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('.factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('.factoryOffer-box').show();
+  });
+
+
+});
 
 
 init();

@@ -1,8 +1,14 @@
 define(function (require, exports, module) {
   require('jquery');
 
-  var screenH = $(window).height();
+  var screenH;
   $(document).ready(function () {
+    screenH = $(window).height();
+    setHeight(screenH);
+  });
+
+  $(window).resize(function () {
+    screenH = $(window).height();
     setHeight(screenH);
   });
 
@@ -20,8 +26,10 @@ define(function (require, exports, module) {
   }
 
   $('.nav-more').hover(function() {
+    $(this).find('i').toggleClass('service-open');
     $(this).find('ul').slideDown(100);
   }, function() {
+    $(this).find('i').toggleClass('service-open');
     $(this).find('ul').slideUp(100);
   });
 

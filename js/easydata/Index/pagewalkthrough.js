@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
-  var quickPanel = require('js/common/quickPanel');
+  require('js/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  var quickPanel = require('js/common/quickPanel/quickPanel');
 
 
   //检验用户身份
@@ -117,7 +117,8 @@ define(function (require, exports, module) {
           $(".module-ul1").find('li').eq(0).css({'z-index':'2','height':'440px','color':'#ffffff','background-color':'#3CA1D7'});
           $(".module-ul1").find('li').eq(0).find('a').css({'color':'#ffffff','border':'1px solid #ffffff','display':'block'});
           $(".module-ul2").find('li').eq(1).css({'z-index':'0'});
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
+          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-image': 'url(/images/production/easydata/modSearchOn.png)'});
+          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '0px'});
 
           $(".module-ul1").find('li').eq(0).unbind('hover');
 
@@ -129,28 +130,24 @@ define(function (require, exports, module) {
          $(".module-ul1").find('li').eq(0).removeAttr('style');
          $(".module-ul1").find('li').eq(0).find('a').removeAttr('style');
          $(".module-ul1").find('li').eq(0).css({'z-index':'1','height':'210px'});
+         $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '0px'});
+         $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-image': 'url(/images/production/easydata/modSearch.png)'});
 
-          $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
           //重新绑定鼠标滑过特效
           $('[control=false] li a').css("display","block");
-          $('[control=true] li').hover(
+          $('.module-wrapper .module-ul1 .module-li1').hover(
             function() {
               $(this).stop().css('z-index','2').animate({'height':'440px'},500);
-              $(this).find('a').stop().delay(300).fadeIn();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1267px'});
+              $(this).find('a').fadeIn(300);
+              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-image': 'url(/images/production/easydata/modSearchOn.png)'});
             },
             function () {
               $(this).stop().css('z-index','1').animate({'height':'210px'},300);
-              $(this).find('a').stop().fadeOut();
-              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-position': '-4px -1159px'});
+              $(this).find('a').fadeOut();
+              $('.module-wrapper .module-ul1 .module-li1 .icon-1').css({'background-image': 'url(/images/production/easydata/modSearch.png)'});
             }
           );
-          $('.module-ul li a').hover(
-            function() {
-              $(this).fadeOut().fadeIn(300);
-            },function () {
-            }
-          );
+
 
       }
 

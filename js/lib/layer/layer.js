@@ -300,6 +300,7 @@ $, win, ready = {
         } else {
             that.offsetTop = parseFloat(config.offset[0] || 0) / 100 * win.height();
         }
+        if(that.offsetTop<0){that.offsetTop=0;}
         that.offsetTop = that.offsetTop + config.border[0] + (config.fix ? 0 : win.scrollTop());
         if (config.offset[1].indexOf("px") != -1) {
             that.offsetLeft = parseFloat(config.offset[1]) + config.border[0];
@@ -628,7 +629,7 @@ $, win, ready = {
     Class.pt.callback = function () {
         var that = this, layerE = that.layerE, config = that.config, dialog = config.dialog;
         that.openLayer();
-        that.config.success(layerE);
+        that.config.success(layerE,that.index);
         layer.ie6 && that.IE6(layerE);
 
         layerE.find('.xubox_close').on('click', function () {
@@ -650,11 +651,30 @@ $, win, ready = {
             });
         }
 
+        //手动添加功能 鼠标处于灰色区域时，弹出提示框 依赖于 poshytip插件
+        var clickCloseTip = {
+                  content: '点击灰色区域，关闭弹出框',
+                  alignTo:'cursor',
+                  slide: false,
+                  followCursor:true,
+                  showOn:'hover',
+                  zIndex:layer.zIndex,
+                  className: 'tip-violet',
+                  fade:false,
+                  showTimeout:0,
+                  hideTimeout:0,
+                  hide_timeOut:true
+
+                };
 
         if (that.config.shadeClose) {
             $('#xubox_shade' + that.index).on('click', function () {
+                $('#xubox_shade' + that.index).poshytip('destroy');
                 layer.close(that.index);
             });
+
+            //灰色区域点击关闭 提示
+            $('#xubox_shade' + that.index).poshytip(clickCloseTip);
         }
 
         //最小化

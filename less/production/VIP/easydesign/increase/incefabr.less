@@ -11,7 +11,6 @@
   margin-left: 15px;
   line-height: 40px;
 }
-
 .fabricbox{
   width: 1200px;
   margin:0 auto;
@@ -34,6 +33,7 @@
     font-size: 18px;
     color:#333333;
     margin-left: 76px;
+    padding-bottom: 10px;
   }
 
   .title_name,.title_density,.yarn_tit,.para_tit,.ingredient_tit,.AddItem_tit,.zonal_tit{
@@ -58,7 +58,19 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.long_input,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.fabric_money{
+  .keyword-box{
+    border: 0;
+    padding: 0;
+    .title_name{
+      margin-left: 32px;
+    }
+    .Single_box{
+      width: 920px;
+    }
+  }
+  .input_fabric,.dropdown_box,.fabric_width,.long_input,
+  .width_company_none,.width_company,.reducebox,
+  .reduceiput,.increasebox,.density_input,.fabric_money,.handle_one{
     border:1px solid #cdcfd1;
     .border-radius(5px);
     color: #333333;
@@ -105,6 +117,7 @@
     cursor: pointer;
 
   }
+
   .Locate,.handle_one{
     position: relative;
   }
@@ -136,7 +149,7 @@
   .handle_top{
     margin-top: 10px;
   }
-  .handle_one:hover{
+  .handle_one:hover,.selected{
     border: 1px solid #3ca1d7;
   }
   .handle_one:hover .select{
@@ -144,6 +157,7 @@
   }
 
   .yarn_butt{
+    cursor: pointer;
     display:inline-block;
     width: 90px;
     padding:0;
@@ -155,7 +169,6 @@
     font-style: 16px;
     .border-radius(5px);
     margin: 40px 0 0 10px;
-
   }
   .density_input{
     width: 68px;
@@ -244,15 +257,22 @@
   }
   .Single_box{
     font-size: 14px;
-    margin-top:10px;
   }
   .radio_rg{
     padding-right:20px;
+  }
+  .label_radio{
+    margin-top: 10px;
   }
   .radio_post{
     margin:14px 4px 0 0;
     display: inline-block;
     *margin-top:10px;
+  }
+  .checkbox_post{
+    width: 18px;
+    height: 18px;
+    margin:14px 4px 0 0;
   }
   .yarntype_box,.wefttype_box{
     width: 1102px;
@@ -264,11 +284,8 @@
     margin:0 auto;
     border-top:none;
   }
-  .yarndensity_box,.unit_box{
+  .yarndensity_box{
     padding-top: 20px;
-  }
-  .unitbox_wid{
-    width: 1020px;
   }
 
   .yarndensity_box
@@ -284,9 +301,13 @@
   .fabr_prompt{
     margin-top: 10px;
   }
+  ul#abb-ul,ul#yarn-ul{
+    padding-left: 10px;
+  }
   .yarn_para,.yarn_para2{
     width: 350px;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     background-color: #f7f7f7;
     height: 130px;
     .border-radius(5px);
@@ -308,21 +329,18 @@
     width: 240px;
   }
   .butt_box{
-    width: 320px;
     margin: 30px auto 0 auto;
+    text-align: center;
   }
   .butt_pricing,.butt_return{
     width: 150px;
-    line-height: 40px;
-    font-size: 16px;
-    color:#fff;
-    text-align: center;
-    background-color: #929698;
-     .border-radius(5px);
-
+    margin: 0 10px;
+    display: inline-block;
+    .button-variant(#fff; #929698; #929698);
+    .button-size(0; 0; 16px; 40px; 5px);
   }
   .butt_return{
-    background-color: #3ca1d7;
+    .button-variant(#fff; #3ca1d7; #3ca1d7);
   }
 
 
@@ -435,6 +453,10 @@
     left: 130px;
     font-size: 15px;
     color: #888;
+    height: 22px;
+    border: 0px;
+    text-align: left;
+    margin-left: 2px;
   }
 }
 
@@ -451,5 +473,6 @@
   }
 }
 
-
-
+.checkboxPad{
+  padding: 12px 12px 0px 0px;
+}

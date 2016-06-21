@@ -7,13 +7,17 @@
   <link href="/css/production/easyPricing/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div id="fixLeftMid" class="floatPanel">
+  <div class="top_arrow_div"><span id="quickToTop" class="top_arrow"></span></div>
+  <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
+</div>
   @@include('common/top.html')
   @@include('easyPricing/header.html')
   <div class="index-banner-box">
     <div class="banner-wrapper">
       <ul class="clearfix banner-box">
         <li class="banner-li">
-          <a href="#">
+          <a>
             <img src="/images/production/easyPricing/banner.png"   ></a>
         </li>
         <li class="banner-li">
@@ -46,7 +50,7 @@
     </div>
     <p class="sim_exp">实时更新原材料价格、海运费价格、货币汇率，工厂备书各类工缴价格，保障核价的精准度。</p>
     <ul class="coreprice clearfix">
-      <li class="lf">
+      <li class="lf" id="corepriceGuide">
         <p class="coreprice_tit">面料核价</p>
         <span class="coreprice_tit_ico1"></span>
         <div class="description">
@@ -121,7 +125,7 @@
     </div>
     <p class="sim_exp">业务太忙来不及报价？成本不明不敢乱报价？推广不力没人问报价？管理困难理不清报价？</p>
     <p class="sim_exp2">哪用得着这么麻烦，有了易家纺智能报价助理，这些都不再是问题！</p>
-    <a href="#" class="simulation_butt">立即使用</a>
+    <a href="/html/VIP/easyPricing/workersPay/Fabric.html" class="simulation_butt">立即使用</a>
     <div class="intelligent_infbox clearfix">
       <span class="lf computer"></span>
       <div class="lf">
@@ -165,13 +169,22 @@
 
   <!--   <a href="#" class="video_butt">立即播放</a> -->
     <div class="video_comp" >
-     <iframe id="playVideo" name="" src="video.html" width="750px" height="420" marginheight="0" marginwidth="0" style="border:0px" frameborder="0" scrolling="no"></iframe>
+      <iframe id="playVideo" name="" src="video.html" width="750px" height="420" marginheight="0" marginwidth="0" style="border:0px;margin-top: 47px;" frameborder="0" scrolling="no"></iframe>
 
-        </div>
+    </div>
 
     </div>
   </div>
+  <!--引导层-->
+  <div id="walkthrough">
+    <div id="guide_step1" style="display:none;">
+    <p class="tooltipTitle">我要核价</p>
+        <p>点击我要核价，获取更精准的面料核价数据</p>
+        <br>
+        <a href="javascript:;" class="close-step" style="float:right;">跳过引导页</a>
+    </div>
+  </div>
   @@include('easyPricing/common/footer.html')
-  <script>seajs.use('js/easyPricing/Index/index',function(){ });</script>
+  <script>seajs.use(['js/easyPricing/Index/index','js/easyPricing/Index/pagewalkthrough']);</script>
 </body>
 </html>

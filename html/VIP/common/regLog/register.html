@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|注册</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/RegLog/registered.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/common/autocomplete/autocomplete.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -50,7 +51,7 @@
         <div class="clearfix padding">
           <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
           <div class="lf input_left2">
-            <input type="text" class="input_codes" id="authCode" name="AuthCode">
+            <input type="text" class="input_codes" errorMsgPosition="rightBottom" id="authCode" name="AuthCode">
             <a href="javascript:void(0)" class="butt_cides lf" id="getValidateCode">获取验证码</a>
             <span class="validateCodeTip">活码已发送<br/>请查收(2小时有效)</span>
             <div class="input-tip clearfix"></div>
@@ -101,17 +102,17 @@
           <span class="men_tit lf">身　　　份：</span>
           <div class="lf input_left identity">
             <label class="lf">
-              <input type="radio" name="Identity" value="1" checked="checked" class="radio_posi"/>工厂
+              <input type="radio" id="factory" name='identity' value="1" checked="checked" class="radio_posi"/>工厂
               <div class="input-tip" style="display:inline-block"></div>
             </label>
             <label class="lf">
-              <input type="radio" name="Identity" value="1" class="radio_posi"/>贸易商
+              <input type="radio" id="trafficker" name='identity' value="1" class="radio_posi"/>贸易商
             </label>
             <label class="lf">
-              <input type="radio" name="Identity" value="1" class="radio_posi"/>进口商
+              <input type="radio" id="importer" name='identity' value="1" class="radio_posi"/>进口商
             </label>
             <label class="lf">
-              <input type="radio" name="Identity" value="1" class="radio_posi"/>零售商
+              <input type="radio" id="stockist" name='identity' value="1" class="radio_posi"/>零售商
             </label>
           </div>
         </div>
@@ -122,42 +123,70 @@
             <span class="lf words">类</span>
             <span class="lf words2">型：</span>
           </span>
-          <div class="lf input_left">
-            <label class="radio_spacing lf chec_spacing">
-              <input type="radio" name="CompanyType" value="1" checked="checked" class="lf chec_posi">纺纱厂
-              <div class="input-tip" style="display:inline-block"></div>
+
+          <div class="lf input_left marginB20" id="factory_sel">
+           <label class="radio_spacing lf service_marg">
+              <input type="radio" name="factory" value="4" checked="true" class="lf chec_posi">纱线染厂
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="radio" name="CompanyType" value="2" class="lf chec_posi">织布厂
+              <input type="radio" name="factory" value="1" class="lf chec_posi">纺纱厂
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="radio" name="CompanyType" value="3" class="lf chec_posi">成品厂
+              <input type="radio" name="factory" value="2" class="lf chec_posi">织布厂
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="radio" name="CompanyType" value="4" class="lf chec_posi">后处理厂
+              <input type="radio" name="factory" value="3" class="lf chec_posi">成品厂
+            </label>
+             <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="factory" value="4" class="lf chec_posi">后处理厂
+            </label>
+             <label class="radio_spacing lf service_marg">
+              <input type="radio" name="factory" value="3" class="lf chec_posi">印花厂
+            </label>
+             <label class="radio_spacing lf service_marg">
+              <input type="radio" name="factory" value="1" class="lf chec_posi">绣花厂
+            </label>
+             <label class="radio_spacing lf service_marg">
+              <input type="radio" name="factory" value="2" class="lf chec_posi">辅料厂
+            </label>
+             <label class="radio_spacing lf service_marg">
+              <input type="radio" name="factory" value="1" class="lf chec_posi">面料染厂
             </label>
             <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="1" class="lf chec_posi">绣花厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="2" class="lf chec_posi">辅料厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="3" class="lf chec_posi">印花厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="4" class="lf chec_posi">纱线染厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="1" class="lf chec_posi">面料染厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="radio" name="CompanyType" value="2" class="lf chec_posi">包装材料厂
+              <input type="radio" name="factory" value="2" class="lf chec_posi">包装材料厂
             </label>
           </div>
+
+          <div class="lf input_left none marginB20" id="trafficker_sel">
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="trafficker" value="1" checked="checked" class="lf chec_posi">面料
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="trafficker" value="2" class="lf chec_posi">成品
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="trafficker" value="3" class="lf chec_posi">辅料及包装材料
+            </label>
+          </div>
+
+          <div class="lf input_left none marginB20" id="importer_sel">
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="importer" value="1" checked="checked" class="lf chec_posi">面料
+            </label>
+            <label class="radio_spacing lf chec_spacing">
+              <input type="radio" name="importer" value="2" class="lf chec_posi">成品
+            </label>
+        </div>
+
+        <div class="lf input_left none marginB20" id="stockist_sel">
+            <label class="radio_spacing lf chec_spacing">
+              零售商暂无企业类型
+            </label>
+        </div>
+
         </div>
         <div class="clearfix agree">
-          <input type="checkbox" name="AgreeProtocol" value="2" class="lf check_agree">
+          <input type="checkbox" name="AgreeProtocol" errorMsgPosition="bottom" value="2" class="lf check_agree">
           <span class="lf check_agreetext">我已阅读并同意</span>
           <a href="#" class="bule_color lf" id="protocol">《易家纺用户注册协议》</a>
           <a href="#" class="bule_color lf" id="promise">《隐私承诺》</a>

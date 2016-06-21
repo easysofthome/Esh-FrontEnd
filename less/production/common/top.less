@@ -44,6 +44,9 @@
     &:hover
     {
       color: #3ca1d7;
+      i{
+        color: #fff;
+      }
     }
   }
   .user
@@ -59,6 +62,15 @@
     .login
     {
       margin-left: -10px;
+      #username{
+        i{
+          padding: 0px 11px;
+          background: #f90;
+          font-style: normal;
+          border-radius: 9px;
+          margin-left: 4px;
+        }
+      }
       a
       {
         margin-left: 10px;
@@ -95,6 +107,9 @@
     {
       .sprite(@icon-ser,inline-block);
       .fixIe6pngTransparent('/images/icon/common/icon-ser.png');
+    }
+    .butt_right{
+        margin-right: 20px;
     }
   }
   .menu

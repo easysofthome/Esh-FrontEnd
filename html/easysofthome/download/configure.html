@@ -61,7 +61,7 @@
 
     <div class="btn">
       <a class="btn_blue" href="#">立即下载</a>
-      <a class="btn_red" href="#">暂时不下载</a>
+      <a class="btn_red" target="_blank" href="/html/easydesign/simulationFabric.html">暂不下载</a>
     </div>
   </div>
  <script src="/js/lib/jquery/jquery.js"></script>
@@ -69,10 +69,6 @@
     var index = parent.layer.getFrameIndex(window.name);
     $('.close,.btn_close').click(function(){
       parent.layer.close(index);
-    });
-
-    $('.btn a').bind('click',function(){
-       parent.layer.close(index);
     });
   </script>
 </body>

@@ -6,20 +6,16 @@
     <link rel="stylesheet" href="/css/production/easydata/global.css">
     <link href="/css/production/easydata/searchAbroad/search.css" rel="stylesheet" type="text/css"/>
     <link href="/css/production/easydata/searchAbroad/sel-pro.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/production/common/pagewalkthrough.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
     <!-- 头部、导航 -->
     @@include('common/top.html')
     @@include('easydata/header1.html')
-    <div id="fixLeftMid" class="floatPanel">
-      <span class="bg">
-        <a class="arrow" id="quickToTop"></a>
-        <a title="点击可打开引导页" id="userGuide" class="userGuide">引导页</a>
-        <a class="arrow" id="quickToBottom"></a>
-      </span>
-
+    <!-- 右侧快捷面板 -->
+   <div id="fixLeftMid" class="floatPanel">
+    <div class="top_arrow_div"><span id="quickToTop" class="top_arrow"></span></div>
+    <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
     </div>
     <div class="main_box distance_top">
       <!-- 搜索 -->
@@ -173,9 +169,7 @@
                   </div>
                 </li>
                 <li>
-                  <div class="level3-tit has-child">
-                    棉制毛巾 <i></i>
-                  </div>
+                  <div class="level3-tit has-child">棉制毛巾 <i></i></div>
                   <div class="level3">
                     <span class="final">皮革面料</span>
                     <span class="final">针织及钩编面料</span>
@@ -186,7 +180,16 @@
                   <div class="level3-tit final">浴巾</div>
                 </li>
                 <li>
-                  <div class="level3-tit final">羊毛制毛巾</div>
+                  <div class="level3-tit has-child">羊毛制毛巾<i></i></div>
+                  <div class="level3">
+                    <span class="final">皮革面料</span>
+                    <span class="final">针织及钩编面料</span>
+                    <span class="final">针织面料</span>
+                    <span class="final">针织及钩编面料</span>
+                    <span class="final">针织面料</span>
+                    <span class="final">针织及钩编面料</span>
+                    <span class="final">针织面料</span>
+                  </div>
                 </li>
               </ul>
               <ul>

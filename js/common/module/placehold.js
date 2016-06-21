@@ -17,7 +17,7 @@ define(function (require, exports, module) {
   });
 
   function init(obj) {
-    $('.placeholder,'+obj).on('click focus',function  () {
+    $('span.placeholder,'+obj).on('click focus',function  () {
       if($(this).hasClass('placeholder')){
         $(this).hide();
         $(this).siblings('input').focus();

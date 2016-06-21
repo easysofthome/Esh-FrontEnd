@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     require('js/lib/tip/jquery.poshytip');
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
     var placehold = require('js/common/module/placehold');
-    var cus = require('customSelect');
+    require('customSelect');
 
     require('js/lib/validation/validation');
     placehold.init('input');
@@ -17,9 +17,9 @@ define(function(require, exports, module) {
     FancyRadioCheckBox.init();
 
     //选中样式
-    $('.handle_one').click(function() {
-          $(this).toggleClass('selected');
-    });
+    // $('.handle_one').click(function() {
+    //     $(this).toggleClass('selected');
+    // });
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
@@ -116,20 +116,31 @@ function setMsgPosition(obj,msg,direction){
         });
     }
 
+    function validateUpLoadImg(){
+        $($('#filePicker')[0]).poshytip('destroy');
+        if(!($('.filelist li img').attr('src'))){
+            setMsgPosition($('#filePicker')[0],'请上传花型图片！',$('#filePicker').attr("errorMsgPosition"));
+            return false;
+        }
+        return true;
+    }
 
 
 /** 表单验证 */
     var validator;
 
-    function validate() {
-        validator = form.validate({
+    function validate(callback) {
+       validator = form.validate({
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
-                //提交表单
-                formSubmit(form);
+                if(!validateUpLoadImg()){
+                    return false;
+                }
                 //阻止表单提交
-                //$.layer(startPriceLayer);
+                if(callback){
+                    callback();
+                }
                 return false;
             },
             onfocusout:function(element){
@@ -142,7 +153,7 @@ function setMsgPosition(obj,msg,direction){
               }
               return true;
             },
-            success:function(element){
+            success:function(error, element){
               $(element).poshytip('destroy');
             },
             rules: {
@@ -153,13 +164,15 @@ function setMsgPosition(obj,msg,direction){
                 typeNum_1: {
                     required: true,
                     number: true,
-                    maxlength: 10
+                    maxlength: 10,
+                    gt:0
 
                 },
                 typeNum_2: {
                     required: true,
                     number: true,
-                    maxlength: 10
+                    maxlength: 10,
+                    gt:0
 
                 },
                textareaFlowcla: {
@@ -191,6 +204,16 @@ function setMsgPosition(obj,msg,direction){
 
 
     //加载表单验证函数
-    init();
+   init();
+
+
+    $(document).ready(function(){
+         $('.butt_return').bind('click',function(){
+            form.submit();
+        });
+
+    });
+
+    exports.validate = validate;
 
 });

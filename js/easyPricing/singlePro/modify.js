@@ -46,13 +46,14 @@ function setMsgPosition(obj,msg,direction){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '439px'],
+          area: ['1020px', '450px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/export.html'},
           success: function (layero, index) {
 
@@ -71,13 +72,12 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 270)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
-
-
           }
         });
       });
@@ -92,9 +92,10 @@ function setMsgPosition(obj,msg,direction){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/productacc.html'},
           success: function (layero, index) {
 
@@ -109,13 +110,14 @@ function setMsgPosition(obj,msg,direction){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '190px'],
+          area: ['1000px', '200px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 200)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/volume.html'},
           success: function (layero, index) {
 
@@ -138,6 +140,7 @@ function setMsgPosition(obj,msg,direction){
           offset: [($(window).height() - 964)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
+          fix : false,
           iframe: {src: '../pricing/replaceFabric.html'},
           success: function (layero, index) {
 
@@ -153,20 +156,65 @@ function setMsgPosition(obj,msg,direction){
         $.layer({
           type:2,
           title: false,
-          area: ['1000px', '586px'],
+          area: ['1000px', '600px'],
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 586)/2+'px',''],
+          offset: [($(window).height() - 600)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
-          iframe: {src: '../pricing/accessories.html'},
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
           success: function (layero, index) {
 
 
           }
         });
       });
+
+      //选择织造工缴工厂报价
+
+      $(".factoryOffer_butt").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '270px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 270)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+     //产品辅料 新增(双层layer)
+     $("#showAddLayer").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '594px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 594)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
@@ -222,27 +270,32 @@ function setMsgPosition(obj,msg,direction){
               USARate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               educationalTariff: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               RefundRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               profitRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               domesticProfit: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               startPort: {
                   maxlength:20
@@ -250,7 +303,8 @@ function setMsgPosition(obj,msg,direction){
               twentyCounterPerPrice: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               endPort: {
                   maxlength:20
@@ -258,12 +312,14 @@ function setMsgPosition(obj,msg,direction){
               fortyCounterPerPrice: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportTariff: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportCountry: {
                   maxlength:20
@@ -271,61 +327,73 @@ function setMsgPosition(obj,msg,direction){
               premiumRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               CustomsClearanceFee: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               creditRisk: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               interest: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               commision: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               exportProfitRate: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricWidth: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               fabricPrice: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               yuanPerM: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               yuanPerNum: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               useEndNum: {
                   number:true,
                   required: true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               },
               factoryOffer: {
                   number:true,
-                  maxlength:8
+                  maxlength:8,
+                  gt:0
               }
 
           },
@@ -444,6 +512,19 @@ function setMsgPosition(obj,msg,direction){
   }
 
 
+
+//核价方式：选择易家纺工缴库核价   选择工厂报价核价
+$(document).ready(function(){
+  $('.factoryOffer-box').hide();
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('.factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('.factoryOffer-box').show();
+  });
+
+
+});
 
 
 

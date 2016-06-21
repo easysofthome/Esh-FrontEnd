@@ -12,11 +12,11 @@
 
 // 右边
 .rgbox{
-  width: 854px;
+  width: 872px;
 }
 .titbox
 {
-  margin-top: 40px;
+  margin: 40px 0 0 20px;
   padding-bottom: 20px;
 
   background-color: #fff;
@@ -53,7 +53,7 @@
     p.type
     {
       display: inline;
-      width: 758px;
+      width: 756px;
       margin-right: 20px;
     }
     span.type_tit
@@ -81,19 +81,27 @@
 
 //列表
 ul.case_list{
-  width: 854px;
-  li.rg_margin{
-    //右边距
-    margin-right: 19px;
-  }
+  margin-left: 2px;
   li{
+    position: relative;
+    top: 0;
+    left: 0;
     line-height: 24px;
     width: 272px;
-    margin-top: 20px;
+    height: 398px;
+    margin: 20px 0 0 18px;
     background-color: #fff;
     -webkit-box-shadow:0 0 15px 1px #e0e0e0;
     -moz-box-shadow:0 0 15px 1px #e0e0e0;
     box-shadow:0 0 15px 1px #e0e0e0;
+    display: inline;
+    .case_wrapper{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      .btnbox{display:none;}
+    }
   }
 
   //li里的样式
@@ -114,24 +122,26 @@ ul.case_list{
         color: #ff4400;
       }
     }
-    //启用
+    //停用
     .switch{
+      width: 58px;
+      .border-radius(12px);
       cursor: pointer;
-      .sprite(@switch-bg);
-      .icon-VIP-easydesign-list;
-      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bg.png');
+      background: #3CA1D7;
+      overflow: hidden;
       span{
         .sprite(@switch-lang);
         .icon-VIP-easydesign-list;
         .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-lang.png');
       }
     }
-    //停用
+    //启用
     .switchno{
+      width: 58px;
+      .border-radius(12px);
       cursor: pointer;
-      .sprite(@switch-bgno);
-      .icon-VIP-easydesign-list;
-      .fixIe6pngTransparent('/images/icon/VIP/easydesign/list/switch-bgno.png');
+      background: #AFAFAF;
+      overflow: hidden;
       span{
         margin-left: -33px;
         .sprite(@switch-lang);
@@ -156,6 +166,7 @@ ul.case_list{
     margin: 0 15px;
     padding: 15px 0;
     div.progress-bar{
+      display: none;
       margin-top: 20px;
       position: relative;
       div.progressBar{
@@ -196,6 +207,14 @@ ul.case_list{
       .button-variant(#fff; #f7210b; #f7210b);
       .button-size(0; 0; 16px; 40px; 3px);
     }
+    a.btn_delete3{
+      display: block;
+      width: 70px;
+      text-align: center;
+      margin: 10px 8px;
+      .button-variant(#fff; #f7210b; #f7210b);
+      .button-size(0; 0; 16px; 40px; 3px);
+    }
     a.btn_blue{
       display: block;
       width: 114px;
@@ -203,6 +222,13 @@ ul.case_list{
       margin: 10px 11px 0 0;
       .button-variant(#fff; #3ca1d7; #3ca1d7);
       .button-size(0; 0; 16px; 40px; 3px);
+    }
+    a.btn_blue1{
+      display: block;
+      text-align: center;
+      margin:10px 5px;
+      .button-variant(#fff; #3ca1d7; #3ca1d7);
+      .button-size(0px; 10px; 16px; 40px; 3px);
     }
   }
 }

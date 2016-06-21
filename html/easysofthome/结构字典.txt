@@ -1,3 +1,9 @@
+AboutUs（关于我们）
+  | AboutUs                关于易家纺
+  | CompanyHonor           公司资质
+  | Intelligence           知识产权
+  | Report                 媒体报道
+
 download（下载页面）
   | configure              下载配置
   | download               软件下载
@@ -9,6 +15,8 @@ helpCenter（帮助中心）
   | video                  视频中心
 
   index.html               帮助中心首页
+
+English                    国际版
 
 index                      首页
 

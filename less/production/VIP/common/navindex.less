@@ -90,7 +90,15 @@
     }
     &.nav-more{
       cursor: pointer;
-      i.service{
+      i{
+        position: absolute;
+        top: 47px;
+        right: 27px;
+        .sprite(@service_close);
+        .icon-VIP-common-nav;
+        .fixIe6pngTransparent('/images/icon/VIP/common/nav/service_close.png');
+      }
+      i.service-open{
         position: absolute;
         top: 47px;
         right: 27px;

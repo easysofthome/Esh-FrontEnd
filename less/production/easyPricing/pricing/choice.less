@@ -137,14 +137,25 @@
 // 排列
 ul.arraybox{
   width: 1220px;
-  margin: 20px auto 0 auto;
-  padding-bottom: 5px;
+  margin: 20px auto 70px;
   li.array{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 285px;
+    height: 307px;
     background-color: #fff;
     padding-bottom: 15px;
-    margin: 0 10px;
+    margin: 10px;
     display: inline;
     .border-radius(3px);
+    .array-wrapper{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 307px;
+      background: #fff;
+    }
     .picture{
       width: 265px;
       height: 265px;
@@ -154,12 +165,13 @@ ul.arraybox{
       margin-left: 15px;
     }
     div.dropbox{
+      opacity: 0;
       margin: 10px 10px 0 10px;
       border-top: #e5e5e5 1px solid;
       width: 265px;
       label.lab{
-        width: 76px;
-        margin: 11px 6px 0 6px;
+        width: 45px;
+        margin: 11px 4px 0 4px;
         cursor: pointer;
         font-size: 12px;
         input.int{
@@ -171,9 +183,10 @@ ul.arraybox{
     }
     a.btn{
       display: block;
+      opacity: 0;
       width: 254px;
       text-align: center;
-      margin: 10px 0 0 16px;
+      margin: 10px 0 10px 16px;
       .button-variant(#fff; #3ca1d7; #3ca1d7);
       .button-size(0; 0; 16px; 40px; 3px);
     }

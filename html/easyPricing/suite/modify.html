@@ -212,7 +212,7 @@
       <p class="smalltitle">
         主要面料　<a class="shrink" href="#">[点击收缩]</a>
       </p>
-      <table class="tab" cellpadding="0" cellspacing="0">
+      <table class="tab" id="mainFabric" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td>主要用途</td>
           <td class="fab_picture">面料图片</td>
@@ -264,7 +264,7 @@
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightBottom" name="fabricPrice_b" type="text" value="15.64" />
+              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightTop" name="fabricPrice_b" type="text" value="15.64" />
               <p class="lf price">元/米</p>
               <div class="input-tip"></div>
             </div>
@@ -288,7 +288,7 @@
             </div>
             <div class="pricebox clearfix">
               <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightBottom" name="fabricPrice_c" type="text" value="15.64" />
+              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightTop" name="fabricPrice_c" type="text" value="15.64" />
               <p class="lf price">元/米</p>
               <div class="input-tip"></div>
             </div>
@@ -301,7 +301,7 @@
       <p class="smalltitle">
         主要辅料　<a class="shrink" href="#">[点击收缩]</a>
       </p>
-      <table class="tab" cellpadding="0" cellspacing="0">
+      <table class="tab" id="mainAccPurpose" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td>辅料编号</td>
           <td>辅料名称</td>
@@ -318,7 +318,7 @@
             <p>枕头填充重量</p>
             <div class="pricebox clearfix">
             <p class="lf price"><span class="txt_red">*</span>填充重量</p>
-              <input class="int intacc lf" id="fillingWeight" name="fillingWeight" type="text"value="12" />
+              <input class="int intacc lf" errorMsgPosition="rightBottom" id="fillingWeight" name="fillingWeight" type="text"value="12" />
               <p class="lf price">个</p>
               <div class="input-tip"></div>
             </div>
@@ -327,7 +327,7 @@
           <td class="acc_price">
             <div class="pricebox clearfix">
               <p class="lf price txt_red">*</p>
-              <input class="int intacc lf" id="yuanPerKg" name="yuanPerKg" type="text"value="0.9" />
+              <input class="int intacc lf" id="yuanPerKg" errorMsgPosition="rightBottom" name="yuanPerKg" type="text"value="0.9" />
               <p class="lf price">元/公斤</p>
               <div class="input-tip"></div>
             </div>
@@ -345,11 +345,11 @@
          <div class="clearfix factoryOfferCss factoryOfferCss">选择款式工缴报价方式：</div>
           <div class="factoryOfferCssSub">
           <label class="lf radio_rg label_radio">
-            <input class="radio_post lf" name="Fruit" type="radio" value="" />
+            <input class="radio_post lf" name="Fruit" type="radio" id="easySoftHomePrice_rad" checked="checked" value="" />
             <span class="lf">选择易家纺工缴库核价</span>
           </label>
           <label class="lf radio_rg label_radio">
-            <input class="lf radio_post" name="Fruit" type="radio" checked="checked" value="" />
+            <input class="lf radio_post" name="Fruit" type="radio" id="factoryPrice_rad" value="" />
             <span class="lf">选择工厂报价核价</span>
           </label>
           </div>
@@ -357,7 +357,7 @@
       </div>
       <div class="clearfix factoryOffer marginleft">
         <span class="lf title_name">款式工缴报价工厂：</span>
-        <input type="text" id="factoryOffer" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
+        <input type="text" id="factoryOffer" readonly="true" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
         <a href="/html/easyPricing/pricing/selectQuotation.html" class="lf factoryOffer_butt">选择工厂报价</a>
         <div class="input-tip"></div>
 
@@ -372,7 +372,7 @@
     </form>
   </div>
 </div>
-
+<button type="hidden" id="showAddLayer"></button>
 @@include('easyPricing/common/footer2.html')
 <script>seajs.use('js/easyPricing/suite/modify');</script>
 </body>

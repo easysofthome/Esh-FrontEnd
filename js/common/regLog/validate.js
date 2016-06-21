@@ -1,6 +1,45 @@
 define(function (require, exports, module) {
     require('js/lib/validation/validation');
+    require('js/lib/tip/jquery.poshytip');
 
+////////////////////////////错误提示框 tip///////////////////////////////////
+  function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+   $(obj).poshytip({
+        className: 'tip-violet',
+        content: msg,
+        showOn: 'none',
+        alignTo: 'target',
+        alignX: alignX,
+        alignY: alignY,
+        offsetX: offsetX,
+        offsetY: offsetY
+      });
+
+    $(obj).poshytip('show');
+  }
+
+  function setMsgPosition(obj,msg,direction){
+    switch(direction){
+      case "right":
+        showTip(obj,msg,"right","center",5,0);
+        break;
+      case "rightTop":
+        showTip(obj,msg,"inner-left","top",50,5);
+        break;
+      case "rightBottom":
+        showTip(obj,msg,"inner-left","bottom",0,5);
+        break;
+      case "bottom":
+        showTip(obj,msg,"inner-left","bottom",-17,5);
+        break;
+      default:
+        showTip(obj,msg,"right","center",5,0);
+    }
+  }
+
+
+/////////////////////////////////// 表单验证 //////////////////////////////////////////
     // input
     var form = $("#register-form");
     var form_account = $("#form-account");
@@ -106,7 +145,7 @@ define(function (require, exports, module) {
 
 /** 表单验证 */
     var validator;
-
+    var validatorTip = {'msg':'addMethod'};
     function validate() {
         addrules();
         validator = form.validate({
@@ -114,17 +153,24 @@ define(function (require, exports, module) {
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
-               // formSubmit(form);
+                formSubmit(form);
                 //阻止表单提交
 
                 return false;
             },
              onfocusout:function(element){
-              $('.input-tip span').css('display','block');
+             // $('.input-tip span').css('display','block');
               $(element).valid();
             },
             errorPlacement: function(error, element) {
-                error.appendTo( element.siblings('.input-tip') );
+                if(error.text().length==0||error.text()=='addMethod')return;
+                $(element).poshytip('destroy');
+                setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+
+            },
+            success:function(error, element){
+                if($(element).attr('id')== 'form-pwd') return;
+                $(element).poshytip('destroy');
             },
             rules: {
                 //用户名
@@ -207,7 +253,7 @@ define(function (require, exports, module) {
         //用户名
         $.validator.addMethod('user', function (value, element, param) {
             return this.optional(element) || (userRule($(element),value))[0];
-        }, '');
+        }, validatorTip.msg);
         $.validator.addMethod('checkUser', function (value, element, param) {
             if((userRule($(element),value))[1]=='phone'){
                 auth_code_tit.html("手机验证码：");
@@ -234,23 +280,24 @@ define(function (require, exports, module) {
             return this.optional(element) || pwdStrengthRule($(element), value);
         // 避免重复验证(存在按键绑定验证checkPwd())
         //}, icons.weak + '有被盗风险,建议使用字母、数字和符号两种及以上组合');
-        }, '');
+        }, validatorTip.msg);
         $.validator.addMethod('same', function (value, element, param) {
-            var target = $(param);
-            return value !== target.val();
-        }, icons.error + '密码与用户名相似，有被盗风险，请更换密码');
+            return this.optional(element) || samePwd($(element), value, param);
+        }, validatorTip.msg);
 
         $.validator.addMethod('enCompanyName', function (value, element, param) {
             return this.optional(element) || EnCompanyNameRule($(element), value);
-        }, '');
+        }, validatorTip.msg);
          $.validator.addMethod('chCompanyName', function (value, element, param) {
             return this.optional(element) || ChCompanyNameRule($(element), value);
-        }, '');
+        }, validatorTip.msg);
 
 
     }
     /** 用户名验证 */
     function userRule (element, value) {
+        $(element).poshytip('destroy');
+        var msg = '';
         var reg = {
             "86": "^(13|15|18|14|17)[0-9]{9}$"  //中国
         };
@@ -267,52 +314,79 @@ define(function (require, exports, module) {
             flag[1] = 'email';  //邮箱验证成功
         }
         if(!flag[0]){
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的手机号或邮箱地址' +'</span>');
+            msg = '请输入正确的手机号或邮箱地址';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
         }else{
-            element.parent().find('.input-tip').html('');
+            //element.parent().find('.input-tip').html('');
         }
         return flag;
     }
 
     //验证企业英文名称
     function EnCompanyNameRule(element, value){
+        $(element).poshytip('destroy');
+        var msg = '';
         var reg = /^[a-z]{2,50}([a-z\.\s\,\(\)-（）]{0,50})$/i;
         var flag = false;
         if($.trim(value).lenght == 0){
             flag = false;
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '企业英文名称不能为空' +'</span>');
+            msg = '企业英文名称不能为空！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
             return flag;
         }
         if(reg.test(value)){
             flag = true;
         }
         if(!flag){
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的企业英文名称' +'</span>');
+            msg = '请输入正确的企业英文名称！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
         }else{
-            element.parent().find('.input-tip').html('');
+            //element.parent().find('.input-tip').html('');
         }
         return flag;
     }
 
      //验证企业中文名称
     function ChCompanyNameRule(element, value){
+        $(element).poshytip('destroy');
+        var msg = '';
         var reg = /^[\u4e00-\u9fa5]{2,50}$/;
         var flag = false;
         if($.trim(value).lenght == 0){
             flag = false;
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '企业中文名称不能为空' +'</span>');
+            msg = '企业中文名称不能为空！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
             return flag;
         }
         if(reg.test(value)){
             flag = true;
         }
         if(!flag){
-            element.parent().find('.input-tip').html('<span class="error">' + icons.error + '请输入正确的企业中文名称' +'</span>');
+            msg = '请输入正确的企业中文名称！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
         }else{
-            element.parent().find('.input-tip').html('');
+
         }
         return flag;
     }
+
+    function samePwd(element, value, param){
+        $(element).poshytip('destroy');
+        var msg = '';
+        var flag = false;
+        var target = $(param);
+        if(value !== target.val()){
+            flag = true;
+        }
+         if(!flag){
+            msg = '新密码不能与旧密码相同！';
+            setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
+        }else{
+           //element.parent().find('.input-tip').html('');
+        }
+        return flag;
+    }
+
 /** /用户名验证 */
 
 /** 密码 **/
@@ -371,26 +445,27 @@ define(function (require, exports, module) {
         },
         2: {
             reg: /^.*([a-zA-Z])+.*$/i,
-            msg: icons.medium + '安全强度适中，可以使用三种以上的组合来提高安全强度'
+            msg: icons.medium + '<span style="color:green">安全强度适中，可以使用三种以上的组合来提高安全强度</span>'
         },
         3: {
             reg: /^.*([0-9])+.*$/i,
-            msg: icons.strong + '你的密码很安全'
+            msg: icons.strong + '<span style="color:green">你的密码很安全</span>'
         }
     };
 
     function pwdStrengthRule(element, value) {
+        $(element).poshytip('destroy');
         var level = 0;
         var typeCount=0;
         var flag = true;
         var valueLength=getStringLength(value);
-        if (valueLength < 6) {
-            element.parent().removeClass('form-item-valid').removeClass(
-                'form-item-error');
-            element.parent().next().find('span').removeClass('error').html(
-                $(element).attr('default'));
-            return;
-        }
+        // if (valueLength < 6) {
+        //     element.parent().removeClass('form-item-valid').removeClass(
+        //         'form-item-error');
+        //     element.parent().next().find('span').removeClass('error').html(
+        //         $(element).attr('default'));
+        //     return;
+        // }
 
         for (var key in pwdStrength) {
             if (pwdStrength[key].reg.test(value)) {
@@ -402,6 +477,7 @@ define(function (require, exports, module) {
                 level=2;
             }else{
                 level=1;
+                flag = false;
             }
         }else if(typeCount==2){
             if(valueLength<11&&valueLength>5){
@@ -417,18 +493,18 @@ define(function (require, exports, module) {
         }
 
         if ($.inArray(value, weakPwds) !== -1) {
-            flag = false;
+            //flag = false;
         }
         if (flag && level > 0) {
-            element.parent().removeClass('form-item-error').addClass(
-                'form-item-valid');
+
         } else {
-            element.parent().addClass('form-item-error').removeClass(
-                'form-item-valid');
+
         }
         if (pwdStrength[level] !== undefined) {
-            // pwdStrength[level]>3?pwdStrength[level]=3:pwdStrength[level];
-            element.parent().find('.input-tip').html('<span>' + pwdStrength[level].msg + '</span>');
+           // pwdStrength[level]>3?pwdStrength[level]=3:pwdStrength[level];
+           // element.parent().find('.input-tip').html('<span>' + pwdStrength[level].msg + '</span>');
+            setMsgPosition(element,pwdStrength[level].msg,$(element).attr("errorMsgPosition"));
+           // alert(pwdStrength[level].msg);
         }
         return flag;
     }

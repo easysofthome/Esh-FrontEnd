@@ -3,10 +3,69 @@ define(function (require, exports, module) {
   require('layer');
   require('js/VIP/common/basicData/layer');
   require('js/lib/validation/validation');
+  require('js/lib/tip/jquery.poshytip');
+  require('js/lib/synchroInputText');
 
+////////////////////////////下拉框样式///////////////////////////////////
   var switchSel = require('js/common/module/switchSel');
   switchSel.set('.select-box','.select-box>span','.select-ul','.select-ul>li','');
 
+
+////////////////////////////错误提示框 tip///////////////////////////////////
+  function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+   $(obj).poshytip({
+        className: 'tip-violet',
+        content: msg,
+        showOn: 'none',
+        alignTo: 'target',
+        alignX: alignX,
+        alignY: alignY,
+        offsetX: offsetX,
+        offsetY: offsetY
+      });
+
+    $(obj).poshytip('show');
+  }
+
+  function setMsgPosition(obj,msg,direction){
+    switch(direction){
+      case "right":
+        showTip(obj,msg,"right","center",5,0);
+        break;
+      case "rightTop":
+        showTip(obj,msg,"inner-left","top",50,5);
+        break;
+      case "rightBottom":
+        showTip(obj,msg,"inner-right","bottom",-15,5);
+        break;
+      case "bottom":
+        showTip(obj,msg,"inner-left","bottom",-17,5);
+        break;
+      default:
+        showTip(obj,msg,"right","center",5,0);
+    }
+  }
+
+  /////////////////////////////////// 文本框输入提示 （银行卡、手机号） //////////////////////////////////////////
+    //tag为如何格式化，例如手机号是### #### ####
+   $(document).ready(function () {
+    $('#email').inputTip({
+      tag:'email',
+      marginTop:-20,
+      width:$('#email').width()+10
+    });
+
+    $('#phone').inputTip({
+      tag:'phone',
+      marginTop:-20,
+      width:$('#phone').width()+10
+    });
+
+   });
+
+
+/////////////////////////////////// 表单验证 //////////////////////////////////////////
   // input
   var form = $("#modify-baseData");
 
@@ -70,6 +129,7 @@ define(function (require, exports, module) {
 
 /** 表单验证 */
   var validator;
+  var validatorTip = {'msg':'addMethod'};
   function validate() {
       addrules();
       validator = form.validate({
@@ -81,9 +141,21 @@ define(function (require, exports, module) {
               //阻止表单提交
               return false;
           },
-          onkeyup: false,
+          onfocusout:function(element){
+              $(element).valid();
+          },
           errorPlacement: function(error, element) {
-              error.appendTo( element.siblings('.input-tip') );
+               if(error.text()!='addMethod'){
+                 $(element).poshytip('destroy');
+              }
+              if(error.text().length > 0&&error.text()!='addMethod'){
+
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
+              return true;
+          },
+          success:function(element){
+                $(element).poshytip('destroy');
           },
           rules: {
               email: {
@@ -131,22 +203,24 @@ define(function (require, exports, module) {
       var flag;
       $.validator.addMethod('phone', function (value, element, param) {
           return this.optional(element) || (phoneRule($(element),value));
-      }, '');
+      }, validatorTip.msg);
 
   }
   /** phone */
   function phoneRule (element, value) {
+      $(element).poshytip('destroy');
+      var msg = '';
       var reg = {
           "86": "^(13|15|18|14|17)[0-9]{9}$"  //中国
       };
       var regPhone = new RegExp(reg[86]);
 
       if(!regPhone.test(value)){
-          flag = true;
-          element.siblings('.input-tip').html('<span class="error">' + icons.error + '手机号码格式有误' +'</span>');
-      }else{
           flag = false;
-          element.siblings('.input-tip').html('');
+          msg = '您输入的手机号码格式错误！';
+          setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
+      }else{
+          flag = true;
       }
       return flag;
   }

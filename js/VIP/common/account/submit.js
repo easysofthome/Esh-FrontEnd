@@ -1,102 +1,77 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
   require('js/lib/laydate/laydate');
+  require('js/lib/synchroInputText');
   var tool = require('tools');
   var placehold = require('js/common/module/placehold');
   placehold.init('#num>input');
 
+////////////////////////////错误提示框 tip///////////////////////////////////
+  function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+
+   $(obj).poshytip({
+        className: 'tip-violet',
+        content: msg,
+        showOn: 'none',
+        alignTo: 'target',
+        alignX: alignX,
+        alignY: alignY,
+        offsetX: offsetX,
+        offsetY: offsetY
+      });
+
+    $(obj).poshytip('show');
+  }
+
+  function setMsgPosition(obj,msg,direction){
+    switch(direction){
+      case "right":
+        showTip(obj,msg,"right","center",5,0);
+        break;
+      case "rightTop":
+        showTip(obj,msg,"inner-left","top",50,5);
+        break;
+      case "rightBottom":
+        showTip(obj,msg,"inner-right","bottom",-15,5);
+        break;
+      case "bottom":
+        showTip(obj,msg,"inner-left","bottom",-17,5);
+        break;
+      default:
+        showTip(obj,msg,"right","center",5,0);
+    }
+  }
+
 /////////////////////////////////// 日期选择 //////////////////////////////////////////
-laydate({
+var laydateOpt = {
     elem: '#dataTime',
     event: 'focus',
-    format: 'YYYY/MM/DD', // 分隔符可以任意定义，该例子表示只显示年月
+    format: 'YYYY-MM-DD', // 分隔符可以任意定义
     festival: true, //显示节日
     choose: function(datas){ //选择日期完毕的回调
         //alert('得到：'+datas);
+        $('#dataTime').siblings('.placeholder').hide();
     }
-});
-$('.laydate_box').hide();
+}
+
 $('#dataTime').bind('focus',function(){
-  laydate();
-  $('.laydate_box').show();
+  laydate(laydateOpt);
+
 });
 
-/////////////////////////////////// 文本框输入提示 （银行卡） //////////////////////////////////////////
-
-function createTip(id){
-
-  var width = $("#"+id).width();
-  var height = $("#"+id).height();
-  var tipH = 30;
-  $(document.body).append('<div id="input_tip"> </div>');
-   $('#input_tip').css({'width':width-5,'height':tipH,'display': 'none',
-    'background-color': '#FFFDCA','border': '1px solid #FACF66','color': '#F73200',
-    'font-size': '26px','overflow': 'hidden','padding': '4px 8px','text-overflow': 'ellipsis',
-    'white-space': 'nowrap','font-family': 'Microsoft YaHei, SimHei','font-weight': '700','position':'absolute'});
-
- $('#input_tip').append('<div id="input_tip_text">12365 </div>');
- $('#input_tip_text').css({
-      'overflow': 'hidden',
-      'text-overflow': 'ellipsis',
-      'white-space': 'nowrap',
-      'background-color': '#FFFDCA',
-      'color': '#F73200',
-      'font-size': '16px',
-      'padding': '6px 4px'
-    });
- inputTipAutoSize(id);
-}
-
-function inputTipAutoSize(id){
-  var height = $("#"+id).height();
-  var top = $("#"+id).offset().top;
-  var left = $("#"+id).offset().left;
-  $('#input_tip').css({'top':(top-height+10),'left':left});
-}
-
-function synchroUserInputText(id){
-  var inputVal = $('#'+id).val();
-  $('#input_tip_text').text(formatInput(inputVal));
-}
-
-function formatInput(text){
-  var val = '';
-  if(!text) return val;
-  var array = text.split('');
-  var ret = '';
-  var split_str = ' ';
-  for(var i=0;i<array.length;i++){
-    if(i % 4 == 0){
-      ret += split_str;
-    }
-    ret +=array[i];
-  }
-  return ret;
-}
-
-function initInputTip(id){
-   createTip(id);
-  $('#'+id).bind('change paste keyup',function(){
-      $('#input_tip').show();
-      synchroUserInputText(id);
-  });
-
-  $('#'+id).bind('blur',function(){
-      $('#input_tip').hide();
-  });
-
-
-}
-
-
- //页面尺寸改变时场景标题定位
-  $(window).resize(function() {
-      inputTipAutoSize('bankCard');
-  });
+/////////////////////////////////// 文本框输入提示 （银行卡、手机号） //////////////////////////////////////////
 
    $(document).ready(function () {
-      initInputTip('bankCard');
+    $('#bankCard').inputTip({
+      tag:'bankcard'
+    });
+
+    $('#phone').inputTip({
+      tag:'phone'
+    });
+
    });
 
 
@@ -117,6 +92,7 @@ function initInputTip(id){
 
 /** 表单验证 */
   var validator;
+  var validatorTip = {'msg':'addMethod'};
   function validate() {
       addrules();
       validator = form.validate({
@@ -129,11 +105,20 @@ function initInputTip(id){
               return false;
           },
           onfocusout:function(element){
-              $('.input-tip span').css('display','block');
               $(element).valid();
           },
           errorPlacement: function(error, element) {
-              element.siblings('.input-tip').html(error);
+              if(error.text()!='addMethod'){
+                 $(element).poshytip('destroy');
+              }
+              if(error.text().length > 0&&error.text()!='addMethod'){
+
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
+              return true;
+          },
+          success:function(element){
+                $(element).poshytip('destroy');
           },
           rules: {
               bankCard:{
@@ -145,7 +130,8 @@ function initInputTip(id){
               },
               Amount: {
                   number: true,
-                  max:500000
+                  max:500000,
+                  gt:0
               },
               phone: {
                   required: true,
@@ -153,6 +139,9 @@ function initInputTip(id){
               },
               remark: {
                   maxlength: 400
+              },
+              uploadImg:{
+                  required:true
               }
           },
           messages: {
@@ -164,13 +153,17 @@ function initInputTip(id){
               },
               Amount: {
                   number: icons.error + '汇款金额格式错误！',
-                  max: icons.error + '汇款金额需小于50W！'
+                  max: icons.error + '汇款金额需小于50W！',
+                  gt: icons.error + '汇款金额不能小于等于0！'
               },
               phone: {
                   required: icons.error + '请填写联系人手机号！'
               },
               remark: {
                   maxlength: icons.error + '备注信息不能超过200个字符！'
+              },
+              uploadImg:{
+                  required: icons.error + '请上传图片！'
               }
           }
       });
@@ -180,41 +173,53 @@ function initInputTip(id){
 
       $.validator.addMethod('phone', function (value, element, param) {
           return this.optional(element) || (phoneRule($(element),value));
-      }, '');
+      }, validatorTip.msg);
 
       $.validator.addMethod('bankCardRule', function (value, element, param) {
           return this.optional(element) || (bankCardRule($(element),value));
-      }, '');
+      }, validatorTip.msg);
   }
   /** phone */
   function phoneRule (element, value) {
+      var flag = false;
+      $(element).poshytip('destroy');
+      var msg = '';
       var reg = {
           "86": "^(13|15|18|14|17)[0-9]{9}$"  // 中国
       };
       var regPhone = new RegExp(reg[86]);
 
       if(!regPhone.test(value)){
-          flag = true;
-          element.siblings('.input-tip').html('<span class="error">' + icons.error + '您输入的手机号码格式错误！' +'</span>');
-      }else{
           flag = false;
-          element.siblings('.input-tip').html('');
+          msg = '您输入的手机号码格式错误！';
+          setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
+      }else{
+          flag = true;
+          //element.siblings('.input-tip').html('');
       }
       return flag;
   }
   /** 银行卡验证*/
   function bankCardRule (element, value) {
+      $(element).poshytip('destroy');
       var flag = false;
       var msg = tool.bankCoardCheck(value);
       if(msg.length>0){
-          flag = true;
-          element.siblings('.input-tip').html('<span class="error">' + icons.error + msg +'</span>');
+          flag = false;
+          setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
       }else{
-           flag = false;
-          element.siblings('.input-tip').html('');
+          flag = true;
+          //element.siblings('.input-tip').html('');
       }
       return flag;
   }
+
+   //强制保留两位小数，不四舍五入
+   $('#Amount').bind('blur',function(){
+    if(!tool.validateAllNum($(this).val())) return;
+     $(this).val(tool.toDecimal2($(this).val()));
+
+    });
 
 
   init();
