@@ -28,6 +28,8 @@ common                              会员中心通用页面
   | register                          注册
 
   security（文件夹）
+  | addccount                         添加子账号
+  | buy                               购买子账号
   | childAccount                      子账号管理
   | modifyPwd-addto                   设置登录密码
   | modifyPwd                         登录密码修改
