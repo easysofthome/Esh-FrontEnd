@@ -3,11 +3,12 @@ define(function (require, exports, module) {
 
 
   $(document).ready(function () {
-
-    $('.flowlist .flowerimg').bind('click',function(e){
-      var url = '/html/easydesign/Fabric/viewFabric.html';
-      window.open(url);
-    });
+    if($('.flowlist a').attr('href')=="#"||!($('.flowlist a').attr('href'))){
+      $('.flowlist .flowerimg').bind('click',function(e){
+        var url = '/html/easydesign/Fabric/viewFabric.html';
+        window.open(url);
+      });
+    }
 
 
    $('#widthPrice150Title').bind('click',function(){

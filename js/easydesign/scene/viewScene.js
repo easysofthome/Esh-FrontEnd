@@ -97,9 +97,11 @@ define(function (require, exports, module) {
       // mousewheel(objJson);
   }
 
+  $(window).resize(function(event) {
+      setConstrainImg('#j-lb-picwp','#j-lb-side');
+  });
 
-
-  /////////////////////////全景图/////////////////////////////////////
+  /////////////////////////全景图入口/////////////////////////////////////
 
  $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
@@ -123,8 +125,6 @@ define(function (require, exports, module) {
     });
 
 
-  $(window).resize(function(event) {
-      setConstrainImg('#j-lb-picwp','#j-lb-side');
-  });
+
 
 });

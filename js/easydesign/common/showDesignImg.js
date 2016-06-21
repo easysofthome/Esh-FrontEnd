@@ -14,7 +14,6 @@ define(function (require, exports, module) {
     'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'','PrevPageUrl':''
   };
 
-
   var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){
@@ -28,11 +27,7 @@ define(function (require, exports, module) {
         '<a class="list" href="'+objJson.FlowerStyleSimilarList[i].ImgLink+'" data-picid="">'+
         '<div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
           objJson.FlowerStyleSimilarList[i].ImgUrl+');"> </div></a></li>');
-
     }
-
-
-
   }
 
   //加载第n张图片
@@ -53,43 +48,39 @@ define(function (require, exports, module) {
   function setConstrainImg(image,imgObj,parentDiv,leftSide){
     var winH = $(window).height();
     var winW = $(window).width();
-
     var w = image.w;
     var h = image.h;
     var l_w_ratio = h/w;
     var w_l_ratio = w/h;
     var leftSide_w = $(leftSide).width();
-
     if($(leftSide).css('display') == 'none'){
         leftSide_w = 0;
     }
-
     if(h>winH&&l_w_ratio>=1){
         h = winH;
         w = winH*w_l_ratio;
 
     }else if(w>winW&&l_w_ratio<=1){
-
         w = winW;
         h = winW*l_w_ratio;
     }
-
     var tmpTop = 0;
     var tmpLeft =0;
-
-    if((winW-w)!=0){
+    if((winW-leftSide_w-w)>0){
         tmpLeft = (winW-leftSide_w-w)/2;
+    }else{
+      w = w-leftSide_w;
     }
-
-    //$('#j-side-cnt').height(winH);
-
+     if((winH-60-h)>0){
+        tmpTop = (winH-60-h)/2;
+    }else{
+       h = h-65;
+    }
     $('#j-lb-main').width(winW-leftSide_w);
     $('#j-lb-main').height(winH);
     $('#j-side-cnt').height(winH);
-
     $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
     $(parentDiv).css({'width':w,'height':h});
-
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
   }
 
@@ -199,12 +190,17 @@ define(function (require, exports, module) {
     //clickFullScreen();
   }
 
+  $(window).resize(function(event) {
+      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+  });
+
+////////////////////////////////入口/////////////////////////////////////
 
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
-   // initPage(objJson);
+    //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
@@ -219,14 +215,7 @@ define(function (require, exports, module) {
       }
     });
 
-
-
-
   });
 
-  $(window).resize(function(event) {
-      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-  });
 
-  exports.initPage = initPage;
 });
