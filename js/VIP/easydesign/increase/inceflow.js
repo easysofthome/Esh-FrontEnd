@@ -136,7 +136,7 @@ function setMsgPosition(obj,msg,direction){
             submitHandler: function (form) {
                 if(!validateUpLoadImg()){
                     return false;
-                }alert();
+                }
                 //阻止表单提交
                 if(callback){
                     callback();
