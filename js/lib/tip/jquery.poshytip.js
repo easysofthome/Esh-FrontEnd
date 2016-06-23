@@ -4,6 +4,7 @@
  * Copyright 2010, Vasil Dinkov, http://vadikom.com/
  */
 define(function (require, exports, module) {
+	require('js/lib/tip/tip.css');
 (function($) {
 	var hideTimer;
 	var tips = [],
@@ -429,7 +430,7 @@ define(function (require, exports, module) {
 			if(arguments.length>=2){
 				params = arguments[1];
 			}
-			
+
 			return this.each(function() {
 				var poshytip = $(this).data('poshytip');
 				var poshytipDropList = $(this).data('poshytipDropList');
