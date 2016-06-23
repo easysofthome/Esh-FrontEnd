@@ -171,7 +171,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       });
 
       //选择织造工缴工厂报价
-
+      $(".factoryOffer_butt").attr('href', 'javascript:void(0)');
       $(".factoryOffer_butt").bind("click",function(){
         $.layer({
           type:2,
@@ -595,12 +595,11 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
 
 ////////////////////////选择工厂报价核价 显示与隐藏///////////////////////////////////
 function radioSelectPriceType(){
-  $('.factoryOffer-box').hide();
   $('#easySoftHomePrice_rad').bind('click',function(){
-    $('.factoryOffer-box').hide();
+    $('#factoryOffer-box').hide();
   });
   $('#factoryPrice_rad').bind('click',function(){
-    $('.factoryOffer-box').show();
+    $('#factoryOffer-box').show();
   });
 }
 
@@ -608,7 +607,6 @@ $(document).ready(function(){
   init();
   //核价方式：选择易家纺工缴库核价
   radioSelectPriceType();
-
 
 });
 

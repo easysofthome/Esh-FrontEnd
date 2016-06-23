@@ -289,24 +289,13 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
-
   // form
   var form = $("#combinationModifyForm");
-
-  $('#btnStartPrice').on('click', function() {
-          form.submit();
-
-  });
 
   //错误信息提示点
   var icons = {
       error: '<i class="i-error"></i>'
   };
-
-  function init() {
-      validate();
-      // bindEvent();
-  }
 
   /** 表单验证 */
   var validator;
@@ -567,23 +556,29 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
       });
   }
 
+function init() {
+      validate();
+}
 
-//核价方式：选择易家纺工缴库核价   选择工厂报价核价
-$(document).ready(function(){
-  $('.factoryOffer-box').hide();
-  $('#easySoftHomePrice_rad').bind('click',function(){
-    $('.factoryOffer-box').hide();
-  });
-  $('#factoryPrice_rad').bind('click',function(){
-    $('.factoryOffer-box').show();
-  });
-
-
+$('#btnStartPrice').on('click', function() {
+      form.submit();
 });
 
+////////////////////////选择工厂报价核价 显示与隐藏///////////////////////////////////
+function radioSelectPriceType(){
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('#factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('#factoryOffer-box').show();
+  });
+}
 
-
-init();
+$(document).ready(function(){
+  init();
+  //核价方式：选择易家纺工缴库核价
+  radioSelectPriceType();
+});
 
 
 });
