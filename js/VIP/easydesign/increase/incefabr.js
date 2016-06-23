@@ -228,11 +228,6 @@ var startPriceLayer = {
       error: '<i class="i-error"></i>'
   };
 
-  function init() {
-      validate();
-      // bindEvent();
-  }
-
   /** 表单验证 */
   var validator;
   function validate() {
@@ -374,6 +369,14 @@ var startPriceLayer = {
       });
   }
 
+
+function init() {
+      validate();
+}
+
+$('#btnSaveAndPublish').on('click', function() {
+      form.submit();
+});
 
 init();
 
