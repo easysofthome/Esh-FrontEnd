@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>易核价-易家纺电子商务服务平台_自由组合核价</title>
-  <link href="/css/production/common/tip-violet/tip-violet.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -74,68 +73,56 @@
           <div>
           <p class="lf"><span class="txt_red">*</span>美元汇率：</p>
           <input class="int lf" type="text" value="6.48" id="USARate" name="USARate"/>
-          <div class="input-tip"></div>
           </div>
         </li>
-        <li class="intli lf clearfix">
+        <li class="intli lf clearfix marginL10">
           <div>
           <p class="lf"><span class="txt_red">*</span>增值税率：</p>
           <input class="int lf" type="text" id="educationalTariff" name="educationalTariff" value="0.17" />
-           <div class="input-tip"></div>
            </div>
         </li>
-        <li class="intli lf clearfix">
+        <li class="intli lf clearfix marginL10">
           <div>
           <p class="lf"><span class="txt_red">*</span>退税率：：</p>
           <input class="int lf" type="text" id="RefundRate" name="RefundRate" value="0.16" />
-           <div class="input-tip"></div>
            </div>
         </li>
-        <li class="intli lf clearfix">
+        <li class="intli lf clearfix marginL10">
           <div>
           <p class="lf"><span class="txt_red">*</span>利润率：</p>
           <input class="int lf" type="text" id="profitRate" name="profitRate" value="0.1" />
-           <div class="input-tip"></div>
            </div>
         </li>
-        <li class="intli lf clearfix">
+        <li class="intli lf clearfix marginL10">
           <div>
           <p class="lf"><span class="txt_red">*</span>内销利润率：</p>
           <input class="int lf" type="text" id="domesticProfit" name="domesticProfit"   value="0.1" />
-           <div class="input-tip"></div>
            </div>
         </li>
       </ul>
     </div>
     <!-- 海运费信息 -->
-    <div class="information">
+     <div class="information">
       <p class="smalltitle">海运费信息</p>
       <ul class="intbox clearfix">
         <li class="intli lf clearfix">
           <p class="lf">起始港：</p>
-          <input class="int lf" id="startPort" name="startPort" type="text" />
-           <div class="input-tip"></div>
+          <input class="int lf" id="startPort" locked='false' name="startPort" type="text" />
+        </li>
+        <li class="intli lf clearfix marginL10">
+          <p class="lf">目的港：</p>
+          <input class="int lf" id="endPort" locked='false'name="endPort" type="text" />
         </li>
         <li class="intli lf clearfix GIFintli">
-          <div>
+          <a href="javascript:void(0)" class="butt_cides lf" id="getShippingInfo">确定</a>
+        </li>
+        <li class="intli lf clearfix marginL10">
           <p class="lf"><span class="txt_red">*</span>20柜单价：</p>
           <input class="int lf" id="twentyCounterPerPrice" name="twentyCounterPerPrice" type="text" />
-           <div class="input-tip"></div>
-           </div>
         </li>
-        <li class="intli lf clearfix">
-          <div>
-          <p class="lf">目的港：</p>
-          <input class="int lf" id="endPort" name="endPort" type="text" />
-           <div class="input-tip"></div>
-           </div>
-        </li>
-        <li class="intli lf clearfix">
-          <div>
+        <li class="intli lf clearfix marginL10">
           <p class="lf"><span class="txt_red">*</span>40柜单价：</p>
           <input class="int lf" id="fortyCounterPerPrice" name="fortyCounterPerPrice" type="text" />
-           <div class="input-tip"></div>
-           </div>
         </li>
       </ul>
     </div>
