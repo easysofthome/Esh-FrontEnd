@@ -1,39 +1,39 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
-
+  require('js/lib/tip/jquery.poshytip');
 ////////////////////////////错误提示框 tip///////////////////////////////////
-function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
-
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
+var cName = (className == undefined? 'tip-violet':'tip-yellow');
+var dropList = (false || isDropList);
  $(obj).poshytip({
-      className: 'tip-violet',
+      className: cName,
       content: msg,
       showOn: 'none',
       alignTo: 'target',
       alignX: alignX,
       alignY: alignY,
       offsetX: offsetX,
-      offsetY: offsetY
+      offsetY: offsetY,
+      dropList:dropList
     });
 
-  $(obj).poshytip('show');
 }
 
-function setMsgPosition(obj,msg,direction){
+function setMsgPosition(obj,msg,direction,className,isDropList){
   switch(direction){
     case "right":
-      showTip(obj,msg,"right","center",5,0);
+      showTip(obj,msg,"right","center",5,0,className,isDropList);
       break;
     case "rightTop":
-      showTip(obj,msg,"inner-left","top",50,5);
+      showTip(obj,msg,"inner-left","top",50,5,className,isDropList);
       break;
     case "rightBottom":
-      showTip(obj,msg,"inner-left","bottom",0,5);
+      showTip(obj,msg,"inner-left","bottom",0,5,className,isDropList);
       break;
     default:
-      showTip(obj,msg,"inner-left","top",0,10);
+      showTip(obj,msg,"inner-left","top",0,10,className,isDropList);
   }
 }
 
@@ -216,26 +216,108 @@ function setMsgPosition(obj,msg,direction){
       });
 
 
-/////////////////////////////// 表单验证部分 ///////////////////////////////////
+/////////////////////////////// 起始港 目的港 下拉提示 ///////////////////////////////////
+var listStartPort = {};
+var listEndPort = {};
+var startPortHTML ='<div class="port_msg" id="port_message">默认列表</div><div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
+var endPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="洛杉矶">洛杉矶(LOS ANGELES CA)</span>美国</a><a class="a1"><span data-port="迪拜">迪拜(DUBAI)</span>阿联酋</a><a class="a1"><span data-port="鹿特丹">鹿特丹(ROTTERDAM)</span>荷兰</a><a class="a1"><span data-port="东京">东京(TOKYO)</span>日本</a><a class="a1"><span data-port="新加坡">新加坡(SINGAPORE)</span>新加坡</a><a class="a1"><span data-port="汉堡">汉堡(HAMBURG)</span>德国</a><a class="a1"><span data-port="卡拉奇">卡拉奇(KARACHI)</span>巴基斯坦</a><a class="a1"><span data-port="那瓦什瓦">那瓦什瓦(NHAVA SHEVA)</span>印度</a></div>';
 
+//起始港口 下拉提示
+$('#startPort').bind('focus',function(element){
+  $(this).poshytip('destoryDop');
+  setMsgPosition(this,buildHTML（startPortHTML,'rightBottom','tip-yellow',true);
+});
+
+//目的港口 下拉提示
+$('#endPort').bind('focus',function(element){
+  $(this).poshytip('destoryDop');
+  setMsgPosition(this,endPortHTML,'rightBottom','tip-yellow',true);
+});
+
+//隐藏下拉提示
+$('#startPort,#endPort').bind('blur',function(){
+  if($(this).attr('locked')=='true')return;
+  $(this).poshytip('destoryDop');
+});
+
+//将后端返回数据拼接成HTML
+function buildHTML(data){
+  var retHTML = data;
+  return retHTML;
+}
+
+//检查起始港口 目的港口非空
+function checkShippingInfo (callback){
+  $('#getShippingInfo').bind('click',function(){
+    var $startPort = $('#startPort');
+    var $endPort = $('#endPort');
+    if($startPort.val().length ==0){
+      $startPort.poshytip('destoryDop');
+      setMsgPosition('#'+$startPort.attr('id'),'起始港不能为空！','');
+      $startPort.trigger('focus')
+      return false;
+    }
+    if($endPort.val().length ==0){
+      $endPort.poshytip('destoryDop');
+      setMsgPosition('#'+$endPort.attr('id'),'目的港不能为空！','');
+      $endPort.trigger('focus')
+      return false;
+    }
+
+    callback();
+
+  });
+
+}
+
+//点击确定 起始港口 目的港口非空 则执行回调
+function searchShippingInfo(callback){
+  checkShippingInfo(callback);
+}
+//测试
+searchShippingInfo(function(){alert('成功！将获取最近的一天海运费信息。')});
+
+//异步获取港口名称列表
+function getPortsListAjax(baseURL,params){
+  var params = baseURL
+  var baseURL = params;
+   $.ajax({
+      type: 'post',
+      url: baseURL+'?'+params,
+      data: '' ,
+      dataType: 'json',
+      success: function(data){
+        var postsHTML = buildHTML(data);
+        $(this).poshytip('showPostList',postsHTML);
+      },
+      error : function() {
+        console.log('---获取港口名称列表异常---');
+      }
+    });
+}
+
+//获取最近的一天海运费信息
+$('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
+   $(this).poshytip('searchKeyWord');
+   //$(this).poshytip('showPostList',endPortHTML);
+   
+   getPortsListAjax();
+});
+
+
+
+
+
+
+/////////////////////////////// 表单验证部分 ///////////////////////////////////
 
   // form
   var form = $("#pricingModifyForm");
-
-  $('#btnStartPrice').on('click', function() {
-        form.submit();
-
-  });
 
   //错误信息提示点
   var icons = {
       error: '<i class="i-error"></i>'
   };
-
-  function init() {
-      validate();
-      // bindEvent();
-  }
 
   /** 表单验证 */
   var validator;
@@ -245,11 +327,9 @@ function setMsgPosition(obj,msg,direction){
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-            // formSubmit(form);
-              //阻止表单提交
-             window.location = "/html/easyPricing/singleProduct/complete.html";
-             return false;
+            //表单验证成功后执行
+            window.location = "/html/easyPricing/singleProduct/complete.html";
+            return false;
           },
           onfocusout:function(element){
               $(element).valid();
@@ -511,10 +591,18 @@ function setMsgPosition(obj,msg,direction){
       });
   }
 
+   //
+  function init() {
+    validate();
+  }
 
+  $('#btnStartPrice').on('click', function() {
+        form.submit();
 
-//核价方式：选择易家纺工缴库核价   选择工厂报价核价
-$(document).ready(function(){
+  });
+
+////////////////////////选择工厂报价核价 显示与隐藏///////////////////////////////////
+function radioSelectPriceType(){
   $('.factoryOffer-box').hide();
   $('#easySoftHomePrice_rad').bind('click',function(){
     $('.factoryOffer-box').hide();
@@ -522,6 +610,12 @@ $(document).ready(function(){
   $('#factoryPrice_rad').bind('click',function(){
     $('.factoryOffer-box').show();
   });
+}
+
+$(document).ready(function(){
+  init();
+  //核价方式：选择易家纺工缴库核价   
+  radioSelectPriceType();
 
 
 });
@@ -529,7 +623,7 @@ $(document).ready(function(){
 
 
 
-init();
+
 
 
 });

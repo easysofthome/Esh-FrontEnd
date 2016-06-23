@@ -21,6 +21,7 @@ define(function (require, exports, module) {
 
 	$.Poshytip = function(elm, options) {
 		this.$elm = $(elm);
+		this.temp = "";
 		this.opts = $.extend({}, $.fn.poshytip.defaults, options);
 		this.$tip = $(['<div style="z-index:'+options.zIndex+'" class="',this.opts.className,'">',
 				'<div class="tip-inner tip-bg-image"></div>',
@@ -37,8 +38,13 @@ define(function (require, exports, module) {
 			tips.push(this);
 
 			// save the original title and a reference to the Poshytip object
-			this.$elm.data('title.poshytip', this.$elm.attr('title'))
-				.data('poshytip', this);
+
+
+				if(!this.opts.dropList){
+					this.$elm.data('title.poshytip', this.$elm.attr('title')).data('poshytip', this);
+				}else{
+					this.$elm.data('title.poshytipDropList', this.$elm.attr('title')).data('poshytipDropList', this);
+				}
 
 			// hook element events
 			switch (this.opts.showOn) {
@@ -59,6 +65,17 @@ define(function (require, exports, module) {
 					});
 					break;
 			}
+			var _that = this;
+			if(this.opts.dropList){
+				this.$tip.hover(function(){
+					if(_that.$elm.attr('locked')==undefined)return;
+					_that.$elm.attr('locked','true');
+				},function(){
+					_that.$elm.attr('locked','false');
+				});
+			}
+
+			this.show();
 		},
 		mouseenter: function(e) {
 			if (this.disabled)
@@ -92,11 +109,39 @@ define(function (require, exports, module) {
 		show: function() {
 			if (this.disabled || this.$tip.data('active'))
 				return;
-
 			this.reset();
 			this.update();
 			this.display();
       this.hide_timeOut(this);
+      this.dropListClick();
+		},
+		dropListClick:function(){
+			var _that = this;
+			this.$tip.find('a').bind('click',function(){
+				if(_that.$elm.attr('locked')==undefined)return;
+				var text = $(this).find('span').attr('data-port');
+				_that.$elm.val(text);
+				_that.$elm.attr('locked','false');
+				_that.hide();
+				if(_that.$elm.valid){
+					_that.$elm.valid();
+				}
+
+			});
+		},
+		searchKeyWord:function(){
+			var val = this.$elm.val();
+			var searchKey = "默认列表";
+			if(this.temp == val&&val.length == 0)return;
+			if(val.length !== 0){
+				searchKey = '查找：'+val;
+			}
+			this.$tip.find('.port_msg').text(searchKey);
+			this.temp = val;
+		},
+		showPostList:function(postListHTML){
+			if(!postListHTML)return;
+			this.$tip.find('.port_contxt').html(postListHTML);
 		},
     hide_timeOut:function(that){
       if(this.opts.hide_timeOut){
@@ -268,9 +313,17 @@ define(function (require, exports, module) {
 			this.disabled = false;
 		},
 		destroy: function() {
+			if(this.opts.dropList) return;
 			this.reset();
 			this.$tip.remove();
 			this.$elm.unbind('poshytip').removeData('title.poshytip').removeData('poshytip');
+			tips.splice($.inArray(this, tips), 1);
+		},
+		destoryDop:function(){
+			if(!this.opts.dropList) return;
+			this.reset();
+			this.$tip.remove();
+			this.$elm.unbind('poshytip').removeData('title.poshytipDropList').removeData('poshytipDropList');
 			tips.splice($.inArray(this, tips), 1);
 		},
 		clearTimeouts: function() {
@@ -372,10 +425,20 @@ define(function (require, exports, module) {
 
 	$.fn.poshytip = function(options){
 		if (typeof options == 'string') {
+			var params = "";
+			if(arguments.length>=2){
+				params = arguments[1];
+			}
+			
 			return this.each(function() {
 				var poshytip = $(this).data('poshytip');
-				if (poshytip && poshytip[options])
+				var poshytipDropList = $(this).data('poshytipDropList');
+				if (poshytip && poshytip[options]){
 					poshytip[options]();
+				}
+				if (poshytipDropList && poshytipDropList[options]){
+					poshytipDropList[options](params);
+				}
 			});
 		}
 
@@ -422,7 +485,8 @@ define(function (require, exports, module) {
 		slide: 			true,		// use slide animation
 		slideOffset: 		8,		// slide animation offset
 		showAniDuration: 	300,		// show animation duration - set to 0 if you don't want show animation
-		hideAniDuration: 	300		// hide animation duration - set to 0 if you don't want hide animation
+		hideAniDuration: 	300,		// hide animation duration - set to 0 if you don't want hide animation
+		dropList:false  //是否以下拉列表的形式展现
 	};
 
 })(jQuery);
