@@ -107,6 +107,8 @@ $, win, ready = {
         }
     };
 
+
+
     //缓存常用字符
     var doms = ['xubox_layer', 'xubox_iframe', '.xubox_title', '.xubox_text', '.xubox_page', '.xubox_main'];
 
@@ -149,6 +151,7 @@ $, win, ready = {
         close: function (index) { layer.close(index); }, //右上角关闭回调
         end: function () { } //终极销毁回调
     };
+
 
     //容器
     Class.pt.space = function (html) {
@@ -284,10 +287,33 @@ $, win, ready = {
         }
         config.time <= 0 || that.autoclose();
         that.callback();
+        that.autoIframeSize();
     };
 
     ready.fade = function (obj, time, opa) {
         obj.css({ opacity: 0 }).animate({ opacity: opa }, time);
+    };
+
+    //自适应iframe页面大小
+    Class.pt.autoIframeSize = function(){
+         var times = this.index
+         var id = doms[1] + '' + times;
+         var layerId = doms[0] + '' + times;
+         var xubox_border = 'xubox_border' + '' + times;
+         $('#'+id).load(function(){
+            var $doc = $(window.frames[id].document);
+            var docH = $doc.find('body').height();
+            $(this).css('height',docH);
+            $("#"+layerId).css('height',docH);
+            $("#"+xubox_border).css('height',docH);
+            $(window.frames[id]).resize(function(){
+                docH = $doc.find('body').height();
+                $(this).css('height',docH);
+                $("#"+layerId).css('height',docH);
+                $("#"+xubox_border).css('height',docH);
+            });
+
+         });
     };
 
     //计算坐标
@@ -695,6 +721,8 @@ $, win, ready = {
         });
 
         ready.config.end[that.index] = config.end;
+
+
     };
 
     //恢复select
