@@ -20,7 +20,6 @@ var dropList = (false || isDropList);
     });
 
 }
-
 function setMsgPosition(obj,msg,direction,className,isDropList){
   switch(direction){
     case "right":
@@ -36,7 +35,6 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       showTip(obj,msg,"inner-left","top",0,10,className,isDropList);
   }
 }
-
 
 ////////////////////////////弹出层///////////////////////////////////
 
@@ -173,7 +171,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       });
 
       //选择织造工缴工厂报价
-
+      $(".factoryOffer_butt").attr('href', 'javascript:void(0)');
       $(".factoryOffer_butt").bind("click",function(){
         $.layer({
           type:2,
@@ -215,23 +213,22 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
         });
       });
 
-
 /////////////////////////////// 起始港 目的港 下拉提示 ///////////////////////////////////
 var listStartPort = {};
 var listEndPort = {};
-var startPortHTML ='<div class="port_msg" id="port_message">默认列表</div><div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
+var startPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
 var endPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="洛杉矶">洛杉矶(LOS ANGELES CA)</span>美国</a><a class="a1"><span data-port="迪拜">迪拜(DUBAI)</span>阿联酋</a><a class="a1"><span data-port="鹿特丹">鹿特丹(ROTTERDAM)</span>荷兰</a><a class="a1"><span data-port="东京">东京(TOKYO)</span>日本</a><a class="a1"><span data-port="新加坡">新加坡(SINGAPORE)</span>新加坡</a><a class="a1"><span data-port="汉堡">汉堡(HAMBURG)</span>德国</a><a class="a1"><span data-port="卡拉奇">卡拉奇(KARACHI)</span>巴基斯坦</a><a class="a1"><span data-port="那瓦什瓦">那瓦什瓦(NHAVA SHEVA)</span>印度</a></div>';
 
 //起始港口 下拉提示
 $('#startPort').bind('focus',function(element){
   $(this).poshytip('destoryDop');
-  setMsgPosition(this,buildHTML（startPortHTML,'rightBottom','tip-yellow',true);
+  setMsgPosition(this,buildHTML(startPortHTML),'rightBottom','tip-yellow',true);
 });
 
 //目的港口 下拉提示
 $('#endPort').bind('focus',function(element){
   $(this).poshytip('destoryDop');
-  setMsgPosition(this,endPortHTML,'rightBottom','tip-yellow',true);
+  setMsgPosition(this,buildHTML(endPortHTML),'rightBottom','tip-yellow',true);
 });
 
 //隐藏下拉提示
@@ -242,7 +239,7 @@ $('#startPort,#endPort').bind('blur',function(){
 
 //将后端返回数据拼接成HTML
 function buildHTML(data){
-  var retHTML = data;
+  var retHTML ='<div class="port_msg" id="port_message">默认列表</div>'+ data;
   return retHTML;
 }
 
@@ -300,14 +297,9 @@ function getPortsListAjax(baseURL,params){
 $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
    $(this).poshytip('searchKeyWord');
    //$(this).poshytip('showPostList',endPortHTML);
-   
-   getPortsListAjax();
+
+  // getPortsListAjax();
 });
-
-
-
-
-
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
@@ -603,20 +595,18 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
 
 ////////////////////////选择工厂报价核价 显示与隐藏///////////////////////////////////
 function radioSelectPriceType(){
-  $('.factoryOffer-box').hide();
   $('#easySoftHomePrice_rad').bind('click',function(){
-    $('.factoryOffer-box').hide();
+    $('#factoryOffer-box').hide();
   });
   $('#factoryPrice_rad').bind('click',function(){
-    $('.factoryOffer-box').show();
+    $('#factoryOffer-box').show();
   });
 }
 
 $(document).ready(function(){
   init();
-  //核价方式：选择易家纺工缴库核价   
+  //核价方式：选择易家纺工缴库核价
   radioSelectPriceType();
-
 
 });
 
