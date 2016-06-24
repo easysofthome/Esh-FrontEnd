@@ -8,7 +8,8 @@
 
  */
 define(function (require, exports, module) {
-
+require('js/lib/laydate/laydate.css');
+require('js/lib/laydate/skins/default.css');
 ; !function(a) {
   var b = {
     path: "",
@@ -458,7 +459,7 @@ define(function (require, exports, module) {
     c.on(h.otoday, "click",
     function() {
       c.elem[h.elemv] = laydate.now(0, c.options.format),
-      c.close()
+      c.close(),"function" == typeof c.options.choose && c.options.choose(laydate.now(0, c.options.format))
     }),
     h.ok = b("#laydate_ok"),
     c.on(h.ok, "click",

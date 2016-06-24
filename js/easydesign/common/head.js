@@ -2,8 +2,9 @@ define(function (require, exports, module) {
   require('jquery');
   // 搜索
   require('js/easydesign/common/search');
-  var switchSel = require('js/common/module/switchSel');
-  switchSel.set('.sea-words','.sea-words>span','.xiala-box','.xiala-box>li','');
+
+  // var switchSel = require('js/common/module/switchSel');
+  // switchSel.set('.sea-words','.sea-words>span','.xiala-box','.xiala-box>li','');
 
   $(function () {
     /** 登录状态的导航  */
@@ -49,9 +50,9 @@ define(function (require, exports, module) {
 
     });
 
-    
+
     $(document).ready(function () {
-      
+
     });
     var categoryHigh = 0;
     function resetHight(){
@@ -61,7 +62,7 @@ define(function (require, exports, module) {
        if($(this).css('display')=='none') {
         return;
        }
-        
+
         categoryHigh = categoryHigh + $(this).height() + parseInt($(this).css('margin-top'));
       });
       if(categoryHigh <= 50) $('.Collapse').hide();

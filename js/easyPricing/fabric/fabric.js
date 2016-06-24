@@ -124,6 +124,7 @@ function setMsgPosition(obj,msg,direction){
 
 ////////////////////////////弹出层///////////////////////////////////
 
+//点击开始核价 弹出层 配置选项
 var startPriceLayer = {
         type: 2,
         title: false,
@@ -156,7 +157,7 @@ var startPriceLayer = {
         shift: 'top',
         fix : false,
         iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
-        success: function () {
+        success: function (layer) {
 
         }
 
@@ -391,7 +392,6 @@ $(document).ready(function(){
   $('#factoryPrice_rad').bind('click',function(){
     $('.factoryOffer-box').show();
   });
-
 
 });
 

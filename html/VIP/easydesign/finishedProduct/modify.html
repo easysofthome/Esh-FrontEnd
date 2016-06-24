@@ -87,7 +87,7 @@
           <p class="lf">起始港：</p>
           <input class="int lf" id="startPort" locked='false' name="startPort" type="text" />
         </li>
-        <li class="lf clearfix">
+        <li class="intli lf clearfix">
           <p class="lf">目的港：</p>
           <input class="int lf" id="endPort" locked='false'name="endPort" type="text" />
         </li>
@@ -288,22 +288,25 @@
     <!-- 选择款式工缴报价方式 -->
     <div class="information">
 
-
-         <p class="smalltitle">选择款式工缴报价方式：</p>
+     <div class="clearfix factoryOffer marginleft lineH_20">
+         <div class="clearfix factoryOfferCss">选择款式工缴报价方式：</div>
           <div class="factoryOfferCssSub">
           <label class="lf radio_rg label_radio">
-            <input class="radio_post lf" name="Fruit" type="radio" value="" />
+            <input class="radio_post lf" name="Fruit" id="easySoftHomePrice_rad" checked="true" type="radio" value="" />
             <span class="lf">选择易家纺工缴库核价</span>
           </label>
-          <label class="lf radio_rg label_radio marginL10">
-            <input class="lf radio_post" name="Fruit" type="radio" checked="checked" value="" />
+          <label class="lf radio_rg label_radio">
+            <input class="lf radio_post" name="Fruit" id="factoryPrice_rad" type="radio" value="" />
             <span class="lf">选择工厂报价核价</span>
           </label>
-           <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
           </div>
-
-
-
+          <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
+      </div>
+      <div id="factoryOffer-box" class="clearfix factoryOffer marginleft none">
+        <span class="lf title_name">款式工缴报价工厂：</span>
+        <input type="text" id="factoryOffer" readonly="true" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
+        <a href="#" class="lf factoryOffer_butt">选择工厂报价</a>
+      </div>
     </div>
 
     <!-- 按钮 -->
@@ -314,7 +317,7 @@
     </form>
   </div>
 </div>
-
+ <button type="hidden" id="showAddLayer"></button>
 @@include('VIP/common/footer.html')
 <script>seajs.use('js/VIP/easydesign/finishedProduct/modify');</script>
 

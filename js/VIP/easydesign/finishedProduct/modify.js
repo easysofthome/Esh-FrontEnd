@@ -49,7 +49,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 450)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,
@@ -71,7 +71,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,
@@ -93,7 +93,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 272)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,
@@ -115,7 +115,7 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
           border: [5, 0.3, '#000'],
           shade: [0.8, '#000'],
           shadeClose: true,
-          offset: [($(window).height() - 650)/2+'px',''],
+          offset: [($(window).height() - 190)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,
@@ -162,6 +162,49 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
           shade: [0.8, '#000'],
           shadeClose: true,
           offset: [($(window).height() - 586)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+      //选择织造工缴工厂报价
+      $(".factoryOffer_butt").attr('href', 'javascript:void(0)');
+      $(".factoryOffer_butt").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '270px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 270)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
+          success: function (layero, index) {
+
+
+          }
+        });
+      });
+
+      //产品辅料 新增(双层layer)
+     $("#showAddLayer").bind("click",function(){
+        $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '594px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 594)/2+'px',''],
           closeBtn: [0, false], //去掉默认关闭按钮
           shift: 'top',
           fix : false,
@@ -263,24 +306,13 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
-
   // form
   var form = $("#pricingModifyForm");
-
-  $('#btnStartPrice').on('click', function() {
-        form.submit();
-
-  });
 
   //错误信息提示点
   var icons = {
       error: '<i class="i-error"></i>'
   };
-
-  function init() {
-      validate();
-      // bindEvent();
-  }
 
   /** 表单验证 */
   var validator;
@@ -536,12 +568,30 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
       });
   }
 
+function init() {
+      validate();
+      // bindEvent();
+  }
+  $('#btnStartPrice').on('click', function() {
+        form.submit();
 
+  });
 
+////////////////////////选择工厂报价核价 显示与隐藏///////////////////////////////////
+function radioSelectPriceType(){
+  $('#easySoftHomePrice_rad').bind('click',function(){
+    $('#factoryOffer-box').hide();
+  });
+  $('#factoryPrice_rad').bind('click',function(){
+    $('#factoryOffer-box').show();
+  });
+}
 
-
-
-init();
+$(document).ready(function(){
+  init();
+  //核价方式：选择易家纺工缴库核价
+  radioSelectPriceType();
+});
 
 
 });

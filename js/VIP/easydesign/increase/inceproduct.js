@@ -1,11 +1,11 @@
 define(function(require, exports, module) {
   require('jquery');
   require('js/lib/validation/validation');
+  require('js/lib/tip/jquery.poshytip');
   /////////////////////////////// 表单样式部分 ///////////////////////////////////
 
   var placehold = require('js/common/module/placehold');
   var FancyRadioCheckBox = require('FancyRadioCheckBox');
-
 
   //加载单选按钮样式
   FancyRadioCheckBox.init();
@@ -13,8 +13,37 @@ define(function(require, exports, module) {
   //占位符
   placehold.init('input');
 
+////////////////////////////错误提示框 tip///////////////////////////////////
+function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
+ $(obj).poshytip({
+      className: 'tip-violet',
+      content: msg,
+      showOn: 'none',
+      alignTo: 'target',
+      alignX: alignX,
+      alignY: alignY,
+      offsetX: offsetX,
+      offsetY: offsetY
+    });
 
+  $(obj).poshytip('show');
+}
 
+function setMsgPosition(obj,msg,direction){
+  switch(direction){
+    case "right":
+      showTip(obj,msg,"right","center",5,0);
+      break;
+    case "rightTop":
+      showTip(obj,msg,"inner-left","top",50,5);
+      break;
+    case "rightBottom":
+      showTip(obj,msg,"inner-left","bottom",0,5);
+      break;
+    default:
+      showTip(obj,msg,"inner-left","top",0,5);
+  }
+}
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
   // form
@@ -25,29 +54,44 @@ define(function(require, exports, module) {
       error: '<i class="i-error"></i>'
   };
 
-  function init() {
-      validate();
-
+  //如果没有上传图片 返回false
+  function validateUpLoadImg(){
+        $($('#filePicker')[0]).poshytip('destroy');
+        if(!($('.filelist li img').attr('src'))){
+            setMsgPosition($('#filePicker')[0],'请上传成品图片！',$('#filePicker').attr("errorMsgPosition"));
+            return false;
+        }
+        return true;
   }
 
   /** 表单验证 */
   var validator;
-  function validate() {
-
+  function validate(callback) {
       validator = form.validate({
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-              formSubmit(form);
-              //阻止表单提交
+            if(!validateUpLoadImg()){
               return false;
+            }
+            //阻止表单提交
+            if(callback){
+                callback();
+            }
+            return false;
           },
           onfocusout:function(element){
               $(element).valid();
           },
           errorPlacement: function(error, element) {
-              error.appendTo(element.siblings('.input-tip') );
+              $(element).poshytip('destroy');
+              if(error.text().length > 0){
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+              }
+              return true;
+          },
+          success:function(error, element){
+              $(element).poshytip('destroy');
           },
           rules: {
               fabricProName: {
@@ -64,7 +108,18 @@ define(function(require, exports, module) {
       });
   }
 
+  function init() {
+    validate();
+  }
 
-init();
+  $(document).ready(function(){
+       $('.butt_return').bind('click',function(){
+          form.submit();
+      });
+       //执行init 静态页测试用
+      init();
+  });
 
+  //接口 参数为回调函数 表单验证成功后执行
+  module.exports.validate = validate;
 });

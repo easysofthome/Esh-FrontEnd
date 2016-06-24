@@ -179,26 +179,6 @@ function setMsgPosition(obj,msg,direction){
       });
     });
 
-    //选择织造工缴工厂报价
-    $('.factoryOffer_butt').on('click', function() {
-      $.layer({
-        type: 2,
-        title: false,
-        area: ['1000px', '270px'],
-        border: [5, 0.3, '#000'],
-        shade: [0.8, '#000'],
-        shadeClose: true,
-        offset: [($(window).height() - 270)/2+'px',''],
-        closeBtn: [0, false], //去掉默认关闭按钮
-        shift: 'top',
-        fix : false,
-        iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
-        success: function () {
-
-        }
-
-      });
-    });
 
 //iframe 弹出层 保存并发布
 var startPriceLayer = {
@@ -228,23 +208,32 @@ var startPriceLayer = {
       error: '<i class="i-error"></i>'
   };
 
-  function init() {
-      validate();
-      // bindEvent();
+  //如果没有上传图片 返回false
+  function validateUpLoadImg(){
+      $($('#filePicker')[0]).poshytip('destroy');
+      if(!($('.filelist li img').attr('src'))){
+          setMsgPosition($('#filePicker')[0],'请上传面料图片！',$('#filePicker').attr("errorMsgPosition"));
+          return false;
+      }
+      return true;
   }
 
   /** 表单验证 */
   var validator;
-  function validate() {
+  function validate(callback) {
 //addrules();
       validator = form.validate({
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-              //formSubmit(form);
+              if(!validateUpLoadImg()){
+                  return false;
+              }
               //阻止表单提交
-              $.layer(startPriceLayer);
+              if(callback){
+                  callback();
+              }
+             // $.layer(startPriceLayer);
               return false;
           },
           onfocusout:function(element){
@@ -374,6 +363,21 @@ var startPriceLayer = {
       });
   }
 
+
+  function init() {
+        validate();
+  }
+
+  $(document).ready(function(){
+      $('#btnSaveAndPublish').on('click', function() {
+          form.submit();
+      });
+      //执行init 静态页测试用
+      init();
+  });
+
+  //接口 参数为回调函数 表单验证成功后执行
+  module.exports.validate = validate;
 
 init();
 

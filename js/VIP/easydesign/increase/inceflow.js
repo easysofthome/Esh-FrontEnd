@@ -16,11 +16,6 @@ define(function(require, exports, module) {
     //加载单选按钮样式
     FancyRadioCheckBox.init();
 
-    //选中样式
-    // $('.handle_one').click(function() {
-    //     $(this).toggleClass('selected');
-    // });
-
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 
@@ -116,6 +111,7 @@ function setMsgPosition(obj,msg,direction){
         });
     }
 
+    //如果没有上传图片 返回false
     function validateUpLoadImg(){
         $($('#filePicker')[0]).poshytip('destroy');
         if(!($('.filelist li img').attr('src'))){
@@ -202,18 +198,15 @@ function setMsgPosition(obj,msg,direction){
         });
     }
 
-
-    //加载表单验证函数
-  //init();
-
-
     $(document).ready(function(){
          $('.butt_return').bind('click',function(){
             form.submit();
         });
-
+        //执行init 静态页测试用
+        init();
     });
 
+    //接口 参数为回调函数 表单验证成功后执行
     module.exports.validate = validate;
 
 });

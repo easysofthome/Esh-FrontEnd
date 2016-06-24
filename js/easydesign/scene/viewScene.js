@@ -2,13 +2,19 @@ define(function (require, exports, module) {
   require('jquery');
 
   var objJson = {
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/panorama_3.jpg','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg?imageView/2/w/500','NextPageUrl':'','PrevPageUrl':''
   };
 
+  // var objJson = {
+  //   'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d/20160314/4d7adc60-4777-4d45-89bb-13f9505a1531.jpg','NextPageUrl':'','PrevPageUrl':''
+  // };
+
+
+   var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){
 
-    setBigImg(objJson,0);
+    setBigImg(objJson);
   }
 
   //加载第n张图片
@@ -17,30 +23,59 @@ define(function (require, exports, module) {
     setNextOrPrev(objJson);
 
     //获取图片的原始尺寸
-    setConstrainImg('#j-lb-picwp','#j-lb-side');
-    var options = "panorama="+objJson.CurrentImgUrl+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
+    $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
+       objImg.w = this.width;
+       objImg.h = this.height;
+       setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+        var options = "panorama="+objJson.CurrentImgUrl+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
+        $('#panoramaShow').attr('src',objJson.iframeSrc+"?"+options);
+        $('#j-lb-picwp').show();
+    });
 
-    $('#panoramaShow').attr('src',"/html/easydesign/scene/panoramaShow.html?"+options);
-    $('#j-lb-picwp').show();
+
 
   }
 
+
   //设置页面尺寸及top left值 可以自适应页面大小
-  function setConstrainImg(parentDiv,leftSide){
+  function setConstrainImg(image,imgObj,parentDiv,leftSide){
     var winH = $(window).height();
     var winW = $(window).width();
-
+    var w = image.w;
+    var h = image.h;
+    var l_w_ratio = h/w;
+    var w_l_ratio = w/h;
     var leftSide_w = $(leftSide).width();
+    if($(leftSide).css('display') == 'none'){
+        leftSide_w = 0;
+    }
+    if(h>winH&&l_w_ratio>=1){
+        h = winH;
+        w = winH*w_l_ratio;
 
+    }else if(w>winW&&l_w_ratio<=1){
+        w = winW;
+        h = winW*l_w_ratio;
+    }
+    var tmpTop = 0;
+    var tmpLeft =0;
+    if((winW-leftSide_w-w)>0){
+        tmpLeft = (winW-leftSide_w-w)/2;
+    }else{
+      w = w-leftSide_w;
+    }
+     if((winH-60-h)>0){
+        tmpTop = (winH-60-h)/2;
+    }else{
+       h = h-65;
+    }
     $('#j-lb-main').width(winW-leftSide_w);
     $('#j-lb-main').height(winH);
     $('#j-side-cnt').height(winH);
-
-
-    $(parentDiv).css({'top':0,'left':0});
-    $(parentDiv).css({'width':'100%','height':'100%'});
-    console.log(winW);
-    $('#panoramaShow').css({'top':10,'left':10,'width':winW-leftSide_w-20,'height':winH-80});
+    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
+    $(parentDiv).css({'width':w,'height':h});
+    $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
+    $('#panoramaShow').css({'top':5,'left':0,'width':w,'height':h-10});
 
   }
 
@@ -107,7 +142,12 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
-    //initPage(objJson);
+    var iframeSrc = $('#hidHtmlUrl').val();
+    if(!iframeSrc){
+      iframeSrc = "/html/easydesign/scene/panoramaShow.html";
+      objJson.iframeSrc = iframeSrc;
+    }
+    // initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
@@ -115,6 +155,7 @@ define(function (require, exports, module) {
       dataType: 'json',
       success: function(data){
         data.CurrentImgUrl = curImgUrl;
+        data.iframeSrc = iframeSrc;
         initPage(data);
       },
       error : function() {

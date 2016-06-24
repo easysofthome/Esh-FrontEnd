@@ -7,7 +7,7 @@
 	<link href="/css/production/VIP/common/account/meaccount.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	@@include('/VIPcommon/nav.html')
+	@@include('VIP/common/nav.html')
 	<div class="main_box clearfix">
 		@@include('VIP/common/account/accountL.html')
 		<div class="rg">
@@ -39,9 +39,9 @@
 				<div class="a17-box01">
 					<div class="chaxun clearfix">
 						<span class="lf">时间：</span>
-						<input class="lf ipt">
+						<input class="lf ipt laydate-icon-default" id="startDate">
 						<span class="lf span_zhi">至</span>
-						<input class="lf ipt">
+						<input class="lf ipt laydate-icon-default" id="endDate">
 						<!-- <span class="lf span_yewu">业务来源：</span>
 					<div class="select-box clearfix lf">
 						<input class="int" type="text" value="全部"></div>
@@ -144,5 +144,8 @@
 </div>
 </div>
 @@include('VIP/common/footer.html')
+<script>
+    seajs.use('/js/VIP/common/account/meaccount');
+ </script>
 </body>
 </html>
