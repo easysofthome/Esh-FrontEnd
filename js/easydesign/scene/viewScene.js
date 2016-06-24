@@ -2,7 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
 
   var objJson = {
-    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg?imageView/2/w/500','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'','PrevPageUrl':''
   };
 
   // var objJson = {
@@ -32,8 +32,6 @@ define(function (require, exports, module) {
         $('#j-lb-picwp').show();
     });
 
-
-
   }
 
 
@@ -49,25 +47,22 @@ define(function (require, exports, module) {
     if($(leftSide).css('display') == 'none'){
         leftSide_w = 0;
     }
-    if(h>winH&&l_w_ratio>=1){
-        h = winH;
-        w = winH*w_l_ratio;
+    if(h>winH-60){
+        h = winH-60;
+        //w = winH*w_l_ratio;
 
-    }else if(w>winW&&l_w_ratio<=1){
-        w = winW;
-        h = winW*l_w_ratio;
+    }
+    if(w>winW-leftSide_w){
+        w = winW-leftSide_w-10
+       // h = winW*l_w_ratio;
     }
     var tmpTop = 0;
     var tmpLeft =0;
     if((winW-leftSide_w-w)>0){
         tmpLeft = (winW-leftSide_w-w)/2;
-    }else{
-      w = w-leftSide_w;
     }
-     if((winH-60-h)>0){
+    if((winH-60-h)>0){
         tmpTop = (winH-60-h)/2;
-    }else{
-       h = h-65;
     }
     $('#j-lb-main').width(winW-leftSide_w);
     $('#j-lb-main').height(winH);
@@ -76,6 +71,7 @@ define(function (require, exports, module) {
     $(parentDiv).css({'width':w,'height':h});
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
     $('#panoramaShow').css({'top':5,'left':0,'width':w,'height':h-10});
+    //$('#panoramaShow').css({'top':5,'left':0,'width':winW-leftSide_w,'height':winH-10});
 
   }
 
@@ -133,7 +129,7 @@ define(function (require, exports, module) {
   }
 
   $(window).resize(function(event) {
-      setConstrainImg('#j-lb-picwp','#j-lb-side');
+     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
   });
 
   /////////////////////////全景图入口/////////////////////////////////////
@@ -147,7 +143,7 @@ define(function (require, exports, module) {
       iframeSrc = "/html/easydesign/scene/panoramaShow.html";
       objJson.iframeSrc = iframeSrc;
     }
-    // initPage(objJson);
+    //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
