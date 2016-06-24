@@ -24,12 +24,13 @@
         </div>
       </div>
       <div class="buy_box">
+      <form id="buyYiDouForm" type="post" action="">
         <div class="buy">
           <p class="buy_tit">购买子账号</p>
           <div class="clearfix buy_quanbox">
             <span class="lf unitprice">购买单价：</span>
             <span class="lf unitprice">100易豆(元)</span>
-            <span class="lf buy_quantit">购买数量：</span>
+            <span class="lf buy_quantit">购买数量(子账号)：</span>
             <input type="text" class="buy_inp lf">
             <span class="lf unit">个</span>
           </div>
@@ -66,12 +67,13 @@
           </div>
 
         </div>
-<button type="submit" href="#" class="save">确认付款</button>
+        <button type="button" href="#" class="save">确认付款</button>
       </div>
+      </form>
     </div>
 
   </div>
   @@include('VIP/common/footer.html')
-  <script>seajs.use("js/VIP/common/account/query.js");</script>
+  <script>seajs.use(["js/VIP/common/account/query","js/VIP/common/security/buy"]);</script>
 </body>
 </html>

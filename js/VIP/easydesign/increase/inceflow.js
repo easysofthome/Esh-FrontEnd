@@ -203,7 +203,7 @@ function setMsgPosition(obj,msg,direction){
             form.submit();
         });
         //执行init 静态页测试用
-        //init();
+        init();
     });
 
     //接口 参数为回调函数 表单验证成功后执行
