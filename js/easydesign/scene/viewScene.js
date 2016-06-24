@@ -147,7 +147,7 @@ define(function (require, exports, module) {
       iframeSrc = "/html/easydesign/scene/panoramaShow.html";
       objJson.iframeSrc = iframeSrc;
     }
-    initPage(objJson);
+    // initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
