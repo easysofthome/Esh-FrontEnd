@@ -33,7 +33,6 @@ define(function (require, exports, module) {
   //加载第n张图片
   function setBigImg(objJson){
     setNextOrPrev(objJson);
-
     $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
 
     //获取图片的原始尺寸
@@ -41,7 +40,9 @@ define(function (require, exports, module) {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+    $('#j-lb-pic').show();
     });
+
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -200,7 +201,7 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
-    //initPage(objJson);
+    initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,

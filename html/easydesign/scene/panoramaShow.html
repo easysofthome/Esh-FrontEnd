@@ -69,7 +69,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
     var MMdoctitle = document.title;
 
   AC_FL_RunContent(
-    "src", "/js/lib/panoramaShow/playerProductInstall",
+    "src", "/video/playerProductInstall",
     "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
     "menu","false",
     "width", width,
@@ -86,7 +86,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
   );
 } else if (hasRequestedVersion) {
   AC_FL_RunContent(
-      "src", "/js/lib/panoramaShow/rmpanoplayer",
+      "src", "http://cjmx.easysofthome.com/rmpanoplayer",
       "FlashVars",options,
       "menu","false",
       "width", width,
@@ -114,13 +114,13 @@ if ( hasProductInstall && !hasRequestedVersion ) {
     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
       id="Main" width="600" height="400"
       codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
-      <param name="movie" value="/js/lib/panoramaShow/rmpanoplayer.swf" />
+      <param name="movie" value="http://cjmx.easysofthome.com/rmpanoplayer.swf" />
       <param name="FlashVars" value="panorama=*.jpg&focus=350&pan=180&start=true&infoText=" />
       <param name="quality" value="high" />
       <param name="bgcolor" value="#333333" />
       <param name="allowFullScreen" value="true" />
       <param name="allowScriptAccess" value="sameDomain" />
-      <embed src="/js/lib/panoramaShow/rmpanoplayer.swf" quality="high" bgcolor="#333333"
+      <embed src="http://cjmx.easysofthome.com/rmpanoplayer.swf" quality="high" bgcolor="#333333"
         FlashVar="panorama=img/01.jpg&focus=350&pan=180&start=true&infoText=花园别墅样板房---餐厅"
         width="600" height="400" name="Main" align="middle"
         play="true"
