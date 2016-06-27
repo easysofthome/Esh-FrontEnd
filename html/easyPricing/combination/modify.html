@@ -44,21 +44,22 @@
   <form method="post" id="combinationModifyForm" action="">
     <p class="title">核价信息参数核对修改</p>
     <!-- 核价方式及费率修改　 -->
-    <div class="ratebox">
-      <p class="smalltitle">
+    <p class="smalltitle marginB20">
         核价方式及费率修改　<a class="shrink" href="#">[点击收缩]</a>
-      </p>
+    </p>
+    <div class="shrink_wrap">
+    <div class="ratebox">
       <div class="pricingbox clearfix">
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" checked="checked" />
+          <input class="int lf" type="checkbox" checked="checked" disabled="true" />
           <span class="words lf">FOB核价</span>
         </label>
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" checked="checked"/>
+          <input class="int lf" type="checkbox"/>
           <span class="words lf">GIF核价</span>
         </label>
         <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" checked="checked"/>
+          <input class="int lf" type="checkbox"/>
           <span class="words lf">LDP核价</span>
         </label>
         <p class="lf reminder">温馨提示：如果您需要核CIF或者LDP价格，请您勾选CIF核价或者LDP核价，勾选完成后填写相应的参数信息。</p>
@@ -102,7 +103,7 @@
       </ul>
     </div>
     <!-- 海运费信息 -->
-     <div class="information">
+     <div class="information none">
       <p class="smalltitle">海运费信息</p>
       <ul class="intbox clearfix">
         <li class="intli lf clearfix">
@@ -127,9 +128,9 @@
       </ul>
     </div>
     <!-- LDP费率信息 -->
-    <div class="information">
+    <div class="information none">
       <p class="smalltitle">
-        LDP费率信息　<a id="exportTariff" class="shrink">获取出口税率</a>
+        LDP费率信息　<a id="exportTariff" class="color_blue hover_red">获取出口税率</a>
       </p>
       <div class="LDP clearfix">
         <ul class="LDPL lf">
@@ -195,11 +196,13 @@
         </ul>
       </div>
     </div>
+    </div>
     <!-- 款式尺码信息-->
-    <div class="information">
-      <p class="smalltitle">
+    <p class="smalltitle marginB20">
         款式尺码信息　<a class="shrink" href="#">[点击收缩]</a>
-      </p>
+    </p>
+    <div class="shrink_wrap">
+    <div class="information">
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td>自由组合类型</td>
@@ -259,11 +262,13 @@
         </tr>
       </table>
     </div>
+    </div>
     <!-- 主要面料-->
-    <div class="information">
-      <p class="smalltitle">
+    <p class="smalltitle marginB20">
         主要面料　<a class="shrink" href="#">[点击收缩]</a>
-      </p>
+    </p>
+    <div class="shrink_wrap">
+    <div class="information">
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td>主要用途</td>
@@ -324,7 +329,7 @@
         </tr>
       </table>
     </div>
-
+    </div>
     <!-- 选择款式工缴报价方式 -->
     <div class="information">
 

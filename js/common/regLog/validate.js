@@ -42,15 +42,15 @@ define(function (require, exports, module) {
 /////////////////////////////////// 表单验证 //////////////////////////////////////////
     // input
     var form = $("#register-form");
-    var form_account = $("#form-account");
+    var form_account = $("#RegName");
     // var form_email = $("#form-email");
     //密码
-    var form_pwd = $("#form-pwd");
+    var form_pwd = $("#Pwd");
     //手机
     // var form_phone = $("#form-phone");
     //获取手机验证码
     var btn_getcode = $("#getCode");
-    var auth_code = $("#authCode");
+    var auth_code = $("#AuthCode");
     var auth_code_tit = $("#authCodeTit");
     //图片验证码
     // var imgAuthCode = $("#imgAuthCode");
@@ -111,22 +111,22 @@ define(function (require, exports, module) {
         $('input[type=password],input[type=text]').bind('input', function() {
             var _id = $(this).attr('id');
             switch(_id){
-                case 'form-account':
+                case 'RegName':
                     resetStringLength(50,_id);
                     break;
                 case 'authCode':
                     resetStringLength(6,_id);
                     break;
-                case 'form-equalTopwd':
-                case 'form-pwd':
+                case 'RePwd':
+                case 'Pwd':
                     resetStringLength(20,_id);
                     break;
                 // 25个中文字符
-                case 'company-name':
+                case 'CompanyName':
                     resetStringLength(50,_id);
                     break;
                 // 50个英文字符
-                case 'company-name-en':
+                case 'CompanyNameEn':
                     resetStringLength(100,_id);
                     break;
                 default: break;
@@ -169,7 +169,7 @@ define(function (require, exports, module) {
 
             },
             success:function(error, element){
-                if($(element).attr('id')== 'form-pwd') return;
+                if($(element).attr('id')== 'Pwd') return;
                 $(element).poshytip('destroy');
             },
             rules: {
@@ -184,11 +184,11 @@ define(function (require, exports, module) {
                     required: true,
                     rangelength: [6, 20],
                     strength: true,
-                    same: '#form-account'
+                    same: '#RegName'
                 },
                 RePwd: {
                     required: true,
-                    equalTo: '#form-pwd'
+                    equalTo: '#Pwd'
                 },
                 CompanyName:{
                     required: true,

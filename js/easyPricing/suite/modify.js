@@ -4,22 +4,6 @@ define(function (require, exports, module) {
   require('js/lib/tip/jquery.poshytip');
   require('js/lib/validation/validation');
 
-  ///////////////////////表单样式初始化//////////////////////////////////
-  var FancyRadioCheckBox = require('FancyRadioCheckBox');
-  FancyRadioCheckBox.init();
-
-  var evTimeStamp = 0;
-  $('.lab').on('click', function() {
-    var now = +new Date();
-    if (now - evTimeStamp < 100) {
-      return;
-    }
-    evTimeStamp = now;
-
-    $('.modifybox').find('.information').eq($(this).index()).toggle();
-  });
-
-
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
 var cName = (className == undefined? 'tip-violet':'tip-yellow');

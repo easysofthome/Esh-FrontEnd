@@ -43,14 +43,14 @@
           <span class="men_tit lf">用　户　名：</span>
           <div class="lf input_left username_box">
             <span class="placeholder">请输入手机号或邮箱</span>
-            <input type="text" class="input_style" value="" name="RegName" id="form-account">
+            <input type="text" class="input_style" value="" name="RegName" id="RegName">
             <div class="input-tip"></div>
           </div>
         </div>
         <div class="clearfix padding">
           <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
           <div class="lf input_left2">
-            <input type="text" class="input_codes" errorMsgPosition="rightBottom" id="authCode" name="AuthCode">
+            <input type="text" class="input_codes" errorMsgPosition="rightBottom" id="AuthCode" name="AuthCode">
             <a href="javascript:void(0)" class="butt_cides lf" id="getValidateCode">获取验证码</a>
             <span class="validateCodeTip">活码已发送<br/>请查收(2小时有效)</span>
             <div class="input-tip clearfix"></div>
@@ -61,7 +61,7 @@
           <span class="men_tit lf">密　　　码：</span>
           <div class="lf input_left password_box">
             <span class="placeholder">请输入密码</span>
-            <input type="password" class="input_style" value="" id="form-pwd" name="Pwd"/>
+            <input type="password" class="input_style" value="" id="Pwd" name="Pwd"/>
             <i class="i-status"></i>
             <div class="input-tip"></div>
           </div>
@@ -76,7 +76,7 @@
           </span>
           <div class="lf input_left passwordRe_box">
             <span class="placeholder">请再次输入密码</span>
-            <input id="form-equalTopwd" name="RePwd" type="password" class="input_style" value="">
+            <input id="RePwd" name="RePwd" type="password" class="input_style" value="">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -85,7 +85,7 @@
           <span class="men_tit lf">企业中文名：</span>
           <div class="lf input_left password_box">
             <span class="placeholder">不能包含英文</span>
-            <input type="text" class="input_style"  id="company-name" name="CompanyName">
+            <input type="text" class="input_style"  id="CompanyName" name="CompanyName">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -93,7 +93,7 @@
           <span class="men_tit lf">企业英文名：</span>
           <div class="lf input_left password_box">
             <span class="placeholder">不能包含中文</span>
-            <input type="text" class="input_style" id="company-name-en" name="CompanyNameEn">
+            <input type="text" class="input_style" id="CompanyNameEn" name="CompanyNameEn">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -185,7 +185,7 @@
 
         </div>
         <div class="clearfix agree">
-          <input type="checkbox" name="AgreeProtocol" errorMsgPosition="bottom" value="2" class="lf check_agree">
+          <input type="checkbox" id="AgreeProtocol" name="AgreeProtocol" errorMsgPosition="bottom" value="2" class="lf check_agree">
           <span class="lf check_agreetext">我已阅读并同意</span>
           <a href="#" class="bule_color lf" id="protocol">《易家纺用户注册协议》</a>
           <a href="#" class="bule_color lf" id="promise">《隐私承诺》</a>
@@ -244,7 +244,7 @@
   <script src="/js/common/seajs/seajs-css.js"></script>
   <script src="/js/rootConfig.js"></script>
   <script>
-    seajs.use('/js/common/regLog/register');
+    seajs.use(['js/common/regLog/register','js/common/regLog/validate']);
   </script>
 </body>
 </html>
