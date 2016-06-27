@@ -71,7 +71,10 @@ define(function (require, exports, module) {
     $(parentDiv).css({'width':w,'height':h});
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
     $('#panoramaShow').css({'top':5,'left':0,'width':w,'height':h-10});
-    //$('#panoramaShow').css({'top':5,'left':0,'width':winW-leftSide_w,'height':winH-10});
+    var obj = window.frames["panoramaShow"].document.getElementById("Main");
+    if(obj){
+       obj.width = w;
+    }
 
   }
 
@@ -143,7 +146,7 @@ define(function (require, exports, module) {
       iframeSrc = "/html/easydesign/scene/panoramaShow.html";
       objJson.iframeSrc = iframeSrc;
     }
-    //initPage(objJson);
+    initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,

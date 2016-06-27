@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title></title>
@@ -21,8 +22,6 @@ var requiredRevision = 28;
 
 <body>
 <script language="JavaScript" type="text/javascript">
-
-
   var options = "";
   var url=window.location;
   options = url.search.replace(/^\?/, '');
@@ -94,6 +93,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
       "align", "middle",
       "id", "Main",
       "quality", "high",
+      "wmode", "transparent",
       "bgcolor", "#333333",
       "name", "Main",
       "allowFullScreen","true",
@@ -119,6 +119,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
       <param name="quality" value="high" />
       <param name="bgcolor" value="#333333" />
       <param name="allowFullScreen" value="true" />
+      <param name="wmode" value="transparent">
       <param name="allowScriptAccess" value="sameDomain" />
       <embed src="http://cjmx.easysofthome.com/rmpanoplayer.swf" quality="high" bgcolor="#333333"
         FlashVar="panorama=img/01.jpg&focus=350&pan=180&start=true&infoText=花园别墅样板房---餐厅"
@@ -129,6 +130,7 @@ if ( hasProductInstall && !hasRequestedVersion ) {
         allowFullScreen="true"
         allowScriptAccess="sameDomain"
         type="application/x-shockwave-flash"
+        womode="transparent"
         pluginspage="http://www.adobe.com/go/getflashplayer">
       </embed>
   </object>
