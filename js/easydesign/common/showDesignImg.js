@@ -11,7 +11,7 @@ define(function (require, exports, module) {
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
     {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
   };
 
   var objImg = {};
@@ -20,7 +20,6 @@ define(function (require, exports, module) {
     if(!objJson) return;
     setBigImg(objJson);
     if(objJson.FlowerStyleSimilarList.length <=0) return;
-
     for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
       $('#j-resemble').append(' <li class="resembleLi">'+
         '<a class="list" href="'+objJson.FlowerStyleSimilarList[i].ImgLink+'" data-picid="">'+
@@ -148,13 +147,18 @@ define(function (require, exports, module) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
-
       if (delta > 0){
-          // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
-      }else if (delta < 0){
-          // 向下滚
+         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+            return;
+         }
+         // 向下滚
          window.open(objJson.PrevPageUrl,'_self');
+      }else if (delta < 0){
+        if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
+            return;
+          }
+         // 向上滚
+         window.open(objJson.NextPageUrl,'_self');
       }
     });
   }
@@ -200,7 +204,7 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
-   // initPage(objJson);
+    //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,

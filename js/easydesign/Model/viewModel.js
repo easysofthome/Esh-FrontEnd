@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
  // require('js/easydesign/common/jquery.fullscreen');
   var objJson = {
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/d840ac06-c4aa-4474-96f4-0689b042f258.jpg','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/d840ac06-c4aa-4474-96f4-0689b042f258.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html'
   };
 
 
@@ -17,14 +17,14 @@ define(function (require, exports, module) {
   //加载第n张图片
   function setBigImg(objJson){
     setNextOrPrev(objJson);
-
+    $('#j-lb-pic').hide();
     $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
-
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+    $('#j-lb-pic').show();
     });
   }
 
@@ -134,11 +134,17 @@ define(function (require, exports, module) {
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
       if (delta > 0){
-          // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
-      }else if (delta < 0){
-          // 向下滚
+         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+            return;
+         }
+         // 向下滚
          window.open(objJson.PrevPageUrl,'_self');
+      }else if (delta < 0){
+        if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
+            return;
+          }
+         // 向上滚
+         window.open(objJson.NextPageUrl,'_self');
       }
     });
   }

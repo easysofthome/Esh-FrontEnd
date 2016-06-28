@@ -2,7 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
 
   var objJson = {
-    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html'
   };
 
   // var objJson = {
@@ -10,7 +10,7 @@ define(function (require, exports, module) {
   // };
 
 
-   var objImg = {};
+  var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){
 
@@ -21,7 +21,6 @@ define(function (require, exports, module) {
   function setBigImg(objJson){
     $('#j-lb-picwp').hide();
     setNextOrPrev(objJson);
-
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
        objImg.w = this.width;
@@ -146,7 +145,7 @@ define(function (require, exports, module) {
       iframeSrc = "/html/easydesign/scene/panoramaShow.html";
       objJson.iframeSrc = iframeSrc;
     }
-   // initPage(objJson);
+   //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
