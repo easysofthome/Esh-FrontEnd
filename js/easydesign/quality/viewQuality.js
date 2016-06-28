@@ -3,7 +3,7 @@ define(function (require, exports, module) {
   require('js/lib/jquery.snipe/jquery.snipe');
 
   var objJson = {
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/767171c0-3b5f-4f63-8832-72ef851c57e4.jpg','NextPageUrl':'','PrevPageUrl':''
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/767171c0-3b5f-4f63-8832-72ef851c57e4.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html'
   };
   var objImg = {};
   var display = true;
@@ -16,14 +16,15 @@ define(function (require, exports, module) {
   //加载第n张图片
   function setBigImg(objJson){
     setNextOrPrev(objJson);
+    $('#j-lb-pic').hide();
     $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
-
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-       snipe_len('j-lb-pic');
+      $('#j-lb-pic').show();
+      snipe_len('j-lb-pic');
       });
     }).each(function() {
         //解决IE8不重复加载的问题
@@ -138,17 +139,23 @@ define(function (require, exports, module) {
   //鼠标滚轮，上一张、下一张
   function mousewheel(objJson){
      // jquery 兼容的滚轮事件
-    $(document).on("mousewheel DOMMouseScroll", function (e) {
+    $('#j-lb-main').on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
-      if (delta > 0){
-          // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
-      }else if (delta < 0){
-          // 向下滚
+       if (delta > 0){
+         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+            return;
+         }
+         // 向下滚
          window.open(objJson.PrevPageUrl,'_self');
+      }else if (delta < 0){
+        if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
+            return;
+          }
+         // 向上滚
+         window.open(objJson.NextPageUrl,'_self');
       }
     });
   }
