@@ -108,6 +108,29 @@ define(function (require, exports, module) {
        window.open(objJson.PrevPageUrl,'_self');
     });
   }
+  //鼠标滚轮，上一张、下一张
+  function mousewheel(objJson){
+     // jquery 兼容的滚轮事件
+    $('#j-lb-main').on("mousewheel DOMMouseScroll", function (e) {
+
+      var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+
+      if (delta > 0){
+         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+            return;
+         }
+         // 向下滚
+         window.open(objJson.PrevPageUrl,'_self');
+      }else if (delta < 0){
+        if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
+            return;
+          }
+         // 向上滚
+         window.open(objJson.NextPageUrl,'_self');
+      }
+    });
+  }
 
   //第一张  最后一张 控制链接显示与否
   function setNextOrPrev(objJson){
@@ -127,7 +150,7 @@ define(function (require, exports, module) {
       bindScrollBigImg(objJson);
       $(document.body).css("overflow","hidden");
       loadOtherFabrics(objJson);
-      // mousewheel(objJson);
+       mousewheel(objJson);
   }
 
   $(window).resize(function(event) {

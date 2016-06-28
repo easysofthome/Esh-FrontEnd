@@ -128,7 +128,7 @@ define(function (require, exports, module) {
   //鼠标滚轮，上一张、下一张
   function mousewheel(objJson){
      // jquery 兼容的滚轮事件
-    $(document).on("mousewheel DOMMouseScroll", function (e) {
+    $('#j-lb-main').on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
