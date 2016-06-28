@@ -17,7 +17,6 @@ define(function (require, exports, module) {
   var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){
-
     if(!objJson) return;
     setBigImg(objJson);
     if(objJson.FlowerStyleSimilarList.length <=0) return;
@@ -32,9 +31,9 @@ define(function (require, exports, module) {
 
   //加载第n张图片
   function setBigImg(objJson){
+    $('#j-lb-pic').hide();
     setNextOrPrev(objJson);
     $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
-
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
@@ -201,7 +200,7 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
-    initPage(objJson);
+   // initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
