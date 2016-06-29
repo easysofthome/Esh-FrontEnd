@@ -17,8 +17,6 @@ define(function (require, exports, module) {
   };
 
 ///////////////////////////////////登录//////////////////////////////////////////
-
-  // 纬纱种类选择纱线
   $('#toLogin').on('click', function() {
     $.layer({
       type: 2,
