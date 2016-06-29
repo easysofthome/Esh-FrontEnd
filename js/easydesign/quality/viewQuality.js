@@ -1,10 +1,36 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/lib/jquery.snipe/jquery.snipe');
+  require('layer');
+  require('js/lib/tip/jquery.poshytip');
 
   var objJson = {
     'CurrentImgUrl':'/images/production/easydesign/designFabrics/767171c0-3b5f-4f63-8832-72ef851c57e4.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html'
   };
+
+///////////////////////////////////登录//////////////////////////////////////////
+  $('#toLogin').on('click', function() {
+    $.layer({
+      type: 2,
+      title: false,
+      area: ['440px', '490px'],
+      border: [5, 0.3, '#000'],
+      shade: [0.8, '#000'],
+      shadeClose: true,
+      offset: [($(window).height() - 490)/2+'px',''],
+      closeBtn: [0, false], //去掉默认关闭按钮
+      shift: 'top',
+      fix : false,
+      iframe: {src: '/html/VIP/common/regLog/login-single.html'},
+      success: function () {
+
+      }
+
+    });
+  });
+
+////////////////////////////////图片加载///////////////////////////////////////////
+
   var objImg = {};
   var display = true;
   //动态加载数据

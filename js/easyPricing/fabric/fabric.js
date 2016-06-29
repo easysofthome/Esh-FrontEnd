@@ -58,12 +58,12 @@ function setMsgPosition(obj,msg,direction){
             + '<div class="lf" style="width: 142px;">'
               + '<span class="clearfix ingredient" >'
                 + '<span class="lf ingredient_tit">成分</span>'
-                + '<span class="lf input_fabric">全棉纱</span>'
+                + '<input class="lf input_fabric" name="" readonly="true" id="warpIngredient2"/>'
               + '</span>'
               + '<span class="clearfix thickness">'
               + '<span class="clearfix thickness">'
                 + '<span class="lf ingredient_tit">粗细</span>'
-                + '<span class="lf input_fabric">80S</span>'
+                + '<input class="lf input_fabric" name="" readonly="true" id="warpDiameter2"/>'
               + '</span>'
             + '</div>'
             + '<div class="yarn_butt lf">选择纱线</div>'
@@ -73,6 +73,7 @@ function setMsgPosition(obj,msg,direction){
           );
         },
         cutEvent: function () {
+          $('#yarn-ul li:last input').poshytip('destroy');
           $('#yarn-ul li:last').remove();
           $('#warp_num_box input:last').poshytip('destroy');
           $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
@@ -91,11 +92,11 @@ function setMsgPosition(obj,msg,direction){
           + '<div class="lf" style="width: 142px;">'
             + '<span class="clearfix ingredient">'
               + '<span class="lf ingredient_tit">成分</span>'
-              + '<span class="lf input_fabric">全棉纱</span>'
+              + '<input class="lf input_fabric" name="" readonly="true" id="weftIngredient'+num+'"/>'
             + '</span>'
             + '<span class="clearfix thickness">'
               + '<span class="lf ingredient_tit">粗细</span>'
-              + '<span class="lf input_fabric">80S</span>'
+              + '<input class="lf input_fabric" name="" readonly="true" id="weftDiameter'+num+'"/>'
             + '</span>'
           + '</div>'
           + '<div class="yarn_butt lf">选择纱线</div>'
@@ -104,6 +105,7 @@ function setMsgPosition(obj,msg,direction){
           + '<input type="text" id="abbSpinnerNum'+num+'" name="abbSpinnerNum'+num+'" class="density_input lf">');
       },
       cutEvent:function () {
+        $('#abb-ul li:last input').poshytip('destroy');
         $('#abb-ul li:last').remove();
         $('#abb_num_box input:last').poshytip('destroy');
         $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
@@ -279,6 +281,18 @@ function closeGuideLayer(){
                   maxlength:10,
                   gt:0
               },
+              warpIngredient1: {
+                  required: true
+              },
+              warpIngredient2: {
+                  required: true
+              },
+              warpDiameter1: {
+                  required: true
+              },
+              warpDiameter2: {
+                  required: true
+              },
               abbSpinnerNum1: {
                   number:true,
                   required: true,
@@ -300,6 +314,30 @@ function closeGuideLayer(){
                   number:true,
                   required: true,
                   maxlength:10
+              },
+              weftIngredient1: {
+                  required: true
+              },
+              weftIngredient2: {
+                  required: true
+              },
+              weftIngredient3: {
+                  required: true
+              },
+              weftIngredient4: {
+                  required: true
+              },
+              weftDiameter1: {
+                  required: true
+              },
+              weftDiameter2: {
+                  required: true
+              },
+              weftDiameter3: {
+                  required: true
+              },
+              weftDiameter4: {
+                  required: true
               },
               exchangeRate: {
                   required: true,
@@ -338,7 +376,18 @@ function closeGuideLayer(){
                   number: icons.error + '经密值只能是数字！',
                   required: icons.error + '请输入经密值！',
                   maxlength: icons.error + '经密值过大！'
-
+              },
+              warpIngredient1: {
+                  required: icons.error + '请输入经纱成分！'
+              },
+              warpIngredient2: {
+                  required: icons.error + '请输入经纱成分！'
+              },
+              warpDiameter1: {
+                  required: icons.error + '请输入经纱粗细！'
+              },
+              warpDiameter2: {
+                  required: icons.error + '请输入经纱粗细！'
               },
               abbSpinnerNum1: {
                   number: icons.error + '纬密值只能是数字！',
@@ -359,6 +408,30 @@ function closeGuideLayer(){
                   number: icons.error + '纬密值只能是数字！',
                   required: icons.error + '请输入纬密值！',
                   maxlength: icons.error + '纬密值过大！'
+              },
+              weftIngredient1: {
+                  required: icons.error + '请输入纬纱成分！'
+              },
+              weftIngredient2: {
+                  required: icons.error + '请输入纬纱成分！'
+              },
+              weftIngredient3: {
+                  required: icons.error + '请输入纬纱成分！'
+              },
+              weftIngredient4: {
+                  required: icons.error + '请输入纬纱成分！'
+              },
+              weftDiameter1: {
+                  required: icons.error + '请输入纬纱粗细！'
+              },
+              weftDiameter2: {
+                  required: icons.error + '请输入纬纱粗细！'
+              },
+              weftDiameter3: {
+                  required: icons.error + '请输入纬纱粗细！'
+              },
+              weftDiameter4: {
+                  required: icons.error + '请输入纬纱粗细！'
               },
               exchangeRate:{
                   required: icons.error + '请输入汇率！',

@@ -1,13 +1,34 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('layer');
+  require('js/lib/tip/jquery.poshytip');
 
   var objJson = {
     'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/uidesign/viewWorks.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/uidesign/viewWorks.html'
   };
 
-  // var objJson = {
-  //   'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d/20160314/4d7adc60-4777-4d45-89bb-13f9505a1531.jpg','NextPageUrl':'','PrevPageUrl':''
-  // };
+  ///////////////////////////////////登录//////////////////////////////////////////
+  $('#toLogin').on('click', function() {
+    $.layer({
+      type: 2,
+      title: false,
+      area: ['440px', '490px'],
+      border: [5, 0.3, '#000'],
+      shade: [0.8, '#000'],
+      shadeClose: true,
+      offset: [($(window).height() - 490)/2+'px',''],
+      closeBtn: [0, false], //去掉默认关闭按钮
+      shift: 'top',
+      fix : false,
+      iframe: {src: '/html/VIP/common/regLog/login-single.html'},
+      success: function () {
+
+      }
+
+    });
+  });
+
+////////////////////////////////图片加载///////////////////////////////////////////
 
 
    var objImg = {};

@@ -71,7 +71,7 @@
 
           <p class="butt_box">
             <a class="butt_pricing" href="#">保存</a>
-            <a class="butt_return" href="#">保存并发布</a>
+            <a class="butt_return" href="javascript:void(0)">保存并发布</a>
           </p>
         </form>
       </div>
@@ -83,6 +83,11 @@
   <script src="/js/common/seajs/seajs-css.js"></script>
 
   <script src="/js/rootConfig.js"></script>
-  <script>seajs.use('js/VIP/easydesign/increase/inceproduct');</script>
+  <script>
+  seajs.use(['js/VIP/easydesign/increase/inceproduct'],function(v){
+    //测试表单验证成功后 是否执行回调
+    v.validate(function(){alert('添加成功！')});
+  });
+  </script>
   </body>
   </html>

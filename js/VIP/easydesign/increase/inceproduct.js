@@ -71,10 +71,11 @@ function setMsgPosition(obj,msg,direction){
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
+            //验证上传图片是否为空
             if(!validateUpLoadImg()){
-              return false;
+                return false;
             }
-            //阻止表单提交
+            //执行回调
             if(callback){
                 callback();
             }
@@ -108,16 +109,10 @@ function setMsgPosition(obj,msg,direction){
       });
   }
 
-  function init() {
-    validate();
-  }
-
   $(document).ready(function(){
        $('.butt_return').bind('click',function(){
           form.submit();
       });
-       //执行init 静态页测试用
-      init();
   });
 
   //接口 参数为回调函数 表单验证成功后执行
