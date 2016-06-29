@@ -1,0 +1,47 @@
+{{#each layouts}}
+  {{#each layout.items}}
+    @{{#if ../../opt.split}}{{escimage ../../name}}-{{/if}}{{escimage meta.name}}: -{{baseDim x}}px -{{baseDim y}}px {{baseDim meta.width}}px {{baseDim meta.height}}px;
+  {{/each}}
+{{/each}}
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x  @sprite-offset-y;
+}
+
+.sprite(@sprite, @display: block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+{{#each layouts}}
+  {{#each sprites}}
+
+    {{#if dpi}}
+    @media (-webkit-min-device-pixel-ratio: {{ratio}}), (min-resolution: {{dpi}}dpi) {
+    {{/if}}
+    .{{cssesc ../classname}} {
+      background-image: url('{{escimage url}}');
+      {{#if dpi}}
+      background-size: {{baseWidth}}px {{baseHeight}}px;
+      {{/if}}
+    }
+    {{#if dpi}}
+    }
+    {{/if}}
+  {{/each}}
+
+{{/each}}
