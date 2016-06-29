@@ -3,7 +3,6 @@ define(function (require, exports, module) {
   require('layer');
   require('js/lib/tip/jquery.poshytip');
 
- // require('js/easydesign/common/jquery.fullscreen');
   var objJson = {'FlowerStyleSimilarList':
     [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
     {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
@@ -38,7 +37,7 @@ define(function (require, exports, module) {
   });
 
 ////////////////////////////////图片加载///////////////////////////////////////////
-  var objImg = {};
+  var objImg = {'w':100,'h':100};
   //动态加载数据
   function loadOtherFabrics(objJson){
     if(!objJson) return;
@@ -228,12 +227,16 @@ define(function (require, exports, module) {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
+    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
       data: '' ,
       dataType: 'json',
+      beforeSend:function(){
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
       success: function(data){
         data.CurrentImgUrl= curImgUrl;
         initPage(data);

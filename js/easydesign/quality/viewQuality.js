@@ -31,7 +31,7 @@ define(function (require, exports, module) {
 
 ////////////////////////////////图片加载///////////////////////////////////////////
 
-  var objImg = {};
+  var objImg = {'w':100,'h':100};
   var display = true;
   //动态加载数据
   function loadOtherFabrics(objJson){
@@ -50,6 +50,7 @@ define(function (require, exports, module) {
     objImg.h = this.height;
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
       $('#j-lb-pic').show();
+      $('.snipe_len_tool').show();
       snipe_len('j-lb-pic');
       });
     }).each(function() {
@@ -125,7 +126,9 @@ define(function (require, exports, module) {
     $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
     $(parentDiv).css({'width':w,'height':h});
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
-    callback();
+    if(callback){
+       callback();
+    }
   }
 
 
@@ -215,25 +218,33 @@ define(function (require, exports, module) {
     //mousewheel(objJson);
   }
 
-  $(window).resize(function(event) {
-      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',function(){
-        snipe_len('j-lb-pic');
-      });
-  });
-
+  //页面尺寸改编，图片一直居中
+  function bindWinresize(callback){
+    $(window).resize(function(event) {
+      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',callback);
+    });
+  }
 
 ////////////////////////////////入口/////////////////////////////////////
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
+    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
       data: '' ,
       dataType: 'json',
+      beforeSend:function(){
+        bindWinresize()
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
       success: function(data){
+        bindWinresize(function(){
+          snipe_len('j-lb-pic');
+        });
         data.CurrentImgUrl= curImgUrl;
         initPage(data);
       },

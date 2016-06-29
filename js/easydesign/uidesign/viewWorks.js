@@ -31,7 +31,7 @@ define(function (require, exports, module) {
 ////////////////////////////////图片加载///////////////////////////////////////////
 
 
-   var objImg = {};
+  var objImg = {'w':100,'h':100};
   //动态加载数据
   function loadOtherFabrics(objJson){
 
@@ -159,6 +159,7 @@ define(function (require, exports, module) {
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
     var iframeSrc = $('#hidHtmlUrl').val();
+    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     if(!iframeSrc){
       iframeSrc = "/html/easydesign/scene/panoramaShow.html";
       objJson.iframeSrc = iframeSrc;
@@ -169,7 +170,11 @@ define(function (require, exports, module) {
       url: baseURL+'?'+params,
       data: '' ,
       dataType: 'json',
+      beforeSend:function(){
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
       success: function(data){
+        $('#j-lb-pic').hide();
         data.CurrentImgUrl = curImgUrl;
         data.iframeSrc = iframeSrc;
         initPage(data);
