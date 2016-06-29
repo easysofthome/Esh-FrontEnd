@@ -59,11 +59,6 @@ function setMsgPosition(obj,msg,direction){
         error: '<i class="i-error"></i>'
     };
 
-    function init() {
-        validate();
-        //bindEvent();
-    }
-
 /** 限制输入字符长度 **/
     function getStringLength (str) {
         if(!str){
@@ -202,8 +197,6 @@ function setMsgPosition(obj,msg,direction){
          $('.butt_return').bind('click',function(){
             form.submit();
         });
-        //执行init 静态页测试用
-        init();
     });
 
     //接口 参数为回调函数 表单验证成功后执行
