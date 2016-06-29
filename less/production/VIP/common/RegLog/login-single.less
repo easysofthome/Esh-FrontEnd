@@ -3,218 +3,170 @@
 
 @import '../../../../dev/mixins/mixins.less';
 
-.logbox
-{
-    background: url('/images/production/VIP/common/RegLog/logback.png') top center no-repeat;
-    .header
-    {
-        width: 100%;
+body{
+    background-color: #000;
+}
 
-        background: rgba(0,0,0,0);
-        .top
-        {
-            font-size: 12px;
-            line-height: 14px;
+.login-box{
+    width: 430px;
+    margin: 0 auto;
+}
 
-            width: 80%;
-            margin: 0 auto;
-            padding: 9px 0;
-            a
-            {
-                color: #fff;
-            }
-            .butt_right
-            {
-                margin-right: 20px;
-            }
-            #username
-            {
-                i
-                {
-                    font-style: normal;
-
-                    margin-left: 4px;
-                    padding: 0 11px;
-
-                    border-radius: 9px;
-                    background: #f90;
-                }
-            }
-        }
-    }
-    .loglog
-    {
-        margin: 0 auto 0 auto;
-
-        .sprite(@loglogo);
+.login-title{
+    line-height: 40px;
+    height: 40px;
+    color: #000;
+    padding: 0 10px;
+    background-color: #f3f3f3;
+    .Shut-down{
+        margin-top: 13px;
+        .sprite(@Shut-down);
         .icon-VIP-common-RegLog;
-        .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/loglogo.png');
-    }
-    .log_left
-    {
-        width: 350px;
-        padding-right: 20px;
-    }
-    .log_box
-    {
-        width: 900px;
-        margin: 56px auto 0 auto;
-        padding: 40px;
-
-        border: 1px solid #dedede;
-        background-color: #fff;
-
-        .border-radius(5px);
-    }
-    .username,
-    .password,
-    .Codes
-    {
-        font-size: 16px;
-        line-height: 46px;
-
-        display: block;
-
-        width: 330px;
-        height: 46px;
-        padding-left: 20px;
-
-        color: #999;
-        border: 0;
-        border: none;
-        background-color: #f2f2f2;
-
-        .border-radius(5px);
-    }
-    .correct
-    {
-        margin-right: 2px;
-
-        .sprite(@correct);
-        .icon-VIP-common-RegLog;
-    }
-    .error
-    {
-        margin-right: 4px;
-
-        .sprite(@error);
-        .icon-VIP-common-RegLog;
-    }
-    .user_prompt
-    {
-        line-height: 16px;
-
-        visibility: hidden;
-
-        padding: 6px 0 6px 0;
-
-        color: #666;
-    }
-    .username
-    {
-        line-height: 46px;
-
-        height: 46px;
-        margin-top: 20px;
-    }
-    .Codes
-    {
-        width: 130px;
-        height: 46px;
-    }
-    .butt_log
-    {
-        margin-top: 20px;
-    }
-    .Codes_cen
-    {
-        overflow: hidden;
-
-        width: 160px;
-        height: 46px;
-
-        background: url('/images/production/VIP/common/RegLog/codes.jpg');
-        background-color: #000;
-
-        .fixIe6pngTransparent('/images/production/VIP/common/RegLog/codes.jpg');
-    }
-    .QRcode
-    {
-        width: 450px;
-        height: 285px;
-        margin: 30px 0 0 20px;
-
-        background: url('/images/production/VIP/common/RegLog/erweima.png') no-repeat;
-
-        .fixIe6pngTransparent('/images/production/VIP/common/RegLog/erweima.png');
-    }
-    .QRcode_text
-    {
-        font-size: 16px;
-
-        margin-top: 10px;
-
-        color: #666;
-    }
-    .pass-box
-    {
-        font-size: 14px;
-
-        color: #666;
-        .int_pass
-        {
-            width: 14px;
-            height: 14px;
-            margin-right: 5px;
-
-            vertical-align: middle;
-        }
-        .for_pass
-        {
-            color: #3ca1d7;
-        }
-    }
-    .butt_log
-    {
-        font-size: 18px;
-        line-height: 46px;
-
-        display: block;
-
-        width: 350px;
-
-        text-align: center;
-
-        color: #fff;
-        background-color: #3ca1d7;
-
-        .border-radius(5px);
-    }
-    .arr_rig
-    {
-        margin: 2px 0 0 4px;
-
-        .sprite(@arrow-right);
-        .icon-VIP-common-RegLog;
-        .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/arrow-right.png');
-    }
-    .immediately
-    {
-        font-size: 16px;
-
-        text-decoration: underline;
-
-        color: #3ca1d7;
-    }
-    .status
-    {
-        margin-top: 2px;
-    }
-    .immediately_box
-    {
-        margin: 20px 0 0 90px;
+        .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/Shut-down.png');
     }
 }
+
+.login-single-box{
+    width: 350px;
+    padding: 20px 40px 50px 40px;
+    background-color: #fff;
+    p.user_title{
+        font-size: 18px;
+        color: #333;
+    }
+}
+
+.username,
+.password,
+.Codes
+{
+    font-size: 16px;
+    line-height: 46px;
+
+    display: block;
+
+    width: 330px;
+    height: 46px;
+    padding-left: 20px;
+
+    color: #999;
+    border: 0;
+    border: none;
+    background-color: #f2f2f2;
+
+    .border-radius(5px);
+}
+.correct
+{
+    margin-right: 2px;
+
+    .sprite(@correct);
+    .icon-VIP-common-RegLog;
+}
+.error
+{
+    margin-right: 4px;
+
+    .sprite(@error);
+    .icon-VIP-common-RegLog;
+}
+.user_prompt
+{
+    line-height: 16px;
+
+    visibility: hidden;
+
+    padding: 6px 0 6px 0;
+
+    color: #666;
+}
+.username
+{
+    line-height: 46px;
+
+    height: 46px;
+    margin-top: 20px;
+}
+.Codes
+{
+    width: 130px;
+    height: 46px;
+}
+.butt_log
+{
+    margin-top: 20px;
+}
+.Codes_cen
+{
+    overflow: hidden;
+
+    width: 160px;
+    height: 46px;
+
+    background: url('/images/production/VIP/common/RegLog/codes.jpg');
+    background-color: #000;
+
+    .fixIe6pngTransparent('/images/production/VIP/common/RegLog/codes.jpg');
+}
+.pass-box
+{
+    font-size: 14px;
+
+    color: #666;
+    .int_pass
+    {
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+
+        vertical-align: middle;
+    }
+    .for_pass
+    {
+        color: #3ca1d7;
+    }
+}
+.butt_log
+{
+    font-size: 18px;
+    line-height: 46px;
+
+    display: block;
+
+    width: 350px;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #3ca1d7;
+
+    .border-radius(5px);
+}
+.arr_rig
+{
+    margin: 2px 0 0 4px;
+
+    .sprite(@arrow-right);
+    .icon-VIP-common-RegLog;
+    .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/arrow-right.png');
+}
+.immediately
+{
+    font-size: 16px;
+
+    text-decoration: underline;
+
+    color: #3ca1d7;
+}
+.status
+{
+    margin-top: 2px;
+}
+.immediately_box
+{
+    margin: 20px 0 0 90px;
+}
+
 .user_box,
 .password_box,
 .authcode_box
