@@ -186,7 +186,7 @@ define(function (require, exports, module) {
         document.onmouseup= function(){return true;};
     }
     document.onselectstart = new Function('event.returnValue=false;');
-    mousewheel(objJson);
+    //mousewheel(objJson);
   }
 
   $(window).resize(function(event) {

@@ -190,7 +190,7 @@ define(function (require, exports, module) {
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
    // similarFlowersClick(objJson);
-    mousewheel(objJson);
+   // mousewheel(objJson);
     //clickFullScreen();
   }
 

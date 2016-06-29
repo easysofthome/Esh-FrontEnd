@@ -16,15 +16,13 @@ define(function (require, exports, module) {
 
 
 //////////////////////////////////智能下拉列表提示//////////////////////////////////////
-  //智能下拉列表提示
-  var companys = ['杭州格仁家纺有限公司', '杭州长相知家纺科技有限公司', '杭州天绫家纺有限公司', '杭州双顺家纺布艺有限公司']; //测试数据
 
-  $(document).ready(function(){
-    $('#CompanyName').autocomplete({
-      hints: companys,
-      width:$('#CompanyName').width()
-    });
-  });
+  function showComNameList(obj,companys){
+      $(obj).autocomplete({
+        hints: companys,
+        width: $(obj).width()
+      });
+  }
 
 //////////////////////////////////身份 选择//////////////////////////////////////
 function userIdentity(){
@@ -43,6 +41,9 @@ function userIdentity(){
       tag:'',
       marginTop:0
     });
-  userIdentity();
+    userIdentity();
    });
+
+  //接口
+  exports.showComNameList = showComNameList;
 });

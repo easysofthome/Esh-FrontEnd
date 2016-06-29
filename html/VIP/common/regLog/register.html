@@ -244,7 +244,17 @@
   <script src="/js/common/seajs/seajs-css.js"></script>
   <script src="/js/rootConfig.js"></script>
   <script>
-    seajs.use(['js/common/regLog/register','js/common/regLog/validate']);
+    seajs.use(['js/common/regLog/register','js/common/regLog/validate'],function(a,b){
+        //验证成功后的回调函数
+        var testDatajson = {'submitAjax':function(){alert('提交成功！');}};
+        b.validate(testDatajson);
+        //下拉列表提示 测试数据
+        var companys = ['杭州格仁家纺有限公司', '杭州长相知家纺科技有限公司', '杭州天绫家纺有限公司', '杭州双顺家纺布艺有限公司'];
+         //智能公司名称下拉提示
+        $('#CompanyName').bind('change paste keyup',function(){
+            a.showComNameList(this,companys);
+        });
+    });
   </script>
 </body>
 </html>

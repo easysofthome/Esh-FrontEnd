@@ -78,7 +78,7 @@ define(function (require, exports, module) {
         // checkEmail();
         checkPwd();
         //getPhoneCode();
-        validate();
+       // validate(testDatajson);
         //注册协议
         // agreen();
         bindEvent();
@@ -143,23 +143,21 @@ define(function (require, exports, module) {
     }
 /** /限制输入字符长度 **/
 
-/** 表单验证 */
+/** 表单验证 datajson为后台传来json数据 datajson.submitAjax() 为表单验证成功后执行的函数 */
     var validator;
     var validatorTip = {'msg':'addMethod'};
-    function validate() {
+    function validate(datajson) {
         addrules();
+        addrulesAjax();
         validator = form.validate({
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
                 //提交表单
-                formSubmit(form);
-                //阻止表单提交
-
+                datajson.submitAjax();
                 return false;
             },
              onfocusout:function(element){
-             // $('.input-tip span').css('display','block');
               $(element).valid();
             },
             errorPlacement: function(error, element) {
@@ -177,7 +175,8 @@ define(function (require, exports, module) {
                 RegName: {
                     required: true,
                     user: true,
-                    checkUser: true
+                    checkUser: true,
+                    checkUserAjax:true
                 },
                 //密码
                 Pwd: {
@@ -288,12 +287,51 @@ define(function (require, exports, module) {
         $.validator.addMethod('enCompanyName', function (value, element, param) {
             return this.optional(element) || EnCompanyNameRule($(element), value);
         }, validatorTip.msg);
-         $.validator.addMethod('chCompanyName', function (value, element, param) {
+        $.validator.addMethod('chCompanyName', function (value, element, param) {
             return this.optional(element) || ChCompanyNameRule($(element), value);
         }, validatorTip.msg);
-
-
     }
+
+    //自定义验证方法 用于需同后台交互
+    function addrulesAjax(){
+        $.validator.addMethod('checkUserAjax', function (value, element) {
+            return this.optional(element) || checkUserAjax($(element), value);
+        }, validatorTip.msg);
+    }
+    /*
+    验证后台是否存在该用户名，将用户名发送给后台，后台返回true/false（是否存在该用户）
+    datajson是后台提供的json数据 包含请求路径:datajson.checkUserAction
+    async不能为异步，需等后台执行完毕后方可继续执行前台
+     */
+    function checkUserAjax(element,value){
+        var flag = true;
+        var msg = '';
+        $.ajax({
+            url:'http://182.168.1.134:8180/checkUser?' +$(element).attr('name')+'='+ $(element).val(),
+            async:false,//要指定不能异步,必须等待后台服务校验完成再执行后续代码
+            dataType:"json",
+            method:'get',
+            success:function(exist) {
+                $(element).poshytip('destroy');
+                if(exist){
+                    if(userRule($(element),value)[1]=='phone'){
+                       msg = "该手机号已存在！";
+                    }else{
+                       msg = "该邮箱已存在！";
+                    }
+                    setMsgPosition(element,msg,$(element).attr("errorMsgPosition"));
+                    flag = false;
+                }else{
+                    flag = true;
+                }
+            },
+            error:function(){
+                console.log('请求失败！');
+            }
+        });
+        return flag;
+    }
+
     /** 用户名验证 */
     function userRule (element, value) {
         $(element).poshytip('destroy');
@@ -672,25 +710,7 @@ function checkEmail(element, succedCallback, errorCallBack) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+exports.validate = validate;
 
 
 

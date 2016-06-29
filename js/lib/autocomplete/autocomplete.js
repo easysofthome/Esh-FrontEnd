@@ -18,6 +18,7 @@ define(function (require, exports, module) {
 				width: 200,
 				height: 0,
 				showButton: false,
+				jsFilter:false,
 				buttonText: 'Search',
 				onSubmit: function(text){},
 				onBlur: function(){}
@@ -26,6 +27,7 @@ define(function (require, exports, module) {
 			//Build messagess
 			this.each(function() {
 				//Container
+				$('.autocomplete-container').html('');
 				var searchContainer = $('<div></div>')
 					.addClass('autocomplete-container')
 					.css('height', params.height * 2)
@@ -100,45 +102,78 @@ define(function (require, exports, module) {
 							break;
 					}
 				});
-				var tempInputVal = "";
-				input.bind("change paste keyup", function(e){
+				if(params.jsFilter){
+					var tempInputVal = "";
+					input.bind("change paste keyup", function(e){
+						if(tempInputVal == input.val()) return;
+						if(e.which != 13 && e.which != 27
+								&& e.which != 38 && e.which != 40){
+							currentProposals = [];
+							currentSelection = -1;
+							proposalList.empty();
+							if(input.val() != ''){
+								var word = '';
+								word = "^" + input.val() + ".*";
+								proposalList.empty();
+								for(var test in params.hints){
+									if(params.hints[test].match(word)){
+										currentProposals.push(params.hints[test]);
+										var element = $('<li></li>')
+											.html(params.hints[test])
+											.addClass('proposal')
+											.hover(function(){
+												input.val($(this).text());
+											})
+											.click(function(){
+												//执行不到 先触发 blur 元素已经被清空 click无法触发 可以用timeout延迟blur触发时间
+												proposalList.empty();
+												params.onSubmit(input.val());
+											})
+											.mouseenter(function() {
+												$(this).addClass('selected');
+											})
+											.mouseleave(function() {
+												$(this).removeClass('selected');
+											});
+										proposalList.append(element);
+									}
+								}
+							}
+						}
+						tempInputVal = input.val();
+					});
+				}else{
 					if(tempInputVal == input.val()) return;
-					if(e.which != 13 && e.which != 27
-							&& e.which != 38 && e.which != 40){
 						currentProposals = [];
 						currentSelection = -1;
 						proposalList.empty();
 						if(input.val() != ''){
-							var word = "^" + input.val() + ".*";
 							proposalList.empty();
 							for(var test in params.hints){
-								if(params.hints[test].match(word)){
-									currentProposals.push(params.hints[test]);
-									var element = $('<li></li>')
-										.html(params.hints[test])
-										.addClass('proposal')
-										.hover(function(){
-											input.val($(this).text());
-										})
-										.click(function(){
-											//执行不到 先触发 blur 元素已经被清空 click无法触发 可以用timeout延迟blur触发时间
-											proposalList.empty();
-											params.onSubmit(input.val());
-										})
-										.mouseenter(function() {
-											$(this).addClass('selected');
-										})
-										.mouseleave(function() {
-											$(this).removeClass('selected');
-										});
-									proposalList.append(element);
-								}
+								currentProposals.push(params.hints[test]);
+								var element = $('<li></li>')
+									.html(params.hints[test])
+									.addClass('proposal')
+									.hover(function(){
+										input.val($(this).text());
+									})
+									.click(function(){
+										//执行不到 先触发 blur 元素已经被清空 click无法触发 可以用timeout延迟blur触发时间
+										proposalList.empty();
+										params.onSubmit(input.val());
+									})
+									.mouseenter(function() {
+										$(this).addClass('selected');
+									})
+									.mouseleave(function() {
+										$(this).removeClass('selected');
+									});
+								proposalList.append(element);
 							}
 						}
-					}
-					tempInputVal = input.val();
-				});
+						tempInputVal = input.val();
 
+				}
 				input.blur(function(e){
 					currentSelection = -1;
 					proposalList.empty();
