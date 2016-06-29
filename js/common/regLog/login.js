@@ -95,7 +95,6 @@ function setMsgPosition(obj,msg,direction){
   /** 表单验证 */
   var validator;
   function validate(callback) {
-//addrules();
       validator = form.validate({
           //忽略
           ignore: '.ignore',
@@ -121,33 +120,25 @@ function setMsgPosition(obj,msg,direction){
           },
           rules: {
               userName: {
-                  required: true,
-                  maxlength:30,
-                  checkUser:true
+                  required: true
               },
               uPassWord: {
-                  required: true,
-                  rangelength: [6, 20]
+                  required: true
               },
               validateCode: {
-                  required: true,
-                  rangelength:[5, 5]
+                  required: true
               }
 
           },
           messages: {
               userName: {
-                  required: icons.error + '手机号或邮箱不能为空',
-                  maxlength: icons.error + '手机号或邮箱过长！'
+                  required: icons.error + '手机号或邮箱不能为空'
               },
               uPassWord: {
-                  required: icons.error + '密码不能为空！',
-                  rangelength: icons.error + '密码长度为6-20个字符！'
+                  required: icons.error + '密码不能为空！'
               },
               validateCode: {
-                  required: icons.error + '验证码不能为空！',
-                  rangelength: icons.error + '验证码长度为5位！'
-
+                  required: icons.error + '验证码不能为空！'
               }
           }
       });
