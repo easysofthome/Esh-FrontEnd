@@ -92,24 +92,18 @@ function setMsgPosition(obj,msg,direction){
       error: '<i class="i-error"></i>'
   };
 
-  function init() {
-      validate();
-      // bindEvent();
-  }
-
   /** 表单验证 */
   var validator;
-  function validate() {
+  function validate(callback) {
 //addrules();
       validator = form.validate({
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-            // formSubmit(form);
-              //阻止表单提交
-
-             return false;
+            if(callback){
+              callback();
+            }
+            return false;
           },
           onfocusout:function(element){
               $(element).valid();
@@ -159,32 +153,6 @@ function setMsgPosition(obj,msg,direction){
       });
   }
 
-
-
-
-init();
-
-
-
-
-
-// //正则检查手机号和邮箱
-//   function checkUser (user) {
-//     var reg = {
-//         "86": "^(13|15|18|14|17)[0-9]{9}$"  //中国
-//     };
-//     var email = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$"; //邮件
-//     var regPhone = new RegExp(reg[86]);
-//     var regEmail = new RegExp(email);
-//     var userFlag = regPhone.test(user.val()) || regEmail.test(user.val());
-//     if(!userFlag){
-//       alert("请输入正确的手机或邮箱");
-//       user.focus();
-//       return false;
-//     }
-//     return true;
-//   }
-
-//   module.exports.preCheck = preCheck;
+   module.exports.validate = validate;
 
 });

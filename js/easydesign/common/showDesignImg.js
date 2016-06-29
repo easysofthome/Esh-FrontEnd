@@ -1,5 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('layer');
+  require('js/lib/tip/jquery.poshytip');
 
  // require('js/easydesign/common/jquery.fullscreen');
   var objJson = {'FlowerStyleSimilarList':
@@ -14,6 +16,30 @@ define(function (require, exports, module) {
     'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
   };
 
+///////////////////////////////////登录//////////////////////////////////////////
+
+  // 纬纱种类选择纱线
+  $('#toLogin').on('click', function() {
+    $.layer({
+      type: 2,
+      title: false,
+      area: ['440px', '490px'],
+      border: [5, 0.3, '#000'],
+      shade: [0.8, '#000'],
+      shadeClose: true,
+      offset: [($(window).height() - 490)/2+'px',''],
+      closeBtn: [0, false], //去掉默认关闭按钮
+      shift: 'top',
+      fix : false,
+      iframe: {src: '/html/VIP/common/regLog/login-single.html'},
+      success: function () {
+
+      }
+
+    });
+  });
+
+////////////////////////////////图片加载///////////////////////////////////////////
   var objImg = {};
   //动态加载数据
   function loadOtherFabrics(objJson){

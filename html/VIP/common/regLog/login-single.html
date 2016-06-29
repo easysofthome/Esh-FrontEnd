@@ -69,6 +69,19 @@
 <script src="/js/common/seajs/seajs-css.js"></script>
 
 <script src="/js/rootConfig.js"></script>
-<script>seajs.use('/js/common/regLog/login');</script>
+<script src="/js/lib/jquery/jquery.js"></script>
+  <script>
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.Shut-down').click(function(){
+      parent.layer.close(index);
+    });
+  </script>
+
+<script>
+seajs.use(['/js/common/regLog/login'],function(v){
+  //测试表单验证成功后 是否执行回调
+  v.validate(function(){alert('登录成功！')});
+});
+</script>
 </body>
 </html>
