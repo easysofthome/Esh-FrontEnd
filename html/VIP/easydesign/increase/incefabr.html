@@ -103,11 +103,11 @@
                     <div class="lf" style="width: 142px;">
                       <span class="clearfix ingredient" >
                         <span class="lf ingredient_tit">成分</span>
-                        <span class="lf input_fabric">全棉纱</span>
+                        <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="warpIngredient1"/>
                       </span>
                       <span class="clearfix thickness">
                         <span class="lf ingredient_tit">粗细</span>
-                        <span class="lf input_fabric">80S</span>
+                        <input class="lf input_fabric" name="" readonly="true" value="60S" id="warpDiameter1"/>
                       </span>
                     </div>
                     <div class="yarn_butt lf">选择纱线</div>
@@ -139,11 +139,11 @@
                     <div class="lf" style="width: 142px;">
                       <span class="clearfix ingredient">
                         <span class="lf ingredient_tit">成分</span>
-                        <span class="lf input_fabric">全棉纱</span>
+                        <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="weftIngredient1"/>
                       </span>
                       <span class="clearfix thickness">
                         <span class="lf ingredient_tit">粗细</span>
-                        <span class="lf input_fabric">80S</span>
+                        <input class="lf input_fabric" name="" readonly="true" value="26S" id="weftDiameter1"/>
                       </span>
                     </div>
                     <div class="yarn_butt lf">选择纱线</div>
@@ -406,6 +406,11 @@
     </div>
   </div>
   @@include('VIP/common/footer.html')
-  <script>seajs.use('js/VIP/easydesign/increase/incefabr');</script>
+  <script>
+  seajs.use(['js/VIP/easydesign/increase/incefabr'],function(v){
+      //测试表单验证成功后 是否执行回调
+      v.validate(function(){alert('添加成功！')});
+  });
+  </script>
   </body>
   </html>
