@@ -1,0 +1,6 @@
+/node_modules
+/js/rootConfig.js
+/Less/sprite
+/dist
+/.idea
+/gulpfile.js
