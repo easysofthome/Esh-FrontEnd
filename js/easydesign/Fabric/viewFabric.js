@@ -3,11 +3,6 @@ define(function (require, exports, module) {
   require('layer');
   require('js/lib/tip/jquery.poshytip');
 
- // require('js/easydesign/common/jquery.fullscreen');
-  var objJson = {
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/767171c0-3b5f-4f63-8832-72ef851c57e4.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Fabric/viewFabric.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Fabric/viewFabric.html'
-  };
-
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
     $.layer({
@@ -215,7 +210,6 @@ define(function (require, exports, module) {
     var baseURL = $('#hidAjaxUrl').val();
     var curImgUrl = $('#hidCurrentImgUrl').val();
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-    //initPage(objJson);
     $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
@@ -223,6 +217,7 @@ define(function (require, exports, module) {
       dataType: 'json',
       beforeSend:function(){
         $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+        $('#j-lb-pic').css({'width':100,'height':100});
       },
       success: function(data){
         data.CurrentImgUrl= curImgUrl;
@@ -232,12 +227,8 @@ define(function (require, exports, module) {
         console.log('---面料详情页异常---');
       }
     });
-
-
-
-
   });
 
 
-
+exports.initPage=initPage;
 });
