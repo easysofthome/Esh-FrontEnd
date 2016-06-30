@@ -1,38 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
 
-////////////////////////////////////////测试用json数据////////////////////////////////////////
-
-  //卧室
-  var beddingroomJson = {'realBigImg':'/images/production/easydesign/bedroom/bedroom_vr.jpg',
-  'realFabricImg':['/images/production/easydesign/bedroom/bedroom_fabric_real.png'],
-  'vrBigImg':'/images/production/easydesign/bedroom/bedroom_01_real.jpg',
-  'vrFabricImg':[{'src':'/images/production/easydesign/bedroom/bedroom_01_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_01_real.jpg'},
-                 {'src':'/images/production/easydesign/bedroom/bedroom_02_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_02_real.jpg'},
-                 {'src':'/images/production/easydesign/bedroom/bedroom_03_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_03_real.jpg'}]};
-  //浴室
-  var bathroomJson = {'realBigImg':'/images/production/easydesign/bathroom/bathroom_vr.jpg',
-  'realFabricImg':['/images/production/easydesign/bathroom/bathroom_fabric_real.png'],
-  'vrBigImg':'/images/production/easydesign/bathroom/bathroom_01_real.jpg',
-  'vrFabricImg':[{'src':'/images/production/easydesign/bathroom/bathroom_01_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_01_real.jpg'},
-                 {'src':'/images/production/easydesign/bathroom/bathroom_02_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_02_real.jpg'},
-                 {'src':'/images/production/easydesign/bathroom/bathroom_03_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_03_real.jpg'}]};
-  //餐厅室
-  var diningroomJson = {'realBigImg':'/images/production/easydesign/diningroom/diningroom_vr.jpg',
-  'realFabricImg':['/images/production/easydesign/diningroom/diningroom_fabric_real.png'],
-  'vrBigImg':'/images/production/easydesign/diningroom/diningroom_01_real.jpg',
-  'vrFabricImg':[{'src':'/images/production/easydesign/diningroom/diningroom_01_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_01_real.jpg'},
-                 {'src':'/images/production/easydesign/diningroom/diningroom_02_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_02_real.jpg'},
-                 {'src':'/images/production/easydesign/diningroom/diningroom_03_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_03_real.jpg'}]};
-  //客厅
-  var livingroomJson = {'realBigImg':'/images/production/easydesign/livingroom/livingroom_vr.jpg',
-  'realFabricImg':['/images/production/easydesign/livingroom/livingroom_fabric_real1.png',
-                  '/images/production/easydesign/livingroom/livingroom_fabric_real2.png',
-                  '/images/production/easydesign/livingroom/livingroom_fabric_real3.png'],
-  'vrBigImg':'/images/production/easydesign/livingroom/livingroom_01_real.jpg',
-  'vrFabricImg':[{'src':'/images/production/easydesign/livingroom/livingroom_01_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_01_real.jpg'},
-                 {'src':'/images/production/easydesign/livingroom/livingroom_02_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_02_real.jpg'},
-                 {'src':'/images/production/easydesign/livingroom/livingroom_03_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_03_real.jpg'}]};
 
 /////////////////////////////////////////////////页面构建////////////////////////////////////////////////////
 
@@ -91,8 +59,8 @@ define(function (require, exports, module) {
 
   //动态加载场景对比页面图片
   simulationFn.loadRoomImg = function(jsonData){
-    $(".simulation_all img").eq(0).attr("src",jsonData.realBigImg);
-    $(".simulation_all img").eq(1).attr("src",jsonData.vrBigImg);
+    $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.realBigImg);
+    $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrBigImg);
     loadFabricList(jsonData);
   }
 
@@ -106,9 +74,9 @@ define(function (require, exports, module) {
       if(i===0){
         selClass = "selectedFabric";
       }else{selClass="";}
-      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.vrFabricImg[i].src+ "\' /></li>");
+      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $li.bind('click',function(){
-        $(".simulation_all img").eq(1).attr("src",jsonData.vrFabricImg[$(this).attr('tag')].href);
+        $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
       });
       $("#fabricListview_right").append($li);
    }
@@ -117,29 +85,12 @@ define(function (require, exports, module) {
         $(".selectFabricList_left span").css("height",134);
    }
    for(var k=0;k<fabricListSizeL;k++){
-      $("#fabricListview_left").append("<li><img src=\'"+jsonData.realFabricImg[k]+ "\' /></li>");
+      $("#fabricListview_left").append("<li><img src=\'"+jsonData.cdnPath+jsonData.realFabricImg[k]+ "\' /></li>");
    }
   }
 
 
   $(document).ready(function () {
-    switch(location.search){
-      case '?id1':
-        simulationFn.loadRoomImg(beddingroomJson);
-        break;
-      case '?id2':
-        simulationFn.loadRoomImg(bathroomJson);
-        break;
-      case '?id3':
-        simulationFn.loadRoomImg(livingroomJson);
-        break;
-      case '?id4':
-        simulationFn.loadRoomImg(diningroomJson);
-        break;
-      default:
-        break;
-    }
-
     //初始化场景对比页
     simulationFn.initAll();
 
@@ -149,5 +100,7 @@ define(function (require, exports, module) {
   $(window).resize(function() {
     simulationFn.initPosition();
   });
+
+exports.loadSimulation = simulationFn.loadRoomImg;
 
 });
