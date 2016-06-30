@@ -5,46 +5,56 @@
 
 .logbox
 {
-    .logo-main{
+    background: url('/images/production/VIP/common/RegLog/logback.png') top center no-repeat;
+    .header
+    {
         width: 100%;
-        background-color: #fff;
-        -webkit-box-shadow:0 0 20px 1px #e0e0e0;
-        -moz-box-shadow:0 0 20px 1px #e0e0e0;
-        box-shadow:0 0 20px 1px #e0e0e0;
-    }
-    .logo-box{
-        width: 1200px;
-        margin: 0 auto;
-        padding: 10px 0;
-        .logo
-        {
-            i{
-                .sprite(@logo_blue);
-                .icon-VIP-common-RegLog;
-                .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/logo_blue.png');
-            }
-            .words{
-                margin: 13px 0 0 40px;
-                line-height: 34px;
-                height: 34px;
-                padding-left: 40px;
-                color: #000;
-                font-size: 18px;
-                border-left: 1px solid #bbbbbb;
-            }
-        }
-        .return{
-            .button-variant(#fff; #ff6600; #ff6600);
-            .button-size(0; 20px; 14px; 30px; 5px);
-            margin-top: 15px;
-        }
-    }
 
+        background: rgba(0,0,0,0);
+        .top
+        {
+            font-size: 12px;
+            line-height: 14px;
+
+            width: 80%;
+            margin: 0 auto;
+            padding: 9px 0;
+            a
+            {
+                color: #fff;
+            }
+            .butt_right
+            {
+                margin-right: 20px;
+            }
+            #username
+            {
+                i
+                {
+                    font-style: normal;
+
+                    margin-left: 4px;
+                    padding: 0 11px;
+
+                    border-radius: 9px;
+                    background: #f90;
+                }
+            }
+        }
+    }
+    .loglog
+    {
+        margin: 0 auto 0 auto;
+
+        .sprite(@loglogo);
+        .icon-VIP-common-RegLog;
+        .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/loglogo.png');
+    }
     .log_content
     {
-        width: 1120px;
-        margin: 40px auto 0 auto;
-        padding: 30px 40px;
+        width: 900px;
+        margin: 56px auto 0 auto;
+        padding: 40px;
 
         border: 1px solid #dedede;
         background-color: #fff;
@@ -53,8 +63,7 @@
     }
     .signup
     {
-        width: 530px;
-        margin-left: 60px;
+        width: 470px;
 
         border-right: 1px solid #ddd;
     }
@@ -187,6 +196,10 @@
     {
         margin-left: 4px;
     }
+    .agree
+    {
+        margin-top: 20px;
+    }
     .check_agree
     {
         margin: 4px 0 0 93px;
@@ -211,7 +224,7 @@
         display: block;
 
         width: 330px;
-        margin-left: 93px;
+        margin: 20px 0 0 93px;
 
         text-align: center;
 
@@ -224,7 +237,7 @@
     .rg_box
     {
         margin-top: 80px;
-        padding-left: 70px;
+        padding-left: 40px;
     }
     .logarr
     {
@@ -434,23 +447,4 @@
 
     width: 110px;
     margin: 3px 0 0 8px;
-}
-
-.footerbox
-{
-    width: 100%;
-    padding-top: 30px;
-
-    .copyright
-    {
-        font-size: 14px;
-        line-height: 34px;
-
-        width: 1200px;
-        margin: 0 auto;
-
-        text-align: center;
-
-        color: #888;
-    }
 }
