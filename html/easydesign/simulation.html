@@ -68,7 +68,57 @@
 
   <script src="/js/rootConfig.js"></script>
   <script>
-    seajs.use('js/easydesign/simulate');
+    seajs.use(['js/easydesign/simulate'],function(e){
+      ////////////////////////////////////////测试用json数据////////////////////////////////////////
+
+  //卧室
+  var beddingroomJson = {'realBigImg':'/images/production/easydesign/bedroom/bedroom_vr.jpg',
+  'realFabricImg':['/images/production/easydesign/bedroom/bedroom_fabric_real.png'],
+  'vrBigImg':'/images/production/easydesign/bedroom/bedroom_01_real.jpg',
+  'vrFabricImg':[{'src':'/images/production/easydesign/bedroom/bedroom_01_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_01_real.jpg'},
+                 {'src':'/images/production/easydesign/bedroom/bedroom_02_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_02_real.jpg'},
+                 {'src':'/images/production/easydesign/bedroom/bedroom_03_fabric.jpg','href':'/images/production/easydesign/bedroom/bedroom_03_real.jpg'}]};
+  //浴室
+  var bathroomJson = {'realBigImg':'/images/production/easydesign/bathroom/bathroom_vr.jpg',
+  'realFabricImg':['/images/production/easydesign/bathroom/bathroom_fabric_real.png'],
+  'vrBigImg':'/images/production/easydesign/bathroom/bathroom_01_real.jpg',
+  'vrFabricImg':[{'src':'/images/production/easydesign/bathroom/bathroom_01_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_01_real.jpg'},
+                 {'src':'/images/production/easydesign/bathroom/bathroom_02_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_02_real.jpg'},
+                 {'src':'/images/production/easydesign/bathroom/bathroom_03_fabric.jpg','href':'/images/production/easydesign/bathroom/bathroom_03_real.jpg'}]};
+  //餐厅室
+  var diningroomJson = {'realBigImg':'/images/production/easydesign/diningroom/diningroom_vr.jpg',
+  'realFabricImg':['/images/production/easydesign/diningroom/diningroom_fabric_real.png'],
+  'vrBigImg':'/images/production/easydesign/diningroom/diningroom_01_real.jpg',
+  'vrFabricImg':[{'src':'/images/production/easydesign/diningroom/diningroom_01_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_01_real.jpg'},
+                 {'src':'/images/production/easydesign/diningroom/diningroom_02_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_02_real.jpg'},
+                 {'src':'/images/production/easydesign/diningroom/diningroom_03_fabric.jpg','href':'/images/production/easydesign/diningroom/diningroom_03_real.jpg'}]};
+  //客厅
+  var livingroomJson = {'realBigImg':'/images/production/easydesign/livingroom/livingroom_vr.jpg',
+  'realFabricImg':['/images/production/easydesign/livingroom/livingroom_fabric_real1.png',
+                  '/images/production/easydesign/livingroom/livingroom_fabric_real2.png',
+                  '/images/production/easydesign/livingroom/livingroom_fabric_real3.png'],
+  'vrBigImg':'/images/production/easydesign/livingroom/livingroom_01_real.jpg',
+  'vrFabricImg':[{'src':'/images/production/easydesign/livingroom/livingroom_01_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_01_real.jpg'},
+                 {'src':'/images/production/easydesign/livingroom/livingroom_02_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_02_real.jpg'},
+                 {'src':'/images/production/easydesign/livingroom/livingroom_03_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_03_real.jpg'}]};
+
+        switch(location.search){
+        case '?id1':
+          e.loadSimulation(beddingroomJson);
+          break;
+        case '?id2':
+          e.loadSimulation(bathroomJson);
+          break;
+        case '?id3':
+          e.loadSimulation(livingroomJson);
+          break;
+        case '?id4':
+          e.loadSimulation(diningroomJson);
+          break;
+        default:
+          break;
+      }
+    });
   </script>
 </body>
 </html>
