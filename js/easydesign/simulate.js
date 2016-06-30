@@ -59,8 +59,8 @@ define(function (require, exports, module) {
 
   //动态加载场景对比页面图片
   simulationFn.loadRoomImg = function(jsonData){
-    $(".simulation_all img").eq(0).attr("src",jsonData.realBigImg);
-    $(".simulation_all img").eq(1).attr("src",jsonData.vrBigImg);
+    $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.realBigImg);
+    $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrBigImg);
     loadFabricList(jsonData);
   }
 
@@ -74,9 +74,9 @@ define(function (require, exports, module) {
       if(i===0){
         selClass = "selectedFabric";
       }else{selClass="";}
-      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.vrFabricImg[i].src+ "\' /></li>");
+      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $li.bind('click',function(){
-        $(".simulation_all img").eq(1).attr("src",jsonData.vrFabricImg[$(this).attr('tag')].href);
+        $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
       });
       $("#fabricListview_right").append($li);
    }
@@ -85,7 +85,7 @@ define(function (require, exports, module) {
         $(".selectFabricList_left span").css("height",134);
    }
    for(var k=0;k<fabricListSizeL;k++){
-      $("#fabricListview_left").append("<li><img src=\'"+jsonData.realFabricImg[k]+ "\' /></li>");
+      $("#fabricListview_left").append("<li><img src=\'"+jsonData.cdnPath+jsonData.realFabricImg[k]+ "\' /></li>");
    }
   }
 
