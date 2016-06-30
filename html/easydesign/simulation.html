@@ -61,7 +61,7 @@
 
 
   <span class="desSelectFabric"><img src="/images/production/easydesign/desSelectFabric.png"/></span>
-
+   <input type="hidden" id="hidCdnPath" value="http://182.168.1.134:8180"/>
   <script src="/js/common/seajs/sea-debug.js"></script>
   <!-- <script src="/js/common/seajs/seajs-combo.js"></script> -->
   <script src="/js/common/seajs/seajs-css.js"></script>
@@ -101,23 +101,28 @@
   'vrFabricImg':[{'src':'/images/production/easydesign/livingroom/livingroom_01_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_01_real.jpg'},
                  {'src':'/images/production/easydesign/livingroom/livingroom_02_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_02_real.jpg'},
                  {'src':'/images/production/easydesign/livingroom/livingroom_03_fabric.jpg','href':'/images/production/easydesign/livingroom/livingroom_03_real.jpg'}]};
-
+        var cdnPath = $('#hidCdnPath').val();
+        var datajson = {};
         switch(location.search){
         case '?id1':
-          e.loadSimulation(beddingroomJson);
+          beddingroomJson.cdnPath=cdnPath;
+          datajson = beddingroomJson;
           break;
         case '?id2':
-          e.loadSimulation(bathroomJson);
+          datajson = bathroomJson;
           break;
         case '?id3':
-          e.loadSimulation(livingroomJson);
+          datajson = livingroomJson;
           break;
         case '?id4':
-          e.loadSimulation(diningroomJson);
+          datajson = diningroomJson;
           break;
         default:
           break;
       }
+      var cdnPath = $('#hidCdnPath').val();
+      datajson.cdnPath=cdnPath;
+      e.loadSimulation(datajson);
     });
   </script>
 </body>

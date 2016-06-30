@@ -57,7 +57,7 @@ define(function (require, exports, module) {
 
   //动态加载场景对比页面图片
   simulationFn.loadRoomImg = function(jsonData){
-    $(".simulation_all img").eq(0).attr("src",jsonData.vrBigImg);
+    $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.vrBigImg);
     loadFabricList(jsonData);
   }
 
@@ -70,9 +70,9 @@ define(function (require, exports, module) {
       if(i===0){
         selClass = "selectedFabric";
       }else{selClass="";}
-      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.vrFabricImg[i].src+ "\' /></li>");
+      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $li.bind('click',function(){
-        $(".simulation_all img").eq(0).attr("src",jsonData.vrFabricImg[$(this).attr('tag')].href);
+        $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
       });
       $("#fabricListview").append($li);
    }
@@ -80,6 +80,8 @@ define(function (require, exports, module) {
 
 
   $(document).ready(function () {
+    var cdnPath = $('#hidCdnPath').val();
+    beddingroomJson.cdnPath=cdnPath;
     //隐藏滚动条
     $(document.body).css("overflow","hidden");
     simulationFn.loadRoomImg(beddingroomJson);

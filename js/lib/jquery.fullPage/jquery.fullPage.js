@@ -5,9 +5,7 @@
  *
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
-define(function (require, exports, module) {
-	require('jquery');
-	require('fullPageCss');
+define(['js/lib/jquery.fullPage/jquery.fullPage.css','jquery'],function (require, exports, module) {
 
 (function($) {
 	$.fn.fullpage = function(options) {
