@@ -2,11 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/lib/tip/jquery.poshytip');
-
- // require('js/easydesign/common/jquery.fullscreen');
-  var objJson = {
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/d840ac06-c4aa-4474-96f4-0689b042f258.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html'
-  };
+  var objImg = {'w':100,'h':100};
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
     $.layer({
@@ -29,18 +25,34 @@ define(function (require, exports, module) {
   });
 
 ////////////////////////////////图片加载///////////////////////////////////////////
-
-  var objImg = {'w':100,'h':100};
-  //动态加载数据
-  function loadOtherFabrics(objJson){
-    if(!objJson) return;
-    setBigImg(objJson);
+  //异步请求
+  function ajaxLoad(url){
+    var curImgUrl = $('#hidCurrentImgUrl').val();
+    $.ajax({
+      type: 'post',
+      url: url,
+      data: '' ,
+      dataType: 'json',
+      beforeSend:function(){
+        if(!curImgUrl)return;
+        objImg = {'w':100,'h':100};
+        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
+      success: function(data){
+        data.CurrentImgUrl= curImgUrl;
+        initPage(data);
+      },
+      error : function() {
+        console.log('---花型详情页异常---');
+      }
+    });
   }
 
   //加载第n张图片
   function setBigImg(objJson){
-    setNextOrPrev(objJson);
     $('#j-lb-pic').hide();
+    setNextOrPrev(objJson);
     $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
@@ -49,6 +61,7 @@ define(function (require, exports, module) {
     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
     $('#j-lb-pic').show();
     });
+
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -136,14 +149,12 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-
     $('.ctrl-next').bind('click',function(){
-
-       window.open(objJson.NextPageUrl,'_self');
+       ajaxLoad(objJson.NextPageUrl);
     });
 
     $('.ctrl-prev').bind('click',function(){
-       window.open(objJson.PrevPageUrl,'_self');
+       ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
@@ -155,19 +166,18 @@ define(function (require, exports, module) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
-
       if (delta > 0){
          if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
             return;
          }
          // 向下滚
-         window.open(objJson.PrevPageUrl,'_self');
+         ajaxLoad(objJson.PrevPageUrl);
       }else if (delta < 0){
         if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
             return;
           }
          // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
+         ajaxLoad(objJson.NextPageUrl);
       }
     });
   }
@@ -186,19 +196,12 @@ define(function (require, exports, module) {
     }
   }
 
-  //为相似花型绑定click事件
-  function similarFlowersClick(objJson){
-      // $('#j-resemble li').bind('click',function(){
-      //      setBigImg(objJson,0);
-      // });
-  }
-
+  //入口
   function initPage(objJson){
     bindScrollBigImg(objJson);
     $(document.body).css("overflow","hidden");
-    loadOtherFabrics(objJson);
-   // similarFlowersClick(objJson);
-   // mousewheel(objJson);
+    setBigImg(objJson);
+    mousewheel(objJson);
     //clickFullScreen();
   }
 
@@ -208,35 +211,14 @@ define(function (require, exports, module) {
 
 ////////////////////////////////入口/////////////////////////////////////
 
-
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
-    var curImgUrl = $('#hidCurrentImgUrl').val();
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-    //initPage(objJson);
-    $.ajax({
-      type: 'post',
-      url: baseURL+'?'+params,
-      data: '' ,
-      dataType: 'json',
-      beforeSend:function(){
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
-      },
-      success: function(data){
-        data.CurrentImgUrl= curImgUrl;
-        initPage(data);
-      },
-      error : function() {
-        console.log('---面料详情页异常---');
-      }
-    });
-
-
-
-
+    var url = baseURL+'?'+params;
+    ajaxLoad(url);
   });
 
+exports.initPage = initPage;
 
 
 });

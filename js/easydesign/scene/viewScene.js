@@ -3,10 +3,7 @@ define(function (require, exports, module) {
   require('layer');
   require('js/lib/tip/jquery.poshytip');
 
-  var objJson = {
-    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html'
-  };
-
+  var objImg = {'w':100,'h':100};
  ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
     $.layer({
@@ -29,12 +26,35 @@ define(function (require, exports, module) {
   });
 
 ////////////////////////////////图片加载///////////////////////////////////////////
+  //异步请求
+  function ajaxLoad(url){
+    var curImgUrl = $('#hidCurrentImgUrl').val();
+    var iframeSrc = $('#hidHtmlUrl').val();
+    $.ajax({
+      type: 'post',
+      url: url,
+      data: '' ,
+      dataType: 'json',
+      beforeSend:function(){
+        if(!curImgUrl)return;
+        objImg = {'w':100,'h':100};
+        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
+      success: function(data){
+        $('#j-lb-pic').hide();
+        data.CurrentImgUrl = curImgUrl;
+        data.iframeSrc = iframeSrc;
+        initPage(data);
+      },
+      error : function() {
+        console.log('---花型详情页异常---');
+      }
+    });
+  }
 
-
-  var objImg = {'w':100,'h':100};
   //动态加载数据
   function loadOtherFabrics(objJson){
-
     setBigImg(objJson);
   }
 
@@ -95,7 +115,6 @@ define(function (require, exports, module) {
     if(obj){
        obj.width = w;
     }
-
   }
 
  //下一张图片
@@ -119,37 +138,11 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-
     $('.ctrl-next').bind('click',function(){
-
-       window.open(objJson.NextPageUrl,'_self');
+       ajaxLoad(objJson.NextPageUrl);
     });
-
     $('.ctrl-prev').bind('click',function(){
-       window.open(objJson.PrevPageUrl,'_self');
-    });
-  }
-  //鼠标滚轮，上一张、下一张
-  function mousewheel(objJson){
-     // jquery 兼容的滚轮事件
-    $('#j-lb-main').on("mousewheel DOMMouseScroll", function (e) {
-
-      var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
-                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
-
-      if (delta > 0){
-         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
-            return;
-         }
-         // 向下滚
-         window.open(objJson.PrevPageUrl,'_self');
-      }else if (delta < 0){
-        if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
-            return;
-          }
-         // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
-      }
+       ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
@@ -168,10 +161,9 @@ define(function (require, exports, module) {
   }
 
   function initPage(objJson){
-      bindScrollBigImg(objJson);
-      $(document.body).css("overflow","hidden");
-      loadOtherFabrics(objJson);
-      //mousewheel(objJson);
+     bindScrollBigImg(objJson);
+     $(document.body).css("overflow","hidden");
+     loadOtherFabrics(objJson);
   }
 
   $(window).resize(function(event) {
@@ -183,32 +175,11 @@ define(function (require, exports, module) {
  $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
-    var curImgUrl = $('#hidCurrentImgUrl').val();
-    var iframeSrc = $('#hidHtmlUrl').val();
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-  // initPage(objJson);
-    $.ajax({
-      type: 'post',
-      url: baseURL+'?'+params,
-      data: '' ,
-      dataType: 'json',
-      beforeSend:function(){
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
-      },
-      success: function(data){
-        $('#j-lb-pic').hide();
-        data.CurrentImgUrl = curImgUrl;
-        data.iframeSrc = iframeSrc;
-        initPage(data);
-      },
-      error : function() {
-        console.log('---场景详情页异常---');
-      }
-    });
-
-    });
+    var url = baseURL+'?'+params;
+    ajaxLoad(url);
+  });
 
 
-
+exports.initPage = initPage;
 
 });
