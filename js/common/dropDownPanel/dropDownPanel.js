@@ -2,11 +2,17 @@ define(function (require, exports, module) {
   require('js/common/dropDownPanel/dropDownPanel.css');
   exports.callback;
   require('jquery');
+  var initH = $(document.body).height();
   //选择产品
   $('#sel-pro').hover(function() {
     $('.sel-pro').show();
+     var h = $(document).height();
+      $(document.body).css({'height':h});
+      parent.layer.iframeAuto();
   }, function() {
     $('.sel-pro').hide();
+    $(document.body).css({'height':initH});
+    parent.layer.iframeAuto();
   });
 
   // $('#sel-pro').on('mouseover', '.level1>li', function(event) {
@@ -29,14 +35,13 @@ define(function (require, exports, module) {
 
     $(this).find('.level3-tit').css('z-index','3');
     $(this).find('.level3').show();
-
-
-
-      var h = $(window).height();
-      console.log( h);
+    var h = $(document).height();
+    $(document.body).css({'height':h});
+    parent.layer.iframeAuto();
 
 
   });
+
 
   $('#sel-pro').on('mouseout', '.level2 ul>li', function(event) {
     $(this).find('.level3').hide();
