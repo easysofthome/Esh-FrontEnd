@@ -10,12 +10,27 @@
 
 <body>
 
-@@include('common/top.html')
-@@include('easydesign/header.html')
+<div style="height: 112px;">
+    @@include('common/top.html')
+    @@include('easydesign/header.html')
+</div>
 <div class="main-box clearfix">
-    <div class="main-left lf"></div>
+    <div class="main-left lf">
+        <div class="gallery-img">
+            <div class="img-wrapper">
+                <img class="gallery" src="/images/production/easydesign/aaa.jpg">
+            </div>
+            <div class="pagination">
+                <a class="prev"><i class="iconfont"><</i></a>
+                <a class="next"><i class="iconfont">></i></a>
+            </div>
+            <div class="action">
+                <a class="fav">收藏</a>
+            </div>
+        </div>
+    </div>
 
-    <div class="rg main-right">
+    <div class="lf main-right">
         <h3>[花型名称]高度大气唯美花纹</h3>
         <div class="desc clearfix">
             <span class="lf">分类名称：</span>
@@ -50,7 +65,7 @@
             <p class="lf tit-width"> 5.68cm x 5.7cm</p>
         </div>
         <div class="desc clearfix">
-            <span class="lf">关&nbsp;键&nbsp;词：</span>
+            <p class="lf">关<span class="three-words">键</span>词：</p>
             <p class="lf tit-width"> 5.68cm x 5.7cm</p>
         </div>
 
