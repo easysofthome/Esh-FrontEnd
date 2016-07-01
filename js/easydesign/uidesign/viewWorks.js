@@ -3,11 +3,8 @@ define(function (require, exports, module) {
   require('layer');
   require('js/lib/tip/jquery.poshytip');
 
-  var objJson = {
-    'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/uidesign/viewWorks.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/uidesign/viewWorks.html'
-  };
-
-  ///////////////////////////////////登录//////////////////////////////////////////
+  var objImg = {'w':100,'h':100};
+ ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
     $.layer({
       type: 2,
@@ -29,12 +26,35 @@ define(function (require, exports, module) {
   });
 
 ////////////////////////////////图片加载///////////////////////////////////////////
+  //异步请求
+  function ajaxLoad(url){
+    var curImgUrl = $('#hidCurrentImgUrl').val();
+    var iframeSrc = $('#hidHtmlUrl').val();
+    $.ajax({
+      type: 'post',
+      url: url,
+      data: '' ,
+      dataType: 'json',
+      beforeSend:function(){
+        if(!curImgUrl)return;
+        objImg = {'w':100,'h':100};
+        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
+      success: function(data){
+        $('#j-lb-pic').hide();
+        data.CurrentImgUrl = curImgUrl;
+        data.iframeSrc = iframeSrc;
+        initPage(data);
+      },
+      error : function() {
+        console.log('---花型详情页异常---');
+      }
+    });
+  }
 
-
-  var objImg = {'w':100,'h':100};
   //动态加载数据
   function loadOtherFabrics(objJson){
-
     setBigImg(objJson);
   }
 
@@ -91,8 +111,10 @@ define(function (require, exports, module) {
     $(parentDiv).css({'width':w,'height':h});
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
     $('#panoramaShow').css({'top':5,'left':0,'width':w,'height':h-10});
-    //$('#panoramaShow').css({'top':5,'left':0,'width':winW-leftSide_w,'height':winH-10});
-
+    var obj = window.frames["panoramaShow"].document.getElementById("Main");
+    if(obj){
+       obj.width = w;
+    }
   }
 
  //下一张图片
@@ -116,14 +138,11 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-
     $('.ctrl-next').bind('click',function(){
-
-       window.open(objJson.NextPageUrl,'_self');
+       ajaxLoad(objJson.NextPageUrl);
     });
-
     $('.ctrl-prev').bind('click',function(){
-       window.open(objJson.PrevPageUrl,'_self');
+       ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
@@ -142,10 +161,9 @@ define(function (require, exports, module) {
   }
 
   function initPage(objJson){
-      bindScrollBigImg(objJson);
-      $(document.body).css("overflow","hidden");
-      loadOtherFabrics(objJson);
-      // mousewheel(objJson);
+     bindScrollBigImg(objJson);
+     $(document.body).css("overflow","hidden");
+     loadOtherFabrics(objJson);
   }
 
   $(window).resize(function(event) {
@@ -157,36 +175,11 @@ define(function (require, exports, module) {
  $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
-    var curImgUrl = $('#hidCurrentImgUrl').val();
-    var iframeSrc = $('#hidHtmlUrl').val();
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-    if(!iframeSrc){
-      iframeSrc = "/html/easydesign/scene/panoramaShow.html";
-      objJson.iframeSrc = iframeSrc;
-    }
-    //initPage(objJson);
-    $.ajax({
-      type: 'post',
-      url: baseURL+'?'+params,
-      data: '' ,
-      dataType: 'json',
-      beforeSend:function(){
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
-      },
-      success: function(data){
-        $('#j-lb-pic').hide();
-        data.CurrentImgUrl = curImgUrl;
-        data.iframeSrc = iframeSrc;
-        initPage(data);
-      },
-      error : function() {
-        console.log('---场景详情页异常---');
-      }
-    });
-
-    });
+    var url = baseURL+'?'+params;
+    ajaxLoad(url);
+  });
 
 
-
+exports.initPage = initPage;
 
 });

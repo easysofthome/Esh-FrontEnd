@@ -2,19 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/lib/tip/jquery.poshytip');
-
-  var objJson = {'FlowerStyleSimilarList':
-    [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/flower.png','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
-    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
-    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
-  };
-
+  var objImg = {'w':100,'h':100};
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
     $.layer({
@@ -37,18 +25,48 @@ define(function (require, exports, module) {
   });
 
 ////////////////////////////////图片加载///////////////////////////////////////////
-  var objImg = {'w':100,'h':100};
-  //动态加载数据
+  //异步请求
+  function ajaxLoad(url){
+    var curImgUrl = $('#hidCurrentImgUrl').val();
+    $.ajax({
+      type: 'post',
+      url: url,
+      data: '' ,
+      dataType: 'json',
+      beforeSend:function(){
+        if(!curImgUrl)return;
+        objImg = {'w':100,'h':100};
+        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+      },
+      success: function(data){
+        data.CurrentImgUrl= curImgUrl;
+        initPage(data);
+      },
+      error : function() {
+        console.log('---花型详情页异常---');
+      }
+    });
+  }
+
+
+  //动态加载数据 右侧的图片列表
   function loadOtherFabrics(objJson){
     if(!objJson) return;
     setBigImg(objJson);
     if(objJson.FlowerStyleSimilarList.length <=0) return;
     for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
-      $('#j-resemble').append(' <li class="resembleLi">'+
-        '<a class="list" href="'+objJson.FlowerStyleSimilarList[i].ImgLink+'" data-picid="">'+
-        '<div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
-          objJson.FlowerStyleSimilarList[i].ImgUrl+');"> </div></a></li>');
+      var str = '<li class="resembleLi">'+
+      '<a class="list" href="javascript:void(0)" data-picid="'+objJson.FlowerStyleSimilarList[i].ImgLink+
+      '"><div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
+          objJson.FlowerStyleSimilarList[i].ImgUrl+')"> </div></a></li>';
+      $('#j-resemble').append(str);
     }
+
+    $('#j-resemble').find('a').bind('click',function(){
+      var href = $(this).attr('data-picid');
+      ajaxLoad(href);
+    });
   }
 
   //加载第n张图片
@@ -151,14 +169,11 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-
     $('.ctrl-next').bind('click',function(){
-
-       window.open(objJson.NextPageUrl,'_self');
+       ajaxLoad(objJson.NextPageUrl);
     });
-
     $('.ctrl-prev').bind('click',function(){
-       window.open(objJson.PrevPageUrl,'_self');
+       ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
@@ -175,13 +190,13 @@ define(function (require, exports, module) {
             return;
          }
          // 向下滚
-         window.open(objJson.PrevPageUrl,'_self');
+         ajaxLoad(objJson.PrevPageUrl);
       }else if (delta < 0){
         if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
             return;
           }
          // 向上滚
-         window.open(objJson.NextPageUrl,'_self');
+         ajaxLoad(objJson.NextPageUrl);
       }
     });
   }
@@ -200,20 +215,12 @@ define(function (require, exports, module) {
     }
   }
 
-  //为相似花型绑定click事件
-  function similarFlowersClick(objJson){
-      // $('#j-resemble li').bind('click',function(){
-      //      setBigImg(objJson,0);
-      // });
-  }
-
-
+  //入口
   function initPage(objJson){
     bindScrollBigImg(objJson);
     $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
-   // similarFlowersClick(objJson);
-   // mousewheel(objJson);
+    mousewheel(objJson);
     //clickFullScreen();
   }
 
@@ -226,27 +233,12 @@ define(function (require, exports, module) {
   $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
-    var curImgUrl = $('#hidCurrentImgUrl').val();
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-    //initPage(objJson);
-    $.ajax({
-      type: 'post',
-      url: baseURL+'?'+params,
-      data: '' ,
-      dataType: 'json',
-      beforeSend:function(){
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
-      },
-      success: function(data){
-        data.CurrentImgUrl= curImgUrl;
-        initPage(data);
-      },
-      error : function() {
-        console.log('---花型详情页异常---');
-      }
-    });
-
+    var url = baseURL+'?'+params;
+    ajaxLoad(url);
   });
+
+//接口
+exports.initPage = initPage;
 
 
 });
