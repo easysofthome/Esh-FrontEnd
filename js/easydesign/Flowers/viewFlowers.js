@@ -2,6 +2,8 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/lib/tip/jquery.poshytip');
+  var commonDetail = require('js/easydesign/common/descHTML'); //生成详情描述
+
   var objImg = {'w':100,'h':100};
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {
@@ -217,11 +219,11 @@ define(function (require, exports, module) {
 
   //入口
   function initPage(objJson){
-    bindScrollBigImg(objJson);
     $(document.body).css("overflow","hidden");
+    commonDetail.buildDescHTML(objJson); //生成详情描述HTML
+    bindScrollBigImg(objJson);
     loadOtherFabrics(objJson);
     mousewheel(objJson);
-    //clickFullScreen();
   }
 
   $(window).resize(function(event) {
