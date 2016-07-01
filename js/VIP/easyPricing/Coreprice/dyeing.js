@@ -40,4 +40,17 @@ define(function (require, exports, module) {
       checkForm.upAndDownRate(that,'down');
   });
 
+  //筛选条件 展开收缩
+  $('.collapse_text').bind('click',function(){
+      if ($(this).attr('show') == 'true') {
+        $('#collapsible').slideUp();
+        $(this).attr('show', 'false');
+        $(this).html('展开');
+      } else {
+        $('#collapsible').slideDown();
+        $(this).attr('show', 'true');
+        $(this).html('收起');
+      }
+  });
+
 });

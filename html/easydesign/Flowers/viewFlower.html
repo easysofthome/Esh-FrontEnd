@@ -154,7 +154,20 @@
 
 <script src="/js/rootConfig.js"></script>
  <script>
-    seajs.use('js/easydesign/common/showDesignImg');
+    seajs.use(['js/easydesign/Flowers/viewFlowers'],function(v){
+          var objJson = {'FlowerStyleSimilarList':
+    [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/flower.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
+  };
+        v.initPage(objJson);
+    });
   </script>
 </body>
 </html>

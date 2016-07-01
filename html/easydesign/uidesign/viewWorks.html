@@ -12,7 +12,7 @@
         <div id="j-lb-main" class="lb-main z-main-hover">
             <div id="j-lb-picwp" class="lb-picture" style="margin-bottom:60px;">
               <img id="j-lb-pic"/>
-              <iframe id="panoramaShow" src="" style="border:0px;position:absolute" frameborder="0" scrolling="no"></iframe>
+              <iframe id="panoramaShow" name="panoramaShow"  src="" style="border:0px;position:absolute" frameborder="0" scrolling="no"></iframe>
             </div>
             <div id="j-lb-pic-ctrl" class="lb-pic-ctrl">
                 <span class="ctrl-item ctrl-prev" title="上一张" style="display: block;">上一张</span>
@@ -111,7 +111,12 @@
 
 <script src="/js/rootConfig.js"></script>
  <script>
-    seajs.use('js/easydesign/uidesign/viewWorks');
+    seajs.use('js/easydesign/uidesign/viewWorks',function(v){
+      var objJson = {
+        'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','iframeSrc':'/html/easydesign/scene/panoramaShow.html'
+      };
+      v.initPage(objJson);
+    });
   </script>
 </body>
 </html>

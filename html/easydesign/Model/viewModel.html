@@ -144,7 +144,12 @@
 
 <script src="/js/rootConfig.js"></script>
  <script>
-    seajs.use('js/easydesign/Model/viewModel');
+    seajs.use('js/easydesign/Model/viewModel',function(v){
+        var objJson = {
+        'CurrentImgUrl':'/images/production/easydesign/designFabrics/d840ac06-c4aa-4474-96f4-0689b042f258.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html'
+      };
+      v.initPage(objJson);
+    });
   </script>
 </body>
 </html>
