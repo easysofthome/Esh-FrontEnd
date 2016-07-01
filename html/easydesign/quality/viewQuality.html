@@ -15,7 +15,7 @@
             <div id="j-lb-picwp" class="lb-picture">
             <div class="snipe_len_tool none">
             <span>
-              <image class="nipe_icon" src="/images/original/easydesign/snipe_len.png" />
+              <image class="nipe_icon" src="/images/production/easydesign/snipe_len.png" />
               <p>点击隐藏放大镜</p>
             </span>
             </div>
@@ -140,7 +140,12 @@
 
 <script src="/js/rootConfig.js"></script>
  <script>
-    seajs.use('js/easydesign/quality/viewQuality');
+    seajs.use(['js/easydesign/quality/viewQuality'],function(v){
+         var objJson = {
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/767171c0-3b5f-4f63-8832-72ef851c57e4.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/quality/viewQuality.html'
+  };
+        v.initPage(objJson);
+    });
   </script>
 </body>
 </html>
