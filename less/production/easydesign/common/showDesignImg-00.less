@@ -2,22 +2,93 @@
 @import '../../../dev/mixins/mixins.less';
 
 .main-box{
-    margin-top: 112px;
     position: relative;
     border-top: 1px solid #eee;
+    padding-bottom: 80px;
 }
 
 .main-left{
     width: 100%;
     background: #F8F8F8;
+    .gallery-img{
+        height: 774px;
+        position: relative;
+        text-align: center;
+        margin-right: 380px;
+        .img-wrapper{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            .gallery{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 790px;
+                height: 527px;
+                margin-top: -260px;
+                margin-left: -395px;
+                display: inline;
+            }
+        }
+        .pagination{
+            a{
+                position: absolute;
+                top: 50%;
+                width: 40px;
+                height: 100px;
+                color: #fff;
+                line-height: 100px;
+                text-align: center;
+                background: #000;
+                opacity: .4;
+                filter: Alpha(opacity=40);
+                margin-top: -50px;
+                cursor: pointer;
+                .iconfont{
+                    font-size: 30px;
+                    font-family: global-iconfont;
+                    font-style: normal;
+                    vertical-align: bottom;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+            .prev{
+                left: 0;
+            }
+            .next{
+                right: 0;
+            }
+        }
+        .action{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: rgba(255,255,255,.6);
+            .fav {
+                width: 120px;
+                height: 32px;
+                line-height: 32px;
+                padding: 0;
+                background-color: #3E82F7!important;
+                color: #fff;
+                display: inline-block;
+                border: 0;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 3px;
+            }
+        }
+    }
 }
 
 .main-right{
-    float: left;
+    position: relative;
     width: 340px;
     min-height: 360px;
     background-color: #fff;
-    margin-left: -336px;
+    margin-left: -380px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 20px;
@@ -28,11 +99,11 @@
     }
     .desc{
         line-height:24px;
-        span{
-            width: 70px;
-        }
         .tit-width{
             width: 270px;
+        }
+        .three-words{
+            margin: 0 7px;
         }
     }
 }
