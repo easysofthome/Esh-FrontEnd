@@ -60,7 +60,7 @@
       <p class="lf tit">单品类型：</p>
       <a class="lf whole cur" href="#">全部</a>
       <ul class="type lf">
-        <li class="lf"><a class="type_a" href="#">窗帘</a></li>
+        <li class="lf"><a class="type_a" id="sunblindFillter" href="javascript:void(0)">窗帘</a></li>
         <li class="lf"><a class="type_a" href="#">枕头</a></li>
         <li class="lf"><a class="type_a" href="#">方形靠垫</a></li>
         <li class="lf"><a class="type_a" href="#">台布</a></li>
@@ -84,7 +84,7 @@
         <li class="lf"><a class="type_a" href="#">座椅套</a></li>
       </ul>
     </div>
-    <div class="clearfix">
+    <div class="clearfix none" id="sunblindMenus">
       <p class="lf tit">窗　　帘：</p>
       <a class="lf whole cur" href="#">全部</a>
       <ul class="type lf">
@@ -203,21 +203,9 @@
         </div>
         <p class="name">滚边枕头</p>
         <div class="dropbox clearfix">
-          <form method="post" id="choiceForm" action="">
-            <div>
-            <label class="lab lf clearrfix label_check">
-              <input class="int lf" id="spam_a" name="spam[]" type="checkbox" checked="checked" />
-              <span class="words lf">70*72</span>
-            </label>
-            </div>
-            <div>
-            <label class="lab lf clearrfix label_check">
-              <input class="int lf" id="spam_b" name="spam[]" type="checkbox" />
-              <span class="words lf">70*72</span>
-            </label>
-            </div>
-            <div class="input-tip" id="messageBox"></div>
-          </form>
+          <div class="loading">
+
+          </div>
         </div>
         <a class="btn" id="btnNext" href="javascript:void(0)">下一步</a>
       </div>

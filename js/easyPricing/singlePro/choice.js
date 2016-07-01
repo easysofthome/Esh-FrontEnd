@@ -13,8 +13,17 @@ define(function (require, exports, module) {
       $(this).find('a.btn').css('opacity','0');
     }
   );
-
-
+/////////////////////////////// 筛选菜单收缩 ///////////////////////////////////
+ //筛选条件 展开收缩
+  $('#sunblindFillter').bind('click',function(){
+      if ($(this).attr('show') == 'true') {
+        $('#sunblindMenus').slideUp();
+        $(this).attr('show', 'false');
+      } else {
+        $('#sunblindMenus').slideDown();
+        $(this).attr('show', 'true');
+      }
+  });
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 
