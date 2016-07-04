@@ -8,6 +8,27 @@
 
 </head>
 
+<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
+
+<script>
+    var w;
+    $(window).resize(function(){
+        w = $(window).width();
+        demo();
+    });
+
+    $(document).ready(function(){
+        w = $(window).width();
+        demo();
+    });
+
+    function demo(){
+        var w2 = $('.slide').css('width');      //20px;
+        w2 = parseInt(w2);              // 20
+        $('.img').css('width',w-w2);
+    }
+</script>
+
 <body>
 
 <div style="height: 112px;">
@@ -25,50 +46,115 @@
                 <a class="next"><i class="iconfont">></i></a>
             </div>
             <div class="action">
-                <a class="fav">收藏</a>
+                <a class="fav">使用此花型设计面料</a>
+                <a class="fav">使用此花型设计面料</a>
+                <ul class="bdsharebuttonbox">
+                    <li class="lf"><a class="bt bds_qzone" target="_blank" href="#"></a></li>
+                    <li class="lf"><a class="bt bds_tsina" target="_blank" href="#"></a></li>
+                    <li class="lf"><a class="bt bds_sqq" target="_blank" href="#"></a></li>
+                </ul>
             </div>
         </div>
     </div>
 
     <div class="lf main-right">
-        <h3>[花型名称]高度大气唯美花纹</h3>
-        <div class="desc clearfix">
-            <span class="lf">分类名称：</span>
-            <p class="lf tit-width">全涤面料</p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">参考价格：</span>
-            <p class="lf tit-width">[门幅150cm] <span class="red">10.46元/m</span><br>[门幅280cm] <span class="red">15.45元/m</span></p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">面料成分：</span>
-            <p class="lf tit-width">涤纶(100%)</p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">织造种类：</span>
-            <p class="lf tit-width">提花布</p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">纱线构成：</span>
-            <p class="lf tit-width">1经2纬</p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">经　　纱：</span>
-            <p class="lf tit-width">涤纶长丝 100D</p>
-        </div>
-        <div class="desc clearfix">
-            <span class="lf">纬　　纱：</span>
-            <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
+        <div class="right-top">
+            <h3>[花型名称]高度大气唯美花纹</h3>
+            <div class="desc clearfix">
+                <span class="lf">分类名称：</span>
+                <p class="lf tit-width">全涤面料</p>
             </div>
-        <div class="desc clearfix">
-            <span class="lf">花回尺寸：</span>
-            <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-        </div>
-        <div class="desc clearfix">
-            <p class="lf">关<span class="three-words">键</span>词：</p>
-            <p class="lf tit-width"> 5.68cm x 5.7cm</p>
+            <div class="desc clearfix">
+                <span class="lf">参考价格：</span>
+                <p class="lf tit-width">[门幅150cm] <span class="red">10.46元/m</span><br>[门幅280cm] <span class="red">15.45元/m</span></p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">面料成分：</span>
+                <p class="lf tit-width">涤纶(100%)</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">织造种类：</span>
+                <p class="lf tit-width">提花布</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">纱线构成：</span>
+                <p class="lf tit-width">1经2纬</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">经　　纱：</span>
+                <p class="lf tit-width">涤纶长丝 100D</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">纬　　纱：</span>
+                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">花回尺寸：</span>
+                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
+            </div>
+            <div class="desc clearfix">
+                <p class="lf">关<span class="three-words">键</span>词：</p>
+                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">纱线构成：</span>
+                <p class="lf tit-width">1经2纬</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">经　　纱：</span>
+                <p class="lf tit-width">涤纶长丝 100D</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">纬　　纱：</span>
+                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">花回尺寸：</span>
+                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
+            </div>
+            <div class="desc clearfix">
+                <p class="lf">关<span class="three-words">键</span>词：</p>
+                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
+            </div>
         </div>
 
+        <div class="deta_info clearfix">
+            <div class="lf imgbox">
+                <img  src="/images/production/easydesign/tuoxiangtu.png">
+            </div>
+            <div class="lf img_name">设计师：易家纺</div>
+        </div>
+
+        <div class="flower_title">相似花型</div>
+        <ul class="xiangshimianliao clearfix">
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
+            </li>
+            <li class="lf mianliaobox">
+                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
+            </li>
+        </ul>
     </div>
 </div>
 

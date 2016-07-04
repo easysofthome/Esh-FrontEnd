@@ -4,7 +4,6 @@
 .main-box{
     position: relative;
     border-top: 1px solid #eee;
-    padding-bottom: 80px;
 }
 
 .main-left{
@@ -46,10 +45,13 @@
                 cursor: pointer;
                 .iconfont{
                     font-size: 30px;
-                    font-family: global-iconfont;
                     font-style: normal;
                     vertical-align: bottom;
+                    font-family: global-iconfont;
                     -webkit-font-smoothing: antialiased;
+                }
+                &:hover{
+                    opacity: .6;
                 }
             }
             .prev{
@@ -65,19 +67,49 @@
             left: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(255,255,255,.6);
+            background-color: rgba(255,255,255,.5);
             .fav {
-                width: 120px;
-                height: 32px;
-                line-height: 32px;
-                padding: 0;
-                background-color: #3E82F7!important;
-                color: #fff;
                 display: inline-block;
-                border: 0;
                 cursor: pointer;
-                text-align: center;
-                border-radius: 3px;
+                .button-variant(#fff; #3E82F7; #3E82F7);
+                .button-size(0; 10px; 14px; 32px; 3px);
+                margin: 0 5px;
+            }
+            .bdsharebuttonbox{
+                position: absolute;
+                bottom: 16px;
+                right: 0;
+                .bt{
+                    margin: 0 5px;
+                    text-indent: -9999px;
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    .border-radius(2px);
+                    background-color: #b3b3b3;
+                    .icon-easydesign;
+                }
+                .bds_qzone{
+                    .sprite(@qq);
+                    .fixIe6pngTransparent('/images/icon/easydesign/qq.png');
+                    &:hover {
+                        background-color: #37b5f9;
+                    }
+                }
+                .bds_tsina{
+                     .sprite(@sina);
+                     .fixIe6pngTransparent('/images/icon/easydesign/sina.png');
+                    &:hover {
+                        background-color: #de0202;
+                    }
+                }
+                .bds_sqq{
+                    .sprite(@in);
+                    .fixIe6pngTransparent('/images/icon/easydesign/in.png');
+                    &:hover {
+                        background-color: #00c666;
+                    }
+                }
             }
         }
     }
@@ -85,13 +117,15 @@
 
 .main-right{
     position: relative;
-    width: 340px;
-    min-height: 360px;
+    width: 330px;
     background-color: #fff;
     margin-left: -380px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 25px;
+    .right-top{
+        min-height: 280px;
+    }
     h3{
         font-weight: 400;
         font-size: 20px;
@@ -100,10 +134,50 @@
     .desc{
         line-height:24px;
         .tit-width{
-            width: 270px;
+            width: 260px;
         }
         .three-words{
             margin: 0 7px;
+        }
+    }
+
+
+    .deta_info{
+        border-top: 1px solid #d9d9d9;
+        margin: 20px auto 0 auto;
+        border-bottom: 1px solid #d9d9d9;
+        padding: 15px 0;
+        .imgbox{
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            .border-radius(25px);
+            overflow: hidden;
+        }
+        .img_name{
+            line-height: 50px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+    }
+
+
+    .flower_title{
+        color: #000;
+        font-size: 22px;
+        margin: 30px auto 0 auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .xiangshimianliao{
+        margin: 0 auto;
+        .mianliaobox{
+            width: 100px;
+            margin: 20px 5px 0 5px;
+
+            height: 100px;
+            background-color: #000;
+            overflow: hidden;
         }
     }
 }
