@@ -8,6 +8,7 @@ define(function (require, exports, module) {
 ////////////////////////////错误提示框 tip///////////////////////////////////
 
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
+//显示被折叠元素的错误提示
 validateHiddenE(obj);
 var cName = (className == undefined? 'tip-violet':'tip-yellow');
 var dropList = (false || isDropList);
