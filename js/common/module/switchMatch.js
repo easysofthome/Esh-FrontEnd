@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
-  require('js/common/module/switchMatch.css');
+  require('js/front/common/module/switchMatch.css');
   require('jquery');
-  require('js/lib/placeholder');
+  require('js/front/lib/placeholder');
 
   var width,height;
   var _this;

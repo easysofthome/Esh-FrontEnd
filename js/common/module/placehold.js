@@ -1,6 +1,6 @@
 // require:
 // 文本的类名为:placeholder
-//   var placehold = require('js/common/module/placehold');
+//   var placehold = require('js/front/common/module/placehold');
 // placehold.init('.username_box>input,.password_box>input,.passwordRe_box>input');
 
 define(function (require, exports, module) {

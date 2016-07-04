@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  var checkForm = require('js/VIP/common/checkForm');
+  var checkForm = require('js/front/VIP/common/checkForm');
   //////////////////////////事件处理入口///////////////////////////////////////////
 
   //报价文本框失去焦点 进行验证

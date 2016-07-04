@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/validation/validation');
+  require('js/front/lib/validation/validation');
 
   $('.array').hover(
     function (event) {

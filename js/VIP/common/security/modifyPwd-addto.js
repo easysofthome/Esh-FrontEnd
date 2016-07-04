@@ -1,8 +1,8 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/validation/validation');
-  require('js/lib/tip/jquery.poshytip');
-  var placehold = require('js/common/module/placehold');
+  require('js/front/lib/validation/validation');
+  require('js/front/lib/tip/jquery.poshytip');
+  var placehold = require('js/front/common/module/placehold');
 
 
 ////////////////////////////文本框占位符///////////////////////////////////

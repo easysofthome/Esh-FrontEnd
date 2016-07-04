@@ -3,7 +3,7 @@ define(function (require, exports, module) {
   exports.overwrite;
 
   require('jquery');
-  var switchMatch = require('js/common/module/switchMatch');
+  var switchMatch = require('js/front/common/module/switchMatch');
 
   var placeholder = require('placeholder');
   // 重置按钮

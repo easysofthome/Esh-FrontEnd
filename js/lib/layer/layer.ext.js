@@ -1,5 +1,5 @@
 ﻿/**
- 
+
 @Name: layer拓展类，依赖于layer
 @Date: 2014.05.16
 @Author: 贤心
@@ -15,9 +15,9 @@
 系统prompt
 2014.5.11
 By 贤心
- 
+
 **/
-define(['layer', 'js/lib/layer/skin/layer.ext.css'], function (require, exports, module) {
+define(['layer', 'js/front/lib/layer/skin/layer.ext.css'], function (require, exports, module) {
     var layer = require('layer');
     layer.prompt = function (parme, yes, no) {
         var log = {}, parme = parme || {}, conf = {
@@ -65,7 +65,7 @@ define(['layer', 'js/lib/layer/skin/layer.ext.css'], function (require, exports,
     tab层 v1.0.0
     2014.5.11
     By 贤心
- 
+
     **/
 
     layer.tab = function (parme) {
@@ -130,7 +130,7 @@ define(['layer', 'js/lib/layer/skin/layer.ext.css'], function (require, exports,
     相册层 v1.0.0
     2014.5.11
     By 贤心
- 
+
     **/
 
 

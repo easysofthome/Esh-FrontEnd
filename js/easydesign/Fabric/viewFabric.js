@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/tip/jquery.poshytip');
+  require('js/front/lib/tip/jquery.poshytip');
   var objImg = {'w':100,'h':100};
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {

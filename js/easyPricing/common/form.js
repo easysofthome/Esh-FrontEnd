@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/validation/validation');
+  require('js/front/lib/validation/validation');
   var FancyRadioCheckBox = require('FancyRadioCheckBox');
   FancyRadioCheckBox.init();
 

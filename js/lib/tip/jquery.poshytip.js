@@ -4,7 +4,7 @@
  * Copyright 2010, Vasil Dinkov, http://vadikom.com/
  */
 define(function (require, exports, module) {
-	require('js/lib/tip/tip.css');
+	require('js/front/lib/tip/tip.css');
 (function($) {
 	var hideTimer;
 	var tips = [],

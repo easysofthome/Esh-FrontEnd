@@ -1,9 +1,9 @@
 define(function (require, exports, module) {
   require('jquery');
   // 搜索
-  require('js/easydesign/common/search');
+  require('js/front/easydesign/common/search');
 
-  // var switchSel = require('js/common/module/switchSel');
+  // var switchSel = require('js/front/common/module/switchSel');
   // switchSel.set('.sea-words','.sea-words>span','.xiala-box','.xiala-box>li','');
 
   $(function () {

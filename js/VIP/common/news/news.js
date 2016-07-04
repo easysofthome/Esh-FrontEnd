@@ -2,7 +2,7 @@ define(function (require, exports, module) {
 
   require('jquery');
   // 调节屏幕高度
-  var head = require('js/VIP/common/head');
+  var head = require('js/front/VIP/common/head');
 
   var h,obj;
   var screenH = $(window).height();

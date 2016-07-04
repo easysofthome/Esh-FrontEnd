@@ -1,4 +1,4 @@
-define(['js/lib/jquery.spinner/jquery.spinner.css', 'jquery'], function () {
+define(['js/front/lib/jquery.spinner/jquery.spinner.css', 'jquery'], function () {
     (function ($) {
         $.fn.spinner = function (opts) {
             return this.each(function () {

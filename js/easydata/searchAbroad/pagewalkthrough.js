@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
-  var quickPanel = require('js/common/quickPanel/quickPanel');
+  require('js/front/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  var quickPanel = require('js/front/common/quickPanel/quickPanel');
 
 
   //检验用户身份

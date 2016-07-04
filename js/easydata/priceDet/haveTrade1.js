@@ -401,8 +401,8 @@ define(function ( require, exports, module) {
         }
       ];
 
-  var amChartYear = require('js/easydata/common/amChartYear');
+  var amChartYear = require('js/front/easydata/common/amChartYear');
     amChartYear.init('chinapricefig1',dataProvider1)
-  var amCHartMonth = require('js/easydata/common/amCHartMonth');
+  var amCHartMonth = require('js/front/easydata/common/amCHartMonth');
     amCHartMonth.init('chinapricefig2',dataProvider2);
 });

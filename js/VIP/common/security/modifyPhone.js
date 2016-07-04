@@ -1,10 +1,10 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/validation/validation');
-  require('js/lib/tip/jquery.poshytip');
-  require('js/lib/synchroInputText');
+  require('js/front/lib/validation/validation');
+  require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/synchroInputText');
   var tools = require('tools');
-  var placehold = require('js/common/module/placehold');
+  var placehold = require('js/front/common/module/placehold');
 
 ////////////////////////////文本框占位符///////////////////////////////////
   placehold.init('#phone');

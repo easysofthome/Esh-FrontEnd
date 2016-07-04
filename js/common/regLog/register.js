@@ -1,13 +1,13 @@
 define(function (require, exports, module) {
   require('jquery');
   require('/js/lib/autocomplete/autocomplete');
-  require('js/lib/synchroInputText');
-  var placehold = require('js/common/module/placehold');
+  require('js/front/lib/synchroInputText');
+  var placehold = require('js/front/common/module/placehold');
   placehold.init('.username_box>input,.password_box>input,.passwordRe_box>input');
 
-  require('js/common/regLog/capslock');
-  require('js/common/regLog/validate');
-  require('js/common/regLog/protocol');
+  require('js/front/common/regLog/capslock');
+  require('js/front/common/regLog/validate');
+  require('js/front/common/regLog/protocol');
 
 //////////////////////////////////验证码倒计时//////////////////////////////////////
   //验证码倒计时可在‘bindClick_countdown’最后一个参数上添加回调函数

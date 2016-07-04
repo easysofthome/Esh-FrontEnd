@@ -982,12 +982,12 @@ $, win, ready = {
             return o.index;
         };
         // (new Image()).src = '/Static/js/lib/layer/skin/default/xubox_ico0.png';
-        (new Image()).src = '/js/lib/layer/skin/default/xubox_ico0.png';
+        (new Image()).src = '/js/front/lib/layer/skin/default/xubox_ico0.png';
     };
 
     var require1 = '../jquery/jquery'; //若采用seajs，需正确配置jquery的相对路径。未用可无视此处。
     if (window.seajs) {
-        define([require1, 'js/lib/layer/skin/layer.css'], function (require, exports, module) {
+        define([require1, 'js/front/lib/layer/skin/layer.css'], function (require, exports, module) {
             ready.run();
             module.exports = layer;
         });

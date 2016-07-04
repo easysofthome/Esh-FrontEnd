@@ -7,7 +7,7 @@
   max-width: 530px;
   color: #860404;
   background-color: #f2e7fd;
-  background-image: url(/js/lib/tip/tip-violet.png);
+  background-image: url(tip-violet.png);
   /* bgImageFrameSize >= 9 should work fine */
   /**
 	 * - If you set a background-image, border/padding/background-color will be ingnored.
@@ -30,7 +30,7 @@
   left: 0;
   width: 16px;
   height: 10px;
-  background: url(/js/lib/tip/tip-violet_arrows.png) no-repeat;
+  background: url(tip-violet_arrows.png) no-repeat;
 }
 .tip-violet .tip-arrow-right {
   margin-top: -9px;
@@ -40,7 +40,7 @@
   left: 100%;
   width: 10px;
   height: 20px;
-  background: url(/js/lib/tip/tip-violet_arrows.png) no-repeat -16px 0;
+  background: url(tip-violet_arrows.png) no-repeat -16px 0;
 }
 .tip-violet .tip-arrow-bottom {
   margin-top: -6px;
@@ -49,7 +49,7 @@
   left: 0;
   width: 16px;
   height: 13px;
-  background: url(/js/lib/tip/tip-violet_arrows.png) no-repeat -32px 0;
+  background: url(tip-violet_arrows.png) no-repeat -32px 0;
 }
 .tip-violet .tip-arrow-left {
   margin-top: -9px;
@@ -59,7 +59,7 @@
   left: 0;
   width: 10px;
   height: 20px;
-  background: url(/js/lib/tip/tip-violet_arrows.png) no-repeat -48px 0;
+  background: url(tip-violet_arrows.png) no-repeat -48px 0;
 }
 
 .tip-yellow {
@@ -71,7 +71,7 @@
   max-width:530px;
   color:#8c3901;
   background-color:#fef9d9;
-  background-image:url(/js/lib/tip/tip-yellow.png); /* bgImageFrameSize >= 10 should work fine */
+  background-image:url(tip-yellow.png); /* bgImageFrameSize >= 10 should work fine */
   /**
    * - If you set a background-image, border/padding/background-color will be ingnored.
    *   You can set any padding to .tip-inner instead if you need.
@@ -92,7 +92,7 @@
   left:0;
   width:16px;
   height:10px;
-  background:url(/js/lib/tip/tip-yellow_arrows.png) no-repeat;
+  background:url(tip-yellow_arrows.png) no-repeat;
 }
 .tip-yellow .tip-arrow-right {
   margin-top:-9px; /* approx. half the height to center it */
@@ -101,7 +101,7 @@
   left:100%;
   width:10px;
   height:20px;
-  background:url(/js/lib/tip/tip-yellow_arrows.png) no-repeat -16px 0;
+  background:url(tip-yellow_arrows.png) no-repeat -16px 0;
 }
 .tip-yellow .tip-arrow-bottom {
   margin-top:-6px;
@@ -110,7 +110,7 @@
   left:0;
   width:16px;
   height:13px;
-  background:url(/js/lib/tip/tip-yellow_arrows.png) no-repeat -32px 0;
+  background:url(tip-yellow_arrows.png) no-repeat -32px 0;
 }
 .tip-yellow .tip-arrow-left {
   margin-top:-9px; /* approx. half the height to center it */
@@ -119,7 +119,7 @@
   left:0;
   width:10px;
   height:20px;
-  background:url(/js/lib/tip/tip-yellow_arrows.png) no-repeat -48px 0;
+  background:url(tip-yellow_arrows.png) no-repeat -48px 0;
 }
 .port_contxt{
   width:200px;

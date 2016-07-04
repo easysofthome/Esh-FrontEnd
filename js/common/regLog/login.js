@@ -1,9 +1,9 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/tip/jquery.poshytip');
-  require('js/lib/validation/validation');
-  require('js/lib/synchroInputText');
-  var placehold = require('js/common/module/placehold');
+  require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/validation/validation');
+  require('js/front/lib/synchroInputText');
+  var placehold = require('js/front/common/module/placehold');
   placehold.init('.user_box>input,.password_box>input,.authcode_box>input');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////

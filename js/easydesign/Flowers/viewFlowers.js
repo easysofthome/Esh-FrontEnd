@@ -1,8 +1,8 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/tip/jquery.poshytip');
-  var commonDetail = require('js/easydesign/common/descHTML'); //生成详情描述
+  require('js/front/lib/tip/jquery.poshytip');
+  var commonDetail = require('js/front/easydesign/common/descHTML'); //生成详情描述
 
   var objImg = {'w':100,'h':100};
 ///////////////////////////////////登录//////////////////////////////////////////

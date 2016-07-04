@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/tip/jquery.poshytip');
+  require('js/front/lib/tip/jquery.poshytip');
   var tool = require('tools');
 
 ////////////////////////////错误提示框 tip///////////////////////////////////

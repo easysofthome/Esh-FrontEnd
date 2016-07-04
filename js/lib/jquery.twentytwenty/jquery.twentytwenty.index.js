@@ -6,7 +6,7 @@
 
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/jquery.twentytwenty/twentytwenty.css');
+  require('js/front/lib/jquery.twentytwenty/twentytwenty.css');
 
 (function($){
 

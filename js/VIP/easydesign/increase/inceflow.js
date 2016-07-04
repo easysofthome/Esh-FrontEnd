@@ -1,11 +1,11 @@
 define(function(require, exports, module) {
     require('jquery');
-    require('js/lib/tip/jquery.poshytip');
+    require('js/front/lib/tip/jquery.poshytip');
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
-    var placehold = require('js/common/module/placehold');
+    var placehold = require('js/front/common/module/placehold');
     require('customSelect');
 
-    require('js/lib/validation/validation');
+    require('js/front/lib/validation/validation');
     placehold.init('input');
 
 

@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  require('js/front/common/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
 
   $(document).ready(function(){
 

@@ -1,13 +1,13 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/VIP/common/basicData/layer');
-  require('js/lib/validation/validation');
-  require('js/lib/tip/jquery.poshytip');
-  require('js/lib/synchroInputText');
+  require('js/front/VIP/common/basicData/layer');
+  require('js/front/lib/validation/validation');
+  require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/synchroInputText');
 
 ////////////////////////////下拉框样式///////////////////////////////////
-  var switchSel = require('js/common/module/switchSel');
+  var switchSel = require('js/front/common/module/switchSel');
   switchSel.set('.select-box','.select-box>span','.select-ul','.select-ul>li','');
 
 

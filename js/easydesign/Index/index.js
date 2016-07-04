@@ -6,13 +6,13 @@ define(function (require, exports, module) {
 
   $('.simulation-box').twentytwenty();
   $('.twentytwenty-handle').css('left','600px');
-  require('js/easydesign/Index/banner');
+  require('js/front/easydesign/Index/banner');
   // 模拟效果
-  require('js/easydesign/Index/simulation');
+  require('js/front/easydesign/Index/simulation');
   // 设计资源库
-  require('js/easydesign/Index/sourceLib');
+  require('js/front/easydesign/Index/sourceLib');
   // 工作室轮播图
-  var studioShow = require('js/easydesign/Index/studioShow');
+  var studioShow = require('js/front/easydesign/Index/studioShow');
 
   $(document).ready(function () {
     $('.exo_conbox li').append("<div class='top-line'></div><div class='right-line'></div><div class='bottom-line'></div><div class='left-line'></div>");

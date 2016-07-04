@@ -2,12 +2,12 @@ define(function (require, exports, module) {
 
   require('jquery');
   require('animateColor');
-  require('js/easydata/Index/pop');
-  var rankCar = require('js/easydata/Index/rankCar');
+  require('js/front/easydata/Index/pop');
+  var rankCar = require('js/front/easydata/Index/rankCar');
   rankCar.init();
   require('animateNumber');
 
-  var switchSel = require('js/common/module/switchSel');
+  var switchSel = require('js/front/common/module/switchSel');
   switchSel.set('.rank-btn','.rank-btn-tit','.rank-btn-ul','.rank-btn-li','&nbsp;&nbsp;<span></span>');
 
   $(function () {

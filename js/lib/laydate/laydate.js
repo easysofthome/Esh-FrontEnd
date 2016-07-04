@@ -8,8 +8,8 @@
 
  */
 define(function (require, exports, module) {
-require('js/lib/laydate/laydate.css');
-require('js/lib/laydate/skins/default.css');
+require('js/front/lib/laydate/laydate.css');
+require('js/front/lib/laydate/skins/default.css');
 ; !function(a) {
   var b = {
     path: "",

@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-  require('js/common/dropDownPanel/dropDownPanel.css');
+  require('js/front/common/dropDownPanel/dropDownPanel.css');
   exports.callback;
   require('jquery');
   var initH = $(document.body).height();

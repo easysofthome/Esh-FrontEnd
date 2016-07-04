@@ -1,10 +1,10 @@
 define(function(require, exports, module) {
   require('jquery');
-  require('js/lib/validation/validation');
-  require('js/lib/tip/jquery.poshytip');
+  require('js/front/lib/validation/validation');
+  require('js/front/lib/tip/jquery.poshytip');
   /////////////////////////////// 表单样式部分 ///////////////////////////////////
 
-  var placehold = require('js/common/module/placehold');
+  var placehold = require('js/front/common/module/placehold');
   var FancyRadioCheckBox = require('FancyRadioCheckBox');
 
   //加载单选按钮样式

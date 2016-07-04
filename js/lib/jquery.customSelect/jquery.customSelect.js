@@ -1,4 +1,4 @@
-define(['js/lib/jquery.customSelect/jquery.customSelect.css'], function () {
+define(['js/front/lib/jquery.customSelect/jquery.customSelect.css'], function () {
     (function ($) {
         'use strict';
         $.fn.extend({

@@ -1,8 +1,8 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/jquery.snipe/jquery.snipe');
+  require('js/front/lib/jquery.snipe/jquery.snipe');
   require('layer');
-  require('js/lib/tip/jquery.poshytip');
+  require('js/front/lib/tip/jquery.poshytip');
 
 ///////////////////////////////////登录//////////////////////////////////////////
   $('#toLogin').on('click', function() {

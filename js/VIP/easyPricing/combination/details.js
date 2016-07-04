@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('layer');
-  require('js/lib/tip/jquery.poshytip');
+  require('js/front/lib/tip/jquery.poshytip');
 
   ////////////////////////////弹出层///////////////////////////////////
       //查看信息

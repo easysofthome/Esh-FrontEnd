@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/laydate/laydate');
+  require('js/front/lib/laydate/laydate');
 
 /////////////////////////////////// 日期选择 //////////////////////////////////////////
   var startDate = {

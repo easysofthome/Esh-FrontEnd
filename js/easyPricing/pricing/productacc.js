@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/lib/tip/jquery.poshytip');
-  require('js/lib/validation/validation');
+  require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/validation/validation');
   var tool = require('tools');
 
 ////////////////////////////全选///////////////////////////////////
