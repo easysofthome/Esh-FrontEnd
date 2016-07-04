@@ -1,6 +1,5 @@
 var alias = {
     // common
-    'urlParam': 'js/front/common/UrlParam.js',
     'tools': 'js/front/common/tool/tool',
 
 //Lib
