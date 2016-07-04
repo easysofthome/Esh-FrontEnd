@@ -10,12 +10,12 @@
     gulp sprite     // 生成sprite 雪碧图
     gulp imagemin   // 压缩original中的图片
 
-    gulp clean      //清理生成的文件(dist、less/sprite)
+    gulp clean      //清理生成的文件(Static、less/sprite)
     gulp create     // 生成image、html、css、js
 
     config    //**** 需要更改的配置项 ***********
  */
- 
+
 var config = {
     base: 'D:/ESH/Esh-FrontEnd/',
     singleWatch: true,
@@ -43,19 +43,19 @@ var path = require('path');
 //静态web服务器配置
 gulp.task('connect', function() {
     connect.server({
-        root: './dist/',
+        root: './Static/',
         port: 8180,
         livereload: true
     });
 });
 //connect实时刷新
 gulp.task('reload',function() {
-    gulp.src('./dist/html/**/*.html')
+    gulp.src('./Static/html/**/*.html')
         .pipe(connect.reload());
 });
 // 清理生成文件
 gulp.task('clean',function(){
-    gulp.src(['dist/','less/sprite'], {read: false})
+    gulp.src(['Static/','less/sprite'], {read: false})
         .pipe(clean());
 });
 // 发布生产
@@ -69,29 +69,29 @@ gulp.task('html', function() {
     // return: 防止出现文件写入出错
     return gulp.src('./html/**/*.html')
         .pipe(fileinclude({prefix: '@@',basepath: 'html/'}))
-        .pipe(gulp.dest('./dist/html'));
+        .pipe(gulp.dest('./Static/html'));
 });
 
 // Less
 gulp.task('less', function () {
     return gulp.src('./less/production/**/*.less')
         .pipe(less())
-        .pipe(gulp.dest('./dist/css/production'));
+        .pipe(gulp.dest('./Static/css/production'));
 });
 
 // Js
 gulp.task('js', function () {
     gulp.src('./js/**/*.*')
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./Static/js/front'));
     gulp.src('./video/**/*.*')
-        .pipe(gulp.dest('./dist/video'));
+        .pipe(gulp.dest('./Static/video'));
 });
 
 // 图片压缩
 gulp.task('imagemin', function () {
     return gulp.src('./images/original/**/*.*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/images/production'));
+        .pipe(gulp.dest('./Static/images/production'));
 });
 
 // 雪碧图
@@ -110,11 +110,11 @@ gulp.task('sprite',function() {
         cssPath: '/images/production'
     })
     .pipe(imagemin())
-    .pipe(gulpif('*.png', gulp.dest('./dist/images/production'), gulp.dest('./less/sprite/')))
+    .pipe(gulpif('*.png', gulp.dest('./Static/images/production'), gulp.dest('./less/sprite/')))
 });
 // 清理图片
 gulp.task('cleanImg',function(){
-    gulp.src('dist/images/production', {read: false})
+    gulp.src('Static/images/production', {read: false})
         .pipe(clean());
 });
 // 图片处理
@@ -154,7 +154,7 @@ gulp.task('watch', function() {
     // watch不能用'./',否则不支持监听新增的文件
     gulp.watch('html/**/*.html',function(event){
         if(event.type != 'deleted'){
-            watchHandle(event,'html/','dist/html/');
+            watchHandle(event,'html/','Static/html/');
             if(config.singleWatch){
                 gulp.src(srcPath)
                    .pipe(fileinclude({prefix: '@@',basepath: 'html/'}))
@@ -162,7 +162,7 @@ gulp.task('watch', function() {
             } else {
                 gulp.src('html/**/*.html')
                     .pipe(fileinclude({prefix: '@@',basepath: 'html/'}))
-                    .pipe(gulp.dest('./dist/html'))
+                    .pipe(gulp.dest('./Static/html'))
                     .on('finish',function(){
                         return gulp.src('html/**/*.*', {read: false})
                             .pipe(connect.reload());
@@ -172,7 +172,7 @@ gulp.task('watch', function() {
     });
     gulp.watch('less/production/**/*.less',function(event){
         if(event.type != 'deleted'){
-            watchHandle(event,'less/production/','dist/css/production/');
+            watchHandle(event,'less/production/','Static/css/production/');
             if(config.singleWatch) {
                 gulp.src(srcPath)
                     .pipe(less())
@@ -180,7 +180,7 @@ gulp.task('watch', function() {
             } else {
                 gulp.src('./less/production/**/*.less')
                     .pipe(less())
-                    .pipe(gulp.dest('./dist/css/production'))
+                    .pipe(gulp.dest('./Static/css/production'))
                     .on('finish',function(){
                         return gulp.src('html/**/*.*', {read: false})
                             .pipe(connect.reload());
@@ -190,24 +190,24 @@ gulp.task('watch', function() {
     });
     gulp.watch('js/**/*.*',function(event){
         if(event.type != 'deleted'){
-            watchHandle(event,'js/','dist/js/');
+            watchHandle(event,'js/','Static/js/front/');
             gulp.src(srcPath)
                 .pipe(gulp.dest(distPath)).pipe(connect.reload());
         }
     });
     gulp.watch('images/original/**/*.*',function(event){
-        // 删除dist下对应的文件
+        // 删除Static下对应的文件
         if(event.type == 'deleted'){
-            watchHandle(event,'images/original/','dist/images/production/',1);
+            watchHandle(event,'images/original/','Static/images/production/',1);
             gulp.src(distPath, {read: false})
                 .pipe(clean())
                 .on('finish',function(){
                     return gulp.src('html/**/*.*', {read: false})
                         .pipe(connect.reload());
                 });
-            // 压缩新增的或者改变的文件到dist下
+            // 压缩新增的或者改变的文件到Static下
         }else{
-            watchHandle(event,'images/original/','dist/images/production/');
+            watchHandle(event,'images/original/','Static/images/production/');
             gulp.src(srcPath)
                 .pipe(imagemin())
                 .pipe(gulp.dest(distPath))
@@ -222,7 +222,7 @@ gulp.task('watch', function() {
     gulp.watch('images/icon/**/*.png',function(event){
         if(watchSwitch) {
             watchSwitch = false;
-            watchHandle(event,'images/icon/','dist/images/production/',2);
+            watchHandle(event,'images/icon/','Static/images/production/',2);
 
             var startIndex = config.base.length + 'images/icon/'.length;
             var endIndex = srcPath.lastIndexOf('/');
@@ -253,7 +253,7 @@ gulp.task('watch', function() {
                     watchSwitch = true;
                     gulp.src('./less/production/**/*.less')
                         .pipe(less())
-                        .pipe(gulp.dest('./dist/css/production'))
+                        .pipe(gulp.dest('./Static/css/production'))
                         .on('finish',function(){
                             return gulp.src('html/**/*.*')
                                 .pipe(connect.reload());
@@ -282,7 +282,7 @@ gulp.task('default', ['connect', 'watch']);
 //     var imgStream = spriteData.img
 //         .pipe(buffer())
 //         .pipe(imagemin())       //压缩合并的图片
-//         .pipe(gulp.dest('dist/images'));
+//         .pipe(gulp.dest('Static/images'));
 
 //     var cssStream = spriteData.css
 //         .pipe(gulp.dest('Less/sprite'));
