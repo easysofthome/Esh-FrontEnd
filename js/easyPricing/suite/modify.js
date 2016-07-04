@@ -331,6 +331,7 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
               $(element).valid();
           },
           errorPlacement: function(error, element) {
+
             $(element).poshytip('destroy');
             if(error.text().length > 0){
                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));

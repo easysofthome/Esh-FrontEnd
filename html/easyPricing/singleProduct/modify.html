@@ -334,6 +334,21 @@
  <button type="hidden" id="showAddLayer"></button>
 @@include('easyPricing/common/footer2.html')
 <script>seajs.use('js/front/easyPricing/singlePro/modify');</script>
-
+<script>
+	seajs.use('js/easyPricing/singlePro/modify',function(m){
+	  //测试港口数据
+	  var startPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
+	  var endPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="洛杉矶">洛杉矶(LOS ANGELES CA)</span>美国</a><a class="a1"><span data-port="迪拜">迪拜(DUBAI)</span>阿联酋</a><a class="a1"><span data-port="鹿特丹">鹿特丹(ROTTERDAM)</span>荷兰</a><a class="a1"><span data-port="东京">东京(TOKYO)</span>日本</a><a class="a1"><span data-port="新加坡">新加坡(SINGAPORE)</span>新加坡</a><a class="a1"><span data-port="汉堡">汉堡(HAMBURG)</span>德国</a><a class="a1"><span data-port="卡拉奇">卡拉奇(KARACHI)</span>巴基斯坦</a><a class="a1"><span data-port="那瓦什瓦">那瓦什瓦(NHAVA SHEVA)</span>印度</a></div>';
+	  var testPorsObj = {};
+	  testPorsObj.startPortHTML = startPortHTML;
+	  testPorsObj.endPortHTML = endPortHTML;
+	  testPorsObj.baseURL = '';
+	  testPorsObj.params = '';
+	  //测试 设置海运费信息：请求url、静态页面需要传入startPortHTML与endPortHTML
+	  m.setPortsInfo(testPorsObj);
+	  //测试 获取海运费信息
+	  m.searchShippingInfo(function(){alert('成功！将获取最近的一天海运费信息。')});
+	});
+</script>
 </body>
 </html>
