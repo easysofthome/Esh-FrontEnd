@@ -6,19 +6,21 @@ define(function (require, exports, module) {
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
-var cName = (className == undefined? 'tip-violet':'tip-yellow');
-var dropList = (false || isDropList);
- $(obj).poshytip({
-      className: cName,
-      content: msg,
-      showOn: 'none',
-      alignTo: 'target',
-      alignX: alignX,
-      alignY: alignY,
-      offsetX: offsetX,
-      offsetY: offsetY,
-      dropList:dropList
-    });
+  //显示被折叠元素的错误提示
+  validateHiddenE(obj);
+  var cName = (className == undefined? 'tip-violet':'tip-yellow');
+  var dropList = (false || isDropList);
+   $(obj).poshytip({
+        className: cName,
+        content: msg,
+        showOn: 'none',
+        alignTo: 'target',
+        alignX: alignX,
+        alignY: alignY,
+        offsetX: offsetX,
+        offsetY: offsetY,
+        dropList:dropList
+      });
 
 }
 
@@ -35,6 +37,23 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       break;
     default:
       showTip(obj,msg,"inner-left","top",0,10,className,isDropList);
+  }
+}
+//显示被折叠元素的错误提示
+function validateHiddenE(ele){
+  var id = $(ele).attr('id');
+  $('.shrink_wrap:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+  $('.information:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+
+  function showHiddenE(id,that){
+    var size = $(that).find('#'+id).length;
+    if(size > 0){
+      $(that).show();
+    }
   }
 }
 
@@ -331,6 +350,7 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
               $(element).valid();
           },
           errorPlacement: function(error, element) {
+
             $(element).poshytip('destroy');
             if(error.text().length > 0){
                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
