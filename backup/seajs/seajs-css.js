@@ -290,9 +290,9 @@ function addBase(id, refUri) {
   else {
     /***** 区分本地还是远程 *****/
     if(id.match(/js\/front\/(.*)/)){
-      ret = data.local + id;
-    }else{
       ret = data.base + id;
+    }else{
+      ret = data.local + id;
     }
     // ret = data.base + id
   }
