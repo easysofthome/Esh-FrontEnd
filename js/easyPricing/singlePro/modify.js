@@ -3,8 +3,12 @@ define(function (require, exports, module) {
   require('layer');
   require('js/lib/validation/validation');
   require('js/lib/tip/jquery.poshytip');
+
+
 ////////////////////////////错误提示框 tip///////////////////////////////////
+
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
+validateHiddenE(obj);
 var cName = (className == undefined? 'tip-violet':'tip-yellow');
 var dropList = (false || isDropList);
  $(obj).poshytip({
@@ -33,6 +37,24 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       break;
     default:
       showTip(obj,msg,"inner-left","top",0,10,className,isDropList);
+  }
+}
+
+//显示被折叠元素的错误提示
+function validateHiddenE(ele){
+  var id = $(ele).attr('id');
+  $('.shrink_wrap:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+  $('.information:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+
+  function showHiddenE(id,that){
+    var size = $(that).find('#'+id).length;
+    if(size > 0){
+      $(that).show();
+    }
   }
 }
 
@@ -214,21 +236,33 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       });
 
 /////////////////////////////// 起始港 目的港 下拉提示 ///////////////////////////////////
-var listStartPort = {};
-var listEndPort = {};
-var startPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
-var endPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="洛杉矶">洛杉矶(LOS ANGELES CA)</span>美国</a><a class="a1"><span data-port="迪拜">迪拜(DUBAI)</span>阿联酋</a><a class="a1"><span data-port="鹿特丹">鹿特丹(ROTTERDAM)</span>荷兰</a><a class="a1"><span data-port="东京">东京(TOKYO)</span>日本</a><a class="a1"><span data-port="新加坡">新加坡(SINGAPORE)</span>新加坡</a><a class="a1"><span data-port="汉堡">汉堡(HAMBURG)</span>德国</a><a class="a1"><span data-port="卡拉奇">卡拉奇(KARACHI)</span>巴基斯坦</a><a class="a1"><span data-port="那瓦什瓦">那瓦什瓦(NHAVA SHEVA)</span>印度</a></div>';
 
+var portsObj = {};
+function setPortsInfo(obj){
+  portsObj = obj;
+}
+function getPortsInfo(){
+  return portsObj;
+}
 //起始港口 下拉提示
 $('#startPort').bind('focus',function(element){
   $(this).poshytip('destoryDop');
-  setMsgPosition(this,buildHTML(startPortHTML),'rightBottom','tip-yellow',true);
+  if(portsObj.startPortHTML){
+    setMsgPosition(this,buildHTML(getPortsInfo().startPortHTML),'rightBottom','tip-yellow',true);
+  }else{
+    getPortsListAjax(this,getPortsInfo());
+  }
+
 });
 
 //目的港口 下拉提示
 $('#endPort').bind('focus',function(element){
   $(this).poshytip('destoryDop');
-  setMsgPosition(this,buildHTML(endPortHTML),'rightBottom','tip-yellow',true);
+  if(portsObj.endPortHTML){
+    setMsgPosition(this,buildHTML(getPortsInfo().endPortHTML),'rightBottom','tip-yellow',true);
+  }else{
+    getPortsListAjax(this,getPortsInfo());
+  }
 });
 
 //隐藏下拉提示
@@ -260,9 +294,7 @@ function checkShippingInfo (callback){
       $endPort.trigger('focus')
       return false;
     }
-
     callback();
-
   });
 
 }
@@ -271,13 +303,11 @@ function checkShippingInfo (callback){
 function searchShippingInfo(callback){
   checkShippingInfo(callback);
 }
-//测试
-searchShippingInfo(function(){alert('成功！将获取最近的一天海运费信息。')});
 
 //异步获取港口名称列表
-function getPortsListAjax(baseURL,params){
-  var params = baseURL
-  var baseURL = params;
+function getPortsListAjax(target,url){
+  var params = url.baseURL
+  var baseURL = url.params;
    $.ajax({
       type: 'post',
       url: baseURL+'?'+params,
@@ -285,7 +315,7 @@ function getPortsListAjax(baseURL,params){
       dataType: 'json',
       success: function(data){
         var postsHTML = buildHTML(data);
-        $(this).poshytip('showPostList',postsHTML);
+        setMsgPosition(target,postsHTML,'rightBottom','tip-yellow',true);
       },
       error : function() {
         console.log('---获取港口名称列表异常---');
@@ -296,9 +326,6 @@ function getPortsListAjax(baseURL,params){
 //获取最近的一天海运费信息
 $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
    $(this).poshytip('searchKeyWord');
-   //$(this).poshytip('showPostList',endPortHTML);
-
-  // getPortsListAjax();
 });
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
@@ -610,10 +637,10 @@ $(document).ready(function(){
 
 });
 
+//接口 ajax获取港口列表请求 信息
+exports.setPortsInfo = setPortsInfo;
 
-
-
-
-
+//接口 获取海运费信息
+exports.searchShippingInfo = searchShippingInfo;
 
 });
