@@ -25,7 +25,7 @@ define(function (require, exports, module) {
         showTip(obj,msg,"right","center",5,0);
         break;
       case "rightTop":
-        showTip(obj,msg,"inner-left","top",50,5);
+        showTip(obj,msg,"inner-left","top",-10,5);
         break;
       case "rightBottom":
         showTip(obj,msg,"inner-left","bottom",0,5);
@@ -153,6 +153,10 @@ define(function (require, exports, module) {
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
+                //企业类型 至少选择一个
+                if(!switchIdentityValid('#factory_sel,#trafficker_sel,#importer_sel')){
+                    return false;
+                }
                 //提交表单
                 datajson.submitAjax();
                 return false;
@@ -258,19 +262,6 @@ define(function (require, exports, module) {
                 auth_code_tit.html("手机验证码：");
             }else{
                 auth_code_tit.html("邮箱验证码：");
-                // checkEmail($(element),
-                //     function () {
-                //         var label_txt = isMobile ? '手机' : '邮箱';
-                //         var validateCode = $('#validate-code');
-                //         if (validateCode.hasClass('none')) {
-                //             validateCode.removeClass('none');
-                //             validateCode.find('.label').html("<b class='ftx04'>*</b>" + label_txt + '验证码');
-                //         }
-                //     },
-                //     function function_name (element) {
-                //         $(element).parent().find('.input-tip').html('<span>' + "该帐号已存在，立刻<a href='./Login.html'>登录</a>" + '</span>');
-                //     }
-                // );
             }
             return true;
         }, '');
@@ -497,13 +488,6 @@ define(function (require, exports, module) {
         var typeCount=0;
         var flag = true;
         var valueLength=getStringLength(value);
-        // if (valueLength < 6) {
-        //     element.parent().removeClass('form-item-valid').removeClass(
-        //         'form-item-error');
-        //     element.parent().next().find('span').removeClass('error').html(
-        //         $(element).attr('default'));
-        //     return;
-        // }
 
         for (var key in pwdStrength) {
             if (pwdStrength[key].reg.test(value)) {
@@ -553,160 +537,64 @@ define(function (require, exports, module) {
             pwdStrengthRule(form_pwd, value);
         });
     }
-/** 密码 **/
+///////////////////////////////////////身　　　份->企业类型联动验证/////////////////////////////////////
+    //身份 选择
+    function userIdentity(target){
+       var that = target;
+       var tag = $(that).attr('id');
+       $('#factory_sel,#trafficker_sel,#importer_sel,#stockist_sel').hide();
+       $('#'+tag+'_sel').show();
+    }
+
+    //验证企业类型 至少选中一个复选框
+    function validateComType(ids,identity){
+        //企业类型选择 click
+        $(ids).find('input[type="checkbox"]').bind('click',function(){
+            checkedValid(this);
+        });
+        //切换用户身份时 click
+        $(identity).find('input[type="radio"]').bind('click',function(){
+            userIdentity(this);
+            switchIdentityValid(ids);
+        });
+    }
+
+    //企业类型选择（checkbox） 实时验证
+    function checkedValid(target){
+        var wraper = $(target).parent().parent();
+        wraper.poshytip('destroy');
+        var checkedNum = $(wraper).find('input[type="checkbox"]:checked').length;
+        if(checkedNum==0){
+            setMsgPosition(wraper,'请选择企业类型','');
+        }
+    }
+
+    //切换用户身份时（radio） 对对企业类型选择 实时验证
+    function switchIdentityValid(ids){
+       var flag = true;
+       $(ids).poshytip('destroy');
+       var array = ids.split(',');
+       for(var i=0;i<array.length;i++){
+            if($(array[i]).css('display')!='none'){
+                var checkedNum = $(array[i]).find('input[type="checkbox"]:checked').length;
+                if(checkedNum==0){
+                    flag = false;
+                    setMsgPosition(array[i],'请选择企业类型','');
+                }
+            }
+       }
+       return flag;
+    }
+
+    $(document).ready(function(){
+        validateComType('#factory_sel,#trafficker_sel,#importer_sel','.identity');
+    });
+
+
 
 /** 检查邮箱 **/
 var nameold, morePinOld, emailResult;
 var namestate = false;
-
-function checkEmail(element, succedCallback, errorCallBack) {
-    value = element.val();
-    // var email = strTrim(value);
-    // if (!namestate || nameold != email) {
-    //     if (nameold != email) {
-    //         nameold = email;
-
-    //         $.getJSON("http://www.easysofthome.com/Member/ashx/Register/checkUnique.ashx?email=" + email + "&r=" + Math.random(), function (date) {
-
-    //             emailResult = date.Data;
-    //             if (date.Data == 0) {
-    //                 namestate = true;
-    //             }
-    //             if (date.Data == 1) {
-    //                 if (errorCallBack) {
-    //                     errorCallBack();
-    //                 }
-    //                 namestate = false;
-    //             }
-    //         });
-    //     }
-    //     else {
-    //         namestate = false;
-    //         if (emailResult == 1) {
-    //             validateSettings.error.run(option, "该帐号已存在，立刻<a  class='flk13' href='/login/Login'>登录</a>");
-    //         }
-    //         if (emailResult == 2) {
-    //             validateSettings.error.run(option, "邮箱地址不正确，请重新输入");
-
-    //         }
-    //         if (emailResult == 3) {
-    //             validateSettings.error.run(option, "<span>中国雅虎邮箱已经停止服务,请您换一个邮箱</span>");
-    //         }
-    //     }
-    // }
-    // else {
-    //     validateSettings.succeed.run(option);
-    // }
-}
-/** /检查邮箱 **/
-/** 发送验证码 **/
-// function sendVCode() {
-//     var btn = $(this);
-//     if (btn.attr("disabled") == 'disabled') {
-//         return;
-//     }
-//     var num = strTrim($('#regName').val());
-//     var isMobile = validateRules.isMobile(num);
-//     var isEmail = validateRules.isEmail(num);
-//     if (!isMobile && !isEmail) {
-//         return;
-//     } else {
-//         var ashxUrl = '/Member/ashx/' + (isMobile ? 'SendVCMsgHandler.ashx' : 'SendEmailVC.ashx');
-//         var paraName = isMobile ? 'phone' : 'email';
-//         var para = {};
-//         para[paraName] = num;
-//         para['txtInviteCode'] = $('#txtInviteCode').val();
-//         $("#dyMobileButton").html("正在发送验证码");
-//         btn.removeClass().addClass("btn btn-15").attr("disabled", "disabled");
-//         $.getJSON(ashxUrl, para, function (data) {
-//             if (data.success) {
-//                 countDown();
-//                 if (data.errorMessage.length === 6)
-//                     alert(data.errorMessage);
-//             } else {
-//                 countDownStop();
-//                 alert(data.existMsg || data.errorMessage || '发送失败');
-//             }
-//         })
-//     }
-// }
-// var delayTime = 120;
-// function countDownStop() {
-//     delayTime = 120;
-//     $("#dyMobileButton").html("获取验证码");
-//     $("#sendCode").removeClass().addClass("btn").removeAttr("disabled");
-// }
-
-// function countDown() {
-//     delayTime--;
-//     $("#dyMobileButton").html(delayTime + '秒后重新获取');
-//     if (delayTime == 0) {
-//         countDownStop();
-//     } else {
-//         setTimeout(countDown, 1000);
-//     }
-// }
-
-// function strTrim(str) {
-//     return str.replace(/(^\s*)|(\s*$)/g, "");
-// }
-/** /发送验证码 **/
-
-    //提交表单
-    // function formSubmit(form) {
-    //     $btnRegister = $("#form-register");
-    //     //海外手机注册
-    //     //phoneNoWithCountryCode=selectCountry.attr('country_id')+form_phone.val();
-    //     //var param = $(form).serialize().replace(/phone=\d+/,'phone='+phoneNoWithCountryCode);
-    //     var param = $(form).serialize();
-    //     var ajaxurl = '../register/regService?';
-    //     if (registerType == 'email') {
-    //         ajaxurl = '../register/sendRegEmail?'
-    //     }
-    //     $.ajax({
-    //         type: 'post',
-    //         url: ajaxurl + location.search.substring(1),
-    //         contentType: "application/x-www-form-urlencoded; charset=utf-8",
-    //         data: param,
-    //         cache:false,
-    //         beforeSend: function () {
-    //             $btnRegister.text('正在注册..');
-    //         },
-    //         error: function () {
-    //             showDialog('网络繁忙，请稍后再试');
-    //         },
-    //         success: function (response) {
-    //             if (response) {
-    //                 var obj = eval(response);
-    //                 if (obj.info) {
-    //                     if (obj.info == '短信验证码不正确或已过期!') {
-    //                         console.log('showerror');
-    //                         showMobileCodeError()
-    //                     } else {
-    //                         showDialog(obj.info);
-    //                     }
-    //                 }
-    //                 if (obj.noAuth) {
-    //                     window.location = obj.noAuth;
-    //                 }
-    //                 if (obj.success == true) {
-    //                     if(obj.dispatchUrl.indexOf("jdpay.com")!=-1){
-    //                         jQuery.getJSON("//sso.jd.com/setCookie?t=sso.jdpay.com&callback=?",function(){
-    //                             successRedirectURL(obj.dispatchUrl);
-    //                         });
-    //                     }else{
-    //                         successRedirectURL(obj.dispatchUrl);
-    //                     }
-    //                 }
-    //             }
-    //             $btnRegister.text('立即注册');
-    //         }
-    //     });
-    // }
-
-
-
-
 
 
 
