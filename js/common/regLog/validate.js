@@ -153,6 +153,10 @@ define(function (require, exports, module) {
             //忽略
             ignore: '.ignore',
             submitHandler: function (form) {
+                //企业类型 至少选择一个
+                if(!switchIdentityValid('#factory_sel,#trafficker_sel,#importer_sel')){
+                    return false;
+                }
                 //提交表单
                 datajson.submitAjax();
                 return false;
@@ -533,7 +537,7 @@ define(function (require, exports, module) {
             pwdStrengthRule(form_pwd, value);
         });
     }
-
+///////////////////////////////////////身　　　份->企业类型联动验证/////////////////////////////////////
     //身份 选择
     function userIdentity(target){
        var that = target;
@@ -542,31 +546,44 @@ define(function (require, exports, module) {
        $('#'+tag+'_sel').show();
     }
 
-
     //验证企业类型 至少选中一个复选框
     function validateComType(ids,identity){
-        $(identity).find('input[type="radio"]').bind('click',function(){
-           userIdentity(this);
-           $(ids).poshytip('destroy');
-           var array = ids.split(',');
-           for(var i=0;i<array.length;i++){
-                if($(array[i]).css('display')!='none'){
-                    var checkedNum = $(array[i]).find('input[type="checkbox"]:checked').length;
-                    if(checkedNum==0){
-                        setMsgPosition(array[i],'请选择企业类型','');
-                    }
-                }
-           }
-        });
-
+        //企业类型选择 click
         $(ids).find('input[type="checkbox"]').bind('click',function(){
-            var wraper = $(this).parent().parent();
-            wraper.poshytip('destroy');
-            var checkedNum = $(wraper).find('input[type="checkbox"]:checked').length;
-            if(checkedNum==0){
-                setMsgPosition(wraper,'请选择企业类型','');
-            }
+            checkedValid(this);
         });
+        //切换用户身份时 click
+        $(identity).find('input[type="radio"]').bind('click',function(){
+            userIdentity(this);
+            switchIdentityValid(ids);
+        });
+    }
+
+    //企业类型选择（checkbox） 实时验证
+    function checkedValid(target){
+        var wraper = $(target).parent().parent();
+        wraper.poshytip('destroy');
+        var checkedNum = $(wraper).find('input[type="checkbox"]:checked').length;
+        if(checkedNum==0){
+            setMsgPosition(wraper,'请选择企业类型','');
+        }
+    }
+
+    //切换用户身份时（radio） 对对企业类型选择 实时验证
+    function switchIdentityValid(ids){
+       var flag = true;
+       $(ids).poshytip('destroy');
+       var array = ids.split(',');
+       for(var i=0;i<array.length;i++){
+            if($(array[i]).css('display')!='none'){
+                var checkedNum = $(array[i]).find('input[type="checkbox"]:checked').length;
+                if(checkedNum==0){
+                    flag = false;
+                    setMsgPosition(array[i],'请选择企业类型','');
+                }
+            }
+       }
+       return flag;
     }
 
     $(document).ready(function(){

@@ -23,9 +23,15 @@ define(function (require, exports, module) {
         width: $(obj).width()
       });
   }
-
+////////////////////////////////// 我有邀请码//////////////////////////////////////
+  //展开/收起  我有邀请码
   $('.Invite-code-words').bind('click',function(){
       $('.Invite-code-input').toggle();
+      if($(this).find('i').hasClass('unfold')){
+        $(this).find('i').removeClass('unfold').addClass('Pack-up');
+      }else{
+        $(this).find('i').removeClass('Pack-up').addClass('unfold');
+      }
   });
 
 //////////////////////////////////文本框输入提示 （银行卡、手机号）//////////////////////////////////////
