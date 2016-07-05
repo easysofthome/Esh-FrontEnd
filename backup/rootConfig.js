@@ -24,6 +24,8 @@ var alias = {
     'layer': 'js/front/lib/layer/layer.min',      //弹窗
     'layerExt': 'js/front/lib/layer/layer.ext',      //弹窗扩展
 
+    'lazyload': 'js/front/lib/jquery.lazyload/jquery.lazyload.js',              // 延时加载
+
     // 轮播、切换
     'switchable': 'js/front/lib/jquery.switchable/2.0/jquery.switchable.min',   //切换
     'fullPage': 'js/front/lib/jquery.fullPage/jquery.fullPage.min.js',          //全屏滚动
