@@ -12,10 +12,8 @@
 <body>
 
 <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
-<script type="text/javascript" src="/js/aa/jquery.tinyscrollbar.js"></script>
 
 <script>
-    var w;
     var h;
 
     $(window).resize(function(){
@@ -30,17 +28,6 @@
         $(".main-right").height(h-133);
     });
 
-
-    $( function(){
-        /*scrollbar*/
-
-
-        $('#scrollbar').tinyscrollbar({
-            axis:"y",			//滚动条方向
-            sizethumb:"55", 	//.thumb的高度
-            size: '500', 		//滚动条高度
-        });
-    })
 
 
 </script>
@@ -72,13 +59,6 @@
     </div>
 
     <div class="lf main-right" id="scrollbar">
-        <div class="scrollbar lf">
-            <div class="track">
-                <div class="thumb">
-                    <div class="end"></div>
-                </div>
-            </div>
-        </div>
         <div class="right-top">
             <h3>[花型名称]高度大气唯美花纹</h3>
             <div class="desc clearfix">
