@@ -85,15 +85,20 @@ define(function () {
 			return validator;
 		},
 		// http://jqueryvalidation.org/valid/
-		valid: function () {
+		valid: function (event) {
 			var valid, validator, errorList;
 			if ($(this[0]).is("form")) {
-				valid = this.validate().form();
+				var _validator = this.validate();
+				valid = _validator.form();
 			} else {
 				errorList = [];
 				valid = true;
 				if(typeof(this[0])!='undefined'){
 					validator = $(this[0].form).validate();
+				}
+				//源代码修改  添加事件类型标识符 2016.7.15
+				if(event){
+					validator.settings.eventTypeTag = event.type;
 				}
 				this.each(function () {
 					valid = validator.element(this) && valid;
@@ -223,6 +228,7 @@ define(function () {
 			ignore: ":hidden",
 			ignoreTitle: false,
 			checkFirst: true,
+			eventTypeTag:"",
 			onfocusin: function (element) {
 				this.lastActive = element;
 				// Hide error label and remove error class on focus if enabled
@@ -425,6 +431,8 @@ define(function () {
 				if (!this.valid()) {
 					$(this.currentForm).triggerHandler("invalid-form", [this]);
 				}
+				//源代码修改  添加事件类型标识符 2016.7.15
+				this.settings.eventTypeTag = "";
 				this.showErrors();
 				return this.valid();
 			},
@@ -815,7 +823,8 @@ define(function () {
 					if (this.labelContainer.length) {
 						this.labelContainer.append(place);
 					} else if (this.settings.errorPlacement) {
-						this.settings.errorPlacement(place, $(element));
+						//源代码修改  添加事件类型标识符 2016.7.15
+						this.settings.errorPlacement(place, $(element),this.settings.eventTypeTag);
 					} else {
 						//
 						$(element).parent().next().html(place);

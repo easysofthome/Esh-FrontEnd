@@ -6,8 +6,13 @@ define(function (require, exports, module) {
 
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
-var cName = (className == undefined? 'tip-violet':'tip-yellow');
-var dropList = (false || isDropList);
+  //给错误提示重新定位
+  validateHiddenE(obj);
+  //显示被折叠元素的错误提示
+  initPostionOnShowTip(obj);
+
+  var cName = (className == undefined? 'tip-violet':'tip-yellow');
+  var dropList = (false || isDropList);
  $(obj).poshytip({
       className: cName,
       content: msg,
@@ -35,6 +40,37 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
       break;
     default:
       showTip(obj,msg,"inner-left","top",0,10,className,isDropList);
+  }
+}
+
+//展开被折叠元素，同时显示错误提示
+function validateHiddenE(ele){
+  var id = $(ele).attr('id');
+  $('.shrink_wrap:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+
+  function showHiddenE(id,that){
+    var size = $(that).find('#'+id).length;
+    if(size > 0){
+      $(that).show();
+    }
+  }
+}
+
+//给错误提示重新定位
+function initPostionOnShowTip(obj){
+  //如果是鼠标离开事件则不执行重新定位 表单提交时才会执行
+  if($(obj).attr('eventTypeTag')=='focusout'){
+    return;
+  }
+  $(obj).trigger('focusin');
+  var oTop = $(obj).offset().top-112;
+  var winH= $(window).height()-112;
+  var sTop = $(window).scrollTop();
+  if((oTop<winH&&sTop>oTop)||(oTop>winH&&(sTop<(oTop-winH)||sTop>oTop))){
+    var scrollT = oTop-$(window).height()+winH/2;
+    $(window).scrollTop(scrollT);
   }
 }
 
@@ -327,16 +363,19 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
              window.location = "/html/easyPricing/suite/complete.html";
              return false;
           },
-          onfocusout:function(element){
-              $(element).valid();
-          },
-          errorPlacement: function(error, element) {
-
+          //添加event 用于记录光标离开事件
+          onfocusout:function(element,event){
+            if($(element).attr('id')){
+              $(element).valid(event);
+            }
+          }, //添加eventType 用于记录光标离开事件
+          errorPlacement: function(error, element, eventType) {
             $(element).poshytip('destroy');
             if(error.text().length > 0){
+                //添加事件类型标识符 用于记录光标离开事件
+                $(element).attr('eventTypeTag',eventType);
                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
             }
-            //error.appendTo(element.siblings('.input-tip') );
           },
           success:function(element){
               $(element).poshytip('destroy');
