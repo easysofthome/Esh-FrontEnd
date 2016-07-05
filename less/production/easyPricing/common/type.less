@@ -1,6 +1,8 @@
 
 @import '../../../dev/mixins/mixins.less';
 
+@import '../../../sprite/easyPricing/pricing/sprite.less';
+
 // 类型
 div.typebox{
   width: 1200px;
@@ -16,7 +18,7 @@ div.typebox{
     line-height: 26px;
     padding: 0 10px;
     .border-radius(3px);
-    margin: 7px 10px 0 10px;
+    margin: 7px 5px 0 10px;
     display: block;
     color: #666;
   }
@@ -27,12 +29,34 @@ div.typebox{
     line-height: 26px;
     padding: 0 10px;
     .border-radius(3px);
-    margin: 7px 10px 0 10px;
+    margin: 7px 5px 0 5px;
     display: block;
     color: #666;
   }
   a.type_a:hover,a.cur{
     background-color: #3ca1d7;
     color: #fff;
+  }
+  .clearList {
+    overflow: hidden;
+    border: 1px solid #3CA1D7;
+    margin: 8px 0 2px 10px;
+    padding: 0 8px;
+    height: 22px;
+    font-size: 12px;
+    color: #e22c37;
+    .border-radius(2px);
+    &:hover{
+      color: #ff5a00;
+      text-decoration: none!important;
+    }
+    p.tit{
+      line-height: 24px;
+    }
+    i.undock {
+      margin: 7px 4px 0 6px;
+      .sprite(@undock);
+      .icon-easyPricing-pricing;
+    }
   }
 }
