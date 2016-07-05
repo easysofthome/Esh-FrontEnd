@@ -10,7 +10,6 @@
     width: 100%;
     background: #F8F8F8;
     .gallery-img{
-        height: 774px;
         position: relative;
         text-align: center;
         margin-right: 380px;
@@ -122,7 +121,7 @@
     margin-left: -380px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 25px;
+    padding: 20px 25px 0 25px;
     .right-top{
         min-height: 280px;
     }
@@ -181,3 +180,74 @@
         }
     }
 }
+
+
+// 滚动条
+.thumb .end, .thumb {
+    background-color: #e0bc2c;
+}
+.scrollbar {
+    position: relative;
+    width: 100%;
+    top:0;
+}
+.track {
+    background-color: #292929;
+    height: 9px;
+    width: 55px;
+    position: relative;
+    border-radius: 8px;
+}
+.thumb {
+    height: 9px;
+    width: 13px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    border-radius: 8px;
+}
+
+
+
+.viewport {
+    width: 360px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.thumb .end,#scrollbar1 .thumb {
+    background-color: #e0bc2c;
+}
+.overview {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+.scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 9px;
+}
+.track {
+    width: 10px;
+    height: 100%;
+    position: relative;
+    border-radius: 8px;
+    background-color: #292929;
+
+}
+.thumb {
+    height: 9px;
+    width: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    border-radius: 8px;
+}
+
