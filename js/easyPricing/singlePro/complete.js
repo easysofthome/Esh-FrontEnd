@@ -2,10 +2,10 @@ define(function (require, exports, module) {
   require('jquery');
   require('js/front/lib/tip/jquery.poshytip');
   require('js/front/lib/validation/validation');
-
+  exports.callback;
 ////////////////////////////错误提示框 tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
-
+ validateHiddenE(obj);
  $(obj).poshytip({
       className: 'tip-violet',
       content: msg,
@@ -33,6 +33,21 @@ function setMsgPosition(obj,msg,direction){
       break;
     default:
       showTip(obj,msg,"inner-left","top",0,10);
+  }
+}
+
+//展开被折叠元素，同时显示错误提示
+function validateHiddenE(ele){
+  var id = $(ele).attr('id');
+  $('.shrink_wrap:hidden').each(function(){
+    showHiddenE(id,this);
+  });
+
+  function showHiddenE(id,that){
+    var size = $(that).find('#'+id).length;
+    if(size > 0){
+      $(that).show();
+    }
   }
 }
 
@@ -64,10 +79,9 @@ function setMsgPosition(obj,msg,direction){
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-            // formSubmit(form);
-              //阻止表单提交
-            // window.location = "/html/easyPricing/suite/complete.html";
+             if(exports.callback){
+                exports.callback();
+             }
              return false;
           },
           onfocusout:function(element){
@@ -111,7 +125,9 @@ function setMsgPosition(obj,msg,direction){
       });
   }
 
-
-
 init();
+
+$('#collectPricingResult').bind('click',function(){
+  form.submit();
+});
 });
