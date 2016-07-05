@@ -289,10 +289,10 @@ function addBase(id, refUri) {
   // Top-level
   else {
     /***** 区分本地还是远程 *****/
-    if(id.match(/js\/business\/(.*)/)){
-      ret = data.local + id;
-    }else{
+    if(id.match(/js\/front\/(.*)/)){
       ret = data.base + id;
+    }else{
+      ret = data.local + id;
     }
     // ret = data.base + id
   }

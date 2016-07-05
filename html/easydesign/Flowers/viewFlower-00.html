@@ -6,30 +6,45 @@
   <link href="/css/production/easydesign/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easydesign/common/showDesignImg-00.css" rel="stylesheet" type="text/css"/>
 
+
 </head>
 
+<body>
+
 <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="/js/aa/jquery.tinyscrollbar.js"></script>
 
 <script>
     var w;
+    var h;
+
     $(window).resize(function(){
-        w = $(window).width();
-        demo();
+        h = $(window).height();
+        $(".gallery-img").height(h-113);
+        $(".main-right").height(h-133);
     });
 
     $(document).ready(function(){
-        w = $(window).width();
-        demo();
+        h = $(window).height();
+        $(".gallery-img").height(h-113);
+        $(".main-right").height(h-133);
     });
 
-    function demo(){
-        var w2 = $('.slide').css('width');      //20px;
-        w2 = parseInt(w2);              // 20
-        $('.img').css('width',w-w2);
-    }
+
+    $( function(){
+        /*scrollbar*/
+
+
+        $('#scrollbar').tinyscrollbar({
+            axis:"y",			//滚动条方向
+            sizethumb:"55", 	//.thumb的高度
+            size: '500', 		//滚动条高度
+        });
+    })
+
+
 </script>
 
-<body>
 
 <div style="height: 112px;">
     @@include('common/top.html')
@@ -56,7 +71,14 @@
         </div>
     </div>
 
-    <div class="lf main-right">
+    <div class="lf main-right" id="scrollbar">
+        <div class="scrollbar lf">
+            <div class="track">
+                <div class="thumb">
+                    <div class="end"></div>
+                </div>
+            </div>
+        </div>
         <div class="right-top">
             <h3>[花型名称]高度大气唯美花纹</h3>
             <div class="desc clearfix">
@@ -95,6 +117,7 @@
                 <p class="lf">关<span class="three-words">键</span>词：</p>
                 <p class="lf tit-width"> 5.68cm x 5.7cm</p>
             </div>
+
             <div class="desc clearfix">
                 <span class="lf">纱线构成：</span>
                 <p class="lf tit-width">1经2纬</p>
