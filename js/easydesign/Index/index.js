@@ -3,7 +3,8 @@ define(function (require, exports, module) {
     require('layer');
     require('jquery.event.move');
     require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
-
+    //接口 接收点击面料的地址
+    exports.simulationFabricUrl;
     $('.simulation-box').twentytwenty();
     $('.twentytwenty-handle').css('left','600px');
     require('js/front/easydesign/Index/banner');
@@ -113,7 +114,9 @@ define(function (require, exports, module) {
 
     function bindClickSimulationFabric (){
         $('.twentytwenty-container').bind('click',function(){
-            window.open('/html/easydesign/simulationFabric.html');
+             if(exports.simulationFabricUrl){
+                window.open(exports.simulationFabricUrl);
+             }
         });
     }
 
