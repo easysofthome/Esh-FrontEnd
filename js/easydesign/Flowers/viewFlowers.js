@@ -58,14 +58,13 @@ define(function (require, exports, module) {
     setBigImg(objJson);
     if(objJson.FlowerStyleSimilarList.length <=0) return;
     for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
-      var str = '<li class="resembleLi">'+
-      '<a class="list" href="javascript:void(0)" data-picid="'+objJson.FlowerStyleSimilarList[i].ImgLink+
-      '"><div style="border: 1px solid rgb(192, 192, 192); background-image: url('+
-          objJson.FlowerStyleSimilarList[i].ImgUrl+')"> </div></a></li>';
-      $('#j-resemble').append(str);
+      var str = '<li class="lf mianliaobox">'+
+      '<a href="javascript:void(0)" data-picid="'+objJson.FlowerStyleSimilarList[i].ImgLink+
+      '"><img src="'+objJson.FlowerStyleSimilarList[i].ImgUrl+'" /></a></li>';
+      $('.xiangshimianliao').append(str);
     }
 
-    $('#j-resemble').find('a').bind('click',function(){
+    $('.xiangshimianliao').find('a').bind('click',function(){
       var href = $(this).attr('data-picid');
       ajaxLoad(href);
     });
@@ -73,15 +72,15 @@ define(function (require, exports, module) {
 
   //加载第n张图片
   function setBigImg(objJson){
-    $('#j-lb-pic').hide();
+   // $('#j-lb-pic').hide();
     setNextOrPrev(objJson);
-    $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
+    $('.gallery').attr('src',objJson.CurrentImgUrl);
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-    $('#j-lb-pic').show();
+    setConstrainImg(objImg,'#j-lb-pic','.img-wrapper','.main-right');
+    //$('#j-lb-pic').show();
     });
 
   }
@@ -94,7 +93,7 @@ define(function (require, exports, module) {
     var h = image.h;
     var l_w_ratio = h/w;
     var w_l_ratio = w/h;
-    var leftSide_w = $(leftSide).width();
+    var leftSide_w = $(leftSide).outerWidth()||$(leftSide).width();
     if($(leftSide).css('display') == 'none'){
         leftSide_w = 0;
     }
@@ -118,11 +117,10 @@ define(function (require, exports, module) {
     }else{
        h = h-65;
     }
-    $('#j-lb-main').width(winW-leftSide_w);
-    $('#j-lb-main').height(winH);
-    $('#j-side-cnt').height(winH);
-    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
-    $(parentDiv).css({'width':w,'height':h});
+   // $('#j-lb-main').width(winW-leftSide_w);
+    //$(parentDiv).css({'top':tmpTop,'left':tmpLeft});
+    console.log(leftSide_w);
+    $(parentDiv).css({'width':(winW-leftSide_w),'height':(h-120)});
     $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
   }
 
@@ -238,6 +236,22 @@ define(function (require, exports, module) {
     var url = baseURL+'?'+params;
     ajaxLoad(url);
   });
+
+
+   var w;
+    var h;
+
+    $(window).resize(function(){
+       // h = $(window).height();
+       // $(".gallery-img").height(h-113);
+       // $(".main-right").height(h-133);
+    });
+
+    $(document).ready(function(){
+       // h = $(window).height();
+       // $(".gallery-img").height(h-113);
+       // $(".main-right").height(h-133);
+    });
 
 //接口
 exports.initPage = initPage;

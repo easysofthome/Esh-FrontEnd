@@ -5,46 +5,8 @@
   <title>易家纺电子商务服务平台|精确匹配国外潜在买家|搜索</title>
   <link href="/css/production/easydesign/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easydesign/common/showDesignImg-00.css" rel="stylesheet" type="text/css"/>
-
-
 </head>
-
 <body>
-
-<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
-<script type="text/javascript" src="/js/aa/jquery.tinyscrollbar.js"></script>
-
-<script>
-    var w;
-    var h;
-
-    $(window).resize(function(){
-        h = $(window).height();
-        $(".gallery-img").height(h-113);
-        $(".main-right").height(h-133);
-    });
-
-    $(document).ready(function(){
-        h = $(window).height();
-        $(".gallery-img").height(h-113);
-        $(".main-right").height(h-133);
-    });
-
-
-    $( function(){
-        /*scrollbar*/
-
-
-        $('#scrollbar').tinyscrollbar({
-            axis:"y",			//滚动条方向
-            sizethumb:"55", 	//.thumb的高度
-            size: '500', 		//滚动条高度
-        });
-    })
-
-
-</script>
-
 
 <div style="height: 112px;">
     @@include('common/top.html')
@@ -149,36 +111,29 @@
 
         <div class="flower_title">相似花型</div>
         <ul class="xiangshimianliao clearfix">
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img src="/images/production/easydesign/listdetails/huabumainliao2.png"></a>
-            </li>
-            <li class="lf mianliaobox">
-                <a href="#"><img  src="/images/production/easydesign/listdetails/huabumainliao3.png"></a>
-            </li>
         </ul>
     </div>
 </div>
+<script src="/js/seajs/sea-debug.js"></script>
+<!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+<script src="/js/seajs/seajs-css.js"></script>
 
+<script src="/js/rootConfig.js"></script>
+ <script>
+    seajs.use(['js/front/easydesign/Flowers/viewFlowers'],function(v){
+          var objJson = {'FlowerStyleSimilarList':
+    [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/flower.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
+    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
+    'CurrentImgUrl':'/images/production/easydesign/designFabrics/1755360e-d12b-4e5e-963c-75a6596b0725.png','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html'
+  };
+        v.initPage(objJson);
+    });
+  </script>
 </body>
 </html>
