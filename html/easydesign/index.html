@@ -629,7 +629,9 @@
 
         </div>
         @@include('easydesign/footer.html')
-        <script>seajs.use('js/front/easydesign/Index/index');</script>
+        <script>seajs.use('js/front/easydesign/Index/index',function(m){
+          m.simulationFabricUrl = "/html/easydesign/simulationFabric.html";
+        });</script>
 
 </body>
       </html>
