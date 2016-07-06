@@ -57,20 +57,20 @@ define(function (require, exports, module) {
     var w_l_ratio = w/h;
     var leftSide_w = $(rightSide).outerWidth()||$(rightSide).width();
     if($(rightSide).css('display') == 'none'){
-        leftSide_w = 0;
+      leftSide_w = 0;
     }
     if(h>imgAreaH&&l_w_ratio>=1){
-        h = imgAreaH;
-        w = imgAreaH*w_l_ratio;
+      h = imgAreaH;
+      w = imgAreaH*w_l_ratio;
 
     }else if(w>winW&&l_w_ratio<=1){
-        w = winW;
-        h = winW*l_w_ratio;
+      w = winW;
+      h = winW*l_w_ratio;
     }
     var tmpTop = 0;
     var tmpLeft =0;
     if((winW-leftSide_w-w)>0){
-        tmpLeft = (winW-leftSide_w-w)/2;
+      tmpLeft = (winW-leftSide_w-w)/2;
     }else{
       w = w-leftSide_w;
     }
@@ -90,7 +90,7 @@ define(function (require, exports, module) {
     setBigImg(objJson);
   }
 
-   //上一张图片
+  //上一张图片
   function prevImg(objJson){
 
     var bigImg = objJson;
@@ -103,33 +103,33 @@ define(function (require, exports, module) {
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
     $('.prev').bind('click',function(){
-       ajaxLoad(objJson.NextPageUrl);
+      ajaxLoad(objJson.NextPageUrl);
     });
     $('.next').bind('click',function(){
-       ajaxLoad(objJson.PrevPageUrl);
+      ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
 
   //鼠标滚轮，上一张、下一张
   function mousewheel(objJson){
-     // jquery 兼容的滚轮事件
+    // jquery 兼容的滚轮事件
     $('.img-wrapper').on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
-                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+          (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
       if (delta > 0){
-         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
-            return;
-         }
-         // 向下滚
-         ajaxLoad(objJson.PrevPageUrl);
+        if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+          return;
+        }
+        // 向下滚
+        ajaxLoad(objJson.PrevPageUrl);
       }else if (delta < 0){
         if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
-            return;
-          }
-         // 向上滚
-         ajaxLoad(objJson.NextPageUrl);
+          return;
+        }
+        // 向上滚
+        ajaxLoad(objJson.NextPageUrl);
       }
     });
   }
@@ -154,7 +154,7 @@ define(function (require, exports, module) {
   });
 
   $('.gallery-img').mouseleave(function(event) {
-   $('.pagination').fadeOut();
+    $('.pagination').fadeOut();
   });
 
   //初始化
@@ -166,7 +166,7 @@ define(function (require, exports, module) {
   }
 
   $(window).resize(function(event) {
-      setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+    setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
   });
 
 ////////////////////////////////入口/////////////////////////////////////
@@ -179,7 +179,7 @@ define(function (require, exports, module) {
   });
 
 //接口
-exports.initPage = initPage;
+  exports.initPage = initPage;
 
 
 });

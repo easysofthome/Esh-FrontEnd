@@ -9,6 +9,11 @@
 
 @import '../common/type.less';
 
+.title-top-border{
+  border: 1px solid #f0f0f0;
+  margin-top: 112px;
+}
+
 .ban-bg
 {
     position: relative;
@@ -125,10 +130,12 @@
       border: 0;
       background-color: #f2f3f5;
     }
-    i{
-      margin: 8px 0 0 8px;
-      .sprite(@searchgray);
-      .icon-easyPricing-pricing;
+    a{
+      padding: 8px 10px 6px 8px;
+      i{
+        .sprite(@searchgray);
+        .icon-easyPricing-pricing;
+      }
     }
   }
 }

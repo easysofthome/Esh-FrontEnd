@@ -41,18 +41,18 @@ define(function (require, exports, module) {
     $('.gallery').attr('src',objJson.CurrentImgUrl);
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
-    objImg.w = this.width;
-    objImg.h = this.height;
-    bindWinresize(function(){
-      $('.gallery-img').show();
-      $('.snipe_len_tool').show();
-      snipe_len(objJson,'.gallery');
+      objImg.w = this.width;
+      objImg.h = this.height;
+      bindWinresize(function(){
+        $('.gallery-img').show();
+        $('.snipe_len_tool').show();
+        snipe_len(objJson,'.gallery');
       });
     }).each(function() {
-        //解决IE8不重复加载的问题
-        if (this.complete) {
-          return $(this).load();
-        }
+      //解决IE8不重复加载的问题
+      if (this.complete) {
+        return $(this).load();
+      }
     });
   }
 
@@ -73,13 +73,13 @@ define(function (require, exports, module) {
 
   //图片放大镜
   function snipe_len(objJson,id){
-      //图片放大镜
-      $(id).snipe({
-        bounds: [10,-10,-10,10],
-        image: objJson.CurrentImgUrl,
-        moveable:true,
-        visible:display
-      });
+    //图片放大镜
+    $(id).snipe({
+      bounds: [10,-10,-10,10],
+      image: objJson.CurrentImgUrl,
+      moveable:true,
+      visible:display
+    });
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -95,20 +95,20 @@ define(function (require, exports, module) {
     var w_l_ratio = w/h;
     var leftSide_w = $(rightSide).outerWidth()||$(rightSide).width();
     if($(rightSide).css('display') == 'none'){
-        leftSide_w = 0;
+      leftSide_w = 0;
     }
     if(h>imgAreaH&&l_w_ratio>=1){
-        h = imgAreaH;
-        w = imgAreaH*w_l_ratio;
+      h = imgAreaH;
+      w = imgAreaH*w_l_ratio;
 
     }else if(w>winW&&l_w_ratio<=1){
-        w = winW;
-        h = winW*l_w_ratio;
+      w = winW;
+      h = winW*l_w_ratio;
     }
     var tmpTop = 0;
     var tmpLeft =0;
     if((winW-leftSide_w-w)>0){
-        tmpLeft = (winW-leftSide_w-w)/2;
+      tmpLeft = (winW-leftSide_w-w)/2;
     }else{
       w = w-leftSide_w;
     }
@@ -119,7 +119,7 @@ define(function (require, exports, module) {
     $(imgObj).css({'width':w,'height':h});
     $(imgObj).parent().css({'width':w,'height':h});
     if(callback){
-       callback();
+      callback();
     }
   }
 
@@ -133,7 +133,7 @@ define(function (require, exports, module) {
     setBigImg(objJson);
   }
 
-   //上一张图片
+  //上一张图片
   function prevImg(objJson){
 
     var bigImg = objJson;
@@ -146,34 +146,34 @@ define(function (require, exports, module) {
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
     $('.next').bind('click',function(){
-       ajaxLoad(objJson.NextPageUrl);
+      ajaxLoad(objJson.NextPageUrl);
     });
     $('.prev').bind('click',function(){
-       ajaxLoad(objJson.PrevPageUrl);
+      ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
 
   //鼠标滚轮，上一张、下一张
   function mousewheel(objJson){
-     // jquery 兼容的滚轮事件
+    // jquery 兼容的滚轮事件
     $('.img-wrapper').on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
-                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+          (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
-       if (delta > 0){
-         if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
-            return;
-         }
-         // 向下滚
-         ajaxLoad(objJson.PrevPageUrl);
+      if (delta > 0){
+        if(!objJson.PrevPageUrl ||objJson.PrevPageUrl.length==0){
+          return;
+        }
+        // 向下滚
+        ajaxLoad(objJson.PrevPageUrl);
       }else if (delta < 0){
         if(!objJson.NextPageUrl || objJson.NextPageUrl.length==0){
-            return;
-          }
-         // 向上滚
-         ajaxLoad(objJson.NextPageUrl);
+          return;
+        }
+        // 向上滚
+        ajaxLoad(objJson.NextPageUrl);
       }
     });
   }
@@ -197,7 +197,7 @@ define(function (require, exports, module) {
   });
 
   $('.gallery-img').mouseleave(function(event) {
-   $('.pagination').fadeOut();
+    $('.pagination').fadeOut();
   });
 
   //入口
@@ -206,10 +206,10 @@ define(function (require, exports, module) {
     loadOtherFabrics(objJson);
 
     if(document.all){
-        document.onselectstart= function(){return false;}; //for ie
+      document.onselectstart= function(){return false;}; //for ie
     }else{
-        document.onmousedown= function(){return false;};
-        document.onmouseup= function(){return true;};
+      document.onmousedown= function(){return false;};
+      document.onmouseup= function(){return true;};
     }
     document.onselectstart = new Function('event.returnValue=false;');
     mousewheel(objJson);
@@ -232,5 +232,5 @@ define(function (require, exports, module) {
 
   });
 
-exports.initPage = initPage;
+  exports.initPage = initPage;
 });
