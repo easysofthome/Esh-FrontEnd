@@ -104,7 +104,7 @@ define(function (require, exports, module) {
 
 
     var urlHelp = {
-        replacePara: function (key, value) {
+        replaceParam: function (key, value) {
             var _href = location.href;
             var qIndex = _href.indexOf('?');
             var para = location.href.substring(qIndex + 1);
