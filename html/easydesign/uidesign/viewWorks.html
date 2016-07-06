@@ -7,111 +7,58 @@
   <link href="/css/production/easydesign/common/showDesignImg.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="z-piccmt-on" style="width: 1920px; height: 955px; display: block;">
-        <!-- Main -->
-        <div id="j-lb-main" class="lb-main z-main-hover">
-            <div id="j-lb-picwp" class="lb-picture" style="margin-bottom:60px;">
-              <img id="j-lb-pic"/>
-              <iframe id="panoramaShow" name="panoramaShow"  src="" style="border:0px;position:absolute" frameborder="0" scrolling="no"></iframe>
+
+<div style="height: 112px;">
+    @@include('common/top.html')
+    @@include('easydesign/header.html')
+</div>
+<div class="main-box clearfix">
+    <div class="main-left lf clearfix">
+        <div class="gallery-img none">
+            <div class="img-wrapper">
+              <img class="gallery gallery_none" src="">
+              <iframe id="panoramaShow" name="panoramaShow" class="iframePanoramaShow" frameborder="0" scrolling="no"></iframe>
             </div>
-            <div id="j-lb-pic-ctrl" class="lb-pic-ctrl">
-                <span class="ctrl-item ctrl-prev" title="上一张" style="display: block;">上一张</span>
-                <span class="ctrl-item ctrl-next" title="下一张">下一张</span>
+            <div class="pagination none">
+                <a class="prev"><i class="iconfont"><</i></a>
+                <a class="next"><i class="iconfont">></i></a>
             </div>
-            <a id="j-lb-crumb" class="lb-crumb" href="javaScript:;"><span class="arrow"></span><span class="tt">小户型阳台改造效果图</span>
-                <img class="thumb" src="" alt="">
-            </a>
-            <div id="lb-pic-opt">
-             <div class="opt-overlay">
-             </div>
-                 <div class="opt-1">
-                    <div class="clearfix likebox">
-                        <div class="rg">
-                          <span class="lf dianzang"></span>
-                          <span class="lf">148984</span>
-                        </div>
-                        <div class="rg marginR10">
-                          <span class="lf browse"></span>
-                          <span class="lf">48984</span>
-                        </div>
-                      </div>
-                </div>
-                <div class="opt-2">
-                    <ul id="bdshare" class="opt-22 bdsharebuttonbox" data-bd-bind="">
-                        <li><a class="bt bt-221 bds_qzone" target="_blank" href="javascript:void(0)" title="腾讯微博"></a></li>
-                        <li><a class="bt bt-222 bds_tsina" target="_blank" href="javascript:void(0)" title="新浪微博"></a></li>
-                        <li><a class="bt bt-223 bds_sqq" target="_blank" href="javascript:void(0)" title="linkin"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Side -->
-        <div id="j-lb-side" class="lb-side">
-            <!-- Side Title -->
-
-            <!-- Side Content -->
-            <div id="j-side-cnt" class="lb-side-cnt custom-scrollbar" style="height: 915px;">
-                <div id="j-cnt-inner">
-                    <div id="j-side-top">
-                        <div id="lb-info">
-
-                            <p class="flowname">成品设计场景</p>
-                            <h3>[场景名称]KTCJMX037</h3>
-                            <div class="desc clearfix">
-                                <span class="lfclass">场景类型：</span>
-                                <p class="lf w-200">客厅</p>
-                                <span class="lfclass">场景名称：</span>
-                                <p class="lf w-200">CHP03 </p>
-
-                                <span class="lfclass">场景描述：</span>
-                                <p class="lf w-200">客厅CHP03</p>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="deta_info">
-                        <div class="warning">
-                            <a id="toLogin" href="javaScript:;">登录</a>
-                             <a id="toRegistered" href="/Registered" target="_blank">注册</a>
-                             <a target="_blank" style="display:none;" href="/member/addflower">上传花型</a>
-                        </div>
-
-                        <div class="warning" style="display:none;">
-                        <a id="toPay" data-paymenttype="1" href="javaScript:;">购买</a>
-                        <a target="_blank" href="/member/addflower">上传花型</a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <a href="javaScript:;" id="j-side-switch" class="lb-side-switch z-side-on"><span class="z-on-txt">展开</span> <span class="z-off-txt">收起</span> </a>
-        </div>
-        <div id="j-lb-rec-pic" class="lb-rec-pic" style="display: none;">
-            <div class="overlay">
-            </div>
-            <div class="rec-wp">
-                <div class="rec-hd">
-                    <span class="end-tip">画报浏览完毕</span>
-                    <p class="rec-opt">
-                        <a class="j-back back" href="javaScript:;"><i></i>返回</a> <a class="j-next-hb next-hb" href="">浏览下一画报<i></i></a>
-                    </p>
-                </div>
-                <div class="cnt">
-                    <p class="title">
-                        推荐画报</p>
-                    <ul class="rec-pic-list clearfix">
-                    </ul>
-                </div>
+            <div class="action">
+                <a class="fav">使用此花型设计面料</a>
+                <ul class="bdsharebuttonbox">
+                    <li class="lf"><a class="bt bds_qzone" target="_blank" href="http://share.v.t.qq.com/index.php?c=share&a=index&title=易家纺电子商务服务器平台通过整合线下资源，与平台线上优势的互补和融合，把松散、低效的设计、打样、核价、生产、验货、物流、资金等主要环节整合成低成本的高效运营体系，为国内外家纺企业用户提供切实符合家纺行业需要的在线全流程服务。http://www.easysofthome.com&appkey=801cf76d3cfc44ada52ec13114e84a96"></a></li>
+                    <li class="lf"><a class="bt bds_tsina" target="_blank" href="http://service.weibo.com/share/share.php?title=易家纺电子商务服务器平台通过整合线下资源，与平台线上优势的互补和融合，把松散、低效的设计、打样、核价、生产、验货、物流、资金等主要环节整合成低成本的高效运营体系，为国内外家纺企业用户提供切实符合家纺行业需要的在线全流程服务。http://www.easysofthome.com&appkey=1343713053&searchPic=false"></a></li>
+                    <li class="lf"><a class="bt bds_sqq" target="_blank" href="http://t.163.com/article/user/checkLogin.do?info=易家纺电子商务服务器平台通过整合线下资源，与平台线上优势的互补和融合，把松散、低效的设计、打样、核价、生产、验货、物流、资金等主要环节整合成低成本的高效运营体系，为国内外家纺企业用户提供切实符合家纺行业需要的在线全流程服务。http://www.easysofthome.com&source=百度分享按钮&togImg=false"></a></li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <div class="lf main-right" id="scrollbar">
+        <div class="right-top">
+            <h3>[场景名称]KTCJMX037</h3>
+            <div class="desc clearfix">
+                <span class="lf">场景类型：</span>
+                <p class="lf tit-width">客厅</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">场景名称：</span>
+                <p class="lf tit-width">CHP03</p>
+            </div>
+            <div class="desc clearfix">
+                <span class="lf">场景描述：</span>
+                <p class="lf tit-width">客厅CHP03</p>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="/js/seajs/sea-debug.js"></script>
 <!-- <script src="/js/seajs/seajs-combo.js"></script> -->
 <script src="/js/seajs/seajs-css.js"></script>
 
 <script src="/js/rootConfig.js"></script>
- <script>
-    seajs.use('js/front/easydesign/uidesign/viewWorks',function(v){
+<script>
+  seajs.use('js/front/easydesign/scene/viewScene',function(v){
       var objJson = {
         'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html','iframeSrc':'/html/easydesign/scene/panoramaShow.html'
       };

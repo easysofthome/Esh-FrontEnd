@@ -3,28 +3,7 @@ define(function (require, exports, module) {
   require('js/front/lib/jquery.snipe/jquery.snipe');
   require('layer');
   require('js/front/lib/tip/jquery.poshytip');
-
-///////////////////////////////////登录//////////////////////////////////////////
-  $('#toLogin').on('click', function() {
-    $.layer({
-      type: 2,
-      title: false,
-      area: ['440px', '490px'],
-      border: [5, 0.3, '#000'],
-      shade: [0.8, '#000'],
-      shadeClose: true,
-      offset: [($(window).height() - 490)/2+'px',''],
-      closeBtn: [0, false], //去掉默认关闭按钮
-      shift: 'top',
-      fix : false,
-      iframe: {src: '/html/VIP/common/regLog/login-single.html'},
-      success: function () {
-
-      }
-
-    });
-  });
-
+  var objImg = {'w':100,'h':100};
 ////////////////////////////////图片加载///////////////////////////////////////////
 //异步请求
   function ajaxLoad(url){
@@ -37,20 +16,19 @@ define(function (require, exports, module) {
       beforeSend:function(){
         if(!curImgUrl)return;
         objImg = {'w':100,'h':100};
-        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+        setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+        $('.gallery').attr('src','/images/production/easydata/gif-load.gif');
       },
       success: function(data){
         data.CurrentImgUrl= curImgUrl;
         initPage(data);
       },
       error : function() {
-        console.log('---花型详情页异常---');
+        console.log('---品质样详情页异常---');
       }
     });
   }
 
-  var objImg = {'w':100,'h':100};
   var display = true;
   //动态加载数据
   function loadOtherFabrics(objJson){
@@ -60,16 +38,15 @@ define(function (require, exports, module) {
   //加载第n张图片
   function setBigImg(objJson){
     setNextOrPrev(objJson);
-    $('#j-lb-pic').hide();
-    $('#j-lb-pic').attr('src',objJson.CurrentImgUrl);
+    $('.gallery').attr('src',objJson.CurrentImgUrl);
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
     objImg.w = this.width;
     objImg.h = this.height;
     bindWinresize(function(){
-      $('#j-lb-pic').show();
+      $('.gallery-img').show();
       $('.snipe_len_tool').show();
-      snipe_len(objJson,'j-lb-pic');
+      snipe_len(objJson,'.gallery');
       });
     }).each(function() {
         //解决IE8不重复加载的问题
@@ -77,7 +54,6 @@ define(function (require, exports, module) {
           return $(this).load();
         }
     });
-
   }
 
   //显示\隐藏放大镜
@@ -98,7 +74,7 @@ define(function (require, exports, module) {
   //图片放大镜
   function snipe_len(objJson,id){
       //图片放大镜
-      $('#'+id).snipe({
+      $(id).snipe({
         bounds: [10,-10,-10,10],
         image: objJson.CurrentImgUrl,
         moveable:true,
@@ -107,20 +83,23 @@ define(function (require, exports, module) {
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
-  function setConstrainImg(image,imgObj,parentDiv,leftSide,callback){
+  function setConstrainImg(image,imgObj,parentDiv,rightSide,callback){
+    var topMenuH= 112;
+    var botH = 62;
     var winH = $(window).height();
     var winW = $(window).width();
+    var imgAreaH = winH-topMenuH-botH;
     var w = image.w;
     var h = image.h;
     var l_w_ratio = h/w;
     var w_l_ratio = w/h;
-    var leftSide_w = $(leftSide).width();
-    if($(leftSide).css('display') == 'none'){
+    var leftSide_w = $(rightSide).outerWidth()||$(rightSide).width();
+    if($(rightSide).css('display') == 'none'){
         leftSide_w = 0;
     }
-    if(h>winH&&l_w_ratio>=1){
-        h = winH;
-        w = winH*w_l_ratio;
+    if(h>imgAreaH&&l_w_ratio>=1){
+        h = imgAreaH;
+        w = imgAreaH*w_l_ratio;
 
     }else if(w>winW&&l_w_ratio<=1){
         w = winW;
@@ -133,17 +112,12 @@ define(function (require, exports, module) {
     }else{
       w = w-leftSide_w;
     }
-     if((winH-60-h)>0){
-        tmpTop = (winH-60-h)/2;
-    }else{
-       h = h-65;
-    }
-    $('#j-lb-main').width(winW-leftSide_w);
-    $('#j-lb-main').height(winH);
-    $('#j-side-cnt').height(winH);
-    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
-    $(parentDiv).css({'width':w,'height':h});
-    $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
+
+    $(rightSide).css({'height':winH-topMenuH-30});
+    $(parentDiv).css({'width':(winW-leftSide_w),'height':(winH-topMenuH-botH),'line-height':(winH-topMenuH-botH)+"px"});
+    $(parentDiv).parent().css({'height':winH-topMenuH});
+    $(imgObj).css({'width':w,'height':h});
+    $(imgObj).parent().css({'width':w,'height':h});
     if(callback){
        callback();
     }
@@ -171,10 +145,10 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-    $('.ctrl-next').bind('click',function(){
+    $('.next').bind('click',function(){
        ajaxLoad(objJson.NextPageUrl);
     });
-    $('.ctrl-prev').bind('click',function(){
+    $('.prev').bind('click',function(){
        ajaxLoad(objJson.PrevPageUrl);
     });
   }
@@ -183,7 +157,7 @@ define(function (require, exports, module) {
   //鼠标滚轮，上一张、下一张
   function mousewheel(objJson){
      // jquery 兼容的滚轮事件
-    $('#j-lb-main').on("mousewheel DOMMouseScroll", function (e) {
+    $('.img-wrapper').on("mousewheel DOMMouseScroll", function (e) {
 
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                   (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
@@ -207,21 +181,28 @@ define(function (require, exports, module) {
   //第一张  最后一张 控制链接显示与否
   function setNextOrPrev(objJson){
     var bigImg = objJson;
-    $('.ctrl-prev').show();
-    $('.ctrl-next').show();
+    $('.prev').show();
+    $('.next').show();
 
     if(!bigImg.NextPageUrl || bigImg.NextPageUrl.length==0){
-      $('.ctrl-next').hide();
+      $('.next').hide();
     }
     if(!bigImg.PrevPageUrl ||bigImg.PrevPageUrl.length==0){
-      $('.ctrl-prev').hide();
+      $('.prev').hide();
     }
   }
+  //鼠标滑过 显示翻页按钮
+  $('.gallery-img').mouseenter(function(event) {
+    $('.pagination').fadeIn();
+  });
+
+  $('.gallery-img').mouseleave(function(event) {
+   $('.pagination').fadeOut();
+  });
 
   //入口
   function initPage(objJson){
     bindScrollBigImg(objJson);
-    $(document.body).css("overflow","hidden");
     loadOtherFabrics(objJson);
 
     if(document.all){
@@ -236,9 +217,9 @@ define(function (require, exports, module) {
 
   //页面尺寸改编，图片一直居中
   function bindWinresize(callback){
-    setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',callback);
+    setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right',callback);
     $(window).resize(function(event) {
-      setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side',callback);
+      setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right',callback);
     });
   }
 

@@ -127,19 +127,6 @@ function fraticLayer_resize(){
 
 }
 
-/////////////////////////////////////////////易家纺设计资源库 点击切换效果///////////////////////////////
-function switchSourceLib(){
-  $('.tew_box .exp_butt li').bind('click',function(){
-      var currentIndex = $(this).index();
-      $('.tew_box .exp_butt li').removeClass('curr_li');
-      $(this).addClass('curr_li');
-      $('.tew_box .exo_conbox').hide();
-      $('.tew_box .exo_conbox').eq(currentIndex).fadeIn(500);
-  });
-}
-
-
-
 ////////////////////////////////媒体图片鼠标划过特效 暂时未应用//////////////////////////////////
   $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
   $(".video_icobutt_def2").css('opacity', 0);
@@ -227,7 +214,6 @@ $(document).ready(function () {
   //bindVideoClick();
  // bindVideoHover();
   fraticLayer();
-  switchSourceLib();
 });
 
 $(window).resize(function () {
