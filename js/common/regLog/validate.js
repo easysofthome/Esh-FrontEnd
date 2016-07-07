@@ -83,7 +83,7 @@ define(function (require, exports, module) {
         // agreen();
         bindEvent();
     }
-/** 限制输入字符长度 **/
+    /** 限制输入字符长度 **/
     function getStringLength (str) {
         if(!str){
             return;

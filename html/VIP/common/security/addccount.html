@@ -24,11 +24,12 @@
         </div>
       </div>
       <div class="add_box">
+      <form action="" id="addccount" method="post">
         <div class="clearfix shurutop">
           <span class="lf titilexingxi">子账号名称：</span>
           <div class="lf veri_left">
             <span class="placeholder">请输入邮箱或手机号</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+            <input type="text" class="shuruchang" value="" name="RegName" id="RegName">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -36,7 +37,7 @@
           <span class="lf titilexingxi">所属部门：</span>
           <div class="lf veri_left">
             <span class="placeholder">请输入部门</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+            <input type="text" class="shuruchang" value="" name="section" id="section">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -44,7 +45,7 @@
           <span class="lf titilexingxi">密码：</span>
           <div class="lf veri_left">
             <span class="placeholder">请输入有效密码</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+            <input type="password" class="shuruchang" value="" name="Pwd" id="Pwd">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -52,7 +53,7 @@
           <span class="lf titilexingxi">确认密码：</span>
           <div class="lf veri_left">
             <span class="placeholder">请确认密码</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+            <input type="password" class="shuruchang" value="" name="RePwd" id="RePwd">
             <div class="input-tip"></div>
           </div>
         </div>
@@ -60,16 +61,23 @@
           <span class="lf titilexingxi">备注：</span>
           <div class="lf veri_left">
             <span class="placeholder">添加备注</span>
-            <input type="password" class="shuruchang" value="" name="newPwd" id="newPwd">
+            <input type="text" class="shuruchang" value="" name="remark" id="remark">
             <div class="input-tip"></div>
           </div>
         </div>
-        <button type="submit" href="#" class="save">确认添加</button>
+        <button type="button" id="addccountSubmit" class="save">确认添加</button>
+        </form>
       </div>
     </div>
 
   </div>
   @@include('VIP/common/footer.html')
-  <script>seajs.use("js/VIP/common/account/query.js");</script>
+  <script>
+  seajs.use("js/front/VIP/common/security/addccount",function(a){
+    a.submitAjax = function(){
+      alert('添加子帐号成功！');
+    };
+  });
+  </script>
 </body>
 </html>
