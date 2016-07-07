@@ -3,10 +3,17 @@ define(function (require, exports, module) {
   require('js/front/lib/jquery.snipe/jquery.snipe');
   require('layer');
   require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/jquery.history');
   var objImg = {'w':100,'h':100};
 ////////////////////////////////图片加载///////////////////////////////////////////
 //异步请求
   function ajaxLoad(url){
+    if(/.+\?/.test(url)){
+      var param = url.replace(/.+\?/,'');
+      if(param){
+        History.pushState(null,null,'?'+param);
+      }
+    }
     var curImgUrl = $('#hidCurrentImgUrl').val();
     $.ajax({
       type: 'post',
