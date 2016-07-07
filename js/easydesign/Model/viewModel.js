@@ -2,6 +2,7 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/front/lib/tip/jquery.poshytip');
+  require('js/front/lib/jquery.history');
   var commonDetail = require('js/front/easydesign/common/descHTML'); //生成详情描述
 
   var objImg = {'w':100,'h':100};
@@ -9,6 +10,12 @@ define(function (require, exports, module) {
 ////////////////////////////////图片加载///////////////////////////////////////////
   //异步请求
   function ajaxLoad(url){
+    if(/.+\?/.test(url)){
+      var param = url.replace(/.+\?/,'');
+      if(param){
+        History.pushState(null,null,'?'+param);
+      }
+    }
     var curImgUrl = $('#hidCurrentImgUrl').val();
     $.ajax({
       type: 'post',
@@ -121,10 +128,10 @@ define(function (require, exports, module) {
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
     $('.prev').bind('click',function(){
-      ajaxLoad(objJson.NextPageUrl);
+       ajaxLoad(objJson.PrevPageUrl);
     });
     $('.next').bind('click',function(){
-      ajaxLoad(objJson.PrevPageUrl);
+       ajaxLoad(objJson.NextPageUrl);
     });
   }
 
