@@ -8,6 +8,10 @@
 </head>
 
 <body>
+  @@include('common/top.html')
+  @@include('easydata/header.html')
+  <div style="margin-top: 112px;height: 0px;width:90%;border: 1px solid yellow"></div>
+
   <div class="qutside_box">
     <div class="within_box">
       <div class="loadbox">
@@ -17,5 +21,12 @@
 
     </div>
   </div>
+
+  @@include('easydata/footer.html')
+
+  <script>
+    seajs.use('js/front/easydata/common/setNodataH');
+  </script>
+
 </body>
 </html>
