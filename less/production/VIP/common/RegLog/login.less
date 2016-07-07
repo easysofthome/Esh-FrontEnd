@@ -3,15 +3,29 @@
 
 @import '../../../../dev/mixins/mixins.less';
 
+body{
+    background-color: #fff;
+}
+
 .logbox
 {
     .logo-main{
         width: 100%;
-        background-color: #fff;
         -webkit-box-shadow:0 0 20px 1px #e0e0e0;
         -moz-box-shadow:0 0 20px 1px #e0e0e0;
         box-shadow:0 0 20px 1px #e0e0e0;
     }
+
+    .pic-box{
+        width: 1920px;
+        height: 584px;
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin-left: -960px;
+        background-image: url("/images/production/VIP/common/RegLog/login-pic.png");
+    }
+
     .logo-box{
         width: 1200px;
         margin: 0 auto;
@@ -43,18 +57,20 @@
     .log_left
     {
         width: 350px;
-        padding-right: 20px;
+        padding: 20px;
+        background-color: #fff;
+        .border-radius(3px);
+        h4{
+            color: #666;
+            font-size: 20px;
+            font-family: "å¾®è½¯é›…é»‘";
+        }
     }
     .log_box
     {
         width: 1120px;
-        margin: 40px auto 0 auto;
-        padding: 40px;
-
-        border: 1px solid #dedede;
-        background-color: #fff;
-
-        .border-radius(5px);
+        margin: 0 auto;
+        padding: 50px 50px 50px 0;
     }
     .username,
     .password,
