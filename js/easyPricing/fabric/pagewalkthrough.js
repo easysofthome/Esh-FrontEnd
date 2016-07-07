@@ -365,23 +365,22 @@ define(function (require, exports, module) {
 
       }
 
-      function setLightH(middleNum,overlayH,bNum,overlayBottom_Top,bottomAccessable_top){
-        $('#middleLeft').height(middleNum);
-        $('#middleRight').height(middleNum);
-        $('#overlayRight').height(overlayH);
-        $('#overlayLeft').height(overlayH);
-        //$('#overlayBottom').height(bNum);
-        $('#overlayBottom').css('top',overlayBottom_Top);
+    function setLightH(middleNum,overlayH,bNum,overlayBottom_Top,bottomAccessable_top){
+      $('#middleLeft').height(middleNum);
+      $('#middleRight').height(middleNum);
+      $('#overlayRight').height(overlayH);
+      $('#overlayLeft').height(overlayH);
+      //$('#overlayBottom').height(bNum);
+      $('#overlayBottom').css('top',overlayBottom_Top);
 
-        $('#bottomAccessable').css('top',bottomAccessable_top);
+      $('#bottomAccessable').css('top',bottomAccessable_top);
 
-      }
+    }
 
     //引导页自适应宽度
     $(window).resize(function() {
         $('body').pagewalkthrough('renderOverlay');
     });
-
 
     $(document).ready(function(){
        //点击右侧引导页快捷入口，打开引导页
