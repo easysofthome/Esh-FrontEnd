@@ -41,7 +41,7 @@ define(function (require, exports, module) {
       tag:'',
       marginTop:0
     });
-   });
+  });
 
   //接口
   exports.showComNameList = showComNameList;

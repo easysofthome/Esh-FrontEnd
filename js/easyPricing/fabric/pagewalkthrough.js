@@ -126,7 +126,7 @@ define(function (require, exports, module) {
                  {
                    content: '#guide_step1',//引导元素id/class(提前在页面定义)
                    type: 'tooltip',      //类型
-                   position: 'top',   //相对高亮区域的位置
+                   position: 'bottom',   //相对高亮区域的位置
                    offsetHorizontal: 0,  //水平位置
                    offsetVertical: 0,    //垂直位置
                    width: '300'
@@ -199,7 +199,7 @@ define(function (require, exports, module) {
                  wrapper: '#hLight_step4', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:250,
+                 appendScrollNum:200,
                  //引导说明文字图片区域
                  popup:
                  {
@@ -225,7 +225,7 @@ define(function (require, exports, module) {
                  wrapper: '#hLight_step5', //高亮区域 class 或 id
                  margin: '0',         //最好别改
                  isTopFix: false,      //要高亮区域是否固定在顶部
-                 appendScrollNum:250,
+                 appendScrollNum:0,
                  //引导说明文字图片区域
                  popup:
                  {
@@ -282,7 +282,6 @@ define(function (require, exports, module) {
           if(pass){
              $.pagewalkthrough('next',e);
           }
-
       });
 
       $('.restart-step').live('click', function(e){
