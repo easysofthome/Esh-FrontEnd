@@ -25,5 +25,29 @@
             </div>
         </div>
     </div>
+
+    <script src="/js/seajs/sea-debug.js"></script>
+    <!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+    <script src="/js/seajs/seajs-css.js"></script>
+
+    <script src="/js/rootConfig.js"></script>
+
+    <script>
+        seajs.use('jquery',function($){
+            var h;
+            function setHeight(){
+                h = $(window).height();
+                $('.error_box').css('height', h);
+            }
+
+            $(document).ready(function(){
+                setHeight();
+            });
+
+            $(window).resize(function(){
+                setHeight();
+            });
+        });
+    </script>
 </body>
 </html>
