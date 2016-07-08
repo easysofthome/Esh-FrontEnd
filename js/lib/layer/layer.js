@@ -15,8 +15,8 @@
 $, win, ready = {
     host: 'http://' + location.host,
     getPath: function () {
-        var js = document.scripts, jsPath = js[js.length - 1].src;
-        return path ? ready.host + path : jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
+        var js = document.scripts, jsPath = js[0].src;
+        return path ? ready.host + path : jsPath.substring(0, jsPath.indexOf("/Static") + 1);
     },
 
     //五种原始层模式
@@ -981,8 +981,7 @@ $, win, ready = {
             var o = new Class(deliver);
             return o.index;
         };
-        // (new Image()).src = '/Static/js/lib/layer/skin/default/xubox_ico0.png';
-        (new Image()).src = '/js/front/lib/layer/skin/default/xubox_ico0.png';
+        (new Image()).src = layer.path + 'js/front/lib/layer/skin/default/xubox_ico0.png';
     };
 
     var require1 = '../jquery/jquery'; //若采用seajs，需正确配置jquery的相对路径。未用可无视此处。

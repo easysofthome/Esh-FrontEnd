@@ -1,10 +1,10 @@
-﻿/** 
- 
+﻿/**
+
  @Name: layer's style
  @Date: 2012.09.15
  @Author: 贤心
  @blog： sentsin.com
- 
+
 **/
 
 *html{background-image:url(about:blank); background-attachment:fixed;}
@@ -25,7 +25,7 @@
 
 .xubox_msgico{width:32px; height:32px; top:52px; left:15px; background:url(default/xubox_ico0.png) no-repeat;}
 .xubox_text{ padding-left:55px; float:left; line-height:25px; word-break:break-all; padding-right:20px; overflow:hidden; font-size:14px;}
-.xubox_msgtype0{background-position:-91px -38px;} 
+.xubox_msgtype0{background-position:-91px -38px;}
 .xubox_msgtype1{background-position:-128px -38px }
 .xubox_msgtype2{background-position:-163px -38px;}
 .xubox_msgtype3{background-position:-91px -75px;}

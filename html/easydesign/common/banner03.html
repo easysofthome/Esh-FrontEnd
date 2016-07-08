@@ -1,24 +1,18 @@
-	<link href="/css/production/easydesign/common/banner.css" rel="stylesheet" type="text/css"/>
+<link href="/css/production/easydesign/common/banner.css" rel="stylesheet" type="text/css"/>
 
-		<div class="ban-bg">
-			<img width="100%" src="/images/production/easydesign/common/icon-Flowers.png">
-			<div class="sea-box clearfix">
-				<div class="sea-boxbai lf clearfix">
-					<div class="sea-words lf">易识图</div>
-					<input type="text" class="lf" placeholder="可以输入http://“图片地址”搜索或点击右边照相机上传图片" />
-					<a class="shitu shitu01 lf" href="#"></a>
-				</div>
-				<a class="ss lf" href="/html/easydesign/Flowers/Knowledgemap.html">搜 &nbsp;索</a>
-				<div class="bg022-box">
-					<div class="bg022-box01 clearfix">
-						<input class="lf bg022-inp" />
-						<a class="bg022-x lf" href="#"></a>
-					</div>
-					<div class="bg022-box02 clearfix">
-						<a class="bg022-a02 lf" href="#">本地上传</a>
-						<span class="lf">可以点击“本地上传”或者在文本框内输入http://“图片地址”搜索</span>
-					</div>
-					<div class="bg022-bottom"></div>
-				</div>
+<div class="ban-bg">
+	<img width="100%" src="/images/production/easydesign/common/icon-Flowers.png">
+	<div class="sea-box clearfix">
+		<div class="sea-boxbai lf clearfix">
+			<div class="upLoad-box">
+				<div id="upLoadDiv">本地上传</div>
+				<a id="imgUpload" class="ui-upload">
+					<input class="ui-upload-btn" type="file" size="100" name="file" data-progressid="progres-1467939861496">
+					<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+				</a>
 			</div>
+			<input type="text" class="lf bg022-inp" placeholder="可以点击“本地上传”或在此文本框内输入http://“图片地址”搜索" />
 		</div>
+		<input type="submit" value="易识图搜索" class="ss lf">
+	</div>
+</div>
