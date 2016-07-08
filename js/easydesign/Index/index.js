@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     //接口 接收点击面料的地址
     exports.simulationFabricUrl;
     $('.simulation-box').twentytwenty();
+    fraticLayer();
     $('.twentytwenty-handle').css('left','600px');
     require('js/front/easydesign/Index/banner');
     // 模拟效果
@@ -68,6 +69,7 @@ define(function (require, exports, module) {
 
 /////////////////////////////////////////////面料对比遮罩及点击事件/////////////////////////////////////////////////
     function fraticLayer(){
+        $('.simulation-box').find('img').show();
         var zIndex = $('.twentytwenty-overlay').css('z-index');
         //$('.twentytwenty-overlay').css({'z-index':'555'});
         var top = $('.twentytwenty-overlay').offset().top;
@@ -125,8 +127,8 @@ define(function (require, exports, module) {
         var left = $('.twentytwenty-overlay').offset().left;
         $('#overLayer_fratic').css({'top':top,'left':left});
         $('#overLayer_fratic_top').css({'top':top,'left':left});
-        $('#overLayer_fratic_top span:eq(0)').css({'top':'55px','left':'50px'});
-        $('#overLayer_fratic_top span:eq(1)').css({'top':'55px','right':'50px'});
+         $('#overLayer_fratic_top span:eq(0)').css({'width':150,'bottom':'17px','left':'20px','position':'absolute','text-align':'left','line-height': '20px'});
+        $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px','position':'absolute','text-align':'right','line-height': '20px'});
 
     }
 
@@ -212,11 +214,8 @@ define(function (require, exports, module) {
 
 
 ////////////////////////////////页面加载事件及页面尺寸改变事件//////////////////////////////////
-
-    $(document).ready(function () {
-        //bindVideoClick();
-        // bindVideoHover();
-        fraticLayer();
+    $(document).ready(function(){
+        fraticLayer_resize();
     });
 
     $(window).resize(function () {

@@ -38,24 +38,6 @@ define(function (require, exports, module) {
     });
   }
 
-  //动态加载数据 右侧的图片列表
-  function loadOtherFabrics(objJson){
-    if(!objJson) return;
-    setBigImg(objJson);
-    if(objJson.FlowerStyleSimilarList.length <=0) return;
-    for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
-      var str = '<li class="lf mianliaobox">'+
-          '<a href="javascript:void(0)" data-picid="'+objJson.FlowerStyleSimilarList[i].ImgLink+
-          '"><img src="'+objJson.FlowerStyleSimilarList[i].ImgUrl+'" /></a></li>';
-      $('.xiangshimianliao').append(str);
-    }
-
-    $('.xiangshimianliao').find('a').bind('click',function(){
-      var href = $(this).attr('data-picid');
-      ajaxLoad(href);
-    });
-  }
-
   //加载第n张图片
   function setBigImg(objJson){
     setNextOrPrev(objJson);
@@ -127,11 +109,11 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-    $('.prev').bind('click',function(){
-       ajaxLoad(objJson.PrevPageUrl);
-    });
     $('.next').bind('click',function(){
-       ajaxLoad(objJson.NextPageUrl);
+      ajaxLoad(objJson.NextPageUrl);
+    });
+    $('.prev').bind('click',function(){
+      ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
@@ -185,8 +167,8 @@ define(function (require, exports, module) {
   //初始化
   function initPage(objJson){
     commonDetail.buildDescHTML(objJson); //生成详情描述HTML
+    setBigImg(objJson);
     bindScrollBigImg(objJson);
-    loadOtherFabrics(objJson);
     mousewheel(objJson);
   }
 
