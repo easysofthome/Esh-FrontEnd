@@ -4,10 +4,12 @@
 	<img width="100%" src="/images/production/easydesign/common/icon-Flowers.png">
 	<div class="sea-box clearfix">
 		<div class="sea-boxbai lf clearfix">
-			<div class="upload-wrap sea-words lf">
-				<input type="file" class="upload-pic" value="上传图片">
-				<i class="soutu-icon upload-icon"></i>
-				<span class="upload-text">本地上传</span>
+			<div class="upLoad-box">
+				<div id="upLoadDiv">本地上传</div>
+				<a id="imgUpload" class="ui-upload">
+					<input class="ui-upload-btn" type="file" size="100" name="file" data-progressid="progres-1467939861496">
+					<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+				</a>
 			</div>
 			<input type="text" class="lf bg022-inp" placeholder="可以点击“本地上传”或在此文本框内输入http://“图片地址”搜索" />
 		</div>

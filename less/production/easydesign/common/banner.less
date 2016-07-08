@@ -132,63 +132,68 @@
     margin-left: 10px;
 
     background-color: #fff;
+    position: relative;
     .bg022-inp
     {
         width: 425px;
-        margin: 10px 0 11px 10px;
+        margin: 10px 0 11px 122px;
         padding: 5px 10px;
 
         border: 0;
         border-left: #dadada 1px solid;
         outline: medium;
     }
-    .sea-words // 本地上传
-    {
-        line-height: 28px;
-
-        position: relative;
-
+    // 本地上传  开始
+    .upLoad-box{
+        position: absolute;
         width: 100px;
         height: 28px;
-        margin: 10px 0 0 10px;
-
+        top: 10px;
+        left: 10px;
+        line-height: 28px;
         text-align: center;
-
+        background: #fff;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1;
         color: #3385ff;
         border: 1px solid #3385ff;
         &:hover{
-            background-color: #3385ff;
-            color: #fff;
+            #upLoadDiv{
+                background-color: #3385ff;
+                color: #fff;
+            }
         }
-        .upload-pic
+        #upLoadDiv
         {
-            font-size: 0;
-
-            position: absolute;
-            z-index: 1;
-
-            width: 100%;
-            height: 100%;
-            margin-left: -22px;
-
-            cursor: pointer;
-
-            opacity: 0;
-            outline: 0;
-
-            filter: alpha(opacity=0);
-        }
-        .upload-wrap {
-            position: relative;
             width: 100px;
             height: 28px;
-            border: 1px solid #3385ff;
-            line-height: 28px;
-            margin: 0 auto;
-            color: #3385ff;
-            text-align: center;
+            display: block;
+            cursor: pointer;
         }
-    } // 本地上传
+        #imgUpload
+        {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 30px;
+            overflow: hidden;
+            bottom: auto;
+            right: auto;
+            input{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+                filter: alpha(opacity=0);
+            }
+        }
+    }
+    // 本地上传   结束
     .shitu
     {
         margin: 10px 10px 0 4px;
