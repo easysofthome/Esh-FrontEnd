@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/production/easysofthome/error/404.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+    @@include('common/top.html')
+    <div class="error_box">
+        <div class="error" >
+            <div class="stabox"></div>
+            <div class="Balloon">
+
+                <p class="ballon_textxiao">您可以通过以下方式继续访问……</p>
+                <ul class="options_box clearfix">
+                    <li class="lf"><a href="#">关于我们</a></li>
+                    <li class="lf"><a href="#">联系我们</a></li>
+                    <li class="lf"><a href="#">咨询客服</a></li>
+                    <li class="lf color_li"><a href="#">返回首页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/seajs/sea-debug.js"></script>
+    <!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+    <script src="/js/seajs/seajs-css.js"></script>
+
+    <script src="/js/rootConfig.js"></script>
+
+    <script>
+        seajs.use('jquery',function($){
+            var h;
+            function setHeight(){
+                h = $(window).height();
+                $('.error_box').css('height', h);
+            }
+
+            $(document).ready(function(){
+                setHeight();
+            });
+
+            $(window).resize(function(){
+                setHeight();
+            });
+        });
+    </script>
+</body>
+</html>
