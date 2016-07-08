@@ -128,7 +128,7 @@
         <!-- 花型库 -->
         <ul id="library_flowerPattern" style="display:none" class="exo_conbox clearfix">
         <li class="lf con_left">
-          <a href="#">
+          <a target="_blank" href="/html/easydesign/Flowers/viewFlower.html">
             <img src="/images/production/easydesign/scenes.png" class="img_position">
             <div class="selectbox"></div>
             <div class="more-box">
@@ -206,7 +206,7 @@
               </ul>
     <ul id="library_fabric" class="exo_conbox clearfix">
       <li class="lf con_left">
-        <a href="#">
+        <a target="_blank" href="/html/easydesign/Fabric/viewFabric.html">
           <img src="/images/production/easydesign/scenes.png" class="img_position">
           <div class="selectbox"></div>
           <div class="more-box">
@@ -286,7 +286,7 @@
               <!-- 品质样库 -->
             <ul id="library_quality" style="display:none" class="exo_conbox clearfix">
             <li class="lf con_left">
-              <a href="#">
+              <a target="_blank" href="/html/easydesign/quality/viewQuality.html">
                 <img src="/images/production/easydesign/scenes.png" class="img_position">
                 <div class="selectbox"></div>
                 <div class="more-box">
@@ -365,7 +365,7 @@
             <!-- 成品设计场景 -->
             <ul id="library_productDesignScene" style="display:none" class="exo_conbox clearfix">
             <li class="lf con_left">
-              <a href="#">
+              <a target="_blank" href="/html/easydesign/scene/viewScene.html">
                 <img src="/images/production/easydesign/scenes.png" class="img_position">
                 <div class="selectbox"></div>
                 <div class="more-box">
@@ -445,7 +445,7 @@
             <!-- 款式模型 -->
             <ul id="library_StyleModel" style="display:none" class="exo_conbox clearfix">
             <li class="lf con_left">
-              <a href="#">
+              <a target="_blank" href="/html/easydesign/Model/viewModel.html">
                 <img src="/images/production/easydesign/scenes.png" class="img_position">
                 <div class="selectbox"></div>
                 <div class="more-box">
@@ -525,7 +525,7 @@
             <!-- 成品作品 -->
             <ul id="library_FinishedProduct" style="display:none" class="exo_conbox clearfix">
             <li class="lf con_left">
-              <a href="#">
+              <a target="_blank" href="/html/easydesign/uidesign/viewWorks.html">
                 <img src="/images/production/easydesign/scenes.png" class="img_position">
                 <div class="selectbox"></div>
                 <div class="more-box">
@@ -629,7 +629,9 @@
 
         </div>
         @@include('easydesign/footer.html')
-        <script>seajs.use('js/front/easydesign/Index/index');</script>
+        <script>seajs.use('js/front/easydesign/Index/index',function(m){
+          m.simulationFabricUrl = "/html/easydesign/simulationFabric.html";
+        });</script>
 
 </body>
       </html>

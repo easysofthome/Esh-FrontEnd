@@ -9,7 +9,10 @@ define(function (require, exports, module) {
 
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY,className,isDropList){
 //显示被折叠元素的错误提示
+initPostionOnShowTip(obj);
+//给错误提示重新定位
 validateHiddenE(obj);
+
 var cName = (className == undefined? 'tip-violet':'tip-yellow');
 var dropList = (false || isDropList);
  $(obj).poshytip({
@@ -41,13 +44,10 @@ function setMsgPosition(obj,msg,direction,className,isDropList){
   }
 }
 
-//显示被折叠元素的错误提示
+//展开被折叠元素，同时显示错误提示
 function validateHiddenE(ele){
   var id = $(ele).attr('id');
   $('.shrink_wrap:hidden').each(function(){
-    showHiddenE(id,this);
-  });
-  $('.information:hidden').each(function(){
     showHiddenE(id,this);
   });
 
@@ -56,6 +56,22 @@ function validateHiddenE(ele){
     if(size > 0){
       $(that).show();
     }
+  }
+}
+
+//给错误提示重新定位
+function initPostionOnShowTip(obj){
+  //如果是鼠标离开事件则不执行重新定位 表单提交时才会执行
+  if($(obj).attr('eventTypeTag')=='focusout'){
+    return;
+  }
+  $(obj).trigger('focusin');
+  var oTop = $(obj).offset().top-112;
+  var winH= $(window).height()-112;
+  var sTop = $(window).scrollTop();
+  if((oTop<winH&&sTop>oTop)||(oTop>winH&&(sTop<(oTop-winH)||sTop>oTop))){
+    var scrollT = oTop-$(window).height()+winH/2;
+    $(window).scrollTop(scrollT);
   }
 }
 
@@ -342,7 +358,6 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
   /** 表单验证 */
   var validator;
   function validate() {
-
       validator = form.validate({
           //忽略
           ignore: '.ignore',
@@ -351,19 +366,23 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
             window.location = "/html/easyPricing/singleProduct/complete.html";
             return false;
           },
-          onfocusout:function(element){
-              $(element).valid();
+          //添加event 用于记录光标离开事件
+          onfocusout:function(element,event){
+            if($(element).attr('id')){
+              $(element).valid(event);
+            }
           },
-          errorPlacement: function(error, element) {
+          errorPlacement: function(error, element, eventType) {
             $(element).poshytip('destroy');
             if(error.text().length > 0){
-                 setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+               //添加事件类型标识符 用于记录光标离开事件
+              $(element).attr('eventTypeTag',eventType);
+              setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
             }
-
-              return true;
+            return true;
           },
           success:function(element){
-              $(element).poshytip('destroy');
+            $(element).poshytip('destroy');
           }
           ,
            rules: {
@@ -613,7 +632,10 @@ $('#startPort,#endPort').bind('keyup keydown paste focus change',function(){
 
    //
   function init() {
+
+
     validate();
+
   }
 
   $('#btnStartPrice').on('click', function() {

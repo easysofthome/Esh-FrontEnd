@@ -105,11 +105,11 @@
         </li>
         <li class="intli lf clearfix marginL10">
           <p class="lf"><span class="txt_red">*</span>20柜单价：</p>
-          <input class="int lf" id="twentyCounterPerPrice" name="twentyCounterPerPrice" type="text" />
+          <input class="int lf ignore" id="twentyCounterPerPrice" name="twentyCounterPerPrice" type="text" />
         </li>
         <li class="intli lf clearfix marginL10">
           <p class="lf"><span class="txt_red">*</span>40柜单价：</p>
-          <input class="int lf" id="fortyCounterPerPrice" name="fortyCounterPerPrice" type="text" />
+          <input class="int lf ignore" id="fortyCounterPerPrice" name="fortyCounterPerPrice" type="text" />
         </li>
       </ul>
     </div>
@@ -124,22 +124,22 @@
           <li class="intli">参考代码：6304.1920</li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>出口税率：</p>
-            <input class="int lf" type="text" id="exportTariff" errorMsgPosition="right" name="exportTariff" value="0.065" />
+            <input class="int lf ignore" type="text" id="exportTariff" errorMsgPosition="right" name="exportTariff" value="0.065" />
              <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>清关费用：</p>
-            <input class="int lf" type="text" id="CustomsClearanceFee" errorMsgPosition="right" name="CustomsClearanceFee" value="0.025" />
+            <input class="int lf ignore" type="text" id="CustomsClearanceFee" errorMsgPosition="right" name="CustomsClearanceFee" value="0.025" />
              <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>利息：</p>
-            <input class="int lf" type="text" id="interest" errorMsgPosition="right" name="interest" value="0.015" />
+            <input class="int lf ignore" type="text" id="interest" errorMsgPosition="right" name="interest" value="0.015" />
              <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>利润率：</p>
-            <input class="int lf" type="text" errorMsgPosition="right" id="exportProfitRate" name="exportProfitRate" value="0.1" />
+            <input class="int lf ignore" type="text" errorMsgPosition="right" id="exportProfitRate" name="exportProfitRate" value="0.1" />
              <div class="input-tip"></div>
           </li>
         </ul>
@@ -152,17 +152,17 @@
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>保险费率：</p>
-            <input class="int lf" type="text" errorMsgPosition="right" id="premiumRate" name="premiumRate" value="0.006" />
+            <input class="int lf ignore" type="text" errorMsgPosition="right" id="premiumRate" name="premiumRate" value="0.006" />
              <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>信用风险：</p>
-            <input class="int lf" type="text" errorMsgPosition="right" id="creditRisk" name="creditRisk" value="0.0105" />
+            <input class="int lf ignore" type="text" errorMsgPosition="right" id="creditRisk" name="creditRisk" value="0.0105" />
              <div class="input-tip"></div>
           </li>
           <li class="intli clearfix">
             <p class="lf name"><span class="txt_red">*</span>佣金：</p>
-            <input class="int lf" type="text" errorMsgPosition="right" id="commision" name="commision" value="0.03" />
+            <input class="int lf ignore" type="text" errorMsgPosition="right" id="commision" name="commision" value="0.03" />
              <div class="input-tip"></div>
           </li>
         </ul>
@@ -373,7 +373,7 @@
   </div>
 </div>
 <button type="hidden" id="showAddLayer"></button>
-@@include('easyPricing/common/footer2.html')
+@@include('easyPricing/common/footer.html')
 <script>seajs.use('js/front/easyPricing/suite/modify');</script>
 </body>
 </html>

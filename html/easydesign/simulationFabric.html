@@ -42,7 +42,9 @@
 
   <script src="/js/rootConfig.js"></script>
   <script>
-    seajs.use('js/front/easydesign/simulateFabric');
+    seajs.use('js/front/easydesign/simulateFabric',function(s){
+      s.initAll();
+    });
   </script>
 </body>
 </html>

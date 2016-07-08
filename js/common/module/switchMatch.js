@@ -79,7 +79,7 @@ define(function (require, exports, module) {
 
   // 点击事件
   function initClick (selObj) {
-    $(selObj + '>li').on('click', function(event) {
+    $(selObj + '>li>a').on('click', function(event) {
       $(this).parent().hide();
       $(this).parent().siblings('input').val($(this).text())
     });

@@ -2,7 +2,6 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
 
-  require('js/front/lib/validation/validation');
   require('js/front/lib/tip/jquery.poshytip');
   var FancyRadioCheckBox = require('FancyRadioCheckBox');
   FancyRadioCheckBox.init();
@@ -17,11 +16,15 @@ define(function (require, exports, module) {
       return;
     }
     evTimeStamp = now;
-
-
     $('.modifybox').find('.information').eq($(this).index()).slideToggle(function(){
+      var that = this;
       $(this).find('input').each(function(){
         $(this).poshytip('destroy');
+        if($(that).css('display')=='none'){
+           $(this).addClass('ignore');
+         }else{
+           $(this).removeClass('ignore');
+         }
       });
     });
   });

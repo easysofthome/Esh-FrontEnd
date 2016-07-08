@@ -2,32 +2,17 @@ define(function (require, exports, module) {
   require('jquery');
   require('layer');
   require('js/front/lib/tip/jquery.poshytip');
-
+  require('js/front/lib/jquery.history');
   var objImg = {'w':100,'h':100};
- ///////////////////////////////////登录//////////////////////////////////////////
-  $('#toLogin').on('click', function() {
-    $.layer({
-      type: 2,
-      title: false,
-      area: ['440px', '490px'],
-      border: [5, 0.3, '#000'],
-      shade: [0.8, '#000'],
-      shadeClose: true,
-      offset: [($(window).height() - 490)/2+'px',''],
-      closeBtn: [0, false], //去掉默认关闭按钮
-      shift: 'top',
-      fix : false,
-      iframe: {src: '/html/VIP/common/regLog/login-single.html'},
-      success: function () {
-
-      }
-
-    });
-  });
-
 ////////////////////////////////图片加载///////////////////////////////////////////
   //异步请求
   function ajaxLoad(url){
+    if(/.+\?/.test(url)){
+      var param = url.replace(/.+\?/,'');
+      if(param){
+        History.pushState(null,null,'?'+param);
+      }
+    }
     var curImgUrl = $('#hidCurrentImgUrl').val();
     var iframeSrc = $('#hidHtmlUrl').val();
     $.ajax({
@@ -38,17 +23,17 @@ define(function (require, exports, module) {
       beforeSend:function(){
         if(!curImgUrl)return;
         objImg = {'w':100,'h':100};
-        setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-        $('#j-lb-pic').attr('src','/images/production/easydata/gif-load.gif');
+        setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+        $('.gallery').attr('src','/images/production/easydata/gif-load.gif');
       },
       success: function(data){
-        $('#j-lb-pic').hide();
+        $('.gallery').hide();
         data.CurrentImgUrl = curImgUrl;
         data.iframeSrc = iframeSrc;
         initPage(data);
       },
       error : function() {
-        console.log('---花型详情页异常---');
+        console.log('---场景详情页异常---');
       }
     });
   }
@@ -60,64 +45,64 @@ define(function (require, exports, module) {
 
   //加载第n张图片
   function setBigImg(objJson){
-    $('#j-lb-picwp').hide();
     setNextOrPrev(objJson);
     //获取图片的原始尺寸
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
-       objImg.w = this.width;
-       objImg.h = this.height;
-       setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
-        var options = "panorama="+objJson.CurrentImgUrl+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
-        $('#panoramaShow').attr('src',objJson.iframeSrc+"?"+options);
-        $('#j-lb-picwp').show();
+      objImg.w = this.width;
+      objImg.h = this.height;
+      setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+      var options = "panorama="+objJson.CurrentImgUrl+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
+      $('#panoramaShow').attr('src',objJson.iframeSrc+"?"+options);
+      $('.gallery-img').show();
     });
 
   }
 
 
   //设置页面尺寸及top left值 可以自适应页面大小
-  function setConstrainImg(image,imgObj,parentDiv,leftSide){
+  function setConstrainImg(image,imgObj,parentDiv,rightSide){
+    var topMenuH= 112;
+    var botH = 62;
     var winH = $(window).height();
     var winW = $(window).width();
+    var imgAreaH = winH-topMenuH-botH;
     var w = image.w;
     var h = image.h;
     var l_w_ratio = h/w;
     var w_l_ratio = w/h;
-    var leftSide_w = $(leftSide).width();
-    if($(leftSide).css('display') == 'none'){
-        leftSide_w = 0;
+    var leftSide_w = $(rightSide).outerWidth()||$(rightSide).width();
+    if($(rightSide).css('display') == 'none'){
+      leftSide_w = 0;
     }
-    if(h>winH-60){
-        h = winH-60;
-        //w = winH*w_l_ratio;
+    if(h>imgAreaH&&l_w_ratio>=1){
+      h = imgAreaH;
+      w = imgAreaH*w_l_ratio;
 
-    }
-    if(w>winW-leftSide_w){
-        w = winW-leftSide_w-10
-       // h = winW*l_w_ratio;
+    }else if(w>winW&&l_w_ratio<=1){
+      w = winW;
+      h = winW*l_w_ratio;
     }
     var tmpTop = 0;
     var tmpLeft =0;
     if((winW-leftSide_w-w)>0){
-        tmpLeft = (winW-leftSide_w-w)/2;
+      tmpLeft = (winW-leftSide_w-w)/2;
+    }else{
+      w = w-leftSide_w;
     }
-    if((winH-60-h)>0){
-        tmpTop = (winH-60-h)/2;
-    }
-    $('#j-lb-main').width(winW-leftSide_w);
-    $('#j-lb-main').height(winH);
-    $('#j-side-cnt').height(winH);
-    $(parentDiv).css({'top':tmpTop,'left':tmpLeft});
-    $(parentDiv).css({'width':w,'height':h});
-    $(imgObj).css({'top':tmpTop,'left':tmpLeft,'width':w,'height':h});
-    $('#panoramaShow').css({'top':5,'left':0,'width':w,'height':h-10});
+
+    $(rightSide).css({'height':winH-topMenuH-30});
+    $(parentDiv).css({'width':(winW-leftSide_w),'height':(winH-topMenuH-botH),'line-height':(winH-topMenuH-botH)+"px"});
+    $(parentDiv).parent().css({'height':winH-topMenuH});
+    $(imgObj).css({'width':w,'height':h});
+    $('#panoramaShow').css({'width':winW-leftSide_w,'height':h});
     var obj = window.frames["panoramaShow"].document.getElementById("Main");
     if(obj){
-       obj.width = w;
+      obj.width = winW-leftSide_w;
+      obj.height = h;
     }
   }
 
- //下一张图片
+  //下一张图片
   function nextImg(objJson){
     var bigImg = objJson;
     if(!bigImg.NextPageUrl || bigImg.NextPageUrl.length==0){
@@ -126,7 +111,7 @@ define(function (require, exports, module) {
     setBigImg(objJson);
   }
 
-   //上一张图片
+  //上一张图片
   function prevImg(objJson){
 
     var bigImg = objJson;
@@ -138,41 +123,48 @@ define(function (require, exports, module) {
 
   //绑定上一张下一张事件
   function bindScrollBigImg(objJson){
-    $('.ctrl-next').bind('click',function(){
-       ajaxLoad(objJson.NextPageUrl);
+    $('.next').bind('click',function(){
+      ajaxLoad(objJson.NextPageUrl);
     });
-    $('.ctrl-prev').bind('click',function(){
-       ajaxLoad(objJson.PrevPageUrl);
+    $('.prev').bind('click',function(){
+      ajaxLoad(objJson.PrevPageUrl);
     });
   }
 
   //第一张  最后一张 控制链接显示与否
   function setNextOrPrev(objJson){
     var bigImg = objJson;
-    $('.ctrl-prev').show();
-    $('.ctrl-next').show();
+    $('.prev').show();
+    $('.next').show();
 
     if(!bigImg.NextPageUrl || bigImg.NextPageUrl.length==0){
-      $('.ctrl-next').hide();
+      $('.next').hide();
     }
     if(!bigImg.PrevPageUrl ||bigImg.PrevPageUrl.length==0){
-      $('.ctrl-prev').hide();
+      $('.prev').hide();
     }
   }
+  //鼠标滑过 显示翻页按钮
+  $('.gallery-img').mouseenter(function(event) {
+    $('.pagination').fadeIn();
+  });
+
+  $('.gallery-img').mouseleave(function(event) {
+    $('.pagination').fadeOut();
+  });
 
   function initPage(objJson){
-     bindScrollBigImg(objJson);
-     $(document.body).css("overflow","hidden");
-     loadOtherFabrics(objJson);
+    bindScrollBigImg(objJson);
+    loadOtherFabrics(objJson);
   }
 
   $(window).resize(function(event) {
-     setConstrainImg(objImg,'#j-lb-pic','#j-lb-picwp','#j-lb-side');
+    setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
   });
 
   /////////////////////////全景图入口/////////////////////////////////////
 
- $(document).ready(function () {
+  $(document).ready(function () {
     var params = window.location.search.replace(/^\?/, '');
     var baseURL = $('#hidAjaxUrl').val();
     var url = baseURL+'?'+params;
@@ -180,6 +172,6 @@ define(function (require, exports, module) {
   });
 
 
-exports.initPage = initPage;
+  exports.initPage = initPage;
 
 });

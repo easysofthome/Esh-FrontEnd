@@ -86,6 +86,7 @@
       <p class="smalltitle">
         主要面料　<a class="shrink" href="#">[点击收缩]</a>
       </p>
+      <div class="shrink_wrap">
       <table class="tab" cellpadding="0" cellspacing="0">
         <tr class="tit">
           <td>主要用途</td>
@@ -119,19 +120,27 @@
           </td>
         </tr>
       </table>
+      </div>
     </div>
 
     <!-- 按钮 -->
     <div class="btnbox clearfix">
       <a class="lf btn_gray" href="/html/easyPricing/singleProduct/modify.html">返　回</a>
-      <a class="lf btn_blue" id="collectPricingResult" href="#">收藏核价结果</a>
+      <a class="lf btn_blue" id="collectPricingResult" href="javascript:void(0)">收藏核价结果</a>
     </div>
     </form>
   </div>
 </div>
 
-@@include('easyPricing/common/footer2.html')
-<script>seajs.use('js/front/easyPricing/singlePro/complete');</script>
+@@include('easyPricing/common/footer.html')
+<script>
+seajs.use('js/front/easyPricing/singlePro/complete',function(c){
+  c.callback = function complete(callback){
+    alert('收藏核价结果成功！');
+  }
+
+});
+</script>
 
 </body>
 </html>

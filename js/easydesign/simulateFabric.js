@@ -14,15 +14,6 @@ define(function (require, exports, module) {
   //胡庆龙 2016-5-5
   var simulationFn = {};
 
-  //初始化所有需要项
-  simulationFn.initAll = function(){
-
-  //隐藏面料选择列表
-  this.swichFabricList();
-
-  }
-
-
   //居中定位,top值自定义
   //胡庆龙 2016-5-4
   simulationFn.centerAlign= function(objId,paddingLeft,topNum,paddingTop){
@@ -70,23 +61,31 @@ define(function (require, exports, module) {
       if(i===0){
         selClass = "selectedFabric";
       }else{selClass="";}
-      var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
-      $li.bind('click',function(){
-        $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
-      });
+      var $li = $("<li clickLink='"+jsonData.cdnPath+jsonData.vrFabricImg[i].href+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $("#fabricListview").append($li);
    }
+   $('#fabricListview').find('li').each(function(){
+      $(this).bind('click',function(){
+        var clickLink = $(this).attr('clickLink');
+        $(".simulation_all img").eq(0).attr("src",clickLink);
+      });
+   });
   }
 
+   //初始化所有需要项
+  simulationFn.initAll = function(){
 
-  $(document).ready(function () {
-    var cdnPath = $('#hidCdnPath').val();
-    beddingroomJson.cdnPath=cdnPath;
-    //隐藏滚动条
-    $(document.body).css("overflow","hidden");
-    simulationFn.loadRoomImg(beddingroomJson);
-    //初始化场景对比页
-    simulationFn.initAll();
-  });
+  //隐藏面料选择列表
+  simulationFn.swichFabricList();
+  var cdnPath = $('#hidCdnPath').val();
+  beddingroomJson.cdnPath=cdnPath;
+  //隐藏滚动条
+  $(document.body).css("overflow","hidden");
+  simulationFn.loadRoomImg(beddingroomJson);
+
+  }
+   //初始化场景对比页
+   exports.initAll=simulationFn.initAll;
+
 
   });
