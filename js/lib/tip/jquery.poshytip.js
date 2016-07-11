@@ -18,6 +18,7 @@ define(function (require, exports, module) {
 			this.refresh(true);
 		});
 	}
+
 	$(window).resize(handleWindowResize);
 
 	$.Poshytip = function(elm, options) {
@@ -153,9 +154,6 @@ define(function (require, exports, module) {
       }
     },
 		hide: function() {
-			if(hideTimer){
-				clearTimeout(hideTimer);
-			}
 			if (this.disabled || !this.$tip.data('active'))
 				return;
 
@@ -466,7 +464,7 @@ define(function (require, exports, module) {
 	// default settings
 	$.fn.poshytip.defaults = {
     zIndex:98,
-    hide_timeOut:false,
+    hide_timeOut:true,
 		content: 		'[title]',	// content to display ('[title]', 'string', element, function(updateCallback){...}, jQuery)
 		className:		'tip-yellow',	// class for the tips
 		bgImageFrameSize:	10,		// size in pixels for the background-image (if set in CSS) frame around the inner content of the tip

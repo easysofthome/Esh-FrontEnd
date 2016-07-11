@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('/js/lib/autocomplete/autocomplete');
+  require('/js/front/lib/autocomplete/autocomplete');
   require('js/front/lib/synchroInputText');
   var placehold = require('js/front/common/module/placehold');
   placehold.init('.username_box>input,.password_box>input,.passwordRe_box>input');
@@ -41,7 +41,7 @@ define(function (require, exports, module) {
       tag:'',
       marginTop:0
     });
-   });
+  });
 
   //接口
   exports.showComNameList = showComNameList;
