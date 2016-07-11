@@ -1,0 +1,33 @@
+{
+  "name": "Esh-gulp",
+  "version": "1.0.0",
+  "description": "Esh gulp develop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puregardenia/"
+  },
+  "author": "puregardenia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puregardenia/issues"
+  },
+  "homepage": "https://github.com/puregardenia/",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-connect": "^4.1.0",
+    "gulp-file-include": "^0.13.7",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-less": "^3.1.0",
+    "gulp-sequence": "^0.4.5",
+    "gulp-watch": "^4.3.8",
+    "sprity-gm": "^1.0.2",
+    "pure-sprity": "2.0.0",
+    "pure-sprity-less": "2.0.0"
+  }
+}
