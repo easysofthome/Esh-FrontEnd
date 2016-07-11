@@ -10,43 +10,53 @@
 
 <body>
   <div class="main-box">
-  <div class="top-box">
-        <div class="top clearfix">
-          <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">easysofthome<i>0</i></a>
-          <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
-          <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
-          <a href="/html/VIP/common/Pay/purchase.html" class="lf butt_right">开通VIP会员</a>
-          <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
-          <a href="/html/easysofthome/English.html" class="rg butt_right">国际版</a>
-          <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
-          <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
-          <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
-          <a href="/html/easydesign/index.html" class="rg butt_right">易设计</a>
-          <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
-          <a href="/html/easysofthome/index.html" class="rg butt_right">易家纺首页</a>
-        </div>
-    </div>
-      <div class="index-banner-box">
-        <div class="banner-wrapper" style="">
-          <ul class="clearfix banner-box" style="">
-            <li class="banner-li" style="">
-              <a href="javascript:void(0)">
-                <img src="/images/production/easysofthome/download/banner_PC.png">
-              </a>
-              </li>
-            <li class="banner-li" style="">
-              <a href="javascript:void(0)">
-                  <img src="/images/production/easysofthome/download/banner_APP.png">
-              </a>
-            </li>
-          </ul>
-        </div>
-    <ul class="switchable-triggers">
-      <li class="lf current"></li>
-      <li class="lf"></li>
+    <!--top 开始-->
+    <link rel="stylesheet" href="/css/production/common/top-white.css">
 
-    </ul>
-  </div>
+
+    <!-- 解决IE 6 除a标签外不支持hover -->
+    <!--[if lte IE 6]>
+    <style type="text/css">
+      body { behavior:url("/Static/assets/csshover3.htc"); }
+    </style>
+    <![endif]-->
+
+    <div class="header" style="position: absolute;">
+      <div class="top clearfix">
+        <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">easysofthome<i>0</i></a>
+        <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
+        <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
+        <a href="/html/VIP/common/Pay/purchase.html" class="lf butt_right">开通VIP会员</a>
+        <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
+        <a href="/html/easysofthome/English.html" class="rg butt_right">国际版</a>
+        <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
+        <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
+        <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
+        <a href="/html/easydesign/index.html" class="rg butt_right">易设计</a>
+        <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
+      </div>
+    </div>
+    <!--top 结束-->
+    <div class="index-banner-box">
+      <div class="banner-wrapper" style="">
+        <ul class="clearfix banner-box" style="">
+          <li class="banner-li" style="">
+            <a href="javascript:void(0)">
+              <img src="/images/production/easysofthome/download/banner_PC.png">
+            </a>
+            </li>
+          <li class="banner-li" style="">
+            <a href="javascript:void(0)">
+              <img src="/images/production/easysofthome/download/banner_APP.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul class="switchable-triggers">
+        <li class="lf current"></li>
+        <li class="lf"></li>
+      </ul>
+    </div>
 
   </div>
 
@@ -64,7 +74,7 @@
         <p class="tit_s">后续将推出软件</p>
         <p class="words">智能核价助手、成品展厅、花型处理、品质样自动分析软件。</p>
       </div>
-      <a class="btn" href="#">
+      <a class="btn-pc" href="#">
         <img class="icon_PC" src="/images/production/easysofthome/download/icon_PC.png">
         下载
       </a>

@@ -1,0 +1,34 @@
+
+@import '../../dev/mixins/mixins.less';
+
+
+.header{
+  position:fixed;
+  top:0;
+  z-index:9999;
+  background:rgba(0,0,0,0);
+  width:100%;
+  _filter:progid:DXImageTransform.Microsoft.Gradient(enabled='true',startColorstr='#00000000',endColorStr='#00000000');
+  .top{
+    font-size: 12px;
+    line-height: 14px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 9px 0;
+    a{
+      color: #fff;
+    }
+    .butt_right{
+      margin-right: 20px;
+    }
+    #username{
+      i{
+        padding: 0px 11px;
+        background: #f90;
+        font-style: normal;
+        border-radius: 9px;
+        margin-left: 4px;
+      }
+    }
+  }
+}
