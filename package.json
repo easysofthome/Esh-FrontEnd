@@ -25,6 +25,9 @@
     "gulp-imagemin": "^3.0.1",
     "gulp-less": "^3.1.0",
     "gulp-sequence": "^0.4.5",
-    "gulp-watch": "^4.3.8"
+    "gulp-watch": "^4.3.8",
+    "sprity-gm": "^1.0.2",
+    "pure-sprity": "2.0.0",
+    "pure-sprity-less": "2.0.0"
   }
 }
