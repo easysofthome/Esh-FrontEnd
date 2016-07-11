@@ -90,7 +90,7 @@ gulp.task('js', function () {
 // 图片压缩
 gulp.task('imagemin', function () {
     return gulp.src('./images/original/**/*.*')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest('./Static/images/production'));
 });
 
@@ -109,7 +109,7 @@ gulp.task('sprite',function() {
         split: true,
         cssPath: '/images/production'
     })
-    .pipe(imagemin())
+    // .pipe(imagemin())
     .pipe(gulpif('*.png', gulp.dest('./Static/images/production'), gulp.dest('./less/sprite/')))
 });
 // 清理图片
@@ -209,7 +209,7 @@ gulp.task('watch', function() {
         }else{
             watchHandle(event,'images/original/','Static/images/production/');
             gulp.src(srcPath)
-                .pipe(imagemin())
+                // .pipe(imagemin())
                 .pipe(gulp.dest(distPath))
                 .on('finish',function(){
                     return gulp.src('html/**/*.*', {read: false})
@@ -246,7 +246,7 @@ gulp.task('watch', function() {
                     cusName: spriteImgName,
                     cusFolderStru: folderStru,
                 })
-                .pipe(imagemin())
+                // .pipe(imagemin())
                 .pipe(gulpif('*.png', gulp.dest(distPath), gulp.dest(distLessPath)))
                 .on('finish',function(){
                     console.log('Compile Less File!');
