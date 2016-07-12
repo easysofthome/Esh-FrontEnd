@@ -21,7 +21,10 @@ var alias = {
     'FancyRadioCheckBox': 'js/front/lib/RadioAndCheckBox/FancyRadioCheckBox',
     //弹窗
     'tip': 'js/front/lib/tip/jquery.poshytip',    //提醒
-    'layer': 'js/front/lib/layer/layer.min',      //弹窗
+    'layer': 'js/front/lib/layer/layer',      //弹窗
+    'layerExt': 'js/front/lib/layer/layer.ext',      //弹窗扩展
+
+    'lazyload': 'js/front/lib/jquery.lazyload/jquery.lazyload.js',              // 延时加载
 
     // 轮播、切换
     'switchable': 'js/front/lib/jquery.switchable/2.0/jquery.switchable.min',   //切换
@@ -43,7 +46,7 @@ if (this.seajs) {
     seajs.config({
 
         local: "/static/",
-        base: "/",
+        base: "http://182.168.1.125:2323/static/",
         debug: true,
 
         comboSyntax: this.comboSyntax,

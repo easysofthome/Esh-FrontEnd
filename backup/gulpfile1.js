@@ -158,7 +158,11 @@ gulp.task('watch', function() {
             if(config.singleWatch){
                 gulp.src(srcPath)
                    .pipe(fileinclude({prefix: '@@',basepath: 'html/'}))
-                   .pipe(gulp.dest(distPath)).pipe(connect.reload());
+                   .pipe(gulp.dest(distPath))
+                   .pipe(connect.reload())
+                   .on('finish',function(){
+                        console.log(srcPath + '编译完成');
+                   });
             } else {
                 gulp.src('html/**/*.html')
                     .pipe(fileinclude({prefix: '@@',basepath: 'html/'}))
@@ -176,7 +180,11 @@ gulp.task('watch', function() {
             if(config.singleWatch) {
                 gulp.src(srcPath)
                     .pipe(less())
-                    .pipe(gulp.dest(distPath)).pipe(connect.reload());
+                    .pipe(gulp.dest(distPath))
+                    .pipe(connect.reload())
+                    .on('finish',function(){
+                        console.log(srcPath + '编译完成');
+                    });
             } else {
                 gulp.src('./less/production/**/*.less')
                     .pipe(less())
@@ -192,26 +200,32 @@ gulp.task('watch', function() {
         if(event.type != 'deleted'){
             watchHandle(event,'js/','Static/js/front/');
             gulp.src(srcPath)
-                .pipe(gulp.dest(distPath)).pipe(connect.reload());
+                .pipe(gulp.dest(distPath))
+                .pipe(connect.reload())
+                .on('finish',function(){
+                    console.log(srcPath + '处理完成');
+                });
         }
     });
     gulp.watch('images/original/**/*.*',function(event){
         // 删除Static下对应的文件
         if(event.type == 'deleted'){
             watchHandle(event,'images/original/','Static/images/production/',1);
+            // 为了方便，此处用 distPath
             gulp.src(distPath, {read: false})
                 .pipe(clean())
                 .on('finish',function(){
                     return gulp.src('html/**/*.*', {read: false})
                         .pipe(connect.reload());
                 });
-            // 压缩新增的或者改变的文件到Static下
+        // 压缩新增的或者改变的文件到Static下
         }else{
             watchHandle(event,'images/original/','Static/images/production/');
             gulp.src(srcPath)
                 // .pipe(imagemin())
                 .pipe(gulp.dest(distPath))
                 .on('finish',function(){
+                    console.log(srcPath + '处理完成');
                     return gulp.src('html/**/*.*', {read: false})
                         .pipe(connect.reload());
                 });
