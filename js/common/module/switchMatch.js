@@ -80,8 +80,9 @@ define(function (require, exports, module) {
   // 点击事件
   function initClick (selObj) {
     $(selObj + '>li>a').on('click', function(event) {
-      $(this).parent().hide();
-      $(this).parent().siblings('input').val($(this).text())
+      $(this).parents('.esh-sel')
+             .find('input').val($(this).text())
+             .siblings('ul').hide();
     });
   }
 

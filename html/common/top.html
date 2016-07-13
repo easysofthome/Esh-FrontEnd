@@ -13,8 +13,10 @@
     <div class="header-top-wrap">
       <div class="user">
         <div class="login">
-          <a href="/html/VIP/common/regLog/login.html">登录</a>
-          <a href="/html/VIP/common/regLog/register.html">注册</a>
+          <a id="user_login" href="/html/VIP/common/regLog/login.html">登录</a>
+          <a id="user_reg" href="/html/VIP/common/regLog/register.html">注册</a>
+          <a id="username" class="none" href="/html/VIP/common/index.html">esgh15321</a>
+          <a id="user_logout" class="none" href="javascript:void(0)">退出</a>
         </div>
         <a href="/html/VIP/common/Pay/purchase.html" class="vip-ser"><span class="vip"></span>开通VIP会员</a>
         <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw"><span class="service"></span>客户服务</a>
@@ -29,3 +31,31 @@
       </div>
     </div>
   </div>
+<script>
+window.ready = function(fn){
+    if(document.addEventListener){//兼容非IE
+        document.addEventListener("DOMContentLoaded",function(){
+            //注销事件，避免反复触发
+            document.removeEventListener("DOMContentLoaded",arguments.callee,false);
+            fn();//调用参数函数
+        },false);
+    }else if(document.attachEvent){//兼容IE
+        document.attachEvent("onreadystatechange",function(){
+            if(document.readyState==="complete"){
+                document.detachEvent("onreadystatechange",arguments.callee);
+                fn();
+            }
+        });
+    }
+}
+
+window.ready(function(){
+  seajs.use(['js/front/common/head'],function(v){
+    var objJson = {'login':true,'username':'esh_12','msgNum':2};
+        v.userLogout = function(){
+          window.location = '/html/VIP/common/regLog/login.html';
+        };
+        v.showHeaderInfo(objJson);
+    });
+});
+</script>
