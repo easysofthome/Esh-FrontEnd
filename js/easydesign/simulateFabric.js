@@ -66,6 +66,8 @@ define(function (require, exports, module) {
    }
    $('#fabricListview').find('li').each(function(){
       $(this).bind('click',function(){
+        $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
+        $(this).addClass("selectedFabric");
         var clickLink = $(this).attr('clickLink');
         $(".simulation_all img").eq(0).attr("src",clickLink);
       });
