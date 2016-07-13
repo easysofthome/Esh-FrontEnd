@@ -98,8 +98,8 @@ define(function (require, exports, module) {
       afterLoad: function(anchorLink, index){
         if(index == 1){
           $('#little_mouse').show();
-          $('.header').animate({backgroundColor: 'rgba(48,56,69,0)'},1000);
-          $('.header a').animate({color: '#fff'},500);
+          $('.header-top').animate({backgroundColor: 'rgba(48,56,69,0)'},1000);
+          $('.header-top a').animate({color: '#fff'},500);
         }
         if(index == 2){
           $('#data-num').html('0');
@@ -107,8 +107,8 @@ define(function (require, exports, module) {
 
           $('#little_mouse').hide();
 
-          $('.header').animate({backgroundColor: '#303845'},1000);
-          $('.header a').animate({color: '#fff'},500);
+          $('.header-top').animate({backgroundColor: '#303845'},1000);
+          $('.header-top a').animate({color: '#fff'},500);
           // 图片描述文字运动
           setTimeout(function () {
             $('.sheji_text').stop().animate({
@@ -127,8 +127,8 @@ define(function (require, exports, module) {
         if(index == 3){
 
           $('#little_mouse').hide();
-          $('.header').animate({backgroundColor:'#303845'},1000);
-          $('.header a').animate({color: '#fff'},500);
+          $('.header-top').animate({backgroundColor:'#303845'},1000);
+          $('.header-top a').animate({color: '#fff'},500);
         }
       },
       onLeave: function(index, direction){
