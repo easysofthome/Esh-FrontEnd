@@ -77,6 +77,8 @@ define(function (require, exports, module) {
       var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $li.bind('click',function(){
         $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
+        $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
+        $(this).addClass("selectedFabric");
       });
       $("#fabricListview_right").append($li);
    }
