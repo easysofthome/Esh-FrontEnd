@@ -102,11 +102,11 @@ var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/i
     }
 
     function loadFraticList(dataobj){
-      for(var i=0;i<dataobj.fabricList.length;i++){
-        var $li = $('<li><img /></li>');
-        $li.find('img').attr('src',dataobj.fabricList[i].src).attr('imgLink',dataobj.fabricList[i].imgLink);
-        $('.fabric_list').find('ul').append($li);
-      }
+      // for(var i=0;i<dataobj.fabricList.length;i++){
+      //   var $li = $('<li><img /></li>');
+      //   $li.find('img').attr('src',dataobj.fabricList[i].src).attr('imgLink',dataobj.fabricList[i].imgLink);
+      //   $('.fabric_list').find('ul').append($li);
+      // }
       $('.fabric_list img').bind('hover',function(){
           $('#simulation_fabric_right').attr('src',$(this).attr('imgLink'));
       });
