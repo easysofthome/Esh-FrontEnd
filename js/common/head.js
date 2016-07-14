@@ -7,7 +7,6 @@ define(function (require, exports, module) {
   var $userName = $('#username');
   var $logout = $('#user_logout');
   var $vip = $('#vipService');
-  var isNotVip = '<span class="vip"></span>开通VIP会员';
   var url = '';
 
   $.ajax({
@@ -35,7 +34,7 @@ define(function (require, exports, module) {
 
   function showHeaderInfo(data){
     if(data){
-      if(data.login){
+      if(data.isLogin){
         loggedIn(data);
       }else{
         noLogin();
@@ -47,17 +46,21 @@ define(function (require, exports, module) {
     $reg.show();
     $userName.hide();
     $logout.hide();
-    $vip.html(isNotVip);
+    $('#isNotVip').show();
+    $('#isVip').hide();
   }
   function loggedIn(data){
     $login.hide();
     $reg.hide();
-    $userName.show().html(data.username+'<i>'+data.msgNum+'</i>');
+    $userName.show().html(data.memberName+'<i>'+data.znxCount+'</i>');
     $logout.show();
-    if(data.isVIP){
-      $vip.html('VIP剩余天数:'+data.DaysRemaining+',易豆数:'+data.beansNum);
+    if(data.IsVip){
+      //$vip.html('VIP剩余天数:'+data.vipEndDate+',易豆数:'+data.beansNum);
+      $('#isVip').show();
+      $('#isNotVip').hide();
     }else{
-      $vip.html(isNotVip);
+      $('#isNotVip').show();
+      $('#isVip').hide();
     }
   }
   function userLogout(){
