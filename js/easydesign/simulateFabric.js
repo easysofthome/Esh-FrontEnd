@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('js/front/lib/jquery.loadImage');
 ////////////////////////////////////////测试用json数据////////////////////////////////////////
  //卧室
   var beddingroomJson = {'vrBigImg':'/images/production/easydesign/simulateFabric/01_simulateFabric_vr.jpg',
@@ -69,10 +70,11 @@ define(function (require, exports, module) {
         $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
         $(this).addClass("selectedFabric");
         var clickLink = $(this).attr('clickLink');
-        $(".simulation_all img").eq(0).attr("src",clickLink);
+        $(".simulation_all img").eq(0).LoadImage(clickLink,'.simulationFabricImg');
       });
    });
   }
+
 
    //初始化所有需要项
   simulationFn.initAll = function(){
