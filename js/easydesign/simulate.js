@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-
+  require('js/front/lib/jquery.loadImage');
 
 /////////////////////////////////////////////////页面构建////////////////////////////////////////////////////
 
@@ -76,7 +76,8 @@ define(function (require, exports, module) {
       }else{selClass="";}
       var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
       $li.bind('click',function(){
-        $(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
+        //$(".simulation_all img").eq(1).attr("src",jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href);
+        $(".simulation_all img").eq(1).LoadImage(jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href,'.simulation_right');
         $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
         $(this).addClass("selectedFabric");
       });
