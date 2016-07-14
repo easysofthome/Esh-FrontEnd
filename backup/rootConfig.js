@@ -24,6 +24,8 @@ var alias = {
     'layer': 'js/front/lib/layer/layer',      //弹窗
     'layerExt': 'js/front/lib/layer/layer.ext',      //弹窗扩展
 
+    'pagewalkthrough': 'js/front/lib/pagewalkthrough/jquery.pagewalkthrough',            // 引导操作插件
+
     'lazyload': 'js/front/lib/jquery.lazyload/jquery.lazyload.js',              // 延时加载
 
     // 轮播、切换
