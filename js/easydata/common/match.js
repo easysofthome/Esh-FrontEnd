@@ -67,17 +67,24 @@ define(function (require, exports, module) {
   $('.sel-port li').on('click',function(){
     portTemp = $(this).find('span').html();
     pushArray(portTemp);
+    setInputValue();
   })
 // 减少事件
   $('.port-tag-box').on('click','span',function(){
     portTemp = $(this).parent().html().slice(0,-14);
     portArray.remove(portTemp);
+    setInputValue();
     if(portArray.length == 0){
       $('.port-tag-box').html('请输入港口名称');
     }else{
       $(this).parent().remove();
     }
   });
+
+  function setInputValue(){
+    portTemp = portArray.join(',');
+    $('[name=port]').val(portTemp);
+  }
 
   Array.prototype.indexOf = function(val) {
     for (var i = 0; i < this.length; i++) {
