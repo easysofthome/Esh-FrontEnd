@@ -72,19 +72,13 @@ define(function (require, exports, module) {
         $('.simulation-box').find('img').show();
         var zIndex = $('.twentytwenty-overlay').css('z-index');
         //$('.twentytwenty-overlay').css({'z-index':'555'});
-        var top = $('.twentytwenty-overlay').offset().top;
-        var left = $('.twentytwenty-overlay').offset().left;
-        var width = $('.twentytwenty-overlay').width();
-        var height = $('.twentytwenty-overlay').height();
+        
 
         $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实面料照片</span><span>易家纺面料模拟效果</span></div></div>')
         $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
 
-        $('#overLayer_fratic').css({'z-index':'41','opacity': '0.6','filter': 'alpha(opacity=60)','background': '#000','top':top,'left':left,'width':width,'height':height});
-        $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
-        $('#overLayer_fratic_top span:eq(0)').css({'width':150,'bottom':'17px','left':'20px','position':'absolute','text-align':'left','line-height': '20px'});
-        $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px','position':'absolute','text-align':'right','line-height': '20px'});
-
+        
+        fraticLayer_position();
 
         $('.twentytwenty-container').bind('mouseleave',function(){
             $('#overLayer_fratic').show();
@@ -122,14 +116,24 @@ define(function (require, exports, module) {
         });
     }
 
-    function fraticLayer_resize(){
-        var top = $('.twentytwenty-overlay').offset().top;
+    function fraticLayer_position(){
+       var top = $('.twentytwenty-overlay').offset().top;
         var left = $('.twentytwenty-overlay').offset().left;
-        $('#overLayer_fratic').css({'top':top,'left':left});
-        $('#overLayer_fratic_top').css({'top':top,'left':left});
-         $('#overLayer_fratic_top span:eq(0)').css({'width':150,'bottom':'17px','left':'20px','position':'absolute','text-align':'left','line-height': '20px'});
-        $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px','position':'absolute','text-align':'right','line-height': '20px'});
+        var width = $('.twentytwenty-overlay').width();
+        var height = $('.twentytwenty-overlay').height();
+       $('#overLayer_fratic').css({'z-index':'41','opacity': '0.2','filter': 'alpha(opacity=20)','background': '#000','top':top,'left':left,'width':width,'height':height});
+        $('#overLayer_fratic_top').css({'color':'#ffffff','z-index':'42','top':top,'left':left,'width':width,'height':height});
+        $('#overLayer_fratic_top span:eq(0)').css({'width':103,'bottom':'17px','left':'20px',
+          'position':'absolute','text-align':'center','line-height': '22px','padding': '3px',
+          'background': '#f90','border-radius': '3px','background': 'rgba(0, 0, 0, 0.38)','padding-bottom': '4px\0'});
+        $('#overLayer_fratic_top span:eq(1)').css({'width':150,'bottom':'17px','right':'20px',
+          'position':'absolute','text-align':'right','line-height': '20px',
+          'text-align':'center','line-height': '22px','padding': '3px',
+          'background': '#f90','border-radius': '3px','background': 'rgba(0, 0, 0, 0.38)','padding-bottom': '4px\0'});
+    }
 
+    function fraticLayer_resize(){
+       fraticLayer_position();
     }
 
 ////////////////////////////////媒体图片鼠标划过特效 暂时未应用//////////////////////////////////
