@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/front/lib/pagewalkthrough/jquery.pagewalkthrough-1.1.0');
+  require('pagewalkthrough');
   var quickPanel = require('js/front/common/quickPanel/quickPanel');
 
 

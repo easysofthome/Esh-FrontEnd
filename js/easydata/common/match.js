@@ -46,11 +46,74 @@ define(function (require, exports, module) {
     //   $(this).parent().siblings('input').val($(this).text())
     // });
     switchMatch.init("#esh-sel1");
-    switchMatch.initHover(".port");
+    // switchMatch.initHover(".port");
     // switchMatch.initClick(".sel-match");
 
 
-  // 添加、删除港口
+///////////////// 添加、删除港口/////////////////////////
+  var portArray = [], portTemp;
+// 经过事件
+  $('.port').on('mouseover','.port-tag-box', function() {
+    $(this).siblings('ul').show();
+  });
+  $('.port').hover(
+    function(){},
+    function() {
+      $(this).find('ul').hide();
+    }
+  );
+
+// 增加事件
+  $('.sel-port li').on('click',function(){
+    portTemp = $(this).find('span').html();
+    pushArray(portTemp);
+  })
+// 减少事件
+  $('.port-tag-box').on('click','span',function(){
+    portTemp = $(this).parent().html().slice(0,-14);
+    portArray.remove(portTemp);
+    if(portArray.length == 0){
+      $('.port-tag-box').html('请输入港口名称');
+    }else{
+      $(this).parent().remove();
+    }
+  });
+
+  Array.prototype.indexOf = function(val) {
+    for (var i = 0; i < this.length; i++) {
+      if (this[i] == val) return i;
+    }
+    return -1;
+  };
+
+  Array.prototype.remove = function(val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+      this.splice(index, 1);
+    }
+  };
+
+  function pushArray (portTemp){
+    var flag = 0;
+    for (var i = portArray.length - 1; i >= 0; i--) {
+      if(portArray[i] == portTemp){
+        flag = 1;
+        break;
+      }
+    }
+    if(!flag){
+      if(portArray.length == 0)
+        $('.port-tag-box').html('<dl></dl>');
+      if(portArray.length > 3)
+        return;
+      $('.port-tag-box dl').append(' <dd class="port-tag">' + portTemp + '<span>x</span></dd>');
+      portArray.push(portTemp);
+    }
+
+  };
+
+
+  /*
     var inputObj = $(".sel-port").siblings('input');
     var Temp;
 
@@ -156,7 +219,7 @@ define(function (require, exports, module) {
 
       }
 
-
+*/
 
 
 
