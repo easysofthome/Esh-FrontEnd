@@ -111,6 +111,31 @@ ul.switchable-triggers
   margin: 0 auto;
   margin-top: 30px;
 }
+.simulation-box .fabric_list{
+  position:absolute;
+  top:0;
+  right:0;
+  width:80px;
+  height:140px;
+  line-height: 140px;
+  z-index:26;
+}
+.simulation-box .fabric_list ul{
+  display: inline-block;
+  vertical-align: middle;
+  height: 112px;
+  li{
+    width:80px;
+    height:28px;
+    img{
+      position: static;
+      display: block;
+      &:hover{
+        cursor:pointer;
+      }
+    }
+  }
+}
 .simulation_outbox .simulation-box img{
   display:none;
 }

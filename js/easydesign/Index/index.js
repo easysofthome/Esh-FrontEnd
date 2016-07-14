@@ -3,10 +3,16 @@ define(function (require, exports, module) {
     require('layer');
     require('jquery.event.move');
     require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
+
+var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/index_fabricList_1.jpg','imgLink':'/images/production/easydesign/simulation_fabric_vr.jpg'},
+    {'src':'/images/production/easydesign/index_fabricList_2.jpg','imgLink':'/images/production/easydesign/index_fabric_2.jpg'},
+    {'src':'/images/production/easydesign/index_fabricList_3.jpg','imgLink':'/images/production/easydesign/index_fabric_3.jpg'},
+    {'src':'/images/production/easydesign/index_fabricList_4.jpg','imgLink':'/images/production/easydesign/index_fabric_4.jpg'}]};
+
     //接口 接收点击面料的地址
     exports.simulationFabricUrl;
     $('.simulation-box').twentytwenty();
-    fraticLayer();
+    fraticLayer(simulationFabricObj);
     $('.twentytwenty-handle').css('left','600px');
     require('js/front/easydesign/Index/banner');
     // 模拟效果
@@ -67,49 +73,47 @@ define(function (require, exports, module) {
 
 
 
-/////////////////////////////////////////////面料对比遮罩及点击事件/////////////////////////////////////////////////
-    function fraticLayer(){
+/////////////////////////////////////////////面料对比遮罩及点击事件////////////////////////////////////////////////
+
+    function fraticLayer(simulationFabricObj){
         $('.simulation-box').find('img').show();
         var zIndex = $('.twentytwenty-overlay').css('z-index');
-        //$('.twentytwenty-overlay').css({'z-index':'555'});
-        
-
         $('body').append('<div id="overLayer_fratic_top" style=\'display:block;width:100%;height:100%;position:absolute;\'><div style=\'postion:relative;display:block;width:100%;height:100%;\'><span>真实面料照片</span><span>易家纺面料模拟效果</span></div></div>')
         $('body').append('<div id="overLayer_fratic" style=\'display:block;width:100%;height:100%;position:absolute;\'></div>')
-
-        
         fraticLayer_position();
-
         $('.twentytwenty-container').bind('mouseleave',function(){
             $('#overLayer_fratic').show();
             $('#overLayer_fratic_top').show();
         });
-
-
         $('#overLayer_fratic_top').bind('mouseover',function(){
             $('#overLayer_fratic').hide();
             $('#overLayer_fratic_top').hide();
-
         });
-
-
         $(".twentytwenty-handle").bind('movestart',function(){
             $('.twentytwenty-container').unbind('click');
         });
-
         $(".twentytwenty-handle").bind('moveend',function(){
             setTimeout(function(){
                 bindClickSimulationFabric();
             }, 800);
-
         });
-
+        loadFraticList(simulationFabricObj);
         bindClickSimulationFabric();
     }
 
+    function loadFraticList(dataobj){
+      for(var i=0;i<dataobj.fabricList.length;i++){
+        var $li = $('<li><img /></li>');
+        $li.find('img').attr('src',dataobj.fabricList[i].src).attr('imgLink',dataobj.fabricList[i].imgLink);
+        $('.fabric_list').find('ul').append($li);
+      }
+      $('.fabric_list img').bind('hover',function(){
+          $('#simulation_fabric_right').attr('src',$(this).attr('imgLink'));
+      });
+    }
 
-    function bindClickSimulationFabric (){
-        $('.twentytwenty-container').bind('click',function(){
+    function bindClickSimulationFabric(){
+        $('.twentytwenty-overlay').bind('click',function(event){
              if(exports.simulationFabricUrl){
                 window.open(exports.simulationFabricUrl);
              }
