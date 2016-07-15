@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     require('jquery');
     require('layer');
     require('jquery.event.move');
+    require('js/front/lib/jquery.loadImage');
     require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
 
 var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/index_fabricList_1.jpg','imgLink':'/images/production/easydesign/simulation_fabric_vr.jpg'},
@@ -102,13 +103,8 @@ var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/i
     }
 
     function loadFraticList(dataobj){
-      // for(var i=0;i<dataobj.fabricList.length;i++){
-      //   var $li = $('<li><img /></li>');
-      //   $li.find('img').attr('src',dataobj.fabricList[i].src).attr('imgLink',dataobj.fabricList[i].imgLink);
-      //   $('.fabric_list').find('ul').append($li);
-      // }
       $('.fabric_list img').bind('hover',function(){
-          $('#simulation_fabric_right').attr('src',$(this).attr('imgLink'));
+          $('#simulation_fabric_right').LoadImage({'imgSrc':$(this).attr('imgLink'),'container':'.simulation-box'});
       });
     }
 
