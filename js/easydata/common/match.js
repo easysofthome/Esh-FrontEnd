@@ -55,6 +55,7 @@ define(function (require, exports, module) {
 
   $(document).ready(function(){
     portTemp = $('[name=port]').val();
+    if(portTemp.trim() == '') return;
     portArray = portTemp.split(',');
     $('.port-tag-box').html('<dl></dl>');
     for (var i = portArray.length - 1; i >= 0; i--) {
