@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     require('jquery');
     require('layer');
     require('jquery.event.move');
-    require('js/front/lib/jquery.loadImage');
+    require('js/front/lib/jquery.loadImage/jquery.loadImage');
     require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
 
 var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/index_fabricList_1.jpg','imgLink':'/images/production/easydesign/simulation_fabric_vr.jpg'},

@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/front/lib/jquery.loadImage');
+  require('js/front/lib/jquery.loadImage/jquery.loadImage');
 ////////////////////////////////////////测试用json数据////////////////////////////////////////
  //卧室
   var beddingroomJson = {'vrBigImg':'/images/production/easydesign/simulateFabric/01_simulateFabric_vr.jpg',
