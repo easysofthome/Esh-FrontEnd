@@ -12,7 +12,7 @@ width       图片最大高
 height      图片最大宽
 */
 define(function (require, exports, module) {
-require('js/front/lib/jquery.loadImage/spin'); //依赖插件 用js实现的等待图标
+require('spin'); //依赖插件 用js实现的等待图标
 
 
 jQuery.fn.LoadImage=function(option){

@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/front/lib/jquery.loadImage/jquery.loadImage');
+  require('loadImage');
 
 /////////////////////////////////////////////////页面构建////////////////////////////////////////////////////
 
