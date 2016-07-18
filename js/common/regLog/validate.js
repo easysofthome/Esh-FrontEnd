@@ -542,6 +542,7 @@ define(function (require, exports, module) {
     function userIdentity(target){
        var that = target;
        var tag = $(that).attr('id');
+       displayInput(tag);
        $('#factory_sel,#trafficker_sel,#importer_sel,#stockist_sel').hide();
        $('#'+tag+'_sel').show();
     }
@@ -584,6 +585,17 @@ define(function (require, exports, module) {
             }
        }
        return flag;
+    }
+
+    function displayInput(tag){
+       if(tag=='importer'){
+        $('#CompanyName').parent().parent().hide();
+        $('#CompanyName').addClass('ignore');
+        $('#CompanyName').poshytip('destroy');
+       }else{
+        $('#CompanyName').parent().parent().show();
+        $('#CompanyName').removeClass('ignore');
+       }
     }
 
     $(document).ready(function(){
