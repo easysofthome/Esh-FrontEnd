@@ -12,6 +12,7 @@
  * Version:  1.9.7
  *
  */
+define(['jquery'], function(require, exports, module){
 
 (function($, window, document, undefined) {
     var $window = $(window);
@@ -239,3 +240,5 @@
     });
 
 })(jQuery, window, document);
+
+});
