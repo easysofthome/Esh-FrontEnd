@@ -27,7 +27,7 @@ var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/i
         $('.exo_conbox li').append("<div class='top-line'></div><div class='right-line'></div><div class='bottom-line'></div><div class='left-line'></div>");
         var w = $(window).width();
         $('.banner-li').css("width",w);
-        $('.banner-wrapper').css("height",w/3.84);
+        // $('.banner-wrapper').css("height",w/3.84);
 
     });
 
