@@ -52,6 +52,18 @@ define(function (require, exports, module) {
 
 ///////////////// 添加、删除港口/////////////////////////
   var portArray = [], portTemp;
+
+  $(document).ready(function(){
+    portTemp = $('[name=port]').val();
+    if(portTemp.trim() == '') return;
+    portArray = portTemp.split(',');
+    $('.port-tag-box').html('<dl></dl>');
+    for (var i = portArray.length - 1; i >= 0; i--) {
+      $('.port-tag-box dl')
+        .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
+    }
+  });
+
 // 经过事件
   $('.port').on('mouseover','.port-tag-box', function() {
     $(this).siblings('ul').show();
