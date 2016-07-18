@@ -63,7 +63,7 @@ define(function (require, exports, module) {
         selClass = "selectedFabric";
       }else{selClass="";}
       var $li = $("<li clickLink='"+jsonData.cdnPath+jsonData.vrFabricImg[i].href+"' class=\'"+selClass+"\'><img /></li>");
-      $li.find('img').LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrFabricImg[i].src,'container':$li,'spin_size':'small'});
+      $li.find('img').attr('src',jsonData.cdnPath+jsonData.vrFabricImg[i].src);
       $("#fabricListview").append($li);
    }
    $('#fabricListview').find('li').each(function(){
