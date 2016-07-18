@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/front/lib/jquery.loadImage');
+  require('loadImage');
 ////////////////////////////////////////测试用json数据////////////////////////////////////////
  //卧室
   var beddingroomJson = {'vrBigImg':'/images/production/easydesign/simulateFabric/01_simulateFabric_vr.jpg',
@@ -63,7 +63,7 @@ define(function (require, exports, module) {
         selClass = "selectedFabric";
       }else{selClass="";}
       var $li = $("<li clickLink='"+jsonData.cdnPath+jsonData.vrFabricImg[i].href+"' class=\'"+selClass+"\'><img /></li>");
-      $li.find('img').LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrFabricImg[i].src,'container':$li,'spin_size':'small'});
+      $li.find('img').attr('src',jsonData.cdnPath+jsonData.vrFabricImg[i].src);
       $("#fabricListview").append($li);
    }
    $('#fabricListview').find('li').each(function(){

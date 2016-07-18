@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     require('jquery');
     require('layer');
     require('jquery.event.move');
-    require('js/front/lib/jquery.loadImage');
+    require('loadImage');
     require('../../lib/jquery.twentytwenty/jquery.twentytwenty.index');
 
 var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/index_fabricList_1.jpg','imgLink':'/images/production/easydesign/simulation_fabric_vr.jpg'},
@@ -27,7 +27,7 @@ var simulationFabricObj = {'fabricList':[{'src':'/images/production/easydesign/i
         $('.exo_conbox li').append("<div class='top-line'></div><div class='right-line'></div><div class='bottom-line'></div><div class='left-line'></div>");
         var w = $(window).width();
         $('.banner-li').css("width",w);
-        $('.banner-wrapper').css("height",w/3.84);
+        // $('.banner-wrapper').css("height",w/3.84);
 
     });
 

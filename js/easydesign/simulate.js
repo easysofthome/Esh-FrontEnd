@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('js/front/lib/jquery.loadImage');
+  require('loadImage');
 
 /////////////////////////////////////////////////页面构建////////////////////////////////////////////////////
 
@@ -75,7 +75,8 @@ define(function (require, exports, module) {
         selClass = "selectedFabric";
       }else{selClass="";}
       var $li = $("<li tag='"+i+"' class=\'"+selClass+"\'><img /></li>");
-      $li.find('img').LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrFabricImg[i].src,'container':$li,'spin_size':'small'});
+      //$li.find('img').LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrFabricImg[i].src,'container':$li,'spin_size':'small'});
+      $li.find('img').attr('src',jsonData.cdnPath+jsonData.vrFabricImg[i].src);
       $li.bind('click',function(){
         $(".simulation_all img").eq(1).LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrFabricImg[$(this).attr('tag')].href,'container':'.simulation_right'});
         $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
