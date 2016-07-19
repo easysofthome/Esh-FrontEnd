@@ -26,7 +26,11 @@ define(function (require, exports, module) {
       });
     }
 
-    initSwitch();
+    $(document).ready(function(){
+      var w = $(window).width();
+      $('.banner-li').css("width",w);
+      initSwitch();
+    });
 
     $(window).resize(function(){
       $('.banner-box').attr('style','');
@@ -37,17 +41,19 @@ define(function (require, exports, module) {
 
       initSwitch();
     });
+
   });
 
   //媒体图片鼠标划过特效
   $(".video_icobutt_def").append('<span class="video_icobutt_def2"></span>');
   $(".video_icobutt_def2").css('opacity', 0);
-  $(".video_icobutt_def").hover(function(){
-  $(".video_icobutt_def2").stop().animate({opacity: '1'},600);
-
-  },
-  function(){
-  $(".video_icobutt_def2").stop().animate({opacity: '0'},600);
-  });
+  $(".video_icobutt_def").hover(
+    function(){
+      $(".video_icobutt_def2").stop()
+        .animate({opacity: '1'},600);
+    },function(){
+      $(".video_icobutt_def2").stop()
+        .animate({opacity: '0'},600);
+    });
 
 });
