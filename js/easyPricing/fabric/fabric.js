@@ -126,6 +126,7 @@ function setMsgPosition(obj,msg,direction){
 
 ////////////////////////////弹出层///////////////////////////////////
 
+var that;
 //点击开始核价 弹出层 配置选项
 var startPriceLayer = {
         type: 2,
@@ -147,6 +148,7 @@ var startPriceLayer = {
 
     // 经纱种类选择纱线
     $('#yarn-ul').on('click', '.yarn_butt' , function() {
+      that = this;
       $.layer({
         type: 2,
         title: false,
@@ -158,7 +160,7 @@ var startPriceLayer = {
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function (layer) {
 
         }
@@ -168,6 +170,7 @@ var startPriceLayer = {
 
     // 纬纱种类选择纱线
     $('#abb-ul').on('click', '.yarn_butt' , function() {
+      that = this;
       $.layer({
         type: 2,
         title: false,
@@ -179,7 +182,7 @@ var startPriceLayer = {
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function () {
 
         }
@@ -189,6 +192,7 @@ var startPriceLayer = {
 
     //选择织造工缴工厂报价
     $('.factoryOffer_butt').on('click', function() {
+      that = this;
       $.layer({
         type: 2,
         title: false,
@@ -200,7 +204,7 @@ var startPriceLayer = {
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/selectQuotation.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function () {
 
         }
