@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
+  require('loadImage');
 ////////////////////////////////////////测试用json数据////////////////////////////////////////
  //卧室
   var beddingroomJson = {'vrBigImg':'/images/production/easydesign/simulateFabric/01_simulateFabric_vr.jpg',
@@ -48,7 +49,7 @@ define(function (require, exports, module) {
 
   //动态加载场景对比页面图片
   simulationFn.loadRoomImg = function(jsonData){
-    $(".simulation_all img").eq(0).attr("src",jsonData.cdnPath+jsonData.vrBigImg);
+    $(".simulation_all img").eq(0).LoadImage({'imgSrc':jsonData.cdnPath+jsonData.vrBigImg,'container':'.simulationFabricImg'});
     loadFabricList(jsonData);
   }
 
@@ -61,7 +62,8 @@ define(function (require, exports, module) {
       if(i===0){
         selClass = "selectedFabric";
       }else{selClass="";}
-      var $li = $("<li clickLink='"+jsonData.cdnPath+jsonData.vrFabricImg[i].href+"' class=\'"+selClass+"\'><img src=\'"+jsonData.cdnPath+jsonData.vrFabricImg[i].src+ "\' /></li>");
+      var $li = $("<li clickLink='"+jsonData.cdnPath+jsonData.vrFabricImg[i].href+"' class=\'"+selClass+"\'><img /></li>");
+      $li.find('img').attr('src',jsonData.cdnPath+jsonData.vrFabricImg[i].src);
       $("#fabricListview").append($li);
    }
    $('#fabricListview').find('li').each(function(){
@@ -69,10 +71,11 @@ define(function (require, exports, module) {
         $(this).parent().find('.selectedFabric').removeClass('selectedFabric');
         $(this).addClass("selectedFabric");
         var clickLink = $(this).attr('clickLink');
-        $(".simulation_all img").eq(0).attr("src",clickLink);
+        $(".simulation_all img").eq(0).LoadImage({'imgSrc':clickLink,'container':'.simulationFabricImg'});
       });
    });
   }
+
 
    //初始化所有需要项
   simulationFn.initAll = function(){

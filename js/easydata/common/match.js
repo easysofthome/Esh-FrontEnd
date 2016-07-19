@@ -52,6 +52,18 @@ define(function (require, exports, module) {
 
 ///////////////// 添加、删除港口/////////////////////////
   var portArray = [], portTemp;
+
+  $(document).ready(function(){
+    portTemp = $('[name=port]').val();
+    if(portTemp.trim() == '') return;
+    portArray = portTemp.split(',');
+    $('.port-tag-box').html('<dl></dl>');
+    for (var i = portArray.length - 1; i >= 0; i--) {
+      $('.port-tag-box dl')
+        .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
+    }
+  });
+
 // 经过事件
   $('.port').on('mouseover','.port-tag-box', function() {
     $(this).siblings('ul').show();
@@ -67,17 +79,24 @@ define(function (require, exports, module) {
   $('.sel-port li').on('click',function(){
     portTemp = $(this).find('span').html();
     pushArray(portTemp);
+    setInputValue();
   })
 // 减少事件
   $('.port-tag-box').on('click','span',function(){
     portTemp = $(this).parent().html().slice(0,-14);
     portArray.remove(portTemp);
+    setInputValue();
     if(portArray.length == 0){
       $('.port-tag-box').html('请输入港口名称');
     }else{
       $(this).parent().remove();
     }
   });
+
+  function setInputValue(){
+    portTemp = portArray.join(',');
+    $('[name=port]').val(portTemp);
+  }
 
   Array.prototype.indexOf = function(val) {
     for (var i = 0; i < this.length; i++) {

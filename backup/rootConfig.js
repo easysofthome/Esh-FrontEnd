@@ -39,7 +39,9 @@ var alias = {
     // seajs
     'seajs-debug': 'js/front/common/seajs/seajsdebug',
     'seajs-style': 'js/front/common/seajs/seajs-style',
-    'seajs-log': 'js/front/common/seajs/seajs-log'
+    'seajs-log': 'js/front/common/seajs/seajs-log',
+    'loadImage':'js/front/lib/jquery.loadImage/jquery.loadImage',
+    'spin':'js/front/lib/jquery.loadImage/spin'
 
 };
 

@@ -1,6 +1,10 @@
 define(function (require, exports, module) {
     require('jquery');
+    require('lazyload');
 /////////////////////////////////////////////易家纺设计资源库 鼠标滑过效果///////////////////////////////
+    // 图片延时加载
+    $('ul.exo_conbox:eq(0) img').lazyload();
+
     $('.exo_conbox li').hover(function() {
         $('.selectbox .search')
         $(this).find('.search,.select_text').css('display','block').animate({'opacity': '1'},300);
@@ -18,6 +22,11 @@ define(function (require, exports, module) {
     function switchSourceLib(){
         $('.tew_box .exp_butt li').bind('click',function(){
             var currentIndex = $(this).index();
+
+            $('ul.exo_conbox:eq('+ currentIndex +') img').lazyload({
+                event : "sporty"
+            }).trigger("sporty");
+
             $('.tew_box .exp_butt li').removeClass('curr_li');
             $(this).addClass('curr_li');
             $('.tew_box .exo_conbox').hide();

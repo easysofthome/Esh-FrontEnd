@@ -18,7 +18,12 @@
           <a id="username" class="none" href="/html/VIP/common/index.html">esgh15321</a>
           <a id="user_logout" class="none" href="javascript:void(0)">退出</a>
         </div>
-        <a href="/html/VIP/common/Pay/purchase.html" id="vipService" class="vip-ser"></a>
+        <a href="/html/VIP/common/Pay/renewals.html" id="isVip" class="vip-ser none">
+          点击续费
+        </a>
+        <a href="/html/VIP/common/Pay/purchase.html" id="isNotVip" class="vip-ser">
+          <span class="vip"></span>开通VIP会员
+        </a>
         <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw"><span class="service"></span>客户服务</a>
       </div>
       <div class="menu">
@@ -51,7 +56,7 @@ window.ready = function(fn){
 
 window.ready(function(){
   seajs.use(['js/front/common/head'],function(v){
-    var objJson = {'login':true,'username':'esh_12','msgNum':2,'DaysRemaining':100,'beansNum':20,'isVIP':true};
+    var objJson = {'isLogin':true,'memberName':'esh_12','znxCount':2,'DaysRemaining':100,'beansNum':20,'IsVip':true};
         v.userLogout = function(){
           window.location = '/html/VIP/common/regLog/login.html';
         };

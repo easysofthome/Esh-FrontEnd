@@ -125,6 +125,29 @@ define(function (require, exports, module) {
                 newpara.push(key + '=' + value);
             }
             return url + '?' + newpara.join('&');
+        },
+        getValueByKey: function (key) {
+            var _href = location.href;
+            var qIndex = _href.indexOf('?');
+            var para = location.href.substring(qIndex + 1);
+
+            var paraArr = para.split('&');
+            var parakey, paravalue, _para, exist = false;
+            for (var j = 0, len = paraArr.length; j < len; j++) {
+                _para = paraArr[j].split('=');
+                parakey = _para[0];
+                paravalue = _para[1];
+                if (key == parakey) {
+                    exist = true;
+                    break;
+                }
+
+            }
+            if(exist){
+                return paravalue;
+            }else{
+                return -1;
+            }
         }
     };
 

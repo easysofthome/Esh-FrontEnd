@@ -18,23 +18,30 @@
   top: 0;
   left: 0;
   height: 500px;
-
   margin: 0 auto;
-
   overflow:hidden;
   ul.banner-box{
 
     li.banner-li{
+      width: 100%;
       float: left;
       position: relative;
       top: 0;
       left: 0;
-
-      img{
-        width:100%;
+      .banner-a {
+        width: 1200px;
+        margin: 0 auto;
+        display: block;
       }
-
-
+    }
+    .banner-color1{
+      background-color: #2a66af;
+    }
+    .banner-color2{
+      background-color: #5ab6ab;
+    }
+    .banner-color3{
+      background-color: #2a6d9d;
     }
   }
   .banner-btn
@@ -110,6 +117,7 @@ ul.switchable-triggers
   height: 140px;
   margin: 0 auto;
   margin-top: 30px;
+  overflow: hidden;
 }
 .simulation-box .fabric_list{
   position:absolute;
@@ -123,20 +131,22 @@ ul.switchable-triggers
 .simulation-box .fabric_list ul{
   display: inline-block;
   vertical-align: middle;
-  height: 112px;
+  height: 124px;
+  margin-top: 4px;
   li{
     width:80px;
-    height:28px;
+    height: 31px;
     img{
       position: static;
       display: block;
+      border-radius: 3px;
       &:hover{
         cursor:pointer;
       }
     }
   }
 }
-.simulation_outbox .simulation-box img{
+.simulation_outbox .simulation-box #simulation_fabric_left{
   display:none;
 }
 .tew_box{
@@ -269,10 +279,6 @@ ul.switchable-triggers
     }
     .top-line,.left-line{left: 0;top: 0;}
     .right-line,.bottom-line{right: 0;bottom: 0;}
-  }
-
-  .img_position{
-    margin-left: -86px;
   }
   .more-box{
     position: absolute;
