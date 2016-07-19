@@ -16,6 +16,7 @@ define(function (require, exports, module) {
   'MemberID':'',
   'IsVip':false,
   'znxCount':0,
+  'loginUrl':'http://www.easysofthome.com/Member/ashx/login.ashx'
   }
 
 
@@ -96,52 +97,42 @@ define(function (require, exports, module) {
       $('.header-top').find('.top').prepend($userName);
     }
 
-
-    $('#user_logout').bind('click',function(){
-      if(exports.userLogout){
-        exports.userLogout();
-      }else{
-        loginObj.userLogout();
-      }
-  });
   },
   setZNX : function(result){
     loginInfoObj.znxCount = result.znxCount;
   },
+  //登出请求
   userLogout : function(){
-    var logoutUrl = '';
-    $.ajax({
-      type: 'post',
-      url: logoutUrl,
-      data: '' ,
-      dataType: 'jsonp',
-      beforeSend:function(){
-      },
-      success: function(data){
-        window.location = '/html/VIP/common/regLog/login.html';
-      },
-      error : function() {
-        console.log('---ajax加载异常---');
-      }
-    });
+  $.getJSON(loginInfoObj.loginUrl+'?callback=?', { action: 'loginOut' }, function (result) {
+                if (result) {
+                   console.log(result.Success);
+                   //注册登出事件
+                  window.location = '/html/VIP/common/regLog/login.html';
+                }
+            });
   }
   }
-
-  $.ajax({
-      type: 'post',
-      url: url,
-      data: '' ,
-      dataType: 'jsonp',
-      beforeSend:function(){
-      },
-      success: function(data){
-        loginObj.loadLoginInfo(data);
-      },
-      error : function() {
-        console.log('---ajax加载异常---');
+  //登出后刷新页面
+  window.loginOutcall = function (result) {
+      if(result.Success){
+        location.reload();
       }
-    });
+  };
 
+  //判断登录状态
+  $.getJSON(loginInfoObj.loginUrl+'?callback=?', { action: 'loginCheck' }, function (result) {
+                if (result) {
+                   loginObj.loadLoginInfo(result);
+                   //注册登出事件
+                  $('#user_logout').bind('click',function(){
+                      if(exports.userLogout){
+                        exports.userLogout();
+                      }else{
+                        loginObj.userLogout();
+                      }
+                  });
+                }
+            });
 
 
   exports.userLogout;

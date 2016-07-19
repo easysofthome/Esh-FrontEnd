@@ -636,8 +636,12 @@
         </div>
         @@include('easydesign/footer.html')
         <script>
-        seajs.use('js/front/easydesign/Index/index',function(m){
+        seajs.use(['js/front/easydesign/Index/index','js/front/lib/jquery.loadImage/jquery.loadImage'],function(m,l){
           m.simulationFabricUrl = "/html/easydesign/simulationFabric.html";
+          var ret = l.loadSpin();
+          setTimeout(function(){
+            l.removeSpin();
+          }, 1000);
         });
         </script>
 
