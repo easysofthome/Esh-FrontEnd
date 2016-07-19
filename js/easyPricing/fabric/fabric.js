@@ -147,6 +147,7 @@ var startPriceLayer = {
 
     // 经纱种类选择纱线
     $('#yarn-ul').on('click', '.yarn_butt' , function() {
+      var that = this;
       $.layer({
         type: 2,
         title: false,
@@ -158,7 +159,7 @@ var startPriceLayer = {
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function (layer) {
 
         }
@@ -168,6 +169,7 @@ var startPriceLayer = {
 
     // 纬纱种类选择纱线
     $('#abb-ul').on('click', '.yarn_butt' , function() {
+      var that = this;
       $.layer({
         type: 2,
         title: false,
@@ -179,7 +181,7 @@ var startPriceLayer = {
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function () {
 
         }
