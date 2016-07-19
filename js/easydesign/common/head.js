@@ -37,18 +37,17 @@ define(function (require, exports, module) {
         $('.switch span').animate({marginLeft: '-33px'});
       });
     });
-    /** /却换中英文 **/
-    /** @type {void} 鼠标滚动增加阴影 */
-    var top = $(window).scrollTop();
-    $(window).scroll(function() {
-      top = $(window).scrollTop();
-      if(top > 0){
-        $('.header').css('box-shadow','0px 2px 3px 2px #ddd');
-      }else{
-        $('.header').css('box-shadow','none');
-      }
-
-    });
+/** /却换中英文 **/
+/** @type {void} 鼠标滚动增加阴影 */
+    // var top = $(window).scrollTop();
+    // $(window).scroll(function() {
+    //   top = $(window).scrollTop();
+    //   if(top > 0){
+    //     $('.header').css('box-shadow','0px 2px 3px 2px #ddd');
+    //   }else{
+    //     $('.header').css('box-shadow','none');
+    //   }
+    // });
 
 
     $(document).ready(function () {
