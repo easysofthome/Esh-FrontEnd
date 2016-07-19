@@ -54,7 +54,7 @@ var spinObj ={'spinner':{},'$windowLayer':{}};
 
 spinObj.loadSpin = function(size){
   if($('#loadSpin').length>0){
-    return;
+    return false;
   }
   var spin_opts = {};
   if(!size || size == 'normal'){
@@ -70,6 +70,7 @@ spinObj.loadSpin = function(size){
   spinObj.$windowLayer.css({'position':'absolute','z-index':999999,'opacity': 0.3,'filter': 'alpha(opacity=30)','background': '#000','top':0,'left':0,'width':winW,'height':winH,'line-height':winH+'px'});
   spinObj.spinner.spin($('body')[0]);
   $('body').append(spinObj.$windowLayer);
+  return true;
 }
 
 spinObj.removeSpin = function(){
