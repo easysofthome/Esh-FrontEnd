@@ -8,8 +8,6 @@ define(function (require, exports, module) {
   var $vip = $('#vipService');
   var url = '';
 
-
-
   var loginInfoObj = {
   'isLogin':true,
   'memberName':'',
@@ -20,7 +18,7 @@ define(function (require, exports, module) {
   }
 
 
-  var loginObj = {
+ var loginObj = {
  loadLoginInfo : function(result){
     if(result){
       loginInfoObj.isLogin = result.Success;
@@ -105,7 +103,6 @@ define(function (require, exports, module) {
   userLogout : function(){
   $.getJSON(loginInfoObj.loginUrl+'?callback=?', { action: 'loginOut' }, function (result) {
                 if (result) {
-                   console.log(result.Success);
                    //注册登出事件
                   window.location = '/html/VIP/common/regLog/login.html';
                 }
