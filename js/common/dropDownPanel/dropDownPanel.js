@@ -1,4 +1,9 @@
 define(function (require, exports, module) {
+   var index = parent.layer.getFrameIndex(window.name);
+    $('.close,.btn_close').click(function(){
+      parent.layer.close(index);
+    });
+
   require('js/front/common/dropDownPanel/dropDownPanel.css');
   exports.callback;
   require('jquery');
