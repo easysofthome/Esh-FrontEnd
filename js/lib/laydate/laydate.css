@@ -29,7 +29,7 @@ html {
   outline: 0;
 }
 .laydate-icon-default {
-  background-image: url(/js/lib/laydate/laydate.png);
+  background-image: url(/js/front/lib/laydate/laydate.png);
 }
 
 .laydate_body .laydate_box {

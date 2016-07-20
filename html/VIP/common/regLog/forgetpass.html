@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+<div class="logbox">
   @@include('common/top-white.html')
 
     <a href="#" class="loglog"></a>
@@ -34,22 +34,24 @@
             <p class="wenzistyle1">完成</p>
           </li>
         </ul>
+        <form method="post" action="" id="forgetpassForm" />
         <div class="clearfix nane_box">
           <span class="lf nane_tit">账户名：</span>
           <div class="user_name">
           <span class="placeholder">请输入邮箱或密码</span>
-          <input type="text" class="lf input_nane" value>
+          <input type="text" id="userName" class="lf input_nane" value>
           </div>
           </div>
         <div class="clearfix cods_box">
           <span class="nane_tit lf">验证码：</span>
           <div class="user_name">
           <span class="placeholder">输入验证码</span>
-            <input type="text" class="lf input_left2 input_naneduan" >
+            <input type="text" id="identifyCode"  class="lf input_left2 input_naneduan" >
           </div>
           <span  class="cods_cen lf"></span>
         </div>
-        <a href="/html/VIP/common/regLog/forgetpass2.html" class="butt_forpass">下一步</a>
+        <a href="javascript:void(0)" class="butt_forpass">下一步</a>
+        </form>
       </div>
 
     </div>
@@ -59,11 +61,12 @@
 
   <script src="/js/rootConfig.js"></script>
   <script type="text/javascript" >
-   seajs.use(['/js/front/VIP/common/regLog/forgetpass'],function(f){
-
-   });
-
-
+  seajs.use('/js/front/VIP/common/regLog/forgetpass',function(f){
+    f.callbackStep1 = function(){
+      alert('成功！');
+      location.href = '/html/VIP/common/regLog/forgetpass2.html';
+    }
+  });
 </script>
 </body>
 </html>
