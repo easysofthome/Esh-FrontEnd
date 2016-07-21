@@ -5,29 +5,11 @@
   <title>易家纺-电子商务平台|注册</title>
   <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/VIP/common/RegLog/forgetpass.css" rel="stylesheet" type="text/css"/>
-   <script src="//cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
 </head>
 <body>
 
   <div class="logbox">
-    <div class="header">
-      <div class="top clearfix">
-        <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">
-          easysofthome <i>0</i>
-        </a>
-        <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
-        <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
-        <a href="/html/VIP/common/Pay/renewals.html" class="lf butt_right">开通VIP会员</a>
-        <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
-        <a href="#" class="rg butt_right">国际版</a>
-        <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
-        <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
-        <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
-        <a href="/html/easydesign/index.html" class="rg butt_right">易设计</a>
-        <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
-        <a href="/html/easysofthome/index.html" class="rg butt_right">易家纺首页</a>
-      </div>
-    </div>
+  @@include('common/top-white.html')
 
     <a href="#" class="loglog"></a>
     <div class="log_box clearfix">
@@ -61,6 +43,7 @@
             </li>
           </ul>
         </div>
+        <form method="post" action="" id="forgetpassForm" />
         <div class="clearfix cods_box">
           <span class="nane_tit lf">昵称：</span>
           <span class="lf for_username">esh13515</span>
@@ -74,27 +57,29 @@
           <span class="nane_tit lf">短信验证码：</span>
           <div class="user_name">
           <span class="placeholder">输入短信验证码</span>
-          <input type="text" class="input_left2 input_naneduan lf" >
-          </div></div>
-        <a href="/html/VIP/common/regLog/forgetpass3.html" class="butt_forpass">下一步</a>
+          <input type="text" id="messageCode" class="input_left2 input_naneduan lf" >
+          </div>
+        </div>
+        <a href="javascript:void(0)" class="butt_forpass">下一步</a>
+        </form>
       </div>
 
     </div>
   </div>
-    <script type="text/javascript">
-    $('.placeholder,.user_name>input').on('click focus',function  () {
-    if($(this).hasClass('placeholder')){
-      $(this).hide();
-      $(this).siblings('input').focus();
-    }else{
-      $(this).siblings('span').hide();
+ <script src="/js/seajs/sea-debug.js"></script>
+  <script src="/js/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script type="text/javascript" >
+   seajs.use(['/js/front/VIP/common/regLog/forgetpass'],function(f){
+      f.callbackStep2 = function(){
+      alert('成功！');
+      location.href = '/html/VIP/common/regLog/forgetpass3.html';
     }
-  });
-  $('.user_name>input').blur(function  () {
-    if($(this).val()===''){
-      $(this).siblings('span').show();
-    }
-  });
+   });
+
+
 </script>
+
 </body>
 </html>

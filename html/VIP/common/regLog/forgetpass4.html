@@ -9,24 +9,7 @@
 <body>
 
   <div class="logbox">
-    <div class="header">
-       <div class="top clearfix">
-        <a href="/html/VIP/common/index.html" class="lf butt_right" id="username">
-          easysofthome <i>0</i>
-        </a>
-        <a href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
-        <a href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
-        <a href="/html/VIP/common/Pay/renewals.html" class="lf butt_right">开通VIP会员</a>
-        <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
-        <a href="#" class="rg butt_right">国际版</a>
-        <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
-        <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
-        <a href="/html/easyPricing/index.html" class="rg butt_right">易核价</a>
-        <a href="/html/easydesign/index.html" class="rg butt_right">易设计</a>
-        <a href="/html/easydata/index.html" class="rg butt_right">易数据</a>
-        <a href="/html/easysofthome/index.html" class="rg butt_right">易家纺首页</a>
-      </div>
-    </div>
+  @@include('common/top-white.html')
 
     <a href="#" class="loglog"></a>
     <div class="log_box clearfix">
@@ -65,5 +48,16 @@
       </div>
     </div>
   </div>
+   <script src="/js/seajs/sea-debug.js"></script>
+  <script src="/js/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
+  <script type="text/javascript" >
+   seajs.use(['/js/front/VIP/common/regLog/forgetpass'],function(f){
+
+   });
+
+
+</script>
 </body>
   </html>

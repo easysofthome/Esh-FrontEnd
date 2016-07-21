@@ -62,12 +62,16 @@ spinObj.loadSpin = function(size){
   }else if(size == 'small'){
     spin_opts =  spin_opts_json.small;
   }
-  spinObj.spinner = new Spinner(spin_opts);
+
   $('body').css('overflow','hidden');
   var winW = $(window).width();
   var winH = $(window).height();
+  var scrollTop = $(document).scrollTop();
   spinObj.$windowLayer = $('<div id="loadSpin"></div>');
-  spinObj.$windowLayer.css({'position':'absolute','z-index':999999,'opacity': 0.3,'filter': 'alpha(opacity=30)','background': '#000','top':0,'left':0,'width':winW,'height':winH,'line-height':winH+'px'});
+  spinObj.$windowLayer.css({'position':'absolute','z-index':999999,'opacity': 0.3,'filter': 'alpha(opacity=30)','background': '#000','top':(0+scrollTop),'left':0,'width':winW,'height':winH,'line-height':winH+'px'});
+  spinObj.$windowLayerSub = $('<div id="loadSpinSub"></div>');
+  spin_opts.top = (scrollTop + (winH-spin_opts.width)/2) + 'px';
+  spinObj.spinner = new Spinner(spin_opts);
   spinObj.spinner.spin($('body')[0]);
   $('body').append(spinObj.$windowLayer);
   return true;
