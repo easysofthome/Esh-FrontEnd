@@ -120,6 +120,12 @@ function setMsgPosition(obj,msg,direction){
     });
 
     $('.handle_one').click(function() {
+      var obj = $(this).find('input');
+      if(obj.prop('checked')){
+        obj.prop('checked',false);
+      } else {
+        obj.prop('checked',true);
+      }
       $(this).toggleClass('selected');
     });
 
