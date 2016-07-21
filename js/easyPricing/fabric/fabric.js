@@ -280,9 +280,22 @@ function closeGuideLayer(){
               //提交表单
             // formSubmit(form);
             closeGuideLayer();
-              //阻止表单提交
-            $.layer(startPriceLayer);
-             return false;
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url: ajaxCallUrl,
+                data: $('#fabricForm').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                  //阻止表单提交
+                  $.layer(startPriceLayer);
+                  console.log(data);
+                  return false;
+                }
+            });
           },
           onfocusout:function(element){
               $(element).valid();
