@@ -144,6 +144,7 @@ var that;
   }
 
 //点击开始核价 弹出层 配置选项
+    var nextStepUrl = $('.butt_return').attr('data-href');
     var startPriceLayer = {
         type: 2,
         title: false,
@@ -155,7 +156,7 @@ var that;
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/result.html'},
+        iframe: {src: nextStepUrl},
         success: function () {
 
         }
