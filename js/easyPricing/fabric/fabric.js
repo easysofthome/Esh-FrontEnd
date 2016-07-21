@@ -46,12 +46,14 @@ function setMsgPosition(obj,msg,direction){
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
+
 // 经纱纬纱事件
     $('#warp-spinner')
       .spinner({
         min:1,
         max:2,
         addEvent: function () {
+          var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
           $('#yarn-ul').append('<li class="lf yarn_para">'
             + '<span class="lf para_tit">经纱2：</span>'
             + '<span class="lf include"></span>'
@@ -59,8 +61,8 @@ function setMsgPosition(obj,msg,direction){
               + '<span class="clearfix ingredient" >'
                 + '<span class="lf ingredient_tit">成分</span>'
                 + '<input type="text" class="lf input_fabric" name="JXCF" readonly="true" id="warpIngredient2"/>'
-                + '<input name="JXSZGGNAME" id="JXSZGGNAME2" type="hidden" value="">'
-                + '<input name="JX_GUXIAN" id="JX_GUXIAN2" type="hidden" value="">'
+                + '<input name="yarnId" type="hidden" value="">'
+                + '<input name="yarnPrice" type="hidden" value="">'
               + '</span>'
               + '<span class="clearfix thickness">'
               + '<span class="clearfix thickness">'
@@ -68,7 +70,7 @@ function setMsgPosition(obj,msg,direction){
                 + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
               + '</span>'
             + '</div>'
-            + '<div class="yarn_butt lf">选择纱线</div>'
+            + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
           + '</li>');
           $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
             + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="warpSpinnerNum2" class="density_input lf">'
@@ -88,6 +90,7 @@ function setMsgPosition(obj,msg,direction){
       max:4,
       addEvent:function () {
         var num = $('#abb-ul li').length+1;
+        var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
         $('#abb-ul').append('<li class="lf yarn_para">'
           + '<span class="lf para_tit">纬纱'+ num +'：</span>'
           + '<span class="lf include"></span>'
@@ -95,15 +98,15 @@ function setMsgPosition(obj,msg,direction){
             + '<span class="clearfix ingredient">'
               + '<span class="lf ingredient_tit">成分</span>'
               + '<input type="text" class="lf input_fabric" name="WXCF" readonly="true" id="weftIngredient'+num+'"/>'
-              + '<input name="WXSZGGNAME" type="hidden" value="">'
-              + '<input name="WX_GUXIAN" type="hidden" value="">'
+              + '<input name="yarnId" type="hidden" value="">'
+              + '<input name="yarnPrice" type="hidden" value="">'
             + '</span>'
             + '<span class="clearfix thickness">'
               + '<span class="lf ingredient_tit">粗细</span>'
               + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+num+'"/>'
             + '</span>'
           + '</div>'
-          + '<div class="yarn_butt lf">选择纱线</div>'
+          + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
           + '</li>');
         $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
           + '<input type="text" id="abbSpinnerNum'+num+'" name="abbSpinnerNum'+num+'" class="density_input lf">');
@@ -131,8 +134,17 @@ function setMsgPosition(obj,msg,direction){
 ////////////////////////////弹出层///////////////////////////////////
 
 var that;
+
+  window.parentFn = function(ingredient, standard, id, price){
+    var obj = $('li.curLayer');
+    obj.find('.input_fabric').val(ingredient);
+    obj.find('.input_fabric:eq(1)').val(standard);
+    obj.find('input[name=yarnId]').val(id);
+    obj.find('input[name=yarnPrice]').val(price);
+  }
+
 //点击开始核价 弹出层 配置选项
-var startPriceLayer = {
+    var startPriceLayer = {
         type: 2,
         title: false,
         area: ['1020px', '650px'],
@@ -153,6 +165,10 @@ var startPriceLayer = {
     // 经纱种类选择纱线
     $('#yarn-ul').on('click', '.yarn_butt' , function() {
       that = this;
+
+      $('.curLayer').removeClass('curLayer');
+      $(that).parents('li').addClass('curLayer');
+
       $.layer({
         type: 2,
         title: false,
@@ -175,6 +191,10 @@ var startPriceLayer = {
     // 纬纱种类选择纱线
     $('#abb-ul').on('click', '.yarn_butt' , function() {
       that = this;
+
+      $('.curLayer').removeClass('curLayer');
+      $(that).parents('li').addClass('curLayer');
+
       $.layer({
         type: 2,
         title: false,
@@ -479,7 +499,4 @@ $(document).ready(function(){
 
 init();
 
-
-
-
-})
+});
