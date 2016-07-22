@@ -85,7 +85,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">经密：</div>
                   <div class="lf" id="warp_num_box">
-                    <input type="text" id="warpSpinnerNum1" name="" class="density_input lf">
+                    <input type="text" id="warpSpinnerNum1" name="FabricYarns[0].DensityLength" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
                     <div class="input-tip"></div>
                   </div>
@@ -99,8 +99,9 @@
                     <span class="clearfix ingredient" >
                       <span class="lf ingredient_tit">成分</span>
                       <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="warpIngredient1"/>
-                      <input name="yarnId" type="hidden" value="" />
-                      <input name="yarnPrice" type="hidden" value="" />
+                      <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
+                      <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
+                      <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="true" />
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
@@ -118,7 +119,6 @@
             <div class="wefttype_box">
               <div class="clearfix yarndensity_box">
                 <div class="lf">
-
                   <div class="lf yarn_tit">纬纱种类：</div>
                   <input type="text" class="lf" id="abb-spinner" />
                 </div>
@@ -126,7 +126,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">纬密：</div>
                   <div class="lf" id="abb_num_box">
-                    <input type="text" id="abbSpinnerNum1" name="" class="density_input lf">
+                    <input type="text" id="abbSpinnerNum1" name="FabricYarns[1].DensityLength" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的纬密。</span>
                     <div class="input-tip"></div>
                   </div>
@@ -141,8 +141,9 @@
                     <span class="clearfix ingredient">
                       <span class="lf ingredient_tit">成分</span>
                       <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="weftIngredient1"/>
-                      <input name="yarnId" type="hidden" value="" />
-                      <input name="yarnPrice" type="hidden" value="" />
+                      <input name="FabricYarns[1].YarnSpecID" type="hidden" value="" />
+                      <input name="FabricYarns[1].FactoryPrice" type="hidden" value="" />
+                      <input name="FabricYarns[1].IsChaineDensity" type="hidden" value="false" />
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
@@ -454,6 +455,88 @@
       <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
     </div>
   </div>
+
+<div id="popupResult" style="display: none">
+    <div id="priceResult"></div>
+    <input type="hidden" id="hid-priceId" />
+    <br />
+    <br />
+</div>
+
+<!-- laytpl模板引擎 -->
+<script id="resultTemplate" type="text/html">
+  <div class="result">
+    <div class="clearfix Row">
+      <div class="lf res_tit">织造种类：</div>
+      <div class="lf res_con">{{ d.FL_NAME }}</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">染织方法：</div>
+      <div class="lf res_con">{{ d.DY_NAME }}</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">有效门幅({{ d.INCH_CM }})：</div>
+      <div class="lf res_con">{{d.INCH_CM=="CM"?d.WIDTH_CM:d.WIDTH_INCH}}</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">经纬密度({{ d.INIUNIT }}：</div>
+      <div class="lf res_con">{{d.JXMD}}*{{d.WXMD}}</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">织物密度/平方英寸：</div>
+      <div class="lf res_con">{{ d.TVALUE }}T/INCH</div>
+    </div>
+    {{# for(var i = 0; i < d.JXCF.split("+").length; i++){ }}
+      <div class="clearfix Row">
+        <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
+        <div class="lf res_con">
+          <span>成分： {{d.JXCF.split("+")[i]}}</span>
+          <span class="data_mar">粗细： {{d.JSGG.split("+")[i]}}</span>
+          <span class="data_mar">股线： {{d.JX_GUXIAN.split("+")[i]}}</span>
+          <span class="data_mar">成分比：  {{d.JX_CFBL.split("+")[i]}}</span>
+        </div>
+      </div>
+    {{#}}}
+    {{# for(var i = 0; i < d.WXCF.split("+").length; i++){ }}
+      <div class="clearfix Row">
+        <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
+        <div class="lf res_con">
+          <span>成分： {{d.WXCF.split("+")[i]}}</span>
+          <span class="data_mar">粗细： {{d.WSGG.split("+")[i]}}</span>
+          <span class="data_mar">股线： {{d.WX_GUXIAN.split("+")[i]}}</span>
+          <span class="data_mar">成分比：  {{d.WX_CFBL.split("+")[i]}}</span>
+        </div>
+      </div>
+    {{#}}}
+
+    <div class="clearfix Row">
+      <div class="lf res_tit">面料克重：</div>
+      <div class="lf res_con"> {{ d.MLGZ }}克/平方米</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">面料成分：</div>
+      <div class="lf res_con">{{ d.MLCOMPONENT }}</div>
+    </div>
+    {{#if(d.HCLFNAME!=""){}}
+      <div class="clearfix Row">
+        <div class="lf res_tit">后处理费：</div>
+        <div class="lf res_con">
+          <span class="data_mar">{{ d.HCLFNAME }}</span>
+        </div>
+      </div>
+    {{# }}}
+    <div class="clearfix Row">
+      <div class="lf res_tit">面料价格（人民币）：</div>
+      <div class="lf res_con">{{ d.PRICE }}元（每米）</div>
+    </div>
+    <div class="clearfix Row">
+      <div class="lf res_tit">面料价格（美元）：</div>
+      <div class="lf res_con">{{ d.FOBPRICE }}元（每米）</div>
+    </div>
+  </div>
+</script>
+<!-- /laytpl模板引擎 -->
+
   @@include('easyPricing/common/footer.html')
   <script>seajs.use(['js/front/easyPricing/fabric/fabric','js/front/easyPricing/fabric/pagewalkthrough']);</script>
 </body>
