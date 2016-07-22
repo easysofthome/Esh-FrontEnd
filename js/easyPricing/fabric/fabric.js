@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 
     require('js/front/lib/validation/validation');
 
-////////////////////////////´íÎóÌáÊ¾¿ò tip///////////////////////////////////
+////////////////////////////é”™è¯¯æç¤ºæ¡† tip///////////////////////////////////
 function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 
  $(obj).poshytip({
@@ -42,14 +42,14 @@ function setMsgPosition(obj,msg,direction){
 }
 
 
-////////////////////////////±íµ¥ÑùÊ½///////////////////////////////////
+////////////////////////////è¡¨å•æ ·å¼///////////////////////////////////
     $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
 var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
 
-// ¾­É´Î³É´ÊÂ¼ş
+// ç»çº±çº¬çº±äº‹ä»¶
     $('#warp-spinner')
       .spinner({
         min:1,
@@ -58,11 +58,11 @@ var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
             yarnNum = yarnNum + 1;
             var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
             $('#yarn-ul').append('<li class="lf yarn_para">'
-                + '<span class="lf para_tit">¾­É´2£º</span>'
+                + '<span class="lf para_tit">ç»çº±2ï¼š</span>'
                 + '<span class="lf include"></span>'
                 + '<div class="lf" style="width: 142px;">'
                   + '<span class="clearfix ingredient" >'
-                    + '<span class="lf ingredient_tit">³É·Ö</span>'
+                    + '<span class="lf ingredient_tit">æˆåˆ†</span>'
                     + '<input type="text" class="lf input_fabric" name="" readonly="true" id="warpIngredient2"/>'
                     + '<input name="FabricYarns['+ yarnNum +'].YarnSpecID" type="hidden" value="">'
                     + '<input name="FabricYarns['+ yarnNum +'].FactoryPrice" type="hidden" value="">'
@@ -70,11 +70,11 @@ var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
                   + '</span>'
                   + '<span class="clearfix thickness">'
                   + '<span class="clearfix thickness">'
-                    + '<span class="lf ingredient_tit">´ÖÏ¸</span>'
+                    + '<span class="lf ingredient_tit">ç²—ç»†</span>'
                     + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
                   + '</span>'
                 + '</div>'
-                + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">Ñ¡ÔñÉ´Ïß</div>'
+                + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">é€‰æ‹©çº±çº¿</div>'
                 + '</li>');
                 $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
                 + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="FabricYarns['+ yarnNum +'].DensityLength" class="density_input lf">'
@@ -97,22 +97,22 @@ var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
         yarnNum = yarnNum + 1;
         var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
         $('#abb-ul').append('<li class="lf yarn_para">'
-          + '<span class="lf para_tit">Î³É´'+ num +'£º</span>'
+          + '<span class="lf para_tit">çº¬çº±'+ num +'ï¼š</span>'
           + '<span class="lf include"></span>'
           + '<div class="lf" style="width: 142px;">'
             + '<span class="clearfix ingredient">'
-              + '<span class="lf ingredient_tit">³É·Ö</span>'
+              + '<span class="lf ingredient_tit">æˆåˆ†</span>'
               + '<input type="text" class="lf input_fabric" name="" readonly="true" id="weftIngredient'+num+'"/>'
               + '<input name="FabricYarns['+ yarnNum +'].YarnSpecID" type="hidden" value="">'
               + '<input name="FabricYarns['+ yarnNum +'].FactoryPrice" type="hidden" value="">'
               + '<input name="FabricYarns['+ yarnNum +'].IsChaineDensity" type="hidden" value="false">'
             + '</span>'
             + '<span class="clearfix thickness">'
-              + '<span class="lf ingredient_tit">´ÖÏ¸</span>'
+              + '<span class="lf ingredient_tit">ç²—ç»†</span>'
               + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+num+'"/>'
             + '</span>'
           + '</div>'
-          + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">Ñ¡ÔñÉ´Ïß</div>'
+          + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">é€‰æ‹©çº±çº¿</div>'
           + '</li>');
         $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
           + '<input type="text" id="abbSpinnerNum'+num+'" name="FabricYarns['+ yarnNum +'].DensityLength" class="density_input lf">');
@@ -135,7 +135,7 @@ var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
       $(this).toggleClass('selected');
     });
 
-    //È¾Ö¯·½·¨
+    //æŸ“ç»‡æ–¹æ³•
     $('#dyed-method label').on('click', function() {
 
       var index = $(this).index();
@@ -143,7 +143,7 @@ var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
       $('.AddItem .js-tab').eq(index).show();
     });
 
-////////////////////////////µ¯³ö²ã///////////////////////////////////
+////////////////////////////å¼¹å‡ºå±‚///////////////////////////////////
 
 var that;
 
@@ -155,7 +155,7 @@ var that;
     obj.find('.ingredient input:eq(2)').val(price);
   }
 
-//µã»÷¿ªÊ¼ºË¼Û µ¯³ö²ã ÅäÖÃÑ¡Ïî
+//ç‚¹å‡»å¼€å§‹æ ¸ä»· å¼¹å‡ºå±‚ é…ç½®é€‰é¡¹
     var nextStepUrl = $('.butt_return').attr('data-href');
     var startPriceLayer = {
         type: 2,
@@ -165,7 +165,7 @@ var that;
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 650)/2+'px',''],
-        closeBtn: [0, false], //È¥µôÄ¬ÈÏ¹Ø±Õ°´Å¥
+        closeBtn: [0, false], //å»æ‰é»˜è®¤å…³é—­æŒ‰é’®
         shift: 'top',
         fix : false,
         iframe: {src: nextStepUrl},
@@ -175,7 +175,7 @@ var that;
 
       }
 
-    // ¾­É´ÖÖÀàÑ¡ÔñÉ´Ïß
+    // ç»çº±ç§ç±»é€‰æ‹©çº±çº¿
     $('#yarn-ul').on('click', '.yarn_butt' , function() {
       that = this;
 
@@ -190,7 +190,7 @@ var that;
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 874)/2+'px',''],
-        closeBtn: [0, false], //È¥µôÄ¬ÈÏ¹Ø±Õ°´Å¥
+        closeBtn: [0, false], //å»æ‰é»˜è®¤å…³é—­æŒ‰é’®
         shift: 'top',
         fix : false,
         iframe: {src: $(that).attr('data-href')},
@@ -201,7 +201,7 @@ var that;
       });
     });
 
-    // Î³É´ÖÖÀàÑ¡ÔñÉ´Ïß
+    // çº¬çº±ç§ç±»é€‰æ‹©çº±çº¿
     $('#abb-ul').on('click', '.yarn_butt' , function() {
       that = this;
 
@@ -216,7 +216,7 @@ var that;
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 874)/2+'px',''],
-        closeBtn: [0, false], //È¥µôÄ¬ÈÏ¹Ø±Õ°´Å¥
+        closeBtn: [0, false], //å»æ‰é»˜è®¤å…³é—­æŒ‰é’®
         shift: 'top',
         fix : false,
         iframe: {src: $(that).attr('data-href')},
@@ -227,7 +227,7 @@ var that;
       });
     });
 
-    //Ñ¡ÔñÖ¯Ôì¹¤½É¹¤³§±¨¼Û
+    //é€‰æ‹©ç»‡é€ å·¥ç¼´å·¥å‚æŠ¥ä»·
     $('.factoryOffer_butt').on('click', function() {
       that = this;
       $.layer({
@@ -238,7 +238,7 @@ var that;
         shade: [0.8, '#000'],
         shadeClose: true,
         offset: [($(window).height() - 270)/2+'px',''],
-        closeBtn: [0, false], //È¥µôÄ¬ÈÏ¹Ø±Õ°´Å¥
+        closeBtn: [0, false], //å»æ‰é»˜è®¤å…³é—­æŒ‰é’®
         shift: 'top',
         fix : false,
         iframe: {src: $(that).attr('data-href')},
@@ -248,14 +248,14 @@ var that;
 
       });
     });
-/////////////////////////////// ¹Ø±ÕÒıµ¼²ã ///////////////////////////////////
+/////////////////////////////// å…³é—­å¼•å¯¼å±‚ ///////////////////////////////////
 function closeGuideLayer(){
   $.pagewalkthrough('close');
   $(document.body).css("overflow","");
 }
 
 
-/////////////////////////////// ±íµ¥ÑéÖ¤²¿·Ö ///////////////////////////////////
+/////////////////////////////// è¡¨å•éªŒè¯éƒ¨åˆ† ///////////////////////////////////
 
   // form
   var form = $("#fabricForm");
@@ -265,7 +265,7 @@ function closeGuideLayer(){
 
   });
 
-  //´íÎóĞÅÏ¢ÌáÊ¾µã
+  //é”™è¯¯ä¿¡æ¯æç¤ºç‚¹
   var icons = {
       error: '<i class="i-error"></i>'
   };
@@ -275,28 +275,28 @@ function closeGuideLayer(){
       // bindEvent();
   }
 
-  /** ±íµ¥ÑéÖ¤ */
+  /** è¡¨å•éªŒè¯ */
   var validator;
   function validate() {
 //addrules();
       validator = form.validate({
-          //ºöÂÔ
+          //å¿½ç•¥
           ignore: '.ignore',
           submitHandler: function (form) {
-              //Ìá½»±íµ¥
+              //æäº¤è¡¨å•
             // formSubmit(form);
             // closeGuideLayer();
             // $.ajax({
             //     cache: true,
             //     type: "POST",
             //     url: '/UIPricing/ashx/FabricPricingHandler.ashx',
-            //     data: $('#fabricForm').serialize(),// ÄãµÄformid
+            //     data: $('#fabricForm').serialize(),// ä½ çš„formid
             //     async: false,
             //     error: function(request) {
             //         alert("Connection error");
             //     },
             //     success: function(data) {
-            //       //×èÖ¹±íµ¥Ìá½»
+            //       //é˜»æ­¢è¡¨å•æäº¤
             //       $.layer(startPriceLayer);
             //       console.log(data);
             //       return false;
@@ -322,7 +322,7 @@ function closeGuideLayer(){
             // $.ajaxSubmit("", ,
             //   function (d) {
                   // if (!d.Success) {
-                  //     //Î´µÇÂ¼
+                  //     //æœªç™»å½•
                   //     if (d.Data == "-1") {
                   //         showLoginForm();
                   //     }
@@ -331,15 +331,15 @@ function closeGuideLayer(){
                   //     }
                   // } else {
                       // var priceData = d.Data;
-                      var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"ÃŞ100%   ","QDL_NAME":"0-1999Ã×","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"ÃæÁÏ»ú¸×È¾É«","RS_YSYQ":"Ç³","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"ËóÖ¯","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"Ìá»¨²¼","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"È¾É«","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"È«ÃŞÉ´","WXCF":"È«ÃŞÉ´","JXSZGGNAME":"È«ÃŞÉ´","WXSZGGNAME":"È«ÃŞÉ´","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"ÃÀÔª","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"¿¹¾ú´¦Àí£»Ôş»¨"},"Success":true,"Message":""};
-                      //Í¬²½äÖÈ¾ Ä£°åÒıÇæ
+                      var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"æ£‰100%   ","QDL_NAME":"0-1999ç±³","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"é¢æ–™æœºç¼¸æŸ“è‰²","RS_YSYQ":"æµ…","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"æ¢­ç»‡","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"æèŠ±å¸ƒ","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"æŸ“è‰²","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"å…¨æ£‰çº±","WXCF":"å…¨æ£‰çº±","JXSZGGNAME":"å…¨æ£‰çº±","WXSZGGNAME":"å…¨æ£‰çº±","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"ç¾å…ƒ","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"æŠ—èŒå¤„ç†ï¼›è½§èŠ±"},"Success":true,"Message":""};
+                      //åŒæ­¥æ¸²æŸ“ æ¨¡æ¿å¼•æ“
                       var resultTemplate = laytpl($("#resultTemplate").html()).render(priceData.Data);
                       $("#priceResult").html(resultTemplate);
                       var layerPrice = $.layer({
-                          type: 1,   //0-4µÄÑ¡Ôñ,
+                          type: 1,   //0-4çš„é€‰æ‹©,
                           title: false,
                           shadeClose: false,
-                          closeBtn: [0, false], //È¥µôÄ¬ÈÏ¹Ø±Õ°´Å¥
+                          closeBtn: [0, false], //å»æ‰é»˜è®¤å…³é—­æŒ‰é’®
                           shift: 'top',
                           fix: false,
                           area: ['1000px', '617px'],
@@ -348,28 +348,28 @@ function closeGuideLayer(){
                           },
                           success: function(){
                             var that = this;
-                            $('a.close').on('click',function(){
+                            $('span.btn_close,a.close').on('click',function(){
                                 layer.close(layerPrice);
                             })
                           }
-                          //ÊÕ²ØºË¼ÛÊÂ¼ş
+                          //æ”¶è—æ ¸ä»·äº‹ä»¶
                           // yes: function () {
-                          //     layer.prompt({ title: 'ÇëÌîĞ´ÊÕ²ØÃû³Æ', type: 3, length: 250 }, function (name, index) {
+                          //     layer.prompt({ title: 'è¯·å¡«å†™æ”¶è—åç§°', type: 3, length: 250 }, function (name, index) {
                           //         var loadi = $.layer({ type: 3, border: [0], bgcolor: '' });
                           //         $.ajaxjson(fabricPricingAshxPath, { Action: "addCollect", recordid: priceData.SYSNUMBER, collectname: name },
                           //       function (d) {
-                          //           //¿îÊ½³ßÂëÍ¬²½äÖÈ¾ Ä£°åÒıÇæ
+                          //           //æ¬¾å¼å°ºç åŒæ­¥æ¸²æŸ“ æ¨¡æ¿å¼•æ“
                           //           if (d.Success) {
                           //               if (d.Success) {
                           //                   layer.close(loadi);
                           //                   layer.close(index);
-                          //                   layer.msg('ºË¼Û½á¹ûÊÕ²Ø³É¹¦£¬ÔÚ»áÔ±ÖĞĞÄ¡°ÎÒµÄºË¼Û¡±ÖĞ²é¿´£¡', 2, { type: 1, shade: false, rate: 'top' });
+                          //                   layer.msg('æ ¸ä»·ç»“æœæ”¶è—æˆåŠŸï¼Œåœ¨ä¼šå‘˜ä¸­å¿ƒâ€œæˆ‘çš„æ ¸ä»·â€ä¸­æŸ¥çœ‹ï¼', 2, { type: 1, shade: false, rate: 'top' });
                           //               } else {
                           //                   if (d.Data == "-1") {
                           //                       showLoginForm();
                           //                   }
                           //                   else {
-                          //                       layer.alert("ºË¼Û½á¹ûÊÕ²ØÊ§°Ü£¡", 8, !1);
+                          //                       layer.alert("æ ¸ä»·ç»“æœæ”¶è—å¤±è´¥ï¼", 8, !1);
                           //                   }
                           //               }
                           //           }
@@ -502,100 +502,100 @@ function closeGuideLayer(){
           },
           messages: {
               fabricWidth: {
-                  required: icons.error + 'ÇëÊäÈëÃæÁÏÃÅ·ù£¡',
-                  number: icons.error + 'ÃæÁÏÃÅ·ùÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  maxlength: icons.error + 'ÃæÁÏÃÅ·ùÖµ¹ı³¤£¡'
+                  required: icons.error + 'è¯·è¾“å…¥é¢æ–™é—¨å¹…ï¼',
+                  number: icons.error + 'é¢æ–™é—¨å¹…å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  maxlength: icons.error + 'é¢æ–™é—¨å¹…å€¼è¿‡é•¿ï¼'
               },
               warpSpinnerNum1: {
-                  number: icons.error + '¾­ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈë¾­ÃÜÖµ£¡',
-                  maxlength: icons.error + '¾­ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'ç»å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥ç»å¯†å€¼ï¼',
+                  maxlength: icons.error + 'ç»å¯†å€¼è¿‡å¤§ï¼'
               },
               warpSpinnerNum2: {
-                  number: icons.error + '¾­ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈë¾­ÃÜÖµ£¡',
-                  maxlength: icons.error + '¾­ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'ç»å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥ç»å¯†å€¼ï¼',
+                  maxlength: icons.error + 'ç»å¯†å€¼è¿‡å¤§ï¼'
               },
               warpIngredient1: {
-                  required: icons.error + 'ÇëÊäÈë¾­É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥ç»çº±æˆåˆ†ï¼'
               },
               warpIngredient2: {
-                  required: icons.error + 'ÇëÊäÈë¾­É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥ç»çº±æˆåˆ†ï¼'
               },
               warpDiameter1: {
-                  required: icons.error + 'ÇëÊäÈë¾­É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥ç»çº±ç²—ç»†ï¼'
               },
               warpDiameter2: {
-                  required: icons.error + 'ÇëÊäÈë¾­É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥ç»çº±ç²—ç»†ï¼'
               },
               abbSpinnerNum1: {
-                  number: icons.error + 'Î³ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈëÎ³ÃÜÖµ£¡',
-                  maxlength: icons.error + 'Î³ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'çº¬å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥çº¬å¯†å€¼ï¼',
+                  maxlength: icons.error + 'çº¬å¯†å€¼è¿‡å¤§ï¼'
               },
               abbSpinnerNum2: {
-                  number: icons.error + 'Î³ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈëÎ³ÃÜÖµ£¡',
-                  maxlength: icons.error + 'Î³ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'çº¬å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥çº¬å¯†å€¼ï¼',
+                  maxlength: icons.error + 'çº¬å¯†å€¼è¿‡å¤§ï¼'
               },
               abbSpinnerNum3: {
-                  number: icons.error + 'Î³ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈëÎ³ÃÜÖµ£¡',
-                  maxlength: icons.error + 'Î³ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'çº¬å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥çº¬å¯†å€¼ï¼',
+                  maxlength: icons.error + 'çº¬å¯†å€¼è¿‡å¤§ï¼'
               },
               abbSpinnerNum4: {
-                  number: icons.error + 'Î³ÃÜÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  required: icons.error + 'ÇëÊäÈëÎ³ÃÜÖµ£¡',
-                  maxlength: icons.error + 'Î³ÃÜÖµ¹ı´ó£¡'
+                  number: icons.error + 'çº¬å¯†å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  required: icons.error + 'è¯·è¾“å…¥çº¬å¯†å€¼ï¼',
+                  maxlength: icons.error + 'çº¬å¯†å€¼è¿‡å¤§ï¼'
               },
               weftIngredient1: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±æˆåˆ†ï¼'
               },
               weftIngredient2: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±æˆåˆ†ï¼'
               },
               weftIngredient3: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±æˆåˆ†ï¼'
               },
               weftIngredient4: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´³É·Ö£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±æˆåˆ†ï¼'
               },
               weftDiameter1: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±ç²—ç»†ï¼'
               },
               weftDiameter2: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±ç²—ç»†ï¼'
               },
               weftDiameter3: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±ç²—ç»†ï¼'
               },
               weftDiameter4: {
-                  required: icons.error + 'ÇëÊäÈëÎ³É´´ÖÏ¸£¡'
+                  required: icons.error + 'è¯·è¾“å…¥çº¬çº±ç²—ç»†ï¼'
               },
               exchangeRate:{
-                  required: icons.error + 'ÇëÊäÈë»ãÂÊ£¡',
-                  number: icons.error + '»ãÂÊÖµÖ»ÄÜÊÇÊı×Ö£¡',
-                  maxlength: icons.error + 'ÊäÈëÊıÖµ¹ı³¤£¡'
+                  required: icons.error + 'è¯·è¾“å…¥æ±‡ç‡ï¼',
+                  number: icons.error + 'æ±‡ç‡å€¼åªèƒ½æ˜¯æ•°å­—ï¼',
+                  maxlength: icons.error + 'è¾“å…¥æ•°å€¼è¿‡é•¿ï¼'
               },
               factoryPrice1: {
-                  number: icons.error + 'Ö»ÄÜÊäÈëÊı×Ö£¡',
-                  maxlength: icons.error + 'ÊäÈëÊıÖµ¹ı³¤£¡'
+                  number: icons.error + 'åªèƒ½è¾“å…¥æ•°å­—ï¼',
+                  maxlength: icons.error + 'è¾“å…¥æ•°å€¼è¿‡é•¿ï¼'
               },
               factoryPrice2:{
-                  number: icons.error + 'Ö»ÄÜÊäÈëÊı×Ö£¡',
-                  maxlength: icons.error + 'ÊäÈëÊıÖµ¹ı³¤£¡'
+                  number: icons.error + 'åªèƒ½è¾“å…¥æ•°å­—ï¼',
+                  maxlength: icons.error + 'è¾“å…¥æ•°å€¼è¿‡é•¿ï¼'
 
               },
               factoryPrice3: {
-                  number: icons.error + 'Ö»ÄÜÊäÈëÊı×Ö£¡',
-                  maxlength: icons.error + 'ÊäÈëÊıÖµ¹ı³¤£¡'
+                  number: icons.error + 'åªèƒ½è¾“å…¥æ•°å­—ï¼',
+                  maxlength: icons.error + 'è¾“å…¥æ•°å€¼è¿‡é•¿ï¼'
               }
           }
       });
   }
 
 
-//ºË¼Û·½Ê½£ºÑ¡ÔñÒ×¼Ò·Ä¹¤½É¿âºË¼Û   Ñ¡Ôñ¹¤³§±¨¼ÛºË¼Û
+//æ ¸ä»·æ–¹å¼ï¼šé€‰æ‹©æ˜“å®¶çººå·¥ç¼´åº“æ ¸ä»·   é€‰æ‹©å·¥å‚æŠ¥ä»·æ ¸ä»·
 $(document).ready(function(){
   $('.factoryOffer-box').hide();
   $('#easySoftHomePrice_rad').bind('click',function(){
