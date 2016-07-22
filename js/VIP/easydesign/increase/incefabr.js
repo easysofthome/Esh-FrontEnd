@@ -52,6 +52,22 @@ function setMsgPosition(obj,msg,direction){
   $('#density_unit,#sel4,#sel5,#warp_flower_size,#across_flower_size,#exchange_rate').customSelect({width:"90px",padding:"12px 5px"});
 
 
+  $('#fabric-type').on('change',function(){
+      var index,data = [{'id': 1,'name': 'zhang'},{'id': 2,'name': 'li'},{'id': 3,'name': 'zheng'},{'id': 4,'name': 'wang'}];
+      var selectObj = $('#fabric-type-second');
+
+      $('#fabric-type-second').html('');
+      $('.customSelectInner:eq(1)').html('');
+
+      for(index in data){
+          selectObj.append('<option value="'+ data[index].id +'">'+ data[index].name + '</option>');
+      }
+
+
+
+  })
+
+
   //纬纱/经纱 成分增减
   // 经纱纬纱事件
     $('#warp-spinner')
