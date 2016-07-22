@@ -59,21 +59,24 @@ function setMsgPosition(obj,msg,direction){
         min:1,
         max:2,
         addEvent: function () {
+          var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
           $('#yarn-ul').append('<li class="lf yarn_para">'
             + '<span class="lf para_tit">经纱2：</span>'
             + '<span class="lf include"></span>'
             + '<div class="lf" style="width: 142px;">'
               + '<span class="clearfix ingredient" >'
                 + '<span class="lf ingredient_tit">成分</span>'
-                + '<input class="lf input_fabric" name="" readonly="true" id="warpIngredient2"/>'
+                + '<input type="text" class="lf input_fabric" name="JXCF" readonly="true" id="warpIngredient2"/>'
+                + '<input name="yarnId" type="hidden" value="">'
+                + '<input name="yarnPrice" type="hidden" value="">'
               + '</span>'
               + '<span class="clearfix thickness">'
               + '<span class="clearfix thickness">'
                 + '<span class="lf ingredient_tit">粗细</span>'
-                + '<input class="lf input_fabric" name="" readonly="true" id="warpDiameter2"/>'
+                + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
               + '</span>'
             + '</div>'
-            + '<div class="yarn_butt lf">选择纱线</div>'
+            + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
           + '</li>');
           $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
             + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="warpSpinnerNum2" class="density_input lf">'
@@ -93,20 +96,23 @@ function setMsgPosition(obj,msg,direction){
       max:4,
       addEvent:function () {
         var num = $('#abb-ul li').length+1;
+        var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
         $('#abb-ul').append('<li class="lf yarn_para">'
           + '<span class="lf para_tit">纬纱'+ num +'：</span>'
           + '<span class="lf include"></span>'
           + '<div class="lf" style="width: 142px;">'
             + '<span class="clearfix ingredient">'
               + '<span class="lf ingredient_tit">成分</span>'
-              + '<input class="lf input_fabric" name="" readonly="true" id="weftIngredient'+num+'"/>'
+              + '<input type="text" class="lf input_fabric" name="WXCF" readonly="true" id="weftIngredient'+num+'"/>'
+              + '<input name="yarnId" type="hidden" value="">'
+              + '<input name="yarnPrice" type="hidden" value="">'
             + '</span>'
             + '<span class="clearfix thickness">'
               + '<span class="lf ingredient_tit">粗细</span>'
-              + '<input class="lf input_fabric" name="" readonly="true" id="weftDiameter'+num+'"/>'
+              + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+num+'"/>'
             + '</span>'
           + '</div>'
-          + '<div class="yarn_butt lf">选择纱线</div>'
+          + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
           + '</li>');
         $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
           + '<input type="text" id="abbSpinnerNum'+num+'" name="abbSpinnerNum'+num+'" class="density_input lf">');
@@ -132,6 +138,12 @@ function setMsgPosition(obj,msg,direction){
 
   //选中样式
   $('.handle_one').click(function() {
+    var obj = $(this).find('input');
+    if(obj.prop('checked')){
+      obj.prop('checked',false);
+    } else {
+      obj.prop('checked',true);
+    }
     $(this).toggleClass('selected');
   });
 
@@ -141,6 +153,11 @@ function setMsgPosition(obj,msg,direction){
 
   // 经纱种类选择纱线
   $('#yarn-ul').on('click', '.yarn_butt' , function() {
+    that = this;
+
+    $('.curLayer').removeClass('curLayer');
+    $(that).parents('li').addClass('curLayer');
+
     $.layer({
       type: 2,
       title: false,
@@ -152,7 +169,7 @@ function setMsgPosition(obj,msg,direction){
       closeBtn: [0, false], //去掉默认关闭按钮
       shift: 'top',
       fix : false,
-      iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+      iframe: {src: $(that).attr('data-href')},
       success: function () {
 
       }
@@ -162,6 +179,11 @@ function setMsgPosition(obj,msg,direction){
 
   // 纬纱种类选择纱线
     $('#abb-ul').on('click', '.yarn_butt' , function() {
+      that = this;
+
+      $('.curLayer').removeClass('curLayer');
+      $(that).parents('li').addClass('curLayer');
+
       $.layer({
         type: 2,
         title: false,
@@ -173,7 +195,7 @@ function setMsgPosition(obj,msg,direction){
         closeBtn: [0, false], //去掉默认关闭按钮
         shift: 'top',
         fix : false,
-        iframe: {src: '/html/easyPricing/pricing/storehouse.html'},
+        iframe: {src: $(that).attr('data-href')},
         success: function () {
 
         }
@@ -183,6 +205,7 @@ function setMsgPosition(obj,msg,direction){
 
 
 //iframe 弹出层 保存并发布
+var nextStepUrl = $('.butt_return').attr('data-href');
 var startPriceLayer = {
       type: 2,
       title: false,
@@ -194,7 +217,7 @@ var startPriceLayer = {
       closeBtn: [0, false], //去掉默认关闭按钮
       shift: 'top',
       fix : false,
-      iframe: {src: '/html/easyPricing/Pop-ups/result.html'},
+      iframe: {src: nextStepUrl},
       success: function () {
       }
     }
