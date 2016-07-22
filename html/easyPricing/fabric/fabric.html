@@ -5,6 +5,9 @@
   <title>易家纺-电子商务平台|面料核价</title>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/Pop-ups/result.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
@@ -465,73 +468,85 @@
 
 <!-- laytpl模板引擎 -->
 <script id="resultTemplate" type="text/html">
-  <div class="result">
-    <div class="clearfix Row">
-      <div class="lf res_tit">织造种类：</div>
-      <div class="lf res_con">{{ d.FL_NAME }}</div>
-    </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">染织方法：</div>
-      <div class="lf res_con">{{ d.DY_NAME }}</div>
-    </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">有效门幅({{ d.INCH_CM }})：</div>
-      <div class="lf res_con">{{d.INCH_CM=="CM"?d.WIDTH_CM:d.WIDTH_INCH}}</div>
-    </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">经纬密度({{ d.INIUNIT }}：</div>
-      <div class="lf res_con">{{d.JXMD}}*{{d.WXMD}}</div>
-    </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">织物密度/平方英寸：</div>
-      <div class="lf res_con">{{ d.TVALUE }}T/INCH</div>
-    </div>
-    {{# for(var i = 0; i < d.JXCF.split("+").length; i++){ }}
-      <div class="clearfix Row">
-        <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
-        <div class="lf res_con">
-          <span>成分： {{d.JXCF.split("+")[i]}}</span>
-          <span class="data_mar">粗细： {{d.JSGG.split("+")[i]}}</span>
-          <span class="data_mar">股线： {{d.JX_GUXIAN.split("+")[i]}}</span>
-          <span class="data_mar">成分比：  {{d.JX_CFBL.split("+")[i]}}</span>
+  <div class="popupbox">
+    <p class="title clearfix">
+      <a class="cur lf">面料核价结果</a>
+      <span class="rg btn_close"></span>
+    </p>
+    <div class="tabbox">
+      <div class="result">
+        <div class="clearfix Row">
+          <div class="lf res_tit">织造种类：</div>
+          <div class="lf res_con">{{ d.FL_NAME }}</div>
         </div>
-      </div>
-    {{#}}}
-    {{# for(var i = 0; i < d.WXCF.split("+").length; i++){ }}
-      <div class="clearfix Row">
-        <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
-        <div class="lf res_con">
-          <span>成分： {{d.WXCF.split("+")[i]}}</span>
-          <span class="data_mar">粗细： {{d.WSGG.split("+")[i]}}</span>
-          <span class="data_mar">股线： {{d.WX_GUXIAN.split("+")[i]}}</span>
-          <span class="data_mar">成分比：  {{d.WX_CFBL.split("+")[i]}}</span>
+        <div class="clearfix Row">
+          <div class="lf res_tit">染织方法：</div>
+          <div class="lf res_con">{{ d.DY_NAME }}</div>
         </div>
-      </div>
-    {{#}}}
+        <div class="clearfix Row">
+          <div class="lf res_tit">有效门幅({{ d.INCH_CM }})：</div>
+          <div class="lf res_con">{{d.INCH_CM=="CM"?d.WIDTH_CM:d.WIDTH_INCH}}</div>
+        </div>
+        <div class="clearfix Row">
+          <div class="lf res_tit">经纬密度({{ d.INIUNIT }}：</div>
+          <div class="lf res_con">{{d.JXMD}}*{{d.WXMD}}</div>
+        </div>
+        <div class="clearfix Row">
+          <div class="lf res_tit">织物密度/平方英寸：</div>
+          <div class="lf res_con">{{ d.TVALUE }}T/INCH</div>
+        </div>
+        {{# for(var i = 0; i < d.JXCF.split("+").length; i++){ }}
+          <div class="clearfix Row">
+            <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
+            <div class="lf res_con">
+              <span>成分： {{d.JXCF.split("+")[i]}}</span>
+              <span class="data_mar">粗细： {{d.JSGG.split("+")[i]}}</span>
+              <span class="data_mar">股线： {{d.JX_GUXIAN.split("+")[i]}}</span>
+              <span class="data_mar">成分比：  {{d.JX_CFBL.split("+")[i]}}</span>
+            </div>
+          </div>
+        {{#}}}
+        {{# for(var i = 0; i < d.WXCF.split("+").length; i++){ }}
+          <div class="clearfix Row">
+            <div class="lf res_tit"> 经纱{{i+1}}规格:</div>
+            <div class="lf res_con">
+              <span>成分： {{d.WXCF.split("+")[i]}}</span>
+              <span class="data_mar">粗细： {{d.WSGG.split("+")[i]}}</span>
+              <span class="data_mar">股线： {{d.WX_GUXIAN.split("+")[i]}}</span>
+              <span class="data_mar">成分比：  {{d.WX_CFBL.split("+")[i]}}</span>
+            </div>
+          </div>
+        {{#}}}
 
-    <div class="clearfix Row">
-      <div class="lf res_tit">面料克重：</div>
-      <div class="lf res_con"> {{ d.MLGZ }}克/平方米</div>
-    </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">面料成分：</div>
-      <div class="lf res_con">{{ d.MLCOMPONENT }}</div>
-    </div>
-    {{#if(d.HCLFNAME!=""){}}
-      <div class="clearfix Row">
-        <div class="lf res_tit">后处理费：</div>
-        <div class="lf res_con">
-          <span class="data_mar">{{ d.HCLFNAME }}</span>
+        <div class="clearfix Row">
+          <div class="lf res_tit">面料克重：</div>
+          <div class="lf res_con"> {{ d.MLGZ }}克/平方米</div>
+        </div>
+        <div class="clearfix Row">
+          <div class="lf res_tit">面料成分：</div>
+          <div class="lf res_con">{{ d.MLCOMPONENT }}</div>
+        </div>
+        {{#if(d.HCLFNAME!=""){}}
+          <div class="clearfix Row">
+            <div class="lf res_tit">后处理费：</div>
+            <div class="lf res_con">
+              <span class="data_mar">{{ d.HCLFNAME }}</span>
+            </div>
+          </div>
+        {{# }}}
+        <div class="clearfix Row">
+          <div class="lf res_tit">面料价格（人民币）：</div>
+          <div class="lf res_con">{{ d.PRICE }}元（每米）</div>
+        </div>
+        <div class="clearfix Row">
+          <div class="lf res_tit">面料价格（美元）：</div>
+          <div class="lf res_con">{{ d.FOBPRICE }}元（每米）</div>
         </div>
       </div>
-    {{# }}}
-    <div class="clearfix Row">
-      <div class="lf res_tit">面料价格（人民币）：</div>
-      <div class="lf res_con">{{ d.PRICE }}元（每米）</div>
     </div>
-    <div class="clearfix Row">
-      <div class="lf res_tit">面料价格（美元）：</div>
-      <div class="lf res_con">{{ d.FOBPRICE }}元（每米）</div>
+    <div class="btnbox clearfix">
+      <a class="btn_blue lf" href="#">收藏核价</a>
+      <a class="btn_gray lf close" href="#">关闭</a>
     </div>
   </div>
 </script>
