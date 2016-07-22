@@ -47,7 +47,7 @@ function setMsgPosition(obj,msg,direction){
 
 
   //下拉框
-  $('#fabric-type').customSelect({width:"120px",padding:"12px 5px"});
+  $('#fabric-type,#fabric-type-second').customSelect({width:"120px",padding:"12px 5px"});
   $('#minimum_order_num').customSelect({width:"120px",padding:"12px 5px"});
   $('#density_unit,#sel4,#sel5,#warp_flower_size,#across_flower_size,#exchange_rate').customSelect({width:"90px",padding:"12px 5px"});
 
