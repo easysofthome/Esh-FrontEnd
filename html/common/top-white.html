@@ -11,15 +11,6 @@
 
    <div class="header-top">
      <div class="top clearfix">
-       <a id="username" href="/html/VIP/common/index.html" class="lf butt_right none"><i>0</i></a>
-       <a id="user_logout" class="lf butt_right none" href="javascript:void(0)">退出</a>
-       <a id="user_login" href="/html/VIP/common/regLog/login.html" class="lf butt_right" id="login">登录</a>
-       <a id="user_reg" href="/html/VIP/common/regLog/register.html" class="lf butt_right" id="register">注册</a>
-       <a href="/html/VIP/common/Pay/purchase.html" id="isNotVip" class="lf butt_right">开通VIP会员</a>
-       <a href="/html/VIP/common/Pay/renewals.html" id="isVip" class="lf butt_right vip-ser none">
-          点击续费
-       </a>
-       <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw" class="lf butt_right">客服服务</a>
        <a href="/html/easysofthome/English.html" class="rg butt_right">国际版</a>
        <a href="/html/easysofthome/download/download.html" class="rg butt_right">易家纺下载区</a>
        <a href="/html/easysofthome/helpCenter/index.html" class="rg butt_right">帮助中心</a>
@@ -47,12 +38,12 @@ window.ready = function(fn){
 }
 
 window.ready(function(){
-  seajs.use(['js/front/common/head'],function(v){
-     var objJson = {'isLogin':true,'memberName':'esh_12','znxCount':2,'DaysRemaining':100,'beansNum':20,'IsVip':false};
-        v.userLogout = function(){
-          window.location = '/html/VIP/common/regLog/login.html';
-        };
-        v.showHeaderInfo(objJson);
+ seajs.use(['js/front/common/head'],function(v){
+    // var objJson = {'Success':true,'LOGIN_NAME':'esh_12','znxCount':2,'IsVip':0};
+    //     v.userLogout = function(){
+    //       window.location = '/html/VIP/common/regLog/login.html';
+    //     };
+    //     v.loadLoginInfo(objJson);
     });
 });
 </script>

@@ -23,6 +23,7 @@ var alias = {
     'tip': 'js/front/lib/tip/jquery.poshytip',    //提醒
     'layer': 'js/front/lib/layer/layer',      //弹窗
     'layerExt': 'js/front/lib/layer/layer.ext',      //弹窗扩展
+    'laytpl': 'js/front/lib/layer/laytpl',      //弹窗扩展
 
     'pagewalkthrough': 'js/front/lib/pagewalkthrough/jquery.pagewalkthrough',            // 引导操作插件
 

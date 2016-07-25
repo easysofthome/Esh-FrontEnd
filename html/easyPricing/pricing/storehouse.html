@@ -165,6 +165,15 @@
     $('.close,.btn_close').click(function(){
       parent.layer.close(index);
     });
+
+    $('.access_butt').on('click', function() {
+      var ingredient = $(this).parents('.access_data').find('li:eq(0)').html();
+      var standard = $(this).parents('.access_data').find('li:eq(2)').html();
+
+      var price = $(this).parents('.access_data').find('li:eq(7)').html();
+      parent.window.parentFn(ingredient,standard,1,price);
+      parent.layer.close(index);
+    })
   </script>
 
 </body>

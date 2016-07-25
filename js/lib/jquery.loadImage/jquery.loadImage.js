@@ -13,7 +13,78 @@ height      图片最大宽
 */
 define(function (require, exports, module) {
 require('spin'); //依赖插件 用js实现的等待图标
+  //依赖插件等待图标配置选项
+  var spin_opts_json = {'normal':{
+    lines: 11, // The number of lines to draw
+    length: 0, // The length of each line
+    width: 20, // The line thickness
+    radius: 40, // The radius of the inner circle
+    corners: 1, // Corner roundness (0..1)
+    rotate: 48, // The rotation offset
+    color: '#000', // #rgb or #rrggbb
+    speed: 1, // Rounds per second
+    trail: 60, // Afterglow percentage
+    shadow: false, // Whether to render a shadow
+    hwaccel: false, // Whether to use hardware acceleration
+    className: 'spinner', // The CSS class to assign to the spinner
+    zIndex: 27, // The z-index (defaults to 2000000000)
+    top: '50%', // Top position relative to parent in px
+    left: '50%' // Left position relative to parent in px}
+    },
+    'small':{
+    lines: 7, // The number of lines to draw
+    length: 0, // The length of each line
+    width: 5, // The line thickness
+    radius: 8, // The radius of the inner circle
+    corners: 1, // Corner roundness (0..1)
+    rotate: 23, // The rotation offset
+    color: '#000', // #rgb or #rrggbb
+    speed: 1, // Rounds per second
+    trail: 53, // Afterglow percentage
+    shadow: false, // Whether to render a shadow
+    hwaccel: false, // Whether to use hardware acceleration
+    className: 'spinner', // The CSS class to assign to the spinner
+    zIndex: 9999, // The z-index (defaults to 2000000000)
+    top: '50%', // Top position relative to parent in px
+    left: '50%' // Left position relative to parent in px
+  }
 
+  };
+var spinObj ={'spinner':{},'$windowLayer':{}};
+
+spinObj.loadSpin = function(size){
+  if($('#loadSpin').length>0){
+    return false;
+  }
+  var spin_opts = {};
+  if(!size || size == 'normal'){
+    spin_opts =  spin_opts_json.normal;
+  }else if(size == 'small'){
+    spin_opts =  spin_opts_json.small;
+  }
+
+  $('body').css('overflow','hidden');
+  var winW = $(window).width();
+  var winH = $(window).height();
+  var scrollTop = $(document).scrollTop();
+  spinObj.$windowLayer = $('<div id="loadSpin"></div>');
+  spinObj.$windowLayer.css({'position':'absolute','z-index':999999,'opacity': 0.3,'filter': 'alpha(opacity=30)','background': '#000','top':(0+scrollTop),'left':0,'width':winW,'height':winH,'line-height':winH+'px'});
+  spinObj.$windowLayerSub = $('<div id="loadSpinSub"></div>');
+  spin_opts.top = (scrollTop + (winH-spin_opts.width)/2) + 'px';
+  spinObj.spinner = new Spinner(spin_opts);
+  spinObj.spinner.spin($('body')[0]);
+  $('body').append(spinObj.$windowLayer);
+  return true;
+}
+
+spinObj.removeSpin = function(){
+  spinObj.spinner.spin();
+  spinObj.$windowLayer.remove();
+  $('body').css('overflow','');
+}
+
+exports.loadSpin = spinObj.loadSpin;
+exports.removeSpin = spinObj.removeSpin;
 
 jQuery.fn.LoadImage=function(option){
   //默认配置选项
@@ -30,9 +101,8 @@ jQuery.fn.LoadImage=function(option){
   };
 
   var opts = $.fn.extend({},defalutOpts,option);
-
   //依赖插件等待图标配置选项
-  var spin_opts_json = {'normal':{
+  var loadImage_opts_json = {'normal':{
     lines: 11, // The number of lines to draw
     length: 0, // The length of each line
     width: 20, // The line thickness
@@ -69,11 +139,12 @@ jQuery.fn.LoadImage=function(option){
 
   };
 
+
   var spin_opts = {};
   if(opts.spin_size=='normal'){
-   spin_opts =  spin_opts_json.normal;
+   spin_opts =  loadImage_opts_json.normal;
   }else if(opts.spin_size=='small'){
-    spin_opts =  spin_opts_json.small;
+    spin_opts =  loadImage_opts_json.small;
   }else if(opts.spin_size=='big'){
 
   }

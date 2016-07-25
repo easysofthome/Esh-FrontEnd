@@ -54,15 +54,22 @@ define(function (require, exports, module) {
   var portArray = [], portTemp;
 
   $(document).ready(function(){
-    portTemp = $('[name=port]').val();
-    if(portTemp.trim() == '') return;
-    portArray = portTemp.split(',');
-    $('.port-tag-box').html('<dl></dl>');
-    for (var i = portArray.length - 1; i >= 0; i--) {
-      $('.port-tag-box dl')
-        .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
-    }
+    showLabel();
   });
+
+  function showLabel(){
+    portTemp = $('[name=port]').val();
+    if(portTemp.trim() == ''){
+      $('.port-tag-box').html('请输入港口名称');
+    } else {
+      portArray = portTemp.split(',');
+      $('.port-tag-box').html('<dl></dl>');
+      for (var i = portArray.length - 1; i >= 0; i--) {
+        $('.port-tag-box dl')
+          .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
+      }
+    }
+  }
 
 // 经过事件
   $('.port').on('mouseover','.port-tag-box', function() {
@@ -240,7 +247,7 @@ define(function (require, exports, module) {
 
 */
 
-
+module.exports.showLabel = showLabel;
 
 
 });
