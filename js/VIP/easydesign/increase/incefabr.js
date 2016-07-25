@@ -13,9 +13,13 @@ define(function(require, exports, module) {
     //占位符
     placehold.init('input');
 
-    // var FancyRadioCheckBox = require('FancyRadioCheckBox');
-    //加载单选按钮样式
-    // FancyRadioCheckBox.init();
+    // 染织方法
+    $('#dyed-method label').on('click', function() {
+        var index = $(this).index();
+        $('.AddItem .js-tab').hide();
+        $('.AddItem .js-tab').eq(index).show();
+    });
+
 
     // 下拉框
     $('#fabricType,#fabricTypeSecond').customSelect({width:"120px",padding:"12px 5px"});
