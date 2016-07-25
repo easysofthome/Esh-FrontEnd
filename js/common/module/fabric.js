@@ -8,6 +8,14 @@ define(function(require, exports, module) {
     var spinner = require('spinner');
     var cus =  require('customSelect');
 
+
+/////////////////////////////// 表单样式部分 ///////////////////////////////////
+    var FancyRadioCheckBox = require('FancyRadioCheckBox');
+    加载单选按钮样式
+    FancyRadioCheckBox.init();
+/////////////////////////////// /表单样式部分 ///////////////////////////////////
+
+
 ////////////////////////////错误提示框 tip///////////////////////////////////
     function showTip(obj,msg,alignX,alignY,offsetX,offsetY){
 
