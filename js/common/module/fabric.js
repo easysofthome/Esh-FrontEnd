@@ -282,9 +282,8 @@ define(function(require, exports, module) {
 
 
 module.exports.setMsgPosition = setMsgPosition;
+module.exports.closeGuideLayer = closeGuideLayer;
 module.exports.init = init;
-// 接口 参数为回调函数 表单验证成功后执行
-// module.exports.validate = validate;
 
 });
 

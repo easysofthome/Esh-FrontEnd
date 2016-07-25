@@ -59,14 +59,15 @@ define(function (require, exports, module) {
 
   function showLabel(){
     portTemp = $('[name=port]').val();
-    if(portTemp.trim() == '')
+    if(portTemp.trim() == ''){
       $('.port-tag-box').html('请输入港口名称');
-
-    portArray = portTemp.split(',');
-    $('.port-tag-box').html('<dl></dl>');
-    for (var i = portArray.length - 1; i >= 0; i--) {
-      $('.port-tag-box dl')
-        .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
+    } else {
+      portArray = portTemp.split(',');
+      $('.port-tag-box').html('<dl></dl>');
+      for (var i = portArray.length - 1; i >= 0; i--) {
+        $('.port-tag-box dl')
+          .append(' <dd class="port-tag">' + portArray[i] + '<span>x</span></dd>');
+      }
     }
   }
 

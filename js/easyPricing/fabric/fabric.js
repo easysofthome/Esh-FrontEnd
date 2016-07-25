@@ -183,10 +183,9 @@ define(function(require, exports, module) {
         }
     };
     fabric.submitHandler = function (form) {
-        console.log(111);
         //提交表单
         // formSubmit(form);
-        // closeGuideLayer();
+        // fabric.closeGuideLayer();
         // $.ajax({
         //     cache: true,
         //     type: "POST",
