@@ -30,8 +30,7 @@ define(function(require, exports, module) {
             type: "POST",
             url: '/MemberCenter/Fabric/GetDesignPropertys?id=' + $(that).val(),
             success: function (data) {
-                console.log(data);
-                var index,data = [{'id': 1,'name': 'zhang'},{'id': 2,'name': 'li'},{'id': 3,'name': 'zheng'},{'id': 4,'name': 'wang'}];
+                var index;
                 var selectObj = $('#fabricTypeSecond');
                 // 清空select(html、值)
                 selectObj.html('<option value="">请选择面料分类</option>');
