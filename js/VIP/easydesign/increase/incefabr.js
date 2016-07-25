@@ -31,6 +31,7 @@ define(function(require, exports, module) {
             url: '/MemberCenter/Fabric/GetDesignPropertys?id=' + $(that).val(),
             success: function (data) {
                 var index;
+                data = JSON.parse(data);
                 var selectObj = $('#fabricTypeSecond');
                 // 清空select(html、值)
                 selectObj.html('<option value="">请选择面料分类</option>');
