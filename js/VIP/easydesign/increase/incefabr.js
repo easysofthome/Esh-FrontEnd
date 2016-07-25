@@ -25,16 +25,24 @@ define(function(require, exports, module) {
 
     // 花型选择 二级联动
     $('#fabricType').on('change',function(){
-        var index,data = [{'id': 1,'name': 'zhang'},{'id': 2,'name': 'li'},{'id': 3,'name': 'zheng'},{'id': 4,'name': 'wang'}];
-        var selectObj = $('#fabricTypeSecond');
-        // 清空select(html、值)
-        selectObj.html('<option value="">请选择面料分类</option>');
-        // $('.customSelectInner:eq(1)').html('');
+        var that = this;
+        $.ajax({
+            type: "POST",
+            url: '/MemberCenter/Fabric/GetDesignPropertys?id=' + $(that).val(),
+            success: function (data) {
+                var index;
+                data = JSON.parse(data);
+                var selectObj = $('#fabricTypeSecond');
+                // 清空select(html、值)
+                selectObj.html('<option value="">请选择面料分类</option>');
+                // $('.customSelectInner:eq(1)').html('');
 
-        for(index in data){
-            selectObj.append('<option value="'+ data[index].id +'">'+ data[index].name + '</option>');
-        }
-
+                for(index in data){
+                    selectObj.append('<option value="'+ data[index].Id +'">'+ data[index].Name + '</option>');
+                }
+            },
+            error: function (err) { console.log('connect error!'); }
+        });
     })
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
@@ -57,11 +65,11 @@ define(function(require, exports, module) {
     fabric.submitHandler = function (form){
         //验证上传图片是否为空
         if(!validateUpLoadImg()){
-                return false;
+            return false;
         }
         //执行回调
         if(callback){
-                callback();
+            callback();
         }
         return false;
     }

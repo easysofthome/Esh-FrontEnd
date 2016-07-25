@@ -89,7 +89,6 @@
 
     color: #666;
   }
-  .options_comp,
   .clioptions_comp
   {
     margin: 4px 0 0 4px;
@@ -97,12 +96,9 @@
 
     cursor: pointer;
 
-    color: #333;
-
     .border-radius(4px);
   }
-  .clioptions_comp
-  {
+  .clioptions_comp:hover,.clioptions_cur{
     color: #fff;
     background-color: #f60;
   }
@@ -114,22 +110,29 @@
 
     .cli_li
     {
-      color: #fff;
       background-color: #f60;
+      a{
+        color: #fff;
+      }
     }
     li
     {
       margin: 4px 0 0 4px;
-      padding: 0 6px;
 
       cursor: pointer;
       white-space: nowrap;
 
       .border-radius(4px);
+      a{
+        padding: 0 6px;
+        display: block;
+      }
       &:hover
       {
-        color: #fff;
         background-color: #f60;
+        a{
+          color: #fff;
+        }
       }
     }
   }
