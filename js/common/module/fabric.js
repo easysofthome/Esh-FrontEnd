@@ -11,7 +11,7 @@ define(function(require, exports, module) {
 
 /////////////////////////////// 表单样式部分 ///////////////////////////////////
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
-    加载单选按钮样式
+    // 加载单选按钮样式
     FancyRadioCheckBox.init();
 /////////////////////////////// /表单样式部分 ///////////////////////////////////
 
