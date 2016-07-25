@@ -37,7 +37,7 @@ define(function(require, exports, module) {
                 // $('.customSelectInner:eq(1)').html('');
 
                 for(index in data){
-                    selectObj.append('<option value="'+ data[index].id +'">'+ data[index].name + '</option>');
+                    selectObj.append('<option value="'+ data[index].Id +'">'+ data[index].Name + '</option>');
                 }
             },
             error: function (err) { console.log('connect error!'); }
