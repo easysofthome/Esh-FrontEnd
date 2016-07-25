@@ -11,7 +11,7 @@
     <div class="mainbox">
       <div class="fabricbox">
 
-        <form method="post" id="addFabricForm" action="">
+        <form method="post" id="fabricForm" action="">
           <div class="fabric_con">
             <div class="flower_title">添加面料</div>
             <div class="clearfix data_frm">
@@ -29,14 +29,14 @@
             <div class="clearfix data_frm">
               <div>
                 <span class="lf title_name">面料分类：</span>
-                <select class="lf" id="fabric-type">
+                <select class="lf" id="fabricType">
                   <option value="">请选择面料分类</option>
                   <option value="one">雪纺</option>
                   <option value="two">牛津布</option>
                   <option value="three">天鹅绒</option>
                   <option value="four">法兰绒</option>
                 </select>
-                <select name="" class="lf marginL10" id="fabric-type-second">
+                <select name="" class="lf marginL10" id="fabricTypeSecond">
 
                 </select>
               </div>
@@ -353,7 +353,7 @@
               <span class="lf title_name">后处理费用：</span>
               <div class="lf unitbox_wid">
                 <div class="lf handle_one selected">
-                  <input type="checkbox" class="hidden" value="" name="cb1">
+                  <input type="checkbox" class="hidden" value="" name="cb1" checked>
                   <span class="select"></span>
                   抗菌处理
                 </div>
@@ -421,10 +421,7 @@
   </div>
   @@include('VIP/common/footer.html')
   <script>
-  seajs.use(['js/front/VIP/easydesign/increase/incefabr'],function(v){
-      //测试表单验证成功后 是否执行回调
-      v.validate(function(){alert('添加成功！')});
-  });
+  seajs.use(['js/front/VIP/easydesign/increase/incefabr']);
   </script>
   </body>
   </html>
