@@ -30,7 +30,7 @@ div.finishedPro-top{
       margin-right: 34px;
       padding: 0 10px;
     }
-    a.cur{
+    a.title:hover,a.cur{
       color: #666;
       background-color: #fff;
     }
@@ -45,12 +45,17 @@ div.finishedPro-top{
         line-height: 22px;
         height: 22px;
         border: 0;
+        .border-left-radius(3px);
       }
-      i{
-        margin: 9px 0 0 6px;
-        .sprite(@search_ico);
-        .icon-other-designsoftware;
-        .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
+      .search_but{
+        padding: 7px 9px;
+        background-color: #fff;
+        border: 0;
+        i{
+          .sprite(@search_ico);
+          .icon-other-designsoftware;
+          .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
+        }
       }
     }
   }
