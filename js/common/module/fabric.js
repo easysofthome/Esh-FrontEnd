@@ -13,6 +13,14 @@ define(function(require, exports, module) {
     var FancyRadioCheckBox = require('FancyRadioCheckBox');
     // 加载单选按钮样式
     FancyRadioCheckBox.init();
+
+    // 染织方法
+    $('#dyed-method label').on('click', function() {
+        var index = $(this).index();
+        $('.AddItem .js-tab').hide();
+        $('.AddItem .js-tab').eq(index).show();
+    });
+
 /////////////////////////////// /表单样式部分 ///////////////////////////////////
 
 

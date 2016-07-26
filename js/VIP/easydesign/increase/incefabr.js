@@ -13,14 +13,6 @@ define(function(require, exports, module) {
     //占位符
     placehold.init('input');
 
-    // 染织方法
-    $('#dyed-method label').on('click', function() {
-        var index = $(this).index();
-        $('.AddItem .js-tab').hide();
-        $('.AddItem .js-tab').eq(index).show();
-    });
-
-
     // 下拉框
     $('#fabricType,#fabricTypeSecond').customSelect({width:"120px",padding:"12px 5px"});
     $('#minimum_order_num').customSelect({width:"120px",padding:"12px 5px"});
