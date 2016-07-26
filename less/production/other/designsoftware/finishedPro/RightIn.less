@@ -68,10 +68,7 @@
   .options
   {
     background-color: #f5f5f5;
-    position: absolute;
-    right: 0;
-    top: 36px;
-    padding-bottom: 10px;
+    overflow: hidden;
     .options_box{
       width: 360px;
       padding: 0 30px 0 10px;
@@ -168,33 +165,13 @@
   }
 
   // 展开收起按钮
-  .btn-box{
-    position: absolute;
-    top: 86px;
-    right: 0;
-    display: block;
-    background-color: #457ce6;
-    width: 30px;
-    color: #fff;
-    line-height: 15px;
-    padding: 15px 0;
-    .border-left-radius(5px);
-    .words{
-      width: 16px;
-      margin-left: 9px;
-      display: block;
-    }
-    i{
-      margin: 10px 0 0 10px;
-      .sprite(@arrow_open);
-      .icon-other-designsoftware;
-      .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_open.png');
-    }
-    i.open{
-      margin: 10px 0 0 10px;
-      .sprite(@arrow_stop);
-      .icon-other-designsoftware;
-      .fixIe6pngTransparent('/images/icon/other/designsoftware/arrow_stop.png');
-    }
+  .fabr_spread {
+    background-color: #e3e4e5;
+    color: #333;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 4px;
+    cursor: pointer;
   }
 }

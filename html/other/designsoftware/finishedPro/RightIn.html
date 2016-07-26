@@ -5,6 +5,12 @@
   <title>分类</title>
   <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/other/designsoftware/finishedPro/RightIn.css" rel="stylesheet" type="text/css"/>
+  <!-- 解决IE 6 除a标签外不支持hover -->
+  <!--[if lte IE 6]>
+    <style type="text/css">
+      body { behavior:url("/js/front/csshover3.htc"); }
+    </style>
+  <![endif]-->
 </head>
 <body>
 
@@ -19,6 +25,73 @@
         </div>
       </div>
     </div>
+
+    <div class="options">
+      <div class="options_box">
+        <div class="options_rowbox clearfix">
+          <span class="lf options_tit">面料成分：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>化学纤维面料</a></li>
+            <li class="lf"><a>天然纤维面料</a></li>
+            <li class="lf"><a>混纺面料</a></li>
+            <li class="lf"><a>人造纤维面料</a></li>
+          </ul>
+        </div>
+        <div class="options_rowbox clearfix">
+          <span class="lf options_tit">染色方式：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>染色面料</a></li>
+            <li class="lf"><a>印花面料</a></li>
+            <li class="lf"><a>提花条子</a></li>
+            <li class="lf"><a>色织面料</a></li>
+          </ul>
+        </div>
+        <div class="options_rowbox clearfix">
+          <span class="lf options_tit">织造方式：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>提花布</a></li>
+            <li class="lf"><a>小提花</a></li>
+            <li class="lf"><a>平纹斜纹缎纹</a></li>
+          </ul>
+        </div>
+        <div class="options_rowbox clearfix">
+          <span class="lf options_tit">面料克重：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>0-100克</a></li>
+            <li class="lf"><a>120-140克</a></li>
+            <li class="lf"><a>140-160克</a></li>
+            <li class="lf"><a>160-180克</a></li>
+            <li class="lf"><a>180-200克</a></li>
+          </ul>
+        </div>
+        <div class="options_rowbox clearfix">
+          <span class="lf options_tit">面料门幅：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>门幅150cm价格</a></li>
+            <li class="lf"><a>门幅280cm价格</a></li>
+          </ul>
+        </div>
+        <div class="options_rowbox clearfix" style="display:none;">
+          <span class="lf options_tit">面料价格：</span>
+          <a class="lf clioptions_comp clioptions_cur">全部</a>
+          <ul class="lf options_conbox">
+            <li class="lf"><a>0-10元</a></li>
+            <li class="lf"><a>10-12.5元</a></li>
+            <li class="lf"><a>12.5-15元</a></li>
+            <li class="lf"><a>15-17.5元</a></li>
+            <li class="lf"><a>17.5-20元</a></li>
+            <li class="lf"><a>20元以上</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="fabr_spread">收起</p>
 
     <ul class="content_box clearfix">
       <li class="lf">
@@ -98,76 +171,6 @@
       </li>
     </ul>
 
-
-    <div class="options">
-      <div class="options_box">
-        <div class="options_rowbox clearfix">
-          <span class="lf options_tit">面料成分：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>化学纤维面料</a></li>
-            <li class="lf"><a>天然纤维面料</a></li>
-            <li class="lf"><a>混纺面料</a></li>
-            <li class="lf"><a>人造纤维面料</a></li>
-          </ul>
-        </div>
-        <div class="options_rowbox clearfix">
-          <span class="lf options_tit">染色方式：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>染色面料</a></li>
-            <li class="lf"><a>印花面料</a></li>
-            <li class="lf"><a>提花条子</a></li>
-            <li class="lf"><a>色织面料</a></li>
-          </ul>
-        </div>
-        <div class="options_rowbox clearfix">
-          <span class="lf options_tit">织造方式：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>提花布</a></li>
-            <li class="lf"><a>小提花</a></li>
-            <li class="lf"><a>平纹斜纹缎纹</a></li>
-          </ul>
-        </div>
-        <div class="options_rowbox clearfix">
-          <span class="lf options_tit">面料克重：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>0-100克</a></li>
-            <li class="lf"><a>120-140克</a></li>
-            <li class="lf"><a>140-160克</a></li>
-            <li class="lf"><a>160-180克</a></li>
-            <li class="lf"><a>180-200克</a></li>
-          </ul>
-        </div>
-        <div class="options_rowbox clearfix">
-          <span class="lf options_tit">面料门幅：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>门幅150cm价格</a></li>
-            <li class="lf"><a>门幅280cm价格</a></li>
-          </ul>
-        </div>
-        <div class="options_rowbox clearfix" style="display:none;">
-          <span class="lf options_tit">面料价格：</span>
-          <a class="lf clioptions_comp clioptions_cur">全部</a>
-          <ul class="lf options_conbox">
-            <li class="lf"><a>0-10元</a></li>
-            <li class="lf"><a>10-12.5元</a></li>
-            <li class="lf"><a>12.5-15元</a></li>
-            <li class="lf"><a>15-17.5元</a></li>
-            <li class="lf"><a>17.5-20元</a></li>
-            <li class="lf"><a>20元以上</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <a class="btn-box" href="#">
-      <span class="words">收起分类</span>
-      <i></i>
-    </a>
   </div>
 
   <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -178,18 +181,22 @@
     $('.options_rowbox:eq(4)').on('click', '.clioptions_comp', function() {
       $('.options_rowbox:last').hide();
     });
-    $('.btn-box').on('click', function() {
-      var htmlObj = $(this).find('span');
-      if(htmlObj.html()=='收起分类'){
-        $('.fabricsesign_box .options').animate({'right': '-400px'});
-        htmlObj.html('展开分类');
-        $(this).css('background','#f60').find('i').toggleClass('open');
-      }else{
-        $('.fabricsesign_box .options').animate({'right': '0'});
-        htmlObj.html('收起分类');
-        $(this).css('background','#457ce6').find('i').toggleClass('open');
-      }
 
+    var obj,state;
+    $('.fabr_spread').attr('data-state',1);
+
+    $('.fabr_spread').on("click",function(){
+      obj = $(this).siblings('.options');
+      state = $(this).attr('data-state');
+      if(state == 1){
+        obj.animate({"height": 0},300);
+        $(this).attr('data-state',0);
+        $(this).html('展开');
+      } else {
+        obj.css({height:'auto'});
+        $(this).attr('data-state',1);
+        $(this).html('收起');
+      }
     });
   </script>
 </body>
