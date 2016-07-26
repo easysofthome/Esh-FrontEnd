@@ -17,13 +17,6 @@ define(function(require, exports, module) {
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
-    // 染织方法
-    $('#dyed-method label').on('click', function() {
-        var index = $(this).index();
-        $('.AddItem .js-tab').hide();
-        $('.AddItem .js-tab').eq(index).show();
-    });
-
 
 /////////////////////// 表单验证 ////////////////////////////
 
