@@ -5,6 +5,12 @@
   <title>分类</title>
   <link href="/css/production/common/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/other/designsoftware/finishedPro/RightIn.css" rel="stylesheet" type="text/css"/>
+  <!-- 解决IE 6 除a标签外不支持hover -->
+  <!--[if lte IE 6]>
+    <style type="text/css">
+      body { behavior:url("/js/front/csshover3.htc"); }
+    </style>
+  <![endif]-->
 </head>
 <body>
 
@@ -175,18 +181,22 @@
     $('.options_rowbox:eq(4)').on('click', '.clioptions_comp', function() {
       $('.options_rowbox:last').hide();
     });
-    $('.btn-box').on('click', function() {
-      var htmlObj = $(this).find('span');
-      if(htmlObj.html()=='收起分类'){
-        $('.fabricsesign_box .options').animate({'right': '-400px'});
-        htmlObj.html('展开分类');
-        $(this).css('background','#f60').find('i').toggleClass('open');
-      }else{
-        $('.fabricsesign_box .options').animate({'right': '0'});
-        htmlObj.html('收起分类');
-        $(this).css('background','#457ce6').find('i').toggleClass('open');
-      }
 
+    var obj,state;
+    $('.fabr_spread').attr('data-state',1);
+
+    $('.fabr_spread').on("click",function(){
+      obj = $(this).siblings('.options');
+      state = $(this).attr('data-state');
+      if(state == 1){
+        obj.animate({"height": 0},300);
+        $(this).attr('data-state',0);
+        $(this).html('展开');
+      } else {
+        obj.css({height:'auto'});
+        $(this).attr('data-state',1);
+        $(this).html('收起');
+      }
     });
   </script>
 </body>
