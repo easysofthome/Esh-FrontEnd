@@ -363,11 +363,11 @@
       if(state == 1){
         obj.animate({"height": 0},300);
         $(this).attr('data-state',0);
+        $(this).html('展开');
       } else {
         obj.css({height:'auto'});
-        // var h = obj.height();
-        // obj.css({'height': 0,'display':'block'}).animate({height: h});
         $(this).attr('data-state',1);
+        $(this).html('收起');
       }
     });
   </script>
