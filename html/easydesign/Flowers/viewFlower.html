@@ -16,7 +16,9 @@
     <div class="main-left lf clearfix">
         <div class="gallery-img none">
             <div class="img-wrapper">
-                <img class="gallery" src="">
+                <div class="gallery">
+                <img  src="">
+                </div>
             </div>
             <div class="pagination none">
                 <a class="prev"><i class="iconfont"><</i></a>
@@ -35,72 +37,15 @@
 
     <div class="lf main-right" id="scrollbar">
         <div class="right-top">
-            <h3>[花型名称]高度大气唯美花纹</h3>
-            <div class="desc clearfix">
-                <span class="lf">分类名称：</span>
-                <p class="lf tit-width">全涤面料</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">参考价格：</span>
-                <p class="lf tit-width">[门幅150cm] <span class="red">10.46元/m</span><br>[门幅280cm] <span class="red">15.45元/m</span></p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">面料成分：</span>
-                <p class="lf tit-width">涤纶(100%)</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">织造种类：</span>
-                <p class="lf tit-width">提花布</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纱线构成：</span>
-                <p class="lf tit-width">1经2纬</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">经　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 100D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纬　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">花回尺寸：</span>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
-            <div class="desc clearfix">
-                <p class="lf">关<span class="three-words">键</span>词：</p>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
 
-            <div class="desc clearfix">
-                <span class="lf">纱线构成：</span>
-                <p class="lf tit-width">1经2纬</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">经　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 100D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纬　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">花回尺寸：</span>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
-            <div class="desc clearfix">
-                <p class="lf">关<span class="three-words">键</span>词：</p>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
         </div>
 
-        <div class="deta_info clearfix">
+       <!--  <div class="deta_info clearfix">
             <div class="lf imgbox">
                 <img  src="/images/production/easydesign/tuoxiangtu.png">
             </div>
-            <div class="lf img_name">设计师：易家纺</div>
-        </div>
+            <div class="lf img_name"></div>
+        </div> -->
 
         <div class="flower_title">相似花型</div>
         <ul class="xiangshimianliao clearfix">
@@ -113,19 +58,12 @@
 
 <script src="/js/rootConfig.js"></script>
 <script>
-    seajs.use(['js/front/easydesign/Flowers/viewFlowers'],function(v){
-        var objJson = {'FlowerStyleSimilarList':
-                [{'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_02_fabric.jpg','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_03_fabric.jpg','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_04_fabric.jpg','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/bedroom_fabric_real.png','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/flower.png','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-21.png','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-22.png','ImgLink':''},
-                    {'ImgUrl':'/images/production/easydesign/designFabrics/icon-huaxing-23.png','ImgLink':''}],
-            'CurrentImgUrl':'http://hx.easysofthome.com/FlowerLibrary/original/2014122911-266_1/b01fc2eb-49dd-44e9-89f2-583f37e9225f.png_watermark1','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html?id=1','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Flowers/viewFlower.html?id=2'
-        };
-        v.initPage(objJson);
+    seajs.use('js/front/easydesign/Flowers/viewFlowers',function(v){
+        // v.urls.imgArrayID_url = 'http://182.168.1.117:880/Flower/GetPageByarray?keyId=e15b7697-8e9f-48f3-b9f4-a9eb7f826f1f&colorId=PC0006&styleId=40D78BD9E9CD4412A3BE532B98A3FD47';
+        v.urls.imgArrayID_url = 'http://182.168.1.117:880/Flower/GetPageByarray?colorId=PC0006&styleId=40D78BD9E9CD4412A3BE532B98A3FD47';
+        v.urls.imgDetail_url = 'http://182.168.1.117:880/Flower/GetDetail';
+        v.urls.similarImg_url = 'http://182.168.1.117:880/MemberCenter/Flower/AjaxMyFlowersDetail?imgNO=1&auditStatus=-1&pageIndex=1';
+        v.init();
     });
 </script>
 </body>
