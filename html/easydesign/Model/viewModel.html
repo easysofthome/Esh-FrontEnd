@@ -35,64 +35,7 @@
 
     <div class="lf main-right" id="scrollbar">
         <div class="right-top">
-            <h3>[面料名称]高度大气唯美花纹</h3>
-            <div class="desc clearfix">
-                <span class="lf">分类名称：</span>
-                <p class="lf tit-width">全涤面料</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">参考价格：</span>
-                <p class="lf tit-width">[门幅150cm] <span class="red">10.46元/m</span><br>[门幅280cm] <span class="red">15.45元/m</span></p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">面料成分：</span>
-                <p class="lf tit-width">涤纶(100%)</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">织造种类：</span>
-                <p class="lf tit-width">提花布</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纱线构成：</span>
-                <p class="lf tit-width">1经2纬</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">经　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 100D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纬　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">花回尺寸：</span>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
-            <div class="desc clearfix">
-                <p class="lf">关<span class="three-words">键</span>词：</p>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
 
-            <div class="desc clearfix">
-                <span class="lf">纱线构成：</span>
-                <p class="lf tit-width">1经2纬</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">经　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 100D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">纬　　纱：</span>
-                <p class="lf tit-width">涤纶长丝 300D + 涤纶长丝 300D</p>
-            </div>
-            <div class="desc clearfix">
-                <span class="lf">花回尺寸：</span>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
-            <div class="desc clearfix">
-                <p class="lf">关<span class="three-words">键</span>词：</p>
-                <p class="lf tit-width"> 5.68cm x 5.7cm</p>
-            </div>
         </div>
     </div>
 </div>
@@ -103,10 +46,10 @@
 <script src="/js/rootConfig.js"></script>
 <script>
     seajs.use('js/front/easydesign/Model/viewModel',function(v){
-        var objJson = {
-            'CurrentImgUrl':'/images/production/easydesign/designFabrics/d840ac06-c4aa-4474-96f4-0689b042f258.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html?id=2','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/Model/viewModel.html?id=1'
-        };
-        v.initPage(objJson);
+        v.urls.imgArrayID_url = 'http://182.168.1.117:880/Flower/GetPageByarray?keyId=e15b7697-8e9f-48f3-b9f4-a9eb7f826f1f&colorId=PC0006&styleId=40D78BD9E9CD4412A3BE532B98A3FD47';
+        v.urls.imgDetail_url = 'http://182.168.1.117:880/Flower/GetDetail';
+        v.urls.similarImg_url = 'http://182.168.1.117:880/MemberCenter/Flower/AjaxMyFlowersDetail?imgNO=1&auditStatus=-1&pageIndex=1';
+        v.init();
     });
 </script>
 </body>

@@ -100,71 +100,70 @@ ul.arrangement_box{
 	}
 
 	.content{
-		width: 920px;
-		margin: 10px 0 0 20px;
+		margin-left: 20px;
     color: #666;
     .content_top{
+      width: 1084px;
       .company{
-        margin-top: 2px;
+        margin-top: 12px;
         font-size: 18px;
         color: #333;
-        width: 470px;
+        width: 520px;
       }
       .countries{
         width: 300px;
-        margin-top: 4px;
+        margin-top: 14px;
       }
       .email{
         width: 240px;
+        margin-top: 14px;
+        a{
+          color: #333;
+          &:hover{
+            color: #ff6600;
+          }
+        }
       }
       .phone{
         width: 190px;
+        margin-top: 14px;
+      }
+      //按钮
+      .btn_buy{
+        width: 132px;
+        line-height: 30px;
+        border: #3ca1d7 1px solid;
+        color: #3ca1d7;
+        text-align: center;
+        display: block;
+        margin-top: 4px;
+        .transition(all 0.2s linear);
+        &:hover{
+          background-color: #3ca1d7;
+          color: #fff;
+        }
+      }
+      .btn_gray{
+        border: #999 1px solid;
+
+        color: #999;
+        &:hover{
+          background-color: #999;
+          color: #fff;
+        }
       }
     }
 		.company_content{
 			margin-top: 11px;
+      padding-right: 20px;
       .business{
-        width: 470px;
+        width: 700px;
       }
       .address{
-        width: 450px;
+        width: 334px;
+        margin-right: 30px;
       }
 		}
-	}
-
-	//按钮
-	.btn_box{
-		.btn_buy{
-			width: 132px;
-			line-height: 30px;
-			border: #ff6600 1px solid;
-			color: #ff6600;
-			text-align: center;
-			display: block;
-			.transition(all 0.2s linear);
-			&:hover{
-				background-color: #f60;
-				color: #fff;
-			}
-		}
-		.btn_buy01{
-			margin-bottom: 10px;
-			border: #3ca1d7 1px solid;
-			color: #3ca1d7;
-			&:hover{
-				background-color: #3ca1d7;
-				color: #fff;
-			}
-		}
-    .btn_gray{
-      border: #999 1px solid;
-
-      color: #999;
-      &:hover{
-        background-color: #999;
-        color: #fff;
-      }
-    }
 	}
 }
 

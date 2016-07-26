@@ -59,10 +59,10 @@
 <script src="/js/rootConfig.js"></script>
 <script>
     seajs.use('js/front/easydesign/scene/viewScene',function(v){
-        var objJson = {
-            'CurrentImgUrl':'http://cjmx.easysofthome.com/scenemodel/pic3d//201662410/3744348922.jpg','NextPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html?id=2','PrevPageUrl':'http://182.168.1.134:8180/html/easydesign/scene/viewScene.html?id=1','iframeSrc':'/html/easydesign/scene/panoramaShow.html'
-        };
-        v.initPage(objJson);
+        v.urls.imgArrayID_url = 'http://182.168.1.117:880/Flower/GetPageByarray?keyId=e15b7697-8e9f-48f3-b9f4-a9eb7f826f1f&colorId=PC0006&styleId=40D78BD9E9CD4412A3BE532B98A3FD47';
+        v.urls.imgDetail_url = 'http://182.168.1.117:880/Flower/GetDetail';
+        v.urls.iframeSrc = '/html/easydesign/scene/panoramaShow.html';
+        v.init();
     });
 </script>
 </body>

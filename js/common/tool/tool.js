@@ -148,6 +148,14 @@ define(function (require, exports, module) {
             }else{
                 return -1;
             }
+        },
+        getValueByKey_URL: function (url,key) {
+           // eval('/^[\-]?[0-9]+\.{0,1}[0-9]{0,'+pointNum+'}$/');
+           // var reg = eval('/(^|\\?|&)'+key+'=([\\s\\S]*)(&|$)/');
+            var reg = new RegExp('(^|\\?|&)'+key+'=([\\s\\S]*)(&|$)'); //构造一个含有目标参数的正则表达式对象
+            var r = url.match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
         }
     };
 
@@ -488,6 +496,16 @@ define(function (require, exports, module) {
             s += '0';
         }
         return s;
+    }
+
+    //重写Array.indexOf方法修正ie9之前无法使用
+    Array.prototype.indexOf = function(el){
+        for (var i=0,n=this.length; i<n; i++){
+                if (this[i] === el){
+                        return i;
+                }
+        }
+        return -1;
     }
 
 
