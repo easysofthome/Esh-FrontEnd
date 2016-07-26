@@ -21,9 +21,9 @@ define(function (require, exports, module) {
    $.ajax({
         type: 'post',
         url: url,
-        dataType: 'jsonp',
-        jsonp: "callback",
-        jsonpCallback: 'jsonpCallback',
+        dataType: 'json',
+        //jsonp: "callback",
+       // jsonpCallback: 'jsonpCallback',
         beforeSend:function(){
 
         },
@@ -59,13 +59,13 @@ define(function (require, exports, module) {
       type: 'post',
       url: url,
       data: '' ,
-      dataType: 'jsonp',
-      jsonpCallback: 'jsonpCallbackDetail',
+      dataType: 'json',
+      // jsonpCallback: 'jsonpCallbackDetail',
       beforeSend:function(){
       },
       success: function(data){
         loadData(data);
-        console.log(data.ID);
+        //console.log(data.ID);
       },
       error : function() {
         console.log('---花型详情页异常---');
@@ -79,8 +79,8 @@ define(function (require, exports, module) {
       type: 'post',
       url: url,
       data: '' ,
-      dataType: 'jsonp',
-      jsonpCallback: 'jsonpCallbackSimilar',
+      dataType: 'json',
+      //jsonpCallback: 'jsonpCallbackSimilar',
       beforeSend:function(){
       },
       success: function(data){
@@ -124,7 +124,6 @@ define(function (require, exports, module) {
       $('.gallery-img').show();
     });
     $('.gallery img').LoadImage({'imgSrc':objJson.CurrentImgUrl,'container':'.gallery'});
-    $('.gallery img').attr('src',objJson.CurrentImgUrl);
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -374,11 +373,6 @@ define(function (require, exports, module) {
     }
     return url;
   }
-
-  $(window).resize(function(event) {
-    setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
-  });
-
   //返回找出相同值，返回索引
   function getIndexByImgID(dataArray,_curImgID){
     var _curImgIndex = -1;
@@ -403,9 +397,11 @@ define(function (require, exports, module) {
     }
   }
 
+ $(window).resize(function(event) {
+  setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+});
+
 ////////////////////////////////入口/////////////////////////////////////
-
-
 //var params = window.location.search.replace(/^\?/, '');
 
 function init(){
@@ -421,7 +417,6 @@ function init(){
     imgData.pagination.curImgIndex = getIndexByImgID(imgData.imgIdArray,curImgID);
   }
   imgData.curImgID = curImgID;
-
   //加载图片数组
   loadImgIdArray(imgData.pagination.pageIndex);
   //绑定上一张、下一张按钮点击事件
