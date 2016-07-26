@@ -274,25 +274,26 @@ define(function(require, exports, module) {
     function validate() {
         //addrules();
         validator = form.validate({
-        //忽略
-        ignore: '.ignore',
-        submitHandler: modExp.submitHandler,
-        onfocusout:function(element){
-            $(element).valid();
-        },
-        errorPlacement: function(error, element) {
-            $(element).poshytip('destroy');
-            if(error.text().length > 0){
-               setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
-            }
-            return true;
-          },
-        success:function(element){
-            $(element).poshytip('destroy');
-        },
-        rules: modExp.rules,
-        messages: modExp.messages
-      });
+            //忽略
+            ignore: '.ignore',
+            submitHandler: modExp.submitHandler,
+            onfocusout:function(element){
+                $(element).valid();
+            },
+            errorPlacement: function(error, element) {
+                $(element).poshytip('destroy');
+                if(error.text().length > 0){
+                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+                }
+                return true;
+              },
+            success:function(element){
+                $(element).poshytip('destroy');
+            },
+            rules: modExp.rules,
+            messages: modExp.messages
+        });
+        module.exports.validator = validator;
     }
 /////////////////////////////// /表单验证部分 ///////////////////////////////////
 

@@ -25,180 +25,301 @@ define(function(require, exports, module) {
         error: '<i class="i-error"></i>'
     };
 
+    $('#hLight_step2 select').on('change', function(){
+        var temp = yarnDensity();
+        // validateConf();
+        var form = $("#fabricForm");
+        $('#warpSpinnerNum1').rules('add',{
+            number:true,
+            required: true,
+            maxlength:10,
+            max: temp,
+            messages: {
+                number: icons.error + '经密值只能是数字！',
+                required: icons.error + '请输入经密值！',
+                maxlength: icons.error + '经密值过大！',
+                max: icons.error + yarnDensityStr
+            }
+        });
+        $('#warpSpinnerNum2').rules('add',{
+            number:true,
+            required: true,
+            maxlength:10,
+            max: temp,
+            messages: {
+                number: icons.error + '经密值只能是数字！',
+                required: icons.error + '请输入经密值！',
+                maxlength: icons.error + '经密值过大！',
+                max: icons.error + yarnDensityStr
+            }
+        });
+        $('#abbSpinnerNum1,#abbSpinnerNum2,#abbSpinnerNum3,#abbSpinnerNum4').each(function(){
+            // $(this).rules('remove');
+        });;
+
+        // $.validate({
+        //     rules: {
+        //        warpSpinnerNum1: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         },
+        //         warpSpinnerNum2: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         },
+        //         abbSpinnerNum1: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         },
+        //         abbSpinnerNum2: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         },
+        //         abbSpinnerNum3: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         },
+        //         abbSpinnerNum4: {
+        //             number:true,
+        //             required: true,
+        //             maxlength:10,
+        //             max: yarnDensity()
+        //         }
+        //     },
+        //     messages: {
+        //         warpSpinnerNum1: {
+        //             number: icons.error + '经密值只能是数字！',
+        //             required: icons.error + '请输入经密值！',
+        //             maxlength: icons.error + '经密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         },
+        //         warpSpinnerNum2: {
+        //             number: icons.error + '经密值只能是数字！',
+        //             required: icons.error + '请输入经密值！',
+        //             maxlength: icons.error + '经密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         },
+        //         abbSpinnerNum1: {
+        //             number: icons.error + '纬密值只能是数字！',
+        //             required: icons.error + '请输入纬密值！',
+        //             maxlength: icons.error + '纬密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         },
+        //         abbSpinnerNum2: {
+        //             number: icons.error + '纬密值只能是数字！',
+        //             required: icons.error + '请输入纬密值！',
+        //             maxlength: icons.error + '纬密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         },
+        //         abbSpinnerNum3: {
+        //             number: icons.error + '纬密值只能是数字！',
+        //             required: icons.error + '请输入纬密值！',
+        //             maxlength: icons.error + '纬密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         },
+        //         abbSpinnerNum4: {
+        //             number: icons.error + '纬密值只能是数字！',
+        //             required: icons.error + '请输入纬密值！',
+        //             maxlength: icons.error + '纬密值过大！',
+        //             max: icons.error + yarnDensityStr
+        //         }
+        //     }
+        // });
+
+        // fabric.validator;
+        // console.log(fabric.validator);
+    });
+
+
     var yarnDensityStr = '';
+    /**
+     * 纱线密度限制数值和错误信息
+     */
     function yarnDensity(){
         var Density = 300;
         if($('#hLight_step2 select').val() == 'Inches'){
             Density = Density / 2.54;
-            yarnDensityValStr = '密度值不超过118英寸';
+            yarnDensityStr = '密度值不超过118英寸';
         } else {
-            yarnDensityValStr = '密度值不超过300厘米';
+            yarnDensityStr = '密度值不超过300厘米';
         }
         return Density;
     }
 
-    $('#hLight_step2 select').on('change', function(){
+    // 表单验证配置
+    // function validateConf() {
+        // 验证规则配置
+        fabric.rules = {
+            fabricWidth: {
+                number:true,
+                required: true,
+                maxlength:10,
+                gt:0
+            },
+            warpSpinnerNum1: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            warpSpinnerNum2: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            warpIngredient1: {required: true },
+            warpIngredient2: {required: true },
+            warpDiameter1: {required: true },
+            warpDiameter2: {required: true },
+            abbSpinnerNum1: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            abbSpinnerNum2: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            abbSpinnerNum3: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            abbSpinnerNum4: {
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity()
+            },
+            weftIngredient1: {required: true },
+            weftIngredient2: {required: true },
+            weftIngredient3: {required: true },
+            weftIngredient4: {required: true },
+            weftDiameter1: {required: true },
+            weftDiameter2: {required: true },
+            weftDiameter3: {required: true },
+            weftDiameter4: {required: true },
+            exchangeRate: {
+                required: true,
+                number: true,
+                maxlength:10,
+                gt:0
+            },
+            factoryPrice1: {
+                number: true,
+                maxlength:10,
+                gt:0
+            },
+            factoryPrice2: {
+                number: true,
+                maxlength:10,
+                gt:0
+            },
+            factoryPrice3: {
+                number: true,
+                maxlength:10,
+                gt:0
+            }
+        };
+        // 验证的错误信息配置
+        fabric.messages = {
+            fabricWidth: {
+                required: icons.error + '请输入面料门幅！',
+                number: icons.error + '面料门幅值只能是数字！',
+                maxlength: icons.error + '面料门幅值过长！'
+            },
+            warpSpinnerNum1: {
+                number: icons.error + '经密值只能是数字！',
+                required: icons.error + '请输入经密值！',
+                maxlength: icons.error + '经密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            warpSpinnerNum2: {
+                number: icons.error + '经密值只能是数字！',
+                required: icons.error + '请输入经密值！',
+                maxlength: icons.error + '经密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            warpIngredient1: {
+                required: icons.error + '请输入经纱成分！'
+            },
+            warpIngredient2: {
+                required: icons.error + '请输入经纱成分！'
+            },
+            warpDiameter1: {
+                required: icons.error + '请输入经纱粗细！'
+            },
+            warpDiameter2: {
+                required: icons.error + '请输入经纱粗细！'
+            },
+            abbSpinnerNum1: {
+                number: icons.error + '纬密值只能是数字！',
+                required: icons.error + '请输入纬密值！',
+                maxlength: icons.error + '纬密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            abbSpinnerNum2: {
+                number: icons.error + '纬密值只能是数字！',
+                required: icons.error + '请输入纬密值！',
+                maxlength: icons.error + '纬密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            abbSpinnerNum3: {
+                number: icons.error + '纬密值只能是数字！',
+                required: icons.error + '请输入纬密值！',
+                maxlength: icons.error + '纬密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            abbSpinnerNum4: {
+                number: icons.error + '纬密值只能是数字！',
+                required: icons.error + '请输入纬密值！',
+                maxlength: icons.error + '纬密值过大！',
+                max: icons.error + yarnDensityStr
+            },
+            weftIngredient1: {required: icons.error + '请输入纬纱成分！'},
+            weftIngredient2: {required: icons.error + '请输入纬纱成分！'},
+            weftIngredient3: {required: icons.error + '请输入纬纱成分！'},
+            weftIngredient4: {required: icons.error + '请输入纬纱成分！'},
+            weftDiameter1: {required: icons.error + '请输入纬纱粗细！'},
+            weftDiameter2: {required: icons.error + '请输入纬纱粗细！'},
+            weftDiameter3: {required: icons.error + '请输入纬纱粗细！'},
+            weftDiameter4: {required: icons.error + '请输入纬纱粗细！'},
+            exchangeRate:{
+                required: icons.error + '请输入汇率！',
+                number: icons.error + '汇率值只能是数字！',
+                maxlength: icons.error + '输入数值过长！'
+            },
+            factoryPrice1: {
+                number: icons.error + '只能输入数字！',
+                maxlength: icons.error + '输入数值过长！'
+            },
+            factoryPrice2:{
+                number: icons.error + '只能输入数字！',
+                maxlength: icons.error + '输入数值过长！'
 
-    });
+            },
+            factoryPrice3: {
+                number: icons.error + '只能输入数字！',
+                maxlength: icons.error + '输入数值过长！'
+            }
+        };
+    // }
 
-    fabric.rules = {
-        fabricWidth: {
-            number:true,
-            required: true,
-            maxlength:10,
-            gt:0
-        },
-        warpSpinnerNum1: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        warpSpinnerNum2: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        warpIngredient1: {required: true },
-        warpIngredient2: {required: true },
-        warpDiameter1: {required: true },
-        warpDiameter2: {required: true },
-        abbSpinnerNum1: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        abbSpinnerNum2: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        abbSpinnerNum3: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        abbSpinnerNum4: {
-            number:true,
-            required: true,
-            maxlength:10,
-            max: yarnDensity()
-        },
-        weftIngredient1: {required: true },
-        weftIngredient2: {required: true },
-        weftIngredient3: {required: true },
-        weftIngredient4: {required: true },
-        weftDiameter1: {required: true },
-        weftDiameter2: {required: true },
-        weftDiameter3: {required: true },
-        weftDiameter4: {required: true },
-        exchangeRate: {
-            required: true,
-            number: true,
-            maxlength:10,
-            gt:0
-        },
-        factoryPrice1: {
-            number: true,
-            maxlength:10,
-            gt:0
-        },
-        factoryPrice2: {
-            number: true,
-            maxlength:10,
-            gt:0
-        },
-        factoryPrice3: {
-            number: true,
-            maxlength:10,
-            gt:0
-        }
-    };
-    fabric.messages = {
-        fabricWidth: {
-            required: icons.error + '请输入面料门幅！',
-            number: icons.error + '面料门幅值只能是数字！',
-            maxlength: icons.error + '面料门幅值过长！'
-        },
-        warpSpinnerNum1: {
-            number: icons.error + '经密值只能是数字！',
-            required: icons.error + '请输入经密值！',
-            maxlength: icons.error + '经密值过大！',
-            max: icons.error + yarnDensityValStr
-        },
-        warpSpinnerNum2: {
-            number: icons.error + '经密值只能是数字！',
-            required: icons.error + '请输入经密值！',
-            maxlength: icons.error + '经密值过大！',
-            max: icons.error + yarnDensityValStr
-        },
-        warpIngredient1: {
-            required: icons.error + '请输入经纱成分！'
-        },
-        warpIngredient2: {
-            required: icons.error + '请输入经纱成分！'
-        },
-        warpDiameter1: {
-            required: icons.error + '请输入经纱粗细！'
-        },
-        warpDiameter2: {
-            required: icons.error + '请输入经纱粗细！'
-        },
-        abbSpinnerNum1: {
-            number: icons.error + '纬密值只能是数字！',
-            required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '纬密值过大！',
-            max: icons.error + '密度值不超过300厘米'
-        },
-        abbSpinnerNum2: {
-            number: icons.error + '纬密值只能是数字！',
-            required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '纬密值过大！',
-            max: icons.error + '密度值不超过300厘米'
-        },
-        abbSpinnerNum3: {
-            number: icons.error + '纬密值只能是数字！',
-            required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '纬密值过大！',
-            max: icons.error + '密度值不超过300厘米'
-        },
-        abbSpinnerNum4: {
-            number: icons.error + '纬密值只能是数字！',
-            required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '纬密值过大！',
-            max: icons.error + '密度值不超过300厘米'
-        },
-        weftIngredient1: {required: icons.error + '请输入纬纱成分！'},
-        weftIngredient2: {required: icons.error + '请输入纬纱成分！'},
-        weftIngredient3: {required: icons.error + '请输入纬纱成分！'},
-        weftIngredient4: {required: icons.error + '请输入纬纱成分！'},
-        weftDiameter1: {required: icons.error + '请输入纬纱粗细！'},
-        weftDiameter2: {required: icons.error + '请输入纬纱粗细！'},
-        weftDiameter3: {required: icons.error + '请输入纬纱粗细！'},
-        weftDiameter4: {required: icons.error + '请输入纬纱粗细！'},
-        exchangeRate:{
-            required: icons.error + '请输入汇率！',
-            number: icons.error + '汇率值只能是数字！',
-            maxlength: icons.error + '输入数值过长！'
-        },
-        factoryPrice1: {
-            number: icons.error + '只能输入数字！',
-            maxlength: icons.error + '输入数值过长！'
-        },
-        factoryPrice2:{
-            number: icons.error + '只能输入数字！',
-            maxlength: icons.error + '输入数值过长！'
-
-        },
-        factoryPrice3: {
-            number: icons.error + '只能输入数字！',
-            maxlength: icons.error + '输入数值过长！'
-        }
-    };
     fabric.submitHandler = function (form) {
         //提交表单
         // formSubmit(form);
@@ -289,7 +410,8 @@ define(function(require, exports, module) {
         // }, { IsShowLoading: false });
             /************ajax***************/
     }
-
+    // 配置规则并初始化
+    // validateConf();
     fabric.init();
 /////////////////////// /表单验证 ////////////////////////////
 
