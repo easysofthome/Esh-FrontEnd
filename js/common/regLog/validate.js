@@ -562,7 +562,7 @@ define(function (require, exports, module) {
 
     //企业类型选择（checkbox） 实时验证
     function checkedValid(target){
-        var wraper = $(target).parent().parent();
+        var wraper = $(target).parent().parent().parent();
         wraper.poshytip('destroy');
         var checkedNum = $(wraper).find('input[type="checkbox"]:checked').length;
         if(checkedNum==0){
