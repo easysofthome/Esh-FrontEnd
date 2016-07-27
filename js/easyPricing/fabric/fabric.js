@@ -25,137 +25,6 @@ define(function(require, exports, module) {
         error: '<i class="i-error"></i>'
     };
 
-    $('#hLight_step2 select').on('change', function(){
-        var temp = yarnDensity();
-        // validateConf();
-        var form = $("#fabricForm");
-        $('#warpSpinnerNum1').rules('add',{
-            number:true,
-            required: true,
-            maxlength:10,
-            max: temp,
-            messages: {
-                number: icons.error + '经密值只能是数字！',
-                required: icons.error + '请输入经密值！',
-                maxlength: icons.error + '经密值过大！',
-                max: icons.error + yarnDensityStr
-            }
-        });
-        $('#warpSpinnerNum2').rules('add',{
-            number:true,
-            required: true,
-            maxlength:10,
-            max: temp,
-            messages: {
-                number: icons.error + '经密值只能是数字！',
-                required: icons.error + '请输入经密值！',
-                maxlength: icons.error + '经密值过大！',
-                max: icons.error + yarnDensityStr
-            }
-        });
-        $('#abbSpinnerNum1,#abbSpinnerNum2,#abbSpinnerNum3,#abbSpinnerNum4').each(function(){
-            // $(this).rules('remove');
-        });;
-
-        // $.validate({
-        //     rules: {
-        //        warpSpinnerNum1: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         },
-        //         warpSpinnerNum2: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         },
-        //         abbSpinnerNum1: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         },
-        //         abbSpinnerNum2: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         },
-        //         abbSpinnerNum3: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         },
-        //         abbSpinnerNum4: {
-        //             number:true,
-        //             required: true,
-        //             maxlength:10,
-        //             max: yarnDensity()
-        //         }
-        //     },
-        //     messages: {
-        //         warpSpinnerNum1: {
-        //             number: icons.error + '经密值只能是数字！',
-        //             required: icons.error + '请输入经密值！',
-        //             maxlength: icons.error + '经密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         },
-        //         warpSpinnerNum2: {
-        //             number: icons.error + '经密值只能是数字！',
-        //             required: icons.error + '请输入经密值！',
-        //             maxlength: icons.error + '经密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         },
-        //         abbSpinnerNum1: {
-        //             number: icons.error + '纬密值只能是数字！',
-        //             required: icons.error + '请输入纬密值！',
-        //             maxlength: icons.error + '纬密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         },
-        //         abbSpinnerNum2: {
-        //             number: icons.error + '纬密值只能是数字！',
-        //             required: icons.error + '请输入纬密值！',
-        //             maxlength: icons.error + '纬密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         },
-        //         abbSpinnerNum3: {
-        //             number: icons.error + '纬密值只能是数字！',
-        //             required: icons.error + '请输入纬密值！',
-        //             maxlength: icons.error + '纬密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         },
-        //         abbSpinnerNum4: {
-        //             number: icons.error + '纬密值只能是数字！',
-        //             required: icons.error + '请输入纬密值！',
-        //             maxlength: icons.error + '纬密值过大！',
-        //             max: icons.error + yarnDensityStr
-        //         }
-        //     }
-        // });
-
-        // fabric.validator;
-        // console.log(fabric.validator);
-    });
-
-
-    var yarnDensityStr = '';
-    /**
-     * 纱线密度限制数值和错误信息
-     */
-    function yarnDensity(){
-        var Density = 300;
-        if($('#hLight_step2 select').val() == 'Inches'){
-            Density = Density / 2.54;
-            yarnDensityStr = '密度值不超过118英寸';
-        } else {
-            yarnDensityStr = '密度值不超过300厘米';
-        }
-        return Density;
-    }
-
     // 表单验证配置
     // function validateConf() {
         // 验证规则配置
@@ -170,13 +39,13 @@ define(function(require, exports, module) {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             warpSpinnerNum2: {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             warpIngredient1: {required: true },
             warpIngredient2: {required: true },
@@ -186,25 +55,25 @@ define(function(require, exports, module) {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             abbSpinnerNum2: {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             abbSpinnerNum3: {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             abbSpinnerNum4: {
                 number:true,
                 required: true,
                 maxlength:10,
-                max: yarnDensity()
+                max: 300
             },
             weftIngredient1: {required: true },
             weftIngredient2: {required: true },
@@ -247,13 +116,13 @@ define(function(require, exports, module) {
                 number: icons.error + '经密值只能是数字！',
                 required: icons.error + '请输入经密值！',
                 maxlength: icons.error + '经密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             warpSpinnerNum2: {
                 number: icons.error + '经密值只能是数字！',
                 required: icons.error + '请输入经密值！',
                 maxlength: icons.error + '经密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             warpIngredient1: {
                 required: icons.error + '请输入经纱成分！'
@@ -271,25 +140,25 @@ define(function(require, exports, module) {
                 number: icons.error + '纬密值只能是数字！',
                 required: icons.error + '请输入纬密值！',
                 maxlength: icons.error + '纬密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             abbSpinnerNum2: {
                 number: icons.error + '纬密值只能是数字！',
                 required: icons.error + '请输入纬密值！',
                 maxlength: icons.error + '纬密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             abbSpinnerNum3: {
                 number: icons.error + '纬密值只能是数字！',
                 required: icons.error + '请输入纬密值！',
                 maxlength: icons.error + '纬密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             abbSpinnerNum4: {
                 number: icons.error + '纬密值只能是数字！',
                 required: icons.error + '请输入纬密值！',
                 maxlength: icons.error + '纬密值过大！',
-                max: icons.error + yarnDensityStr
+                max: icons.error + '密度值不超过300根/厘米'
             },
             weftIngredient1: {required: icons.error + '请输入纬纱成分！'},
             weftIngredient2: {required: icons.error + '请输入纬纱成分！'},

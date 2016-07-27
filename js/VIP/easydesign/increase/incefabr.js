@@ -84,12 +84,14 @@ define(function(require, exports, module) {
         warpSpinnerNum1: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         warpSpinnerNum2: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         warpIngredient1: {required: true },
         warpIngredient2: {required: true },
@@ -98,22 +100,26 @@ define(function(require, exports, module) {
         abbSpinnerNum1: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         abbSpinnerNum2: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         abbSpinnerNum3: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         abbSpinnerNum4: {
             number:true,
             required: true,
-            maxlength:10
+            maxlength:10,
+            max: 300
         },
         weftIngredient1: {required: true },
         weftIngredient2: {required: true },
@@ -156,12 +162,14 @@ define(function(require, exports, module) {
         warpSpinnerNum1: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入经密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         warpSpinnerNum2: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入经密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         warpIngredient1: {required: icons.error + '请输入经纱成分！'},
         warpIngredient2: {required: icons.error + '请输入经纱成分！'},
@@ -170,22 +178,26 @@ define(function(require, exports, module) {
         abbSpinnerNum1: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         abbSpinnerNum2: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         abbSpinnerNum3: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         abbSpinnerNum4: {
             number: icons.error + '经密值只能是数字！',
             required: icons.error + '请输入纬密值！',
-            maxlength: icons.error + '经密值过大！'
+            maxlength: icons.error + '经密值过大！',
+            max: icons.error + '密度值不超过300根/厘米'
         },
         weftIngredient1: {required: icons.error + '请输入纬纱成分！'},
         weftIngredient2: {required: icons.error + '请输入纬纱成分！'},
