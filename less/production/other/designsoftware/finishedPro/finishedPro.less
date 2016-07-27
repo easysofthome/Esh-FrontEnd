@@ -48,7 +48,7 @@ div.finishedPro-top{
         .border-left-radius(3px);
       }
       .search_but{
-        padding: 7px 9px;
+        padding: 6px 8px;
         background-color: #fff;
         border: 0;
         i{
@@ -56,6 +56,9 @@ div.finishedPro-top{
           .icon-other-designsoftware;
           .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
         }
+      }
+      .search_but:hover{
+        border: #000 solid 1px;
       }
     }
   }
@@ -184,40 +187,52 @@ div.finishedPro-next{
   position: fixed;
   bottom: 0;
   left: 0;
-    .next-box{
+  .next-box{
     width: 444px;
     padding: 20px 0;
     margin: 0 auto;
   }
-  a,input{
-    width: 28px;
-    height: 28px;
-    border: #b2b2b2 1px solid;
-    .border-radius(3px);
+  li{
+    cursor: pointer;
+    a,input{
+      width: 28px;
+      height: 28px;
+      border: #b2b2b2 1px solid;
+      display: block;
+      .border-radius(3px);
+    }
   }
-  a.next{
-    background-color: #f2f2f2;
-    width: 62px;
-    margin-right: 10px;
-    color: #333;
+
+  .next{
+    a{
+      background-color: #f2f2f2;
+      width: 62px;
+      margin-right: 10px;
+      color: #333;
+    }
   }
-  a.num{
+  .num a{
     background-color: #fff;
     margin-right: 10px;
     color: #333;
   }
-  span.words{
+  .words span{
     color: #999;
     margin-left: 10px;
     font-family: "宋体";
   }
-  a.go{
+  .go a{
     margin-left: 10px;
     color: #333;
   }
-  a.num:hover,a.cur{
+  .next a:hover,.num a:hover,.go a:hover,.cur a{
     background-color: #567fb7;
     border: #567fb7 1px solid;
     color: #fff;
+  }
+  .next_gray a:hover{
+    background-color: #f2f2f2;
+    border: #b2b2b2 1px solid;
+    color: #333;
   }
 }

@@ -104,7 +104,6 @@ define(function (require, exports, module) {
           '"></a></li>');
       $('.xiangshimianliao').append($str);
       var $img = '<img />';
-       // $str.find('img').src=objJson.FlowerStyleSimilarList[i].ImgUrl;
       $str.find('a').append($img).find('img').LoadImage({'imgSrc':objJson.FlowerStyleSimilarList[i].ImgUrl,'spin_size':'small'});
     }
     $('.xiangshimianliao').find('a').bind('click',function(){
@@ -388,11 +387,15 @@ define(function (require, exports, module) {
 
   //重写url
   function rewriteRUL(url){
+    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+        var State = History.getState(); // Note: We are using History.getState() instead of event.state
+    });
+
     if(/.+\?/.test(url)){
       //var param = 'pageIndex='+imgData.pagination.pageIndex+'&keyId='+imgData.curImgID;
       var param = 'keyId='+imgData.curImgID;
       if(param){
-        History.pushState(null,null,'?'+param);
+        History.pushState({State:imgData.curImgID},null,'?'+param);
       }
     }
   }
