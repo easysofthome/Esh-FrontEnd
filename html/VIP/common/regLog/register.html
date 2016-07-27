@@ -37,15 +37,6 @@
             <div class="input-tip"></div>
           </div>
         </div>
-        <div class="clearfix padding">
-          <span class="men_tit lf" id="authCodeTit">验　证　码：</span>
-          <div class="lf input_left2">
-            <input type="text" class="input_codes" errorMsgPosition="rightBottom" id="AuthCode" name="AuthCode">
-            <a href="javascript:void(0)" class="butt_cides lf" id="getValidateCode">获取验证码</a>
-            <span class="validateCodeTip">活码已发送<br/>请查收(2小时有效)</span>
-            <div class="input-tip clearfix"></div>
-          </div>
-        </div>
 
         <div class="clearfix padding">
           <span class="men_tit lf">密　　　码：</span>
@@ -71,6 +62,24 @@
           </div>
         </div>
 
+          <div class="clearfix padding">
+              <span class="men_tit lf">身　　　份：</span>
+              <div class="lf input_left identity">
+                  <label class="lf">
+                      <input type="radio" id="factory" name='identity' value="1" checked="checked" class="radio_posi"/>工厂
+                  </label>
+                  <label class="lf">
+                      <input type="radio" id="trafficker" name='identity' value="1" class="radio_posi"/>贸易商
+                  </label>
+                  <label class="lf">
+                      <input type="radio" id="importer" name='identity' value="1" class="radio_posi"/>进口商
+                  </label>
+                  <label class="lf">
+                      <input type="radio" id="stockist" name='identity' value="1" class="radio_posi"/>零售商
+                  </label>
+              </div>
+          </div>
+
         <div class="clearfix padding">
           <span class="men_tit lf">企业中文名：</span>
           <div class="lf input_left password_box">
@@ -79,6 +88,7 @@
             <div class="input-tip"></div>
           </div>
         </div>
+
         <div class="clearfix padding">
           <span class="men_tit lf">企业英文名：</span>
           <div class="lf input_left password_box">
@@ -87,23 +97,7 @@
             <div class="input-tip"></div>
           </div>
         </div>
-        <div class="clearfix padding">
-          <span class="men_tit lf">身　　　份：</span>
-          <div class="lf input_left identity">
-            <label class="lf">
-              <input type="radio" id="factory" name='identity' value="1" checked="checked" class="radio_posi"/>工厂
-            </label>
-            <label class="lf">
-              <input type="radio" id="trafficker" name='identity' value="1" class="radio_posi"/>贸易商
-            </label>
-            <label class="lf">
-              <input type="radio" id="importer" name='identity' value="1" class="radio_posi"/>进口商
-            </label>
-            <label class="lf">
-              <input type="radio" id="stockist" name='identity' value="1" class="radio_posi"/>零售商
-            </label>
-          </div>
-        </div>
+
         <div class="clearfix padding">
           <span class="men_tit lf">
             <span class="lf">企</span>
@@ -113,56 +107,75 @@
           </span>
 
           <div class="lf input_left marginB20 width336" id="factory_sel">
-           <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="4" checked="true" class="lf chec_posi">纱线染厂
-            </label>
-            <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="factory" value="1" class="lf chec_posi">纺纱厂
-            </label>
-            <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="factory" value="2" class="lf chec_posi">织布厂
-            </label>
-            <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="factory" value="3" class="lf chec_posi">成品厂
-            </label>
-             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="factory" value="4" class="lf chec_posi">后处理厂
-            </label>
-             <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="3" class="lf chec_posi">印花厂
-            </label>
-             <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="1" class="lf chec_posi">绣花厂
-            </label>
-             <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="2" class="lf chec_posi">辅料厂
-            </label>
-             <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="1" class="lf chec_posi">面料染厂
-            </label>
-            <label class="radio_spacing lf service_marg">
-              <input type="checkbox" name="factory" value="2" class="lf chec_posi">包装材料厂
-            </label>
+              <div class="clearfix">
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="4" checked="true" class="lf chec_posi">纱线工厂
+                  </label>
+                  <label class="radio_spacing lf chec_spacing">
+                      <input type="checkbox" name="factory" value="1" class="lf chec_posi">织造工厂
+                  </label>
+                  <label class="radio_spacing lf chec_spacing">
+                      <input type="checkbox" name="factory" value="2" class="lf chec_posi">染色工厂
+                  </label>
+                  <label class="radio_spacing lf chec_spacing">
+                      <input type="checkbox" name="factory" value="3" class="lf chec_posi">印花工厂
+                  </label>
+                  <label class="radio_spacing lf chec_spacing">
+                      <input type="checkbox" name="factory" value="4" class="lf chec_posi">涂层、轧花等其他后处理工厂
+                  </label>
+              </div>
+              <div class="clearfix">
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="3" class="lf chec_posi">绣花工厂
+                  </label>
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="1" class="lf chec_posi">包装材料工厂
+                  </label>
+              </div>
+
+              <div class="clearfix">
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="2" class="lf chec_posi">填充物及辅料工厂
+                  </label>
+              </div>
+
+              <div class="clearfix">
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="1" class="lf chec_posi">家纺成品工厂
+                  </label>
+              </div>
+
+              <div class="clearfix">
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="2" class="lf chec_posi">坯布供应商
+                  </label>
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="1" class="lf chec_posi">成品面料供应商
+                  </label>
+                  <label class="radio_spacing lf service_marg">
+                      <input type="checkbox" name="factory" value="2" class="lf chec_posi">家纺成品供应商
+                  </label>
+              </div>
           </div>
 
           <div class="lf input_left none marginB20" id="trafficker_sel">
             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="trafficker" value="1" checked="checked" class="lf chec_posi">面料
+              <input type="checkbox" name="trafficker" value="1" checked="checked" class="lf chec_posi">面料贸易商
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="trafficker" value="2" class="lf chec_posi">成品
+              <input type="checkbox" name="trafficker" value="2" class="lf chec_posi">家纺成品贸易商
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="trafficker" value="3" class="lf chec_posi">辅料及包装材料
+              <input type="checkbox" name="trafficker" value="3" class="lf chec_posi">辅料及包装材料贸易商
             </label>
           </div>
 
           <div class="lf input_left none marginB20" id="importer_sel">
             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="importer" value="1" checked="checked" class="lf chec_posi">面料
+              <input type="checkbox" name="importer" value="1" checked="checked" class="lf chec_posi">面料进口商
             </label>
             <label class="radio_spacing lf chec_spacing">
-              <input type="checkbox" name="importer" value="2" class="lf chec_posi">成品
+              <input type="checkbox" name="importer" value="2" class="lf chec_posi">家纺成品进口商
             </label>
         </div>
 
