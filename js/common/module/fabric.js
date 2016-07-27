@@ -66,16 +66,17 @@ define(function(require, exports, module) {
 
 /////////////////////////// 增加减少经纬纱种类 /////////////////////////
 
-
-    var yarnNum = $('#abb-ul li').length + $('.yarn-ul li').length;
+    var warpNum = $('#yarn-ul li').length;
+    var abbNum = $('#abb-ul li').length;
+    var yarnNum = warpNum + abbNum;
 
     // 经纱事件
     $('#warp-spinner')
       .spinner({
         min:1,
         max:2,
+        value: warpNum,
         addEvent: function () {
-            yarnNum = yarnNum + 1;
             var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
             $('#yarn-ul').append('<li class="lf yarn_para">'
                 + '<span class="lf para_tit">经纱2：</span>'
@@ -99,6 +100,7 @@ define(function(require, exports, module) {
                 $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
                 + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="FabricYarns['+ yarnNum +'].DensityLength" class="density_input lf">'
             );
+            yarnNum++;
         },
         cutEvent: function () {
           $('#yarn-ul li:last input').poshytip('destroy');
@@ -112,9 +114,9 @@ define(function(require, exports, module) {
     $('#abb-spinner').spinner({
         min:1,
         max:4,
+        value: abbNum,
         addEvent:function () {
             var num = $('#abb-ul li').length+1;
-            yarnNum = yarnNum + 1;
             var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
             $('#abb-ul').append('<li class="lf yarn_para">'
               + '<span class="lf para_tit">纬纱'+ num +'：</span>'
@@ -136,6 +138,7 @@ define(function(require, exports, module) {
               + '</li>');
             $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
               + '<input type="text" id="abbSpinnerNum'+num+'" name="FabricYarns['+ yarnNum +'].DensityLength" class="density_input lf">');
+            yarnNum++;
         },
         cutEvent:function () {
             $('#abb-ul li:last input').poshytip('destroy');
@@ -164,9 +167,7 @@ define(function(require, exports, module) {
         setAbbValidator();
     });
 
-    /**
-     * 纱线密度限制数值和错误信息
-     */
+    // 纱线密度限制数值和错误信息
     function yarnDensity(){
         var Density = 300;
         if($('#hLight_step2 select').val() == 'Inches'){
@@ -177,7 +178,7 @@ define(function(require, exports, module) {
         }
         return Density;
     }
-
+    // 重新设置经纱的验证
     function setWarpValidator(){
         $('#warpSpinnerNum1,#warpSpinnerNum2').each(function(){
             $(this).rules('add',{
@@ -195,6 +196,7 @@ define(function(require, exports, module) {
         });
     }
 
+    // 重新设置纬纱的验证
     function setAbbValidator(){
         $('#abbSpinnerNum1,#abbSpinnerNum2,#abbSpinnerNum3,#abbSpinnerNum4').each(function(){
             $(this).rules('add',{
@@ -313,14 +315,23 @@ define(function(require, exports, module) {
         });
     });
 
-    // iframe传值
-    window.parentFn = function(ingredient, standard, id, price){
+////////////////////// iframe传值 ////////////////////
+    // window.parentFn = function(ingredient, standard, id, price){
+    //     var obj = $('li.curLayer');
+    //     obj.find('.input_fabric').val(ingredient);
+    //     obj.find('.input_fabric:eq(1)').val(standard);
+    //     obj.find('.ingredient input:eq(1)').val(id);
+    //     obj.find('.ingredient input:eq(2)').val(price);
+    // }
+    // postMessage
+    window.addEventListener('message',function(e){
+        // console.log(e.data);
         var obj = $('li.curLayer');
-        obj.find('.input_fabric').val(ingredient);
-        obj.find('.input_fabric:eq(1)').val(standard);
-        obj.find('.ingredient input:eq(1)').val(id);
-        obj.find('.ingredient input:eq(2)').val(price);
-    }
+        obj.find('.input_fabric').val(e.data.ingredient);
+        obj.find('.input_fabric:eq(1)').val(e.data.standard);
+        obj.find('.ingredient input:eq(1)').val(e.data.id);
+        obj.find('.ingredient input:eq(2)').val(e.data.price);
+    },false);
 
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////

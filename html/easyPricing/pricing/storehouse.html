@@ -169,9 +169,16 @@
     $('.access_butt').on('click', function() {
       var ingredient = $(this).parents('.access_data').find('li:eq(0)').html();
       var standard = $(this).parents('.access_data').find('li:eq(2)').html();
-
+      var id = 1;
       var price = $(this).parents('.access_data').find('li:eq(7)').html();
-      parent.window.parentFn(ingredient,standard,1,price);
+
+      var data = {
+        'ingredient':ingredient,
+        'standard':standard,
+        'id':id,
+        'price':price
+      };
+      window.parent.postMessage(data,'*');
       parent.layer.close(index);
     })
   </script>
