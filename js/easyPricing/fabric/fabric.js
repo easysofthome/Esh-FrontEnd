@@ -284,9 +284,6 @@ define(function(require, exports, module) {
     fabric.init();
 /////////////////////// /表单验证 ////////////////////////////
 
-
-// module.exports.validate = function(callback){callback()};
-
 }); //define
 
 

@@ -164,9 +164,7 @@ define(function(require, exports, module) {
         setAbbValidator();
     });
 
-    /**
-     * 纱线密度限制数值和错误信息
-     */
+    // 纱线密度限制数值和错误信息
     function yarnDensity(){
         var Density = 300;
         if($('#hLight_step2 select').val() == 'Inches'){
@@ -177,7 +175,7 @@ define(function(require, exports, module) {
         }
         return Density;
     }
-
+    // 重新设置经纱的验证
     function setWarpValidator(){
         $('#warpSpinnerNum1,#warpSpinnerNum2').each(function(){
             $(this).rules('add',{
@@ -195,6 +193,7 @@ define(function(require, exports, module) {
         });
     }
 
+    // 重新设置纬纱的验证
     function setAbbValidator(){
         $('#abbSpinnerNum1,#abbSpinnerNum2,#abbSpinnerNum3,#abbSpinnerNum4').each(function(){
             $(this).rules('add',{
@@ -313,14 +312,23 @@ define(function(require, exports, module) {
         });
     });
 
-    // iframe传值
-    window.parentFn = function(ingredient, standard, id, price){
+////////////////////// iframe传值 ////////////////////
+    // window.parentFn = function(ingredient, standard, id, price){
+    //     var obj = $('li.curLayer');
+    //     obj.find('.input_fabric').val(ingredient);
+    //     obj.find('.input_fabric:eq(1)').val(standard);
+    //     obj.find('.ingredient input:eq(1)').val(id);
+    //     obj.find('.ingredient input:eq(2)').val(price);
+    // }
+    // postMessage
+    window.addEventListener('message',function(e){
+        // console.log(e.data);
         var obj = $('li.curLayer');
-        obj.find('.input_fabric').val(ingredient);
-        obj.find('.input_fabric:eq(1)').val(standard);
-        obj.find('.ingredient input:eq(1)').val(id);
-        obj.find('.ingredient input:eq(2)').val(price);
-    }
+        obj.find('.input_fabric').val(e.data.ingredient);
+        obj.find('.input_fabric:eq(1)').val(e.data.standard);
+        obj.find('.ingredient input:eq(1)').val(e.data.id);
+        obj.find('.ingredient input:eq(2)').val(e.data.price);
+    },false);
 
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
