@@ -145,6 +145,73 @@ define(function(require, exports, module) {
         }
     });
 
+/////////////////// 切换单位重新设置验证 ////////////////////////////
+    var icons = {
+        error: '<i class="i-error"></i>'
+    };
+    var yarnDensityStr = '';
+
+    $('#hLight_step2 select').on('change', function(){
+        setWarpValidator();
+        setAbbValidator();
+    });
+
+    $('.increase:eq(0)').on('click', function(){
+        setWarpValidator();
+    });
+
+    $('.increase:eq(1)').on('click', function(){
+        setAbbValidator();
+    });
+
+    /**
+     * 纱线密度限制数值和错误信息
+     */
+    function yarnDensity(){
+        var Density = 300;
+        if($('#hLight_step2 select').val() == 'Inches'){
+            Density = Density * 2.54;
+            yarnDensityStr = '密度值不超过762根/英寸';
+        } else {
+            yarnDensityStr = '密度值不超过300根/厘米';
+        }
+        return Density;
+    }
+
+    function setWarpValidator(){
+        $('#warpSpinnerNum1,#warpSpinnerNum2').each(function(){
+            $(this).rules('add',{
+                number: true,
+                required: true,
+                maxlength: 10,
+                max: yarnDensity(),
+                messages: {
+                    number: icons.error + '经密值只能是数字！',
+                    required: icons.error + '请输入经密值！',
+                    maxlength: icons.error + '经密值过大！',
+                    max: icons.error + yarnDensityStr
+                }
+            });
+        });
+    }
+
+    function setAbbValidator(){
+        $('#abbSpinnerNum1,#abbSpinnerNum2,#abbSpinnerNum3,#abbSpinnerNum4').each(function(){
+            $(this).rules('add',{
+                number:true,
+                required: true,
+                maxlength:10,
+                max: yarnDensity(),
+                messages: {
+                    number: icons.error + '经密值只能是数字！',
+                    required: icons.error + '请输入经密值！',
+                    maxlength: icons.error + '经密值过大！',
+                    max: icons.error + yarnDensityStr
+                }
+            });
+        });
+    }
+
     // 标签选择
     $('.handle_one').click(function() {
         var obj = $(this).find('input');
