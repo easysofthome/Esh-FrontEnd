@@ -50,7 +50,7 @@ define(['js/front/lib/jquery.customSelect/jquery.customSelect.css'], function ()
 
                     customSelectSpan.addClass(prefix);
                     if (options.mapClass) {
-                        customSelectSpan.addClass($select.attr('class'));
+                        customSelectSpan.addClass($select.attr('class')).removeClass('lf');
                     }
                     if (options.mapStyle) {
                         customSelectSpan.attr('style', $select.attr('style'));
