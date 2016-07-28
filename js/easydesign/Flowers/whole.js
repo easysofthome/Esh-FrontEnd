@@ -4,7 +4,7 @@ define(function (require, exports, module) {
 
     if($('.flowlist a').attr('href')=="#"||!($('.flowlist a').attr('href'))){
       $('.flowlist .flowerimg').bind('click',function(e){
-        var url = '/html/easydesign/Flowers/viewFlower.html';
+        var url = '/html/easydesign/Flowers/viewFlower.html?keyId=e15b7697-8e9f-48f3-b9f4-a9eb7f826f1f&pageIndex=1';
         window.open(url);
       });
     }
