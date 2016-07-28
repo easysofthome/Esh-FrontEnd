@@ -35,20 +35,21 @@
               <option value="three">200-299米</option>
               <option value="four">3000-399米</option>
             </select>
+            <input type="hidden" name="OrderQuantityName" value="0-199米">
           </div>
           <div class="clearfix rad_frm">
             <span class="lf title_name">织造种类：</span>
             <div class="lf Single_box">
               <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" checked="checked" class="lf radio_post" />
+                <input name="WeavingType" type="radio" value="FL0001" checked="checked" class="lf radio_post" />
                 <span class="lf">提花布</span>
               </label>
               <label class="lf radio_rg label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
+                <input name="WeavingType" type="radio" value="FL0002" class="lf radio_post" />
                 <span class="lf">小提花</span>
               </label>
               <label class="lf label_radio">
-                <input name="Fruit" type="radio" class="lf radio_post" />
+                <input name="WeavingType" type="radio" value="FL0003" class="lf radio_post" />
                 <span class="lf">平纹、斜纹、缎纹</span>
               </label>
             </div>
@@ -56,7 +57,7 @@
           <div class="clearfix data_frm">
             <div>
               <span class="lf title_name">面料门幅：</span>
-              <input type="text" id="fabricWidth" name="" class="lf fabric_width">
+              <input type="text" id="fabricWidth" name="FabricWidth" class="lf fabric_width">
               <select class="lf handle_mag" id="sel2" >
                 <option value="">厘米</option>
                 <option value="">分米</option>
@@ -71,7 +72,7 @@
             <div class="clearfix">
               <span class="lf title_name">纱线种类数量：</span>
               <span class="lf title_density">密度单位：</span>
-              <select class="lf" id="sel3">
+              <select class="lf" id="sel3" name="YarnDensityUnit">
                 <option value="Centimetre">根/厘米</option>
                 <option value="Inches">根/英寸</option>
               </select>
@@ -161,15 +162,15 @@
               <span class="lf title_name">染织方法：</span>
               <div class="lf Single_box">
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit2" type="radio" checked="checked" class="lf radio_post" />
+                  <input name="DyeingType" type="radio" checked="checked" class="lf radio_post" />
                   <span class="lf">染色</span>
                 </label>
                 <label class="lf radio_rg label_radio">
-                  <input name="Fruit2" type="radio" class="lf radio_post" />
+                  <input name="DyeingType" type="radio" class="lf radio_post" />
                   <span class="lf">印花</span>
                 </label>
                 <label class="lf label_radio">
-                  <input name="Fruit2" type="radio" class="lf radio_post" />
+                  <input name="DyeingType" type="radio" class="lf radio_post" />
                   <span class="lf">色织</span>
                 </label>
               </div>
@@ -481,11 +482,11 @@
           <div class="lf res_con">{{ d.DY_NAME }}</div>
         </div>
         <div class="clearfix Row">
-          <div class="lf res_tit">有效门幅({{ d.INCH_CM }})：</div>
-          <div class="lf res_con">{{d.INCH_CM=="CM"?d.WIDTH_CM:d.WIDTH_INCH}}</div>
+          <div class="lf res_tit">有效门幅({{ d.FabricWidthUnit }})：</div>
+          <div class="lf res_con">{{d.FabricWidth}}</div>
         </div>
         <div class="clearfix Row">
-          <div class="lf res_tit">经纬密度({{ d.INIUNIT }}：</div>
+          <div class="lf res_tit">经纬密度({{ d.YarnDensityUnit }}：</div>
           <div class="lf res_con">{{d.JXMD}}*{{d.WXMD}}</div>
         </div>
         <div class="clearfix Row">
