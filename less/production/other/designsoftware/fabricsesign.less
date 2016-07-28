@@ -56,35 +56,38 @@
       width: 122px;
       color: #999999;
       border-radius: 6px 0 0 6px;
+      outline:none;
     }
     .fabricsesign_buttico{
       width: 27px;
       height: 24px;
       border-radius: 0 6px 6px 0;
-      background-color: transparent;
+      text-align: center;
       border: 0;
+      outline:none;
+      cursor: pointer;
       i{
-        margin-left: 5px;
-
         .sprite(@search_ico);
         .icon-other-designsoftware;
-        .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
+        display: inline-block;
+        _background:url("/images/production/other/designsoftware/search_ico.png") no-repeat;
+        _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/production/other/designsoftware/search_ico.png");
       }
     }
   }
   .options
   {
     background-color: #f5f5f5;
-     .fabr_spread{
-    background-color: #e3e4e5;
-    color: #333;
-    line-height: 30px;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 4px;
-    cursor: pointer;
+    .fabr_spread{
+      background-color: #e3e4e5;
+      color: #333;
+      line-height: 30px;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 4px;
+      cursor: pointer;
 
-  }
+    }
   }
   .options_rowbox
   {

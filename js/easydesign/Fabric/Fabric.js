@@ -5,7 +5,7 @@ define(function (require, exports, module) {
   $(document).ready(function () {
     if($('.flowlist a').attr('href')=="#"||!($('.flowlist a').attr('href'))){
       $('.flowlist .flowerimg').bind('click',function(e){
-        var url = '/html/easydesign/Fabric/viewFabric.html';
+        var url = '/html/easydesign/Fabric/viewFabric.html?keyId=0dfc98ae-60fd-4985-93ab-bd024f22dd9e&pageIndex=1';
         window.open(url);
       });
     }

@@ -44,12 +44,17 @@
     .fabricsesign_buttico{
       width: 27px;
       height: 24px;
+      border-radius: 0 6px 6px 0;
+      text-align: center;
+      border: 0;
+      outline:none;
+      cursor: pointer;
       i{
-        margin: 4px 0 0 5px;
-
         .sprite(@search_ico);
         .icon-other-designsoftware;
-        .fixIe6pngTransparent('/images/icon/other/designsoftware/search_ico.png');
+        display: inline-block;
+        _background:url("/images/production/other/designsoftware/search_ico.png") no-repeat;
+        _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/production/other/designsoftware/search_ico.png");
       }
     }
   }
@@ -70,8 +75,8 @@
     background-color: #f5f5f5;
     overflow: hidden;
     .options_box{
-      width: 360px;
-      padding: 0 30px 0 10px;
+      width: 380px;
+      padding-left: 10px;
     }
   }
   .options_rowbox
