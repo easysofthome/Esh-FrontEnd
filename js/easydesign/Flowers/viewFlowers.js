@@ -291,7 +291,7 @@ define(function (require, exports, module) {
   function getImgDetailURL(pid){
     var url = '';
     if(exports.urls.imgDetail_url.length>0){
-      url = exports.urls.imgDetail_url+'?keyId='+pid;
+      url = exports.urls.imgDetail_url+'?ID='+pid;
     }
     return url;
   }
