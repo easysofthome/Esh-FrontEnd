@@ -17,7 +17,6 @@ define(function(require, exports, module) {
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
-
 /////////////////////// 表单验证 ////////////////////////////
 
     //错误信息提示点
@@ -233,34 +232,70 @@ define(function(require, exports, module) {
                 // };
                 // priceData.
 
+                // $.ajax({
+                //     type: "POST",
+                //     url: '/Pricing/Fabric/FabricPricing',
+                //     data: $("#fabricForm").serialize(),
+                //     dataType: "text",
+                //     success: function (d) {
+                //         if(!d.jieguo){
+                //             alert(priceData.Message);
+                //             return;
+                //         }
 
-                // $("#showDataForm").ajaxSubmit(
-                //     function(message) {
-                //         console.log(message);
-                //     }
-                // );
+                //     },
+                //     error: function (err) { console.log('数据提交失败'); }
+                // });
 
-                $.ajax({
-                    type: "POST",
-                    url: '/Pricing/Fabric/FabricPricing',
-                    data: $("#fabricForm").serialize(),
-                    dataType: "text",
-                    success: function (d) { console.log(d); },
-                    error: function (err) { console.log('提交失败'); }
-                });
+                // var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"棉100%   ","QDL_NAME":"0-1999米","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"面料机缸染色","RS_YSYQ":"浅","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"梭织","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"提花布","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"染色","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"全棉纱","WXCF":"全棉纱","JXSZGGNAME":"全棉纱","WXSZGGNAME":"全棉纱","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"美元","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"抗菌处理；轧花"},"Success":true,"Message":""};
+                // var priceData = {"jieguo":true, "qdl":null, "zzzl":" 提花布", "rzff":"染色", "yxmf":0, "jwmd":null, "zwmd":102, "jxgg":[{"DensityLength":20, "YarnSpecName":null, "YarnSpecNum":null, "IsChaineDensity":true, "YarnSpecID":"047cd9f6-17c2-4c41-8120-0856be503dd3", "FactoryPrice":null }], "wxgg":[{"DensityLength":20, "YarnSpecName":null, "YarnSpecNum":null, "IsChaineDensity":false, "YarnSpecID":"00761d99-2045-4487-8fcf-8485f9c6e729", "FactoryPrice":null }, {"DensityLength":20, "YarnSpecName":null, "YarnSpecNum":null, "IsChaineDensity":true, "YarnSpecID":"047cd9f6-17c2-4c41-8120-0856be503dd3", "FactoryPrice":null } ], "mlkz":240, "mlcf":"涤纶60.15% 粘胶39.85% ", "hcl":null, "jg":16.87 };
 
-                return;
+                var priceData = {
+                    "jieguo":true,
+                    "qdl":null,
+                    "zzzl":" 提花布",
+                    "rzff":"染色",
+                    "yxmf":0,
+                    "jwmd":null,
+                    "zwmd":102,
+                    "jxgg":[{
+                        "DensityLength":20,
+                        "YarnSpecName":null,
+                        "YarnSpecNum":null,
+                        "IsChaineDensity":true,
+                        "YarnSpecID":"047cd9f6-17c2-4c41-8120-0856be503dd3",
+                        "FactoryPrice":null
+                    }],
+                    "wxgg":[
+                        {
+                            "DensityLength":20,
+                            "YarnSpecName":null,
+                            "YarnSpecNum":null,
+                            "IsChaineDensity":false,
+                            "YarnSpecID":"00761d99-2045-4487-8fcf-8485f9c6e729",
+                            "FactoryPrice":null
+                        },
+                        {
+                            "DensityLength":20,
+                            "YarnSpecName"
+                            :null,
+                            "YarnSpecNum":null,
+                            "IsChaineDensity":true,
+                            "YarnSpecID":"047cd9f6-17c2-4c41-8120-0856be503dd3",
+                            "FactoryPrice"
+                            :null
+                        }
+                    ],
+                    "mlkz":240,
+                    "mlcf":"涤纶60.15% 粘胶39.85% ",
+                    "hcl":null,
+                    "jg":16.87
+                };
 
-                var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"棉100%   ","QDL_NAME":"0-1999米","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"面料机缸染色","RS_YSYQ":"浅","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"梭织","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"提花布","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"染色","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"全棉纱","WXCF":"全棉纱","JXSZGGNAME":"全棉纱","WXSZGGNAME":"全棉纱","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"美元","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"抗菌处理；轧花"},"Success":true,"Message":""};
-
-                // if(!priceData.Result){
-                //     alert(priceData.Message);
-                //     return;
-                // }
 
                 //同步渲染 模板引擎
                 var laytpl = require('laytpl');
-                var resultTemplate = laytpl($("#resultTemplate").html()).render(priceData.Data);
+                var resultTemplate = laytpl($("#resultTemplate").html()).render(priceData);
                 $("#priceResult").html(resultTemplate);
                 var layerPrice = $.layer({
                     type: 1,   //0-4的选择,
