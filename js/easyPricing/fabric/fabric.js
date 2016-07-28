@@ -223,15 +223,16 @@ define(function(require, exports, module) {
     //             }
     //         } else {
                 // var priceData = d.Data;
-                var priceData = {
-                    "Result":true,
-                    "TotalPrice":10.57,
-                    "FabricTotalWeight":68,
-                    "FabricDensity":87,
-                    "FabricCompositionContent":"涤纶65.00% 棉35.00% ",
-                    "Message":null
-                };
-                var
+                // var priceData = {
+                //     "Result":true,
+                //     "TotalPrice":10.57,
+                //     "FabricTotalWeight":68,
+                //     "FabricDensity":87,
+                //     "FabricCompositionContent":"涤纶65.00% 棉35.00% ",
+                //     "Message":null
+                // };
+                // priceData.
+                console.log($('#fabricForm').serialize());
                 var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"棉100%   ","QDL_NAME":"0-1999米","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"面料机缸染色","RS_YSYQ":"浅","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"梭织","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"提花布","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"染色","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"全棉纱","WXCF":"全棉纱","JXSZGGNAME":"全棉纱","WXSZGGNAME":"全棉纱","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"美元","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"抗菌处理；轧花"},"Success":true,"Message":""};
 
                 // if(!priceData.Result){
