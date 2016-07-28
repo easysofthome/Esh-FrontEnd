@@ -13,32 +13,23 @@ define(function (require, exports, module) {
     'similarImg_url':''
   };
   var objImg = {'w':100,'h':100};
-  var imgData = {'curImgID':'','pagination':{'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray':[],'currentImgInfo':{'detail':{},'similarImgList':[]},'searchParam':''};
+  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':0,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{'similarImgList':[]},'searchParam':''};
 ////////////////////////////////图片加载///////////////////////////////////////////
 
-  //异步请求图片ID数组
-  function ajaxLoadImgIdArray(url){
+   //异步请求图片ID数组
+  function ajaxLoadImgIdArray(url,pageIndex){
    $.ajax({
         type: 'post',
         url: url,
         dataType: 'json',
-        //jsonp: "callback",
-       // jsonpCallback: 'jsonpCallback',
+        // jsonp: "callback",
+        // jsonpCallback: 'jsonpCallback',
         beforeSend:function(){
 
         },
         success: function(data){
-         //如果数组不为空则放入cookie
          if(data.length>0){
-            imgData.imgIdArray = data;
-            //将数组放入cookie,用户刷新页面记录当前页面信息
-            Cookies.set('imgIdArray',imgData.imgIdArray);
-            var _curImgID = imgData.curImgID;
-            var tempCurImgIndex = imgData.pagination.curImgIndex;
-            //返回图片数组ID是不为空，则在查找图片ID在数组中索引
-            var _curImgIndex = getIndexByImgID(data,_curImgID);
-            //如果当前图片存在于数组中则取出索引，如果不存在则取数组的开始或结束索引（取决于用户点击的上一张还是下一张）
-            imgData.pagination.curImgIndex = _curImgIndex >= 0 ? _curImgIndex : (tempCurImgIndex>0?-1:imgData.imgIdArray.length);
+            setImgIdArrayCookie(data,pageIndex);
          }
          //设置上一张、下一张按钮显示与否
          setNextOrPrev(imgData.pagination,data.length);
@@ -49,12 +40,33 @@ define(function (require, exports, module) {
       });
   }
 
+  //将图片数组放入cookie
+  function setImgIdArrayCookie(data,pageIndex){
+    if(imgData.pagination.pageIndex == pageIndex){ //第一次加载
+      imgData.imgIdArray_cur = data;
+      Cookies.set('imgIdArray_cur',data);
+    }else if(imgData.pagination.pageIndex > pageIndex){//当前组第一张
+      imgData.imgIdArray_temp = data;
+      Cookies.set('imgIdArray_temp',data);
+    }else if(imgData.pagination.pageIndex < pageIndex){//当前组最后一张
+      imgData.imgIdArray_temp = data;
+      Cookies.set('imgIdArray_temp',data);
+    }
+    var _curImgID = imgData.curImgID;
+    //返回图片数组ID是不为空，则在查找图片ID在数组中索引
+    var _curImgIndex = getIndexByImgID(imgData.imgIdArray_cur,_curImgID);
+    //如果当前图片存在于数组中则取出索引，如果不存在返回当前图片索引
+    imgData.pagination.curImgIndex = _curImgIndex;
+  }
+
   //异步请求图片详情
   function ajaxLoadImgDetail(url){
     //重写url
     rewriteRUL(url);
     //将数组放入cookie,用户刷新页面记录当前页面信息
-    Cookies.set('pageIndex',imgData.pagination.pageIndex);
+    Cookies.set('pageIndex_cur',imgData.pagination.pageIndex);
+    Cookies.set('pageIndex_edge',imgData.pagination.pageIndex_edge);
+    //console.log(imgData.curImgID);
     $.ajax({
       type: 'post',
       url: url,
@@ -65,10 +77,10 @@ define(function (require, exports, module) {
       },
       success: function(data){
         loadData(data);
-        //console.log(data.ID);
+        //console.log('pageIndex:'+imgData.pagination.pageIndex);
       },
       error : function() {
-        console.log('---花型详情页异常---');
+        console.log('---面料详情页异常---');
       }
     });
   }
@@ -201,61 +213,57 @@ define(function (require, exports, module) {
    //下一张图片
   function nextImg(){
     var pageobj = imgData.pagination;
-    var imgIdArray = imgData.imgIdArray;
-    var arrayLength = imgIdArray.length;
-    pageobj.curImgIndex ++;
+    var imgIdArray_cur = imgData.imgIdArray_cur;
+    var arrayLength = imgIdArray_cur.length;
+    pageobj.curImgIndex ++; //图片索引加一
     var _curImgID = '';
     $('.prev').show();
-    //当前组最后一张图片 且 可能还有下一组图片
-    if(arrayLength==pageobj.pageCount){
-      if(pageobj.curImgIndex >= arrayLength-1){
-        pageobj.curImgIndex = arrayLength-1;
-        pageobj.pageIndex++;
-        //pageobj.curImgIndex = 0;
-        _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-        loadImgIdArray(pageobj.pageIndex);
-      }else{
-        _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-      }
-    }else if(arrayLength<pageobj.pageCount){
-       _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-      //当前组最后一张图片 且 没有下一组图片
-      if(pageobj.curImgIndex == arrayLength-1){
-         pageobj.pageIndex ++;
-         $('.next').hide();
-      }
+
+    if(pageobj.curImgIndex==arrayLength){//到达下一组第一张
+      pageobj.curImgIndex = 0; //页码归零
+      pageobj.pageIndex++;     //组索引加一
+      imgData.imgIdArray_cur = imgData.imgIdArray_temp;//当前组图片
+      imgData.imgIdArray_temp = imgIdArray_cur;
+      Cookies.set('imgIdArray_cur',imgData.imgIdArray_cur);
+      Cookies.set('imgIdArray_temp',imgData.imgIdArray_temp);
+      _curImgID = imgData.imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
+      imgData.pagination.pageIndex_edge = 0;
+
+    }else if(pageobj.curImgIndex==arrayLength-1){//到达每组最后一张
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
+      loadImgIdArray(parseInt(pageobj.pageIndex)+1);//请求一下组图片
+      imgData.pagination.pageIndex_edge = 1;
+    }else{//每组中间图片
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
+      imgData.pagination.pageIndex_edge = 0;
     }
     //加载图片详情
     LoadPageDetail(_curImgID);
   }
-
   //上一张图片
   function prevImg(){
     var pageobj = imgData.pagination;
-    var imgIdArray = imgData.imgIdArray;
-    var arrayLength = imgIdArray.length;
+    var imgIdArray_cur = imgData.imgIdArray_cur;
+    var arrayLength = imgIdArray_cur.length;
     pageobj.curImgIndex --;
     var _curImgID = '';
     $('.next').show();
-    //当前组第一张图片 且 还有上一组图片
-    if(pageobj.pageIndex>1){
-      if(pageobj.curImgIndex<=0){
-        pageobj.curImgIndex =0;
-        pageobj.pageIndex--;
-        //pageobj.curImgIndex = arrayLength-1;
-        _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-        imgData.curImgID = _curImgID;
-        loadImgIdArray(pageobj.pageIndex);
-      }else if(pageobj.curImgIndex==arrayLength-2){
-        pageobj.pageIndex --;
-        _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-      }else{
-         _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-      }
-    }else if(pageobj.pageIndex==1){
-      _curImgID = imgIdArray[pageobj.curImgIndex].ID;
-      imgData.curImgID = _curImgID;
-      loadImgIdArray(pageobj.pageIndex);
+   if(pageobj.curImgIndex==-1){//到达上一组最后一张
+      pageobj.pageIndex--;     //组索引加一
+      imgData.imgIdArray_cur = imgData.imgIdArray_temp;//当前组图片
+      imgData.imgIdArray_temp = imgIdArray_cur; //记录下一组图片
+      pageobj.curImgIndex = imgData.imgIdArray_cur.length-1; //页码归当前组图片末尾
+      _curImgID = imgData.imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
+      imgData.pagination.pageIndex_edge = 0;
+      Cookies.set('imgIdArray_cur',imgData.imgIdArray_cur);
+      Cookies.set('imgIdArray_temp',imgData.imgIdArray_temp);
+    }else if(pageobj.curImgIndex==0){//到达每组第一张
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
+      loadImgIdArray(parseInt(pageobj.pageIndex)-1);//请求上一组图片
+      imgData.pagination.pageIndex_edge = -1;
+    }else{//每组中间图片
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
+      imgData.pagination.pageIndex_edge = 0;
     }
     //加载图片详情
     LoadPageDetail(_curImgID);
@@ -328,7 +336,7 @@ define(function (require, exports, module) {
   }
   function loadImgIdArray(pageIndex){
     //获取图片数组
-    ajaxLoadImgIdArray(getInitURL(pageIndex));
+    ajaxLoadImgIdArray(getInitURL(pageIndex),pageIndex);
   }
   function LoadPageDetail(curImgID){
     imgData.curImgID = curImgID;
@@ -409,22 +417,34 @@ define(function (require, exports, module) {
 
 function init(){
   var curImgID = tools.urlHelp.getValueByKey('keyId');
-  var imgIdArray_cookie = Cookies.get('imgIdArray');
-  var pageIndex = Cookies.get('pageIndex');
+  var imgIdArray_temp = Cookies.get('imgIdArray_temp');
+  var imgIdArray_cur = Cookies.get('imgIdArray_cur');
+  var pageIndex_cur = 0;
+  //var pagination_cookie = Cookies.get('pagination');
   var url_pageIndex = tools.urlHelp.getValueByKey('pageIndex');
   if(url_pageIndex!=-1){ //首次加载
     imgData.pagination.pageIndex = url_pageIndex;
+    pageIndex_cur = imgData.pagination.pageIndex;
   }else{ //刷新页面
-    imgData.imgIdArray = jQuery.parseJSON(imgIdArray_cookie);
-    imgData.pagination.pageIndex = pageIndex;
-    imgData.pagination.curImgIndex = getIndexByImgID(imgData.imgIdArray,curImgID);
+    //imgData.imgIdArray = jQuery.parseJSON(imgIdArray_cookie);
+    imgData.imgIdArray_temp = jQuery.parseJSON(imgIdArray_temp);
+    imgData.imgIdArray_cur = jQuery.parseJSON(imgIdArray_cur);
+    imgData.pagination.pageIndex = Cookies.get('pageIndex_cur');
+    imgData.pagination.pageIndex_edge = Cookies.get('pageIndex_edge');
+    if(imgData.pagination.pageIndex_edge==-1){
+      pageIndex_cur = parseInt(imgData.pagination.pageIndex)-1;
+    }else if(imgData.pagination.pageIndex_edge==1){
+      pageIndex_cur = parseInt(imgData.pagination.pageIndex)+1;
+    }else{
+      pageIndex_cur = imgData.pagination.pageIndex;
+    }
   }
   imgData.curImgID = curImgID;
   //加载图片数组
-  loadImgIdArray(imgData.pagination.pageIndex);
+  loadImgIdArray(pageIndex_cur);
   //绑定上一张、下一张按钮点击事件
   bindScrollBigImg();
-  //加载图片详情  加载相似花型
+  //加载图片详情
   LoadPageDetail(imgData.curImgID);
 }
 
