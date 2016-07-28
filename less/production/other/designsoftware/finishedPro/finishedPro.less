@@ -54,12 +54,12 @@ div.finishedPro-top{
         border: 0;
         outline:none;
         cursor: pointer;
-        background-color: transparent;
         i{
           .sprite(@search_ico);
           .icon-other-designsoftware;
-          .fixIe6pngTransparent('/images/production/other/designsoftware/search_ico.png');
           display: inline-block;
+          _background:url("/images/production/other/designsoftware/search_ico.png") no-repeat;
+          _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/production/other/designsoftware/search_ico.png");
         }
       }
     }
