@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-面料工缴</title>
+  <link href="/css/production/VIP/easyPricing/assistant/validity.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  @@include('VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <!-- 右边搜索 -->
+      <div class="titbox">
+        <div class="clearfix">
+          <p class="tit lf">价格有效期设置</p>
+        </div>
+
+        <div class="clearfix outer_box">
+          <span class="lf coredata_tit">工 缴 分 类：</span>
+          <ul class="lf coredata_list">
+            <li class="lf">纱线价格</li>
+            <li class="lf">织造工缴</li>
+            <li class="lf">染色工缴</li>
+            <li class="lf">印花工缴</li>
+            <li class="lf">涂层、轧花等其他后处理</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="validity-box">
+        <div class="remind">
+          <p>提醒：</p>
+          <p>1、有效期未设置，其他用户是无法搜索到你的报价</p>
+          <p>2、有效期前一周系统会自动提醒您，如未能及时更新有效期，有效期过后其他用户无法搜索到你的报价</p>
+          <p>3、有效期内不可以修改价格，有效期设置好后是不可以更改的，只有当有效期结束后才可以重新设置有效期</p>
+        </div>
+
+        <table cellspacing="0" cellpadding="0" class="tab-box">
+          <tr>
+            <th>成分名称</th>
+            <th>有效期截至时间</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td>纯涤纱</td>
+            <td><input class="ipt laydate-icon-default" id="startDate"></td>
+            <td>
+              <a class="btn-save" href="#">保存</a>
+              <a class="btn-delete" href="#">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td>纯涤纱</td>
+            <td><input class="ipt laydate-icon-default" id="startDate"></td>
+            <td>
+              <a class="btn-save" href="#">保存</a>
+              <a class="btn-delete" href="#">删除</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  @@include('VIP/common/footer.html')
+  <script>seajs.use("js/front/VIP/easypricing/workersPay/fabric");</script>
+</body>
+</html>
