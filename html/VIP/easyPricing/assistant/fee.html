@@ -1,7 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-面料工缴</title>
+  <link href="/css/production/VIP/easyPricing/assistant/fee.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
 
-  <link href="/css/production/VIP/easyPricing/Coreprice/mycorepriceopt.css" rel="stylesheet" type="text/css"/>
-
-<div class="titbox">
+<body>
+  @@include('VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <!-- 右边搜索 -->
+      <div class="titbox">
         <div class="clearfix">
           <p class="tit lf">面料工缴设置</p>
           <a target="_blank" class="upload rg" href="/html/VIP/easyPricing/Coreprice/dyeing.html">添加纱线规格</a>
@@ -117,3 +129,13 @@
         </div>
         <div class="collapse_box">展开</div>
       </div>
+
+      <div class="tab-top">
+        您还未添加任何自己工厂的工缴数据，请及时补充完整，数据越完整，越容易让
+        <br>其他工厂找到你，给您带来更多合作的机会!</div>
+    </div>
+  </div>
+  @@include('VIP/common/footer.html')
+  <script>seajs.use("js/front/VIP/easypricing/workersPay/fabric");</script>
+</body>
+</html>

@@ -1,108 +1,58 @@
 @import '../../../../dev/mixins/mixins.less';
-@import '../../../../sprite/VIP/easyPricing/Coreprice/sprite.less';
-.core_box{
-    width:854px;
-    background-color:#fff;
-    .core_contbox{
-        width: 814px;
-        margin: 0 auto;
-        .species{
-            font-size: 16px;
-            line-height: 18px;
-            position: relative;
-            padding-bottom: 10px;
-            li:hover{
-                color:#ff6600;
-            }
+.titbox
+{  width: 854px;
+  margin-top: 40px;
 
-            li{
-                cursor: pointer;
-                width: 60px;
-                text-align: center;
-            }
-            .li_speci{
-                margin-left: 10px;
-            }
-            .bott_boreder{
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                background-color: #ff6600;
-            }
-        }
-        .core_titbut2{
-            margin-right:10px;
-        }
-        .core_databox{
-            margin:10px 0 0 0 ;
-        }
-        .core_databox,.core_databox2{
-            font-size:14px;
-            line-height:24px;
-            color: #333333;
+  background-color: #fff;
+  p.tit
+  {
+    font-size: 24px;
+    line-height: 66px;
 
-        }
-        .core_databox2{
-            margin-top:8px;
-        }
-        .list_Complete,.list_Complete2{
-            padding: 0 10px 0 10px;
+    margin-left: 20px;
+    display: inline;
 
-        }
-        .list_Complete2{
-            background-color: #e85d40;
-            color: #fff;
-            .border-radius(2px);
-        }
-
-
-        .coredata_list{
-
-            width: 670px;
-            margin-left:12px;
-            li{
-                padding: 0 10px 0 10px;
-                text-align: center;
-                cursor: pointer;
-            }
-            .li_leftmar,.li_lefttopmar{
-                margin-left: 12px;
-            }
-            .li_lefttopmar,.li_lefttopmarone{
-                margin-top: 6px;
-            }
-
-            li:hover{
-                background-color: #e85d40;
-                color: #fff;
-                 .border-radius(2px);
-            }
-        }
-        .Clearleft{
-            margin-left: 0px;
-        }
-        .collapse_box{
-            margin: 20px auto 0 auto;
-            width: 150px;
-            height: 30px;
-            cursor:pointer;
-            .border-radius(5px 5px 0 0);
-            background-color: #eeeeee;
-            .Choice{
-                margin: 11px 4px 0 18px;
-                   .sprite(@Choice);
-                   .icon-VIP-easyPricing-Coreprice;
-            }
-            .collapse_text{
-                line-height: 30px;
-                font-size: 14px;
-                margin-left: 2px;
-                color: #888888;
-            }
-
-        }
-    }
-
-
+    color: #333;
+  }
+  a.upload{
+    margin: 17px 20px 0 0;
+    .button-variant(#fff; #fd6464; #fd6464);
+    .button-size(0; 10px; 16px; 36px; 5px);
+  }
 }
+
+
+
+  .collapse_box{
+    margin: 20px auto 0 auto;
+    background-color: #e3e4e5;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+    cursor:pointer;
+    width: 150px;
+    .border-radius(5px 5px 0 0);
+    }
+.outer_box,.core_box{
+  width: 814px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4d4d4d;
+}
+  .coredata_tit,.coredata_list li{
+    margin-top: 8px;
+  }
+  .coredata_list{
+     width: 670px;
+   li{
+    margin-left: 4px;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+  }
+ }
+  .coredata_list li:hover{
+    background-color: #e85d40;
+    color: #fff;
+    border-radius: 2px;
+  }
