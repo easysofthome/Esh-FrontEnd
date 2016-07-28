@@ -234,14 +234,16 @@ define(function(require, exports, module) {
                 // priceData.
 
 
-                console.log($('#fabricForm').serialize());
-
-
+                // $("#showDataForm").ajaxSubmit(
+                //     function(message) {
+                //         console.log(message);
+                //     }
+                // );
 
                 $.ajax({
                     type: "POST",
                     url: '/Pricing/Fabric/FabricPricing',
-                    data: $("#fabricForm"),
+                    data: $("#fabricForm").serialize(),
                     dataType: "text",
                     success: function (d) { console.log(d); },
                     error: function (err) { console.log('提交失败'); }
