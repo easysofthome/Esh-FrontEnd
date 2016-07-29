@@ -112,7 +112,7 @@ define(function(require, exports, module) {
                 + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
                 + '</li>');
                 $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
-                + '<input type="text" id="warpSpinnerNum2" errorMsgPosition="rightTop" name="FabricYarnsChaine['+ warpNum +'].DensityLength" class="density_input lf">'
+                + '<input type="text" id="warpSpinnerNum2" name="FabricYarnsChaine['+ warpNum +'].DensityLength" class="density_input lf">'
             );
         },
         cutEvent: function () {
