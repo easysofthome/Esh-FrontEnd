@@ -1,0 +1,13 @@
+
+
+ addbind.html             添加织造工缴
+
+ addfee.html              添加纱线规格
+
+ binding.html             织造工缴（无数据）
+
+ fee.html                 纱线规格（无数据）
+
+ mainfee.html             纱线规格（有数据）
+
+ prom
