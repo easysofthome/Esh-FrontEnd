@@ -1,0 +1,60 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/common/RegLog/sprite.less';
+
+.prompt-box{
+  width: 440px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  background-color: #fff;
+  .border-radius(5px);
+  p.tit{
+    margin: 0 0 10px 0;
+    line-height: 30px;
+    font-size: 16px;
+    color: #333;
+    background-color: #eee;
+    padding: 0 10px;
+    i{
+      cursor: pointer;
+      margin-top: 7px;
+      .sprite(@btn_close);
+      .icon-VIP-common-RegLog;
+      .fixIe6pngTransparent('/images/icon/VIP/common/RegLog/btn_close.png');
+    }
+  }
+  .checkbox-box{
+    label.modify{
+      margin: 10px 20px;
+      line-height: 16px;
+      input.int{
+        width: 16px;
+        height: 16px;
+        margin-right: 3px;
+      }
+    }
+  }
+  .btn{
+    margin-top: 10px;
+    text-align: center;
+    .btn-save{
+      display: inline-block;
+      width: 60px;
+      line-height: 26px;
+      color: #fff;
+      margin: 0 10px;
+      background-color: #86be37;
+      .border-radius(4px);
+    }
+    .btn-delete{
+      display: inline-block;
+      width: 60px;
+      line-height: 26px;
+      color: #fff;
+      margin: 0 10px;
+      background-color: #fc5050;
+      .border-radius(4px);
+    }
+  }
+}
