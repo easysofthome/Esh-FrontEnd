@@ -20,6 +20,18 @@ define(function(require, exports, module) {
         $('.AddItem .js-tab').hide();
         $('.AddItem .js-tab').eq(index).show();
     });
+    $('input:radio[name=DyeingDyeRequirement]').on('click', function(){
+        var obj = $('input:radio[name=DyeingPrintingProcessRequirements]');
+        if($(this).val() == 3){
+            obj.eq(0).parent().parent().hide();
+            $('#flowerPositionLoop').css('display','inline-block');
+            obj.eq(2).parent().parent().show();
+        } else {
+            obj.eq(2).parent().parent().hide();
+            $('#flowerPositionLoop').hide();
+            obj.eq(0).parent().parent().show();
+        }
+    });
 
 /////////////////////////////// /表单样式部分 ///////////////////////////////////
 
