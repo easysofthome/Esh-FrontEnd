@@ -340,6 +340,9 @@ define(function (require, exports, module) {
       }else{
         pageIndex_cur = imgData.pagination.pageIndex;
       }
+      if(pageIndex_cur==0){
+        pageIndex_cur = 1;
+      }
       loadImgIdArray(pageIndex_cur);
       LoadPageDetail(imgData.curImgID);
   }
@@ -471,6 +474,9 @@ function init(){
       pageIndex_cur = parseInt(imgData.pagination.pageIndex)+1;
     }else{
       pageIndex_cur = parseInt(imgData.pagination.pageIndex);
+    }
+    if(pageIndex_cur==0){
+      pageIndex_cur = 1;
     }
     imgData.curImgID = curImgID;
     //加载图片数组
