@@ -13,7 +13,7 @@
   width: 854px;
 }
 
-.titbox{
+.outer_box{
   padding-bottom: 20px;
 }
 
@@ -21,10 +21,10 @@
 .validity-box{
   margin-top: 20px;
   background-color: #fff;
-  padding-bottom: 20px;
+  padding: 20px 0;
   .remind{
     line-height:24px;
-    margin: 20px 20px 0 20px;
+    margin: 0 20px;
   }
   .tab-box{
     width: 814px;
@@ -47,16 +47,22 @@
     td:nth-child(even){
       color: #C00;
     }
-    tr:nth-child(5){
-      background-color: #73B1E0;
-      color: #FFF;
-    }
     td{
       .ipt
       {
         width: 180px;
         height: 26px;
         padding: 0 10px;
+
+        border: 1px #cecece solid;
+
+        .border-radius(4px);
+      }
+      .tax-ipt{
+        width: 60px;
+        height: 26px;
+        padding: 0 10px;
+        margin: 0 5px;
 
         border: 1px #cecece solid;
 
@@ -71,15 +77,12 @@
         margin: 0 5px;
         .border-radius(4px);
       }
-      .btn-delete{
-        display: inline-block;
-        width: 60px;
-        line-height: 26px;
-        border: 1px solid #fc2e2e;
-        color: #fc2e2e;
-        margin: 0 5px;
-        .border-radius(4px);
-      }
+    }
+    .name{
+      width: 300px;
+    }
+    .operation{
+      width: 178px;
     }
   }
 }
