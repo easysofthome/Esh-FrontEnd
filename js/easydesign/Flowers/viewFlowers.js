@@ -386,7 +386,10 @@ define(function (require, exports, module) {
     var _curImgID = '';
     $('.next').show();
    if(pageobj.curImgIndex==-1){//到达上一组最后一张
-      pageobj.pageIndex--;     //组索引加一
+      pageobj.pageIndex--;     //组索引减一
+      if(pageobj.pageIndex==0){
+        pageobj.pageIndex =1;
+      }
       imgData.imgIdArray_cur = imgData.imgIdArray_temp;//当前组图片
       imgData.imgIdArray_temp = imgIdArray_cur; //记录下一组图片
       pageobj.curImgIndex = imgData.imgIdArray_cur.length-1; //页码归当前组图片末尾
