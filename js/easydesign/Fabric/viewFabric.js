@@ -83,9 +83,9 @@ define(function (require, exports, module) {
   function setNextOrPrev(pageobj,arrayLength){
     if(arrayLength == 0){//没有下一组图片
       imgData.pagination.hasNextImg = false;
-      if(pageobj.pageIndex==1){// 么有上一张
+      if(pageobj.pageIndex==1&&pageobj.curImgIndex==0){// 么有上一张
         imgData.pagination.hasPreImg = false;
-      }else if(pageobj.pageIndex>1){//有上一张
+      }else if(pageobj.pageIndex>1||(pageobj.pageIndex==1&&pageobj.curImgIndex>0)){//有上一张
         imgData.pagination.hasPreImg = true;
       }
     }else if(arrayLength > 0){//有下一组图片
@@ -99,14 +99,6 @@ define(function (require, exports, module) {
     setNextOrPrevButton(imgData.pagination.hasNextImg,imgData.pagination.hasPreImg);
   }
 
-  //鼠标滑过 显示翻页按钮
-  $('.gallery-img').mouseenter(function(event) {
-    $('.pagination').fadeIn();
-  });
-
-  $('.gallery-img').mouseleave(function(event) {
-    $('.pagination').fadeOut();
-  });
 ////////////////////////////////事件绑定///////////////////////////////////////////
 
   //鼠标滚轮，上一张、下一张
@@ -135,9 +127,18 @@ define(function (require, exports, module) {
     });
   }
 
+  //鼠标滑过 显示翻页按钮
+  $('.gallery-img').mouseenter(function(event) {
+    $('.pagination').fadeIn();
+  });
+
+  $('.gallery-img').mouseleave(function(event) {
+    $('.pagination').fadeOut();
+  });
+
   //地址改变事件
-  History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-      var imgData_state = History.getState(); // Note: We are using History.getState() instead of event.state
+  History.Adapter.bind(window,'statechange',function(){
+      var imgData_state = History.getState();
       if(imgData_state.data&&imgData_state.data.isBrowserGo){
         doLoadData(imgData_state.data);
       }
@@ -272,7 +273,7 @@ define(function (require, exports, module) {
     History.pushState(stateObj,null,'?'+param);
   }
 
-  //浏览器前进 后退功能
+  //浏览器地址改变后 执行函数 获取图片数组及图片详情
   function doLoadData(imgData_state){
       imgData=imgData_state
       Cookies.set('imgIdArray_cur',imgData.imgIdArray_cur);
@@ -330,8 +331,6 @@ define(function (require, exports, module) {
       imgData.pagination.pageIndex_edge = 0;
     }
     imgData.curImgID = _curImgID;
-    //加载图片详情
-    //LoadPageDetail(_curImgID);
     //重写URL
     reWriteURL(imgData,_curImgID,true);
   }
@@ -361,8 +360,6 @@ define(function (require, exports, module) {
       imgData.pagination.pageIndex_edge = 0;
     }
     imgData.curImgID = _curImgID;
-    //加载图片详情
-    //LoadPageDetail(_curImgID);
     //重写URL
     reWriteURL(imgData,_curImgID,true);
   }
