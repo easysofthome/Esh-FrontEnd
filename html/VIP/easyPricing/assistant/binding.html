@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-面料工缴</title>
+  <link href="/css/production/VIP/easyPricing/assistant/fee.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  @@include('VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <!-- 右边搜索 -->
+      <div class="titbox">
+        <div class="clearfix">
+          <p class="tit lf">面料工缴设置</p>
+          <a target="_blank" class="upload rg" href="#">添加织造工缴</a>
+        </div>
+
+        <div class="clearfix outer_box">
+          <span class="lf coredata_tit">工 缴 分 类：</span>
+          <ul class="lf coredata_list">
+            <li class="lf"><a href="#">纱线价格</a></li>
+            <li class="lf current_list"><a href="#">织造工缴</a></li>
+            <li class="lf"><a href="#">染色工缴</a></li>
+            <li class="lf"><a href="#">印花工缴</a></li>
+            <li class="lf"><a href="#">涂层、轧花等其他后处理</a></li>
+          </ul>
+        </div>
+
+        <div class="core_box">
+          <div class="clearfix">
+            <span class="lf coredata_tit">工 缴 类 型：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">化纤</a></li>
+              <li class="lf"><a href="#">棉</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">染 织 类 型：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">染色印花 </a></li>
+              <li class="lf"><a href="#">色织</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">密　　&nbsp;&nbsp;&nbsp;度：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-300 </a></li>
+              <li class="lf"><a href="#">0-79 </a></li>
+              <li class="lf"><a href="#">80-30 </a></li>
+              <li class="lf"><a href="#">80-300</a></li>
+
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">门　　&nbsp;&nbsp;&nbsp;幅：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-160 </a></li>
+              <li class="lf"><a href="#">161-195 </a></li>
+              <li class="lf"><a href="#">196-229</a></li>
+              <li class="lf"><a href="#">230-310</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">起&nbsp;&nbsp;&nbsp;订&nbsp;&nbsp;&nbsp;量：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-999999 </a></li>
+              <li class="lf"><a href="#">0-19999 </a></li>
+              <li class="lf"><a href="#">20000-999999</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+        <div class="collapse_box">展开</div>
+      </div>
+
+      <div class="tab-top">
+        您还可以通过绑定自己合作的工厂或者找到其他工厂的工缴价格，这样可以提供
+        <br>更多供应链服务，给您带来跟多合作的机会。</div>
+    </div>
+  </div>
+  @@include('VIP/common/footer.html')
+  <script>seajs.use("js/front/VIP/easypricing/workersPay/fabric");</script>
+</body>
+</html>
