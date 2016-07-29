@@ -99,13 +99,13 @@ define(function (require, exports, module) {
     }
   }
 
-  //上一张 下一张显示或隐藏
+   //上一张 下一张显示或隐藏
   function setNextOrPrev(pageobj,arrayLength){
     if(arrayLength == 0){//没有下一组图片
       imgData.pagination.hasNextImg = false;
-      if(pageobj.pageIndex==1){// 么有上一张
+      if(pageobj.pageIndex==1&&pageobj.curImgIndex==0){// 么有上一张
         imgData.pagination.hasPreImg = false;
-      }else if(pageobj.pageIndex>1){//有上一张
+      }else if(pageobj.pageIndex>1||(pageobj.pageIndex==1&&pageobj.curImgIndex>0)){//有上一张
         imgData.pagination.hasPreImg = true;
       }
     }else if(arrayLength > 0){//有下一组图片
@@ -162,8 +162,8 @@ define(function (require, exports, module) {
     });
   }
   //地址改变事件
-  History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-      var imgData_state = History.getState(); // Note: We are using History.getState() instead of event.state
+  History.Adapter.bind(window,'statechange',function(){
+      var imgData_state = History.getState();
       if(imgData_state.data&&imgData_state.data.isBrowserGo){
         doLoadData(imgData_state.data);
       }
@@ -203,7 +203,7 @@ define(function (require, exports, module) {
     //将数组放入cookie,用户刷新页面记录当前页面信息
     Cookies.set('pageIndex_cur',imgData.pagination.pageIndex);
     Cookies.set('pageIndex_edge',imgData.pagination.pageIndex_edge);
-    console.log(imgData.pagination.pageIndex);
+    //console.log(imgData.pagination.pageIndex);
     $.ajax({
       type: 'post',
       url: url,
