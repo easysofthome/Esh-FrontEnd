@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-添加织造工缴</title>
+  <link href="/css/production/VIP/easyPricing/assistant/addfee.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  @@include('VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <!-- 右边搜索 -->
+      <div class="titbox">
+        <div class="clearfix">
+          <p class="tit lf">添加织造工缴</p>
+
+        </div>
+
+
+        <div class="core_box">
+          <div class="clearfix">
+            <span class="lf coredata_tit">工 缴 类 型：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">化纤</a></li>
+              <li class="lf"><a href="#">棉</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">染 织 类 型：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">染色印花 </a></li>
+              <li class="lf"><a href="#">色织</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">密　　&nbsp;&nbsp;&nbsp;度：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-300 </a></li>
+              <li class="lf"><a href="#">0-79 </a></li>
+              <li class="lf"><a href="#">80-30 </a></li>
+              <li class="lf"><a href="#">80-300</a></li>
+
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">门　　&nbsp;&nbsp;&nbsp;幅：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-160 </a></li>
+              <li class="lf"><a href="#">161-195 </a></li>
+              <li class="lf"><a href="#">196-229</a></li>
+              <li class="lf"><a href="#">230-310</a></li>
+            </ul>
+          </div>
+          <div class="clearfix">
+            <span class="lf coredata_tit">起&nbsp;&nbsp;&nbsp;订&nbsp;&nbsp;&nbsp;量：</span>
+            <ul class="lf coredata_list">
+              <li class="lf"><a href="#">0-999999 </a></li>
+              <li class="lf"><a href="#">0-19999 </a></li>
+              <li class="lf"><a href="#">20000-999999</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+        <div class="collapse_box">展开</div>
+      </div>
+
+      <div class="tab-top">@@include('VIP/easyPricing/assistant/weavingtab.html')</div>
+      @@include('VIP/common/next.html')
+    </div>
+  </div>
+  @@include('VIP/common/footer.html')
+  <script>seajs.use("js/front/VIP/easypricing/workersPay/fabric");</script>
+</body>
+</html>

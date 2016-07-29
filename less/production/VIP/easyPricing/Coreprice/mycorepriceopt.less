@@ -1,8 +1,7 @@
 @import '../../../../dev/mixins/mixins.less';
 .titbox
 {  width: 854px;
-  margin-top: 40px;
-
+  margin-top:40px;
   background-color: #fff;
   p.tit
   {
@@ -38,7 +37,11 @@
   margin: 0 auto;
   font-size: 14px;
   line-height: 24px;
+
+        a{
   color: #4d4d4d;
+}
+
 }
   .coredata_tit,.coredata_list li{
     margin-top: 8px;
@@ -49,10 +52,22 @@
     margin-left: 4px;
     padding: 0 10px 0 10px;
     cursor: pointer;
+
   }
  }
   .coredata_list li:hover{
     background-color: #e85d40;
-    color: #fff;
+
     border-radius: 2px;
+  }
+  .current_list{
+    background-color: #e85d40;
+
+    border-radius: 2px;
+    a{
+      color: #fff;
+    }
+  }
+  .coredata_list li:hover a{
+    color: #fff;
   }

@@ -1,0 +1,54 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.prompt-box{
+  width: 440px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  background-color: #fff;
+  .border-radius(5px);
+  p.tit{
+    margin: 0 0 10px 0;
+    line-height: 30px;
+    font-size: 16px;
+    color: #333;
+    background-color: #eee;
+    padding: 0 10px;
+    i{
+      cursor: pointer;
+      margin-top: 7px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url('/images/production/VIP/easyPricing/assistant/btn_close.PNG');
+    }
+  }
+  .words{
+    line-height:24px;
+    padding: 0 20px;
+  }
+  .btn{
+    margin-top: 20px;
+    text-align: center;
+    .btn-save{
+      display: inline-block;
+      width: 60px;
+      line-height: 26px;
+      color: #fff;
+      margin: 0 10px;
+      background-color: #86be37;
+      .border-radius(4px);
+    }
+    .btn-delete{
+      display: inline-block;
+      width: 60px;
+      line-height: 26px;
+      color: #fff;
+      margin: 0 10px;
+      background-color: #fc5050;
+      .border-radius(4px);
+    }
+  }
+}

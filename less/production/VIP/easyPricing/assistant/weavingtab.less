@@ -11,29 +11,42 @@
     line-height: 40px;
     overflow: hidden;
     text-align: center;
-      border-bottom: 1px solid #ebebeb;
-      .che_cen{
-        vertical-align: middle;
-      }
-      .money_inp{
-        .border-radius(4px);
-        width: 80px;
-        margin: 0 auto;
-        line-height: 26px;
-        height: 26px;
-        border: 1px solid #ccc;
-        text-align: center;
-        padding: 0 2px;
-      }
+    border-bottom: 1px solid #ebebeb;
+    white-space: nowrap;text-overflow: ellipsis;
+    .che_cen{
+      vertical-align: middle;
+    }
+    .money_inp{
+      .border-radius(4px);
+      width: 80px;
+      margin: 0 auto;
+      line-height: 26px;
+      height: 26px;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 0 2px;
+    }
   }
-  .som_box{
-    width: 70px;
+  .feetab_tit{
+    td{
+      line-height: 18px;
+      padding: 5px 0;
+    }
+  }
+  .tit_box{
+    width: 120px;
+  }
+  .start_box{
+    width: 50px;
   }
   .single_box{
     width: 30px;
   }
   .ope_box{
     width: 140px;
+  }
+  .quoted_box{
+    width: 90px;
   }
   .butt_ad,.determine_but,.delete_but{
     display: block;
@@ -47,8 +60,10 @@
   }
   .determine_but{
     margin-left: 6px;
+    width: 70px;
   }
   .delete_but{
+    width: 50px;
     color: #e8c54f;
     border: 1px solid #e8c54f;
     margin-left: 4px;
