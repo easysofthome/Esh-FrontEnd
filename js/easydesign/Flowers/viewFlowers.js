@@ -14,7 +14,7 @@ define(function (require, exports, module) {
     'similarImg_url':''
   };
   var objImg = {'w':100,'h':100};
-  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':0,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{'similarImgList':[]},'searchParam':''};
+  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{'similarImgList':[]},'searchParam':''};
 
 ////////////////////////////////图片样式///////////////////////////////////////////
 
@@ -33,20 +33,19 @@ define(function (require, exports, module) {
   //动态加载数据 右侧的图片列表
   function loadOtherFabrics(objJson){
     if(!objJson) return;
-    if(objJson.FlowerStyleSimilarList.length <=0) return;
+    if(objJson.length <=0) return;
     $('.xiangshimianliao').html('');
-    for(var i=0;i<objJson.FlowerStyleSimilarList.length;i++){
+    for(var i=0;i<objJson.length;i++){
       var $str = $('<li class="lf mianliaobox">'+
-          '<a href="javascript:void(0)" data-picid="'+objJson.FlowerStyleSimilarList[i].ImgLink+
+          '<a href="javascript:void(0)" data-picid="'+objJson[i].id+
           '"></a></li>');
       $('.xiangshimianliao').append($str);
       var $img = '<img />';
-      $str.find('a').append($img).find('img').LoadImage({'imgSrc':objJson.FlowerStyleSimilarList[i].ImgUrl,'spin_size':'small'});
+      $str.find('a').append($img).find('img').LoadImage({'imgSrc':objJson[i].ImgUrl,'spin_size':'small'});
     }
     $('.xiangshimianliao').find('a').bind('click',function(){
-       var link_url = $(this).attr('data-picid');
-       var imgID = tools.urlHelp.getValueByKey_URL(link_url,'keyId');
-       LoadSimilarImgDetail(imgID);
+       var similarImgId = $(this).attr('data-picid');
+       LoadSimilarImgDetail(similarImgId);
     });
   }
 
@@ -175,15 +174,21 @@ define(function (require, exports, module) {
    $.ajax({
         type: 'post',
         url: url,
-        dataType: 'json',
-        // jsonp: "callback",
-        // jsonpCallback: 'jsonpCallback',
+        dataType: 'jsonp',
+        jsonp: "callback",
+        jsonpCallback: 'jsonpCallback',
         beforeSend:function(){
 
         },
         success: function(data){
          if(data.length>0){
             setImgIdArrayCookie(data,pageIndex);
+         }else{
+            var _curImgID = imgData.curImgID;
+            //返回图片数组为空，则在之前图片ID在数组中索引
+            var _curImgIndex = getIndexByImgID(imgData.imgIdArray_cur,_curImgID);
+            //如果当前图片存在于数组中则取出索引，如果不存在返回当前图片索引
+            imgData.pagination.curImgIndex = _curImgIndex;
          }
          //设置上一张、下一张按钮显示与否
          setNextOrPrev(imgData.pagination,data.length);
@@ -198,13 +203,13 @@ define(function (require, exports, module) {
     //将数组放入cookie,用户刷新页面记录当前页面信息
     Cookies.set('pageIndex_cur',imgData.pagination.pageIndex);
     Cookies.set('pageIndex_edge',imgData.pagination.pageIndex_edge);
-    //console.log(imgData.curImgID);
+    console.log(imgData.pagination.pageIndex);
     $.ajax({
       type: 'post',
       url: url,
       data: '' ,
-      dataType: 'json',
-      //jsonpCallback: 'jsonpCallbackDetail',
+      dataType: 'jsonp',
+      jsonpCallback: 'jsonpCallbackDetail',
       beforeSend:function(){
       },
       success: function(data){
@@ -241,8 +246,8 @@ define(function (require, exports, module) {
       type: 'post',
       url: url,
       data: '' ,
-      dataType: 'json',
-      //jsonpCallback: 'jsonpCallbackSimilar',
+      dataType: 'jsonp',
+      jsonpCallback: 'jsonpCallbackSimilar',
       beforeSend:function(){
       },
       success: function(data){
@@ -255,6 +260,9 @@ define(function (require, exports, module) {
     });
   }
   function loadImgIdArray(pageIndex){
+    if(pageIndex==0){
+      pageIndex = 1;
+    }
     if(!pageIndex){
       return false;
     }
@@ -335,15 +343,26 @@ define(function (require, exports, module) {
       var pageIndex_cur = 1;
       if(imgData.pagination.pageIndex_edge==-1){
         pageIndex_cur = parseInt(imgData.pagination.pageIndex)-1;
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
       }else if(imgData.pagination.pageIndex_edge==1){
         pageIndex_cur = parseInt(imgData.pagination.pageIndex)+1;
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
+      }else if(imgData.pagination.pageIndex_edge==-2){
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
       }else{
-        pageIndex_cur = imgData.pagination.pageIndex;
+        $('.next').show();
+        $('.prev').show();
       }
-      if(pageIndex_cur==0){
-        pageIndex_cur = 1;
-      }
-      loadImgIdArray(pageIndex_cur);
+
       LoadPageDetail(imgData.curImgID);
   }
 
@@ -355,7 +374,6 @@ define(function (require, exports, module) {
     pageobj.curImgIndex ++; //图片索引加一
     var _curImgID = '';
     $('.prev').show();
-
     if(pageobj.curImgIndex==arrayLength){//到达下一组第一张
       pageobj.curImgIndex = 0; //页码归零
       pageobj.pageIndex++;     //组索引加一
@@ -364,8 +382,7 @@ define(function (require, exports, module) {
       Cookies.set('imgIdArray_cur',imgData.imgIdArray_cur);
       Cookies.set('imgIdArray_temp',imgData.imgIdArray_temp);
       _curImgID = imgData.imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
-      imgData.pagination.pageIndex_edge = 0;//当前图片是第一张则为-1，最后一张则为1，中间则为0
-
+      imgData.pagination.pageIndex_edge = 1;//当前图片是第一张则为-1，最后一张则为1，中间则为0
     }else if(pageobj.curImgIndex==arrayLength-1){//到达每组最后一张
       _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
       //loadImgIdArray(parseInt(pageobj.pageIndex)+1);//请求一下组图片
@@ -375,8 +392,6 @@ define(function (require, exports, module) {
       imgData.pagination.pageIndex_edge = 0;
     }
     imgData.curImgID = _curImgID;
-    //加载图片详情
-    //LoadPageDetail(_curImgID);
     //重写URL
     reWriteURL(imgData,_curImgID,true);
   }
@@ -409,8 +424,6 @@ define(function (require, exports, module) {
       imgData.pagination.pageIndex_edge = 0;
     }
     imgData.curImgID = _curImgID;
-    //加载图片详情
-    //LoadPageDetail(_curImgID);
     //重写URL
     reWriteURL(imgData,_curImgID,true);
   }

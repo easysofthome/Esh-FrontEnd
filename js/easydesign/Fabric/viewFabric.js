@@ -14,7 +14,7 @@ define(function (require, exports, module) {
     'similarImg_url':''
   };
   var objImg = {'w':100,'h':100};
-  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':0,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
+  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
 ////////////////////////////////图片样式///////////////////////////////////////////
 
   //加载第n张图片
@@ -159,6 +159,12 @@ define(function (require, exports, module) {
         success: function(data){
          if(data.length>0){
             setImgIdArrayCookie(data,pageIndex);
+         }else{
+            var _curImgID = imgData.curImgID;
+            //返回图片数组为空，则在之前图片ID在数组中索引
+            var _curImgIndex = getIndexByImgID(imgData.imgIdArray_cur,_curImgID);
+            //如果当前图片存在于数组中则取出索引，如果不存在返回当前图片索引
+            imgData.pagination.curImgIndex = _curImgIndex;
          }
          //设置上一张、下一张按钮显示与否
          setNextOrPrev(imgData.pagination,data.length);
@@ -210,6 +216,9 @@ define(function (require, exports, module) {
     imgData.pagination.curImgIndex = _curImgIndex;
   }
   function loadImgIdArray(pageIndex){
+    if(pageIndex==0){
+      pageIndex = 1;
+    }
     if(!pageIndex){
       return false;
     }
@@ -271,12 +280,25 @@ define(function (require, exports, module) {
       var pageIndex_cur = 1;
       if(imgData.pagination.pageIndex_edge==-1){
         pageIndex_cur = parseInt(imgData.pagination.pageIndex)-1;
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
       }else if(imgData.pagination.pageIndex_edge==1){
         pageIndex_cur = parseInt(imgData.pagination.pageIndex)+1;
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
+      }else if(imgData.pagination.pageIndex_edge==-2){
+        if(pageIndex_cur==0){
+          pageIndex_cur = 1;
+        }
+        loadImgIdArray(pageIndex_cur);
       }else{
-        pageIndex_cur = imgData.pagination.pageIndex;
+        $('.next').show();
+        $('.prev').show();
       }
-      loadImgIdArray(pageIndex_cur);
       LoadPageDetail(imgData.curImgID);
   }
 
