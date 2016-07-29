@@ -340,6 +340,9 @@ define(function (require, exports, module) {
       }else{
         pageIndex_cur = imgData.pagination.pageIndex;
       }
+      if(pageIndex_cur==0){
+        pageIndex_cur = 1;
+      }
       loadImgIdArray(pageIndex_cur);
       LoadPageDetail(imgData.curImgID);
   }
