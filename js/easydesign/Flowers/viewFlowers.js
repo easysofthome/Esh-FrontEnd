@@ -475,6 +475,9 @@ function init(){
     }else{
       pageIndex_cur = parseInt(imgData.pagination.pageIndex);
     }
+    if(pageIndex_cur==0){
+      pageIndex_cur = 1;
+    }
     imgData.curImgID = curImgID;
     //加载图片数组
     loadImgIdArray(pageIndex_cur);
