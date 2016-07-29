@@ -44,7 +44,9 @@
   .rad_frm{
     padding: 10px 0 10px 0;
   }
-  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,.width_company,.reducebox,.reduceiput,.increasebox,.density_input,.handle_one,.fabric_money{
+  .input_fabric,.dropdown_box,.fabric_width,.width_company_none,
+  .width_company,.reducebox,.reduceiput,.increasebox,.density_input,
+  .handle_one,.fabric_money,.flowerPositionLoop{
     border:1px solid #cdcfd1;
   .border-radius(5px);
     color: #333333;
@@ -58,7 +60,7 @@
     cursor: pointer;
     position: relative;
   }
-  .fabric_money{
+  .fabric_money,.flowerPositionLoop{
     margin-left: 10px;
     width: 40px;
   }
@@ -237,6 +239,7 @@
   }
   .AddItem_tit{
     width: 240px;
+    display: inline-block;
   }
   .butt_box{
     width: 320px;
@@ -257,4 +260,12 @@
     background-color: #3ca1d7;
   }
 
+}
+
+.margin10{
+  margin-left: 10px;
+}
+
+#flowerPositionLoop{
+  display: none;
 }

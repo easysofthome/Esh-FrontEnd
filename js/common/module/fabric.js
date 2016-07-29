@@ -20,6 +20,18 @@ define(function(require, exports, module) {
         $('.AddItem .js-tab').hide();
         $('.AddItem .js-tab').eq(index).show();
     });
+    $('input:radio[name=DyeingDyeRequirement]').on('click', function(){
+        var obj = $('input:radio[name=DyeingPrintingProcessRequirements]');
+        if($(this).val() == 3){
+            obj.eq(0).parent().parent().hide();
+            $('#flowerPositionLoop').css('display','inline-block');
+            obj.eq(2).parent().parent().show();
+        } else {
+            obj.eq(2).parent().parent().hide();
+            $('#flowerPositionLoop').hide();
+            obj.eq(0).parent().parent().show();
+        }
+    });
 
 /////////////////////////////// /表单样式部分 ///////////////////////////////////
 
@@ -84,9 +96,11 @@ define(function(require, exports, module) {
                 + '<div class="lf" style="width: 142px;">'
                   + '<span class="clearfix ingredient" >'
                     + '<span class="lf ingredient_tit">成分</span>'
-                    + '<input type="text" class="lf input_fabric" name="" readonly="true" id="warpIngredient2"/>'
+                    + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecName" readonly="true" id="warpIngredient2"/>'
                     + '<input name="FabricYarnsChaine['+ warpNum +'].YarnSpecID" type="hidden" value="">'
                     + '<input name="FabricYarnsChaine['+ warpNum +'].FactoryPrice" type="hidden" value="">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
                     + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
                   + '</span>'
                   + '<span class="clearfix thickness">'
@@ -122,7 +136,7 @@ define(function(require, exports, module) {
               + '<div class="lf" style="width: 142px;">'
                 + '<span class="clearfix ingredient">'
                   + '<span class="lf ingredient_tit">成分</span>'
-                  + '<input type="text" class="lf input_fabric" name="" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
+                  + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecNum" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
                   + '<input name="FabricYarns['+ warpNum +'].YarnSpecID" type="hidden" value="">'
                   + '<input name="FabricYarns['+ warpNum +'].FactoryPrice" type="hidden" value="">'
                   + '<input name="FabricYarns['+ warpNum +'].IsChaineDensity" type="hidden" value="false">'

@@ -17,7 +17,6 @@ define(function(require, exports, module) {
     $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
     $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
 
-
 /////////////////////// 表单验证 ////////////////////////////
 
     //错误信息提示点
@@ -233,77 +232,67 @@ define(function(require, exports, module) {
                 // };
                 // priceData.
 
+                 $.ajax({
+                     type: "POST",
+                     url: '/Pricing/Fabric/FabricPricing',
+                     data: $("#fabricForm").serialize(),
+                     dataType: "json",
+                     success: function (d) {
+                         if(!d.jieguo){
+                             alert(d.Message);
+                             return;
+                         }
 
-                // $("#showDataForm").ajaxSubmit(
-                //     function(message) {
-                //         console.log(message);
-                //     }
-                // );
+                         //同步渲染 模板引擎
+                         var laytpl = require('laytpl');
+                         var resultTemplate = laytpl($("#resultTemplate").html()).render(d);
+                         $("#priceResult").html(resultTemplate);
+                         var layerPrice = $.layer({
+                             type: 1,   //0-4的选择,
+                             title: false,
+                             shadeClose: false,
+                             closeBtn: [0, false], //去掉默认关闭按钮
+                             shift: 'top',
+                             fix: false,
+                             area: ['1000px', '617px'],
+                             page: {
+                                 dom: '#popupResult'
+                             },
+                             success: function(){
+                                 var that = this;
+                                 $('span.btn_close,a.close').on('click',function(){
+                                     layer.close(layerPrice);
+                                 })
+                             }
+                             //收藏核价事件
+                             // yes: function () {
+                             //     layer.prompt({ title: '请填写收藏名称', type: 3, length: 250 }, function (name, index) {
+                             //         var loadi = $.layer({ type: 3, border: [0], bgcolor: '' });
+                             //         $.ajaxjson(fabricPricingAshxPath, { Action: "addCollect", recordid: priceData.SYSNUMBER, collectname: name },
+                             //       function (d) {
+                             //           //款式尺码同步渲染 模板引擎
+                             //           if (d.Success) {
+                             //               if (d.Success) {
+                             //                   layer.close(loadi);
+                             //                   layer.close(index);
+                             //                   layer.msg('核价结果收藏成功，在会员中心“我的核价”中查看！', 2, { type: 1, shade: false, rate: 'top' });
+                             //               } else {
+                             //                   if (d.Data == "-1") {
+                             //                       showLoginForm();
+                             //                   }
+                             //                   else {
+                             //                       layer.alert("核价结果收藏失败！", 8, !1);
+                             //                   }
+                             //               }
+                             //           }
+                             //       }, { IsShowLoading: false });
+                             //     });
+                             // }
+                         });
+                     },
+                     error: function (err) { console.log('数据提交失败'); }
+                 });
 
-                $.ajax({
-                    type: "POST",
-                    url: '/Pricing/Fabric/FabricPricing',
-                    data: $("#fabricForm").serialize(),
-                    dataType: "text",
-                    success: function (d) { console.log(d); },
-                    error: function (err) { console.log('提交失败'); }
-                });
-
-                return;
-
-                var priceData = {"Data":{"SYSNUMBER":"7571e4a6-9dc7-4b6e-9efd-3e5ad7631b58","MLCOMPONENT":"棉100%   ","QDL_NAME":"0-1999米","S_QDL":0.0,"E_QDL":1999.0,"SZ_GYYQ":null,"RS_GYYQ":"面料机缸染色","RS_YSYQ":"浅","YH_GYYQ":null,"YH_SLDDJ":null,"YH_RLYQ":null,"IFDWH":"0","YH_SS":null,"YH_HWXH":null,"WIDTH_CM":1.0,"WIDTH_INCH":0.393700787401575,"INCH_CM":"CM","JXSZ":1.0,"WXSZ":1.0,"MLGZ":10.0,"MLYL":2.0,"FA_SYSNUMBER":"FA0001","FA_FNUMBER":"FA0001","FA_NAME":"梭织","FL_SYSNUMBER":"FL0001","FL_FNUMBER":"FL0001","FL_NAME":"提花布","DY_SYSNUMBER":"DY0001","DY_FNUMBER":"DY0001","DY_NAME":"染色","MEMBER_ID":null,"CREATETIME":null,"HCLFSYSNUMBER":"b1b1bb7e-c0c9-42c9-851c-63e497c93af4+3bb8a138-de77-4344-9287-330fcf43f84b","HCLF":2.83,"HCLQUANTITY":null,"FOBPRICE":0.76,"QDL_SYSNUMBER":"88faf09c-d00c-4399-8ffe-2ab97ab8b7fd","JSMLGZ":1.0,"WSMLGZ":9.0,"HCLSL":0.00,"TVALUE":5.0,"JXMD":"1","WXMD":"1","JXCF":"全棉纱","WXCF":"全棉纱","JXSZGGNAME":"全棉纱","WXSZGGNAME":"全棉纱","JSGG":"80S","WSGG":"7S","JX_GUXIAN":"1","WX_GUXIAN":"1","JX_CFBL":"-","WX_CFBL":"-","PRICE_JS":"","PRICE_WS":"","EXCHANGERATENAME":"美元","EXCHANGERATEVALUE":6.67,"INIUNIT":"CM","PRICE":5.33,"DCPRIC":1.87,"HCLFNAME":"抗菌处理；轧花"},"Success":true,"Message":""};
-
-                // if(!priceData.Result){
-                //     alert(priceData.Message);
-                //     return;
-                // }
-
-                //同步渲染 模板引擎
-                var laytpl = require('laytpl');
-                var resultTemplate = laytpl($("#resultTemplate").html()).render(priceData.Data);
-                $("#priceResult").html(resultTemplate);
-                var layerPrice = $.layer({
-                    type: 1,   //0-4的选择,
-                    title: false,
-                    shadeClose: false,
-                    closeBtn: [0, false], //去掉默认关闭按钮
-                    shift: 'top',
-                    fix: false,
-                    area: ['1000px', '617px'],
-                    page: {
-                        dom: '#popupResult'
-                    },
-                    success: function(){
-                        var that = this;
-                        $('span.btn_close,a.close').on('click',function(){
-                            layer.close(layerPrice);
-                        })
-                    }
-                //收藏核价事件
-                // yes: function () {
-                //     layer.prompt({ title: '请填写收藏名称', type: 3, length: 250 }, function (name, index) {
-                //         var loadi = $.layer({ type: 3, border: [0], bgcolor: '' });
-                //         $.ajaxjson(fabricPricingAshxPath, { Action: "addCollect", recordid: priceData.SYSNUMBER, collectname: name },
-                //       function (d) {
-                //           //款式尺码同步渲染 模板引擎
-                //           if (d.Success) {
-                //               if (d.Success) {
-                //                   layer.close(loadi);
-                //                   layer.close(index);
-                //                   layer.msg('核价结果收藏成功，在会员中心“我的核价”中查看！', 2, { type: 1, shade: false, rate: 'top' });
-                //               } else {
-                //                   if (d.Data == "-1") {
-                //                       showLoginForm();
-                //                   }
-                //                   else {
-                //                       layer.alert("核价结果收藏失败！", 8, !1);
-                //                   }
-                //               }
-                //           }
-                //       }, { IsShowLoading: false });
-                //     });
-                // }
-                });
                 // $(".fabric_step_2 tbody tr").hover(function () {
                 //     $(this).addClass("hover");
                 // }, function () {
@@ -313,25 +302,83 @@ define(function(require, exports, module) {
         // }, { IsShowLoading: false });
             /************ajax***************/
     }
-    // 配置规则并初始化
-    // validateConf();
+
     fabric.init();
 /////////////////////// /表单验证 ////////////////////////////
 
 }); //define
 
 
-//     $.ajax({
-//         type: "POST",
-//         url: /UIPricing/ashx/FabricPricingHandler.ashx?Action=pricing,
-//         data: $("#fabricForm"),
-//         dataType: "text",
-//         beforeSend: function () {
-//             if (options.IsShowLoading == true) {
-//                 loadi = $.layer({ type: 3, border: [0], bgcolor: '' });
-// //                    $.hLoading.show({ msg: options.Message, Isback: options.Isback, timeout: 10000000, loadingType: options.LoadingType });
-//             }
-//         },
-//         success: function (d) { layer.close(loadi); fnSuccess(d); },
-//         error: function (err) { layer.close(loadi); layer.alert(options.ErrorMsg, 8, !1); }
-//     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var priceData = {
+//    "jieguo":true,
+//    "qdl":"0-1999米",
+//    "zzzl":" 提花布",
+//    "rzff":"染色",
+//    "yxmf":232.0,
+//    "jwmd":"1*3+2*4*6",
+//    "zwmd":102.0,
+//    "jxgg":[
+//        {
+//            "DensityLength":20,
+//            "YarnSpecName":"涤棉纱",
+//            "YarnSpecNum":"32S",
+//            "IsChaineDensity":true,
+//            "ComponentRatio":"65/35",
+//            "StrandsNum":"1",
+//            "YarnSpecID":"1bd4daae-7793-48ae-a94c-6580d27c1e66",
+//            "FactoryPrice":null
+//        },
+//        {
+//            "DensityLength":10,
+//            "YarnSpecName":"棉纱",
+//            "YarnSpecNum":"16S",
+//            "IsChaineDensity":true,
+//            "ComponentRatio":"65/20",
+//            "StrandsNum":"3",
+//            "YarnSpecID":"1bd4daae-7793-48ae-a94c-6580d27c1e66",
+//            "FactoryPrice":null
+//        }
+//    ],
+//    "wxgg":[
+//        {
+//            "DensityLength":20,
+//            "YarnSpecName":"全棉纱",
+//            "YarnSpecNum":"60S",
+//            "IsChaineDensity":false,
+//            "ComponentRatio":"-",
+//            "StrandsNum":"1",
+//            "YarnSpecID":"ea73606a-3bc1-4a2c-8475-34f5e0beebda",
+//            "FactoryPrice":null
+//        },
+//        {
+//            "DensityLength":30,
+//            "YarnSpecName":"全纱",
+//            "YarnSpecNum":"80S",
+//            "IsChaineDensity":false,
+//            "ComponentRatio":"-",
+//            "StrandsNum":"2",
+//            "YarnSpecID":"ea73606a-3bc1-4a2c-8475-34f5e0beebda",
+//            "FactoryPrice":null
+//        }
+//    ],
+//    "mlkz":61.0,
+//    "mlcf":"涤纶42.80% 棉57.20% ",
+//    "hcl":1,
+//    "jg":8.2,
+//    "jgmy":0,
+//    "msg": "发送失败"
+//};
