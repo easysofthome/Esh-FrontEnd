@@ -1,0 +1,59 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.TheBinding-box{
+  width: 814px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px 20px 0 20px;
+  .border-radius(5px);
+  .tab-box{
+    width: 814px;
+    line-height: 38px;
+    text-align: center;
+    th,td{
+      border: 1px solid #EEE;
+    }
+    th{
+      background-color:#4a7bc4;
+      font-weight:normal;
+      font-size:14px;
+      color:#FFF;
+    }
+    tr:nth-child(odd){
+      background-color: #F4F4F4;
+    }
+    td{
+      .btn-save{
+        display: inline-block;
+        width: 80px;
+        line-height: 26px;
+        border: 1px solid #86be37;
+        color: #86be37;
+        margin: 0 5px;
+        .border-radius(4px);
+      }
+      .btn-gary{
+        display: inline-block;
+        width: 80px;
+        line-height: 26px;
+        border: 1px solid #ccc;
+        color: #ccc;
+        margin: 0 5px;
+        .border-radius(4px);
+      }
+    }
+    .name{
+      width: 280px;
+    }
+    .region{
+      width: 154px;
+    }
+    .price{
+      width: 130px;
+    }
+    .date{
+      width: 120px;
+    }
+  }
+}
