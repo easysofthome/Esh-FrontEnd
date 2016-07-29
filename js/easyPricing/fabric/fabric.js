@@ -239,7 +239,7 @@ define(function(require, exports, module) {
                      dataType: "json",
                      success: function (d) {
                          if(!d.jieguo){
-                             alert(priceData.Message);
+                             alert(d.Message);
                              return;
                          }
 
