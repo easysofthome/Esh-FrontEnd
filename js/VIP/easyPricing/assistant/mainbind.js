@@ -2,7 +2,7 @@ define(function(require, exports, module){
   require('jquery');
   var layer = require('layer');
 
-  $('.determine_but').on("click", function(){
+  $('.btn').on("click", function(){
 
     var that = this;
     var layerHref = $(this).attr('data-href');
