@@ -5,7 +5,7 @@ define(function(require, exports, module) {
     require('jquery');
     require('js/front/lib/tip/jquery.poshytip');
     require('js/front/lib/validation/validation');
-    var spinner = require('spinner');
+    require('spinner');
     var cus =  require('customSelect');
 
 
@@ -22,14 +22,14 @@ define(function(require, exports, module) {
     });
     $('input:radio[name=DyeingDyeRequirement]').on('click', function(){
         var obj = $('input:radio[name=DyeingPrintingProcessRequirements]');
-        if($(this).val() == 3){
-            obj.eq(0).parent().parent().hide();
+        if($(this).val() == '转移印花'){
+            obj.eq(0).parent().hide().next().hide();
             $('#flowerPositionLoop').css('display','inline-block');
-            obj.eq(2).parent().parent().show();
+            obj.eq(2).attr('checked','checked').parent().show();
         } else {
-            obj.eq(2).parent().parent().hide();
+            obj.eq(2).parent().hide();
             $('#flowerPositionLoop').hide();
-            obj.eq(0).parent().parent().show();
+            obj.eq(0).attr('checked','checked').parent().show().next().show();
         }
     });
 
@@ -76,90 +76,6 @@ define(function(require, exports, module) {
         $(document.body).css("overflow","");
     }
 
-/////////////////////////// 增加减少经纬纱种类 /////////////////////////
-
-    var warpNum = $('#yarn-ul li').length;
-    var abbNum = $('#abb-ul li').length;
-
-
-    // 经纱事件
-    $('#warp-spinner')
-      .spinner({
-        min:1,
-        max:2,
-        value: warpNum,
-        addEvent: function () {
-            var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
-            $('#yarn-ul').append('<li class="lf yarn_para">'
-                + '<span class="lf para_tit">经纱2：</span>'
-                + '<span class="lf include"></span>'
-                + '<div class="lf" style="width: 142px;">'
-                  + '<span class="clearfix ingredient" >'
-                    + '<span class="lf ingredient_tit">成分</span>'
-                    + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecName" readonly="true" id="warpIngredient2"/>'
-                    + '<input name="FabricYarnsChaine['+ warpNum +'].YarnSpecID" type="hidden" value="">'
-                    + '<input name="FabricYarnsChaine['+ warpNum +'].FactoryPrice" type="hidden" value="">'
-                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
-                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
-                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
-                  + '</span>'
-                  + '<span class="clearfix thickness">'
-                  + '<span class="clearfix thickness">'
-                    + '<span class="lf ingredient_tit">粗细</span>'
-                    + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
-                  + '</span>'
-                + '</div>'
-                + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
-                + '</li>');
-                $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
-                + '<input type="text" id="warpSpinnerNum2" name="FabricYarnsChaine['+ warpNum +'].DensityLength" class="density_input lf">'
-            );
-        },
-        cutEvent: function () {
-          $('#yarn-ul li:last input').poshytip('destroy');
-          $('#yarn-ul li:last').remove();
-          $('#warp_num_box input:last').poshytip('destroy');
-          $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
-
-        }
-      });
-    // 纬纱事件
-    $('#abb-spinner').spinner({
-        min:1,
-        max:4,
-        value: abbNum,
-        addEvent:function () {
-            var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
-            $('#abb-ul').append('<li class="lf yarn_para">'
-              + '<span class="lf para_tit">纬纱'+ warpNum +'：</span>'
-              + '<span class="lf include"></span>'
-              + '<div class="lf" style="width: 142px;">'
-                + '<span class="clearfix ingredient">'
-                  + '<span class="lf ingredient_tit">成分</span>'
-                  + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecNum" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
-                  + '<input name="FabricYarns['+ warpNum +'].YarnSpecID" type="hidden" value="">'
-                  + '<input name="FabricYarns['+ warpNum +'].FactoryPrice" type="hidden" value="">'
-                  + '<input name="FabricYarns['+ warpNum +'].IsChaineDensity" type="hidden" value="false">'
-                + '</span>'
-                + '<span class="clearfix thickness">'
-                  + '<span class="lf ingredient_tit">粗细</span>'
-                  + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+ (warpNum+1) +'"/>'
-                + '</span>'
-              + '</div>'
-              + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
-              + '</li>');
-            $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
-              + '<input type="text" id="abbSpinnerNum'+ (warpNum+1) +'" name="FabricYarns['+ warpNum +'].DensityLength" class="density_input lf">');
-            warpNum++;
-        },
-        cutEvent:function () {
-            $('#abb-ul li:last input').poshytip('destroy');
-            $('#abb-ul li:last').remove();
-            $('#abb_num_box input:last').poshytip('destroy');
-            $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
-            warpNum--;
-        }
-    });
 
 /////////////////// 切换单位重新设置验证 ////////////////////////////
     var icons = {

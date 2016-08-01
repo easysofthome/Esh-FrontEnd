@@ -40,6 +40,88 @@ define(function(require, exports, module) {
             error: function (err) { console.log('connect error!'); }
         });
     })
+/////////////////////////// 增加减少经纬纱种类 /////////////////////////
+
+    var warpNum = $('#yarn-ul li').length;
+    var abbNum = $('#abb-ul li').length;
+
+
+    // 经纱事件
+    $('#warp-spinner')
+      .spinner({
+        min:1,
+        max:2,
+        value: warpNum,
+        addEvent: function () {
+            var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
+            $('#yarn-ul').append('<li class="lf yarn_para">'
+                + '<span class="lf para_tit">经纱2：</span>'
+                + '<span class="lf include"></span>'
+                + '<div class="lf" style="width: 142px;">'
+                  + '<span class="clearfix ingredient" >'
+                    + '<span class="lf ingredient_tit">成分</span>'
+                    + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].FabriceElement_NAME" readonly="true" id="warpIngredient2"/>'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].YARN_SPEC_ID" type="hidden" value="">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].YARN_PRICE" type="hidden" value="">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].YARN_TYPE" type="hidden" value="true">'
+                  + '</span>'
+                  + '<span class="clearfix thickness">'
+                  + '<span class="clearfix thickness">'
+                    + '<span class="lf ingredient_tit">粗细</span>'
+                    + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
+                  + '</span>'
+                + '</div>'
+                + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
+                + '</li>');
+                $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
+                + '<input type="text" id="warpSpinnerNum2" name="FabricYarnsChaine['+ warpNum +'].DENSITY_LENGTH" class="density_input lf">'
+            );
+        },
+        cutEvent: function () {
+          $('#yarn-ul li:last input').poshytip('destroy');
+          $('#yarn-ul li:last').remove();
+          $('#warp_num_box input:last').poshytip('destroy');
+          $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
+
+        }
+      });
+    // 纬纱事件
+    $('#abb-spinner').spinner({
+        min:1,
+        max:4,
+        value: abbNum,
+        addEvent:function () {
+            var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
+            $('#abb-ul').append('<li class="lf yarn_para">'
+              + '<span class="lf para_tit">纬纱'+ warpNum +'：</span>'
+              + '<span class="lf include"></span>'
+              + '<div class="lf" style="width: 142px;">'
+                + '<span class="clearfix ingredient">'
+                  + '<span class="lf ingredient_tit">成分</span>'
+                  + '<input type="text" class="lf input_fabric" name="FabricYarns['+ warpNum +'].FabriceElement_NAME" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
+                  + '<input name="FabricYarns['+ warpNum +'].YARN_SPEC_ID" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ warpNum +'].YARN_PRICE" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ warpNum +'].YARN_TYPE" type="hidden" value="false">'
+                + '</span>'
+                + '<span class="clearfix thickness">'
+                  + '<span class="lf ingredient_tit">粗细</span>'
+                  + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+ (warpNum+1) +'"/>'
+                + '</span>'
+              + '</div>'
+              + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
+              + '</li>');
+            $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
+              + '<input type="text" id="abbSpinnerNum'+ (warpNum+1) +'" name="FabricYarns['+ warpNum +'].DENSITY_LENGTH" class="density_input lf">');
+            warpNum++;
+        },
+        cutEvent:function () {
+            $('#abb-ul li:last input').poshytip('destroy');
+            $('#abb-ul li:last').remove();
+            $('#abb_num_box input:last').poshytip('destroy');
+            $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
+            warpNum--;
+        }
+    });
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 

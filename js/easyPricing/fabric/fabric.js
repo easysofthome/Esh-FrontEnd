@@ -10,12 +10,117 @@ define(function(require, exports, module) {
         $('#factoryPrice_rad').bind('click',function(){
             $('.factoryOffer-box').show();
         });
+    /////////////// 默认选项 ///////////////
+        //织造种类 默认选中第一个
+        $("input[name='WeavingType']:first").attr("checked", "checked");
+
+        //染织方法
+        $("input[name='DyeingType']:first").attr("checked", "checked");
+
+        //染色颜色
+        $("input[name='DyeingColorRequirements']:first").attr("checked", "checked");
+
+        //染织方法
+        $("input[name='DyeingDyeRequirement']:first").attr("checked", "checked");
+        $("input[name='DyeingPrintingProcessRequirements']:first").attr("checked", "checked");
+        $("input[name='DyeingColourFastnessGrade']:first").attr("checked", "checked");
+        $("input[name=DyeingPrintingProcessRequirements]:last").parent().css('display','none');
+
+        //汇率
+        $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
+
+        $("#exchangeRateSel").change(function() {
+            $("input[name='ExchangeRate']").val($(this).val());
+        });
+
     });
 
 ////////////////////////////表单样式///////////////////////////////////
-    $('#sel1').customSelect({width:"150px",padding:"12px 5px"});
-    $('#sel2,#sel3,#sel4,#sel5').customSelect({width:"90px",padding:"12px 5px"});
-    $('#sel6').customSelect({width:"200px",padding:"12px 5px"});
+    $('.sel1').customSelect({width:"150px",padding:"12px 5px"});
+    $('.sel2').customSelect({width:"90px",padding:"12px 5px"});
+
+/////////////////////////// 增加减少经纬纱种类 /////////////////////////
+
+    var warpNum = $('#yarn-ul li').length;
+    var abbNum = $('#abb-ul li').length;
+
+
+    // 经纱事件
+    $('#warp-spinner')
+      .spinner({
+        min:1,
+        max:2,
+        value: warpNum,
+        addEvent: function () {
+            var ifrUrl = $('.yarntype_box .yarn_butt').attr('data-href');
+            $('#yarn-ul').append('<li class="lf yarn_para">'
+                + '<span class="lf para_tit">经纱2：</span>'
+                + '<span class="lf include"></span>'
+                + '<div class="lf" style="width: 142px;">'
+                  + '<span class="clearfix ingredient" >'
+                    + '<span class="lf ingredient_tit">成分</span>'
+                    + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecName" readonly="true" id="warpIngredient2"/>'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].YarnSpecID" type="hidden" value="">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].FactoryPrice" type="hidden" value="">'
+                    + '<input name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
+                  + '</span>'
+                  + '<span class="clearfix thickness">'
+                  + '<span class="clearfix thickness">'
+                    + '<span class="lf ingredient_tit">粗细</span>'
+                    + '<input type="text" class="lf input_fabric" name="JSGG" readonly="true" id="warpDiameter2"/>'
+                  + '</span>'
+                + '</div>'
+                + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
+                + '</li>');
+                $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
+                + '<input type="text" id="warpSpinnerNum2" name="FabricYarnsChaine['+ warpNum +'].DensityLength" class="density_input lf">'
+            );
+        },
+        cutEvent: function () {
+          $('#yarn-ul li:last input').poshytip('destroy');
+          $('#yarn-ul li:last').remove();
+          $('#warp_num_box input:last').poshytip('destroy');
+          $('#warp_num_box input:last,#warp_num_box .plus:last').remove();
+
+        }
+      });
+    // 纬纱事件
+    $('#abb-spinner').spinner({
+        min:1,
+        max:4,
+        value: abbNum,
+        addEvent:function () {
+            var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
+            $('#abb-ul').append('<li class="lf yarn_para">'
+              + '<span class="lf para_tit">纬纱'+ warpNum +'：</span>'
+              + '<span class="lf include"></span>'
+              + '<div class="lf" style="width: 142px;">'
+                + '<span class="clearfix ingredient">'
+                  + '<span class="lf ingredient_tit">成分</span>'
+                  + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecNum" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
+                  + '<input name="FabricYarns['+ warpNum +'].YarnSpecID" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ warpNum +'].FactoryPrice" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ warpNum +'].IsChaineDensity" type="hidden" value="false">'
+                + '</span>'
+                + '<span class="clearfix thickness">'
+                  + '<span class="lf ingredient_tit">粗细</span>'
+                  + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+ (warpNum+1) +'"/>'
+                + '</span>'
+              + '</div>'
+              + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
+              + '</li>');
+            $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
+              + '<input type="text" id="abbSpinnerNum'+ (warpNum+1) +'" name="FabricYarns['+ warpNum +'].DensityLength" class="density_input lf">');
+            warpNum++;
+        },
+        cutEvent:function () {
+            $('#abb-ul li:last input').poshytip('destroy');
+            $('#abb-ul li:last').remove();
+            $('#abb_num_box input:last').poshytip('destroy');
+            $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
+            warpNum--;
+        }
+    });
 
 /////////////////////// 表单验证 ////////////////////////////
 
@@ -243,6 +348,8 @@ define(function(require, exports, module) {
                     alert(d.Message);
                     return;
                 }
+
+                d.jgdw = $('#hLight_step5 select option:selected').text();
 
                 //var priceData = {"jieguo": true, "qdl": "0-1999米", "zzzl": " 提花布", "rzff": "染色", "yxmf": 232.0, "jwmd": "1*3+2*4*6", "zwmd": 102.0, "jxgg": [{"DensityLength": 20, "YarnSpecName": "涤棉纱", "YarnSpecNum": "32S", "IsChaineDensity": true, "ComponentRatio": "65/35", "StrandsNum": "1", "YarnSpecID": "1bd4daae-7793-48ae-a94c-6580d27c1e66", "FactoryPrice": null }, {"DensityLength": 10, "YarnSpecName": "棉纱", "YarnSpecNum": "16S", "IsChaineDensity": true, "ComponentRatio": "65/20", "StrandsNum": "3", "YarnSpecID": "1bd4daae-7793-48ae-a94c-6580d27c1e66", "FactoryPrice": null } ], "wxgg": [{"DensityLength": 20, "YarnSpecName": "全棉纱", "YarnSpecNum": "60S", "IsChaineDensity": false, "ComponentRatio": "-", "StrandsNum": "1", "YarnSpecID": "ea73606a-3bc1-4a2c-8475-34f5e0beebda", "FactoryPrice": null }, {"DensityLength": 30, "YarnSpecName": "全纱", "YarnSpecNum": "80S", "IsChaineDensity": false, "ComponentRatio": "-", "StrandsNum": "2", "YarnSpecID": "ea73606a-3bc1-4a2c-8475-34f5e0beebda", "FactoryPrice": null } ], "mlkz": 61.0, "mlcf": "涤纶42.80% 棉57.20% ", "hcl": 1, "jg": 8.2, "jgmy": 0, "msg": "发送失败"};
 
