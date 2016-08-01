@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('loadImage');
+  var loadImageObj = require('loadImage');
   var tools = require('tools');
   require('cookie');
   require('js/front/lib/jquery.history');
@@ -14,19 +14,28 @@ define(function (require, exports, module) {
     'similarImg_url':''
   };
   var objImg = {'w':100,'h':100};
-  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
+  var imgData = {'canScroll':true,'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
 ////////////////////////////////图片样式///////////////////////////////////////////
 
   //加载第n张图片
   function setBigImg(objJson){
-    //获取图片的原始尺寸
+    //图片加载等待
+    loadImageObj.spinObj.loadSpin_freeWrapper({'selecter':'.gallery img'});
+    //图片加载事件
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
       objImg.w = this.width;
       objImg.h = this.height;
+      //设置图片位置及大小
       setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+      //显示图片容器
       $('.gallery-img').show();
+      //移除图片加载等待
+      loadImageObj.spinObj.removeSpin_freeWrapper();
+      //载入图片
+      $('.gallery img').attr('src',objJson.CurrentImgUrl);
+      //图片加载完毕可以滚动滚轮
+      bindMousewheel();
     });
-    $('.gallery img').LoadImage({'imgSrc':objJson.CurrentImgUrl,'container':'.gallery'});
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -52,14 +61,6 @@ define(function (require, exports, module) {
       w = winW;
       h = winW*l_w_ratio;
     }
-    var tmpTop = 0;
-    var tmpLeft =0;
-    if((winW-leftSide_w-w)>0){
-      tmpLeft = (winW-leftSide_w-w)/2;
-    }else{
-      w = w-leftSide_w;
-    }
-
     $(rightSide).css({'height':winH-topMenuH-30});
     $(parentDiv).css({'width':(winW-leftSide_w),'height':(winH-topMenuH-botH),'line-height':(winH-topMenuH-botH)+"px"});
     $(parentDiv).parent().css({'height':winH-topMenuH});
@@ -102,19 +103,58 @@ define(function (require, exports, module) {
 ////////////////////////////////事件绑定///////////////////////////////////////////
 
   //鼠标滚轮，上一张、下一张
-  function mousewheel(pageobj,imgIdArray){
+  function mousewheel(){
     // jquery 兼容的滚轮事件
     $('.img-wrapper').on("mousewheel DOMMouseScroll", function (e) {
+      if(!imgData.canScroll)return;
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
           (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
       if (delta > 0){
-        // 向下滚
-        nextImg();
-      }else if (delta < 0){
         // 向上滚
-        prevImg();
+        if(imgData.pagination.hasPreImg){
+          unbindMousewheel();
+          //防止间隔过短
+          prevImg();
+        }
+      }else if (delta < 0){
+         // 向下滚
+        if(imgData.pagination.hasNextImg){
+          unbindMousewheel();
+          //防止间隔过短
+          nextImg();
+        }
       }
     });
+  }
+
+  //键盘左右翻页
+  function keyDownLR(){
+     $(document).on('keydown',function(e){
+      var keyCode = e.keyCode;
+      if(keyCode==37){ //上一张
+         if(imgData.pagination.hasPreImg){
+          unbindMousewheel();
+          //防止间隔过短
+          prevImg();
+        }
+      }else if(keyCode==39){//下一张
+         if(imgData.pagination.hasNextImg){
+          unbindMousewheel();
+          //防止间隔过短
+          nextImg();
+        }
+      }
+    });
+  }
+
+  //注销鼠标滚轮事件
+  function unbindMousewheel(){
+    imgData.canScroll = false;
+  }
+
+  //注册鼠标滚轮事件
+  function bindMousewheel(){
+    imgData.canScroll = true;
   }
 
    //绑定上一张下一张事件
@@ -311,7 +351,7 @@ define(function (require, exports, module) {
     pageobj.curImgIndex ++; //图片索引加一
     var _curImgID = '';
     $('.prev').show();
-
+    imgData.pagination.hasPreImg = true;
     if(pageobj.curImgIndex==arrayLength){//到达下一组第一张
       pageobj.curImgIndex = 0; //页码归零
       pageobj.pageIndex++;     //组索引加一
@@ -342,8 +382,12 @@ define(function (require, exports, module) {
     pageobj.curImgIndex --;
     var _curImgID = '';
     $('.next').show();
+    imgData.pagination.hasNextImg = true;
    if(pageobj.curImgIndex==-1){//到达上一组最后一张
       pageobj.pageIndex--;     //组索引加一
+      if(pageobj.pageIndex<=0){
+        pageobj.pageIndex = 1;
+      }
       imgData.imgIdArray_cur = imgData.imgIdArray_temp;//当前组图片
       imgData.imgIdArray_temp = imgIdArray_cur; //记录下一组图片
       pageobj.curImgIndex = imgData.imgIdArray_cur.length-1; //页码归当前组图片末尾
@@ -355,6 +399,9 @@ define(function (require, exports, module) {
       _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
       //loadImgIdArray(parseInt(pageobj.pageIndex)-1);//请求上一组图片
       imgData.pagination.pageIndex_edge = -1;
+    }else if(pageobj.curImgIndex<-1){
+      pageobj.curImgIndex = 0;
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
     }else{//每组中间图片
       _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
       imgData.pagination.pageIndex_edge = 0;
@@ -371,7 +418,7 @@ define(function (require, exports, module) {
     copyCurImgInfo(objJson);
     setBigImg(imgData.currentImgInfo);
     commonDetail.buildDescHTML(imgData.currentImgInfo,'fabric'); //生成详情描述HTML
-    //mousewheel(objJson);
+    mousewheel(objJson);
   }
 
   function copyCurImgInfo(objJson){
@@ -440,9 +487,10 @@ function init(){
     //加载图片详情
     LoadPageDetail(imgData.curImgID);
   }
-  //绑定上一张、下一张按钮点击事件
+  //绑定上一张、下一张事件
   bindScrollBigImg();
-
+  mousewheel();
+  keyDownLR();
 }
 
 exports.init=init;

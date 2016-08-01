@@ -507,7 +507,27 @@ define(function (require, exports, module) {
         }
         return -1;
     }
-
+    var EventHelper={
+        /*防止用户频繁操作
+         *func 回调函数
+         *wait 调用时差
+         *immediate true:如果没有正在执行的函数(timeout为null)，fales:先执行setTimeout
+         */
+        debounce:function (func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+    }
 
 
 
@@ -531,7 +551,7 @@ define(function (require, exports, module) {
     module.exports.validateAllNum = validateAllNum;
     module.exports.toKeepDecimal2 = toKeepDecimal2;
     module.exports.validateNumPointNum_plus = validateNumPointNum_plus;
-
+    module.exports.EventHelper = EventHelper;
 
 
 
