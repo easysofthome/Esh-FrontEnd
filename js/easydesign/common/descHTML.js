@@ -48,7 +48,7 @@ define(function (require, exports, module) {
                   // '<div class="desc clearfix"><span class="lf">关键字：</span><p class="lf tit-width">'+data.FABRIC_WEIGHT_PER+'</p></div>';
         break;
       case 'model':
-       retHTML = '<h3>[模型编号]'+data.PRODUCT_CATALOG_ID+'</h3>'+
+       retHTML = '<h3>[模型编号]'+data.CODE+'</h3>'+
                   '<div class="desc clearfix"><span class="lf">模型名称：</span><p class="lf tit-width">'+data.NAME+'</p></div>'+
                   '<div class="desc clearfix"><span class="lf">模型分类：</span><p class="lf tit-width">'+data.STYLE_ID+'</p></div>'+
                   '<div class="desc clearfix"><span class="lf">模型长度：</span><p class="lf tit-width">'+data.LENGHT+'</p></div>'+

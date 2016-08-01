@@ -173,7 +173,7 @@ define(function (require, exports, module) {
            this.hide();
         }
       }
-     
+
         this.lens.css({
           left: e.pageX-this.x_space,
           top: e.pageY-this.y_space
@@ -207,9 +207,9 @@ define(function (require, exports, module) {
   Snipe.prototype.mousewheel=function(){
     var _this = this;
     //解绑document滚轮事件
-    this.lens.on("mouseenter",function(event) {
-      $(document).unbind("mousewheel DOMMouseScroll");
-    });
+    // this.lens.on("mouseenter",function(event) {
+    //   $(document).unbind("mousewheel DOMMouseScroll");
+    // });
      //绑定放大镜滚轮事件
     this.lens.on("mousewheel DOMMouseScroll", function (e) {
       // cross-browser wheel delta
@@ -251,7 +251,7 @@ define(function (require, exports, module) {
   }
 
 
-    
+
 
     Snipe.prototype.init = function(e) {
       this.show();
@@ -304,7 +304,7 @@ define(function (require, exports, module) {
       if(!this.browserHelp().isIE8){
         this.mousewheel();
       }
-        
+
       }
 
       this.lens.show().css({

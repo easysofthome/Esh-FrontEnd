@@ -50,7 +50,22 @@ require('spin'); //依赖插件 用js实现的等待图标
   }
 
   };
-var spinObj ={'spinner':{},'$windowLayer':{}};
+var spinObj ={'spinner':{},'$windowLayer':{},'$wapperlayer':{}};
+
+ //默认配置选项
+  spinObj.defalutOpts = {
+    'selecter':'',
+    'imgSrc':'',
+    'container':'',
+    'scaling':false,
+    'width':0,
+    'height':0,
+    'layer_zIndex':26,
+    'spin_zIndex':27,
+    'layerOpacity':0.2,
+    'spin_size':'normal',
+    callback:function(){}
+  };
 
 spinObj.loadSpin = function(size){
   if($('#loadSpin').length>0){
@@ -77,14 +92,44 @@ spinObj.loadSpin = function(size){
   return true;
 }
 
+spinObj.loadSpin_freeWrapper = function(option){
+  spinObj.removeSpin_freeWrapper();
+  var opts = $.fn.extend({},spinObj.defalutOpts,option);
+  var t = $(opts.selecter);
+  var wapper = opts.container || t.parent();
+  var spin_opts = {};
+  if(opts.spin_size == 'normal'){
+    spin_opts =  spin_opts_json.normal;
+  }else if(opts.spin_size == 'small'){
+    spin_opts =  spin_opts_json.small;
+  }
+
+  spinObj.$wapperlayer = $('<div id="loadSpin_freeWrapper"></div>');
+  spinObj.$wapperlayer.css({'position':'absolute','z-index':opts.layer_zIndex,'opacity': opts.layerOpacity,'filter': 'alpha(opacity='+(opts.layerOpacity*100)+')','background': '#000','top':0,'left':0,'width':t.width(),'height':t.height(),'line-height':t.height()+'px'});
+  t.after(spinObj.$wapperlayer);
+  spinObj.spinner = new Spinner(spin_opts);
+  spinObj.spinner.spin($(wapper)[0]);
+  return true;
+}
+
 spinObj.removeSpin = function(){
   spinObj.spinner.spin();
   spinObj.$windowLayer.remove();
   $('body').css('overflow','');
 }
 
+spinObj.removeSpin_freeWrapper = function(){
+  if(spinObj.spinner.spin){
+    spinObj.spinner.spin();
+  }
+  if(spinObj.$wapperlayer.remove){
+    spinObj.$wapperlayer.remove();
+  }
+}
+
 exports.loadSpin = spinObj.loadSpin;
 exports.removeSpin = spinObj.removeSpin;
+exports.spinObj=spinObj;
 
 jQuery.fn.LoadImage=function(option){
   //默认配置选项
@@ -97,7 +142,8 @@ jQuery.fn.LoadImage=function(option){
     'layer_zIndex':26,
     'spin_zIndex':27,
     'layerOpacity':0.2,
-    'spin_size':'normal'
+    'spin_size':'normal',
+    callback:function(){}
   };
 
   var opts = $.fn.extend({},defalutOpts,option);
@@ -167,6 +213,9 @@ jQuery.fn.LoadImage=function(option){
     if(img.complete){
       hideLoadingImg();
       t.attr("src",img.src);
+      if(callback){
+        callback(t);
+      }
       return;
     }
 

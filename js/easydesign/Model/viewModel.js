@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
   require('jquery');
-  require('loadImage');
+  var loadImageObj = require('loadImage');
   var tools = require('tools');
   require('cookie');
   require('js/front/lib/jquery.history');
@@ -14,19 +14,28 @@ define(function (require, exports, module) {
     'similarImg_url':''
   };
   var objImg = {'w':100,'h':100};
-  var imgData = {'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
+  var imgData = {'canScroll':true,'curImgID':'','pagination':{'pageIndex_edge':-2,'curImgIndex':0,'pageIndex':1,'pageCount':3,'hasNextImg':false,'hasPreImg':false},'imgIdArray_cur':[],'imgIdArray_temp':[],'currentImgInfo':{},'searchParam':''};
 ////////////////////////////////图片样式///////////////////////////////////////////
 
   //加载第n张图片
   function setBigImg(objJson){
-    //获取图片的原始尺寸
+    //图片加载等待
+    loadImageObj.spinObj.loadSpin_freeWrapper({'selecter':'.gallery img'});
+    //图片加载事件
     $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
       objImg.w = this.width;
       objImg.h = this.height;
+      //设置图片位置及大小
       setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
+      //显示图片容器
       $('.gallery-img').show();
+      //移除图片加载等待
+      loadImageObj.spinObj.removeSpin_freeWrapper();
+      //载入图片
+      $('.gallery img').attr('src',objJson.CurrentImgUrl);
+      //图片加载完毕可以滚动滚轮
+      bindMousewheel();
     });
-    $('.gallery img').LoadImage({'imgSrc':objJson.CurrentImgUrl,'container':'.gallery'});
   }
 
   //设置页面尺寸及top left值 可以自适应页面大小
@@ -52,14 +61,6 @@ define(function (require, exports, module) {
       w = winW;
       h = winW*l_w_ratio;
     }
-    var tmpTop = 0;
-    var tmpLeft =0;
-    if((winW-leftSide_w-w)>0){
-      tmpLeft = (winW-leftSide_w-w)/2;
-    }else{
-      w = w-leftSide_w;
-    }
-
     $(rightSide).css({'height':winH-topMenuH-30});
     $(parentDiv).css({'width':(winW-leftSide_w),'height':(winH-topMenuH-botH),'line-height':(winH-topMenuH-botH)+"px"});
     $(parentDiv).parent().css({'height':winH-topMenuH});
@@ -102,19 +103,58 @@ define(function (require, exports, module) {
 ////////////////////////////////事件绑定///////////////////////////////////////////
 
   //鼠标滚轮，上一张、下一张
-  function mousewheel(pageobj,imgIdArray){
+  function mousewheel(){
     // jquery 兼容的滚轮事件
     $('.img-wrapper').on("mousewheel DOMMouseScroll", function (e) {
+      if(!imgData.canScroll)return;
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
           (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
       if (delta > 0){
-        // 向下滚
-        nextImg();
-      }else if (delta < 0){
         // 向上滚
-        prevImg();
+        if(imgData.pagination.hasPreImg){
+          unbindMousewheel();
+          //防止间隔过短
+          prevImg();
+        }
+      }else if (delta < 0){
+         // 向下滚
+        if(imgData.pagination.hasNextImg){
+          unbindMousewheel();
+          //防止间隔过短
+          nextImg();
+        }
       }
     });
+  }
+
+  //键盘左右翻页
+  function keyDownLR(){
+     $(document).on('keydown',function(e){
+      var keyCode = e.keyCode;
+      if(keyCode==37){ //上一张
+         if(imgData.pagination.hasPreImg){
+          unbindMousewheel();
+          //防止间隔过短
+          prevImg();
+        }
+      }else if(keyCode==39){//下一张
+         if(imgData.pagination.hasNextImg){
+          unbindMousewheel();
+          //防止间隔过短
+          nextImg();
+        }
+      }
+    });
+  }
+
+  //注销鼠标滚轮事件
+  function unbindMousewheel(){
+    imgData.canScroll = false;
+  }
+
+  //注册鼠标滚轮事件
+  function bindMousewheel(){
+    imgData.canScroll = true;
   }
 
    //绑定上一张下一张事件
@@ -311,7 +351,7 @@ define(function (require, exports, module) {
     pageobj.curImgIndex ++; //图片索引加一
     var _curImgID = '';
     $('.prev').show();
-
+    imgData.pagination.hasPreImg = true;
     if(pageobj.curImgIndex==arrayLength){//到达下一组第一张
       pageobj.curImgIndex = 0; //页码归零
       pageobj.pageIndex++;     //组索引加一
@@ -342,8 +382,12 @@ define(function (require, exports, module) {
     pageobj.curImgIndex --;
     var _curImgID = '';
     $('.next').show();
+    imgData.pagination.hasNextImg = true;
    if(pageobj.curImgIndex==-1){//到达上一组最后一张
       pageobj.pageIndex--;     //组索引加一
+      if(pageobj.pageIndex<=0){
+        pageobj.pageIndex = 1;
+      }
       imgData.imgIdArray_cur = imgData.imgIdArray_temp;//当前组图片
       imgData.imgIdArray_temp = imgIdArray_cur; //记录下一组图片
       pageobj.curImgIndex = imgData.imgIdArray_cur.length-1; //页码归当前组图片末尾
@@ -355,6 +399,9 @@ define(function (require, exports, module) {
       _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;//当前图片ID
       //loadImgIdArray(parseInt(pageobj.pageIndex)-1);//请求上一组图片
       imgData.pagination.pageIndex_edge = -1;
+    }else if(pageobj.curImgIndex<-1){
+      pageobj.curImgIndex = 0;
+      _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
     }else{//每组中间图片
       _curImgID = imgIdArray_cur[pageobj.curImgIndex].ID;
       imgData.pagination.pageIndex_edge = 0;
@@ -370,23 +417,33 @@ define(function (require, exports, module) {
   function loadData(objJson){
     copyCurImgInfo(objJson);
     setBigImg(imgData.currentImgInfo);
-    commonDetail.buildDescHTML(imgData.currentImgInfo,'model'); //生成详情描述HTML
-    //mousewheel(objJson);
+    commonDetail.buildDescHTML(imgData.currentImgInfo,'fabric'); //生成详情描述HTML
+    mousewheel(objJson);
   }
 
   function copyCurImgInfo(objJson){
     //测试用 之后删除
     if(!objJson.IMG_PATH){
-      objJson.IMG_PATH = 'http://cpmx.easysofthome.com/ProductModel/e1f9270e-634a-4c24-94ce-ce782df554ac.jpg';
+      objJson.IMG_PATH = '/images/production/easydesign/c7ad1773-b42b-444f-b549-1c0f576f10f0.jpg';
+    }
+    if(objJson.IMG_PATH=='C:\\Users\\1\\Desktop\\111.png'){
+      objJson.IMG_PATH = '/images/production/easydesign/6e1868ac-eb4f-44a1-a148-a3244701c0c5.png';
     }
     imgData.currentImgInfo.CurrentImgUrl = objJson.IMG_PATH;//图片路径
-    imgData.currentImgInfo.PRODUCT_CATALOG_ID = objJson.PRODUCT_CATALOG_ID;//模型编号
-    imgData.currentImgInfo.NAME = objJson.NAME;//模型名称
-    imgData.currentImgInfo.STYLE_ID = objJson.STYLE_ID;//模型分类
-    imgData.currentImgInfo.LENGHT = objJson.LENGHT;//模型长度
-    imgData.currentImgInfo.WIDTH = objJson.WIDTH;//模型宽度
-    imgData.currentImgInfo.HEIGHT = objJson.HEIGHT;//模型高度
-    imgData.currentImgInfo.REMARK = objJson.REMARK;//备注
+    imgData.currentImgInfo.PROPERTY_TYPE = objJson.PROPERTY_TYPE;//分类名称
+    imgData.currentImgInfo.NAME = objJson.NAME;//面料名称
+    imgData.currentImgInfo.PRICE_280 = objJson.PRICE_280;//参考价格 门幅280cm
+    imgData.currentImgInfo.PRICE_150 = objJson.PRICE_150;//参考价格 门幅150cm
+    imgData.currentImgInfo.FABRIC_WEIGHT_PER = objJson.FABRIC_WEIGHT_PER;//面料克重
+    imgData.currentImgInfo.FABRIC_ELEMENT_CONTAINS = objJson.FABRIC_ELEMENT_CONTAINS;//面料成分
+    imgData.currentImgInfo.WEAVING_TYPE = objJson.WEAVING_TYPE;//织造种类
+    imgData.currentImgInfo.DYEING_TYPE = objJson.DYEING_TYPE;//染织方法
+    imgData.currentImgInfo.CHAINE_DENSITY = objJson.CHAINE_DENSITY;//经向根数
+    imgData.currentImgInfo.FILLING_DENSITY = objJson.FILLING_DENSITY;//纬向根叔
+    //imgData.currentImgInfo.LAST_UPDATE_TIME = objJson.LAST_UPDATE_TIME;//经纱
+    //imgData.currentImgInfo.LAST_UPDATE_TIME = objJson.LAST_UPDATE_TIME;//纬纱
+    imgData.currentImgInfo.CHAINE_FLOWER_SIZE = objJson.CHAINE_FLOWER_SIZE;//经向花卉尺寸
+    imgData.currentImgInfo.FILLING_FLOWER_SIZE = objJson.FILLING_FLOWER_SIZE;//纬向花卉尺寸
     return copyCurImgInfo;
   }
 
@@ -430,9 +487,10 @@ function init(){
     //加载图片详情
     LoadPageDetail(imgData.curImgID);
   }
-  //绑定上一张、下一张按钮点击事件
+  //绑定上一张、下一张事件
   bindScrollBigImg();
-
+  mousewheel();
+  keyDownLR();
 }
 
 exports.init=init;
