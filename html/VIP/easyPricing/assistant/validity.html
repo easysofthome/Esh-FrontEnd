@@ -46,51 +46,51 @@
           </tr>
           <tr>
             <td>纯涤纱</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt laydate-icon" id="date1"/></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" data-href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>涤纶长丝</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date2" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>涤棉纱</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date3" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>涤粘胶</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date4" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>锦纶长丝</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date5" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>全棉纱</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date6" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
           <tr>
             <td>粘胶</td>
-            <td><input class="ipt"></td>
+            <td><input class="ipt" id="date7" /></td>
             <td>
-              <a class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</a>
+              <span class="btn-save" href="/html/VIP/easyPricing/assistant/prompt.html">保存</span>
             </td>
           </tr>
         </table>
@@ -100,5 +100,38 @@
   </div>
   @@include('VIP/common/footer.html')
   <script>seajs.use("js/front/VIP/easypricing/workersPay/fabric");</script>
+
+  <script>
+    seajs.use(['jquery','layer','laydate'],function($,layer, laydat){
+      // 点击保存按钮
+      $('.btn-save').on('click', function(){
+        $.layer({
+            shade: [0],
+            area: ['auto','auto'],
+            dialog: {
+                msg: '保存后有效期内不可以修改价格和更改绑定，也不能重新设置有效期时间，您是否要保存?',
+                btns: 2,
+                type: 4,
+                btn: ['是','否'],
+                yes: function(){
+                        layer.msg('是', 1, 1);
+                }, no: function(){
+                        layer.msg('否', 1, 13);
+                }
+            }
+        });
+      })
+
+      $('.ipt').on('click', function(){
+        // 日期插件
+        laydate({
+          elem: '.ipt',
+          event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+        });
+      });
+
+
+    });
+  </script>
 </body>
 </html>

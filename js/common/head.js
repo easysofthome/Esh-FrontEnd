@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
-  require('jquery');
+    var baseUrl = "http://test.easysofthome.com/"
+    require('jquery');
 
   var $login = $('#user_login');
   var $reg = $('#user_reg');
@@ -14,7 +15,7 @@ define(function (require, exports, module) {
   'MemberID':'',
   'IsVip':false,
   'znxCount':0,
-  'loginUrl':'http://www.easysofthome.com/Member/ashx/login.ashx'
+  'loginUrl':baseUrl+'Member/ashx/login.ashx'
   }
 
 
@@ -39,8 +40,8 @@ define(function (require, exports, module) {
     }
   },
   noLogin : function(){
-      var loginHTML = $('<a id="user_login" href="/html/VIP/common/regLog/login.html">登录</a>');
-      var regHTML = $('<a id="user_reg" href="/html/VIP/common/regLog/register.html">注册</a>');
+      var loginHTML = $('<a id="user_login" href="' + baseUrl + 'Account/Home/Login.aspx">登录</a>');
+      var regHTML = $('<a id="user_reg" href="' + baseUrl + 'Account/Home/Register.aspx">注册</a>');
     if($('.user').length > 0 ){
       var $loginWrapper = $('<div class="login"></div>');
       $loginWrapper.append(loginHTML);
@@ -61,10 +62,10 @@ define(function (require, exports, module) {
     var $consumer = $('<a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA0NzY0MV8yNjc2MDVfNDAwMDg3NTgxNV8yXw"></a>');
     $consumer.append('<span class="service"></span>客户服务');
     if(!IsVip){
-      $vipWrapper = $('<a href="/html/VIP/common/Pay/purchase.html" id="isNotVip" class="vip-ser"></a>');
+        $vipWrapper = $('<a href="' + baseUrl + '/VIPPay" id="isNotVip" class="vip-ser"></a>');
       $vipWrapper.append('<span class="vip"></span>开通VIP会员');
     }else{
-      $vipWrapper = $('<a href="/html/VIP/common/Pay/purchase.html" id="isNotVip" class="vip-ser"></a>');
+        $vipWrapper = $('<a href="' + baseUrl + '/VIPPay" id="isNotVip" class="vip-ser"></a>');
       $vipWrapper.append('点击续费');
     }
     if($('.user').length > 0 ){
@@ -80,7 +81,7 @@ define(function (require, exports, module) {
   },
   loggedIn : function(data){
     var $loginWrapper = $('<div class="login"></div>');
-    var $userName = $('<a id="username" href="/html/VIP/common/index.html">'+data.memberName+'<i>'+data.znxCount+'</i></a>');
+    var $userName = $('<a id="username" href="' + baseUrl + 'Account/Home/Index.aspx">' + data.memberName + '<i>' + data.znxCount + '</i></a>');
     var $logout = $('<a id="user_logout" href="javascript:void(0)">退出</a>');
     if($('.user').length > 0 ){
       $loginWrapper.append($userName);
@@ -104,7 +105,7 @@ define(function (require, exports, module) {
   $.getJSON(loginInfoObj.loginUrl+'?callback=?', { action: 'loginOut' }, function (result) {
                 if (result) {
                    //注册登出事件
-                  window.location = '/html/VIP/common/regLog/login.html';
+                  window.location =baseUrl + 'Account/Home/Login.aspx';
                 }
             });
   }
