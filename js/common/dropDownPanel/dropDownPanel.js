@@ -31,11 +31,12 @@ define(function (require, exports, module) {
   $('#sel-pro').on('mouseover', '.level2 ul>li', function(event) {
     offsetL = $(this).offset().left-$('.level2').offset().left;
     // 判断元素的位置在左半边还是右半边
-    if(offsetL > 578 - offsetL){
+    var dropPanelW = $('#sel-pro').find('.sel-pro').width();
+    if(offsetL > dropPanelW - offsetL){
       $(this).find('.level3').css('left','unset').css('right',0);
       $(this).find('.level3').css('width',offsetL + $(this).width()-1);
     }else{
-      $(this).find('.level3').css('width',576 - offsetL);
+      $(this).find('.level3').css('width',dropPanelW-2 - offsetL);
     }
 
     $(this).find('.level3-tit').css('z-index','3');
