@@ -981,7 +981,7 @@ $, win, ready = {
             var o = new Class(deliver);
             return o.index;
         };
-        (new Image()).src = layer.path + 'js/front/lib/layer/skin/default/xubox_ico0.png';
+        (new Image()).src = layer.path + '/js/front/lib/layer/skin/default/xubox_ico0.png';
     };
 
     var require1 = '../jquery/jquery'; //若采用seajs，需正确配置jquery的相对路径。未用可无视此处。

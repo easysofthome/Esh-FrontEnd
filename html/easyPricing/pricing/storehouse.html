@@ -194,7 +194,25 @@
       };
       window.parent.postMessage(data,'*');
       parent.layer.close(index);
-    })
+    });
+
+    var obj, h;
+    $(document).ready(function(){
+      obj = $('.type:eq(2)');
+      h = obj.height();
+      obj.css({'height': '36px','overflow': 'hidden'});
+      $('.showmore').attr('data-state','off')
+    });
+    $('.showmore').on('click', function(){
+      if($(this).attr('data-state') == 'off'){
+        obj.animate({'height': h});
+        $(this).attr('data-state','on').html('<span></span>收起');
+      } else {
+        obj.animate({'height': '36px'});
+        $(this).attr('data-state', 'off').html('<span></span>展开');
+      }
+
+    });
   </script>
 
 </body>
