@@ -1,4 +1,4 @@
-var alias = {
+﻿var alias = {
     // common
     'tools': 'js/front/common/tool/tool',
 
@@ -23,9 +23,10 @@ var alias = {
     'tip': 'js/front/lib/tip/jquery.poshytip',    //提醒
     'layer': 'js/front/lib/layer/layer',      //弹窗
     'layerExt': 'js/front/lib/layer/layer.ext',      //弹窗扩展
-    'laytpl': 'js/front/lib/layer/laytpl',      //弹窗扩展
+    'laytpl': 'js/front/lib/layer/laytpl',
+    'laydate': 'js/front/lib/laydate/laydate',      //日期弹窗
 
-    'pagewalkthrough': 'js/front/lib/pagewalkthrough/jquery.pagewalkthrough',            // 引导操作插件
+   'pagewalkthrough': 'js/front/lib/pagewalkthrough/jquery.pagewalkthrough',            // 引导操作插件
 
     'lazyload': 'js/front/lib/jquery.lazyload/jquery.lazyload.js',              // 延时加载
 
@@ -38,20 +39,24 @@ var alias = {
     'jquery.twentytwenty': 'js/front/lib/jquery.twentytwenty/jquery.twentytwenty.js',
 
     // seajs
-    'seajs-debug': 'js/front/common/seajs/seajsdebug',
-    'seajs-style': 'js/front/common/seajs/seajs-style',
-    'seajs-log': 'js/front/common/seajs/seajs-log',
+    'seajs-debug': 'js/seajs/seajsdebug',
+    'seajs-style': 'js/seajs/seajs-style',
+    'seajs-log': 'js/seajs/seajs-log',
     'loadImage':'js/front/lib/jquery.loadImage/jquery.loadImage',
     'spin':'js/front/lib/jquery.loadImage/spin'
 
 };
 
-var comboSyntax =['$$', '&'];
-if (this.seajs) {
-    seajs.config({
+var comboSyntax = ['$$', '&'];
 
-        local: "/static/",
-        base: "http://182.168.1.125:2323/static/",
+if (this.seajs) {
+    var localPath = "/static/";
+    if (location.host.indexOf('easysofthome') > -1) {
+        localPath = "http://pure.picp.net:2323/static/";
+    }
+    seajs.config({
+        local: localPath,
+        base: "http://pure.picp.net:2323/static/",
         debug: true,
 
         comboSyntax: this.comboSyntax,
