@@ -1,0 +1,4 @@
+
+    fabric.html                    面料核价
+
+    procurement.html               询价方式（直接采购成品面料）
