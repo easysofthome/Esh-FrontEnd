@@ -1,0 +1,187 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+@import '../../../../sprite/VIP/easyPricing/assistant/sprite.less';
+
+.factory-box{
+  width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  .tit_box{
+    border-bottom: 1px dashed #dbdbdb;
+    padding: 20px 0 10px 0;
+    margin: 0 30px;
+    .tit_cla{
+      font-size: 20px;
+      color: #333;
+      line-height: 30px;
+    }
+  }
+  // 排序
+  .sortbox{
+    margin: 10px 30px;
+    div.sort{
+      line-height: 32px;
+      p.tit_s{
+        margin-right: 5px;
+      }
+      a.cur,a.sort_ablue{
+        margin-right: 30px;
+        i{
+          margin: 12px 0 0 9px;
+          .icon-VIP-easyPricing-assistant;
+        }
+      }
+      a.sort_ablue{
+        color: #888;
+        i{
+          .sprite(@sortgray);
+        }
+      }
+      a.cur,a.sort_ablue:hover{
+        color: #3ca1d7;
+        i{
+          .sprite(@sortblue);
+        }
+      }
+    }
+    div.intbox,div.intchoice{
+      width: 150px;
+      border: 1px solid #d1d1d1;
+      .border-radius(3px);
+      input.int{
+        width: 100px;
+        line-height: 18px;
+        padding: 5px 10px;
+        border: 0;
+        background-color: #fff;
+      }
+      i{
+        margin: 8px 0 0 8px;
+        .sprite(@searchgray);
+        .icon-VIP-easyPricing-assistant;
+      }
+    }
+    div.intchoice{
+      width: 300px;
+      border: 0;
+      input.int{
+        border: 1px solid #d1d1d1;
+      }
+      span{
+        line-height: 30px;
+      }
+    }
+    .sel-box{
+      width: 490px;
+      ul{
+        width: 490px;
+        li{
+          width: 75px;
+        }
+      }
+    }
+  }//排序
+  .tab-box{
+    width: 1140px;
+    line-height: 38px;
+    text-align: center;
+    margin: 0 auto;
+    th,td{
+      border: 1px solid #EEE;
+    }
+    th{
+      background-color:#4a7bc4;
+      font-weight:normal;
+      font-size:14px;
+      color:#FFF;
+    }
+    tr:nth-child(odd){
+      background-color: #F4F4F4;
+    }
+    td{
+      .btn-save,.btn-red,.btn-gray{
+        display: inline-block;
+        padding: 0 15px;
+        line-height: 26px;
+        margin: 0 5px;
+        .border-radius(4px);
+      }
+      .btn-save{
+        border: 1px solid #86be37;
+        color: #86be37;
+        &:hover{
+          color: #fff;
+          background-color: #86be37;
+        }
+      }
+      .btn-red{
+        border: 1px solid #e86f4f;
+        color: #e86f4f;
+        &:hover{
+          color: #fff;
+          background-color: #e86f4f;
+        }
+      }
+      .btn-gray{
+        border: 1px solid #ccc;
+        color: #ccc;
+      }
+    }
+    .name{
+      width: 280px;
+    }
+    .region{
+      width: 240px;
+    }
+    .price{
+      width: 160px;
+    }
+    .operation{
+      width: 220px;
+    }
+    .factory-operation{
+      width: 400px;
+    }
+
+    .effective{
+      color: #00a2ca;
+    }
+    .failure{
+      color: #cc0000;
+    }
+
+    .offer-box{
+      position: relative;
+      .new{
+        position: absolute;
+        top: 14px;
+        right: 5px;
+        width: 31px;
+        height: 12px;
+        background: url("/images/production/VIP/easyPricing/new.gif") no-repeat;
+      }
+    }
+  }
+}
+
+//按钮
+.butt_box{
+  width: 100%;
+  text-align: center;
+  padding: 40px 0 70px 0;
+  .butt_pricing,.butt_return{
+    width: 120px;
+    line-height: 40px;
+    font-size: 16px;
+    color:#fff;
+    background-color: #929698;
+    .border-radius(5px);
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .butt_return{
+    background-color: #3ca1d7;
+  }
+}
