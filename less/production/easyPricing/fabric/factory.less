@@ -5,7 +5,7 @@
 
 .factory-box{
   width: 1200px;
-  margin: 20px auto 0 auto;
+  margin: 152px auto 0 auto;
   background-color: #fff;
   .tit_box{
     border-bottom: 1px dashed #dbdbdb;
@@ -17,6 +17,7 @@
       line-height: 30px;
     }
   }
+
   // 排序
   .sortbox{
     margin: 10px 30px;
@@ -87,30 +88,30 @@
     line-height: 38px;
     text-align: center;
     margin: 0 auto;
-    th,td{
-      border: 1px solid #EEE;
-    }
+
     th{
-      background-color:#4a7bc4;
+
       font-weight:normal;
-      font-size:14px;
-      color:#FFF;
+      height: 36px;
+      border-bottom: 1px solid #e3e3e3;
+      border-top: 2px solid #e3e3e3;
+      line-height: 36px;
+      background: #f3f3f3;
+      color: #999;
     }
-    tr:nth-child(odd){
-      background-color: #F4F4F4;
-    }
+
     td{
+      border-bottom: 1px dashed #e3e3e3;
       .btn-save{
         display: inline-block;
         width: 80px;
-        line-height: 26px;
-        border: 1px solid #86be37;
-        color: #86be37;
+        line-height: 28px;
+        background-color: #3ca1d7;
+        color: #fff;
         margin: 0 5px;
         .border-radius(4px);
         &:hover{
-          color: #fff;
-          background-color: #86be37;
+            background-color: #63b4df;
         }
       }
       .btn-gary{
@@ -122,6 +123,10 @@
         margin: 0 5px;
         .border-radius(4px);
       }
+    }
+    .Price_color{
+      color: #f94100;
+      font-weight: bold;
     }
     .name{
       width: 320px;
@@ -139,6 +144,9 @@
       width: 400px;
     }
   }
+    .top_box{
+  margin-top: 20px;
+ }
 }
 
 //按钮
