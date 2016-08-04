@@ -9,7 +9,7 @@ define(function(require, exports, module){
 
     $.layer({
       type: 2,
-      title: '选择工厂',
+      title: false,
       area: ['865px', 'auto'],
       border: [5, 0.3, '#000'],
       shade: [0.8, '#000'],
