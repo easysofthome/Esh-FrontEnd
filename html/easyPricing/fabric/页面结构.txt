@@ -1,10 +1,12 @@
 
-    complete.html                  核价完成
+  choose.html                    选择工厂
 
-    fabric.html                    面料核价
+  complete.html                  核价完成
 
-    grey.html                      询价方式（选择坯布+染色（印花））
+  fabric.html                    面料核价
 
-    procurement.html               询价方式（直接采购成品面料）
+  grey.html                      询价方式（选择坯布+染色（印花））
 
-    yarn.html                      询价方式（选择纱线+织造+染色（印花））
+  procurement.html               询价方式（直接采购成品面料）
+
+  yarn.html                      询价方式（选择纱线+织造+染色（印花））

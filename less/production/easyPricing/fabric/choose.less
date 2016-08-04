@@ -3,25 +3,22 @@
 
 @import '../../../sprite/easyPricing/pricing/sprite.less';
 
-.factory-box{
-  width: 1200px;
-  margin: 152px auto 0 auto;
+.TheBinding-box{
+  width: 854px;
+  margin: 0 auto;
   background-color: #fff;
-  padding-bottom: 30px;
-  .tit_box{
-    border-bottom: 1px dashed #dbdbdb;
-    padding: 20px 0 10px 0;
-    margin: 0 30px;
-    .tit_cla{
-      font-size: 20px;
-      color: #333;
-      line-height: 30px;
-    }
+  .border-radius(5px);
+  p.tit{
+    margin: 0 0 10px 0;
+    line-height: 40px;
+    font-size: 16px;
+    color: #333;
+    background-color: #eee;
+    padding: 0 10px;
   }
-
   // 排序
   .sortbox{
-    margin: 10px 30px;
+    margin: 10px;
     div.sort{
       line-height: 32px;
       p.tit_s{
@@ -85,40 +82,39 @@
     }
   }//排序
   .tab-box{
-    width: 1140px;
+    width: 834px;
     line-height: 38px;
     text-align: center;
-    margin: 0 auto;
-
-    th{
-
-      font-weight:normal;
-      height: 36px;
-      border-bottom: 1px solid #e3e3e3;
-      border-top: 2px solid #e3e3e3;
-      line-height: 36px;
-      background: #f3f3f3;
-      color: #999;
+    margin: 0 10px;
+    th,td{
+      border: 1px solid #EEE;
     }
-
+    th{
+      background-color:#4a7bc4;
+      font-weight:normal;
+      font-size:14px;
+      color:#FFF;
+    }
+    tr:nth-child(odd){
+      background-color: #F4F4F4;
+    }
     td{
-      border-bottom: 1px dashed #e3e3e3;
       .btn-save{
         display: inline-block;
         width: 80px;
-        line-height: 28px;
-        background-color: #3ca1d7;
-        color: #fff;
+        line-height: 26px;
+        border: 1px solid #86be37;
+        color: #86be37;
         margin: 0 5px;
-        cursor: pointer;
         .border-radius(4px);
         &:hover{
-            background-color: #63b4df;
+          color: #fff;
+          background-color: #86be37;
         }
       }
       .btn-gary{
         display: inline-block;
-        padding: 0 15px;
+        width: 80px;
         line-height: 26px;
         border: 1px solid #ccc;
         color: #ccc;
@@ -126,48 +122,17 @@
         .border-radius(4px);
       }
     }
-    .Price_color{
-      color: #f94100;
-      font-weight: bold;
-    }
     .name{
-      width: 320px;
+      width: 280px;
     }
     .region{
-      width: 200px;
+      width: 154px;
     }
     .price{
-      width: 200px;
+      width: 130px;
     }
-    .operation{
-      width: 200px;
+    .date{
+      width: 120px;
     }
-    .factory-operation{
-      width: 400px;
-    }
-  }
-    .top_box{
-  margin-top: 20px;
- }
-}
-
-//按钮
-.butt_box{
-  width: 100%;
-  text-align: center;
-  padding: 40px 0 70px 0;
-  .butt_pricing,.butt_return{
-    width: 150px;
-    line-height: 40px;
-    font-size: 16px;
-    color:#fff;
-    background-color: #929698;
-    .border-radius(5px);
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 10px;
-  }
-  .butt_return{
-    background-color: #3ca1d7;
   }
 }

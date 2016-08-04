@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>我收藏的工厂报价（坯布+染色（印花））</title>
+  <link href="/css/production/vip/easyPricing/fabric/factory.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div class="factory-box">
+    <div class="tit_box">
+      <span class="tit_cla">我收藏的工厂报价</span>
+    </div>
+    <table cellspacing="0" cellpadding="0" class="tab-box">
+      <tr>
+        <th class="name">工缴类型</th>
+        <th class="region">工厂名称</th>
+        <th class="price">报价</th>
+        <th>报价日期</th>
+        <th>报价状态</th>
+        <th class="operation">操作</th>
+      </tr>
+      <tr>
+        <td>坯布工厂</td>
+        <td>某某坯布厂</td>
+        <td class="offer-box">20（元/米）</td>
+        <td>2016-6-30</td>
+        <td><span class="effective">有效</span></td>
+        <td>
+          <a class="btn-red" href="#">更换工厂</a>
+          <a class="btn-gray" href="#">刷新报价</a>
+        </td>
+      </tr>
+      <tr>
+        <td>染色工厂</td>
+        <td>某某染色厂</td>
+        <td class="offer-box">20（元/米）</td>
+        <td>2016-6-30</td>
+        <td><span class="effective failure">失效</span></td>
+        <td>
+          <a class="btn-red" href="#">更换工厂</a>
+          <a class="btn-gray" href="#">刷新报价</a>
+        </td>
+      </tr>
+      <tr>
+        <td>涂层、轧花等其他后处理工厂</td>
+        <td>某某后处理厂</td>
+        <td class="offer-box">20（元/米）<div class="new"></div></td>
+        <td>2016-6-30</td>
+        <td><span class="effective">有效</span></td>
+        <td>
+          <a class="btn-red" href="#">更换工厂</a>
+          <a class="btn-save" href="#">刷新报价</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="butt_box">
+    <a href="/html/VIP/easyPricing/Fabric/Fabric.html" class="butt_pricing">返回</a>
+    <a href="#" class="butt_return">重新询价</a>
+  </div>
+  <script src="/js/seajs/sea-debug.js"></script>
+  <script src="/js/seajs/seajs-css.js"></script>
+  <script src="/js/rootConfig.js"></script>
+  <script src="/js/front/lib/jquery/jquery.js"></script>
+  <script>
+  seajs.use(['js/front/common/dropDownPanel/dropDownPanel'],function(o){
+    //测试 选择地区后执行回调函数 返回点击的对象
+    o.callback=function(e){
+      alert('当前点击对象为：  '+$(e).text());
+    }
+  });
+  </script>
+</body>
+</html>
