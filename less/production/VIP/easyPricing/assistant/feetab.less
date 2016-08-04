@@ -32,15 +32,22 @@
   .single_box{
     width: 30px;
   }
-  .ope_box{
-    width: 140px;
+  .way_box{
+    width: 220px;
     span{
       cursor: pointer;
     }
   }
-  .butt_ad,.determine_but,.delete_but{
-    display: block;
-    width: 60px;
+  .ope_box{
+    width: 180px;
+    span{
+      cursor: pointer;
+    }
+  }
+  .butt_ad,.delete_but{
+    display: inline-block;
+    padding: 0 10px;
+
     line-height: 26px;
     text-align: center;
     border: 1px solid #3ca1d7;
@@ -52,9 +59,7 @@
       background-color: #3ca1d7;
     }
   }
-  .determine_but{
-    margin-left: 6px;
-  }
+
   .delete_but{
     color: #e86f4f;
     border: 1px solid #e86f4f;
@@ -85,7 +90,7 @@
     padding: 14px 0 ;
     display: block;
   }
-  .butt_batch{
+  .butt_batch,.butt_sho{
     padding: 0 16px 0 16px;
     display: block;
     border-radius: 4px;
@@ -94,6 +99,9 @@
     height: 30px;
     color: #4d4d4d;
     margin: 8px 0 0 16px;
+  }
+  .butt_sho{
+    margin: 8px 0 0 6px;
   }
   .price-box{
     margin: 8px 0 0 16px;
