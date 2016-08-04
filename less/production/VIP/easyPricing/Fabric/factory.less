@@ -1,12 +1,11 @@
 
 @import '../../../../dev/mixins/mixins.less';
 
-@import '../../../../sprite/VIP/easyPricing/assistant/sprite.less';
-
 .factory-box{
   width: 1200px;
   margin: 20px auto 0 auto;
   background-color: #fff;
+  padding-bottom: 30px;
   .tit_box{
     border-bottom: 1px dashed #dbdbdb;
     padding: 20px 0 10px 0;
@@ -17,76 +16,11 @@
       line-height: 30px;
     }
   }
-  // 排序
-  .sortbox{
-    margin: 10px 30px;
-    div.sort{
-      line-height: 32px;
-      p.tit_s{
-        margin-right: 5px;
-      }
-      a.cur,a.sort_ablue{
-        margin-right: 30px;
-        i{
-          margin: 12px 0 0 9px;
-          .icon-VIP-easyPricing-assistant;
-        }
-      }
-      a.sort_ablue{
-        color: #888;
-        i{
-          .sprite(@sortgray);
-        }
-      }
-      a.cur,a.sort_ablue:hover{
-        color: #3ca1d7;
-        i{
-          .sprite(@sortblue);
-        }
-      }
-    }
-    div.intbox,div.intchoice{
-      width: 150px;
-      border: 1px solid #d1d1d1;
-      .border-radius(3px);
-      input.int{
-        width: 100px;
-        line-height: 18px;
-        padding: 5px 10px;
-        border: 0;
-        background-color: #fff;
-      }
-      i{
-        margin: 8px 0 0 8px;
-        .sprite(@searchgray);
-        .icon-VIP-easyPricing-assistant;
-      }
-    }
-    div.intchoice{
-      width: 300px;
-      border: 0;
-      input.int{
-        border: 1px solid #d1d1d1;
-      }
-      span{
-        line-height: 30px;
-      }
-    }
-    .sel-box{
-      width: 490px;
-      ul{
-        width: 490px;
-        li{
-          width: 75px;
-        }
-      }
-    }
-  }//排序
   .tab-box{
     width: 1140px;
     line-height: 38px;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     th,td{
       border: 1px solid #EEE;
     }
