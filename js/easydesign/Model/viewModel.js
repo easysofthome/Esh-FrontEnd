@@ -417,33 +417,31 @@ define(function (require, exports, module) {
   function loadData(objJson){
     copyCurImgInfo(objJson);
     setBigImg(imgData.currentImgInfo);
-    commonDetail.buildDescHTML(imgData.currentImgInfo,'fabric'); //生成详情描述HTML
+    commonDetail.buildDescHTML(imgData.currentImgInfo,'model'); //生成详情描述HTML
     mousewheel(objJson);
   }
 
   function copyCurImgInfo(objJson){
     //测试用 之后删除
+    if(exports.urls.basePath&&objJson.IMG_PATH){
+      objJson.IMG_PATH = exports.urls.basePath+objJson.IMG_PATH;
+    }
     if(!objJson.IMG_PATH){
       objJson.IMG_PATH = '/images/production/easydesign/c7ad1773-b42b-444f-b549-1c0f576f10f0.jpg';
     }
     if(objJson.IMG_PATH=='C:\\Users\\1\\Desktop\\111.png'){
       objJson.IMG_PATH = '/images/production/easydesign/6e1868ac-eb4f-44a1-a148-a3244701c0c5.png';
     }
+
     imgData.currentImgInfo.CurrentImgUrl = objJson.IMG_PATH;//图片路径
-    imgData.currentImgInfo.PROPERTY_TYPE = objJson.PROPERTY_TYPE;//分类名称
-    imgData.currentImgInfo.NAME = objJson.NAME;//面料名称
-    imgData.currentImgInfo.PRICE_280 = objJson.PRICE_280;//参考价格 门幅280cm
-    imgData.currentImgInfo.PRICE_150 = objJson.PRICE_150;//参考价格 门幅150cm
-    imgData.currentImgInfo.FABRIC_WEIGHT_PER = objJson.FABRIC_WEIGHT_PER;//面料克重
-    imgData.currentImgInfo.FABRIC_ELEMENT_CONTAINS = objJson.FABRIC_ELEMENT_CONTAINS;//面料成分
-    imgData.currentImgInfo.WEAVING_TYPE = objJson.WEAVING_TYPE;//织造种类
-    imgData.currentImgInfo.DYEING_TYPE = objJson.DYEING_TYPE;//染织方法
-    imgData.currentImgInfo.CHAINE_DENSITY = objJson.CHAINE_DENSITY;//经向根数
-    imgData.currentImgInfo.FILLING_DENSITY = objJson.FILLING_DENSITY;//纬向根叔
-    //imgData.currentImgInfo.LAST_UPDATE_TIME = objJson.LAST_UPDATE_TIME;//经纱
-    //imgData.currentImgInfo.LAST_UPDATE_TIME = objJson.LAST_UPDATE_TIME;//纬纱
-    imgData.currentImgInfo.CHAINE_FLOWER_SIZE = objJson.CHAINE_FLOWER_SIZE;//经向花卉尺寸
-    imgData.currentImgInfo.FILLING_FLOWER_SIZE = objJson.FILLING_FLOWER_SIZE;//纬向花卉尺寸
+    imgData.currentImgInfo.CODE = objJson.CODE;//模型编号
+    imgData.currentImgInfo.NAME = objJson.NAME;//模型名称
+    imgData.currentImgInfo.STYLE_ID = objJson.STYLE_ID;//模型分类
+    imgData.currentImgInfo.LENGHT = objJson.LENGHT;//模型长度
+    imgData.currentImgInfo.WIDTH = objJson.WIDTH;//模型宽度
+    imgData.currentImgInfo.HEIGHT = objJson.HEIGHT;//模型高度
+    imgData.currentImgInfo.KEYWORD = objJson.KEYWORD;//关键字
+    imgData.currentImgInfo.REMARK = objJson.REMARK;//备注
     return copyCurImgInfo;
   }
 
