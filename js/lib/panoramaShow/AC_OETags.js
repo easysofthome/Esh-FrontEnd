@@ -1,3 +1,4 @@
+define(function (require, exports, module) {
 // Flash Player Version Detection - Rev 1.6
 // Detect Client Browser type
 // Copyright(c) 2005-2006 Adobe Macromedia Software, LLC. All rights reserved.
@@ -159,7 +160,7 @@ function AC_AddExtension(src, ext)
     return src + ext;
 }
 
-function AC_Generateobj(objAttrs, params, embedAttrs)
+function AC_Generateobj(objAttrs, params, embedAttrs, wapperID)
 {
     var str = '';
     if (isIE && isWin && !isOpera)
@@ -177,8 +178,13 @@ function AC_Generateobj(objAttrs, params, embedAttrs)
   			str += i + '="' + embedAttrs[i] + '" ';
   		str += '> </embed>';
     }
+    var container = document.getElementById(wapperID);
+    if(container){
+      container.innerHTML = str;
+    }else{
+      document.write(str);
+    }
 
-    document.write(str);
 }
 
 function AC_FL_RunContent(){
@@ -187,7 +193,7 @@ function AC_FL_RunContent(){
     (  arguments, ".swf", "movie", "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
      , "application/x-shockwave-flash"
     );
-  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs,ret.wrapperID);
 }
 
 function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
@@ -251,6 +257,9 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
       case "codebase":
         ret.objAttrs[args[i]] = args[i+1];
         break;
+      case "wrapperid":
+        ret.wrapperID = args[i+1];
+        break;
       case "id":
       case "width":
       case "height":
@@ -273,4 +282,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
   return ret;
 }
 
+exports.DetectFlashVer=DetectFlashVer;
+exports.AC_FL_RunContent=AC_FL_RunContent;
 
+});
