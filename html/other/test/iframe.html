@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iframe</title>
+  <style>
+    body{
+      height: 600px;
+    }
+    .save{
+      padding: 5px 10px;
+      border: 1px solid green;
+    }
+    .save:hover{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" name="test[]" value="a" />a
+  <input type="checkbox" name="test[]" value="b" />b
+  <input type="checkbox" name="test[]" value="c" />c
+  <input type="checkbox" name="test[]" value="d" />d
+  <input type="checkbox" name="test[]" value="e" />e
+  <input type="checkbox" name="test[]" value="f" />f
+  <span class="save">确定</span>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+  $('.save').on('click', function(){
+    var temp = '';
+    $('input[type=checkbox]:checked').each(function(){
+      temp += $(this).val() + "+";
+    });
+    temp = temp.slice(0,-1);
+    window.parent.postMessage(temp, '*');
+    // 关闭 layer
+    var index = parent.layer.getFrameIndex(window.name);
+    parent.layer.close(index);
+
+  });
+
+  window.addEventListener('message',function(e){
+    if(e.source!=window.parent) return;
+    var data = e.data.split('+');
+    for(i in data){
+      $('input[value='+ data[i] +']').prop('checked',true);
+    }
+
+  },false);
+
+</script>
+
+</body>
+</html>
