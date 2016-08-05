@@ -1,7 +1,8 @@
 define(function (require, exports, module) {
   require('jquery');
+
   require('js/front/lib/tip/jquery.poshytip');
-  require('layer');
+  var layer = require('layer');
 
   // 颜色渐变支持
 
@@ -40,7 +41,7 @@ define(function (require, exports, module) {
     $('#section1 .othermodules').css('height',devHeight-160);
     $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
     $('#section2 .wrap').css('height',devHeight-282);
-  }
+  };
 
   //首页小鼠标定位操作
   //胡庆龙 2016-05-4
@@ -74,7 +75,7 @@ define(function (require, exports, module) {
 
     }
 
-   }
+   };
 
 
   require('animateColor');
