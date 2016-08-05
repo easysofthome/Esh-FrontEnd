@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试</title>
+</head>
+<body>
+  <input type="text" value="a+b+c" data-state="cur">
+  <input type="button" value="赋值">
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/seajs/sea-debug.js"></script>
+<!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+<script src="/js/seajs/seajs-css.js"></script>
+
+<script src="/js/rootConfig.js"></script>
+<script>
+    seajs.use(['jquery','js/front/lib/tip/jquery.poshytip','js/front/lib/layer2/layer'], function($, poshytip, layer){
+      $('input[type=text]').on('click', function(){
+        layer.open({
+          type: 2,
+          title: '弹窗',
+          area: ['900px','600px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 300)/2+'px',''],
+          shift: 'top',
+          fix : false,
+          content: './iframe.html',
+          success: function (layer) {}
+        });
+      });
+
+      window.addEventListener('message',function(e){
+        var data=e.data;
+        $('input[data-state=cur]').val(data);
+      },false);
+
+      $('input[type=button]').on('click', function(){
+        var temp = $('input[type=text]').val();
+
+        layer.open({
+          type: 2,
+          title: '弹窗',
+          shade: [0.8, '#000'],
+          area: ['900px','600px'],
+          border: [5, 0.3, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 300)/2+'px',''],
+
+          shift: 'top',
+          fix : false,
+          content: './iframe.html',
+          success: function (layer) {
+            window.frames[0].postMessage(temp,'*');
+          }
+        });
+
+
+      });
+    });
+</script>
+</body>
+</html>

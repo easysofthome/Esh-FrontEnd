@@ -18,22 +18,21 @@ define(function (require, exports, module) {
   //加载第n张图片
   function setBigImg(objJson){
     //图片加载等待
-    loadImageObj.spinObj.loadSpin_freeWrapper({'selecter':'.gallery'});
-    //图片加载事件
-    $("<img/>").attr("src", objJson.CurrentImgUrl).load(function() {
-      objImg.w = this.width;
-      objImg.h = this.height;
+      loadImageObj.spinObj.loadSpin_freeWrapper({'selecter':'.gallery'});
       setConstrainImg(objImg,'.gallery','.img-wrapper','.main-right');
       var options = "panorama="+objJson.CurrentImgUrl+"&focus=350&pan=180&start=true&infoText=&width="+$('#panoramaShow').width()+"&height="+$('#panoramaShow').height();
-      $('#panoramaShow').attr('src',exports.urls.iframeSrc+"?"+options);
-      $('.gallery-img').show();
-      //移除图片加载等待
-      loadImageObj.spinObj.removeSpin_freeWrapper();
-      //图片加载完毕可以滚动滚轮
-      bindMousewheel();
-    });
+      $('#panoramaShow').attr("src", exports.urls.iframeSrc+"?"+options).load(function() {
+
+       //移除图片加载等待
+       loadImageObj.spinObj.removeSpin_freeWrapper();
+       $('.gallery-img').show();
+
+     });
 
   }
+
+
+
   //设置页面尺寸及top left值 可以自适应页面大小
   function setConstrainImg(image,imgObj,parentDiv,rightSide){
     var topMenuH= 112;
@@ -41,22 +40,18 @@ define(function (require, exports, module) {
     var winH = $(window).height();
     var winW = $(window).width();
     var imgAreaH = winH-topMenuH-botH;
-    var w = image.w;
-    var h = image.h;
+    var w = 1500;
+    var h = 1500;
     var l_w_ratio = h/w;
     var w_l_ratio = w/h;
     var leftSide_w = $(rightSide).outerWidth()||$(rightSide).width();
     if($(rightSide).css('display') == 'none'){
       leftSide_w = 0;
     }
-    if(h>imgAreaH){
-      h = imgAreaH;
-      //w = imgAreaH*w_l_ratio;
-    }
-    if(w>winW){
-      w = winW-leftSide_w;
-      //h = winW*l_w_ratio;
-    }
+    h = imgAreaH;
+    w = winW-leftSide_w;
+
+
     $(rightSide).css({'height':winH-topMenuH-30});
     $(parentDiv).css({'width':(winW-leftSide_w),'height':(winH-topMenuH-botH),'line-height':(winH-topMenuH-botH)+"px"});
     $(parentDiv).parent().css({'height':winH-topMenuH});
