@@ -713,7 +713,9 @@ seajs.importStyle("@font-face {    font-family: 'fontello';    src: url('https:/
 
           // Add debug file mapping
           if (config.source && !/\-debug\.(js|css)+/g.test(uri)) {
-            uri = uri.replace(/\/(.*)\.(js|css)/g, "/$1-debug.$2")
+            // uri = uri.replace(/\/(.*)\.(js|css)/g, "/$1-debug.$2")
+            // ads中处理script引用的seajs-debug.js有问题
+            uri = uri.replace(/\/(static)\/(.*)\.(js|css)/gi, "/static/debug/$2.$3")
           }
           return uri
         }
