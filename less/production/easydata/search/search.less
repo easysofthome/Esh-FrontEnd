@@ -1,7 +1,7 @@
 
 @import '../../../dev/mixins/mixins.less';
-
 @import '../../../sprite/easydata/sprite.less';
+@import './sel.less';
 
 /** 滚动条样式  */
 /* 滚动条的滑轨背景颜色 */
@@ -42,50 +42,6 @@
   &:hover{
     .input-tri{
       .triangleRotate(#666);
-    }
-  }
-  .sel-country{
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    z-index: 2;
-    width: 428px;
-    background-color: #fff;
-    border: 1px solid #cdcfd1;
-    color: #333;
-    ul.continent{
-      display: inline-block;
-      font-size: 16px;
-      li{
-        line-height:20px;
-        padding:6px 15px 6px 15px;
-        background: #eee;
-        &:hover,&.cur{
-          background: #3ca1d7;
-          cursor:pointer;
-          color: #fff;
-        }
-      }
-    }
-    ul.country{
-      display:inline-block;
-      width: 335px;
-      float: right;
-      margin-top: 6px;
-      .country-ol{
-        display:none;
-        li{
-          float: left;
-          width: 25%;
-          font-size: 14px;
-          padding: 3px 0;
-          &:hover{
-            cursor: pointer;
-            color: #3ca1d7;
-          }
-        }
-      }
     }
   }
 }

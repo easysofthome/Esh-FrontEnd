@@ -79,6 +79,8 @@ new function(settings) {
       return self;
     };
 
+    module.exports = queryObject;
+
     queryObject.prototype = {
       queryObject: true,
       parseNew: function(){
@@ -246,6 +248,5 @@ new function(settings) {
     return new queryObject(location.search, location.hash);
   };
 }(jQuery.query || {}); // Pass in jQuery.query as settings object
-
 
 });

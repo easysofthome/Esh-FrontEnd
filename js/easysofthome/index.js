@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-  require('jquery');
+  var $ = require('jquery');
 
   require('js/front/lib/tip/jquery.poshytip');
   var layer = require('layer');
