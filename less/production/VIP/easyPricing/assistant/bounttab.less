@@ -1,0 +1,142 @@
+@import '../../../../dev/mixins/mixins.less';
+
+.feetab_box{
+  background-color: #fff;
+  table-layout: fixed;
+
+  tr{
+    padding-left: 200px;
+  }
+  td{
+    font-size: 12px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+    .che_cen{
+      vertical-align: middle;
+    }
+    .money_inp{
+      .border-radius(4px);
+      width: 60px;
+      margin: 0 auto;
+      line-height: 26px;
+      height: 26px;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 0 2px;
+    }
+    .my-int{
+      width: 60px;
+      height: 26px;
+      padding: 0 10px;
+
+      border: 1px #cecece solid;
+
+      .border-radius(4px);
+    }
+    .my-int-time{
+      width: 98px;
+      height: 26px;
+      padding: 0 10px;
+
+      border: 1px #cecece solid;
+
+      .border-radius(4px);
+    }
+  }
+  .som_box{
+    width: 50px;
+  }
+  .single_box{
+    width: 30px;
+  }
+  .way_box{
+    width: 220px;
+    span{
+      cursor: pointer;
+    }
+  }
+  .easysoft_box{
+    width: 76px;  }
+  .tit_box{
+    width: 110px;
+  }
+  .ope_box{
+    width: 200px;
+    span{
+      cursor: pointer;
+    }
+  }
+  .butt_ad,.delete_but{
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid #3ca1d7;
+    color: #3ca1d7;
+    margin: 0 auto;
+    .border-radius(4px);
+    &:hover{
+      color: #fff;
+      background-color: #3ca1d7;
+    }
+  }
+
+  .delete_but{
+    color: #e86f4f;
+    border: 1px solid #e86f4f;
+    margin-left: 4px;
+    &:hover{
+      color: #fff;
+      background-color: #e86f4f;
+    }
+  }
+}
+.fee_operating,.feetab_box{
+  width: 1200px;
+}
+.fee_operating,.feetab_tit{
+  background-color: #ebebeb;
+    color: #999;
+}
+.fee_operating{
+  .all_che{
+    vertical-align: middle;
+    margin-left: 8px;
+    *margin-left: 4px;
+  }
+  .all_text,.all_che{
+    cursor: pointer;
+  }
+  .butt_box{
+    padding: 14px 0 ;
+    display: block;
+  }
+  .butt_batch,.butt_sho{
+    padding: 0 16px 0 16px;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    line-height: 30px;
+    height: 30px;
+    color: #4d4d4d;
+    margin: 8px 0 0 16px;
+  }
+  .butt_sho{
+    margin: 8px 0 0 6px;
+  }
+  .price-box{
+    margin: 8px 0 0 16px;
+    color: #4d4d4d;
+    input{
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      height: 30px;
+      width: 40px;
+      padding: 0 10px;
+    }
+  }
+}
