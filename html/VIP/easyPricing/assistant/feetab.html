@@ -1,8 +1,13 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-添加纱线规格</title>
 
-
-  <link href="/css/production/VIP/easyPricing/assistant/feetab.css" rel="stylesheet" type="text/css"/>
-
-
+  <link href="/css/production/VIP/easyPricing/assistant/bounttab.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+  </head>
+<body>
   <table class="feetab_box" cellspacing=”0″>
     <tr class="feetab_tit">
       <td class="single_box">
@@ -10,13 +15,16 @@
       </td>
       <td>成分名称</td>
       <td>规格名称</td>
-      <td>规格</td>
+      <td class="som_box">规格</td>
       <td class="som_box">孔数</td>
       <td class="som_box">股线</td>
       <td class="som_box">成分比</td>
       <td>纱线工艺</td>
-      <td>参考价</td>
-      <td class="way_box">报价方式</td>
+      <td>我自己报价 </td>
+      <td>我报价的有效期 </td>
+      <td>绑定的工厂报价 </td>
+      <td>选择工厂</td>
+      <td>操作</td>
     </tr>
     <tr>
       <td>
@@ -29,10 +37,12 @@
       <td>1</td>
       <td>-</td>
       <td>OE(气流纺)</td>
-      <td>1600</td>
+      <td><input type="text" class="my-int" /></td>
+      <td><input type="text" class="my-int-time" /></td>
+      <td></td>
+      <td><span data-href="/html/VIP/easyPricing/assistant/TheBinding.html" class="delete_but btn">请选择工厂</span></td>
       <td class="way_box">
-         <a href="#" class="butt_ad">我自己报价</a>
-        <a href="#" class="delete_but">选择绑定工厂报价</a>
+         <a href="#" class="butt_ad">保存</a>
       </td>
     </tr>
     <tr>
@@ -46,10 +56,12 @@
       <td>1</td>
       <td>-</td>
       <td>OE(气流纺)</td>
-      <td>1600</td>
+      <td><input type="text" class="my-int" /></td>
+      <td><input type="text" class="my-int-time" /></td>
+      <td></td>
+      <td><span data-href="/html/VIP/easyPricing/assistant/TheBinding.html" class="delete_but btn">请选择工厂</span></td>
       <td  class="way_box">
-        <a href="#" class="butt_ad">我自己报价</a>
-        <a href="#" class="delete_but">选择绑定工厂报价</a>
+        <a href="#" class="butt_ad">保存</a>
       </td>
     </tr>
         <tr>
@@ -63,10 +75,12 @@
       <td>1</td>
       <td>-</td>
       <td>OE(气流纺)</td>
-      <td>1600</td>
+      <td><input type="text" class="my-int" /></td>
+      <td><input type="text" class="my-int-time" /></td>
+      <td></td>
+      <td><span data-href="/html/VIP/easyPricing/assistant/TheBinding.html" class="delete_but btn">请选择工厂</span></td>
       <td class="way_box">
-          <a href="#" class="butt_ad">我自己报价</a>
-        <a href="#" class="delete_but">选择绑定工厂报价</a>
+          <a href="#" class="butt_ad">保存</a>
       </td>
     </tr>
         <tr>
@@ -80,10 +94,12 @@
       <td>1</td>
       <td>-</td>
       <td>OE(气流纺)</td>
-      <td>1600</td>
+      <td><input type="text" class="my-int" /></td>
+      <td><input type="text" class="my-int-time" /></td>
+      <td></td>
+      <td><span data-href="/html/VIP/easyPricing/assistant/TheBinding.html" class="delete_but btn">请选择工厂</span></td>
       <td  class="way_box">
-          <a href="#" class="butt_ad">我自己报价</a>
-        <a href="#" class="delete_but">选择绑定工厂报价</a>
+          <a href="#" class="butt_ad">保存</a>
       </td>
     </tr>
         <tr>
@@ -97,10 +113,12 @@
       <td>1</td>
       <td>-</td>
       <td>OE(气流纺)</td>
-      <td>1600</td>
+      <td><input type="text" class="my-int" /></td>
+      <td><input type="text" class="my-int-time" /></td>
+      <td></td>
+      <td><span data-href="/html/VIP/easyPricing/assistant/TheBinding.html" class="delete_but btn">请选择工厂</span></td>
       <td  class="way_box">
-       <a href="#" class="butt_ad">我自己报价</a>
-       <a href="#" class="delete_but">选择绑定工厂报价</a>
+       <a href="#" class="butt_ad">保存</a>
       </td>
     </tr>
 
@@ -110,5 +128,8 @@
       <input name="Fruit" type="checkbox" value="" class="all_che"/>
       <span class="all_text">全选</span>
     </label>
-    <a href="#" class="butt_batch lf">批量添加</a>
+    <a href="#" class="butt_batch lf">批量添加到我自己的报价</a>
+    <a href="#" class="butt_batch lf">批量添加到选择绑定工厂报价</a>
   </div>
+  </body>
+  </html>
