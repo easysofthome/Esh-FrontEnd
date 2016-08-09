@@ -1,6 +1,16 @@
 /node_modules
 /js/rootConfig.js
 /Less/sprite
-/Static
+/Static/css
+/Static/images
+/Static/js
+/Static/video
+/Static/html/common
+/Static/html/easydata
+/Static/html/easydesign
+/Static/html/easyPricing
+/Static/html/easysofthome
+/Static/html/other
+/Static/html/VIP
 /.idea
 /gulpfile.js
