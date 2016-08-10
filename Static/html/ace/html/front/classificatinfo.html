@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta charset="utf-8" />
+  <title>Form Elements - Ace Admin</title>
+  <meta name="description" content="Common form elements and layouts" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- bootstrap & fontawesome -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../assets/css/font-awesome.css" />
+  <!-- text fonts -->
+  <link rel="stylesheet" href="../../assets/css/ace-fonts.css" />
+  <!-- ace styles -->
+  <link rel="stylesheet" href="../../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+  <![endif]-->
+  <!-- inline styles related to this page -->
+  <!-- ace settings handler -->
+  <script src="../../assets/js/jquery.js"></script>
+  <script src="../../assets/js/ace-extra.js"></script>
+  <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+  <!--[if lte IE 8]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="page-content " >
+    <div class="page-header">
+      <h1>
+        套件小类信息
+        <small> <i class="ace-icon fa fa-angle-double-right"></i>
+          套件分类信息
+        </small>
+      </h1>
+    </div>
+    <div class="row">
+
+      <form class="form-horizontal" role="form">
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-3 col-xs-offset-3 no-padding-right">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">套件分类编号</label>
+
+            <div class="col-xs-8">
+              <input type="text" id="form-field-1" placeholder="请输入套件分类编号" class="col-xs-12"></div>
+          </div>
+
+          <div class="col-xs-3 no-padding-left">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">套件分类名称</label>
+
+            <div class="col-xs-8">
+              <input type="text" id="form-field-1" placeholder="请输入套件分类名称" class="col-xs-12"></div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-3 col-xs-offset-3 no-padding-right">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">退税率</label>
+
+            <div class="col-xs-8">
+              <input type="text" id="form-field-1" placeholder="请输入退税率" class="col-xs-12"></div>
+          </div>
+
+          <div class="col-xs-3 no-padding-left">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">上级分类</label>
+
+            <div class="col-xs-8">
+              <select class="form-control " id="form-field-select-1">
+                <option value="">-请选择-</option>
+                <option value="AL">床上用品</option>
+                <option value="AK">桌上用品</option>
+                <option value="AZ">客厅用品</option>
+                <option value="AR">卫浴用品</option>
+                <option value="AR">窗品</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-6 col-xs-offset-3">
+            <label class="col-xs-2 control-label no-padding-right" for="form-field-1">包含产品</label>
+
+            <div class="col-xs-6">
+              <input type="text" id="form-field-1" placeholder="" class="col-xs-12"></div>
+            <div class="col-xs-1">
+              <a class="btn btn-info btn-sm btnSelectAttrName" href="#">选择</a>
+            </div>
+            <div class="col-xs-1">
+              <a class="btn btn-info btn-sm btnSelectAttrName" href="#">赋值</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-6 col-xs-offset-3">
+            <label class="col-xs-2 control-label no-padding-right" for="form-field-1">产品数量</label>
+
+            <div class="col-xs-10">
+              <input type="text" id="form-field-1" placeholder="请输入产品数量" class="col-xs-12"></div>
+
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-6 col-xs-offset-3">
+            <label class="col-xs-2 control-label no-padding-right" for="form-field-1">备注</label>
+
+            <div class="col-xs-10">
+              <textarea class="col-xs-12  " cols="30" id="REMARK" name="REMARK" rows="2">2</textarea>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-6 col-xs-offset-3">
+            <label class="col-xs-2 control-label no-padding-right" for="form-field-1">创建企业</label>
+
+            <div class="col-xs-10">
+              <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" type="text" value="杭州易上弘网络有限公司"></div>
+
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-3 col-xs-offset-3 no-padding-right">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">创建人</label>
+
+            <div class="col-xs-8">
+              <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" type="text" value="胡庆龙"></div>
+          </div>
+
+          <div class="col-xs-3 no-padding-left">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">创建时间</label>
+
+            <div class="col-xs-8">
+              <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" type="text" value="2016/6/12 12:12:56"></div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 form-group">
+
+          <div class="col-xs-3 col-xs-offset-3 no-padding-right">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">最后收件人</label>
+
+            <div class="col-xs-8">
+              <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" type="text" value="胡庆龙"></div>
+          </div>
+
+          <div class="col-xs-3 no-padding-left">
+            <label class="col-xs-4 control-label no-padding-right" for="form-field-1">最后修改日期</label>
+
+            <div class="col-xs-8">
+              <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" type="text" value="2016/6/12 12:12:56"></div>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>
