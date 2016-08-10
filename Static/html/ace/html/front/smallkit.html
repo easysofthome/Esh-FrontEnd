@@ -57,10 +57,16 @@
     <!-- /section:basics/content.searchbox --> </div>
   <!-- .page-content -->
   <div class="page-content">
-    <div class="row">
-      <!-- 工具栏 --> </div>
+
     <!-- 查询栏 -->
+
     <div class="row">
+      <div class="col-xs-12 ">
+        <button class="btn btn-app btn-primary btn-xs">新增</button>
+        <button class="btn btn-app btn-yellow btn-xs">修改</button>
+        <button class="btn btn-app btn-danger btn-xs">删除</button>
+      </div>
+
       <div class="col-xs-12">
         <div class="widget-box">
           <div class="widget-header">
@@ -70,16 +76,16 @@
             <div class="widget-main">
               <div class="row">
                 <form class="form-horizontal" role="form">
-                  <div class="col-xs-9">
-                    <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1" >套件类别编号</label>
+                  <div class="col-xs-12">
+                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1" >套件类别编号</label>
                     <div class="col-xs-2 common_maxW_160">
-                      <input type="text" id="form-field-1" placeholder="请输入编号"/>
+                      <input type="text" id="form-field-1" class="col-xs-12" placeholder="请输入编号"/>
                     </div>
-                    <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">套件类别名称</label>
+                    <label class="common_minW control-label no-padding-right  pull-left" for="form-field-1">套件类别名称</label>
                     <div class="col-xs-2 common_maxW_160">
-                      <input type="text" id="form-field-1" placeholder="请输入名称"/>
+                      <input type="text" id="form-field-1" class="col-xs-12" placeholder="请输入名称"/>
                     </div>
-                    <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">上级分类</label>
+                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">上级分类</label>
                     <div class="col-xs-2 common_maxW_160">
                       <select class="form-control" id="form-field-select-1">
                         <option value="AL">全部</option>
@@ -90,13 +96,7 @@
                         <option value="AR">窗品</option>
                       </select>
                     </div>
-
-                  </div>
-                  <div class="col-xs-3 ">
-                    <button class="btn btn-app btn-danger btn-xs pull-right">删除</button>
-                    <button class="btn btn-app btn-yellow btn-xs pull-right">修改</button>
-                    <button class="btn btn-app btn-primary btn-xs pull-right">新增</button>
-
+                    <button type="button" class="btn btn-sm btn-primary">查询</button>
                   </div>
 
                 </form>
@@ -124,7 +124,7 @@
               <th>类别编号</th>
               <th>套件类别名称</th>
               <th>退税率</th>
-              <th class="col-xs-5">包含产品</th>
+              <th class="col-xs-3">包含产品</th>
               <th class="col-xs-1">备注</th>
               <th>创建企业</th>
               <th>创建人</th>
@@ -144,7 +144,7 @@
               <td>TJFL11701</td>
               <td>单方盖毯</td>
               <td>0.121</td>
-              <td>毛毯+窗帘+窗花</td>
+              <td>毛毯+窗帘+窗花+毛毯+窗帘+窗花+窗帘+窗花</td>
               <td>15116fy516</td>
               <td>杭州易上弘</td>
               <td>胡庆龙</td>
