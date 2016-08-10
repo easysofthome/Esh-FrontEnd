@@ -853,6 +853,8 @@ seajs.config = function(configData) {
 }
 
 })(this);
+
+// 预加载
 var data = seajs.data
 var doc = document
 
