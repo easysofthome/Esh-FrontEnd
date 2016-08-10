@@ -1,210 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta charset="utf-8" />
-    <title>
-      Form Elements - Ace Admin
-    </title>
-    <meta name="description" content="Common form elements and layouts" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="../../assets/css/font-awesome.css" />
-    <!-- text fonts -->
-    <link rel="stylesheet" href="../../assets/css/ace-fonts.css" />
-    <!-- ace styles -->
-    <link rel="stylesheet" href="../../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
-    <!--[if lte IE 9]>
-      <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
-    <![endif]-->
-    <!--[if lte IE 9]>
-      <link rel="stylesheet" href="../assets/css/ace-ie.css" />
-    <![endif]-->
-    <!-- inline styles related to this page -->
-    <!-- ace settings handler -->
-    <script src="../../assets/js/jquery.js">
-    </script>
-    <script src="../../assets/js/ace-extra.js">
-    </script>
-    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-    <!--[if lte IE 8]>
-      <script src="../assets/js/html5shiv.js">
-      </script>
-      <script src="../assets/js/respond.js">
-      </script>
-    <![endif]-->
-    <style>
-      .common_minW_82{
-      min-width:82px
-      }
-      .common_maxW_160{
-      max-width:160px
-      }
-    </style>
-  </head>
-  <body>
-    <!-- .page-content -->
-    <div class="page-content">
-      <div class="row">
-        <!-- 工具栏 -->
-        <div class="col-xs-12">
-          <button class="btn btn-app btn-primary btn-xs">
-            <i class="ace-icon glyphicon glyphicon-plus bigger-160">
-            </i>
-            新增
-          </button>
-          <button class="btn btn-app btn-yellow btn-xs">
-            <i class="ace-icon glyphicon glyphicon-pencil bigger-160">
-            </i>
-            修改
-          </button>
-          <button class="btn btn-app btn-danger btn-xs">
-            <i class="ace-icon fa fa-trash-o bigger-160">
-            </i>
-            删除
-          </button>
-        </div>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta charset="utf-8" />
+  <title>Form Elements - Ace Admin</title>
+  <meta name="description" content="Common form elements and layouts" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- bootstrap & fontawesome -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../assets/css/font-awesome.css" />
+  <!-- text fonts -->
+  <link rel="stylesheet" href="../../assets/css/ace-fonts.css" />
+  <!-- ace styles -->
+  <link rel="stylesheet" href="../../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+  <![endif]-->
+  <!-- inline styles related to this page -->
+  <!-- ace settings handler -->
+  <script src="../../assets/js/jquery.js"></script>
+  <script src="../../assets/js/ace-extra.js"></script>
+  <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+  <!--[if lte IE 8]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="breadcrumbs" id="breadcrumbs">
+
+    <ul class="breadcrumb">
+      <li> <i class="ace-icon fa fa-home home-icon"></i>
+        <a href="#">Home</a>
+      </li>
+
+      <li>
+        <a href="#">基础信息</a>
+      </li>
+      <li class="active">套间小类信息</li>
+    </ul>
+    <!-- /.breadcrumb -->
+
+    <!-- #section:basics/content.searchbox -->
+
+    <!-- /section:basics/content.searchbox --> </div>
+  <!-- .page-content -->
+  <div class="page-content">
+    <div class="row">
+       <div class="col-xs-12 ">
+        <button class="btn btn-app btn-primary btn-xs">新增</button>
+        <button class="btn btn-app btn-yellow btn-xs">修改</button>
+        <button class="btn btn-app btn-danger btn-xs">删除</button>
       </div>
-      <!-- 查询栏 -->
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="widget-box">
-            <div class="widget-header">
-              <h4 class="smaller">
-                查询栏
-              </h4>
+     </div>
+    <!-- 查询栏 -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="widget-box">
+          <div class="widget-header">
+            <h4 class="widget-title">查询栏</h4>
+            <div class="widget-toolbar">
+              <a href="#" data-action="collapse">
+                <i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+              </a>
             </div>
-            <div class="widget-body">
-              <div class="widget-main">
-                <div class="row">
-                  <form class="form-horizontal" role="form">
-                    <div class="col-xs-9">
-                      <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">
-                        Text Field
-                      </label>
-                      <div class="col-xs-2 common_maxW_160">
-                        <input type="text" id="form-field-1" placeholder="Username"/>
-                      </div>
-                      <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">
-                        Text Field
-                      </label>
-                      <div class="col-xs-2 common_maxW_160">
-                        <input type="text" id="form-field-1" placeholder="Username"/>
-                      </div>
-                      <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">
-                        Text Field
-                      </label>
-                      <div class="col-xs-2 common_maxW_160">
-                        <select class="form-control" id="form-field-select-1">
-                          <option value="">
-                          </option>
-                          <option value="AL">
-                            Alabama
-                          </option>
-                          <option value="AK">
-                            Alaska
-                          </option>
-                          <option value="AZ">
-                            Arizona
-                          </option>
-                          <option value="AR">
-                            Arkansas
-                          </option>
-                        </select>
-                      </div>
-                      <label class="col-xs-1 common_minW control-label no-padding-right" for="form-field-1">
-                        Text Field
-                      </label>
-                      <div class="col-xs-2 common_maxW_160">
-                        <select class="form-control" id="form-field-select-1">
-                          <option value="">
-                          </option>
-                          <option value="AL">
-                            Alabama
-                          </option>
-                          <option value="AK">
-                            Alaska
-                          </option>
-                          <option value="AZ">
-                            Arizona
-                          </option>
-                          <option value="AR">
-                            Arkansas
-                          </option>
-                        </select>
-                      </div>
-                      <button type="button" id="search" class="btn btn-sm btn-primary">
-                        查询
-                      </button>
+          </div>
+          <div class="widget-body">
+            <div class="widget-main">
+              <div class="row">
+                <form class="form-horizontal" role="form">
+                  <div class="col-xs-12">
+                    <label class="control-label no-padding-right pull-left" for="form-field-1" >尺码名称：</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" placeholder="请输入编号"/>
                     </div>
-                  </form>
+                    <label class="control-label no-padding-right pull-left" for="form-field-1">尺码规格：</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" placeholder="请输入名称"/>
+                    </div>
+
+                    <label class="control-label no-padding-right pull-left" for="form-field-1">
+                        套件类型：
+                      </label>
+                    <div class="col-xs-2">
+                        <select class="form-control" id="form-field-select-1">
+                          <option value="">
+                          全部
+                          </option>
+                          <option value="AL">
+                            单品抱枕
+                          </option>
+                          <option value="AK">
+                            单品床垫
+                          </option>
+                          <option value="AZ">
+                            成对枕头
+                          </option>
+                          <option value="AR">
+                            床单三件套
+                          </option>
+                        </select>
+                      </div>
+                      <label class="control-label no-padding-right pull-left" for="form-field-1">
+                        产品类型；
+                      </label>
+                      <div class="col-xs-2">
+                        <select class="form-control" id="form-field-select-1">
+                          <option value="">
+                          全部
+                          </option>
+                          <option value="AL">
+                            床裙
+                          </option>
+                          <option value="AK">
+                            坐垫
+                          </option>
+                          <option value="AZ">
+                            餐垫
+                          </option>
+                          <option value="AR">
+                            餐巾
+                          </option>
+                        </select>
+                      </div>
+                      <button type="button" class="btn btn-sm btn-primary">查询</button>
                 </div>
+              </form>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- 查询栏end -->
-      <!-- 报表 -->
-      <div class="row">
-        <div class="col-xs-12">
-          <table id="sample-table-1" class="table table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
-                </th>
-                <th>
-                  套件类型
-                </th>
-                <th>
-                  尺码名称
-                </th>
-                <th>
-                  产品类型
-                </th>
-                <th>
-                  参数列表
-                </th>
-                <th>
-                  参数值
-                </th>
-                <th>
-                  备注
-                </th>
-                <th>
-                  创建企业
-                </th>
-                <th>
-                  创建人
-                </th>
-                <th>
-                  创建时间
-                </th>
-                <th>
-                  最后修改人
-                </th>
-                <th>
-                  最后修改时间
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
-                </td>
-                <td>
-                    ace.com
+    </div>
+    <!-- 查询栏end -->
+    <!-- 报表 -->
+    <div class="space-4"></div>
+    <div class="row ">
+      <div class="col-xs-12">
+        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </th>
+              <th class="col-xs-1">
+                套件类型
+              </th>
+              <th class="col-xs-1">
+                尺码名称
+              </th>
+              <th class="col-xs-1">
+                产品类型
+              </th>
+              <th class="col-xs-1">
+                参数列表
+              </th>
+              <th class="col-xs-1">
+                参数值
+              </th>
+              <th class="col-xs-2">
+                备注
+              </th>
+              <th class="col-xs-1">
+                创建企业
+              </th>
+              <th class="col-xs-1">
+                创建人
+              </th>
+              <th class="col-xs-1">
+                创建时间
+              </th>
+              <th class="col-xs-1">
+                最后修改人
+              </th>
+              <th class="col-xs-1">
+                最后修改时间
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
                 </td>
                 <td>
                   $45
@@ -215,157 +205,521 @@
                 <td>
                   Feb 12
                 </td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-              </tr>
-              <tr>
-                <td class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
                 </td>
                 <td>
-                  <a href="#">
-                    base.com
-                  </a>
+                  $45
                 </td>
                 <td>
-                  $35
-                </td>
-                <td class="hidden-480">
-                  2,595
+                  3,330
                 </td>
                 <td>
-                  Feb 18
+                  Feb 12
                 </td>
-                <td class="hidden-480">
-                  <span class="label label-sm label-success">
-                    Registered
-                  </span>
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-              </tr>
-              <tr>
-                <td class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
+                <td class="col-xs-2">
+                  Expiring
                 </td>
-                <td>
-                  <a href="#">
-                    max.com
-                  </a>
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>
-                  $60
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td class="hidden-480">
-                  4,400
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>
-                  Mar 11
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td class="hidden-480">
-                  <span class="label label-sm label-warning">
-                    Expiring
-                  </span>
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-              </tr>
-              <tr>
-                <td class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
                 </td>
                 <td>
-                  <a href="#">
-                    best.com
-                  </a>
+                  $45
                 </td>
                 <td>
-                  $75
-                </td>
-                <td class="hidden-480">
-                  6,500
+                  3,330
                 </td>
                 <td>
-                  Apr 03
+                  Feb 12
                 </td>
-                <td class="hidden-480">
-                  <span class="label label-sm label-inverse arrowed-in">
-                    Flagged
-                  </span>
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-              </tr>
-              <tr>
-                <td class="center">
-                  <label class="position-relative">
-                    <input type="checkbox" class="ace"/>
-                    <span class="lbl">
-                    </span>
-                  </label>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
                 </td>
                 <td>
-                  <a href="#">
-                    pro.com
-                  </a>
+                  $45
                 </td>
                 <td>
-                  $55
-                </td>
-                <td class="hidden-480">
-                  4,250
+                  3,330
                 </td>
                 <td>
-                  Jan 21
+                  Feb 12
                 </td>
-                <td class="hidden-480">
-                  <span class="label label-sm label-success">
-                    Registered
-                  </span>
+                <td class="col-xs-1">
+                  Expiring
                 </td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-                <td>Expiring</td>
-              </tr>
-            </tbody>
-          </table>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>
+                  ace.com
+                </td>
+                <td>
+                  $45
+                </td>
+                <td>
+                  3,330
+                </td>
+                <td>
+                  Feb 12
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-2">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+                <td class="col-xs-1">
+                  Expiring
+                </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="dataTables_info" id="sample-table-2_info" role="status" aria-live="polite">
+          共
+          <span>41</span>
+          条&nbsp;&nbsp;&nbsp;&nbsp;当前第
+          <span>1</span>
+          页
         </div>
       </div>
-      <!-- 报表end -->
-</div>
-<!--
+      <div class="col-xs-6">
+        <div class="dataTables_paginate paging_simple_numbers" id="sample-table-2_paginate">
+          <ul class="pagination">
+            <li class="paginate_button previous disabled" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_previous">
+              <a href="#">上一页</a>
+            </li>
+            <li class="paginate_button active" aria-controls="sample-table-2" tabindex="0">
+              <a href="#">1</a>
+            </li>
+            <li class="paginate_button " aria-controls="sample-table-2" tabindex="0">
+              <a href="#">2</a>
+            </li>
+            <li class="paginate_button " aria-controls="sample-table-2" tabindex="0">
+              <a href="#">3</a>
+            </li>
+            <li class="paginate_button next" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_next">
+              <a href="#">下一页</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 报表end --> </div>
+
+  <!--
   /.page-content
 -->
 </body>
