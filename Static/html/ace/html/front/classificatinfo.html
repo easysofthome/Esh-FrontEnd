@@ -92,10 +92,10 @@
             <div class="col-xs-6">
               <input type="text" id="form-field-1" placeholder="" class="col-xs-12"></div>
             <div class="col-xs-1">
-              <a class="btn btn-info btn-sm btnSelectAttrName" href="#">选择</a>
+              <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">选择</a>
             </div>
             <div class="col-xs-1">
-              <a class="btn btn-info btn-sm btnSelectAttrName" href="#">赋值</a>
+              <a class="btn btn-info btn-sm btnSelectAttrName" id="setParamBtn" href="javascript:void(0)">赋值</a>
             </div>
           </div>
 
@@ -187,14 +187,34 @@
     </div>
   </div>
    <script>
+   ///////////////////弹出layer//////////////////
+   //选择产品
+   $('#selProBtn').click(function(){
     layer.open({
-      type: 1,
-      title: false,
-      closeBtn: 0,
+      type: 2,
+      title:'产品选择',
+      offset:'200px',
+      area: 'auto',
+      fix: true, //不固定
+      maxmin: true,
       shadeClose: true,
-      skin: 'yourclass',
-      content: '自定义HTML内容'
+      content: 'classificatinfo_selPro.html'
     });
+   });
+   //赋值
+   $('#setParamBtn').click(function(){
+    layer.open({
+      type: 2,
+      title:'参数值设置',
+      offset:'200px',
+      area: '900px',
+      fix: true, //不固定
+      maxmin: true,
+      shadeClose: true,
+      content: 'classificatinfo_setParam.html'
+    });
+   });
+
 
    </script>
    <script src="../../assets/js/layer/layer.js"></script>
