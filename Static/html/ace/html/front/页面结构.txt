@@ -15,7 +15,25 @@
 
     smallkit.html                 套件小类信息
 
-    StyleLibraryInfo.html         款式库信息
+                                    款式库信息
 
-    StyleLibraryModify.html       款式库信息修改
-    StyleLibraryModify_config.html款式库信息修改_弹出层_套件配置
+    --StyleLibraryInfo.html                     款式库信息列表
+    |
+    --StyleLibraryModify.html                   款式库信息修改
+      |
+      |--StyleLibraryModify_config.html         套件配置列表
+         |
+         |--nuckitpre.html                      套件核价详情
+            |
+            |--nuckitpre_selMould.html          包装辅料信息 模板选择
+            |--nuckitpre_addAcce.html           包装辅料信息 新增
+            |--nuckitpre_carton.html            获取纸箱信息
+            |--nuckitpre_cartonCalculate.html   纸箱信息精算
+            |--nuckitpre_oceanFreight.html      海运费 单价查询
+            |--nuckitpre_setContainer .html     海运费 配置集装箱
+            |--nuckitpre_tariffRate .html       获取税率信息
+            |
+            |--nuclearPriceInfo.html            产品列表 查看\修改
+               |
+               |--
+               |--
