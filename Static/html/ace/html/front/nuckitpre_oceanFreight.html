@@ -54,12 +54,7 @@
                     <div class="col-xs-12 hr8 no-margin-top">
                       <label class="control-label no-padding-right pull-left" for="form-field-1" >有效期</label>
                       <div class="col-xs-2">
-                        <div class="input-group">
-                          <input class="form-control date-picker col-xs-12" id="my-date-picker-input" type="text" data-date-format="yyyy-mm-dd">
-                          <span class="input-group-addon">
-                            <i class="fa fa-calendar bigger-110"></i>
-                          </span>
-                        </div>
+                          <input class="col-xs-12" id="my-date-picker-input" type="text" data-date-format="yyyy-mm-dd">
                       </div>
                       <label class="control-label no-padding-right pull-left" for="form-field-1" >货运形式</label>
                       <div class="col-xs-2">
@@ -130,20 +125,23 @@
                   <span class="lbl"></span>
                 </label>
               </th>
-              <th>款式编号</th>
-              <th>款式名称</th>
-              <th>套件类型</th>
-              <th>款式类型</th>
-              <th>是否拼接款式</th>
-              <th>款式分类</th>
-              <th class="col-xs-1">包含工艺</th>
-              <th>款式工缴</th>
-              <th class="col-xs-1">文字描述</th>
-              <th>创建企业</th>
-              <th>创建人</th>
-              <th>创建时间</th>
-              <th>最后修改人</th>
-              <th>最后修改时间</th>
+              <th>有效期</th>
+              <th>出运港</th>
+              <th>目的港</th>
+              <th>基本运价</th>
+              <th>20GP</th>
+              <th>40GP</th>
+              <th>40HP</th>
+              <th>附加费</th>
+              <th>货运形式</th>
+              <th class="col-xs-1">主题</th>
+              <th>发布时间</th>
+              <th>航程</th>
+              <th>开航时间</th>
+              <th>航运公司</th>
+              <th>航线</th>
+              <th>抓取时间</th>
+              <th class="col-xs-1">信息链接</th>
             </tr>
           </thead>
           <tbody>
@@ -164,10 +162,13 @@
               <td>0.80</td>
               <td>距边0.5英寸处微波打孔</td>
               <td>杭州易上弘</td>
-              <td>胡庆龙</td>
               <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
+              <td>杭州易上弘</td>
               <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
             </tr>
             <tr>
               <td class="center">
@@ -186,10 +187,13 @@
               <td>0.80</td>
               <td>距边0.5英寸处微波打孔</td>
               <td>杭州易上弘</td>
-              <td>胡庆龙</td>
               <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
+              <td>杭州易上弘</td>
               <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
             </tr>
             <tr>
               <td class="center">
@@ -208,10 +212,13 @@
               <td>0.80</td>
               <td>距边0.5英寸处微波打孔</td>
               <td>杭州易上弘</td>
-              <td>胡庆龙</td>
               <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
+              <td>杭州易上弘</td>
               <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
             </tr>
             <tr>
               <td class="center">
@@ -230,10 +237,13 @@
               <td>0.80</td>
               <td>距边0.5英寸处微波打孔</td>
               <td>杭州易上弘</td>
-              <td>胡庆龙</td>
               <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
+              <td>杭州易上弘</td>
               <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
             </tr>
             <tr>
               <td class="center">
@@ -252,11 +262,40 @@
               <td>0.80</td>
               <td>距边0.5英寸处微波打孔</td>
               <td>杭州易上弘</td>
-              <td>胡庆龙</td>
               <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
+              <td>杭州易上弘</td>
               <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
             </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+              <td>单品款式</td>
+              <td>否</td>
+              <td>餐巾</td>
+              <td>整体式，拷边</td>
+              <td>0.80</td>
+              <td>距边0.5英寸处微波打孔</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+              <td>杭州易上弘</td>
+              <td>2016/2/18  12:12:12</td>
+              <td>杭州易上弘</td>
+            </tr>
+
           </tbody>
         </table>
 
@@ -302,12 +341,53 @@
 -->
 <script type="text/javascript" src="../../assets/js/date-time/bootstrap-datepicker.js"></script>
 <script type="text/javascript">
-  $('#my-date-picker-input').datepicker({
-   autoclose: true,
-   todayHighlight: true
-})
-</script>
+    $(function(){
+        var result = '';
+        var data,
+            dataArr = [];   // 统一的数组
+        // 分割成数组重新写入元数据，并且维护统一的一个数组
+        function getArray(obj, num){
+            var temp = [],item;
+            var trimObj = obj[num].trim();
+            if(trimObj == '') return;
 
+            result = trimObj.split("+");
+
+            for(i in result){
+                dataIndex = result[i].trim().indexOf(']');
+                item = result[i].trim().substr(1, dataIndex-1);
+
+                if(item == '' || $.inArray(item,dataArr) != -1) continue;
+                else{
+                    dataArr.push(item);
+                    temp[i] = item;
+                }
+            }
+
+            // 处理完的数据重新放入data对象
+            data[num] = temp;
+        }
+
+
+
+        var index = parent.layer.getFrameIndex(window.name);
+        $(document).on('click', '#success', function() {
+            parent.layer.close(index);
+        });
+        $(document).on('click', '#cancel', function() {
+            parent.layer.close(index);
+        });
+        parent.layer.iframeAuto(index);
+
+
+
+    });
+
+    $('#my-date-picker-input').datepicker({
+       autoclose: true,
+       todayHighlight: true
+    });
+</script>
 
 </body>
 </html>

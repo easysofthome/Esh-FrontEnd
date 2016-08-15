@@ -772,7 +772,7 @@
                           </div>
                           <div class="col-xs-6 form-group">
                             <div class="col-xs-1"></div>
-                            <button class="btn pull-left" >配置集装箱</button>
+                            <button class="btn pull-left" type="button" id="setContainerBtn">配置集装箱</button>
                           </div>
                         </div>
                       </form>
@@ -1042,7 +1042,7 @@
       title:'模板选择',
       offset:'200px',
       area: '1200px',
-      fix: true, //不固定
+      fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_selMould.html'
@@ -1056,7 +1056,7 @@
       title:'辅料信息选择',
       offset:'200px',
       area: 'auto',
-      fix: true, //不固定
+      fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_addAcce.html'
@@ -1070,7 +1070,7 @@
       title:'纸箱信息',
       offset:'200px',
       area: '1200px',
-      fix: true, //不固定
+      fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_carton.html'
@@ -1084,7 +1084,7 @@
       title:'辅料计算核价(纸箱)',
       offset:'20px',
       area: '1200px',
-      fix: true, //不固定
+      fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_cartonCalculate.html'
@@ -1096,12 +1096,26 @@
     layer.open({
       type: 2,
       title:'海运费信息查询',
-      offset:'20px',
-      area: '1200px',
-      fix: true, //不固定
+      offset:'200px',
+      area: '1800px',
+      fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_oceanFreight.html'
+    });
+   });
+
+   //运费信息 配置集装箱
+   $('#setContainerBtn').click(function(){
+    layer.open({
+      type: 2,
+      title:'配置集装箱',
+      offset:'200px',
+      area: '500px',
+      fix: false, //不固定
+      maxmin: true,
+      shadeClose: true,
+      content: 'nuckitpre_setContainer.html'
     });
    });
 
