@@ -305,7 +305,7 @@ $, win, ready = {
             var docH = $doc.find('body').height();
             $(this).css('height',docH);
             $("#"+layerId).css('height',docH);
-            $("#"+xubox_border).css('height',docH);
+            $("#"+xubox_border).css('height',docH + 10);
          });
     };
 
