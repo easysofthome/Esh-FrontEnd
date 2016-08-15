@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta charset="utf-8" />
+  <title>Form Elements - Ace Admin</title>
+  <meta name="description" content="Common form elements and layouts" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- bootstrap & fontawesome -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../assets/css/font-awesome.css" />
+  <!-- text fonts -->
+  <link rel="stylesheet" href="../../assets/css/ace-fonts.css" />
+  <!-- ace styles -->
+  <link rel="stylesheet" href="../../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+  <![endif]-->
+  <!-- inline styles related to this page -->
+  <!-- ace settings handler -->
+  <script src="../../assets/js/jquery.js"></script>
+  <script src="../../assets/js/ace-extra.js"></script>
+  <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+  <!--[if lte IE 8]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <!-- /section:basics/content.searchbox --> </div>
+  <!-- .page-content -->
+  <div class="page-content">
+
+
+
+    <div class="row">
+      <div class="col-xs-12 ">
+        <button class="btn btn-app btn-primary btn-xs">确定</button>
+        <button class="btn btn-app btn-yellow btn-xs" id="viewBtn">查看</button>
+      </div>
+      <!-- 查询栏 -->
+      <div class="col-xs-12">
+        <div class="widget-box">
+          <div class="widget-header">
+            <h4 class="smaller">查询栏</h4>
+          </div>
+          <div class="widget-body">
+            <div class="widget-main">
+              <div class="row">
+                <form class="form-horizontal" role="form">
+                  <div class="col-xs-12">
+                    <label class="control-label no-padding-right pull-left" for="form-field-1" >模板编号</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" />
+                    </div>
+                    <label class="control-label no-padding-right pull-left" for="form-field-1" >模板名称</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" />
+                    </div>
+                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">产品类别</label>
+                    <div class="col-xs-2">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="AL">全部</option>
+                        <option value="AK">单品抱枕</option>
+                        <option value="AR">单品座椅套</option>
+                        <option value="AR">单品床笠</option>
+                        <option value="AR">单品床旗</option>
+                        <option value="AR">单品被套</option>
+                        <option value="AR">单品被子</option>
+                        <option value="AR">成对枕头</option>
+                        <option value="AR">床单三件套</option>
+                        <option value="AZ">床单四件套</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-primary">查询</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 查询栏end -->
+    <!-- 报表 -->
+    <div class="space-4"></div>
+    <div class="row ">
+      <div class="col-xs-12">
+        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </th>
+              <th>模板编号</th>
+              <th>模板名称</th>
+              <th class="col-xs-5">描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="dataTables_info" id="sample-table-2_info" role="status" aria-live="polite">
+          共
+          <span>41</span>
+          条&nbsp;&nbsp;&nbsp;&nbsp;当前第
+          <span>1</span>
+          页
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="dataTables_paginate paging_simple_numbers" id="sample-table-2_paginate">
+          <ul class="pagination">
+            <li class="paginate_button previous disabled" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_previous">
+              <a href="#">上一页</a>
+            </li>
+            <li class="paginate_button active" aria-controls="sample-table-2" tabindex="0">
+              <a href="#">1</a>
+            </li>
+            <li class="paginate_button " aria-controls="sample-table-2" tabindex="0">
+              <a href="#">2</a>
+            </li>
+            <li class="paginate_button " aria-controls="sample-table-2" tabindex="0">
+              <a href="#">3</a>
+            </li>
+            <li class="paginate_button next" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_next">
+              <a href="#">下一页</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 报表end --> </div>
+
+  <!--
+  /.page-content
+-->
+
+<script>
+    $(function(){
+        var result = '';
+        var data,
+            dataArr = [];   // 统一的数组
+        // 分割成数组重新写入元数据，并且维护统一的一个数组
+        function getArray(obj, num){
+            var temp = [],item;
+            var trimObj = obj[num].trim();
+            if(trimObj == '') return;
+
+            result = trimObj.split("+");
+
+            for(i in result){
+                dataIndex = result[i].trim().indexOf(']');
+                item = result[i].trim().substr(1, dataIndex-1);
+
+                if(item == '' || $.inArray(item,dataArr) != -1) continue;
+                else{
+                    dataArr.push(item);
+                    temp[i] = item;
+                }
+            }
+
+            // 处理完的数据重新放入data对象
+            data[num] = temp;
+        }
+
+
+
+        var index = parent.layer.getFrameIndex(window.name);
+        $(document).on('click', '#success', function() {
+            parent.layer.close(index);
+        });
+        $(document).on('click', '#cancel', function() {
+            parent.layer.close(index);
+        });
+        parent.layer.iframeAuto(index);
+
+
+///////////////////弹出layer//////////////////
+       //包装辅料信息 模板选择 查看
+       $('#viewBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料模板详情',
+          offset:'200px',
+          area: '1200px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'selMould_view.html'
+        });
+   });
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
