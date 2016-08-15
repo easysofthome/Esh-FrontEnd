@@ -26,6 +26,7 @@
          |--nuckitpre.html                      套件核价详情
             |
             |--nuckitpre_selMould.html          包装辅料信息 模板选择
+               |--selMould_view.html            包装辅料信息 模板选择 查看
             |--nuckitpre_addAcce.html           包装辅料信息 新增
             |--nuckitpre_carton.html            获取纸箱信息
             |--nuckitpre_cartonCalculate.html   纸箱信息精算
