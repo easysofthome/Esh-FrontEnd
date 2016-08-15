@@ -1,5 +1,7 @@
 
     classificatinfo.html          套件小类信息修改
+    classificatinfo_selPro.html   套件小类信息修改_弹出层_产品选择
+    classificatinfo_setParam.html 套件小类信息修改_弹出层_参数设置
 
     CutPieceInfo.html             裁片信息
 
@@ -16,3 +18,4 @@
     StyleLibraryInfo.html         款式库信息
 
     StyleLibraryModify.html       款式库信息修改
+    StyleLibraryModify_config.html款式库信息修改_弹出层_套件配置

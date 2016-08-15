@@ -97,7 +97,7 @@
           <div class="col-xs-3 no-padding-left">
             <label class="col-xs-4 control-label no-padding-right" for="form-field-1">套件配置</label>
             <div class="col-xs-1">
-              <a class="btn btn-info btn-sm btnSelectAttrName" href="#">配置</a>
+              <a class="btn btn-info btn-sm btnSelectAttrName" id="configBtn" href="javascript:void(0)">配置</a>
             </div>
           </div>
 
@@ -233,17 +233,23 @@
 
     </div>
   </div>
-   <script>
+  <script>
+   ///////////////////弹出layer//////////////////
+   //配置
+   $('#configBtn').click(function(){
     layer.open({
-      type: 1,
-      title: false,
-      closeBtn: 0,
+      type: 2,
+      title:'套件配置',
+      offset:'200px',
+      area: '1200px',
+      fix: true, //不固定
+      maxmin: true,
       shadeClose: true,
-      skin: 'yourclass',
-      content: '自定义HTML内容'
+      content: 'StyleLibraryModify_config.html'
     });
-
+   });
    </script>
-   <script src="../../assets/js/layer/layer.js"></script>
+
+<script src="../../assets/js/layer/layer.js"></script>
 </body>
 </html>
