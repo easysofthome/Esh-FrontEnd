@@ -1,4 +1,6 @@
 
+    classificatinfo.html          套件小类信息修改
+
     CutPieceInfo.html             裁片信息
 
     processInfo.html              工艺信息
@@ -12,3 +14,5 @@
     smallkit.html                 套件小类信息
 
     StyleLibraryInfo.html         款式库信息
+
+    StyleLibraryModify.html       款式库信息修改

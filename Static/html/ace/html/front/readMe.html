@@ -1,26 +1,48 @@
 <!--
-row: 设置左右外边距
-pull-left: 左浮动
-pull-right: 有浮动
-col-lg-1
-  lg: 大屏幕 大桌面显示器 (≥1200px)
-  md: 中等屏幕 桌面显示器 (≥992px)
-  sm: 小屏幕 平板 (≥768px)
-  xs: 超小屏幕 手机 (<768px)
-  1: 指定占父级的多少列(1-12)
+Layout{
+  .row: 设置左右外边距
+  .pull-left: 左浮动
+  .pull-right: 有浮动
+  .col-lg-1
+    lg: 大屏幕 大桌面显示器 (≥1200px)
+    md: 中等屏幕 桌面显示器 (≥992px)
+    sm: 小屏幕 平板 (≥768px)
+    xs: 超小屏幕 手机 (<768px)
+    1: 指定占父级的多少列(1-12)
 
-col-xs-offset-3: 定义列偏移
+  .col-xs-offset-3: 定义列偏移
 
-no-padding: 无内边距
-  no-padding-left: 无左内边距
-  no-padding-right: 无右内边距
-  no-padding-top: 无上内边距
-  no-padding-bottom: 无下内边距
+  .no-padding/no-margin: 无边距
+    no-padding-left: 无左内边距
+    no-padding-right/no-padding-top/no-padding-bottom
+    no-margin-top/no-margin-left/no-margin-right/no-margin-bottom
+  .no-border
+    no-border-top/no-border-right/no-border-bottom/no-border-left
 
+  .space-4(2,4..32)
+    指定一个空的div 上边距为4,下边距为3
+  .hr8/.hr-8: 上下各8px外边距(2,4..32)
+    margin:8px 0;
 
-space-4
-  指定一个空的div 上边距为4,下边距为3
+  .position-relative/.position-absolute
 
+  .middle (垂直居中)
+    .align-top/.align-bottom/.align-middle
+  .center (左右居中)
+    .align-left/.align-center/.align-right
+  .block/.inline
+}
+Font{
+  bigger-110: 默认字体的1.1倍(1.1,1.2..3.0)
+  smaller-90: 默认字体的0.9倍(0.2,0.3-0.9)
+  .line-height-normal
+    .line-height-0
+    .line-height-1
+    .line-height-125
+    .line-height-150
+}
+
+width-20: 宽度的20%(20,25,30..100)
 
 
 
