@@ -28,29 +28,12 @@
   <script src="../assets/js/html5shiv.js"></script>
   <script src="../assets/js/respond.js"></script>
   <![endif]-->
+
 </head>
 <body>
-  <div class="breadcrumbs" id="breadcrumbs">
-
-    <ul class="breadcrumb">
-      <li> <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="#">Home</a>
-      </li>
-
-      <li>
-        <a href="#">信息</a>
-      </li>
-      <li class="active">款式库信息</li>
-    </ul>
-    <!-- /.breadcrumb -->
-
-    <!-- #section:basics/content.searchbox -->
-
-    <!-- /section:basics/content.searchbox --> </div>
-  <!-- .page-content -->
   <div class="page-content">
 
-    <!-- 查询栏 -->
+    <!-- 工具栏 -->
 
     <div class="row">
       <div class="col-xs-12 ">
@@ -59,68 +42,8 @@
         <button class="btn btn-app btn-danger btn-xs">删除</button>
       </div>
 
-      <div class="col-xs-12">
-        <div class="widget-box">
-          <div class="widget-header">
-            <h4 class="smaller">查询栏</h4>
-          </div>
-          <div class="widget-body">
-            <div class="widget-main">
-              <div class="row">
-                <form class="form-horizontal" role="form">
-                  <div class="col-xs-12">
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >款式编号</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >款式名称</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">款式类型</label>
-                    <div class="col-xs-1">
-                      <select class="form-control" id="form-field-select-1">
-                        <option value="AL">全部</option>
-                        <option value="AK">单品抱枕</option>
-                        <option value="AR">单品座椅套</option>
-                        <option value="AR">单品床笠</option>
-                        <option value="AR">单品床旗</option>
-                        <option value="AR">单品被套</option>
-                        <option value="AR">单品被子</option>
-                        <option value="AR">成对枕头</option>
-                        <option value="AR">床单三件套</option>
-                        <option value="AZ">床单四件套</option>
-                      </select>
-                    </div>
-                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">审核状态</label>
-                    <div class="col-xs-1">
-                      <select class="form-control" id="form-field-select-1">
-                        <option value="AL">未审核</option>
-                        <option value="AK">已审核</option>
-                      </select>
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >款式类型</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <a href="#">
-                      <i class="ace-icon fa fa-check green bigger-130"></i>
-                    </a>
-                    <a href="#">
-                      <i class="ace-icon fa fa-times red bigger-125"></i>
-                    </a>
-                    <button type="button" class="btn btn-sm btn-primary">查询</button>
-                  </div>
-
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- 查询栏end -->
+    <!-- 工具栏end -->
     <!-- 报表 -->
     <div class="space-4"></div>
     <div class="row ">
@@ -134,20 +57,14 @@
                   <span class="lbl"></span>
                 </label>
               </th>
-              <th>款式编号</th>
-              <th>款式名称</th>
-              <th>套件类型</th>
-              <th>款式类型</th>
-              <th>是否拼接款式</th>
-              <th>款式分类</th>
-              <th class="col-xs-1">包含工艺</th>
-              <th>款式工缴</th>
-              <th class="col-xs-1">文字描述</th>
-              <th>创建企业</th>
-              <th>创建人</th>
-              <th>创建时间</th>
-              <th>最后修改人</th>
-              <th>最后修改时间</th>
+              <th>套件编号</th>
+              <th>套件名称</th>
+              <th>套件尺寸</th>
+              <th>里布类型</th>
+              <th>套件介绍</th>
+              <th>CIF报价</th>
+              <th>FOB报价</th>
+              <th class="col-xs-1">备注</th>
             </tr>
           </thead>
           <tbody>
@@ -166,12 +83,6 @@
               <td>餐巾</td>
               <td>整体式，拷边</td>
               <td>0.80</td>
-              <td>距边0.5英寸处微波打孔</td>
-              <td>杭州易上弘</td>
-              <td>胡庆龙</td>
-              <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
-              <td>2016/2/18  12:12:12</td>
             </tr>
             <tr>
               <td class="center">
@@ -188,14 +99,8 @@
               <td>餐巾</td>
               <td>整体式，拷边</td>
               <td>0.80</td>
-              <td>距边0.5英寸处微波打孔</td>
-              <td>杭州易上弘</td>
-              <td>胡庆龙</td>
-              <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
-              <td>2016/2/18  12:12:12</td>
             </tr>
-            <tr>
+             <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
@@ -210,14 +115,8 @@
               <td>餐巾</td>
               <td>整体式，拷边</td>
               <td>0.80</td>
-              <td>距边0.5英寸处微波打孔</td>
-              <td>杭州易上弘</td>
-              <td>胡庆龙</td>
-              <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
-              <td>2016/2/18  12:12:12</td>
             </tr>
-            <tr>
+             <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
@@ -232,14 +131,8 @@
               <td>餐巾</td>
               <td>整体式，拷边</td>
               <td>0.80</td>
-              <td>距边0.5英寸处微波打孔</td>
-              <td>杭州易上弘</td>
-              <td>胡庆龙</td>
-              <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
-              <td>2016/2/18  12:12:12</td>
             </tr>
-            <tr>
+             <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
@@ -254,12 +147,22 @@
               <td>餐巾</td>
               <td>整体式，拷边</td>
               <td>0.80</td>
-              <td>距边0.5英寸处微波打孔</td>
-              <td>杭州易上弘</td>
-              <td>胡庆龙</td>
-              <td>2016/2/18  12:12:12</td>
-              <td>马强</td>
-              <td>2016/2/18  12:12:12</td>
+            </tr>
+             <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>单品餐巾</td>
+              <td>单品款式</td>
+              <td>否</td>
+              <td>餐巾</td>
+              <td>整体式，拷边</td>
+              <td>0.80</td>
             </tr>
           </tbody>
         </table>
@@ -304,6 +207,48 @@
   <!--
   /.page-content
 -->
+<script>
+    $(function(){
+        var result = '';
+        var data,
+            dataArr = [];   // 统一的数组
+        // 分割成数组重新写入元数据，并且维护统一的一个数组
+        function getArray(obj, num){
+            var temp = [],item;
+            var trimObj = obj[num].trim();
+            if(trimObj == '') return;
 
+            result = trimObj.split("+");
+
+            for(i in result){
+                dataIndex = result[i].trim().indexOf(']');
+                item = result[i].trim().substr(1, dataIndex-1);
+
+                if(item == '' || $.inArray(item,dataArr) != -1) continue;
+                else{
+                    dataArr.push(item);
+                    temp[i] = item;
+                }
+            }
+
+            // 处理完的数据重新放入data对象
+            data[num] = temp;
+        }
+
+
+
+        var index = parent.layer.getFrameIndex(window.name);
+        $(document).on('click', '#success', function() {
+            parent.layer.close(index);
+        });
+        $(document).on('click', '#cancel', function() {
+            parent.layer.close(index);
+        });
+        parent.layer.iframeAuto(index);
+
+
+
+    });
+</script>
 </body>
 </html>
