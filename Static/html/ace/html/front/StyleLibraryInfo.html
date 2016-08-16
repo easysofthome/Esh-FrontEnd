@@ -54,7 +54,7 @@
 
     <div class="row">
       <div class="col-xs-12 ">
-        <button class="btn btn-app btn-primary btn-xs">新增</button>
+        <button id="addBtn" class="btn btn-app btn-primary btn-xs">新增</button>
         <button class="btn btn-app btn-yellow btn-xs">修改</button>
         <button class="btn btn-app btn-danger btn-xs">删除</button>
       </div>
@@ -304,6 +304,12 @@
   <!--
   /.page-content
 -->
+<script type="text/javascript">
+  $('#addBtn').bind('click',function(){
+     window.open('StyleLibraryModify.html');
+  });
+</script>
+
 
 </body>
 </html>
