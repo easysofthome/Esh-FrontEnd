@@ -49,8 +49,8 @@
                       订单总体积：
                     </label>
                   </td>
-                  <td class="col-xs-12">
-                    <input type="text" id="form-field-1" class="col-xs-10" />
+                  <td class="col-xs-7">
+                    <input type="text" id="form-field-1" class="col-xs-8" />
                     <label class="control-label" for="form-field-1">
                       立方米
                     </label>
@@ -62,8 +62,8 @@
                       20柜(20GP)：
                     </label>
                   </td>
-                  <td class="col-xs-12">
-                    <input id="mySpinner" type="text" class="input-mini"/>
+                  <td>
+                    <input id="mySpinner1" type="text" class="input-mini"/>
                   </td>
                 </tr>
                 <tr>
@@ -72,8 +72,8 @@
                       40柜(40GP)：
                     </label>
                   </td>
-                  <td class="col-xs-12">
-                    <input type="text" id="form-field-1" class="col-xs-10" />
+                  <td>
+                    <input id="mySpinner2" type="text" class="input-mini"/>
                   </td>
                 </tr>
                 <tr>
@@ -82,8 +82,8 @@
                       40高柜(40HP)：
                     </label>
                   </td>
-                  <td class="col-xs-12">
-                    <input type="text" id="form-field-1" class="col-xs-10" />
+                  <td>
+                    <input id="mySpinner3" type="text" class="input-mini"/>
                   </td>
                 </tr>
                 <tr>
@@ -92,8 +92,8 @@
                       总体积：
                     </label>
                   </td>
-                  <td class="col-xs-12">
-                    <input type="text" id="form-field-1" class="col-xs-10" />
+                  <td>
+                    <input type="text" id="form-field-1" class="col-xs-8" />
                     <label class="control-label">
                       立方米
                     </label>
@@ -159,7 +159,7 @@
         parent.layer.iframeAuto(index);
 
         //数字调节
-        $('#mySpinner').ace_spinner({
+        $('#mySpinner1,#mySpinner2,#mySpinner3').ace_spinner({
           value:5,
           min:-100,
           max:100,
