@@ -31,8 +31,8 @@
             |--nuckitpre_carton.html            获取纸箱信息
             |--nuckitpre_cartonCalculate.html   纸箱信息精算
             |--nuckitpre_oceanFreight.html      海运费 单价查询
-            |--nuckitpre_setContainer.html     海运费 配置集装箱
-            |--nuckitpre_tariffRate .html       获取税率信息
+            |--nuckitpre_setContainer.html      海运费 配置集装箱
+            |--nuckitpre_tariffRate.html        获取税率信息
             |
             |--nuclearPriceInfo.html            产品列表 查看\修改
                |

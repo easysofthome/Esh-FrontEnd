@@ -40,46 +40,7 @@
       <div class="col-xs-12 ">
         <button class="btn btn-app btn-primary btn-xs">确定</button>
       </div>
-      <!-- 查询栏 -->
-      <div class="col-xs-12">
-        <div class="widget-box">
-          <div class="widget-header">
-            <h4 class="smaller">查询栏</h4>
-          </div>
-          <div class="widget-body">
-            <div class="widget-main">
-              <div class="row">
-                <form class="form-horizontal" role="form">
-                  <div class="col-xs-12">
-                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">产品</label>
-                    <div class="col-xs-2">
-                      <select class="form-control" id="form-field-select-1">
-                        <option value="AL">全部</option>
-                        <option value="AK">单品抱枕</option>
-                        <option value="AR">单品座椅套</option>
-                        <option value="AR">单品床笠</option>
-                        <option value="AR">单品床旗</option>
-                        <option value="AR">单品被套</option>
-                        <option value="AR">单品被子</option>
-                        <option value="AR">成对枕头</option>
-                        <option value="AR">床单三件套</option>
-                        <option value="AZ">床单四件套</option>
-                      </select>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-primary">查询</button>
-                  </div>
-
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 查询栏end -->
     <!-- 报表 -->
-    <div class="space-4"></div>
     <div class="row ">
       <div class="col-xs-12">
         <table id="sample-table-1" class="table table-striped table-bordered table-hover">
@@ -91,9 +52,10 @@
                   <span class="lbl"></span>
                 </label>
               </th>
-              <th>编号</th>
-              <th>类型</th>
-              <th>填充物</th>
+              <th>税率编号</th>
+              <th>中文描述</th>
+              <th>英文描述</th>
+              <th>代码参考</th>
             </tr>
           </thead>
           <tbody>
@@ -104,9 +66,10 @@
                   <span class="lbl"></span>
                 </label>
               </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
             </tr>
             <tr>
               <td class="center">
@@ -115,9 +78,10 @@
                   <span class="lbl"></span>
                 </label>
               </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
             </tr>
             <tr>
               <td class="center">
@@ -126,9 +90,10 @@
                   <span class="lbl"></span>
                 </label>
               </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
             </tr>
             <tr>
               <td class="center">
@@ -137,9 +102,21 @@
                   <span class="lbl"></span>
                 </label>
               </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
+            <tr>
+              <td class="center">
+                <label class="position-relative">
+                  <input type="checkbox" class="ace"/>
+                  <span class="lbl"></span>
+                </label>
+              </td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
             </tr>
             <tr>
               <td class="center">
@@ -148,20 +125,10 @@
                   <span class="lbl"></span>
                 </label>
               </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-            </tr>
-            <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
-              <td>DPCJ-080003</td>
-              <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
+              <td>9101</td>
+              <td>拷边打孔餐巾拷边打孔餐巾</td>
+              <td>good morning good morning</td>
+              <td>6029 4589</td>
             </tr>
           </tbody>
         </table>
@@ -245,22 +212,6 @@
             parent.layer.close(index);
         });
         parent.layer.iframeAuto(index);
-
-
-///////////////////弹出layer//////////////////
-       //包装辅料信息 模板选择 查看
-       $('#viewBtn').click(function(){
-        parent.layer.open({
-          type: 2,
-          title:'辅料模板详情',
-          offset:'200px',
-          area: '1200px',
-          fix: true, //不固定
-          maxmin: true,
-          shadeClose: true,
-          content: 'selMould_view.html'
-        });
-   });
 
     });
 

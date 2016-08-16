@@ -843,7 +843,7 @@
 
                         <div class="col-xs-12 center form-group">
 
-                          <button class=" btn btn-success " type="submit" id="submitbtn">获取税率信息</button>
+                          <button class=" btn btn-success " type="button" id="tariffRateBtn">获取税率信息</button>
 
                         </div>
                       </form>
@@ -1045,6 +1045,7 @@
       fix: false, //不固定
       maxmin: true,
       shadeClose: true,
+      scrollbar :false,
       content: 'nuckitpre_selMould.html'
     });
    });
@@ -1111,11 +1112,25 @@
       type: 2,
       title:'配置集装箱',
       offset:'200px',
-      area: '500px',
+      area: '800px',
       fix: false, //不固定
       maxmin: true,
       shadeClose: true,
       content: 'nuckitpre_setContainer.html'
+    });
+   });
+
+   //获取税率信息
+   $('#tariffRateBtn').click(function(){
+    layer.open({
+      type: 2,
+      title:'税率信息',
+      offset:'200px',
+      area: '1200px',
+      fix: false, //不固定
+      maxmin: true,
+      shadeClose: true,
+      content: 'nuckitpre_tariffRate.html'
     });
    });
 
