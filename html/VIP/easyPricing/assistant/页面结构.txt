@@ -1,23 +1,16 @@
 
+    addfee.html              添加纱线规格
 
- addbind.html             添加织造工缴
+    fee.html                 纱线规格（无数据）
 
- addfee.html              添加纱线规格
+    mainbinding.html         纱线规格（我自己的报价）
 
- binding.html             织造工缴（无数据）
+    mainbinding2.html        纱线规格（绑定工厂的报价）
 
- fee.html                 纱线规格（无数据）
+    ModifyThe.html           修改工厂绑定（弹窗）
 
- mainbind.html            织造工缴（有数据）
+    tax.html                 利税率设置
 
- mainfee.html             纱线规格（有数据）
+    TheBinding.html          选择工厂绑定（弹窗）
 
- ModifyThe.html           修改工厂绑定（弹窗）
-
- prompt.html              提示（弹窗）
-
- tax.html                 利税率设置
-
- TheBinding.html          选择工厂绑定（弹窗）
-
- validity.html            价格有效期设置
+    validity.html            价格有效期设置
