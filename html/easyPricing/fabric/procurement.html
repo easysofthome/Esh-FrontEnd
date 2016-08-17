@@ -15,10 +15,23 @@
     @@include('common/top.html')
     @@include('easyPricing/header.html')
     <div class="title-top-border"></div>
-    @@include('easyPricing/fabric/supplier.html')
 
+    @@include('easyPricing/fabric/userinf.html')
+    @@include('easyPricing/fabric/supplier.html')
 
     @@include('easyPricing/common/footer.html')
     <script>seajs.use(['js/front/easyPricing/fabric/fabric','js/front/easyPricing/fabric/pagewalkthrough']);</script>
+    <script src="/js/seajs/sea-debug.js"></script>
+    <script src="/js/seajs/seajs-css.js"></script>
+    <script src="/js/rootConfig.js"></script>
+    <script src="/js/front/lib/jquery/jquery.js"></script>
+    <script>
+    seajs.use(['js/front/common/dropDownPanel/dropDownPanel'],function(o){
+      //测试 选择地区后执行回调函数 返回点击的对象
+      o.callback=function(e){
+        alert('当前点击对象为：  '+$(e).text());
+      }
+    });
+    </script>
 </body>
 </html>
