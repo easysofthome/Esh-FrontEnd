@@ -56,7 +56,7 @@
   .btn_00{
     margin-left: 20px;
     .button-variant(#fff,#cbcbcb,#cbcbcb);
-    .button-size(0,44px,16px,40px,3px);
+    .button-size(0,28px,16px,40px,3px);
   }
   .btn_01{
     margin-left: 20px;
@@ -68,6 +68,7 @@
     .button-variant(#fff,#38b5f8,#38b5f8);
     .button-size(0,44px,16px,40px,3px);
   }
+
 .search_box{
   background-color: #f5f5f5;
   border-top: 2px solid #ee7711;
@@ -75,7 +76,34 @@
   width: 1200px;
   margin: 0 auto;
   padding: 30px 0;
-  font-size: 12px;
+
+
+  .drop_downbox{
+    width: 1200px;
+    text-align: center;
+    margin-top: 20px;
+
+    .drop_down{
+      background-color: #ed7b18;
+      padding: 0 14px;
+      color:#fff;
+      font-size: 14px;
+      line-height: 28px;
+      display: inline-block;
+      .border-radius(3px 3px 0 0);
+      vertical-align: middle;
+      cursor: pointer;
+      .pers_on{
+        .sprite(@pers_on,inline-block);
+        .icon-easydata;
+    }
+      .pers_under{
+        .sprite(@pers_under,inline-block);
+        .icon-easydata;
+    }
+    }
+
+  }
   #peer{
     position: relative;
     top: 0;
@@ -227,13 +255,72 @@
     }
   }
 }
-
+.matchsearch_box{
+  padding-bottom: 0;
+}
 
 
 .search_not{
   border-bottom: none;
 }
 
+
+.leibie_box{
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 1px #dedede solid;
+    line-height: 24px;
+    .leibie_tit{
+      width: 270px;
+      text-align: right;
+    }
+    .leibie_inp{
+      width: 80px;
+      margin-right: 13px;
+      padding: 6px;
+      margin-top: 4px;
+
+    }
+    .zhi{
+      margin-top: 10px;
+      padding: 0 13px 0 0;
+    }
+        .leibie
+    {
+        margin-top: 6px;
+    }
+    span
+    {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .whole{
+        margin-left: 13px;
+        padding: 0 11px;
+
+        color: #000;
+    }
+    a
+    {
+        margin-right: 13px;
+        padding: 0 11px;
+        margin-top: 10px;
+         white-space:nowrap;
+        color: #000;
+    }
+
+    a:hover
+    {
+        color: #fff;
+        background-color: #fd6464;
+
+        .border-radius(5px);
+    }
+    .leibie_p
+    {
+        width: 900px;
+    }
+  }
 
 // 匹配度
 .matchingDeg{
@@ -303,6 +390,32 @@
   padding: 20px 0;
   font-size: 12px;
   background-color: #fff;
+  .tit_intsprbox{
+     width: 1200px;
+    text-align: center;
+    margin-top: 20px;
+
+    .drop_down{
+      background-color: #f2f3f5;
+      padding: 0 14px;
+      color:#333;
+      font-size: 14px;
+      line-height: 28px;
+      display: inline-block;
+      .border-radius(3px 3px 0 0);
+      vertical-align: middle;
+      cursor: pointer;
+      .pers_on333{
+        .sprite(@pers_on333,inline-block);
+        .icon-easydata;
+    }
+      .pers_under333{
+        .sprite(@pers_under333,inline-block);
+        .icon-easydata;
+    }
+    }
+
+  }
   input{
     width: 298px;
     height: 18px;
@@ -327,7 +440,9 @@
     margin-left: 38px;
   }
 }
-
+.tit_intpadd{
+  padding-bottom: 0px;
+}
 
 // 精确匹配国外潜在买家(已登录-数据库中没有)
 dl.fill{
