@@ -2,14 +2,17 @@ define(function(require, exports, module) {
     var fabric = require('js/front/common/module/fabric');
 
     $(document).ready(function(){
-        //核价方式：选择易家纺工缴库核价   选择工厂报价核价
-        $('.factoryOffer-box').hide();
-        $('#easySoftHomePrice_rad').bind('click',function(){
-            $('.factoryOffer-box').hide();
-        });
-        $('#factoryPrice_rad').bind('click',function(){
-            $('.factoryOffer-box').show();
-        });
+
+        // 单经单纬却换
+        $('input[name=WeavingType]').on('change', function() {
+            var index = $(this).parent().index();
+            if(index){
+                $('.spinner').show();
+            } else {
+                $('.spinner').hide();
+            }
+        })
+
     /////////////// 默认选项 ///////////////
         //织造种类 默认选中第一个
         $("input[name='WeavingType']:first").attr("checked", "checked");
