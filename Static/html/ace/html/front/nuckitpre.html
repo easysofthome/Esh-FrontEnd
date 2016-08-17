@@ -32,7 +32,7 @@
   <script src="../../assets/js/jquery-ui.custom.js"></script>
   <script src="../../assets/js/ace/ace.widget-on-reload.js"></script>
 </head>
-<body>
+<body class="overflow-hidden">
   <div  class="page-content ">
     <div class="page-header">
       <h1>
@@ -318,23 +318,14 @@
                     </div>
                     <div class="row">
                       <div class="col-xs-6">
-                        <button class="btn btn-xs btn-primary">新增</button>
-                        <button class="btn btn-xs btn-success">修改</button>
+                        <button id="proList_addBtn" class="btn btn-xs btn-primary">新增</button>
+                        <button id="proList_modifyBtn" class="btn btn-xs btn-success">修改</button>
                         <button class="btn btn-xs btn-danger">删除</button>
                         <button class="btn btn-xs  btn-purple">查看</button>
                       </div>
                       <div class="col-xs-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="sample-table-2_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous " >
-                              <span class="no-border">
-                                共
-                              41
-                              条&nbsp;&nbsp;&nbsp;&nbsp;当前第
-                              1
-                              页
-                              </span>
-                            </li>
+                          <ul class="pagination pull-right">
                             <li class="paginate_button previous disabled" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_previous">
                               <a href="#">上一页</a>
                             </li>
@@ -350,8 +341,8 @@
                             <li class="paginate_button next" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_next">
                               <a href="#">下一页</a>
                             </li>
-
                           </ul>
+                          <span class="pull-right" style="margin-top: 7px;">共41条&nbsp;&nbsp;&nbsp;&nbsp;当前第1页</span>
                         </div>
                       </div>
                     </div>
@@ -482,23 +473,14 @@
                     </div>
                     <div class="row">
                       <div class="col-xs-6">
-                        <button class="btn btn-xs btn-primary">保存</button>
-                        <button class="btn btn-xs btn-success">新增</button>
+                        <button  class="btn btn-xs btn-primary">保存</button>
+                        <button id="addAcceBtn" class="btn btn-xs btn-success">新增</button>
                         <button class="btn btn-xs btn-danger">删除</button>
-                        <button class="btn btn-xs  btn-purple">模板</button>
+                        <button id="selMouldBtn" class="btn btn-xs  btpurplen-">模板</button>
                       </div>
                       <div class="col-xs-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="sample-table-2_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous " >
-                              <span class="no-border">
-                                共
-                              41
-                              条&nbsp;&nbsp;&nbsp;&nbsp;当前第
-                              1
-                              页
-                              </span>
-                            </li>
+                          <ul class="pagination pull-right">
                             <li class="paginate_button previous disabled" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_previous">
                               <a href="#">上一页</a>
                             </li>
@@ -514,8 +496,8 @@
                             <li class="paginate_button next" aria-controls="sample-table-2" tabindex="0" id="sample-table-2_next">
                               <a href="#">下一页</a>
                             </li>
-
                           </ul>
+                          <span class="pull-right" style="margin-top: 7px">共41条&nbsp;&nbsp;&nbsp;&nbsp;当前第1页</span>
                         </div>
                       </div>
                     </div>
@@ -650,12 +632,12 @@
                         </div>
                         <div class="col-xs-12">
                           <div class="col-xs-6 form-group">
-                            <button class="btn btn-success pull-right" type="submit" id="submitbtn">获取纸箱信息</button>
+                            <button class="btn btn-success pull-right" type="button" id="cartonBtn">获取纸箱信息</button>
                             <div class="col-xs-1"></div>
                           </div>
                           <div class="col-xs-6 form-group">
                             <div class="col-xs-1"></div>
-                            <button class="btn pull-left" >纸箱信息精算</button>
+                            <button class="btn pull-left" type="button" id="cartonCalculate">纸箱信息精算</button>
                           </div>
                         </div>
                       </form>
@@ -767,12 +749,12 @@
 
                         <div class="col-xs-12">
                           <div class="col-xs-6 form-group">
-                            <button class="btn btn-success pull-right" type="submit" id="submitbtn">海运费单价查询</button>
+                            <button class="btn btn-success pull-right" type="button" id="oceanFreight">海运费单价查询</button>
                             <div class="col-xs-1"></div>
                           </div>
                           <div class="col-xs-6 form-group">
                             <div class="col-xs-1"></div>
-                            <button class="btn pull-left" >配置集装箱</button>
+                            <button class="btn pull-left" type="button" id="setContainerBtn">配置集装箱</button>
                           </div>
                         </div>
                       </form>
@@ -843,7 +825,7 @@
 
                         <div class="col-xs-12 center form-group">
 
-                          <button class=" btn btn-success " type="submit" id="submitbtn">获取税率信息</button>
+                          <button class=" btn btn-success " type="button" id="tariffRateBtn">获取税率信息</button>
 
                         </div>
                       </form>
@@ -1032,5 +1014,177 @@
       </div>
     </div>
   </div>
+
+  <script>
+   ///////////////////弹出layer//////////////////
+
+   $(function(){
+        var result = '';
+        var data,
+            dataArr = [];   // 统一的数组
+        // 分割成数组重新写入元数据，并且维护统一的一个数组
+        function getArray(obj, num){
+            var temp = [],item;
+            var trimObj = obj[num].trim();
+            if(trimObj == '') return;
+
+            result = trimObj.split("+");
+
+            for(i in result){
+                dataIndex = result[i].trim().indexOf(']');
+                item = result[i].trim().substr(1, dataIndex-1);
+
+                if(item == '' || $.inArray(item,dataArr) != -1) continue;
+                else{
+                    dataArr.push(item);
+                    temp[i] = item;
+                }
+            }
+
+            // 处理完的数据重新放入data对象
+            data[num] = temp;
+        }
+
+        var index = parent.layer.getFrameIndex(window.name);
+        parent.layer.iframeAuto(index);
+        var winW = $(parent.window).width();
+        var winH = $(parent.window).height();
+        //console.log(winH);
+        ///////////////////弹出layer//////////////////
+       //产品核价信息
+       $('#proList_modifyBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'产品核价信息',
+          offset:'0px',
+          area: [winW+'px',winH+'px'],
+          fix: false, //不固定
+          maxmin: true,
+          //scrollbar:true,
+          shadeClose: true,
+          content: 'nuclearPriceInfo.html'
+        });
+       });
+
+       //包装辅料信息 模板选择 查看
+       $('#addBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'套件核价详情',
+          offset:'0px',
+          area: '1200px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre.html'
+          });
+        });
+
+       //包装辅料信息 模板选择
+       $('#selMouldBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'模板选择',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          scrollbar :false,
+          content: 'nuckitpre_selMould.html'
+        });
+       });
+
+       //包装辅料信息 新增
+       $('#addAcceBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料信息选择',
+          offset:'200px',
+          area: 'auto',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_addAcce.html'
+        });
+       });
+
+       //获取纸箱信息
+       $('#cartonBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'纸箱信息',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_carton.html'
+        });
+       });
+
+       //纸箱信息精算
+       $('#cartonCalculate').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料计算核价(纸箱)',
+          offset:'20px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_cartonCalculate.html'
+        });
+       });
+
+       //海运费单价查询
+       $('#oceanFreight').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'海运费信息查询',
+          offset:'200px',
+          area: '1800px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_oceanFreight.html'
+        });
+       });
+
+       //运费信息 配置集装箱
+       $('#setContainerBtn').click(function(){
+       parent.layer.open({
+          type: 2,
+          title:'配置集装箱',
+          offset:'200px',
+          area: '800px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_setContainer.html'
+        });
+       });
+
+       //获取税率信息
+       $('#tariffRateBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'税率信息',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_tariffRate.html'
+        });
+       });
+
+    });
+
+
+
+   </script>
+
+<script src="../../assets/js/layer/layer.js"></script>
 </body>
 </html>

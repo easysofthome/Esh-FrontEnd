@@ -1,0 +1,69 @@
+
+有效期和利税率设置
+    assistant（纱支规格）
+        |--tax.html                          利税率设置
+
+面料工缴设置
+    assistant（纱支规格）
+        |--addfee.html                       添加纱线规格
+            |--feetab.html
+        |--fee.html                          纱线规格（无数据）
+        |--mainbinding.html                  纱线规格（我自己的报价）
+            |--mainpricetab.html
+        |--mainbinding2.html                 纱线规格（绑定工厂的报价）
+            |--mainpricetab2.html
+
+        |--tax.html                          利税率设置
+
+        |--TheBinding.html                   选择工厂绑定（弹窗）
+
+    dyeing（染色工缴）
+        |--adddyeing.html                    添加染色工缴
+        |--dyeingFactory.html                染色工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--dyeingMy.html                     染色工缴（我自己的报价）
+            |--selweavtab.html
+
+    printing（印花工缴）
+        |--addprinting.html                    添加印花工缴
+        |--printingFactory.html                印花工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--printingMy.html                     印花工缴（我自己的报价）
+            |--selweavtab.html
+
+    processing（后处理费用）
+        |--addprocessing.html                    添加后处理费用
+        |--processingFactory.html                后处理费用（绑定工厂的报价）
+            |--factoryPrice.html
+        |--processingMy.html                     后处理费用（我自己的报价）
+            |--selweavtab.html
+
+    weaving（织造工缴）
+        |--addWeaving.html                   添加织造工缴
+        |--weavingFactory.html               织造工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--weavingMy.html                    织造工缴（我自己的报价）
+            |--selweavtab.html
+
+    yarndyed（色织工缴）
+        |--addyarndyed.html                   添加色织工缴
+        |--yarndyedFactory.html               色织工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--yarndyedMy.html                    色织工缴（我自己的报价）
+            |--selweavtab.html
+
+
+成品工缴设置
+    fillers（填充物辅料）
+        |--addfillers.html                      添加填充物辅料报价
+        |--fillersFactory.html                  填充物辅料（绑定工厂的报价）
+            |--factoryPrice.html
+        |--fillersMy.html                       填充物辅料（我自己的报价）
+            |--selweavtab.html
+
+    style（款式工缴）
+        |--addstyle.html                      添加款式工缴
+        |--styleFactory.html                  款式工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--styleMy.html                       款式工缴（我自己的报价）
+            |--selweavtab.html

@@ -1,5 +1,7 @@
 
     classificatinfo.html          套件小类信息修改
+    classificatinfo_selPro.html   套件小类信息修改_弹出层_产品选择
+    classificatinfo_setParam.html 套件小类信息修改_弹出层_参数设置
 
     CutPieceInfo.html             裁片信息
 
@@ -13,6 +15,34 @@
 
     smallkit.html                 套件小类信息
 
-    StyleLibraryInfo.html         款式库信息
+                                    款式库信息
 
-    StyleLibraryModify.html       款式库信息修改
+    --StyleLibraryInfo.html                     款式库信息列表
+    |
+    --StyleLibraryModify.html                   款式库信息修改
+      |
+      |--StyleLibraryModify_config.html         套件配置列表
+         |
+         |--nuckitpre.html                      套件核价详情
+            |
+            |--nuckitpre_selMould.html          包装辅料信息 模板选择
+               |--selMould_view.html            包装辅料信息 模板选择 查看
+            |--nuckitpre_addAcce.html           包装辅料信息 新增
+            |--nuckitpre_carton.html            获取纸箱信息
+            |--nuckitpre_cartonCalculate.html   纸箱信息精算
+            |--nuckitpre_oceanFreight.html      海运费 单价查询
+            |--nuckitpre_setContainer.html      海运费 配置集装箱
+            |--nuckitpre_tariffRate.html        获取税率信息
+            |
+            |--nuclearPriceInfo.html            产品列表 查看\修改
+               |
+               |--nuclearPrice_selCraftwork.html     工艺信息 选择工艺
+               |--nuclearPrice_setSize.html          主要尺寸 设置
+               |--nuclearPrice_setParam.html         裁片列表 参数设置
+               |--nuclearPrice_selFabric.html        裁片列表 选择辅料
+               |--nuclearPrice_selAcce.html          裁片列表 选择辅料
+               |--nuclearPrice_setFreeParam.html     裁片列表 条件参数设置  
+               |--nuclearPrice_selMould.html         产品附件辅料信息 模板选择
+                  |--nuclearPrice_selMould_view.html            包装辅料信息 模板选择 查看
+               |--nuclearPrice_addAttachmentAcce.html产品附件辅料信息 新增
+

@@ -119,7 +119,7 @@
     </div>
     <!-- 产品信息end -->
 
-    <hr>
+
 
     <!-- 工艺信息 -->
     <div class="row">
@@ -143,7 +143,7 @@
                       <input type="text" id="form-field-1" class="col-xs-12" />
                     </div>
                     <div class="col-xs-1">
-                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">选择</a>
+                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selCraftworkBtm" href="javascript:void(0)">选择</a>
                     </div>
                   </div>
                   <div class="col-xs-2">
@@ -152,7 +152,7 @@
                       <input type="text" id="form-field-1" class="col-xs-12" />
                     </div>
                     <div class="col-xs-1">
-                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">选择</a>
+                      <a class="btn btn-info btn-sm btnSelectAttrName" href="javascript:void(0)">选择</a>
                     </div>
                   </div>
 
@@ -162,7 +162,7 @@
                       <input type="text" id="form-field-1" class="col-xs-12" />
                     </div>
                     <div class="col-xs-1">
-                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">选择</a>
+                      <a class="btn btn-info btn-sm btnSelectAttrName" href="javascript:void(0)">选择</a>
                     </div>
                   </div>
                 </form>
@@ -175,7 +175,7 @@
     </div>
     <!-- 工艺信息end -->
 
-    <hr>
+
 
     <!-- 主要尺寸 -->
     <div class="row">
@@ -213,8 +213,8 @@
                     </div>
 
                     <div>
-                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">添加自由裁片</a>
-                      <a class="btn btn-info btn-sm btnSelectAttrName" id="setParamBtn" href="javascript:void(0)">设值</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="selProBtn" href="javascript:void(0)">添加自由裁片</a>
+                      <a class="btn btn-success btn-sm btnSelectAttrName" id="setSizeBtn" href="javascript:void(0)">设值</a>
                     </div>
 
                   </div>
@@ -228,7 +228,226 @@
     </div>
     <!-- 主要尺寸end -->
 
-    <hr>
+
+
+    <!-- 裁片列表 -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="widget-box">
+          <div class="widget-header">
+            <h4 class="widget-title">裁片列表</h4>
+            <div class="widget-toolbar">
+              <a href="#" data-action="collapse">
+                <i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+          <div class="widget-body">
+            <div class="widget-main">
+              <div class="row">
+                <form class="form-horizontal" role="form">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class="col-xs-1">
+                        <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" value="主体裁片" type="text">
+                      </div>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamValBtn" href="javascript:void(0)">参数值设置</a>
+
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">固有参数值设置</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setFreeParamBtn" href="javascript:void(0)">条件参数值设置</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamBtn1" href="javascript:void(0)">裁片计算</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamBtn2" href="javascript:void(0)">面料计算</a>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">对应模型位置(数字)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >裁片数：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                      <div style="float: left;">
+                        <a class="btn btn-success btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">增加</a>
+                        <a class="btn btn-danger btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">删除</a>
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >面料名称：</label>
+                      <div class="col-xs-1">
+                        <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" value="FD110600010" type="text">
+                      </div>
+                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selFabricNameBtn" style="float: left;" href="javascript:void(0)">选择</a>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >面料门幅：</label>
+                      <div class="col-xs-1">
+                        <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" value="74" type="text">
+                      </div>
+                      <a class="btn btn-success btn-sm btnSelectAttrName" id="selProBtn4" style="float: left;" href="javascript:void(0)">修改</a>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">面料价格类型：</label>
+                      <div class="col-xs-1">
+                        <select class="form-control " id="form-field-select-1">
+                          <option value="">-- 请选择 --</option>
+                          <option value="AL">系统参考价</option>
+                          <option value="AL">工厂面料价</option>
+                          <option value="AL">二次面料处理价</option>
+                        </select>
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">更改后处理项目：</label>
+                      <div class="col-xs-1">
+                        <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn4" style="float: left;" href="javascript:void(0)">选择</a>
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">面料价格(元)：</label>
+                      <div class="col-xs-1">
+                        <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" value="14.45" type="text">
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">指定面料价(元)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >裁损率：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >裁片方向：</label>
+                      <div class="col-xs-1">
+                        <div class="radio" style="float: left;">
+                          <label>
+                            <input name="form-field-radio" type="radio" class="ace">
+                            <span class="lbl">经向</span>
+                          </label>
+                        </div>
+                        <div class="radio" style="float: left;">
+                          <label>
+                            <input name="form-field-radio" type="radio" class="ace">
+                            <span class="lbl">纬向</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">裁片长度(英制)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">裁片宽度(英制)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">单片成本(元)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">单片净重(克)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">面料用量(米)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">多余损耗(英制)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 hr hr-double dotted"></div>
+
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class="col-xs-1">
+                        <input class="col-xs-12" id="CREATE_USER" name="CREATE_USER" readonly="readonly" value="窗帘头编织带" type="text">
+                      </div>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">参数值设置</a>
+
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">固有参数值设置</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamBtn3" href="javascript:void(0)">条件参数值设置</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamBtn1" href="javascript:void(0)">用量计算</a>
+                      <a class="btn btn-primary btn-sm btnSelectAttrName" id="setParamBtn2" href="javascript:void(0)">辅料计算</a>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">对应模型位置(个数)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >辅料件数：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                      <div style="float: left;">
+                        <a class="btn btn-success btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">增加</a>
+                        <a class="btn btn-danger btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">删除</a>
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >辅料品种：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                      <a class="btn btn-info btn-sm btnSelectAttrName" id="selAcceTypeBtn" style="float: left;" href="javascript:void(0)">选择</a>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">单价(元)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">耗用数量(枚)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">成本(元)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">单位重量(克)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">最小订单(枚)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">总重(克)：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 裁片列表end -->
+
+
 
     <!-- 产品附件辅料信息 -->
     <div class="row">
@@ -247,10 +466,10 @@
               <div class="row">
                 <form class="form-horizontal" role="form">
                   <div class="col-xs-12">
-                    <a class="btn btn-info btn-sm btnSelectAttrName" id="selProBtn4" href="javascript:void(0)">模板</a>
-                    <a class="btn btn-info btn-sm btnSelectAttrName" id="setParamBtn3" href="javascript:void(0)">新增</a>
-                    <a class="btn btn-info btn-sm btnSelectAttrName" id="setParamBtn1" href="javascript:void(0)">删除</a>
-                    <a class="btn btn-info btn-sm btnSelectAttrName" id="setParamBtn2" href="javascript:void(0)">保存</a>
+                    <a class="btn btn-primary btn-sm btnSelectAttrName" id="selMouldBtn" href="javascript:void(0)">模板</a>
+                    <a class="btn btn-success btn-sm btnSelectAttrName" id="acceAddBtn" href="javascript:void(0)">新增</a>
+                    <a class="btn btn-danger btn-sm btnSelectAttrName" id="setParamBtn1" href="javascript:void(0)">删除</a>
+                    <a class="btn btn-success btn-sm btnSelectAttrName" id="setParamBtn2" href="javascript:void(0)">保存</a>
 
                   </div>
                   <div class="col-xs-12" style="margin-top: 10px;">
@@ -343,7 +562,7 @@
     </div>
     <!-- 产品附件辅料信息end -->
 
-    <hr>
+
 
     <!-- 产品汇总信息 -->
     <div class="row">
@@ -362,32 +581,69 @@
               <div class="row">
                 <form class="form-horizontal" role="form">
                   <div class="col-xs-12">
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >面料总净重：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1">面料总成本：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >单个产品净重：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1">估计订单数量：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1" >分摊费用：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
-                    </div>
-                    <label class="control-label no-padding-right pull-left" for="form-field-1">辅料损耗系数：</label>
-                    <div class="col-xs-1">
-                      <input type="text" id="form-field-1" class="col-xs-12" />
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >面料总净重：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">面料总成本：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >单个产品净重：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >分摊费用：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">辅料损耗系数：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">估计订单数量：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-9" />
+                        <a href="#" class="col-xs-3">
+                          <i class="ace-icon fa fa-check green bigger-130" style="margin-top: 7px;"></i>
+                        </a>
+                      </div>
                     </div>
 
+                    <div class="form-group">
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >工缴：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">额外工缴：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >辅料成本：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1" >附件辅料重量：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+
+                      <label class="control-label no-padding-right pull-left col-xs-1" for="form-field-1">直接成本：</label>
+                      <div class="col-xs-1">
+                        <input type="text" id="form-field-1" class="col-xs-12" />
+                      </div>
+                    </div>
                   </div>
+
                 </form>
 
               </div>
@@ -398,9 +654,127 @@
     </div>
     <!-- 产品汇总信息end -->
 
+    <script>
+    $(function(){
+      var index = parent.layer.getFrameIndex(window.name);
 
-  <!--
-  /.page-content
--->
+      //工艺信息 选择
+      $('#selCraftworkBtm').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'选择工艺',
+          offset:'200px',
+          area: '800px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_selCraftwork.html'
+          });
+      });
+
+      //主要尺寸 设置
+      $('#setSizeBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'参数值设置',
+          offset:'200px',
+          area: '800px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_setSize.html'
+          });
+      });
+
+      //裁片列表 参数值设置
+      $('#setParamValBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'参数值设置',
+          offset:'200px',
+          area: '800px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_setParam.html'
+          });
+      });
+
+      //裁片列表 面料名称选择
+      $('#selFabricNameBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'面料选择',
+          offset:'200px',
+          area: '800px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_selFabric.html'
+          });
+      });
+
+      //裁片列表 辅料品种选择
+      $('#selAcceTypeBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料选择',
+          offset:'200px',
+          area: '1200px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_selAcce.html'
+          });
+      });
+
+      //裁片列表 核价条件参数值设置
+      $('#setFreeParamBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'核价条件参数值设置',
+          offset:'200px',
+          area: '500px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_setFreeParam.html'
+          });
+      });
+
+      //产品附件辅料信息 模板选择
+      $('#selMouldBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'模板选择',
+          offset:'200px',
+          area: '800px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_selMould.html'
+          });
+      });
+
+       //产品附件辅料信息 新增
+      $('#acceAddBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料信息选择',
+          offset:'200px',
+          area: '500px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuclearPrice_addAttachmentAcce.html'
+          });
+      });
+
+
+
+
+    });
+</script>
+
 </body>
 </html>
