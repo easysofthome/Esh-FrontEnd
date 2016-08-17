@@ -1,4 +1,9 @@
 
+有效期和利税率设置
+    assistant（纱支规格）
+        |--tax.html                          利税率设置
+
+面料工缴设置
     assistant（纱支规格）
         |--addfee.html                       添加纱线规格
             |--feetab.html
@@ -8,13 +13,9 @@
         |--mainbinding2.html                 纱线规格（绑定工厂的报价）
             |--mainpricetab2.html
 
-        |--ModifyThe.html                    修改工厂绑定（弹窗）
-
         |--tax.html                          利税率设置
 
         |--TheBinding.html                   选择工厂绑定（弹窗）
-
-        |--validity.html                     价格有效期设置
 
     dyeing（染色工缴）
         |--adddyeing.html                    添加染色工缴
@@ -49,4 +50,20 @@
         |--yarndyedFactory.html               色织工缴（绑定工厂的报价）
             |--factoryPrice.html
         |--yarndyedMy.html                    色织工缴（我自己的报价）
+            |--selweavtab.html
+
+
+成品工缴设置
+    fillers（填充物辅料）
+        |--addfillers.html                      添加填充物辅料报价
+        |--fillersFactory.html                  填充物辅料（绑定工厂的报价）
+            |--factoryPrice.html
+        |--fillersMy.html                       填充物辅料（我自己的报价）
+            |--selweavtab.html
+
+    style（款式工缴）
+        |--addstyle.html                      添加款式工缴
+        |--styleFactory.html                  款式工缴（绑定工厂的报价）
+            |--factoryPrice.html
+        |--styleMy.html                       款式工缴（我自己的报价）
             |--selweavtab.html

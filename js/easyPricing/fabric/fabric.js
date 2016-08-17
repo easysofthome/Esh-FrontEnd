@@ -4,7 +4,7 @@ define(function(require, exports, module) {
     $(document).ready(function(){
 
         // 单经单纬却换
-        $('input[name=WeavingType]').on('change', function() {
+        $('input[name=yarnTypeNum]').on('change', function() {
             var index = $(this).parent().index();
             if(index){
                 $('.spinner').show();
