@@ -28,22 +28,79 @@
   <script src="../assets/js/html5shiv.js"></script>
   <script src="../assets/js/respond.js"></script>
   <![endif]-->
-
 </head>
-<body>
+<body class="overflow-hidden">
+    <!-- /section:basics/content.searchbox --> </div>
+  <!-- .page-content -->
   <div class="page-content">
 
-    <!-- 工具栏 -->
+
 
     <div class="row">
       <div class="col-xs-12 ">
-        <button id="addBtn" class="btn btn-app btn-primary btn-xs">新增</button>
-        <button class="btn btn-app btn-yellow btn-xs">修改</button>
-        <button class="btn btn-app btn-danger btn-xs">删除</button>
+        <button class="btn btn-app btn-primary btn-xs" id="okBtn">确定</button>
       </div>
+      <!-- 查询栏 -->
+      <div class="col-xs-12">
+        <div class="widget-box">
+          <div class="widget-header">
+            <h4 class="smaller">查询栏</h4>
+          </div>
+          <div class="widget-body">
+            <div class="widget-main">
+              <div class="row">
+                <form class="form-horizontal" role="form">
+                  <div class="col-xs-12">
+                    <label class="control-label no-padding-right pull-left" for="form-field-1" >辅料编号</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" />
+                    </div>
+                    <label class="control-label no-padding-right pull-left" for="form-field-1" >辅料名称</label>
+                    <div class="col-xs-2">
+                      <input type="text" id="form-field-1" class="col-xs-12" />
+                    </div>
+                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">辅料分类</label>
+                    <div class="col-xs-2">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="AL">全部</option>
+                        <option value="AK">单品抱枕</option>
+                        <option value="AR">单品座椅套</option>
+                        <option value="AR">单品床笠</option>
+                        <option value="AR">单品床旗</option>
+                        <option value="AR">单品被套</option>
+                        <option value="AR">单品被子</option>
+                        <option value="AR">成对枕头</option>
+                        <option value="AR">床单三件套</option>
+                        <option value="AZ">床单四件套</option>
+                      </select>
+                    </div>
+                    <label class="common_minW control-label no-padding-right pull-left" for="form-field-1">适用范围</label>
+                    <div class="col-xs-2">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="AL">全部</option>
+                        <option value="AK">单品抱枕</option>
+                        <option value="AR">单品座椅套</option>
+                        <option value="AR">单品床笠</option>
+                        <option value="AR">单品床旗</option>
+                        <option value="AR">单品被套</option>
+                        <option value="AR">单品被子</option>
+                        <option value="AR">成对枕头</option>
+                        <option value="AR">床单三件套</option>
+                        <option value="AZ">床单四件套</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-primary">查询</button>
+                  </div>
 
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- 工具栏end -->
+    <!-- 查询栏end -->
     <!-- 报表 -->
     <div class="space-4"></div>
     <div class="row ">
@@ -57,14 +114,16 @@
                   <span class="lbl"></span>
                 </label>
               </th>
-              <th>套件编号</th>
-              <th>套件名称</th>
-              <th>套件尺寸</th>
-              <th>里布类型</th>
-              <th>套件介绍</th>
-              <th>CIF报价</th>
-              <th>FOB报价</th>
-              <th class="col-xs-1">备注</th>
+              <th>辅料编号</th>
+              <th>辅料名称</th>
+              <th>单位</th>
+              <th>单价</th>
+              <th>单位重量</th>
+              <th>规格型号</th>
+              <th>最小订单量</th>
+              <th>成本计算公式</th>
+              <th>适应范围</th>
+              <th>辅料描述</th>
             </tr>
           </thead>
           <tbody>
@@ -75,14 +134,16 @@
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
             <tr>
               <td class="center">
@@ -91,78 +152,88 @@
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
-             <tr>
+            <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
-             <tr>
+            <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
-             <tr>
+            <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
-             <tr>
+            <tr>
               <td class="center">
                 <label class="position-relative">
                   <input type="checkbox" class="ace"/>
                   <span class="lbl"></span>
                 </label>
               </td>
+              <td>DPCJ-s</td>
+              <td>拷边打孔餐巾</td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
-              <td>单品餐巾</td>
-              <td>单品款式</td>
-              <td>否</td>
-              <td>餐巾</td>
-              <td>整体式，拷边</td>
-              <td>0.80</td>
+              <td>DPCJ-</td>
+              <td>P*q</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
+              <td>DPCJ-080003</td>
+              <td>拷边打孔餐巾</td>
             </tr>
           </tbody>
         </table>
@@ -207,6 +278,7 @@
   <!--
   /.page-content
 -->
+
 <script>
     $(function(){
         var result = '';
@@ -235,27 +307,20 @@
             data[num] = temp;
         }
 
+
+
         var index = parent.layer.getFrameIndex(window.name);
-        parent.layer.iframeAuto(index);
-        var winW = $(parent.window).width();
-        var winH = $(parent.window).height();
-        ///////////////////弹出layer//////////////////
-       //包装辅料信息 模板选择 查看
-       $('#addBtn').click(function(){
-        parent.layer.open({
-          type: 2,
-          title:'套件核价详情',
-          offset:'0px',
-          area: [winW+'px',winH+'px'],
-          fix: true, //不固定
-          maxmin: true,
-          shadeClose: true,
-          content: 'nuckitpre.html'
+        $(document).on('click', '#okBtn', function() {
+            parent.layer.close(index);
         });
-   });
+        parent.layer.iframeAuto(index);
 
 
     });
+
+
+
 </script>
+
 </body>
 </html>

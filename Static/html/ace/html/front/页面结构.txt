@@ -36,5 +36,13 @@
             |
             |--nuclearPriceInfo.html            产品列表 查看\修改
                |
-               |--
-               |--
+               |--nuclearPrice_selCraftwork.html     工艺信息 选择工艺
+               |--nuclearPrice_setSize.html          主要尺寸 设置
+               |--nuclearPrice_setParam.html         裁片列表 参数设置
+               |--nuclearPrice_selFabric.html        裁片列表 选择辅料
+               |--nuclearPrice_selAcce.html          裁片列表 选择辅料
+               |--nuclearPrice_setFreeParam.html     裁片列表 条件参数设置  
+               |--nuclearPrice_selMould.html         产品附件辅料信息 模板选择
+                  |--nuclearPrice_selMould_view.html            包装辅料信息 模板选择 查看
+               |--nuclearPrice_addAttachmentAcce.html产品附件辅料信息 新增
+

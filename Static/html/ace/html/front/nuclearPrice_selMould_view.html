@@ -32,18 +32,6 @@
 </head>
 <body>
   <div class="page-content">
-
-    <!-- 工具栏 -->
-
-    <div class="row">
-      <div class="col-xs-12 ">
-        <button id="addBtn" class="btn btn-app btn-primary btn-xs">新增</button>
-        <button class="btn btn-app btn-yellow btn-xs">修改</button>
-        <button class="btn btn-app btn-danger btn-xs">删除</button>
-      </div>
-
-    </div>
-    <!-- 工具栏end -->
     <!-- 报表 -->
     <div class="space-4"></div>
     <div class="row ">
@@ -51,30 +39,17 @@
         <table id="sample-table-1" class="table table-striped table-bordered table-hover">
           <thead>
             <tr>
-              <th class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </th>
-              <th>套件编号</th>
-              <th>套件名称</th>
-              <th>套件尺寸</th>
-              <th>里布类型</th>
-              <th>套件介绍</th>
-              <th>CIF报价</th>
-              <th>FOB报价</th>
-              <th class="col-xs-1">备注</th>
+              <th>辅料编号</th>
+              <th>辅料名称</th>
+              <th>单位</th>
+              <th>耗用数量</th>
+              <th>单价</th>
+              <th>成本</th>
+              <th class="col-xs-2">辅料描述</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -82,15 +57,8 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
             <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -98,15 +66,8 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
              <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -114,15 +75,8 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
              <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -130,15 +84,8 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
              <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -146,15 +93,8 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
              <tr>
-              <td class="center">
-                <label class="position-relative">
-                  <input type="checkbox" class="ace"/>
-                  <span class="lbl"></span>
-                </label>
-              </td>
               <td>DPCJ-080003</td>
               <td>拷边打孔餐巾</td>
               <td>单品餐巾</td>
@@ -162,7 +102,6 @@
               <td>否</td>
               <td>餐巾</td>
               <td>整体式，拷边</td>
-              <td>0.80</td>
             </tr>
           </tbody>
         </table>
@@ -235,24 +174,17 @@
             data[num] = temp;
         }
 
+
+
         var index = parent.layer.getFrameIndex(window.name);
-        parent.layer.iframeAuto(index);
-        var winW = $(parent.window).width();
-        var winH = $(parent.window).height();
-        ///////////////////弹出layer//////////////////
-       //包装辅料信息 模板选择 查看
-       $('#addBtn').click(function(){
-        parent.layer.open({
-          type: 2,
-          title:'套件核价详情',
-          offset:'0px',
-          area: [winW+'px',winH+'px'],
-          fix: true, //不固定
-          maxmin: true,
-          shadeClose: true,
-          content: 'nuckitpre.html'
+        $(document).on('click', '#success', function() {
+            parent.layer.close(index);
         });
-   });
+        $(document).on('click', '#cancel', function() {
+            parent.layer.close(index);
+        });
+        parent.layer.iframeAuto(index);
+
 
 
     });
