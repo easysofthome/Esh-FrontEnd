@@ -14,7 +14,7 @@ define(function (require, exports, module) {
     });
 
     //选择产品
-    $('#sel-pro').on('click', function() {
+    $('#sel-pro input').on('click', function() {
         $('.sel-pro').show();
     });
 
@@ -47,8 +47,9 @@ define(function (require, exports, module) {
 
     $('#sel-pro').on('click', '.level2 ul>li .final', function(event) {
         $('#sel-pro input').val($.trim($(this).html()));
-            if(exports.overwrite)
-        exports.overwrite();
+        $('.sel-pro').hide();
+        if(exports.overwrite)
+            exports.overwrite();
     });
 
 });
