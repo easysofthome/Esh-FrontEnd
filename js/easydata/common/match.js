@@ -29,6 +29,18 @@ define(function (require, exports, module) {
     }
     if(exports.overwrite) exports.overwrite();
   });
+  // 个性化搜索
+  $('.drop_down').attr('data-state', 'close');
+  $('.drop_down').on('click', function() {
+    if($(this).attr('data-state') == 'close'){
+      $(this).attr('data-state','open');
+      $(this).find('span').removeClass('pers_under pers_under333').addClass('pers_on pers_on333');
+    } else {
+      $(this).attr('data-state','close');
+      $(this).find('span').removeClass('pers_on pers_on333').addClass('pers_under pers_under333');
+    }
+    $('.leibie_box').slideToggle();
+  });
 
 
   // 选择匹配度、合作可能性、合作风险、生产淡旺季

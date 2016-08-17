@@ -7,9 +7,9 @@ define(function(require, exports, module) {
         $('input[name=yarnTypeNum]').on('change', function() {
             var index = $(this).parent().index();
             if(index){
-                $('.spinner').show();
+                $('.spinner,.yarndensity_box').show();
             } else {
-                $('.spinner').hide();
+                $('.spinner,.yarndensity_box').hide();
             }
         })
 
