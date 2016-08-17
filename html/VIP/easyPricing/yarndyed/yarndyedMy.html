@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易家纺-电子商务平台|易核价会员中心-（织造）我自己的报价</title>
+  <link href="/css/production/VIP/easyPricing/assistant/addfee.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/VIP/common/global.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  @@include('VIP/common/nav.html')
+  <div class="main_box clearfix">
+    @@include('VIP/easyPricing/easyPricingL.html')
+    <div class="rg rgbox">
+      <!-- 右边搜索 -->
+      <div class="titbox titbox-bottom">
+        <div class="clearfix">
+          <p class="tit lf">面料工缴设置</p>
+          <a target="_blank" class="upload rg" data-href="/html/VIP/easyPricing/yarndyed/addyarndyed.html" href="javascript:;">添加色织工缴</a>
+        </div>
+
+        <div class="clearfix outer_box">
+          <span class="lf coredata_tit">工 缴 分 类：</span>
+          <ul class="lf coredata_list">
+            <li class="lf">
+              <a href="/html/VIP/easyPricing/assistant/mainbinding.html">纱线价格</a>
+            </li>
+            <li class="lf">
+              <a href="/html/VIP/easyPricing/weaving/weavingMy.html">织造工缴</a>
+            </li>
+            <li class="lf">
+              <a href="/html/VIP/easyPricing/dyeing/dyeingMy.html">染色工缴</a>
+            </li>
+            <li class="lf current_list">
+              <a href="/html/VIP/easyPricing/yarndyed/yarndyedMy.html">色织工缴</a>
+            </li>
+            <li class="lf">
+              <a href="/html/VIP/easyPricing/printing/printingMy.html">印花工缴</a>
+            </li>
+            <li class="lf">
+              <a href="/html/VIP/easyPricing/processing/processingMy.html">涂层、轧花等其他后处理</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="switch-box clearfix">
+        <a class="lf switch_default  switch_cur" href="/html/VIP/easyPricing/yarndyed/yarndyedMy.html">我自己的报价</a>
+        <a class="lf switch_default" href="/html/VIP/easyPricing/yarndyed/yarndyedFactory.html">绑定工厂的报价</a>
+      </div>
+
+      <div class="tab-top">@@include('VIP/easyPricing/yarndyed/selweavtab.html')</div>
+      @@include('VIP/common/next.html')
+    </div>
+  </div>
+  @@include('VIP/common/footer.html')
+  <script>seajs.use(["js/front/VIP/easypricing/workersPay/fabric",'js/front/VIP/easyPricing/assistant/mainbind']);</script>
+
+  <script>
+    seajs.use(['jquery','layer'], function($,layer){
+      $('.btn-price').on("click", function(){
+
+        var that = this;
+        var layerHref = $(this).attr('data-href');
+
+        $.layer({
+          type: 2,
+          title: '我自己的报价',
+          area: ['400px', 'auto'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 533)/2+'px',''],
+          closeBtn: [0, true], //默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: $(that).attr('data-href')},
+          success: function (layer) {}
+        });
+      });
+    });
+  </script>
+</body>
+</html>
