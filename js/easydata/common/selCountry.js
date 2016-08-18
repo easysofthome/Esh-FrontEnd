@@ -15,11 +15,14 @@ define(function (require, exports, module) {
         var flag = $('#sel-country').hasClass('clicked');
         if($('#sel-country .clicked').length == 0 && !flag){
             $('.sel-country').hide();
+            $('#sel-country .input-tri[tri-state=cur]').toggleClass('toggleTri');
         }
     });
     //选择国家
     $('#sel-country input').on('click', function () {
         $('.sel-country').show();
+        $('[tri-state=cur]').attr('tri-state','')
+        $('#sel-country .input-tri').attr('tri-state','cur').toggleClass('toggleTri');
     });
     $('.continent li').on('mouseover', function () {
         $(this).parent().find('.cur').removeClass('cur');

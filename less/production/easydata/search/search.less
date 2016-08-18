@@ -39,10 +39,19 @@
     top: 19px;
     right: 10px;
   }
-  &:hover{
-    .input-tri{
-      .triangleRotate(#666);
-    }
+  .toggleTri{
+    border: solid 1px rgba(0, 0, 0, 0);
+    border-width: 4px 4px 0;
+    border-top-color: #666;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    _border-color: #fff;
+    _filter: chroma(color=white);
   }
 }
 
