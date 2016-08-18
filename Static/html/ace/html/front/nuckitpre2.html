@@ -156,7 +156,7 @@
               <div class="btn-toolbar">
               <div class="space-2"></div>
                 <div class="btn-group">
-                  <button class="btn btn-sm btn-success btn-white btn-round"style="margin-right: 6px;">新增</button>
+                  <button id="proList_modifyBtn" class="btn btn-sm btn-success btn-white btn-round"style="margin-right: 6px;">新增</button>
                   <button class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">修改</button>
                   <button class="btn btn-sm btn-danger btn-white btn-round" style="margin-right: 6px;">删除</button>
                   <button class="btn btn-sm btn-purple btn-white btn-round" style="margin-right: 6px;">查看</button>
@@ -316,9 +316,9 @@
                <div class="space-2"></div>
                 <div class="btn-group">
                   <button class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">保存</button>
-                  <button class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">新增</button>
+                  <button id="addAcceBtn" class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">新增</button>
                   <button class="btn btn-sm btn-danger btn-white btn-round" style="margin-right: 6px;">删除</button>
-                  <button class="btn btn-sm btn-purple btn-white btn-round" style="margin-right: 6px;">模板</button>
+                  <button id="selMouldBtn" class="btn btn-sm btn-purple btn-white btn-round" style="margin-right: 6px;">模板</button>
 
                 </div>
                  <div class="space-2 col-xs-12"></div>
@@ -455,8 +455,8 @@
               <div class="space-2"></div>
                 <div class="btn-group">
 
-                  <button class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">获取纸箱信息</button>
-                  <button class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">纸箱信息精算</button>
+                  <button id="cartonBtn" class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">获取纸箱信息</button>
+                  <button id="cartonCalculate" class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">纸箱信息精算</button>
 
                 </div>
                 <div class="space-2 col-xs-12"></div>
@@ -602,8 +602,8 @@
               <div class="btn-toolbar ">
               <div class="space-2"></div>
                 <div class="btn-group">
-                  <button class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">海运费单价查询</button>
-                  <button class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">配置集装箱</button>
+                  <button id="oceanFreight" class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">海运费单价查询</button>
+                  <button id="setContainerBtn" class="btn btn-sm btn-primary btn-white btn-round" style="margin-right: 6px;">配置集装箱</button>
 
                 </div>
                 <div class="space-2 col-xs-12"></div>
@@ -733,7 +733,7 @@
               <div class="space-2"></div>
                 <div class="btn-group">
 
-                  <button class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">获取税率信息</button>
+                  <button id="tariffRateBtn" class="btn btn-sm btn-success btn-white btn-round" style="margin-right: 6px;">获取税率信息</button>
 
                 </div>
                 <div class="space-2 col-xs-12"></div>
@@ -994,6 +994,177 @@
       </div>
     </div>
   </div>
+
+<script>
+   ///////////////////弹出layer//////////////////
+
+   $(function(){
+        var result = '';
+        var data,
+            dataArr = [];   // 统一的数组
+        // 分割成数组重新写入元数据，并且维护统一的一个数组
+        function getArray(obj, num){
+            var temp = [],item;
+            var trimObj = obj[num].trim();
+            if(trimObj == '') return;
+
+            result = trimObj.split("+");
+
+            for(i in result){
+                dataIndex = result[i].trim().indexOf(']');
+                item = result[i].trim().substr(1, dataIndex-1);
+
+                if(item == '' || $.inArray(item,dataArr) != -1) continue;
+                else{
+                    dataArr.push(item);
+                    temp[i] = item;
+                }
+            }
+
+            // 处理完的数据重新放入data对象
+            data[num] = temp;
+        }
+
+        var index = parent.layer.getFrameIndex(window.name);
+        var winW = $(parent.window).width();
+        var winH = $(parent.window).height();
+        //console.log(winH);
+        ///////////////////弹出layer//////////////////
+       //产品核价信息
+       $('#proList_modifyBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'产品核价信息',
+          offset:'0px',
+          area: [winW+'px',winH+'px'],
+          fix: false, //不固定
+          maxmin: true,
+          //scrollbar:true,
+          shadeClose: true,
+          content: 'nuclearPriceInfo.html'
+        });
+       });
+
+       //包装辅料信息 模板选择 查看
+       $('#addBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'套件核价详情',
+          offset:'0px',
+          area: '1200px',
+          fix: true, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre.html'
+          });
+        });
+
+       //包装辅料信息 模板选择
+       $('#selMouldBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'模板选择',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          scrollbar :false,
+          content: 'nuckitpre_selMould.html'
+        });
+       });
+
+       //包装辅料信息 新增
+       $('#addAcceBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料信息选择',
+          offset:'200px',
+          area: 'auto',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_addAcce.html'
+        });
+       });
+
+       //获取纸箱信息
+       $('#cartonBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'纸箱信息',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_carton.html'
+        });
+       });
+
+       //纸箱信息精算
+       $('#cartonCalculate').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'辅料计算核价(纸箱)',
+          offset:'20px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_cartonCalculate.html'
+        });
+       });
+
+       //海运费单价查询
+       $('#oceanFreight').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'海运费信息查询',
+          offset:'200px',
+          area: '1800px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_oceanFreight.html'
+        });
+       });
+
+       //运费信息 配置集装箱
+       $('#setContainerBtn').click(function(){
+       parent.layer.open({
+          type: 2,
+          title:'配置集装箱',
+          offset:'200px',
+          area: '800px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_setContainer.html'
+        });
+       });
+
+       //获取税率信息
+       $('#tariffRateBtn').click(function(){
+        parent.layer.open({
+          type: 2,
+          title:'税率信息',
+          offset:'200px',
+          area: '1200px',
+          fix: false, //不固定
+          maxmin: true,
+          shadeClose: true,
+          content: 'nuckitpre_tariffRate.html'
+        });
+       });
+
+    });
+
+
+
+   </script>
+
+<script src="../../assets/js/layer/layer.js"></script>
 
 </body>
 </html>
