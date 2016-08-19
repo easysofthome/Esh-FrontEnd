@@ -10,7 +10,7 @@ define(function (require, exports, module) {
         var flag = $('#sel-pro').hasClass('clicked');
         if($('#sel-pro .clicked').length == 0 && !flag){
             $('.sel-pro').hide();
-            $('#sel-pro .input-tri[tri-state=cur]').toggleClass('toggleTri');
+            $('#sel-pro .input-tri[tri-state=cur]').removeClass('toggleTri');
         }
     });
 
@@ -18,7 +18,7 @@ define(function (require, exports, module) {
     $('#sel-pro input').on('click', function() {
         $('.sel-pro').show();
         $('[tri-state=cur]').attr('tri-state','')
-        $('#sel-pro .input-tri').attr('tri-state','cur').toggleClass('toggleTri');
+        $('#sel-pro .input-tri').attr('tri-state','cur').addClass('toggleTri');
     });
 
     $('#sel-pro').on('mouseover', '.level1>li', function(event) {
