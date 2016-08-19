@@ -1,4 +1,5 @@
 define(function(require, exports, module){
+    require('js/front/common/dropDownPanel/dropDownPanel');
     require('jquery');
     var layer = require('layer');
 
