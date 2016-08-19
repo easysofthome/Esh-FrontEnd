@@ -1,25 +1,17 @@
 <!doctype html>
 <html>
-<head>89o8
+<head>
   <meta charset="utf-8">
   <title>易家纺-电子商务平台|面料核价</title>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/production/easyPricing/Pop-ups/result.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/fabric/fabricbomb.css" rel="stylesheet" type="text/css"/>
+
 
 </head>
 
 <body>
 <!-- 右侧快捷面板 -->
- <div id="fixLeftMid" class="floatPanel">
-  <div class="top_arrow_div"><span id="quickToTop" class="top_arrow"></span></div>
-  <span id="userGuide" class="quickGuide" title="点击可打开引导页"></span>
-  </div>
-  @@include('common/top.html')
-  @@include('easyPricing/header.html')
-  <div class="title-top-border"></div>
-  @@include('easyPricing/fabric/fabrictitle.html')
+
   <div class="mainbox">
     <div class="fabricbox">
       <form action="/html/easyPricing/pricing/result.html" id="fabricForm" method="post">
@@ -401,31 +393,11 @@
             </select>
             <input type="text" name="" id="exchangeRate" errorMsgPosition="right" class="fabric_money">
           </div>
-          <div class="clearfix rad_frm">
-            <span class="lf title_name">核价方式：</span>
-            <div class="lf Single_box">
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit8" id="easySoftHomePrice_rad" checked="checked" type="radio" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/procurement.html">直接采购成品面料</a></span>
-              </label>
-              <label class="lf radio_rg label_radio">
-                <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/grey.html">选择坯布+染色（印花）</a></span>
-              </label>
-               <label class="lf radio_rg label_radio">
-                <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/yarn.html">选择纱线+织造+染色（印花）</a></span>
-              </label>
-               <label class="lf radio_rg label_radio">
-                <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/complete.html">采用易家纺系统核价</a></span>
-              </label>
-            </div>
-          </div>
+
+
 
           <div class="clearfix butt_box">
-            <a href="javascript:history.back();" class="lf butt_pricing">返回</a>
-            <div class="rg butt_return" id="startPrice" data-href="/html/easyPricing/pricing/result.html">下一步</div>
+            <div class="butt_return" id="startPrice" data-href="/html/easyPricing/pricing/result.html">保存</div>
           </div>
         </div>
        </div>
@@ -433,36 +405,7 @@
     </div>
   </div>
   <!--引导层-->
-  <div id="walkthrough">
-    <div id="guide_step1" style="display:none;">
-      <p class="tooltipTitle">面料核价<i class="content">第一步</i></p>
-      <br>
-      <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
-    </div>
-    <div id="guide_step2" style="display:none;">
-      <p class="tooltipTitle">面料核价<i class="content">第二步</i></p>
-      <br>
-      <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
-      <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
-    </div>
-     <div id="guide_step3" style="display:none;">
-      <p class="tooltipTitle">面料核价<i class="content">第三步</i></p>
-      <br>
-      <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
-      <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
-    </div>
-    <div id="guide_step4" style="display:none;">
-      <p class="tooltipTitle">面料核价<i class="content">第四步</i></p>
-      <br>
-      <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
-      <a href="javascript:;" class="next-step" style="float:right;">下一步</a>
-    </div>
-     <div id="guide_step5" style="display:none;">
-      <p class="tooltipTitle">面料核价<i class="content">点击开始核价，完成操作</i></p>
-      <br>
-      <a href="javascript:;" class="prev-step" style="float:left;">上一步</a>
-    </div>
-  </div>
+
 
 <div id="popupResult" style="display: none">
     <div id="priceResult"></div>
@@ -557,7 +500,13 @@
 </script>
 <!-- /laytpl模板引擎 -->
 
-  @@include('easyPricing/common/footer.html')
-  <script>seajs.use(['js/front/easyPricing/fabric/fabric','js/front/easyPricing/fabric/pagewalkthrough']);</script>
+  <script src="/js/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+  <script src="/js/seajs/seajs-css.js"></script>
+  <script src="/js/rootConfig.js"></script>
+  <script>
+    seajs.use(['js/front/easyPricing/common/form','js/front/easyPricing/common/head']);
+  </script>
+  <script>seajs.use(['js/front/easyPricing/fabric/fabric']);</script>
 </body>
 </html>
