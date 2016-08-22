@@ -250,7 +250,7 @@
           </div>
           <div class="widget-body">
             <div class="widget-main">
-              <div class="row">
+              <div class="row" style="overflow-x: scroll;">
                 <form class="form-horizontal" role="form">
                   <div class="col-xs-3 table-bordered" style="width: 305px; height: 910px;">
                     <div class="space-6 row"></div>
@@ -845,6 +845,9 @@
 
 
     });
+
+    var w = $('.form-horizontal:eq(3)>div').length * 305;
+    $('.form-horizontal:eq(3)').css('width',w);
 
 </script>
 
