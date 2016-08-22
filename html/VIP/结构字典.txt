@@ -120,6 +120,8 @@ easyPricing                          易核价会员中心页面
   | details                            面料核价详情
   | Fabric                             面料核价
 
+  finishedProduct(成品表格)
+
   intelligence（智能核价助手）
   | fiber                              添加化纤染色工缴
 

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易核价-易家纺电子商务服务平台_单品核价</title>
+  <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  @@include('common/top.html')
+  @@include('easyPricing/header.html')
+  <div class="mainbox main_mar">
+    <p class="fabrictitle clearfix">
+      <span class="lf fabrictitle_left">单品核价</span>
+      <span class="rg fabrictitle_rg">
+        当前位置：
+        <a href="#">首页</a>
+        >
+        <a href="#">单品核价</a>
+      </span>
+    </p>
+    <!-- 进度条 -->
+    <div class="progressBar">
+      <ul class="words clearfix">
+        <li class="lf width txtblue">选择款式尺寸</li>
+        <li class="lf widththree txtblue">修改单品参数</li>
+        <li class="lf width">核价完成</li>
+      </ul>
+      <ul class="Step clearfix">
+        <li class="lf circle txtwhite">1</li>
+        <li class="lf barblue barthree"></li>
+        <li class="lf circle txtwhite">2</li>
+        <li class="lf bargray barthree"></li>
+        <li class="lf circle">3</li>
+      </ul>
+    </div>
+
+    <!-- 核对修改参数 -->
+    <div class="modifybox">
+      <form method="post" id="pricingModifyForm" action="">
+        @@include('easyPricing/singleProduct/parameter.html')
+
+        @@include('easyPricing/singleProduct/designSize.html')
+
+        @@include('easyPricing/singleProduct/table-fabric.html')
+
+        @@include('easyPricing/singleProduct/table-accessory.html')
+
+        <div class="clearfix nuclear-price-way">
+          <span class="lf mar-left">核价方式：</span>
+          <div class="lf Single_box">
+            <label class="lf radio_rg label_radio">
+              <input name="Fruit8" id="easySoftHomePrice_rad" checked="checked" type="radio" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/singleProduct/directPurchase.html">直接采购成品</a></span>
+            </label>
+            <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/singleProduct/oneselfPurchase.html">自己采购面料，再找成品厂加工成品</a></span>
+            </label>
+             <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/singleProduct/oneselfChoose.html">自己选择面料供应商，再委托成品厂采购面料并加工成成品</a></span>
+            </label>
+             <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/singleProduct/easysofthome.html">采用易家纺系统核价</a></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 按钮 -->
+        <div class="btnbox clearfix">
+          <a class="lf btn_gray" href="/html/easyPricing/singleProduct/choice.html">返　回</a>
+          <a class="lf btn_blue" id="btnStartPrice" href="javascript:void(0)">下一步</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button type="hidden" id="showAddLayer"></button>
+  @@include('easyPricing/common/footer.html')
+  <script>
+  seajs.use('js/front/easyPricing/singlePro/modify',function(m){
+    //测试港口数据
+    var startPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="上海">上海(SHANGHAI)</span>中国</a><a class="a1"><span data-port="深圳">深圳(SHENZHEN)</span>中国</a><a class="a1"><span data-port="天津">天津(TIANJIN)</span>中国</a><a class="a1"><span data-port="青岛">青岛(QINGDAO)</span>中国</a><a class="a1"><span data-port="大连">大连(DALIAN)</span>中国</a><a class="a1"><span data-port="宁波">宁波(NINGBO)</span>中国</a><a class="a1"><span data-port="厦门">厦门(XIAMEN)</span>中国</a><a class="a1"><span data-port="广州">广州(GUANGZHOU)</span>中国</a></div>';
+    var endPortHTML ='<div class="port_contxt" id="port_list"><a class="a1"><span data-port="洛杉矶">洛杉矶(LOS ANGELES CA)</span>美国</a><a class="a1"><span data-port="迪拜">迪拜(DUBAI)</span>阿联酋</a><a class="a1"><span data-port="鹿特丹">鹿特丹(ROTTERDAM)</span>荷兰</a><a class="a1"><span data-port="东京">东京(TOKYO)</span>日本</a><a class="a1"><span data-port="新加坡">新加坡(SINGAPORE)</span>新加坡</a><a class="a1"><span data-port="汉堡">汉堡(HAMBURG)</span>德国</a><a class="a1"><span data-port="卡拉奇">卡拉奇(KARACHI)</span>巴基斯坦</a><a class="a1"><span data-port="那瓦什瓦">那瓦什瓦(NHAVA SHEVA)</span>印度</a></div>';
+    var testPorsObj = {};
+    testPorsObj.startPortHTML = startPortHTML;
+    testPorsObj.endPortHTML = endPortHTML;
+    testPorsObj.baseURL = '';
+    testPorsObj.params = '';
+    //测试 设置海运费信息：请求url、静态页面需要传入startPortHTML与endPortHTML
+    m.setPortsInfo(testPorsObj);
+    //测试 获取海运费信息
+    m.searchShippingInfo(function(){alert('成功！将获取最近的一天海运费信息。')});
+  });
+</script>
+</body>
+</html>
