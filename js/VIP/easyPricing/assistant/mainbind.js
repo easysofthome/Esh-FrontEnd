@@ -1,6 +1,7 @@
 define(function(require, exports, module){
-    require('js/front/common/dropDownPanel/dropDownPanel');
+
     require('jquery');
+    require('tip');
     var layer = require('layer');
 
     $('.btn').on("click", function(){
