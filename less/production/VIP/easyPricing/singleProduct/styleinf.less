@@ -1,0 +1,66 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.styleinfbox{
+  width: 814px;
+  padding: 10px 20px;
+  background-color:#fff;
+     .title_te{
+      color: #333;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .title_butt,.title_butt2{
+      border: 1px solid #3ca1d7;
+      color: #3ca1d7;
+      line-height: 28px;
+      font-size:14px;
+      padding: 0 14px;
+      .border-radius(3px);
+    }
+    .title_butt2{
+      margin-left: 10px;
+      border: 1px solid #f8210c;
+      color: #f8210c;
+    }
+    .title_butt:hover {
+      background-color: #3ca1d7;
+      color: #fff;
+    }
+    .title_butt2:hover {
+      background-color: #f8210c;
+      color: #fff;
+    }
+    .inf_box{
+      margin-top: 6px;
+      .img_box{
+        .border-radius(3px);
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        img{
+             width: 90px;
+        height: 90px;
+        }
+      }
+      .con_box{
+
+      width: 100%;
+      font-size: 14px;
+      li{
+
+        line-height: 22px;
+        width: 31.3%;
+        padding-right: 2%;
+        span{
+
+          font-weight: bold;
+        }
+      }
+      .long_li{
+        width: 100%;
+      }
+      }
+    }
+
+}
