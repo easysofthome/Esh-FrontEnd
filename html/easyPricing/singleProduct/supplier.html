@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>与您匹配的面料供应商</title>
+  <title>与您匹配的成品供应商</title>
   <link href="/css/production/easyPricing/fabric/factory.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -10,7 +10,7 @@
 <body>
   <div class="factory-box">
     <div class="tit_box">
-      <span class="tit_cla">与您匹配的面料供应商</span>
+      <span class="tit_cla">与您匹配的成品供应商</span>
     </div>
     <div class="sortbox clearfix">
       <div class="lf sort clearfix">
@@ -114,12 +114,12 @@
       <tr>
         <th class="name">工厂名称</th>
         <th class="region">地区</th>
-        <th class="price">报价（元/米）</th>
+        <th class="price">报价（个/元）</th>
         <th>报价日期</th>
         <th class="operation">收藏询价</th>
       </tr>
       <tr>
-        <td>成品面料供应商A</td>
+        <td>成品供应商A</td>
         <td>杭州</td>
         <td class="Price_color">0.17</td>
         <td>2016-6-30</td>
@@ -128,7 +128,7 @@
         </td>
       </tr>
       <tr>
-        <td>成品面料供应商B</td>
+        <td>成品供应商B</td>
         <td>杭州</td>
         <td class="Price_color">0.17</td>
         <td>2016-6-30</td>
@@ -137,7 +137,7 @@
         </td>
       </tr>
       <tr>
-        <td>成品面料供应商C</td>
+        <td>成品供应商C</td>
         <td>杭州</td>
         <td class="Price_color">0.17</td>
         <td>2016-6-30</td>
@@ -146,7 +146,7 @@
         </td>
       </tr>
       <tr>
-        <td>成品面料供应商D</td>
+        <td>成品供应商D</td>
         <td>杭州</td>
         <td class="Price_color">0.17</td>
         <td>2016-6-30</td>
@@ -155,7 +155,7 @@
         </td>
       </tr>
       <tr>
-        <td>成品面料供应商E</td>
+        <td>成品供应商E</td>
         <td>杭州</td>
         <td class="Price_color">0.17</td>
         <td>2016-6-30</td>
@@ -167,7 +167,15 @@
     @@include('easyPricing/common/next.html')
   </div>
   <div class="butt_box">
-      <a href="/html/easyPricing/fabric/fabric.html" class="butt_pricing">返回</a>
+      <a href="/html/easyPricing/singleProduct/modify.html" class="butt_pricing">返回</a>
   </div>
+
+  <script src="/js/seajs/sea-debug.js"></script>
+  <script src="/js/seajs/seajs-css.js"></script>
+  <script src="/js/rootConfig.js"></script>
+  <script>
+  seajs.use(['jquery','js/front/easydata/common/selCity']);
+  </script>
+
 </body>
 </html>
