@@ -10,16 +10,174 @@
 <body>
   <div class="popupbox">
     <p class="title clearfix">
-      <a class="cur lf" href="#">面料选择</a>
-      <a class="herfa lf" href="#">我的面料</a>
+      <a class="herfa lf" href="/html/easyPricing/pricing/replaceFabric.html">易家纺已有的面料</a>
+      <a class="herfa cur lf" href="/html/easyPricing/pricing/replaceFabric2.html">选择自己的面料</a>
+      <a class="herfa lf" href="/html/easyPricing/pricing/replaceFabric3.html">直接填写面料价格</a>
+      <a class="herfa lf" href="/html/easyPricing/fabric/fabricbomb.html">填写面料信息</a>
       <span class="rg btn_close"></span>
     </p>
-    <div class="fill_box clearfix">
-      <div class="lf fill_tit">面料价格(元)</div>
-      <input type="text" class="lf fill_input" >
-      <p class="lf fill_prompt">提示：此面料信息与默认面料信息无关，此价格只用于询价使用</p>
+
+    <!-- 类型 -->
+    <div class="typebox">
+      <div class="clearfix container">
+        <p class="lf tit">询价方式：</p>
+        <div class="lf radio_box">
+          <label class="lf radio_rg label_radio r_on">
+                <input name="WeavingType" type="radio" value="FL0001" checked="checked" class="lf radio_post">
+                <span class="lf">只提供面料规格进行询价</span>
+              </label>
+              <label class="lf radio_rg label_radio">
+                <input name="WeavingType" type="radio" value="FL0002" class="lf radio_post">
+                <span class="lf">用我的面料价格，找成品厂询价</span>
+              </label>
+        </div>
+      </div>
+      <div class="clearfix container">
+        <p class="lf tit">面料成分：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">化学纤维面料</a></li>
+          <li class="lf"><a class="type_a" href="#">天然纤维面料</a></li>
+          <li class="lf"><a class="type_a" href="#">混纺面料</a></li>
+        </ul>
+      </div>
+      <div class="clearfix container">
+        <p class="lf tit">染色方式：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">染色面料</a></li>
+          <li class="lf"><a class="type_a" href="#">印花面料</a></li>
+          <li class="lf"><a class="type_a" href="#">色织面料</a></li>
+        </ul>
+      </div>
+      <div class="clearfix container">
+        <p class="lf tit">织造方式：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">提花布</a></li>
+          <li class="lf"><a class="type_a" href="#">小提花</a></li>
+          <li class="lf"><a class="type_a" href="#">平纹斜纹缎纹</a></li>
+        </ul>
+      </div>
+      <div class="clearfix container">
+        <p class="lf tit">面料克重：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">0-100克</a></li>
+          <li class="lf"><a class="type_a" href="#">120-140克</a></li>
+          <li class="lf"><a class="type_a" href="#">140-160克</a></li>
+          <li class="lf"><a class="type_a" href="#">160-180克</a></li>
+          <li class="lf"><a class="type_a" href="#">180-200克</a></li>
+        </ul>
+      </div>
+      <div class="clearfix container">
+        <p class="lf tit">面料价格：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">门幅150cm价格</a></li>
+          <li class="lf"><a class="type_a" href="#">门幅280cm价格</a></li>
+        </ul>
+      </div>
     </div>
-    <a href="#" class="fill_butt">保存</a>
+    <!-- 排序 -->
+    <div class="sortbox clearfix">
+      <div class="lf sort clearfix">
+        <p class="tit lf">排序：</p>
+        <div class="content lf clearfix">
+          <a class="cur clearfix lf" href="#">
+            <span class="lf">默认排序</span>
+            <i class="lf"></i>
+          </a>
+          <a class="sort_ablue clearfix lf" href="#">
+            <span class="lf">发布时间从近到远</span>
+            <i class="lf"></i>
+          </a>
+        </div>
+      </div>
+      <div class="rg intbox">
+        <input class="int lf" type="text" placeholder="请输入面料编号" />
+        <i class="lf"></i>
+      </div>
+    </div>
+
+    <!-- 排列 -->
+    <ul class="arraybox clearfix">
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+    </ul>
+    <ul class="arraybox clearfix">
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+      <li class="lf array">
+        <div class="picture">
+          <img src="/images/production/easyPricing/pricing/array_picture.png" width="230" height="230" />
+        </div>
+        <div class="words">
+          <a href="#" class="name">FD192414534864963</a>
+          <p class="clearfix"><span class="lf">设计者：</span><a href="#" class="name lf">eshvip17@e</a></p>
+        </div>
+      </li>
+    </ul>
+    @@include('easyPricing/common/next2.html')
 
   </div>
     <script src="/js/seajs/sea-debug.js"></script>
