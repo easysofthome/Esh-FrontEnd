@@ -5,14 +5,20 @@
   <title>易家纺-电子商务平台|面料核价</title>
   <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/fabric/fabricbomb.css" rel="stylesheet" type="text/css"/>
-
+  <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
 <body>
 <!-- 右侧快捷面板 -->
 
-  <div class="mainbox">
+  <div class="mainbox popupbox">
+    <p class="title clearfix">
+      <a class="herfa lf" href="/html/easyPricing/pricing/replaceFabric.html">面料选择</a>
+      <a class="herfa lf" href="#">我的面料</a>
+      <a class="herfa cur lf" href="/html/easyPricing/fabric/fabricbomb.html">重新设置面料参数</a>
+      <span class="rg btn_close"></span>
+    </p>
     <div class="fabricbox">
       <form action="/html/easyPricing/pricing/result.html" id="fabricForm" method="post">
         <div class="fabric_con">
@@ -508,5 +514,12 @@
     seajs.use(['js/front/easyPricing/common/form','js/front/easyPricing/common/head']);
   </script>
   <script>seajs.use(['js/front/easyPricing/fabric/fabric']);</script>
+  <script src="/js/front/lib/jquery/jquery.js"></script>
+  <script>
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.close,.btn_close').click(function(){
+      parent.layer.close(index);
+    });
+  </script>
 </body>
 </html>
