@@ -15,7 +15,7 @@ define(function (require, exports, module) {
     });
 
     //选择产品
-    $('#sel-pro input').on('click', function() {
+    $('#sel-pro').on('click','input', function() {
         $('.sel-pro').show();
         $('[tri-state=cur]').attr('tri-state','')
         $('#sel-pro .input-tri').attr('tri-state','cur').addClass('toggleTri');
