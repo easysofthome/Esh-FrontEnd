@@ -20,7 +20,7 @@ define(function (require, exports, module) {
         }
     });
     //选择国家
-    $('#sel-country input').on('click', function () {
+    $('#sel-country').on('click', 'input', function () {
         $('.sel-country').show();
         $('[tri-state=cur]').attr('tri-state','')
         $('#sel-country .input-tri').attr('tri-state','cur').addClass('toggleTri');
