@@ -51,6 +51,27 @@ define(function (require, exports, module) {
     });
   });
 
+  $('#widthPrice150Title').attr('href','javascript:void(0)');
+  $("#widthPrice150Title").bind('click',function(){
+     $(this).parent().parent().parent().next().animate({height: 'toggle', opacity: 'toggle'}, "fast",function(){
+        autoIframe();
+     });
+   });
+  $('#allWidthPrice').attr('href','javascript:void(0)');
+  $("#allWidthPrice").bind('click',function(){
+     $(this).parent().parent().parent().next().animate({height: 'toggle', opacity: 'toggle'}, "fast",function(){
+        autoIframe();
+     });
+  });
 
+  function autoIframe(height){
+    if(parent.layer){
+      var windowH = $(document).height();
+      var index = parent.layer.getFrameIndex(window.name);
+      parent.document.getElementById('xubox_iframe'+index).style.height = windowH+'px';
+
+
+    }
+  }
 
 });

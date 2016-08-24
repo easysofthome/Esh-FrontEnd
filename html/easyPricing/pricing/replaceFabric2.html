@@ -73,9 +73,21 @@
       <div class="clearfix container">
         <p class="lf tit">面料价格：</p>
         <ul class="type lf">
-          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
-          <li class="lf"><a class="type_a" href="#">门幅150cm价格</a></li>
+          <li class="lf"><a class="type_a cur" href="#" id="allWidthPrice">全部</a></li>
+          <li class="lf"><a class="type_a" href="#" id="widthPrice150Title">门幅150cm价格</a></li>
           <li class="lf"><a class="type_a" href="#">门幅280cm价格</a></li>
+        </ul>
+      </div>
+      <div class="clearfix container none">
+        <p class="lf tit">价格范围：</p>
+        <ul class="type lf">
+          <li class="lf"><a class="type_a cur" href="#">全部</a></li>
+          <li class="lf"><a class="type_a" href="#">0-10元</a></li>
+          <li class="lf"><a class="type_a" href="#">10-12.5元</a></li>
+          <li class="lf"><a class="type_a" href="#">12.5-15元</a></li>
+          <li class="lf"><a class="type_a" href="#">15-17.5元</a></li>
+          <li class="lf"><a class="type_a" href="#">17.5-20元</a></li>
+          <li class="lf"><a class="type_a" href="#">20元以上</a></li>
         </ul>
       </div>
     </div>
@@ -177,15 +189,9 @@
   <script src="/js/seajs/seajs-css.js"></script>
 
   <script src="/js/rootConfig.js"></script>
- <script src="/js/front/lib/jquery/jquery.js"></script>
+
   <script>
-     seajs.use('FancyRadioCheckBox');
-  </script>
-  <script>
-    var index = parent.layer.getFrameIndex(window.name);
-    $('.close,.btn_close').click(function(){
-      parent.layer.close(index);
-    });
+     seajs.use('/js/front/easyPricing/pricing/replaceFabric');
   </script>
 
 </body>
