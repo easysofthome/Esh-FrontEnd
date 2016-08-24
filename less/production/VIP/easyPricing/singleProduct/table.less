@@ -1,0 +1,119 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+p.smalltitle{
+  // 小标题
+  margin-left: 42px;
+  font-size: 16px;
+  color: #333;
+  a.shrink{
+    color: #3ca1d7;
+    &:hover{
+      color: #ff6600;
+    }
+  }
+}
+p.top-20{
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.txt_red{
+  // 红色
+  color: #ff0000;
+}
+
+//表格
+table.tab{
+  width: 1074px;
+  text-align: center;
+  margin: 20px 0 0 42px;
+  border-top: #eaeaea 1px solid;
+  border-left: #eaeaea 1px solid;
+  td{
+    border-right: #eaeaea 1px solid;
+    border-bottom: #eaeaea 1px solid;
+    line-height: 36px;
+    padding: 7px 10px;
+    a{
+      color: #3ca1d7;
+      &:hover{
+        color: #ff0000;
+      }
+    }
+  }
+
+  // 款式尺码信息
+  td.style{
+    width: 146px;
+    padding: 20px 20px 6px 20px;
+    span{
+      display: block;
+    }
+  }
+
+  // 主要辅料
+  td.acc_price{
+    width: 170px;
+    padding: 0 10px;
+  }
+  td.acc_purpose{
+    width: 216px;
+    padding: 0 10px;
+    text-align: left;
+  }
+
+
+  //自由组合第二步
+  td.re_sin_type{
+    width: 110px;
+    padding: 20px 10px;
+  }
+
+
+  // 套件核价
+  // 款式尺码信息   //自由组合第三步
+  td.sui_style{
+    width: 146px;
+    padding: 20px;
+  }
+
+  // 套件核价结果
+  td.sui_result{
+    width: 110px;
+    padding: 20px 10px;
+  }
+  // td.sui_re_type{
+  //   width: 120px;
+  // }
+  // td.sui_re_num{
+  //   width: 78px;
+  // }
+  // td.sui_re_size{
+  //   width: 65px;
+  // }
+
+
+  //自由组合第二部
+  td.td_int{
+    width: 120px;
+  }
+  td.td_free_size{
+    width: 144px;
+  }
+
+  // 标题样式
+  tr.tit{
+    background-color: #eaeaea;
+    td{
+      line-height: 50px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+  tr.tittwo{
+    background-color: #f8f8f8;
+    td{
+      line-height: 44px;
+    }
+  }
+}

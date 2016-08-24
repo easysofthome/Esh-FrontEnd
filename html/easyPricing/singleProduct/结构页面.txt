@@ -1,0 +1,26 @@
+
+  |-choice.html                        选择款式尺寸
+
+  |-modify.html                        修改单品参数
+    |--designSize.html                   款式尺码信息
+    |--table-accessory.html              主要辅料
+    |--table-fabric.html                 主要面料
+
+  |-directPurchase.html                直接采购成品
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--supplier.html                     与您匹配的成品供应商
+
+  |-oneselfPurchase.html               自己采购面料
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--factory.html                      请选择各环节的工厂报价
+
+  |-oneselfChoose.html                 自己选择面料供应商
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--factory.html                      请选择各环节的工厂报价
+
+  |-easysofthome.html                  采用易家纺系统核价
+
+  |-complete.html                      核价完成

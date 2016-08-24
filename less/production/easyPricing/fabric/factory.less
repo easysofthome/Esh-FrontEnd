@@ -165,3 +165,79 @@
     background-color: #3ca1d7;
   }
 }
+
+
+/// 下拉选择地区
+.dropdownInput {
+  line-height: 18px;
+  width: 150px;
+  padding: 5px 10px;
+  border: 1px solid #cdcfd1;
+  border-radius: 3px;
+}
+.int_430{
+  position: relative;
+}
+.pop-up{
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 2;
+  width: 374px;
+  padding: 11px 0 1px 12px;
+  background-color: #fff;
+  border: 1px solid #cdcfd1;
+  color: #333;
+  line-height: normal;
+  .item{
+    float: left;
+    width: 60px;
+    padding: 4px 0;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+  }
+  ul.zxcities,ul.provinces{
+    display: inline-block;
+    font-size: 12px;
+    li{
+      span{
+        position: relative;
+        float: left;
+        line-height: 14px;
+        padding: 4px 7px;
+        cursor: pointer;
+        &:hover{
+          background: #444;
+          color: #fff;
+        }
+      }
+    }
+  }
+  ul.provinces li span{
+    padding: 4px;
+  }
+  .sub-items{
+    display: none;
+    width: 100%;
+    padding-left: 12px;
+    margin: 0 0 0 -12px;
+    background: #eee;
+    span{
+      font-size: 12px;
+      padding: 4px;
+    }
+  }
+
+}
+
+.input-tri{
+  .triangle(#666);
+  position: absolute;
+  top: 14px;
+  right: 4px;
+}
+.toggleTri{
+  .triangleRotate(#666);
+}

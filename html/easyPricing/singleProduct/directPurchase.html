@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易核价-易家纺电子商务服务平台_询价方式（直接采购成品）</title>
+  <link href="/css/production/easyPricing/global.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/pricing/modify.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+@@include('common/top.html')
+@@include('easyPricing/header.html')
+<div class="mainbox main_mar">
+  <p class="fabrictitle clearfix">
+    <span class="lf fabrictitle_left">单品核价</span>
+    <span class="rg fabrictitle_rg">
+      当前位置：
+      <a href="#">首页</a>
+      >
+      <a href="#">单品核价</a>
+    </span>
+  </p>
+  <!-- 进度条 -->
+  <div class="progressBar">
+    <ul class="words clearfix">
+      <li class="lf width txtblue">选择款式尺寸</li>
+      <li class="lf widththree txtblue">修改单品参数</li>
+      <li class="lf width txtblue">核价完成</li>
+    </ul>
+    <ul class="Step clearfix">
+      <li class="lf circle txtwhite">1</li>
+      <li class="lf barblue barthree"></li>
+      <li class="lf circle txtwhite">2</li>
+      <li class="lf barblue barthree"></li>
+      <li class="lf circle txtwhite">3</li>
+    </ul>
+  </div>
+
+  <!-- 单品核价结果 -->
+  <div class="modifybox">
+    <div class="tit_box">
+      <span class="tit_cla">询价方式（直接采购成品）</span>
+    </div>
+    @@include('easyPricing/singleProduct/price-parameter.html')
+
+    @@include('easyPricing/singleProduct/price-fabric.html')
+  </div>
+  @@include('easyPricing/singleProduct/supplier.html')
+</div>
+
+@@include('easyPricing/common/footer.html')
+
+</body>
+</html>

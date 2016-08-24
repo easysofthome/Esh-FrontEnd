@@ -10,8 +10,10 @@
 <body>
   <div class="popupbox">
     <p class="title clearfix">
-      <a class="cur lf" href="#">面料选择</a>
-      <a class="herfa lf" href="#">我的面料</a>
+      <a class="herfa cur lf" href="/html/easyPricing/pricing/replaceFabric.html">易家纺已有的面料</a>
+      <a class="herfa lf" href="/html/easyPricing/pricing/replaceFabric2.html">选择自己的面料</a>
+      <a class="herfa lf" href="/html/easyPricing/pricing/replaceFabric3.html">直接填写面料价格</a>
+      <a class="herfa lf" href="/html/easyPricing/fabric/fabricbomb.html">填写面料信息</a>
       <span class="rg btn_close"></span>
     </p>
 
@@ -163,13 +165,23 @@
       </li>
     </ul>
     @@include('easyPricing/common/next2.html')
+
   </div>
+    <script src="/js/seajs/sea-debug.js"></script>
+  <!-- <script src="/js/seajs/seajs-combo.js"></script> -->
+  <script src="/js/seajs/seajs-css.js"></script>
+
+  <script src="/js/rootConfig.js"></script>
  <script src="/js/front/lib/jquery/jquery.js"></script>
+  <script>
+     seajs.use('FancyRadioCheckBox');
+  </script>
   <script>
     var index = parent.layer.getFrameIndex(window.name);
     $('.close,.btn_close').click(function(){
       parent.layer.close(index);
     });
   </script>
+
 </body>
 </html>

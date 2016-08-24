@@ -1,0 +1,17 @@
+
+  |-directPurchase.html                直接采购成品
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--supplier.html                     我收藏的工厂报价
+
+  |-oneselfPurchase.html               自己采购面料
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--supplier2.html                    我收藏的工厂报价
+
+  |-oneselfChoose.html                 自己选择面料供应商
+    |--price-parameter.html              您要核价的成品参数
+    |--price-fabric.html                 您要核价的成品所用面料
+    |--supplier2.html                    我收藏的工厂报价
+
+  |-easysofthome.html                  采用易家纺系统核价

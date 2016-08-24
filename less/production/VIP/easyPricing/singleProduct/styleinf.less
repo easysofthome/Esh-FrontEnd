@@ -1,0 +1,96 @@
+
+@import '../../../../dev/mixins/mixins.less';
+
+.styleinfbox
+{
+    width: 814px;
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    background-color: #fff;
+    .title_te
+    {
+        font-size: 18px;
+        line-height: 24px;
+
+        color: #333;
+    }
+    .title_butt,
+    .title_butt2
+    {
+        font-size: 14px;
+        line-height: 28px;
+
+        padding: 0 14px;
+
+        color: #3ca1d7;
+        border: 1px solid #3ca1d7;
+
+        .border-radius(3px);
+    }
+    .title_butt2
+    {
+        margin-left: 10px;
+
+        color: #f8210c;
+        border: 1px solid #f8210c;
+    }
+    .title_butt:hover
+    {
+        color: #fff;
+        background-color: #3ca1d7;
+    }
+    .title_butt2:hover
+    {
+        color: #fff;
+        background-color: #f8210c;
+    }
+    .update{
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+      background-color: #f48719;
+      padding: 0 14px;
+      line-height: 30px;
+      .border-radius(3px);
+    }
+    .inf_box
+    {
+        margin-top: 6px;
+        .img_box
+        {
+            overflow: hidden;
+
+            width: 90px;
+            height: 90px;
+
+            .border-radius(3px);
+            img
+            {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        .con_box
+        {
+            font-size: 14px;
+
+            width: 100%;
+            li
+            {
+                line-height: 22px;
+
+                width: 31.3%;
+                padding-right: 2%;
+                span
+                {
+                    font-weight: bold;
+                }
+            }
+            .long_li
+            {
+                width: 100%;
+            }
+        }
+    }
+}

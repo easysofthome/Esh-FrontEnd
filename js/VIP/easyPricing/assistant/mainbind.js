@@ -1,5 +1,7 @@
 define(function(require, exports, module){
+
     require('jquery');
+    require('tip');
     var layer = require('layer');
 
     $('.btn').on("click", function(){
