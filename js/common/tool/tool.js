@@ -479,25 +479,6 @@ define(function (require, exports, module) {
         return s;
     }
 
-     //如果小数位数大于2，保留2位小数，如：2.333，会即2.33 不四舍五入
-     //如果小数位数小于2，如为2.3结果仍为2.3 不强制补0 不四舍五入
-    function toKeepDecimal2(x) {
-        var f = parseFloat(x);
-        if (isNaN(f)) {
-            return false;
-        }
-        var f = Math.floor(x*100)/100;alert(f);
-        var s = f.toString();
-        var rs = s.lastIndexOf('.');
-        if (rs < 2) {
-            return x;
-        }
-        while (s.length <= rs + 2) {
-            s += '0';
-        }
-        return s;
-    }
-
     //重写Array.indexOf方法修正ie9之前无法使用
     Array.prototype.indexOf = function(el){
         for (var i=0,n=this.length; i<n; i++){

@@ -37,340 +37,45 @@
   </div>
 
   <!-- 核对修改参数 -->
-  <div class="modifybox">
-   <form method="post" id="suiteModifyForm" action="">
-    <p class="title">核价信息参数核对修改</p>
-    <!-- 核价方式及费率修改　 -->
-   <p class="smalltitle marginB20">
-      核价方式及费率修改　<a class="shrink" href="#">[点击收缩]</a>
-   </p>
-   <div class="shrink_wrap">
-    <div class="ratebox">
-      <div class="pricingbox clearfix">
-        <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox" checked="checked" disabled="true" />
-          <span class="words lf">FOB核价</span>
-        </label>
-        <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox"/>
-          <span class="words lf">GIF核价</span>
-        </label>
-        <label class="lab lf clearrfix">
-          <input class="int lf" type="checkbox"/>
-          <span class="words lf">LDP核价</span>
-        </label>
-        <p class="lf reminder">温馨提示：如果您需要核CIF或者LDP价格，请您勾选CIF核价或者LDP核价，勾选完成后填写相应的参数信息。</p>
-      </div>
-    </div>
-    <!-- FOB费率信息 -->
-    <div class="information">
-      <p class="smalltitle">FOB费率信息</p>
-      <ul class="intbox clearfix">
-        <li class="intli lf clearfix">
-          <p class="lf"><span class="txt_red">*</span>美元汇率：</p>
-          <input class="int lf" type="text" value="6.48" id="USARate" name="USARate"/>
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>增值税率：</p>
-          <input class="int lf" type="text" id="educationalTariff" name="educationalTariff" value="0.17" />
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>退税率：：</p>
-          <input class="int lf" type="text" id="RefundRate" name="RefundRate" value="0.16" />
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>利润率：</p>
-          <input class="int lf" type="text" id="profitRate" name="profitRate" value="0.1" />
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>内销利润率：</p>
-          <input class="int lf" type="text" id="domesticProfit" name="domesticProfit"   value="0.1" />
-        </li>
-      </ul>
-    </div>
-    <!-- 海运费信息 -->
-   <div class="information none">
-      <p class="smalltitle">海运费信息</p>
-      <ul class="intbox clearfix">
-        <li class="intli lf clearfix">
-          <p class="lf">起始港：</p>
-          <input class="int lf" id="startPort" locked='false' name="startPort" type="text" />
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf">目的港：</p>
-          <input class="int lf" id="endPort" locked='false'name="endPort" type="text" />
-        </li>
-        <li class="intli lf clearfix GIFintli">
-          <a href="javascript:void(0)" class="butt_cides lf" id="getShippingInfo">确定</a>
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>20柜单价：</p>
-          <input class="int lf ignore" id="twentyCounterPerPrice" name="twentyCounterPerPrice" type="text" />
-        </li>
-        <li class="intli lf clearfix marginL10">
-          <p class="lf"><span class="txt_red">*</span>40柜单价：</p>
-          <input class="int lf ignore" id="fortyCounterPerPrice" name="fortyCounterPerPrice" type="text" />
-        </li>
-      </ul>
-    </div>
-    <!-- LDP费率信息 -->
-    <div class="information none">
-      <p class="smalltitle">
-        LDP费率信息　<a id="exportTariff" class="color_blue hover_red">获取出口税率</a>
-      </p>
-      <div class="LDP clearfix">
-        <ul class="LDPL lf">
-          <li class="intli">中文描述：非针织或钩编其他化纤制床罩</li>
-          <li class="intli">参考代码：6304.1920</li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>出口税率：</p>
-            <input class="int lf ignore" type="text" id="exportTariff" errorMsgPosition="right" name="exportTariff" value="0.065" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>清关费用：</p>
-            <input class="int lf ignore" type="text" id="CustomsClearanceFee" errorMsgPosition="right" name="CustomsClearanceFee" value="0.025" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>利息：</p>
-            <input class="int lf ignore" type="text" id="interest" errorMsgPosition="right" name="interest" value="0.015" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>利润率：</p>
-            <input class="int lf ignore" type="text" errorMsgPosition="right" id="exportProfitRate" name="exportProfitRate" value="0.1" />
-             <div class="input-tip"></div>
-          </li>
-        </ul>
-        <ul class="LDPR lf">
-          <li class="intli">英文描述：Bedspreads non knitted or crocheted,of man made fiber,other</li>
-          <li class="intli clearfix">
-            <p class="lf name">出口国家名称：</p>
-            <input class="int lf" type="text" errorMsgPosition="right" id="exportCountry" name="exportCountry" value="USA" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>保险费率：</p>
-            <input class="int lf ignore" type="text" errorMsgPosition="right" id="premiumRate" name="premiumRate" value="0.006" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>信用风险：</p>
-            <input class="int lf ignore" type="text" errorMsgPosition="right" id="creditRisk" name="creditRisk" value="0.0105" />
-             <div class="input-tip"></div>
-          </li>
-          <li class="intli clearfix">
-            <p class="lf name"><span class="txt_red">*</span>佣金：</p>
-            <input class="int lf ignore" type="text" errorMsgPosition="right" id="commision" name="commision" value="0.03" />
-             <div class="input-tip"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    </div>
-    <!-- 款式尺码信息-->
-   <p class="smalltitle marginB20">
-      款式尺码信息　<a class="shrink" href="#">[点击收缩]</a>
-   </p>
-   <div class="shrink_wrap">
-    <div class="information">
-      <table class="tab" cellpadding="0" cellspacing="0">
-        <tr class="tit">
-          <td class="sui_style">款式</td>
-          <td>套件类型</td>
-          <td>尺码</td>
-          <td>单品名称</td>
-          <td>单品尺寸</td>
-          <td>数量</td>
-          <td>产品辅料</td>
-          <td>包装辅料</td>
-          <td>体积信息</td>
-        </tr>
-        <tr>
-          <td class="sui_style">
-            <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
-            <span>成对十字拼接枕头</span>
-          </td>
-          <td>成对枕头</td>
-          <td>20*28</td>
-          <td>枕头</td>
-          <td>20*28</td>
-          <td>2</td>
-           <td><a id="product_view">查看修改</a></td>
-          <td><a id="packing_view">查看修改</a></td>
-          <td><a id="volume_view">查看修改</a></td>
-        </tr>
-      </table>
-    </div>
-    </div>
-    <!-- 主要面料-->
-    <p class="smalltitle marginB20">
-        主要面料　<a class="shrink" href="#">[点击收缩]</a>
-    </p>
-    <div class="shrink_wrap">
-    <div class="information">
-      <table class="tab" id="mainFabric" cellpadding="0" cellspacing="0">
-        <tr class="tit">
-          <td>主要用途</td>
-          <td class="fab_picture">面料图片</td>
-          <td>面料编号</td>
-          <td>面料分类</td>
-          <td>面料克重</td>
-          <td>面料替换</td>
-          <td class="fab_price">门幅&价格</td>
-        </tr>
-        <tr>
-          <td>枕头衬布裁片</td>
-          <td class="fab_picture">
-            <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
-          </td>
-          <td>FD110600032</td>
-          <td>涤棉面料</td>
-          <td>82</td>
-          <td><a class="accessories_name">替换面料</a></td>
-          <td class="fab_price">
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" id="fabricWidth_a" errorMsgPosition="rightTop" name="fabricWidth_a" type="text" value="150" />
-              <p class="lf price">厘米</p>
-              <div class="input-tip"></div>
-            </div>
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_a" errorMsgPosition="rightTop" name="fabricPrice_a" type="text" value="15.64" />
-              <p class="lf price">元/米</p>
-              <div class="input-tip"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>枕头衬布裁片</td>
-          <td class="fab_picture">
-            <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
-          </td>
-          <td>FD110600032</td>
-          <td>涤棉面料</td>
-          <td>82</td>
-          <td><a class="accessories_name">替换面料</a></td>
-          <td class="fab_price">
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" id="fabricWidth_b" errorMsgPosition="rightTop" name="fabricWidth_b" type="text" value="150" />
-              <p class="lf price">厘米</p>
-              <div class="input-tip"></div>
-            </div>
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_b" errorMsgPosition="rightTop" name="fabricPrice_b" type="text" value="15.64" />
-              <p class="lf price">元/米</p>
-              <div class="input-tip"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>枕头衬布裁片</td>
-          <td class="fab_picture">
-            <img src="/images/production/easyPricing/pricing/array_picture.png" width="146" height="146" />
-          </td>
-          <td>FD110600032</td>
-          <td>涤棉面料</td>
-          <td>82</td>
-          <td><a class="accessories_name">替换面料</a></td>
-          <td class="fab_price">
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料门幅：</p>
-              <input class="int lf" id="fabricWidth_c" errorMsgPosition="rightTop" name="fabricWidth_c" type="text" value="150" />
-              <p class="lf price">厘米</p>
-              <div class="input-tip"></div>
-            </div>
-            <div class="pricebox clearfix">
-              <p class="lf price"><span class="txt_red">*</span>面料价格：</p>
-              <input class="int lf" id="fabricPrice_c" errorMsgPosition="rightTop" name="fabricPrice_c" type="text" value="15.64" />
-              <p class="lf price">元/米</p>
-              <div class="input-tip"></div>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-    </div>
-    <!-- 主要辅料-->
-    <p class="smalltitle marginB20">
-        主要辅料　<a class="shrink" href="#">[点击收缩]</a>
-    </p>
-    <div class="shrink_wrap">
-    <div class="information">
-      <table class="tab" id="mainAccPurpose" cellpadding="0" cellspacing="0">
-        <tr class="tit">
-          <td>辅料编号</td>
-          <td>辅料名称</td>
-          <td class="acc_purpose">用途</td>
-          <td>辅料用量</td>
-          <td class="acc_price">辅料单价</td>
-          <td>辅料成本（元）</td>
-          <td>辅料替换</td>
-        </tr>
-        <tr>
-          <td>AD110600132</td>
-          <td>靠垫填充用PP棉</td>
-          <td class="acc_purpose">
-            <p>枕头填充重量</p>
-            <div class="pricebox clearfix">
-            <p class="lf price"><span class="txt_red">*</span>填充重量</p>
-              <input class="int intacc lf" errorMsgPosition="rightBottom" id="fillingWeight" name="fillingWeight" type="text"value="12" />
-              <p class="lf price">个</p>
-              <div class="input-tip"></div>
-            </div>
-          </td>
-          <td>0.7 公斤</td>
-          <td class="acc_price">
-            <div class="pricebox clearfix">
-              <p class="lf price txt_red">*</p>
-              <input class="int intacc lf" id="yuanPerKg" errorMsgPosition="rightBottom" name="yuanPerKg" type="text"value="0.9" />
-              <p class="lf price">元/公斤</p>
-              <div class="input-tip"></div>
-            </div>
-          </td>
-          <td>6.3</td>
-          <td><a class="accessories_name">辅料替换</a></td>
-        </tr>
-      </table>
-    </div>
-    </div>
-    <!-- 选择款式工缴报价方式 -->
-     <div class="information">
+    <div class="modifybox">
+      <form method="post" id="pricingModifyForm" action="">
+        @@include('easyPricing/singleProduct/parameter.html')
 
-     <div class="clearfix factoryOffer marginleft">
-         <div class="clearfix factoryOfferCss factoryOfferCss">选择款式工缴报价方式：</div>
-          <div class="factoryOfferCssSub">
-          <label class="lf radio_rg label_radio">
-            <input class="radio_post lf" name="Fruit" type="radio" id="easySoftHomePrice_rad" checked="checked" value="" />
-            <span class="lf">选择易家纺工缴库核价</span>
-          </label>
-          <label class="lf radio_rg label_radio">
-            <input class="lf radio_post" name="Fruit" type="radio" id="factoryPrice_rad" value="" />
-            <span class="lf">选择工厂报价核价</span>
-          </label>
+        @@include('easyPricing/singleProduct/designSize.html')
+
+        @@include('easyPricing/singleProduct/table-fabric.html')
+
+        @@include('easyPricing/singleProduct/table-accessory.html')
+
+        <div class="clearfix nuclear-price-way">
+          <span class="lf mar-left">核价方式：</span>
+          <div class="lf Single_box">
+            <label class="lf radio_rg label_radio">
+              <input name="Fruit8" id="easySoftHomePrice_rad" checked="checked" type="radio" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/suite/directPurchase.html">直接采购成品</a></span>
+            </label>
+            <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/suite/oneselfPurchase.html">自己采购面料，再找成品厂加工成品</a></span>
+            </label>
+             <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/suite/oneselfChoose.html">自己选择面料供应商，再委托成品厂采购面料并加工成成品</a></span>
+            </label>
+             <label class="lf radio_rg label_radio">
+              <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
+              <span class="lf"><a href="/html/easyPricing/suite/easysofthome.html">采用易家纺系统核价</a></span>
+            </label>
           </div>
-          <p class="lf reminder margin_0">温馨提示：（非必选）如果款式工缴未有工厂报价，则默认使用易家纺库工缴价。</p>
-      </div>
-      <div id="factoryOffer-box" class="clearfix factoryOffer marginleft none">
-        <span class="lf title_name">款式工缴报价工厂：</span>
-        <input type="text" id="factoryOffer" readonly="true" errorMsgPosition="rightBottom" name="factoryOffer" class="factoryOffer_input lf">
-        <a href="/html/easyPricing/pricing/selectQuotation.html" class="lf factoryOffer_butt">选择工厂报价</a>
-        <div class="input-tip"></div>
+        </div>
 
-      </div>
+        <!-- 按钮 -->
+        <div class="btnbox clearfix">
+          <a class="lf btn_gray" href="/html/easyPricing/singleProduct/choice.html">返　回</a>
+          <a class="lf btn_blue" id="btnStartPrice" href="javascript:void(0)">下一步</a>
+        </div>
+      </form>
     </div>
-
-    <!-- 按钮 -->
-    <div class="btnbox clearfix">
-      <a class="lf btn_gray" href="/html/easyPricing/suite/choice.html">返　回</a>
-      <a class="lf btn_blue" id="btnStartPrice" href="javascript:void(0)">开始核价</a>
-    </div>
-    </form>
-  </div>
 </div>
 <button type="hidden" id="showAddLayer"></button>
 @@include('easyPricing/common/footer.html')
