@@ -12,12 +12,12 @@
 @@include('easyPricing/header.html')
 <div class="mainbox main_mar">
   <p class="fabrictitle clearfix">
-    <span class="lf fabrictitle_left">自由核价</span>
+    <span class="lf fabrictitle_left">自由组合核价</span>
     <span class="rg fabrictitle_rg">
       当前位置：
-      <a href="#">首页</a>
+      <a href="/html/easyPricing/index.html">易核价首页</a>
       >
-      <a href="#">自由核价</a>
+      <a href="/html/easyPricing/combination/choice.html">自由组合核价</a>
     </span>
   </p>
   <!-- 进度条 -->
@@ -44,7 +44,7 @@
     <div class="tit_box">
       <span class="tit_cla">询价方式</span>
     </div>
-    @@include('easyPricing/singleProduct/price-parameter.html')
+    @@include('easyPricing/combination/price-parameter.html')
 
     @@include('easyPricing/singleProduct/price-fabric.html')
   </div>
@@ -59,11 +59,11 @@
         <table class="tab modfy_part3" cellpadding="0" cellspacing="0">
           <tr>
             <td>被子面布裁片</td>
-            <td>3.5元/米</td>
+            <td><span class="Price_color">3.5</span>元/米</td>
           </tr>
           <tr>
             <td>被子底布裁片</td>
-            <td>3.9元/米</td>
+            <td><span class="Price_color">3.9</span>元/米</td>
           </tr>
         </table>
       </div>
@@ -90,14 +90,24 @@
             <td>40柜</td>
           </tr>
           <tr>
-            <td>90*92</td>
-            <td>56.72</td>
-            <td>8.06</td>
-            <td>7.82</td>
-            <td>8.99</td>
-            <td>8.36</td>
-            <td>12.77</td>
-            <td>11.94</td>
+            <td>第一套尺码</td>
+            <td class="Price_color">56.72</td>
+            <td class="Price_color">8.06</td>
+            <td class="Price_color">7.82</td>
+            <td class="Price_color">8.99</td>
+            <td class="Price_color">8.36</td>
+            <td class="Price_color">12.77</td>
+            <td class="Price_color">11.94</td>
+          </tr>
+          <tr>
+            <td>第二套尺码</td>
+            <td class="Price_color">56.72</td>
+            <td class="Price_color">8.06</td>
+            <td class="Price_color">7.82</td>
+            <td class="Price_color">8.99</td>
+            <td class="Price_color">8.36</td>
+            <td class="Price_color">12.77</td>
+            <td class="Price_color">11.94</td>
           </tr>
         </table>
       </div>
