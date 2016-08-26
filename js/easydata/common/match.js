@@ -71,6 +71,7 @@ define(function (require, exports, module) {
 
   function showLabel(){
     portTemp = $('[name=port]').val();
+    if(!portTemp) return;
     if(portTemp.trim() == ''){
       $('.port-tag-box').html('请输入港口名称');
     } else {
