@@ -1,4 +1,4 @@
-
+@import '../../../../sprite/VIP/easyPricing/sprite.less';
 @import '../../../../dev/mixins/mixins.less';
 
 .main_box
@@ -71,29 +71,38 @@
 // 右边列表
 div.rg_list
 {
-  width: 854px;
+  width: 814px;
   margin-top: 20px;
-  padding: 10px 0;
-
+  padding: 10px 20px;
+   position: relative;
   background-color: #fff;
+  .NEW{
+  position: absolute;
+  right: 160px;
+  top: 0;
+  .sprite(@new);
+  .icon-VIP-easyPricing;
+
+    }
   ul.list_box{
-    width: 715px;
+    width: 685px;
     border-right: #eeeeee 1px solid;
+
+
     li{
-      margin-left: 20px;
-      line-height: 36px;
+       line-height: 28px;
+       width: 31.3%;
+       padding-right: 2%;
       span.txt_gray{
         color: #333;
-        font-size: 18px;
+        font-size: 16px;
       }
       span.txt_orange{
         color: #f79226;
-        font-size: 18px;
+        font-size: 16px;
       }
     }
-    li.list{
-      width: 210px;
-    }
+
   }
   div.btn{
     margin-left: 20px;
@@ -123,17 +132,7 @@ div.rg_list
         color: #fff;
       }
     }
-    .update{
-      font-size: 14px;
-      margin-top: 10px;
-      color: #fff;
-      display: block;
-      background-color: #f48719;
-      width: 98px;
-      line-height: 30px;
-      text-align: center;
-      .border-radius(3px);
-    }
+
   }
 }
 
