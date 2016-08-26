@@ -995,6 +995,93 @@
     </div>
   </div>
 
+<!-- ////////////////////////配置集装箱信息//////////////////////////// -->
+
+ <div class="page-content none" id="setContainer_layer">
+      <div class="row">
+        <div class="col-xs-12">
+          <form class="form-horizontal" role="form">
+            <table id="sample-table-1" class="table table-striped table-bordered">
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="control-label pull-right">
+                      订单总体积：
+                    </label>
+                  </td>
+                  <td class="col-xs-7">
+                    <input type="text" id="form-field-1" class="col-xs-8" />
+                    <label class="control-label" for="form-field-1">
+                      立方米
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="control-label pull-right">
+                      20柜(20GP)：
+                    </label>
+                  </td>
+                  <td>
+                    <input id="mySpinner1" value="2" type="text" class="input-mini"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="control-label pull-right">
+                      40柜(40GP)：
+                    </label>
+                  </td>
+                  <td>
+                    <input id="mySpinner2" value="2" type="text" class="input-mini"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="control-label pull-right">
+                      40高柜(40HP)：
+                    </label>
+                  </td>
+                  <td>
+                    <input id="mySpinner3" value="2" type="text" class="input-mini"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="control-label pull-right">
+                      总体积：
+                    </label>
+                  </td>
+                  <td>
+                    <input type="text" id="form-field-1" class="col-xs-8" />
+                    <label class="control-label">
+                      立方米
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="col-xs-12">
+              <div class="col-xs-6 form-group">
+                <button class="btn btn-success pull-right" type="button" id="success">
+                  保存
+                </button>
+                <div class="col-xs-1">
+                </div>
+              </div>
+              <div class="col-xs-6 form-group">
+                <div class="col-xs-1">
+                </div>
+                <a class="btn pull-left" id="cancel" href="javascript:void(0)">
+                  关闭
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
 <script>
    ///////////////////弹出layer//////////////////
 
@@ -1132,15 +1219,39 @@
 
        //运费信息 配置集装箱
        $('#setContainerBtn').click(function(){
-       parent.layer.open({
-          type: 2,
+         //数字调节
+        $('#setContainer_layer').find('#mySpinner1,#mySpinner2,#mySpinner3').ace_spinner({
+          value:5,
+          min:-100,
+          max:100,
+          step:1,
+          on_sides: true,
+          icon_up:'ace-icon fa fa-plus smaller-75',
+          icon_down:'ace-icon fa fa-minus smaller-75',
+          btn_up_class:'btn-success' ,
+          btn_down_class:'btn-danger'
+        });
+
+
+
+         $('#setContainer_layer').find('#success').bind('click', function() {
+            layer.closeAll('page');
+          });
+         $('#setContainer_layer').find('#cancel').bind('click', function() {
+            layer.closeAll('page');
+          });
+
+       layer.open({
+          type: 1,
           title:'配置集装箱',
           offset:'200px',
           area: '800px',
-          fix: false, //不固定
-          maxmin: true,
           shadeClose: true,
-          content: 'nuckitpre_setContainer.html'
+          content: $('#setContainer_layer'),
+          success:function(){
+
+
+          }
         });
        });
 
@@ -1162,9 +1273,14 @@
 
 
 
+
+
+
    </script>
 
 <script src="../../assets/js/layer/layer.js"></script>
+<script src="../../assets/js/ace/elements.spinner.js"></script>
+<script src="../../assets/js/fuelux/fuelux.spinner.js"></script>
 
 </body>
 </html>
