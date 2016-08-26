@@ -2,13 +2,14 @@ define(function(require, exports, module) {
 
     require('jquery');
 
-    $(document).ready(function() {
+    // documentReady 执行 并提供对外的接口
+    var domReady = function() {
         var arr = JSON.parse($('input[name=searchFilter]').val());
 
         if(arr == '') return;
 
         // 根据用户信息展示
-        if(!arr[0].min){
+        if(arr[0].min == undefined){
             var index1 = arrIndexArea(arrObj1, arr[0]);
             if(arr.length > 1)
                 index2 = arrIndexArea(arrObj2, arr[1]);
@@ -32,14 +33,25 @@ define(function(require, exports, module) {
         } else {
             showObj3.hide();
         }
-        if(arr[2]) showObj3.show().find('a:eq(' + index3 + ')').addClass('current');
+        if(arr[2])
+            showObj3.show().find('a:eq(' + index3 + ')').trigger("click").addClass('current');
+    }
+
+    $(document).ready(function() {
+        domReady();
     });
+
+    module.exports.override = domReady;
+
     // 找到所属范围
     function arrIndexArea(obj, value){
         var temp;
         for(i in obj){
-            if(value > obj[i].min && value <= obj[i].max)
+            if(value > obj[i].min && !obj[i].max){
                 temp = i;
+            } else if(value > obj[i].min && value <= obj[i].max){
+                temp = i;
+            }
         }
         return temp;
     }
@@ -71,10 +83,12 @@ define(function(require, exports, module) {
 
         // 切换current类
         if($(this).hasClass("current")) {
-            $(this).toggleClass('current');
+            $(this).removeClass('current');
+            $('.leibie:eq(2)').hide();
         } else {
             $(this).parent().find('.current').removeClass('current');
             $(this).addClass('current');
+            $('.leibie:eq(2)').show();
         }
 
         $('.leibie:eq(2) .current').removeClass('current');
@@ -84,7 +98,6 @@ define(function(require, exports, module) {
         index2 = findIndex(arrObj2, index, max1);
         $('.leibie:eq(2) a').show();
         $('.leibie:eq(2) a:gt('+ index2 +')').hide();
-        $('.leibie:eq(2)').show();
 
         dataArr = [];
         if($(this).hasClass('current')) {
