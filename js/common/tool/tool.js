@@ -530,7 +530,7 @@ define(function (require, exports, module) {
     module.exports.validatePositiveInt = validatePositiveInt;
     module.exports.toDecimal2 = toDecimal2;
     module.exports.validateAllNum = validateAllNum;
-    module.exports.toKeepDecimal2 = toKeepDecimal2;
+    // module.exports.toKeepDecimal2 = toKeepDecimal2;
     module.exports.validateNumPointNum_plus = validateNumPointNum_plus;
     module.exports.EventHelper = EventHelper;
 
