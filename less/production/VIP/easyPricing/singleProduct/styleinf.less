@@ -1,4 +1,4 @@
-
+@import '../../../../sprite/VIP/easyPricing/sprite.less';
 @import '../../../../dev/mixins/mixins.less';
 
 .styleinfbox
@@ -6,11 +6,19 @@
     width: 814px;
     margin-top: 20px;
     padding: 10px 20px;
-
+    position: relative;
     background-color: #fff;
+   .NEW{
+      position: absolute;
+      right: 160px;
+      top: 0;
+      .sprite(@new);
+      .icon-VIP-easyPricing;
+
+    }
     .title_te
     {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 24px;
 
         color: #333;
@@ -25,7 +33,7 @@
         width: 96px;
         line-height: 30px;
         text-align: center;
-        font-size: 14px;
+        font-size: 16px;
 
         color: #3ca1d7;
         border: 1px solid #3ca1d7;
@@ -49,20 +57,10 @@
         color: #fff;
         background-color: #f8210c;
     }
-    .update{
-      font-size: 14px;
-      color: #fff;
-      margin-top: 10px;
-      background-color: #f48719;
-      width: 98px;
-      line-height: 30px;
-      .border-radius(3px);
-      display: block;
-      text-align: center;
-    }
+
     .inf_box
     {
-        margin-top: 6px;
+        margin-top: 12px;
         .con_box
         {
             font-size: 14px;
@@ -70,13 +68,17 @@
             border-right: #eeeeee 1px solid;
             li
             {
-                line-height: 22px;
+                line-height: 28px;
 
                 width: 31.3%;
                 padding-right: 2%;
                 span
                 {
-                    font-weight: bold;
+                    font-size: 16px;
+                    color: #333;
+                }
+                .or_color{
+                    color: #f79226;
                 }
             }
             .long_li

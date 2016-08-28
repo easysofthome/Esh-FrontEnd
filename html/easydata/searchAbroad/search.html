@@ -222,7 +222,9 @@
       <a class="lf btn" href="#" id="search">精准匹配</a>
       <a class="lf btn_00" href="#" id="reset">重新匹配</a>
     </div>
-    <div class="leibie_box" style="display: none;">
+    <div class="leibie_box none">
+      <!-- <input type="hidden" name="searchFilter" value='[{"min":100,"max":300},{"min":200,"max":300},{"min":10,"max":30}]' /> -->
+      <input type="hidden" name="searchFilter" value='[2500,400,300]' />
       <div class="leibie clearfix">
         <span class="lf leibie_tit">客户在中国采购该产品的总额：</span>
 
@@ -777,7 +779,7 @@
 <!-- 版权 -->
 @@include('easydata/footer2.html')
 <script>
-    seajs.use(['js/front/easydata/searchAbroad/search','js/front/easydata/searchAbroad/pagewalkthrough']);
+    seajs.use(['js/front/easydata/searchAbroad/search','js/front/easydata/common/searchFilter','js/front/easydata/searchAbroad/pagewalkthrough']);
   </script>
 
 </body>
