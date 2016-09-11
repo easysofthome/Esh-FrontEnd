@@ -32,8 +32,9 @@ littleLoading.prototype = {
 //私有方法
 littleLoading._private = {
   _processHTML : function(that){
+    //防止重复提交
     if(that.trim(that.$baseDIV.html()).length > 0){
-      _emptyHTML(that);
+      this._emptyHTML(that);
     }
     var $mainDIV = $('<div></div>');
     that.$baseDIV.append($mainDIV);
