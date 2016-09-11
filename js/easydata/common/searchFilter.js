@@ -4,9 +4,9 @@ define(function(require, exports, module) {
 
     // documentReady 执行 并提供对外的接口
     var domReady = function() {
-        var arr = JSON.parse($('input[name=searchFilter]').val());
-
-        if(arr == '') return;
+        var searchValue = $('input[name=searchFilter]').val().trim();
+        if(searchValue == '') return;
+        var arr = JSON.parse(searchValue);
 
         // 根据用户信息展示
         if(arr[0].min == undefined){
