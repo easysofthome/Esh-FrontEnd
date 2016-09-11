@@ -10,7 +10,7 @@ var littleLoading = function(option){
       'margin-top': '80px',
       'background': '#fff'
     },
-    'loadImgUrl':'/js/front/lib/loading/refresh.gif'
+    'loadImgUrl':'js/front/lib/loading/refresh.gif'
   }
   this.opts = $.extend(defOpt,option);
   this.$baseDIV = $(this.opts.select);
