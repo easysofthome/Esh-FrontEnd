@@ -21,7 +21,7 @@ littleLoading.prototype = {
     var that = this;
     littleLoading._private._processHTML(that);
   },
-  destory : function(){
+  destroy : function(){
     var that = this;
     littleLoading._private._emptyHTML(that);
   }
