@@ -40,7 +40,7 @@ littleLoading._private = {
     var $mainDIV = $('<div></div>');
     that.$baseDIV.append($mainDIV);
     $mainDIV.css(that.opts.loadCss);
-
+    (new Image()).src = '/js/front/lib/loading/refresh.gif';
     //$img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
     var img = new Image();
     img.src=that.opts.loadImgUrl;
