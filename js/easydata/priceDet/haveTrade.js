@@ -1,6 +1,7 @@
 define(function ( require, exports, module) {
 
   require('jquery');
+  var loadObj =  require('js/front/lib/Loading/littleLoading.js');
   // var col1 = $('#set-table1 .vertical li').length-1;
   // var col2 = $('#set-table1 .vert_data:first li').length-1;
   // var width = $('.pricechangesbox').width()-60;
@@ -13,6 +14,15 @@ define(function ( require, exports, module) {
   // $('#set-table1 .vert_data').each(function(index, el) {
   //   $(this).find('li:gt(0)').css('width',w2-2);
   // });
+var myloadObj = loadObj.init({
+      'select':'#dataBox'
+    });
+$('.btn_01').click(function(){
+  myloadObj.show();
+  setTimeout(function(){
+    myloadObj.destory();
+  },3000);
+});
 
 
 
