@@ -10,7 +10,7 @@ var littleLoading = function(option){
       'margin-top': '80px',
       'background': '#fff'
     },
-    'loadImgUrl':'js/front/lib/loading/refresh.gif'
+    'loadImgUrl':'/js/front/lib/loading/refresh.gif'
   }
   this.opts = $.extend(defOpt,option);
   this.$baseDIV = $(this.opts.select);
@@ -40,8 +40,9 @@ littleLoading._private = {
     var $mainDIV = $('<div></div>');
     that.$baseDIV.append($mainDIV);
     $mainDIV.css(that.opts.loadCss);
-    var $img = $('<img />');
-    $img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
+    var $img = $('<img src="'+ that.opts.loadImgUrl+'" />');
+    //$img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
+    $img.css({'margin':'auto'});
     $mainDIV.append($img).append("<br/>加载中......");
   },
   _emptyHTML : function(that){
