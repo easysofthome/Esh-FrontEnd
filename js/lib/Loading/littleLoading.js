@@ -40,10 +40,14 @@ littleLoading._private = {
     var $mainDIV = $('<div></div>');
     that.$baseDIV.append($mainDIV);
     $mainDIV.css(that.opts.loadCss);
-    var $img = $('<img src="'+ that.opts.loadImgUrl+'" />');
+
     //$img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
-    $img.css({'margin':'auto'});
-    $mainDIV.append($img).append("<br/>加载中......");
+    var img = new Image();
+    img.src=that.opts.loadImgUrl;
+   // var $img = $('<img src="'+ that.opts.loadImgUrl+'" />');
+   // $img.css({'margin':'auto'});
+   $(img).css({'margin':'auto'});
+    $mainDIV.append(img).append("<br/>加载中......");
   },
   _emptyHTML : function(that){
       that.$baseDIV.empty();
