@@ -19,7 +19,7 @@ var loadObj =  require('js/front/lib/Loading/littleLoading.js');
 //获取图片加载等待对象
 var myloadObj = loadObj.init({
       'select':'#dataBox'
-    });
+});
 //查询接口
 $('.btn_01').click(function(){
   //出现
@@ -29,9 +29,24 @@ $('.btn_01').click(function(){
      //消失
      myloadObj.destroy();
   }, 2000);
-
-
 });
+
+//获取图片加载等待对象
+var myloadObj2 = loadObj.init({
+      'select':'#dataBox2'
+});
+
+//查询接口
+$('.btn_b').click(function(){
+  //出现
+  myloadObj2.show();
+
+  setTimeout(function() {
+     //消失
+     myloadObj2.destroy();
+  }, 2000);
+});
+
 
 
 

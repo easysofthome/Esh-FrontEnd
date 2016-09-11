@@ -24,17 +24,23 @@ littleLoading.prototype = {
   destroy : function(){
     var that = this;
     littleLoading._private._emptyHTML(that);
-  }
+  },
+  trim : function(str){ //删除左右两端的空格
+　  return str.replace(/(^\s*)|(\s*$)/g, "");
+　}
 }
 //私有方法
 littleLoading._private = {
   _processHTML : function(that){
-      var $mainDIV = $('<div></div>');
-      that.$baseDIV.append($mainDIV);
-      $mainDIV.css(that.opts.loadCss);
-      var $img = $('<img />');
-      $img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
-      $mainDIV.append($img).append("<br/>加载中......");
+    if(that.trim(that.$baseDIV.html()).length > 0){
+      _emptyHTML(that);
+    }
+    var $mainDIV = $('<div></div>');
+    that.$baseDIV.append($mainDIV);
+    $mainDIV.css(that.opts.loadCss);
+    var $img = $('<img />');
+    $img.attr('src',that.opts.loadImgUrl).css({'margin':'auto'});
+    $mainDIV.append($img).append("<br/>加载中......");
   },
   _emptyHTML : function(that){
       that.$baseDIV.empty();
@@ -44,7 +50,6 @@ littleLoading._private = {
 var init = function(option){
   return new littleLoading(option);
 }
-
 module.exports.init = init;
 
 });
