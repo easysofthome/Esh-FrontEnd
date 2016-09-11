@@ -15,6 +15,7 @@ var littleLoading = function(option){
   this.opts = $.extend(defOpt,option);
   this.$baseDIV = $(this.opts.select);
 }
+
 //原型链方法
 littleLoading.prototype = {
   show : function(){
