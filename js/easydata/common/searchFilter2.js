@@ -2,46 +2,17 @@ define(function(require, exports, module) {
 
     require('jquery');
 
-    // documentReady 执行 并提供对外的接口
-    var domReady = function() {
-        var searchValue = $('input[name=searchFilter]').val().trim();
-        if(searchValue == '') return;
-        var arr = JSON.parse(searchValue);
+    var arrObj1 = [{min: false, max: 100 }, {min: 100, max: 300 }, {min: 300, max: 500 }, {min: 500, max: 1000 }, {min: 1000, max: 2000 }, {min: 2000, max: false } ];
+    var arrObj2 = [{min: false, max: 10 }, {min: 10, max: 50 }, {min: 50, max: 100 }, {min: 100, max: 200 }, {min: 200, max: false }];
+    var arrObj3 = [{min: false, max: 0.2 }, {min: 0.2, max: 0.5 }, {min: 0.5, max: 1 }, {min: 1, max: 5 }];
 
-        // 根据用户信息展示
-        if(arr[0].min == undefined){
-            var index1 = arrIndexArea(arrObj1, arr[0]);
-            if(arr.length > 1)
-                index2 = arrIndexArea(arrObj2, arr[1]);
-            if(arr.length > 2)
-                index3 = arrIndexArea(arrObj3, arr[2]);
-        } else {    // 用户搜索的结果
-            var index1 = arrIndex(arrObj1, arr[0]);
-            var index2 = '',index3 = '';
-            if(arr.length > 1)
-                index2 = arrIndex(arrObj2, arr[1]);
-            if(arr.length > 2)
-                index3 = arrIndex(arrObj3, arr[2]);
-        }
+    var dataArr = [];
 
-        var showObj1 = $('.leibie:eq(0)'),
-            showObj2 = $('.leibie:eq(2)'),
-            showObj3 = $('.leibie:eq(3)');
-        if(showObj1) showObj1.find('a:eq(' + index1 + ')').trigger("click").addClass('current');
-        if(arr[1]) {
-            showObj2.show().find('a:eq(' + index2 + ')').trigger("click").addClass('current');
-        } else {
-            showObj3.hide();
-        }
-        if(arr[2])
-            showObj3.show().find('a:eq(' + index3 + ')').trigger("click").addClass('current');
-    }
+    var max1 = '';   // 第一个列表中选中的最大值
+    var max2 = '';   // 第二个列表中选中的最大值
+    var index2, index3; // 能显示的最大索引
 
-    $(document).ready(function() {
-        domReady();
-    });
-
-    module.exports.override = domReady;
+    var index;          // 点击按钮的索引
 
     // 找到所属范围
     function arrIndexArea(obj, value){
@@ -65,18 +36,41 @@ define(function(require, exports, module) {
 
 
 
+    // 找到能显示的最大索引
+    function findIndex(obj,index,max) {
+        var data;
+        // 假如要搜索的是第二个对象
+        if(obj[0] == arrObj2[0]){
+            for(i in obj) {
+                if(obj[i].max <= max){
+                    if(obj[i].max == 0) {
+                        if(arrObj1[index].max > obj[i].min){
+                            data = i;
+                        }
+                    } else {
+                        data = i;
+                    }
+                }
+            }
+        // 假如要搜索的是第三个对象
+        } else if(obj[0] == arrObj3[0]) {
+            for(i in obj) {
+                if(obj[i].max <= max){
+                    if(obj[i].max == 0) {
+                        if(arrObj2[index].max > obj[i].min){
+                            data = i;
+                        }
+                    } else {
+                        data = i;
+                    }
+                }
+            }
+        }
+        return data;
+    }
+
 //////////////// 搜索条件过滤 ///////////////////////
-    var arrObj1 = [{min: false, max: 100 }, {min: 100, max: 300 }, {min: 300, max: 500 }, {min: 500, max: 1000 }, {min: 1000, max: 2000 }, {min: 2000, max: false } ];
-    var arrObj2 = [{min: false, max: 10 }, {min: 10, max: 50 }, {min: 50, max: 100 }, {min: 100, max: 200 }, {min: 200, max: false }];
-    var arrObj3 = [{min: false, max: 0.2 }, {min: 0.2, max: 0.5 }, {min: 0.5, max: 1 }, {min: 1, max: 5 }];
 
-    var dataArr = [];
-
-    var max1 = '';   // 第一个列表中选中的最大值
-    var max2 = '';   // 第二个列表中选中的最大值
-    var index2, index3; // 能显示的最大索引
-
-    var index;          // 点击按钮的索引
 
     $('.leibie_box').on('click', '.leibie:eq(0) a', function() {
         index = $(this).index();
@@ -154,38 +148,44 @@ define(function(require, exports, module) {
         $('input[name=searchFilter]').val(JSON.stringify(dataArr));
     });
 
+    // documentReady 执行 并提供对外的接口
+    var domReady = function() {
+        var searchValue = $.trim($('input[name=searchFilter]').val());
+        if(searchValue == '') return;
+        var arr = JSON.parse(searchValue);
 
-    // 找到能显示的最大索引
-    function findIndex(obj,index,max) {
-        var data;
-        // 假如要搜索的是第二个对象
-        if(obj[0] == arrObj2[0]){
-            for(i in obj) {
-                if(obj[i].max <= max){
-                    if(obj[i].max == 0) {
-                        if(arrObj1[index].max > obj[i].min){
-                            data = i;
-                        }
-                    } else {
-                        data = i;
-                    }
-                }
-            }
-        // 假如要搜索的是第三个对象
-        } else if(obj[0] == arrObj3[0]) {
-            for(i in obj) {
-                if(obj[i].max <= max){
-                    if(obj[i].max == 0) {
-                        if(arrObj2[index].max > obj[i].min){
-                            data = i;
-                        }
-                    } else {
-                        data = i;
-                    }
-                }
-            }
+        // 根据用户信息展示
+        if(arr[0].min == undefined){
+            var index1 = arrIndexArea(arrObj1, arr[0]);
+            if(arr.length > 1)
+                index2 = arrIndexArea(arrObj2, arr[1]);
+            if(arr.length > 2)
+                index3 = arrIndexArea(arrObj3, arr[2]);
+        } else {    // 用户搜索的结果
+            var index1 = arrIndex(arrObj1, arr[0]);
+            var index2 = '',index3 = '';
+            if(arr.length > 1)
+                index2 = arrIndex(arrObj2, arr[1]);
+            if(arr.length > 2)
+                index3 = arrIndex(arrObj3, arr[2]);
         }
-        return data;
+
+        var showObj1 = $('.leibie:eq(0)'),
+            showObj2 = $('.leibie:eq(2)'),
+            showObj3 = $('.leibie:eq(3)');
+        if(showObj1) showObj1.find('a:eq(' + index1 + ')').trigger("click").addClass('current');
+        if(arr[1]) {
+            showObj2.show().find('a:eq(' + index2 + ')').trigger("click").addClass('current');
+        } else {
+            showObj3.hide();
+        }
+        if(arr[2])
+            showObj3.show().find('a:eq(' + index3 + ')').trigger("click").addClass('current');
     }
 
+    $(document).ready(function() {
+        domReady();
+    });
+
+    module.exports.override = domReady;
 });

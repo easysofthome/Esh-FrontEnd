@@ -16,12 +16,12 @@ define(function (require, exports, module) {
   });
   //搜索按钮
   $('#search').on('click', function() {
-    if($('#sel-country>input').val().trim() == ''){
+    if($.trim($('#sel-country>input').val()) == ''){
       alert("请选择国家");
       $('#sel-country>input').focus();
       $('#sel-country .sel-country').show();
       return;
-    }else if($('#sel-pro>input').val().trim() == ''){
+    }else if($.trim($('#sel-pro>input').val()) == ''){
       alert("请选择产品");
       $('#sel-pro>input').focus();
       $('#sel-pro .sel-pro').show();
@@ -72,7 +72,7 @@ define(function (require, exports, module) {
   function showLabel(){
     portTemp = $('[name=port]').val();
     if(!portTemp) return;
-    if(portTemp.trim() == ''){
+    if($.trim(portTemp) == ''){
       $('.port-tag-box').html('请输入港口名称');
     } else {
       portArray = portTemp.split(',');
