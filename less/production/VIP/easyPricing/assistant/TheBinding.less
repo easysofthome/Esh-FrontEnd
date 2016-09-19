@@ -91,14 +91,14 @@
       border: 1px solid #EEE;
     }
     th{
-      background-color:#4a7bc4;
+      background-color:#f7f7f7;
       font-weight:normal;
       font-size:14px;
-      color:#FFF;
+      color:#333;
     }
-    tr:nth-child(odd){
-      background-color: #F4F4F4;
-    }
+    // tr:nth-child(odd){
+    //   background-color: #F4F4F4;
+    // }
     td{
       .btn-save{
         display: inline-block;
@@ -121,6 +121,27 @@
         color: #ccc;
         margin: 0 5px;
         .border-radius(4px);
+      }
+
+      .access_butt{
+        display: block;
+        width: 80px;
+        line-height: 24px;
+        border:1px solid #dddddd;
+        height: 24px;
+        background-color:#f7f7f7;
+        color:#333333;
+        margin:5px auto;
+      }
+      .confirm_bule{
+          margin:6px 4px 0 16px;
+          .sprite(@confirm_bule);
+          .icon-VIP-easyPricing-assistant;
+      }
+      .confirm_white{
+        margin:6px 4px 0 16px;
+        .sprite(@confirm_white);
+        .icon-VIP-easyPricing-assistant;
       }
     }
     .name{
