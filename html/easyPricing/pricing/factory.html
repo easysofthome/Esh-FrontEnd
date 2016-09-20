@@ -163,574 +163,121 @@
     </div>
 
     <!-- 排序 -->
-  <div class="sortbox clearfix">
-    <div class="lf sort clearfix">
-      <p class="tit lf">排序：</p>
-      <div class="content lf clearfix">
-        <a class="cur clearfix lf" href="#">
-          <span class="lf">默认排序</span>
-          <i class="lf"></i>
-        </a>
-        <a class="sort_ablue clearfix lf" href="#">
-          <span class="lf">报价日期</span>
-          <i class="lf"></i>
-        </a>
-        <a class="sort_ablue clearfix lf" href="#">
-          <span class="lf">价格</span>
-          <i class="lf"></i>
-        </a>
-      </div>
-      <div class="lf int_430" id="sel-pro">
-        <span class="lf">地区：</span>
-        <input type="text" value="全国" class="dropdownInput"/>
-        <span class="input-tri"></span>
-        <div class="sel-pro">
-              <div class="level2">
-                <ul>
-                  <!--
-              has-child:有子节点，加<i></i>
-                final最后一个节点
-            -->
-                <li>
-                  <div class="level3-tit final" data-id="">全国</div>
-                </li>
-                <li>
-                  <div class="level3-tit final" data-id="">北京</div>
-                </li>
-                 <li>
-                  <div class="level3-tit final" data-id="">天津</div>
-                </li>
-                 <li>
-                  <div class="level3-tit final" data-id="">上海</div>
-                </li>
-                 <li>
-                  <div class="level3-tit final" data-id="">重庆</div>
-                </li>
+    <div class="sortbox clearfix">
+      <div class="lf sort clearfix">
+        <p class="tit lf">排序：</p>
+        <div class="content lf clearfix">
+          <a class="cur clearfix lf" href="#">
+            <span class="lf">默认排序</span>
+            <i class="lf"></i>
+          </a>
+          <a class="sort_ablue clearfix lf" href="#">
+            <span class="lf">报价日期</span>
+            <i class="lf"></i>
+          </a>
+          <a class="sort_ablue clearfix lf" href="#">
+            <span class="lf">价格</span>
+            <i class="lf"></i>
+          </a>
+        </div>
+        <div class="lf int_430" id="sel-pro">
+          <span class="lf">地区：</span>
+          <div class="int_430 lf" id="selCity" >
+
+            <input type="text" class="dropdownInput" placeholder="请选择地区"/>
+            <span class="input-tri"></span>
+            <div class="pop-up">
+              <ul class="zxcities clearfix">
+                <li class="item qg" data-id="0"><span>全国</span></li>
+                <li class="item zx" data-id="1"><span>北京</span></li>
+                <li class="item zx" data-id="9"><span>上海</span></li>
+                <li class="item zx" data-id="22"><span>重庆</span></li>
+                <li class="item zx" data-id="2"><span>天津</span></li>
               </ul>
-              <ul>
-              <li>
-                  <div class="level3-tit has-child">
-                    河北<i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final" data-id="">全部</span>
-                    <span class="final" data-id="">石家庄</span>
-                    <span class="final" data-id="">唐山市</span>
-                    <span class="final">邯郸市</span>
-                    <span class="final">邢台市</span>
-                    <span class="final">秦皇岛市</span>
-                    <span class="final">张家口市</span>
-                  </div>
+              <ul class="provinces clearfix">
+                <li class="item province" data-id="3"><span>河北</span></li>
+                <li class="item province" data-id="4"><span>山西</span></li>
+                <li class="item province" data-id="5"><span>内蒙古</span></li>
+                <li class="item province" data-id="6"><span>辽宁</span></li>
+                <li class="item province" data-id="7"><span>吉林</span></li>
+                <li class="item province" data-id="8"><span>黑龙江</span></li>
+
+                <li class="sub-items lf">
+                  <ul class="clearfix none">
+                    <li class="item" data-id="3" data-pid="3"><span>全部</span></li><li class="item" data-id="37" data-pid="3"><span>石家庄市</span></li><li class="item" data-id="38" data-pid="3"><span>唐山市</span></li><li class="item" data-id="39" data-pid="3"><span>秦皇岛市</span></li><li class="item" data-id="40" data-pid="3"><span>邯郸市</span></li><li class="item" data-id="41" data-pid="3"><span>邢台市</span></li><li class="item" data-id="42" data-pid="3"><span>保定市</span></li><li class="item" data-id="43" data-pid="3"><span>张家口市</span></li><li class="item" data-id="44" data-pid="3"><span>承德市</span></li><li class="item" data-id="45" data-pid="3"><span>沧州市</span></li><li class="item" data-id="46" data-pid="3"><span>廊坊市</span></li><li class="item" data-id="47" data-pid="3"><span>衡水市</span></li>
+                  </ul>
+                  <ul class="clearfix none">
+                    <li class="item" data-id="4" data-pid="4"><span>全部</span></li><li class="item" data-id="48" data-pid="4"><span>太原市</span></li><li class="item" data-id="49" data-pid="4"><span>大同市</span></li><li class="item" data-id="50" data-pid="4"><span>阳泉市</span></li><li class="item" data-id="51" data-pid="4"><span>长治市</span></li><li class="item" data-id="52" data-pid="4"><span>晋城市</span></li><li class="item" data-id="53" data-pid="4"><span>朔州市</span></li><li class="item" data-id="54" data-pid="4"><span>晋中市</span></li><li class="item" data-id="55" data-pid="4"><span>运城市</span></li><li class="item" data-id="56" data-pid="4"><span>忻州市</span></li><li class="item" data-id="57" data-pid="4"><span>临汾市</span></li><li class="item" data-id="58" data-pid="4"><span>吕梁市</span></li>
+                  </ul>
                 </li>
-                <li>
-                  <div class="level3-tit has-child">山西<i></i></div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">太原市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                    <span class="final">大同市</span>
-                  </div>
+
+                <li class="item province" data-id="10"><span>江苏</span></li>
+                <li class="item province" data-id="11"><span>浙江</span></li>
+                <li class="item province" data-id="12"><span>安徽</span></li>
+                <li class="item province" data-id="13"><span>福建</span></li>
+                <li class="item province" data-id="14"><span>江西</span></li>
+                <li class="item province" data-id="15"><span>山东</span></li>
+
+                <li class="sub-items lf">
+                  <ul></ul>
                 </li>
-                <li>
-                  <div class="level3-tit has-child">内蒙古<i></i></div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">呼和浩特市</span>
-                    <span class="final">包头市</span>
-                    <span class="final">乌海市</span>
-                    <span class="final">赤峰市</span>
-                    <span class="final">赤峰市</span>
-                    <span class="final">赤峰市</span>
-                    <span class="final">赤峰市</span>
-                  </div>
+
+                <li class="item province" data-id="16"><span>河南</span></li>
+                <li class="item province" data-id="17"><span>湖北</span></li>
+                <li class="item province" data-id="18"><span>湖南</span></li>
+                <li class="item province" data-id="19"><span>广东</span></li>
+                <li class="item province" data-id="20"><span>广西</span></li>
+                <li class="item province" data-id="21"><span>海南</span></li>
+
+                <li class="sub-items lf">
+                  <ul></ul>
                 </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    辽宁
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">沈阳市</span>
-                    <span class="final">大连市</span>
-                    <span class="final">沈阳市</span>
-                    <span class="final">大连市</span>
-                    <span class="final">沈阳市</span>
-                    <span class="final">大连市</span>
-                    <span class="final">沈阳市</span>
-                    <span class="final">大连市</span>
-                    <span class="final">沈阳市</span>
-                    <span class="final">大连市</span>
-                  </div>
+
+                <li class="item province" data-id="23"><span>四川</span></li>
+                <li class="item province" data-id="24"><span>贵州</span></li>
+                <li class="item province" data-id="25"><span>云南</span></li>
+                <li class="item province" data-id="26"><span>西藏</span></li>
+                <li class="item province" data-id="27"><span>陕西</span></li>
+                <li class="item province" data-id="28"><span>甘肃</span></li>
+
+                <li class="sub-items lf">
+                  <ul></ul>
                 </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                 <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="level3-tit has-child">
-                    吉林
-                    <i></i>
-                  </div>
-                  <div class="level3">
-                    <span class="final">全部</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                    <span class="final">长春市</span>
-                    <span class="final">辽源市</span>
-                  </div>
+
+                <li class="item province" data-id="29"><span>青海</span></li>
+                <li class="item province" data-id="30"><span>宁夏</span></li>
+                <li class="item province" data-id="31"><span>新疆</span></li>
+                <li class="item province" data-id="32"><span>台湾</span></li>
+                <li class="item province" data-id="33"><span>香港</span></li>
+                <li class="item province" data-id="34"><span>澳门</span></li>
+
+                <li class="sub-items lf">
+                  <ul></ul>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
 
-    <div class="rg intbox">
-      <input class="int lf" type="text" placeholder="请输入工厂名称" />
-      <i class="lf"></i>
+      <div class="lf intbox">
+        <input class="int lf" type="text" placeholder="请输入工厂名称" />
+        <i class="lf"></i>
+      </div>
     </div>
-  </div>
 
     <!-- 表格 -->
     <div class="tabbox">@@include('easyPricing/Pop-ups/factory.html')</div>
 
     @@include('easyPricing/common/next2.html')
   </div>
-  <script src="/js/seajs/sea-debug.js"></script>
-  <script src="/js/seajs/seajs-css.js"></script>
-  <script src="/js/rootConfig.js"></script>
-  <script src="/js/front/lib/jquery/jquery.js"></script>
-  <script>
-  seajs.use(['js/front/common/dropDownPanel/dropDownPanel'],function(o){
-    //测试 选择地区后执行回调函数 返回点击的对象
-    o.callback=function(e){
-      alert('当前点击对象为：  '+$(e).text());
-    }
-  });
-  </script>
-  <script>
-    var index = parent.layer.getFrameIndex(window.name);
-    $('.close,.btn_close').click(function(){
-      parent.layer.close(index);
-    });
-  </script>
+    <script src="/js/seajs/sea-debug.js"></script>
+    <script src="/js/seajs/seajs-css.js"></script>
+    <script src="/js/rootConfig.js"></script>
+    <script src="/js/front/lib/jquery/jquery.js"></script>
+    <script>
+      seajs.use(['jquery','js/front/easydata/common/selCity']);
+    </script>
 </body>
 </html>

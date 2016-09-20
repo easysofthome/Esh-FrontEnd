@@ -7,9 +7,12 @@ define(function(require, exports, module) {
         $('input[name=yarnTypeNum]').on('change', function() {
             var index = $(this).parent().index();
             if(index){
-                $('.spinner,.yarndensity_box').show();
+                $('.spinner,.singleWarpWeft').hide();
+                $('.spinner,.multiWarpWeft').show();
             } else {
-                $('.spinner,.yarndensity_box').hide();
+                $('.spinner,.singleWarpWeft').show();
+                $('.spinner,.multiWarpWeft').hide();
+
             }
         })
 
@@ -75,7 +78,7 @@ define(function(require, exports, module) {
                 + '</div>'
                 + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
                 + '</li>');
-                $('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
+                $('.multiWarpWeft').find('.fixed-input-tip').eq(0).before('<span class="plus lf"></span>'
                 + '<input type="text" id="warpSpinnerNum2" name="FabricYarnsChaine['+ warpNum +'].DensityLength" class="density_input lf">'
             );
         },
@@ -112,7 +115,7 @@ define(function(require, exports, module) {
               + '</div>'
               + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
               + '</li>');
-            $('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
+            $('.multiWarpWeft').find('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
               + '<input type="text" id="abbSpinnerNum'+ (warpNum+1) +'" name="FabricYarns['+ warpNum +'].DensityLength" class="density_input lf">');
             warpNum++;
         },

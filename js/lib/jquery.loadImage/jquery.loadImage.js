@@ -213,8 +213,8 @@ jQuery.fn.LoadImage=function(option){
     if(img.complete){
       hideLoadingImg();
       t.attr("src",img.src);
-      if(callback){
-        callback(t);
+      if(opts.callback){
+        opts.callback(t);
       }
       return;
     }
