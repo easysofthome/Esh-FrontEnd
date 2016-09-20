@@ -40,7 +40,6 @@ littleLoading._private = {
     var $mainDIV = $('<div></div>');
     that.$baseDIV.append($mainDIV);
     $mainDIV.css(that.opts.loadCss);
-    (new Image()).src = 'js/front/lib/loading/refresh.gif';
     var $img = $('<img src="'+ that.opts.loadImgUrl+'" />');
     $img.css({'margin':'auto'});
     $mainDIV.append($img).append("<br/>加载中......");
