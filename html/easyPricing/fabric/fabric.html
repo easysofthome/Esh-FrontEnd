@@ -7,6 +7,8 @@
   <link href="/css/production/easyPricing/fabric/fabric.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/pricing/popup.css" rel="stylesheet" type="text/css"/>
   <link href="/css/production/easyPricing/Pop-ups/result.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/fabric/userinf.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/production/easyPricing/fabric/factory.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -22,7 +24,7 @@
   @@include('easyPricing/fabric/fabrictitle.html')
   <div class="mainbox">
     <div class="fabricbox">
-      <form action="/html/easyPricing/pricing/result.html" id="fabricForm" method="post">
+      <form id="fabricForm" method="post">
         <div class="fabric_con">
         <!-- 用户引导 第一步 -->
           <div id="hLight_step1">
@@ -56,7 +58,7 @@
           <div class="clearfix data_frm">
             <div>
               <span class="lf title_name">面料门幅：</span>
-              <input type="text" id="fabricWidth" name="FabricWidth" class="lf fabric_width">
+              <input type="text" id="fabricWidth" value="1" name="FabricWidth" class="lf fabric_width">
               <select class="lf handle_mag sel2">
                 <option value="">厘米</option>
                 <option value="">分米</option>
@@ -97,7 +99,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">经密：</div>
                   <div class="lf">
-                    <input type="text" name="FabricYarns[0].DensityLength" class="density_input lf">
+                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleWarpSpinnerNum1" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
                   </div>
                 </div>
@@ -171,7 +173,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">纬密：</div>
                   <div class="lf">
-                    <input type="text" name="FabricYarns[0].DensityLength" class="density_input lf">
+                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleabbSpinnerNum1" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的纬密。</span>
                   </div>
               </div>
@@ -466,13 +468,13 @@
               <option value="">英镑汇率</option>
               <option value="">韩币汇率</option>
             </select>
-            <input type="text" name="" id="exchangeRate" errorMsgPosition="right" class="fabric_money">
+            <input type="text" name="" id="exchangeRate" value="1" errorMsgPosition="right" class="fabric_money">
           </div>
-          <div class="clearfix rad_frm">
+          <div id="" class="clearfix rad_frm">
             <span class="lf title_name">核价方式：</span>
-            <div class="lf Single_box">
+            <div id="priceType" class="lf Single_box">
               <label class="lf radio_rg label_radio">
-                <input name="Fruit8" id="easySoftHomePrice_rad" checked="checked" type="radio" class="lf radio_post" />
+                <input name="Fruit8" id="direct_rad" checked="checked" type="radio" class="lf radio_post" />
                 <span class="lf"><a href="/html/easyPricing/fabric/procurement.html">直接采购成品面料</a></span>
               </label>
               <label class="lf radio_rg label_radio">
@@ -491,13 +493,371 @@
           </div>
 
           <div class="clearfix butt_box">
-            <a href="javascript:history.back();" class="lf butt_pricing">返回</a>
-            <div class="rg butt_return" id="startPrice" data-href="/html/easyPricing/pricing/result.html">下一步</div>
+            <a href="javascript:history.back();" class="lf butt_return">返回</a>
+            <a href="javascript:void(0);" id="startPrice" data-href="/html/easyPricing/pricing/result.html" class="lf butt_pricing">下一步</a>
           </div>
         </div>
        </div>
       </form>
     </div>
+    <!--------------------- 核价页面 start ---------------------->
+    <!-- 您要核价的面料参数 -->
+    <div class="pricePart">
+      <div id="fabricParam" class="user_box none">
+        <div class="clearfix tit_box">
+          <span class="lf tit_cla">您要核价的面料参数</span>
+          <!--       <a href="#" class="rg tit_butt">修改</a> -->
+        </div>
+        <ul class="clearfix inf_box">
+          <li class="lf">
+            起订量 :
+            &nbsp;
+            <span class="inf_data">0-1999米</span>
+          </li>
+          <li class="lf">
+            织造种类 :
+            &nbsp;
+            <span class="inf_data">提花布</span>
+          </li>
+          <li class="lf">
+            面料门幅 :
+            &nbsp;
+            <span class="inf_data">120厘米</span>
+          </li>
+          <li class="lf">
+            纱线种类数量 :
+            &nbsp;
+            <span class="inf_data">2经2纬</span>
+          </li>
+          <li class="lf">
+            经纬密 :
+            &nbsp;
+            <span class="inf_data">2+2*2+2</span>
+          </li>
+          <li class="yarntype_box lf">
+            <div class="clearfix yarn_para">
+              <span class="lf para_tit">经纱1</span>
+              <div class="lf para_words">
+                <p class="lf inf_data">成分：全棉纱</p>
+                <p class="lf inf_data">粗细：60S</p>
+                <p class="lf inf_data">股线：1</p>
+                <p class="lf inf_data">成分比：-</p>
+              </div>
+            </div>
+
+            <div class="clearfix yarn_para">
+              <span class="lf para_tit">经纱2</span>
+              <div class="lf para_words">
+                <p class="lf inf_data">成分：全棉纱</p>
+                <p class="lf inf_data">粗细：60S</p>
+                <p class="lf inf_data">股线：1</p>
+                <p class="lf inf_data">成分比：-</p>
+              </div>
+            </div>
+
+            <div class="clearfix yarn_para">
+              <span class="lf para_tit">纬纱1</span>
+              <div class="lf para_words">
+                <p class="lf inf_data">成分：全棉纱</p>
+                <p class="lf inf_data">粗细：60S</p>
+                <p class="lf inf_data">股线：1</p>
+                <p class="lf inf_data">成分比：-</p>
+              </div>
+            </div>
+
+            <div class="clearfix yarn_para">
+              <span class="lf para_tit">纬纱2</span>
+              <div class="lf para_words">
+                <p class="lf inf_data">成分：全棉纱</p>
+                <p class="lf inf_data">粗细：60S</p>
+                <p class="lf inf_data">股线：1</p>
+                <p class="lf inf_data">成分比：-</p>
+              </div>
+            </div>
+          </li>
+          <li class="lf">
+            染织方式 :
+            &nbsp;
+            <span class="inf_data">印花</span>
+          </li>
+          <li class="lf">
+            染料要求 :
+            &nbsp;
+            <span class="inf_data">染料印花</span>
+          </li>
+          <li class="lf">
+            工艺要求 :
+            &nbsp;
+            <span class="inf_data">平网印花</span>
+          </li>
+          </li>
+          <li class="lf">
+            色牢度等级 :
+            &nbsp;
+            <span class="inf_data">色牢三级</span>
+          </li>
+          <li class="lf log_li">
+            染厂后处理 :
+            &nbsp;
+            <span class="inf_data">抗菌处理</span>
+          </li>
+          <li class="lf log_li">
+            其他后处理 :
+            &nbsp;
+            <span class="inf_data">轧光</span>
+          </li>
+        </ul>
+
+      </div>
+      <!-- 与您匹配的面料供应商 -->
+      <div id="matFactoryList" class="factory-box none">
+        <div class="tit_box">
+          <span class="tit_cla">与您匹配的面料供应商</span>
+        </div>
+        <div class="sortbox clearfix">
+          <div class="lf sort clearfix">
+            <p class="tit_s lf">排序：</p>
+            <div class="content lf clearfix">
+              <a class="cur clearfix lf" href="#">
+                <span class="lf">默认排序</span> <i class="lf"></i>
+              </a>
+              <a class="sort_ablue clearfix lf" href="#">
+                <span class="lf">报价日期</span> <i class="lf"></i>
+              </a>
+              <a class="sort_ablue clearfix lf" href="#">
+                <span class="lf">价格</span>
+                <i class="lf"></i>
+              </a>
+            </div>
+            <span class="lf">地区：</span>
+            <div class="int_430 lf" id="selCity" >
+
+              <input type="text" class="dropdownInput" placeholder="请选择地区"/>
+              <span class="input-tri"></span>
+              <div class="pop-up">
+                <ul class="zxcities clearfix">
+                  <li class="item qg" data-id="0"><span>全国</span></li>
+                  <li class="item zx" data-id="1"><span>北京</span></li>
+                  <li class="item zx" data-id="9"><span>上海</span></li>
+                  <li class="item zx" data-id="22"><span>重庆</span></li>
+                  <li class="item zx" data-id="2"><span>天津</span></li>
+                </ul>
+                <ul class="provinces clearfix">
+                  <li class="item province" data-id="3"><span>河北</span></li>
+                  <li class="item province" data-id="4"><span>山西</span></li>
+                  <li class="item province" data-id="5"><span>内蒙古</span></li>
+                  <li class="item province" data-id="6"><span>辽宁</span></li>
+                  <li class="item province" data-id="7"><span>吉林</span></li>
+                  <li class="item province" data-id="8"><span>黑龙江</span></li>
+
+                  <li class="sub-items lf">
+                    <ul class="clearfix none">
+                      <li class="item" data-id="3" data-pid="3"><span>全部</span></li><li class="item" data-id="37" data-pid="3"><span>石家庄市</span></li><li class="item" data-id="38" data-pid="3"><span>唐山市</span></li><li class="item" data-id="39" data-pid="3"><span>秦皇岛市</span></li><li class="item" data-id="40" data-pid="3"><span>邯郸市</span></li><li class="item" data-id="41" data-pid="3"><span>邢台市</span></li><li class="item" data-id="42" data-pid="3"><span>保定市</span></li><li class="item" data-id="43" data-pid="3"><span>张家口市</span></li><li class="item" data-id="44" data-pid="3"><span>承德市</span></li><li class="item" data-id="45" data-pid="3"><span>沧州市</span></li><li class="item" data-id="46" data-pid="3"><span>廊坊市</span></li><li class="item" data-id="47" data-pid="3"><span>衡水市</span></li>
+                    </ul>
+                    <ul class="clearfix none">
+                      <li class="item" data-id="4" data-pid="4"><span>全部</span></li><li class="item" data-id="48" data-pid="4"><span>太原市</span></li><li class="item" data-id="49" data-pid="4"><span>大同市</span></li><li class="item" data-id="50" data-pid="4"><span>阳泉市</span></li><li class="item" data-id="51" data-pid="4"><span>长治市</span></li><li class="item" data-id="52" data-pid="4"><span>晋城市</span></li><li class="item" data-id="53" data-pid="4"><span>朔州市</span></li><li class="item" data-id="54" data-pid="4"><span>晋中市</span></li><li class="item" data-id="55" data-pid="4"><span>运城市</span></li><li class="item" data-id="56" data-pid="4"><span>忻州市</span></li><li class="item" data-id="57" data-pid="4"><span>临汾市</span></li><li class="item" data-id="58" data-pid="4"><span>吕梁市</span></li>
+                    </ul>
+                  </li>
+
+                  <li class="item province" data-id="10"><span>江苏</span></li>
+                  <li class="item province" data-id="11"><span>浙江</span></li>
+                  <li class="item province" data-id="12"><span>安徽</span></li>
+                  <li class="item province" data-id="13"><span>福建</span></li>
+                  <li class="item province" data-id="14"><span>江西</span></li>
+                  <li class="item province" data-id="15"><span>山东</span></li>
+
+                  <li class="sub-items lf">
+                    <ul></ul>
+                  </li>
+
+                  <li class="item province" data-id="16"><span>河南</span></li>
+                  <li class="item province" data-id="17"><span>湖北</span></li>
+                  <li class="item province" data-id="18"><span>湖南</span></li>
+                  <li class="item province" data-id="19"><span>广东</span></li>
+                  <li class="item province" data-id="20"><span>广西</span></li>
+                  <li class="item province" data-id="21"><span>海南</span></li>
+
+                  <li class="sub-items lf">
+                    <ul></ul>
+                  </li>
+
+                  <li class="item province" data-id="23"><span>四川</span></li>
+                  <li class="item province" data-id="24"><span>贵州</span></li>
+                  <li class="item province" data-id="25"><span>云南</span></li>
+                  <li class="item province" data-id="26"><span>西藏</span></li>
+                  <li class="item province" data-id="27"><span>陕西</span></li>
+                  <li class="item province" data-id="28"><span>甘肃</span></li>
+
+                  <li class="sub-items lf">
+                    <ul></ul>
+                  </li>
+
+                  <li class="item province" data-id="29"><span>青海</span></li>
+                  <li class="item province" data-id="30"><span>宁夏</span></li>
+                  <li class="item province" data-id="31"><span>新疆</span></li>
+                  <li class="item province" data-id="32"><span>台湾</span></li>
+                  <li class="item province" data-id="33"><span>香港</span></li>
+                  <li class="item province" data-id="34"><span>澳门</span></li>
+
+                  <li class="sub-items lf">
+                    <ul></ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf intbox">
+            <input class="int lf" type="text" placeholder="请输入工厂名称" />
+            <i class="lf"></i>
+          </div>
+        </div>
+        <table cellspacing="0" cellpadding="0" class="tab-box">
+          <tr>
+            <th class="name">工厂名称</th>
+            <th class="region">地区</th>
+            <th class="price">报价（元/米）</th>
+            <th>报价日期</th>
+            <th class="operation">收藏询价</th>
+          </tr>
+          <tr>
+            <td>成品面料供应商A</td>
+            <td>杭州</td>
+            <td class="Price_color">0.17</td>
+            <td>2016-6-30</td>
+            <td>
+              <a class="btn-save" href="#">确定</a>
+            </td>
+          </tr>
+          <tr>
+            <td>成品面料供应商B</td>
+            <td>杭州</td>
+            <td class="Price_color">0.17</td>
+            <td>2016-6-30</td>
+            <td>
+              <a class="btn-save" href="#">确定</a>
+            </td>
+          </tr>
+          <tr>
+            <td>成品面料供应商C</td>
+            <td>杭州</td>
+            <td class="Price_color">0.17</td>
+            <td>2016-6-30</td>
+            <td>
+              <a class="btn-save" href="#">确定</a>
+            </td>
+          </tr>
+          <tr>
+            <td>成品面料供应商D</td>
+            <td>杭州</td>
+            <td class="Price_color">0.17</td>
+            <td>2016-6-30</td>
+            <td>
+              <a class="btn-save" href="#">确定</a>
+            </td>
+          </tr>
+          <tr>
+            <td>成品面料供应商E</td>
+            <td>杭州</td>
+            <td class="Price_color">0.17</td>
+            <td>2016-6-30</td>
+            <td>
+              <a class="btn-save" href="#">确定</a>
+            </td>
+          </tr>
+        </table>
+        @@include('easyPricing/common/next.html')
+        <div class="butt_box">
+          <a href=javascript:void(0) class="lf butt_return">返回</a>
+        </div>
+      </div>
+
+      <!-- 请选择各环节的工厂报价 -->
+      <div id="selFactoryPrice" class="factory-box none">
+        <div class="tit_box">
+          <span class="tit_cla">请选择各环节的工厂报价</span>
+        </div>
+
+        <table cellspacing="0" cellpadding="0" class="tab-box">
+          <tr>
+            <td class="name">可做坯布的工厂</td>
+            <td></td>
+            <td class="operation">
+              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
+            </td>
+          </tr>
+          <tr>
+            <td>染色工厂</td>
+            <td></td>
+            <td>
+              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
+            </td>
+          </tr>
+          <tr>
+            <td>涂层、轧花等其他后处理工厂</td>
+            <td></td>
+            <td>
+              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
+            </td>
+          </tr>
+        </table>
+        <div class="butt_box">
+          <a href="javascript:void(0)" class="lf butt_return">返回</a>
+          <a href="javascript:void(0)" class="lf butt_pricing">下一步</a>
+        </div>
+      </div>
+      <!-- 询价结果 -->
+      <div id="priceRet" class="user_box none">
+        <div class="clearfix tit_box">
+          <span class="lf tit_cla">您的询价结果</span>
+        </div>
+        <ul class="clearfix inf_box">
+          <li class="lf">
+            织物密度 :
+            &nbsp;
+            <span class="inf_data">20T/INCH</span>
+          </li>
+          <li class="lf">
+            面料克重 :
+            &nbsp;
+            <span class="inf_data">25克/平方米</span>
+          </li>
+          <li class="lf">
+            面料成分 :
+            &nbsp;
+            <span class="inf_data">棉82%　涤纶18%</span>
+          </li>
+          <li class="lf">
+            染厂后处理 :
+            &nbsp;
+            <span class="inf_data">抗菌处理</span>
+          </li>
+          <li class="lf">
+            其他后处理 :
+            &nbsp;
+            <span class="inf_data">轧光</span>
+          </li>
+        </ul>
+        <ul class="clearfix inf_box">
+          <li class="lf">
+            面料价格（人民币） :
+            &nbsp;
+            <span class="inf_data text_color">7.95</span>元/每米
+          </li>
+          <li class="lf">
+            面料价格（美元） :
+            &nbsp;
+            <span class="inf_data text_color">1.09</span>元/每米
+          </li>
+        </ul>
+        <div class="butt_box">
+          <a href="/html/easyPricing/fabric/fabric.html" class="lf butt_return">返回</a>
+          <a class="lf butt_pricing">收藏核价结果</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--------------------- 核价页面 end ---------------------->
   </div>
   <!--引导层-->
   <div id="walkthrough">

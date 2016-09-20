@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
     var fabric = require('js/front/common/module/fabric');
-
+    var pricing = require('js/front/easyPricing/fabric/pricing'); //核价功能
+    var pricingObj = pricing.init();
     $(document).ready(function(){
 
         // 单经单纬却换
@@ -12,7 +13,6 @@ define(function(require, exports, module) {
             } else {
                 $('.spinner,.singleWarpWeft').show();
                 $('.spinner,.multiWarpWeft').hide();
-
             }
         })
 
@@ -213,6 +213,14 @@ define(function(require, exports, module) {
             number: true,
             maxlength:10,
             gt:0
+        },
+        singleWarpSpinnerNum1: {
+            required: true,
+            number:true
+        },
+        singleabbSpinnerNum1: {
+            required: true,
+            number:true
         }
     };
     // 验证的错误信息配置
@@ -295,11 +303,22 @@ define(function(require, exports, module) {
         factoryPrice3: {
             number: icons.error + '只能输入数字！',
             maxlength: icons.error + '输入数值过长！'
+        },
+        singleWarpSpinnerNum1: {
+            required: icons.error + '请输入经密值！',
+            number: icons.error + '只能输入数字！',
+            maxlength: icons.error + '输入数值过长！'
+        },
+        singleabbSpinnerNum1: {
+            required: icons.error + '请输入纬密值！',
+            number: icons.error + '只能输入数字！',
+            maxlength: icons.error + '输入数值过长！'
         }
     };
     // }
 
-    fabric.submitHandler = function (form) {
+    var submitHandler = function (form) {
+        pricingObj.start();return;
         //提交表单
         // formSubmit(form);
         // fabric.closeGuideLayer();
@@ -419,7 +438,7 @@ define(function(require, exports, module) {
         /************ajax***************/
     }
 
-    fabric.init();
+    fabric.init(submitHandler);
 /////////////////////// /表单验证 ////////////////////////////
 
 }); //define

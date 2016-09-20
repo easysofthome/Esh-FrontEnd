@@ -15,10 +15,16 @@ define(function(require, exports, module) {
     FancyRadioCheckBox.init();
 
     // 染织方法
-    $('#dyed-method label').on('click', function() {
-        var index = $(this).index();
+    $('#dyed-method input[type="radio"]').bind('click', function(e) {
+        var index = $(this).parent().index();
         $('.AddItem .js-tab').hide();
         $('.AddItem .js-tab').eq(index).show();
+        if(index==2){ //色织选中 选择纱线+织造+染色（印花）隐藏
+            $('#factoryPrice_rad').parent().hide();
+            $('#factoryPrice_rad').attr('checked')?$('#easySoftHomePrice_rad').attr('checked','checked'):'';
+        }else{
+            $('#factoryPrice_rad').parent().show();
+        }
     });
     $('input:radio[name=DyeingDyeRequirement]').on('click', function(){
         var obj = $('input:radio[name=DyeingPrintingProcessRequirements]');
@@ -271,19 +277,23 @@ define(function(require, exports, module) {
         form.submit();
     });
 
-    function init() {
-        validate();
+    function init(callback) {
+        validate(callback);
     }
 
     /** 表单验证 */
     var validator;
 
-    function validate() {
+    function validate(callback) {
         //addrules();
         validator = form.validate({
             //忽略
-            ignore: '.ignore',
-            submitHandler: modExp.submitHandler,
+            ignore: ':hidden',
+            submitHandler:function(){
+                if(callback){
+                    callback();
+                }
+            },
             onfocusout:function(element){
                 $(element).valid();
             },
@@ -308,6 +318,7 @@ define(function(require, exports, module) {
 module.exports.setMsgPosition = setMsgPosition;
 module.exports.closeGuideLayer = closeGuideLayer;
 module.exports.init = init;
+
 
 });
 
