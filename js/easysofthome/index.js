@@ -1,8 +1,31 @@
 define(function (require, exports, module) {
-  var $ = require('jquery');
+  require('jquery');
 
   require('js/front/lib/tip/jquery.poshytip');
   var layer = require('layer');
+  require('animateColor');
+  // 数字增长动画支持
+  require('animateNumber');
+  // 全屏滚动插件
+  require('fullPage');
+
+  // 初始化页的高度
+  var setWH = function () {
+    var devWidth = $(window).width();
+    var devHeight = $(window).height();
+    $('#section0').width(devWidth);
+    var w1 = -$('#section0 .wrap').width()/2;
+    var h1 = -$('#section0 .wrap').height()/2;
+    var w2 = -$('#section1 .content_box').width()/2;
+    $('#section0 .wrap').css('margin-left',w1+"px")
+                        .css('margin-top',h1+"px")
+                        .css('left',"50%")
+                        .css('top',"50%");
+
+    $('#section1 .othermodules').css('height',devHeight-160);
+    $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
+    $('#section2 .wrap').css('height',devHeight-282);
+  };
 
   // 颜色渐变支持
 
@@ -24,24 +47,6 @@ define(function (require, exports, module) {
 
   });
 
-
-  // 初始化页的高度
-  function setWH() {
-    var devWidth = $(window).width();
-    var devHeight = $(window).height();
-    $('#section0').width(devWidth);
-    var w1 = -$('#section0 .wrap').width()/2;
-    var h1 = -$('#section0 .wrap').height()/2;
-    var w2 = -$('#section1 .content_box').width()/2;
-    $('#section0 .wrap').css('margin-left',w1+"px")
-                        .css('margin-top',h1+"px")
-                        .css('left',"50%")
-                        .css('top',"50%");
-
-    $('#section1 .othermodules').css('height',devHeight-160);
-    $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
-    $('#section2 .wrap').css('height',devHeight-282);
-  };
 
   //首页小鼠标定位操作
   //胡庆龙 2016-05-4
@@ -76,13 +81,6 @@ define(function (require, exports, module) {
     }
 
    };
-
-
-  require('animateColor');
-  // 数字增长动画支持
-  require('animateNumber');
-  // 全屏滚动插件
-  require('fullPage');
 
   $(function(){
     //第一屏根据身份禁止点击
