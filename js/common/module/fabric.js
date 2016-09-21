@@ -186,20 +186,19 @@ define(function(require, exports, module) {
       }
 
     // 经纱种类选择纱线
-    $('#yarn-ul').on('click', '.yarn_butt' , function() {
+    $('.yarntype_box').on('click', '.yarn_butt' , function() {
         that = this;
 
         $('.curLayer').removeClass('curLayer');
         $(that).parents('li').addClass('curLayer');
-
         $.layer({
             type: 2,
             title: false,
-            area: ['1020px', '874px'],
+            area: ['1020px', ''],
             border: [5, 0.3, '#000'],
             shade: [0.8, '#000'],
             shadeClose: true,
-            offset: [($(window).height() - 874)/2+'px',''],
+            offset: [($(window).height() - 600)/2+'px',''],
             closeBtn: [0, false], //去掉默认关闭按钮
             shift: 'top',
             fix : false,
@@ -209,7 +208,7 @@ define(function(require, exports, module) {
     });
 
     // 纬纱种类选择纱线
-    $('#abb-ul').on('click', '.yarn_butt' , function() {
+    $('.wefttype_box').on('click', '.yarn_butt' , function() {
         that = this;
 
         $('.curLayer').removeClass('curLayer');
@@ -218,30 +217,11 @@ define(function(require, exports, module) {
         $.layer({
             type: 2,
             title: false,
-            area: ['1020px', '874px'],
+            area: ['1020px', ''],
             border: [5, 0.3, '#000'],
             shade: [0.8, '#000'],
             shadeClose: true,
-            offset: [($(window).height() - 874)/2+'px',''],
-            closeBtn: [0, false], //去掉默认关闭按钮
-            shift: 'top',
-            fix : false,
-            iframe: {src: $(that).attr('data-href')},
-            success: function () {}
-        });
-    });
-
-    //选择织造工缴工厂报价
-    $('.factoryOffer_butt').on('click', function() {
-        that = this;
-        $.layer({
-            type: 2,
-            title: false,
-            area: ['1000px', '270px'],
-            border: [5, 0.3, '#000'],
-            shade: [0.8, '#000'],
-            shadeClose: true,
-            offset: [($(window).height() - 270)/2+'px',''],
+            offset: [($(window).height() - 600)/2+'px',''],
             closeBtn: [0, false], //去掉默认关闭按钮
             shift: 'top',
             fix : false,
@@ -274,7 +254,7 @@ define(function(require, exports, module) {
     var form = $("#fabricForm");
 
     $('#startPrice').on('click', function() {
-        form.submit();
+        ///form.submit();
     });
 
     function init(callback) {

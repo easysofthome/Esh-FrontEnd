@@ -30,7 +30,7 @@
           <div id="hLight_step1">
           <div class="clearfix data_frm">
             <span class="lf title_name">起 订 量：</span>
-            <select class="lf sel1">
+            <select class="lf sel1" name="OrderQuantityID" id="OrderQuantityID">
               <option value="">0-199米</option>
               <option value="one">0-99米</option>
               <option value="two">100-199米</option>
@@ -38,7 +38,7 @@
               <option value="four">3000-399米</option>
             </select>
           </div>
-          <div class="clearfix rad_frm">
+          <div class="clearfix rad_frm WeavingType">
             <span class="lf title_name">织造种类：</span>
             <div class="lf Single_box">
               <label class="lf radio_rg label_radio">
@@ -58,7 +58,7 @@
           <div class="clearfix data_frm">
             <div>
               <span class="lf title_name">面料门幅：</span>
-              <input type="text" id="fabricWidth" value="1" name="FabricWidth" class="lf fabric_width">
+              <input type="text" id="fabricWidth" value="1" name="FabricWidth" id="FabricWidth" class="lf fabric_width">
               <select class="lf handle_mag sel2">
                 <option value="">厘米</option>
                 <option value="">分米</option>
@@ -66,7 +66,7 @@
               </select>
             </div>
           </div>
-            <div class="clearfix rad_frm">
+            <div class="clearfix rad_frm yarnTypeNum">
             <span class="lf title_name">纱线种类数量：</span>
             <div class="lf Single_box">
               <label class="lf radio_rg label_radio">
@@ -99,7 +99,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">经密：</div>
                   <div class="lf">
-                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleWarpSpinnerNum1" class="density_input lf">
+                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleWarpSpinnerNum" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的经密。</span>
                   </div>
                 </div>
@@ -111,14 +111,16 @@
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="全棉纱"/>
+                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱"/>
                       <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
                       <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
                       <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="true" />
+                      <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
+                      <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="60S"/>
+                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="60S"/>
                     </span>
                   </div>
                   <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -149,14 +151,15 @@
                     <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="warpIngredient1"/>
+                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱" id="warpIngredient1"/>
                       <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
                       <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
                       <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="true" />
+
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="60S" id="warpDiameter1"/>
+                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="60S" id="warpDiameter1"/>
                     </span>
                     </div>
                     <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -173,7 +176,7 @@
                 <div class="lf">
                   <div class="lf yarn_tit">纬密：</div>
                   <div class="lf">
-                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleabbSpinnerNum1" class="density_input lf">
+                    <input type="text" name="FabricYarns[0].DensityLength" value="1" id="singleabbSpinnerNum" class="density_input lf">
                     <span class="fixed-input-tip">温馨提示：请分别对应输入不同纱线的纬密。</span>
                   </div>
               </div>
@@ -185,14 +188,16 @@
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient">
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="全棉纱"/>
+                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱"/>
                       <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
                       <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
                       <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="false" />
+                      <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
+                      <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric" name="" readonly="true" value="26S"/>
+                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="26S"/>
                     </span>
                   </div>
                   <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -222,14 +227,16 @@
                  <div class="lf" style="width: 142px;">
                 <span class="clearfix ingredient">
                   <span class="lf ingredient_tit">成分</span>
-                  <input class="lf input_fabric" name="" readonly="true" value="全棉纱" id="weftIngredient1"/>
+                  <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱" id="weftIngredient1"/>
                   <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
                   <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
                   <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="false" />
+                  <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
+                  <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
                 </span>
                 <span class="clearfix thickness">
                   <span class="lf ingredient_tit">粗细</span>
-                  <input class="lf input_fabric" name="" readonly="true" value="26S" id="weftDiameter1"/>
+                  <input class="lf input_fabric yarnthickness" name="" readonly="true" value="26S" id="weftDiameter1"/>
                 </span>
                  </div>
                  <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -380,10 +387,10 @@
             </div>
           </div>
 
-          <div class="clearfix data_frm">
+          <div class="clearfix data_frm" id="yeWorksAftertreatment">
             <span class="lf title_name">染厂后处理：</span>
-            <div class="lf handle_one">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+            <div class="lf handle_one selected">
+              <input type="checkbox" class="hidden" checked="checked" value="" name="cb1">
               <span class="select"></span>
               抗菌处理
             </div>
@@ -419,10 +426,10 @@
             </div>
           </div>
 
-          <div class="clearfix data_frm">
+          <div class="clearfix data_frm" id="otherAftertreatment">
             <span class="lf title_name">其他后处理：</span>
-            <div class="lf handle_one">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+            <div class="lf handle_one selected">
+              <input type="checkbox" class="hidden" checked="checked" value="" name="cb2">
               <span class="select"></span>
               轧光
             </div>
@@ -475,26 +482,26 @@
             <div id="priceType" class="lf Single_box">
               <label class="lf radio_rg label_radio">
                 <input name="Fruit8" id="direct_rad" checked="checked" type="radio" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/procurement.html">直接采购成品面料</a></span>
+                <span class="lf">直接采购成品面料</span>
               </label>
               <label class="lf radio_rg label_radio">
                 <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/grey.html">选择坯布+染色（印花）</a></span>
+                <span class="lf">选择坯布+染色（印花）</span>
               </label>
                <label class="lf radio_rg label_radio">
                 <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/yarn.html">选择纱线+织造+染色（印花）</a></span>
+                <span class="lf">选择纱线+织造+染色（印花）</span>
               </label>
                <label class="lf radio_rg label_radio">
                 <input name="Fruit8" type="radio" id="factoryPrice_rad" class="lf radio_post" />
-                <span class="lf"><a href="/html/easyPricing/fabric/complete.html">采用易家纺系统核价</a></span>
+                <span class="lf">采用易家纺系统核价</span>
               </label>
             </div>
           </div>
 
           <div class="clearfix butt_box">
             <a href="javascript:history.back();" class="lf butt_return">返回</a>
-            <a href="javascript:void(0);" id="startPrice" data-href="/html/easyPricing/pricing/result.html" class="lf butt_pricing">下一步</a>
+            <a href="javascript:void(0);" id="startPrice" class="lf butt_pricing">下一步</a>
           </div>
         </div>
        </div>
@@ -508,106 +515,6 @@
           <span class="lf tit_cla">您要核价的面料参数</span>
           <!--       <a href="#" class="rg tit_butt">修改</a> -->
         </div>
-        <ul class="clearfix inf_box">
-          <li class="lf">
-            起订量 :
-            &nbsp;
-            <span class="inf_data">0-1999米</span>
-          </li>
-          <li class="lf">
-            织造种类 :
-            &nbsp;
-            <span class="inf_data">提花布</span>
-          </li>
-          <li class="lf">
-            面料门幅 :
-            &nbsp;
-            <span class="inf_data">120厘米</span>
-          </li>
-          <li class="lf">
-            纱线种类数量 :
-            &nbsp;
-            <span class="inf_data">2经2纬</span>
-          </li>
-          <li class="lf">
-            经纬密 :
-            &nbsp;
-            <span class="inf_data">2+2*2+2</span>
-          </li>
-          <li class="yarntype_box lf">
-            <div class="clearfix yarn_para">
-              <span class="lf para_tit">经纱1</span>
-              <div class="lf para_words">
-                <p class="lf inf_data">成分：全棉纱</p>
-                <p class="lf inf_data">粗细：60S</p>
-                <p class="lf inf_data">股线：1</p>
-                <p class="lf inf_data">成分比：-</p>
-              </div>
-            </div>
-
-            <div class="clearfix yarn_para">
-              <span class="lf para_tit">经纱2</span>
-              <div class="lf para_words">
-                <p class="lf inf_data">成分：全棉纱</p>
-                <p class="lf inf_data">粗细：60S</p>
-                <p class="lf inf_data">股线：1</p>
-                <p class="lf inf_data">成分比：-</p>
-              </div>
-            </div>
-
-            <div class="clearfix yarn_para">
-              <span class="lf para_tit">纬纱1</span>
-              <div class="lf para_words">
-                <p class="lf inf_data">成分：全棉纱</p>
-                <p class="lf inf_data">粗细：60S</p>
-                <p class="lf inf_data">股线：1</p>
-                <p class="lf inf_data">成分比：-</p>
-              </div>
-            </div>
-
-            <div class="clearfix yarn_para">
-              <span class="lf para_tit">纬纱2</span>
-              <div class="lf para_words">
-                <p class="lf inf_data">成分：全棉纱</p>
-                <p class="lf inf_data">粗细：60S</p>
-                <p class="lf inf_data">股线：1</p>
-                <p class="lf inf_data">成分比：-</p>
-              </div>
-            </div>
-          </li>
-          <li class="lf">
-            染织方式 :
-            &nbsp;
-            <span class="inf_data">印花</span>
-          </li>
-          <li class="lf">
-            染料要求 :
-            &nbsp;
-            <span class="inf_data">染料印花</span>
-          </li>
-          <li class="lf">
-            工艺要求 :
-            &nbsp;
-            <span class="inf_data">平网印花</span>
-          </li>
-          </li>
-          <li class="lf">
-            色牢度等级 :
-            &nbsp;
-            <span class="inf_data">色牢三级</span>
-          </li>
-          <li class="lf log_li">
-            染厂后处理 :
-            &nbsp;
-            <span class="inf_data">抗菌处理</span>
-          </li>
-          <li class="lf log_li">
-            其他后处理 :
-            &nbsp;
-            <span class="inf_data">轧光</span>
-          </li>
-        </ul>
-
       </div>
       <!-- 与您匹配的面料供应商 -->
       <div id="matFactoryList" class="factory-box none">
@@ -708,63 +615,67 @@
           </div>
 
           <div class="lf intbox">
-            <input class="int lf" type="text" placeholder="请输入工厂名称" />
+            <input class="int lf" id="searchFactoryName" type="text" placeholder="请输入工厂名称" />
             <i class="lf"></i>
           </div>
         </div>
         <table cellspacing="0" cellpadding="0" class="tab-box">
-          <tr>
-            <th class="name">工厂名称</th>
-            <th class="region">地区</th>
-            <th class="price">报价（元/米）</th>
-            <th>报价日期</th>
-            <th class="operation">收藏询价</th>
-          </tr>
-          <tr>
-            <td>成品面料供应商A</td>
-            <td>杭州</td>
-            <td class="Price_color">0.17</td>
-            <td>2016-6-30</td>
-            <td>
-              <a class="btn-save" href="#">确定</a>
-            </td>
-          </tr>
-          <tr>
-            <td>成品面料供应商B</td>
-            <td>杭州</td>
-            <td class="Price_color">0.17</td>
-            <td>2016-6-30</td>
-            <td>
-              <a class="btn-save" href="#">确定</a>
-            </td>
-          </tr>
-          <tr>
-            <td>成品面料供应商C</td>
-            <td>杭州</td>
-            <td class="Price_color">0.17</td>
-            <td>2016-6-30</td>
-            <td>
-              <a class="btn-save" href="#">确定</a>
-            </td>
-          </tr>
-          <tr>
-            <td>成品面料供应商D</td>
-            <td>杭州</td>
-            <td class="Price_color">0.17</td>
-            <td>2016-6-30</td>
-            <td>
-              <a class="btn-save" href="#">确定</a>
-            </td>
-          </tr>
-          <tr>
-            <td>成品面料供应商E</td>
-            <td>杭州</td>
-            <td class="Price_color">0.17</td>
-            <td>2016-6-30</td>
-            <td>
-              <a class="btn-save" href="#">确定</a>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th class="name">工厂名称</th>
+              <th class="region">地区</th>
+              <th class="price">报价（元/米）</th>
+              <th>报价日期</th>
+              <th class="operation">收藏询价</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>成品面料供应商A</td>
+              <td>杭州</td>
+              <td class="Price_color">0.17</td>
+              <td>2016-6-30</td>
+              <td>
+                <a class="btn-save" href="#">确定</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成品面料供应商B</td>
+              <td>杭州</td>
+              <td class="Price_color">0.17</td>
+              <td>2016-6-30</td>
+              <td>
+                <a class="btn-save" href="#">确定</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成品面料供应商C</td>
+              <td>杭州</td>
+              <td class="Price_color">0.17</td>
+              <td>2016-6-30</td>
+              <td>
+                <a class="btn-save" href="#">确定</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成品面料供应商D</td>
+              <td>杭州</td>
+              <td class="Price_color">0.17</td>
+              <td>2016-6-30</td>
+              <td>
+                <a class="btn-save" href="#">确定</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成品面料供应商E</td>
+              <td>杭州</td>
+              <td class="Price_color">0.17</td>
+              <td>2016-6-30</td>
+              <td>
+                <a class="btn-save" href="#">确定</a>
+              </td>
+            </tr>
+          </tbody>
         </table>
         @@include('easyPricing/common/next.html')
         <div class="butt_box">
@@ -781,21 +692,21 @@
         <table cellspacing="0" cellpadding="0" class="tab-box">
           <tr>
             <td class="name">可做坯布的工厂</td>
-            <td></td>
+            <td class="lf"></td>
             <td class="operation">
               <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
             </td>
           </tr>
           <tr>
             <td>染色工厂</td>
-            <td></td>
+            <td class="lf"></td>
             <td>
               <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
             </td>
           </tr>
           <tr>
             <td>涂层、轧花等其他后处理工厂</td>
-            <td></td>
+            <td class="lf"></td>
             <td>
               <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
             </td>
@@ -851,8 +762,8 @@
           </li>
         </ul>
         <div class="butt_box">
-          <a href="/html/easyPricing/fabric/fabric.html" class="lf butt_return">返回</a>
-          <a class="lf butt_pricing">收藏核价结果</a>
+          <a href="javascript:void(0)" class="lf butt_return">返回</a>
+          <a href="javascript:void(0)" class="lf butt_pricing">收藏核价结果</a>
         </div>
       </div>
     </div>
@@ -987,6 +898,16 @@
   @@include('easyPricing/common/footer.html')
   <script>seajs.use(['js/front/easyPricing/fabric/fabric'
   //  ,'js/front/easyPricing/fabric/pagewalkthrough'
-  ]);</script>
+  ]);
+
+  priceObj = {};
+  //静态方法
+  priceObj.selFactoryCb = function(data){
+    if(_fn.$factory_flag){
+      _fn.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice+' '+data.fNum);
+    }
+  }
+
+  </script>
 </body>
 </html>

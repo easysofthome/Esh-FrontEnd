@@ -1,7 +1,8 @@
 define(function(require, exports, module) {
     var fabric = require('js/front/common/module/fabric');
     var pricing = require('js/front/easyPricing/fabric/pricing'); //核价功能
-    var pricingObj = pricing.init();
+   // var pricingObj = new pricing();
+    var pricingObj = {};
     $(document).ready(function(){
 
         // 单经单纬却换
@@ -96,35 +97,35 @@ define(function(require, exports, module) {
         max:4,
         value: abbNum,
         addEvent:function () {
+            abbNum++;
             var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
             $('#abb-ul').append('<li class="lf yarn_para">'
-              + '<span class="lf para_tit">纬纱'+ warpNum +'：</span>'
+              + '<span class="lf para_tit">纬纱'+ abbNum +'：</span>'
               + '<span class="lf include"></span>'
               + '<div class="lf" style="width: 142px;">'
                 + '<span class="clearfix ingredient">'
                   + '<span class="lf ingredient_tit">成分</span>'
-                  + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ warpNum +'].YarnSpecNum" readonly="true" id="weftIngredient'+ (warpNum+1) +'"/>'
-                  + '<input name="FabricYarns['+ warpNum +'].YarnSpecID" type="hidden" value="">'
-                  + '<input name="FabricYarns['+ warpNum +'].FactoryPrice" type="hidden" value="">'
-                  + '<input name="FabricYarns['+ warpNum +'].IsChaineDensity" type="hidden" value="false">'
+                  + '<input type="text" class="lf input_fabric" name="FabricYarnsChaine['+ abbNum +'].YarnSpecNum" readonly="true" id="weftIngredient'+ (abbNum+1) +'"/>'
+                  + '<input name="FabricYarns['+ abbNum +'].YarnSpecID" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ abbNum +'].FactoryPrice" type="hidden" value="">'
+                  + '<input name="FabricYarns['+ abbNum +'].IsChaineDensity" type="hidden" value="false">'
                 + '</span>'
                 + '<span class="clearfix thickness">'
                   + '<span class="lf ingredient_tit">粗细</span>'
-                  + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+ (warpNum+1) +'"/>'
+                  + '<input type="text" class="lf input_fabric" name="WSGG" readonly="true" id="weftDiameter'+ (abbNum+1) +'"/>'
                 + '</span>'
               + '</div>'
               + '<div class="yarn_butt lf" data-href="'+ ifrUrl +'">选择纱线</div>'
               + '</li>');
             $('.multiWarpWeft').find('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
-              + '<input type="text" id="abbSpinnerNum'+ (warpNum+1) +'" name="FabricYarns['+ warpNum +'].DensityLength" class="density_input lf">');
-            warpNum++;
+              + '<input type="text" id="abbSpinnerNum'+ (abbNum+1) +'" name="FabricYarns['+ abbNum +'].DensityLength" class="density_input lf">');
         },
         cutEvent:function () {
             $('#abb-ul li:last input').poshytip('destroy');
             $('#abb-ul li:last').remove();
             $('#abb_num_box input:last').poshytip('destroy');
             $('#abb_num_box input:last,#abb_num_box .plus:last').remove();
-            warpNum--;
+            abbNum--;
         }
     });
 
