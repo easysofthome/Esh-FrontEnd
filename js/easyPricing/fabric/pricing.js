@@ -11,12 +11,14 @@ define(function(require, exports, module) {
         radioGroup:'#priceType',
         priceFabricParam:'#fabricParam'
     };
-    //对象
+    /**
+     * 核价页面对象，主要实现核价功能的页面操作，将原先多个页面的功能整合到一个页面（多页面传参不好控制） 包括样式、数据不涉及前后台数据交互
+     */
     var priceObj = function(){
         _fn.init();
     };
     //共有函数
-    priceObj.prototype={
+    priceObj.prototype = {
         start : function(){
             _fn.start();
         }
@@ -29,23 +31,24 @@ define(function(require, exports, module) {
     }
     //初始化
     _fn.init = function(){
-        _fn.load();
-        _fn.bindEvent();
+        this.load();
+        this.bindEvent();
     }
     //界面加载时执行
     _fn.load = function(){
-        _fn.pricingPartH = $(_fn.pricingParamPart).height();
-        _fn.originalHTML = $(_fn.priceFabricParam).html();
+        this.pricingPartH = $(this.pricingParamPart).height();
+        this.originalHTML = $(this.priceFabricParam).html();
     }
     ///////////////////////////////操作DOM//////////////////////////////
 
     //开始核价
     _fn.start = function(){
-        var index = _fn.typeIndex = _fn.getChekedIndex(_fn.radioGroup);
-        _fn.pricingPartHide();
-        _fn.toTop();
-        $(_fn.pricingRet).show().children('div').hide();
-        _fn.processHTML();//构建核价的面料参数 数据
+        //选中的核价方式
+        var index = this.typeIndex = this.getChekedIndex(this.radioGroup);
+        this.pricingPartHide();
+        this.toTop();
+        $(this.pricingRet).show().children('div').hide();
+        this.processHTML();//构建核价的面料参数 数据
         $('#fabricParam').fadeIn(300);//父容器 核价面料参数 显示
         switch (index){
             case 0:
@@ -64,18 +67,18 @@ define(function(require, exports, module) {
     }
     //隐藏核价操作部分
     _fn.pricingPartHide = function(){
-        $(_fn.pricingParamPart).animate({height: 0, opacity: 0}, "slow",function(){$(this).hide()});
+        $(this.pricingParamPart).animate({height: 0, opacity: 0}, "slow",function(){$(this).hide()});
     }
     //显示核价操作部分
     _fn.pricingPartShow = function(cb){
-        $(_fn.pricingParamPart).show().animate({height: _fn.pricingPartH, opacity: 1}, 500,function(c){
+        $(this.pricingParamPart).show().animate({height: this.pricingPartH, opacity: 1}, 500,function(c){
             if(cb){
                 cb();
             }
         });
     }
     _fn.pricingRetHide = function(cb){
-        $(_fn.pricingRet).fadeOut(500,function(){
+        $(this.pricingRet).fadeOut(500,function(){
             if(cb){
                 cb();
             }
@@ -90,6 +93,7 @@ define(function(require, exports, module) {
     _fn.toBottom = function(){
         $('html,body').animate({scrollTop:$('body')[0].scrollHeight},'slow');
     }
+    //获取选中的radio的索引
     _fn.getChekedIndex = function(selector){
         var index = 0;
         $(selector+' input[type="radio"]').each(function(i){
@@ -102,11 +106,11 @@ define(function(require, exports, module) {
     }
     //生成核价页数据
     _fn.processHTML = function(){
-        $(_fn.priceFabricParam).html(_fn.originalHTML);
+        $(this.priceFabricParam).html(this.originalHTML);
         var $ul = $('<ul class="clearfix inf_box"></ul>');
         var $li = $('<li class="lf"></li>');
         var $span = $('<span class="inf_data"></span>');
-        var $fabricParam = $(_fn.priceFabricParam);
+        var $fabricParam = $(this.priceFabricParam);
         //起 订 量
         $span.html($('#OrderQuantityID option:selected').text());
         $li.html('起订量 :   '+$span[0].outerHTML)
@@ -124,10 +128,10 @@ define(function(require, exports, module) {
         $ul.append($li[0].outerHTML);
 
         //纱线种类数量 经纬密
-        _fn.processHTML_partA($li,$ul,$span);
+        this.processHTML_partA($li,$ul,$span);
 
         //经纱 纱线列表
-        _fn.processHTML_partB($li,$ul);
+        this.processHTML_partB($li,$ul);
 
         //染织方式
         var DyeingType = $('#dyed-method input[type="radio"]:checked').next('span').text();
@@ -191,7 +195,6 @@ define(function(require, exports, module) {
                     tag_w_w = '*';
                 }
                 warpRet += (tag_w+$(this).val());
-
             });
             $('#abb_num_box').find('input').each(function(i){
                 j=i;
@@ -254,11 +257,11 @@ define(function(require, exports, module) {
         $ul.append($listLi[0].outerHTML);
         $li.removeClass('yarntype_box');
     }
-
+    //检索与您匹配的面料供应商 加载提示
     _fn.startLoadData = function(){
         $('#matFactoryList .tab-box tbody').html('<tr><td colspan="5" style="text-align: center;">正在加载。。。。</td></tr>');
     }
-
+    //去掉加载提示
     _fn.endLoadData = function(){
         $('#matFactoryList .tab-box tbody').html('加载完成');
     }
@@ -266,23 +269,23 @@ define(function(require, exports, module) {
     /////////////////////事件////////////////////
     //注册事件
     _fn.bindEvent = function(){
+        var that = this;
         //返回
         $('#matFactoryList,#selFactoryPrice,#priceRet').find('.butt_return').bind('click',function(){
-            _fn.pricingRetHide();
-            _fn.pricingPartShow(function(){
-                _fn.toBottom();
+            that.pricingRetHide();
+            that.pricingPartShow(function(){
+                that.toBottom();
             });
-
         });
         //核价
         $('#selFactoryPrice').find('.butt_pricing').bind('click',function(){
             $(this).parent().hide();
-            _fn.askPrice();
+            that.askPrice();
         });
         //选择工厂
         $('.btn').on("click", function(){
-            var that = this;
-            _fn.$factory_flag  = $(this);
+            var _that = this;
+            that.$factory_flag  = $(this);
             var layerHref = $(this).attr('data-href');
             $.layer({
                 type: 2,
@@ -295,13 +298,13 @@ define(function(require, exports, module) {
                 closeBtn: [0, true], //默认关闭按钮
                 shift: 'top',
                 fix : false,
-                iframe: {src: $(that).attr('data-href')},
+                iframe: {src: $(_that).attr('data-href')},
                 success: function (layer) {}
             });
         });
         //检索与您匹配的面料供应商
         $('#searchFactoryName').bind('change keydown',function(){
-            _fn.startLoadData();
+            that.startLoadData();
         });
     }
 
