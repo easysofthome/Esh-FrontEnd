@@ -5,36 +5,50 @@ define(function (require, exports, module) {
         $exports.bind(events, fn);
     };
     require('jquery');
-    // 初始化显示
-    $('.country ol:eq(0)').addClass('cur').show();
-    $('.continent li:eq(0)').addClass('cur').show();
-    // 隐藏选择国家
-    $('body').on('click', function(e) {
-        e = window.event || e; // 兼容IE7
-        $('.clicked').removeClass('clicked');
-        $(e.srcElement || e.target).addClass('clicked');
-        var flag = $('#sel-country').hasClass('clicked');
-        if($('#sel-country .clicked').length == 0 && !flag){
-            $('.sel-country').hide();
-            $('#sel-country .input-tri[tri-state=cur]').removeClass('toggleTri');
-        }
-    });
-    //选择国家
-    $('#sel-country').on('click', 'input', function () {
-        $('.sel-country').show();
-        $('[tri-state=cur]').attr('tri-state','')
-        $('#sel-country .input-tri').attr('tri-state','cur').addClass('toggleTri');
-    });
-    $('.continent li').on('mouseover', function () {
-        $(this).parent().find('.cur').removeClass('cur');
-        $(this).addClass('cur');
-        $('.country-ol').hide();
-        $('.country-ol').eq($(this).index()).show();
-    });
-    $('.country-ol li').click(function (event) {
-        var html = $.trim($(this).html());
-        $('#sel-country input').val(html);
-        $('.sel-country').hide();
-        $exports.trigger('beforeClick', html);
-    });
+
+    var hideDiv = function (obj) {
+        // 隐藏选择国家
+        $('body').on('click', function(e) {
+            e = window.event || e; // 兼容IE7
+            $('.clicked').removeClass('clicked');
+            $(e.srcElement || e.target).addClass('clicked');
+            var flag = obj.hasClass('clicked');
+            if(obj.find('.clicked').length == 0 && !flag){
+                obj.find('.sel-country').hide();
+                obj.find('.input-tri[tri-state=cur]').removeClass('toggleTri');
+            }
+        });
+    };
+    var bindEvent = function (obj) {
+        //选择国家
+        obj.on('click', 'input', function () {
+            obj.find('.sel-country').show();
+            obj.find('[tri-state=cur]').attr('tri-state','')
+            obj.find('.input-tri').attr('tri-state','cur').addClass('toggleTri');
+        });
+        obj.find('.continent li').on('mouseover', function () {
+            $(this).parent().find('.cur').removeClass('cur');
+            $(this).addClass('cur');
+            obj.find('.country-ol').hide();
+            obj.find('.country-ol').eq($(this).index()).show();
+        });
+        obj.find('.country-ol li').click(function (event) {
+            var html = $.trim($(this).html());
+            obj.find('input').val(html);
+            obj.find('.sel-country').hide();
+            $exports.trigger('beforeClick', html);
+        });
+    }
+
+    function init (obj) {
+        // 初始化显示
+        $('.country ol:eq(0)').addClass('cur').show();
+        $('.continent li:eq(0)').addClass('cur').show();
+
+        hideDiv(obj);
+        bindEvent(obj);
+    }
+
+    init($('#sel-country'));
+    init($('#sel-country-input'));
 });
