@@ -1,0 +1,42 @@
+@icon-vip: -4px -4px 12px 12px;
+@icon-download: -4px -24px 12px 12px;
+@icon-ser: -4px -44px 12px 12px;
+@icon-linkedin: -4px -64px 16px 16px;
+@icon-qq: -4px -88px 16px 16px;
+@switch_dot_cur: -4px -112px 16px 16px;
+@icon-sina: -4px -136px 16px 16px;
+@switch_dot: -4px -160px 18px 18px;
+@switch-bg: -4px -186px 58px 24px;
+@switch-lang: -4px -218px 91px 24px;
+@foot_qq: -4px -250px 30px 30px;
+@scratch-border: -4px -288px 358px 42px;
+@logo: -4px -338px 167px 43px;
+@number-footer: -4px -389px 199px 62px;
+@icon-code: -4px -459px 96px 118px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-common {
+  background-image: url('/images/production/common/sprite-common.png');
+}

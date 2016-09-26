@@ -1,0 +1,49 @@
+@oper_icon: -4px -4px 8px 8px;
+@playbtn_w: -4px -20px 11px 12px;
+@icon_next: -4px -40px 7px 12px;
+@playbtn_g: -4px -60px 11px 12px;
+@icon_sina: -4px -80px 20px 16px;
+@icon_WeChat: -4px -104px 20px 16px;
+@icon_share: -4px -128px 16px 16px;
+@icon_Collection: -4px -152px 20px 16px;
+@icon_qq: -4px -176px 20px 16px;
+@icon_more: -4px -200px 16px 16px;
+@icon_home: -4px -224px 18px 18px;
+@tit_bg: -4px -250px 2px 18px;
+@oper_easydesign: -4px -276px 52px 52px;
+@oper_easydata: -4px -336px 52px 52px;
+@oper_easyPricing: -4px -396px 52px 52px;
+@help_register: -4px -456px 62px 62px;
+@help_video: -4px -526px 62px 62px;
+@help_account: -4px -596px 62px 62px;
+@help_VIP: -4px -666px 62px 62px;
+@help_problem: -4px -736px 62px 62px;
+@help_recharge: -4px -806px 62px 62px;
+@video_icon: -4px -876px 280px 180px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easysofthome-helpCenter {
+  background-image: url('/images/production/easysofthome/helpCenter/sprite-easysofthome-helpCenter.png');
+}

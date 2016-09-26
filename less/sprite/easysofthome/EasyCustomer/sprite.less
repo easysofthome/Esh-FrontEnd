@@ -1,0 +1,33 @@
+@icon_excessive: -4px -4px 46px 24px;
+@Be_invited: -4px -36px 106px 90px;
+@invitation: -4px -134px 106px 90px;
+@First_step: -4px -232px 154px 154px;
+@Second_step: -4px -394px 154px 154px;
+@Third_step: -4px -556px 154px 154px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easysofthome-EasyCustomer {
+  background-image: url('/images/production/easysofthome/EasyCustomer/sprite-easysofthome-EasyCustomer.png');
+}

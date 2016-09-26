@@ -1,0 +1,45 @@
+@videohui: -4px -4px 20px 20px;
+@videobai: -4px -32px 20px 20px;
+@polygon: -4px -60px 19px 22px;
+@titlelf: -4px -90px 24px 24px;
+@titlerg: -4px -122px 24px 24px;
+@i_SingleProductOn: -4px -154px 80px 80px;
+@i_Suite: -4px -242px 80px 80px;
+@i_SuiteOn: -4px -330px 80px 80px;
+@i_combination: -4px -418px 80px 80px;
+@coreprice_icobai: -4px -506px 78px 80px;
+@i_combinationOn: -4px -594px 80px 80px;
+@i_Fabric: -4px -682px 80px 80px;
+@i_FabricOn: -4px -770px 80px 80px;
+@i_SingleProduct: -4px -858px 80px 80px;
+@video_icobutt: -4px -946px 110px 110px;
+@video_icobutt2: -4px -1064px 124px 124px;
+@computer: -4px -1196px 525px 425px;
+@video_comp: -4px -1629px 840px 492px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easyPricing {
+  background-image: url('/images/production/easyPricing/sprite-easyPricing.png');
+}

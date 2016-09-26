@@ -1,0 +1,36 @@
+@sc_chongzhi: -4px -4px 19px 18px;
+@arr_bom: -4px -30px 20px 20px;
+@gouxian: -4px -58px 21px 21px;
+@yidou: -4px -87px 76px 26px;
+@zhifubao: -4px -121px 76px 26px;
+@zaixian: -4px -155px 92px 28px;
+@seal: -4px -191px 33px 33px;
+@Preferential: -4px -232px 202px 62px;
+@verification: -4px -302px 66px 66px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-VIP-common-Pay {
+  background-image: url('/images/production/VIP/common/Pay/sprite-VIP-common-Pay.png');
+}

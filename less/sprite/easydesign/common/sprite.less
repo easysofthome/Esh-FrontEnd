@@ -1,0 +1,67 @@
+@xiala-hui: -4px -4px 6px 4px;
+@icon-xiala-hui: -4px -16px 6px 4px;
+@icon-fenlei-hui: -4px -28px 6px 10px;
+@icon-fenlei-hong: -4px -46px 6px 10px;
+@searchgray: -4px -64px 14px 14px;
+@Xblack: -4px -86px 17px 17px;
+@Xgray: -4px -111px 17px 17px;
+@icon-shitu01: -4px -136px 39px 31px;
+@icon-shitu02: -4px -175px 39px 31px;
+@i_style: -4px -214px 32px 32px;
+@i_quality: -4px -254px 32px 32px;
+@i_qualityFree: -4px -294px 32px 32px;
+@i_qualityFreeOn: -4px -334px 32px 32px;
+@i_qualityOn: -4px -374px 32px 32px;
+@i_qualityVip: -4px -414px 32px 32px;
+@i_qualityVipOn: -4px -454px 32px 32px;
+@i_scene: -4px -494px 32px 32px;
+@i_sceneFree: -4px -534px 32px 32px;
+@i_sceneFreeOn: -4px -574px 32px 32px;
+@i_sceneOn: -4px -614px 32px 32px;
+@i_FlowerFreeOn: -4px -654px 32px 32px;
+@i_sceneVipOn: -4px -694px 32px 32px;
+@i_studio: -4px -734px 32px 32px;
+@i_FlowerVip: -4px -774px 32px 32px;
+@i_styleFree: -4px -814px 32px 32px;
+@i_styleFreeOn: -4px -854px 32px 32px;
+@i_styleOn: -4px -894px 32px 32px;
+@i_styleVip: -4px -934px 32px 32px;
+@i_styleVipOn: -4px -974px 32px 32px;
+@i_works: -4px -1014px 32px 32px;
+@i_worksOn: -4px -1054px 32px 32px;
+@i_FlowerFree: -4px -1094px 32px 32px;
+@i_Flower: -4px -1134px 32px 32px;
+@i_FlowerOn: -4px -1174px 32px 32px;
+@i_FlowerVipOn: -4px -1214px 32px 32px;
+@i_FabricOn: -4px -1254px 32px 32px;
+@icon_Flower: -4px -1294px 32px 32px;
+@icon_FlowerOn: -4px -1334px 32px 32px;
+@i_Fabric: -4px -1374px 32px 32px;
+@i_sceneVip: -4px -1414px 32px 32px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easydesign-common {
+  background-image: url('/images/production/easydesign/common/sprite-easydesign-common.png');
+}

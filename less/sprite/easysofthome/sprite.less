@@ -1,0 +1,70 @@
+@mouse_arrow: -4px -4px 10px 5px;
+@newfoot: -4px -17px 14px 9px;
+@Sina: -4px -34px 120px 16px;
+@icon-qq: -4px -58px 16px 16px;
+@icon-163: -4px -82px 16px 16px;
+@btn_close: -4px -106px 16px 16px;
+@icon-sina: -4px -130px 16px 16px;
+@Collect: -4px -154px 120px 16px;
+@qq: -4px -178px 120px 16px;
+@icon-linkedin: -4px -202px 16px 16px;
+@mouse: -4px -226px 16px 23px;
+@gray: -4px -257px 27px 27px;
+@foot_Wechat: -4px -292px 30px 30px;
+@foot_qq: -4px -330px 30px 30px;
+@browser: -4px -368px 220px 34px;
+@baoti: -4px -410px 1162px 36px;
+@mousedown: -4px -454px 60px 60px;
+@Android: -4px -522px 61px 61px;
+@PC: -4px -591px 61px 61px;
+@iPhone: -4px -660px 61px 61px;
+@number-footer: -4px -729px 199px 62px;
+@videologo: -4px -799px 451px 72px;
+@flower: -4px -879px 80px 80px;
+@data: -4px -967px 80px 80px;
+@qian: -4px -1055px 80px 80px;
+@ie: -4px -1143px 100px 100px;
+@Firefox: -4px -1251px 100px 100px;
+@opera: -4px -1359px 100px 100px;
+@chrome: -4px -1467px 100px 100px;
+@logoimg: -4px -1575px 285px 102px;
+@icon-code: -4px -1685px 96px 118px;
+@dibanben: -4px -1811px 559px 125px;
+@videocode: -4px -1944px 150px 150px;
+@nav2: -4px -2102px 240px 163px;
+@nav5: -4px -2273px 240px 163px;
+@nav4: -4px -2444px 240px 163px;
+@nav3: -4px -2615px 240px 163px;
+@nav1: -4px -2786px 240px 163px;
+@nav6: -4px -2957px 240px 164px;
+@nav8: -4px -3129px 240px 164px;
+@nav7: -4px -3301px 240px 164px;
+@sheji: -4px -3473px 565px 339px;
+@hejia: -4px -3820px 601px 384px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easysofthome {
+  background-image: url('/images/production/easysofthome/sprite-easysofthome.png');
+}

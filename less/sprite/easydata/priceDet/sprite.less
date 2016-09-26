@@ -1,0 +1,32 @@
+@Spread: -4px -4px 10px 10px;
+@arrow: -4px -22px 10px 12px;
+@avg: -4px -42px 20px 20px;
+@di: -4px -70px 20px 20px;
+@gao: -4px -98px 20px 20px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-easydata-priceDet {
+  background-image: url('/images/production/easydata/priceDet/sprite-easydata-priceDet.png');
+}

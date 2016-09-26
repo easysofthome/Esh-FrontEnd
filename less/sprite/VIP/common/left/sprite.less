@@ -1,0 +1,67 @@
+@subset_g: -4px -4px 10px 2px;
+@subset_b: -4px -14px 10px 2px;
+@L_accountOn: -4px -24px 20px 20px;
+@L_attention: -4px -52px 20px 20px;
+@L_attentionOn: -4px -80px 20px 20px;
+@L_basicData: -4px -108px 20px 20px;
+@L_buyerEva: -4px -136px 20px 20px;
+@L_buyerEvaOn: -4px -164px 20px 20px;
+@L_childAccount: -4px -192px 20px 20px;
+@L_childAccountOn: -4px -220px 20px 20px;
+@L_industryDet: -4px -248px 20px 20px;
+@L_industryDetOn: -4px -276px 20px 20px;
+@L_invitation: -4px -304px 20px 20px;
+@L_iwho: -4px -332px 20px 20px;
+@L_iwhoOn: -4px -360px 20px 20px;
+@L_match: -4px -388px 20px 20px;
+@L_matchOn: -4px -416px 20px 20px;
+@L_modSearch: -4px -444px 20px 20px;
+@L_modSearchOn: -4px -472px 20px 20px;
+@L_news: -4px -500px 20px 20px;
+@L_account: -4px -528px 20px 20px;
+@L_offerOn: -4px -556px 20px 20px;
+@L_priceDet: -4px -584px 20px 20px;
+@L_priceDetOn: -4px -612px 20px 20px;
+@L_pricing: -4px -640px 20px 20px;
+@L_pricingOn: -4px -668px 20px 20px;
+@L_remittance: -4px -696px 20px 20px;
+@L_remittanceOn: -4px -724px 20px 20px;
+@L_security: -4px -752px 20px 20px;
+@L_securityOn: -4px -780px 20px 20px;
+@L_survey: -4px -808px 20px 20px;
+@L_surveyOn: -4px -836px 20px 20px;
+@L_trend: -4px -864px 20px 20px;
+@L_trendOn: -4px -892px 20px 20px;
+@L_whoi: -4px -920px 20px 20px;
+@L_whoiOn: -4px -948px 20px 20px;
+@L_Design: -4px -976px 20px 20px;
+@L_offer: -4px -1004px 20px 20px;
+@qq: -4px -1032px 30px 30px;
+@hotlinenum: -4px -1070px 257px 40px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-VIP-common-left {
+  background-image: url('/images/production/VIP/common/left/sprite-VIP-common-left.png');
+}

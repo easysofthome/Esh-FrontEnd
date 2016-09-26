@@ -1,0 +1,48 @@
+@member: -4px -4px 430px 6px;
+@xiala: -4px -18px 12px 10px;
+@unfold: -4px -36px 13px 13px;
+@Pack-up: -4px -57px 13px 13px;
+@Shut-down: -4px -78px 14px 14px;
+@correct: -4px -100px 16px 16px;
+@i-pwd-medium: -4px -124px 15px 16px;
+@i-pwd-strong: -4px -148px 15px 16px;
+@i-pwd-weak: -4px -172px 15px 16px;
+@error: -4px -196px 16px 16px;
+@btn_close: -4px -220px 16px 16px;
+@arrow-right: -4px -244px 18px 17px;
+@jingdu1: -4px -269px 170px 20px;
+@jingdu2: -4px -297px 170px 20px;
+@jingdu3: -4px -325px 170px 20px;
+@jingdu11: -4px -353px 170px 20px;
+@jingdu12: -4px -381px 170px 20px;
+@jingdu13: -4px -409px 170px 20px;
+@logarr: -4px -437px 24px 24px;
+@logo_blue: -4px -469px 168px 60px;
+@loglogo: -4px -537px 328px 118px;
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 3);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 4);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 1);
+  @sprite-offset-y: extract(@sprite, 2);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite(@sprite, @display:block) {
+  .sprite-position(@sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: @display;
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+.icon-VIP-common-RegLog {
+  background-image: url('/images/production/VIP/common/RegLog/sprite-VIP-common-RegLog.png');
+}
