@@ -292,7 +292,58 @@ define(function(require, exports, module) {
         });
         module.exports.validator = validator;
     }
-/////////////////////////////// /表单验证部分 ///////////////////////////////////
+
+/////////////////////// /表单动态赋值 ////////////////////////////
+//观察者模式
+var observer = (function(){
+    var subscribes = {};
+    var content = [];
+    var _update = function(data){
+
+    }
+    var subscribe = function(id,update){
+        var ob = {};
+        ob.id = id;
+        ob.update = update || _update;
+        content.push(ob);
+        subscribes[id] = content;
+    }
+    var publish = function(id,data){
+        if(subscribes[id]){
+            var len = subscribes[id].length;
+            for(var i=0;i<len;i++ ){
+                subscribes[id][i].update(data);
+            }
+        }
+    }
+    var unsubscribe = function (id) {
+        if(subscribes[id]){
+            delete subscribes[id];
+        }
+    }
+
+    return {
+        publish:publish,
+        subscribe:subscribe,
+        unsubscribe:unsubscribe
+    }
+})();
+//订阅选择纱线
+observer.subscribe('fabricForm',function(data){
+    $(that).parent().find('input').each(function(){
+        var name = $(this).attr('dataName');
+        var readOnly = $(this).attr('readonly');
+        if(readOnly){
+            $(this).attr('readonly','');
+            $(this).val(data[name]);
+            $(this).attr('readonly','readonly');
+        }else{
+             $(this).val(data[name]);
+        }
+
+    });
+});
+window.observer = observer;
 
 
 module.exports.setMsgPosition = setMsgPosition;

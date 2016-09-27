@@ -111,16 +111,29 @@
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱"/>
-                      <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
-                      <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
-                      <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="true" />
-                      <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
-                      <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
+                     <input dataName='YarnSpecName' value="全棉纱" readonly="readonly" name="FabricYarnsChaineSingle.YarnSpecName" class="lf input_fabric yarnComponent">
+                      <!-- 面料成分 -->
+                      <input dataName="FabricElementId" type="hidden" value="" name="FabricYarnsChaineSingle.FabricElementId">
+                      <!-- 纱织粗细 -->
+                      <input dataName="YarnSpecNum" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNum">
+                      <!-- 纱织粗细 单位 -->
+                      <input dataName="YarnSpecNumUnit" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNumUnit">
+                      <!-- 股线 -->
+                      <input dataName="StrandsNum" type="hidden" value="" name="FabricYarnsChaineSingle.StrandsNum">
+                      <!-- 成分比 -->
+                      <input dataName="ComponentRatio" type="hidden" value="" name="FabricYarnsChaineSingle.ComponentRatio">
+                      <!-- 孔数 -->
+                      <input dataName="HolesNum" type="hidden" value="" name="FabricYarnsChaineSingle.HolesNum">
+                      <!-- 纱线工艺 -->
+                      <input dataName="Technology" type="hidden" value="" name="FabricYarnsChaineSingle.Technology">
+                      <!-- 工厂ID -->
+                      <input dataName="FactoryYarnId" type="hidden" value="" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <!-- 是否是纱线 -->
+                      <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="60S"/>
+                      <input dataName="YarnNum" class="lf input_fabric yarnthickness" name="" readonly="true" value="60S"/>
                     </span>
                   </div>
                   <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -151,15 +164,29 @@
                     <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient" >
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱" id="warpIngredient1"/>
-                      <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
-                      <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
-                      <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="true" />
-
+                     <input dataName='YarnSpecName' value="全棉纱" readonly="readonly" name="FabricYarnsChaineSingle.YarnSpecName" class="lf input_fabric yarnComponent">
+                      <!-- 面料成分 -->
+                      <input dataName="FabricElementId" type="hidden" value="" name="FabricYarnsChaineSingle.FabricElementId">
+                      <!-- 纱织粗细 -->
+                      <input dataName="YarnSpecNum" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNum">
+                      <!-- 纱织粗细 单位 -->
+                      <input dataName="YarnSpecNumUnit" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNumUnit">
+                      <!-- 股线 -->
+                      <input dataName="StrandsNum" type="hidden" value="" name="FabricYarnsChaineSingle.StrandsNum">
+                      <!-- 成分比 -->
+                      <input dataName="ComponentRatio" type="hidden" value="" name="FabricYarnsChaineSingle.ComponentRatio">
+                      <!-- 孔数 -->
+                      <input dataName="HolesNum" type="hidden" value="" name="FabricYarnsChaineSingle.HolesNum">
+                      <!-- 纱线工艺 -->
+                      <input dataName="Technology" type="hidden" value="" name="FabricYarnsChaineSingle.Technology">
+                      <!-- 工厂ID -->
+                      <input dataName="FactoryYarnId" type="hidden" value="" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <!-- 是否是纱线 -->
+                      <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="60S" id="warpDiameter1"/>
+                      <input dataName="YarnNum" class="lf input_fabric yarnthickness" name="" readonly="true" value="60S" id="warpDiameter1"/>
                     </span>
                     </div>
                     <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -188,16 +215,29 @@
                   <div class="lf" style="width: 142px;">
                     <span class="clearfix ingredient">
                       <span class="lf ingredient_tit">成分</span>
-                      <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱"/>
-                      <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
-                      <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
-                      <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="false" />
-                      <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
-                      <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
+                    <input dataName='YarnSpecName' value="全棉纱" readonly="readonly" name="FabricYarnsChaineSingle.YarnSpecName" class="lf input_fabric yarnComponent">
+                      <!-- 面料成分 -->
+                      <input dataName="FabricElementId" type="hidden" value="" name="FabricYarnsChaineSingle.FabricElementId">
+                      <!-- 纱织粗细 -->
+                      <input dataName="YarnSpecNum" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNum">
+                      <!-- 纱织粗细 单位 -->
+                      <input dataName="YarnSpecNumUnit" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNumUnit">
+                      <!-- 股线 -->
+                      <input dataName="StrandsNum" type="hidden" value="" name="FabricYarnsChaineSingle.StrandsNum">
+                      <!-- 成分比 -->
+                      <input dataName="ComponentRatio" type="hidden" value="" name="FabricYarnsChaineSingle.ComponentRatio">
+                      <!-- 孔数 -->
+                      <input dataName="HolesNum" type="hidden" value="" name="FabricYarnsChaineSingle.HolesNum">
+                      <!-- 纱线工艺 -->
+                      <input dataName="Technology" type="hidden" value="" name="FabricYarnsChaineSingle.Technology">
+                      <!-- 工厂ID -->
+                      <input dataName="FactoryYarnId" type="hidden" value="" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <!-- 是否是纱线 -->
+                      <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
                     <span class="clearfix thickness">
                       <span class="lf ingredient_tit">粗细</span>
-                      <input class="lf input_fabric yarnthickness" name="" readonly="true" value="26S"/>
+                      <input dataName="YarnNum" class="lf input_fabric yarnthickness" name="" readonly="true" value="26S"/>
                     </span>
                   </div>
                   <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
@@ -228,15 +268,29 @@
                 <span class="clearfix ingredient">
                   <span class="lf ingredient_tit">成分</span>
                   <input class="lf input_fabric yarnComponent" name="" readonly="true" value="全棉纱" id="weftIngredient1"/>
-                  <input name="FabricYarns[0].YarnSpecID" type="hidden" value="" />
-                  <input name="FabricYarns[0].FactoryPrice" type="hidden" value="" />
-                  <input name="FabricYarns[0].IsChaineDensity" type="hidden" value="false" />
-                  <input name="" class="foldedYarns" type="hidden" value="1" /> <!-- 股线 -->
-                  <input name="" class="ratioConstituents" type="hidden" value="成分比" /> <!-- 成分比 -->
+                 <input dataName='YarnSpecName' value="全棉纱" readonly="readonly" name="FabricYarnsChaineSingle.YarnSpecName" class="lf input_fabric yarnComponent">
+                      <!-- 面料成分 -->
+                      <input dataName="FabricElementId" type="hidden" value="" name="FabricYarnsChaineSingle.FabricElementId">
+                      <!-- 纱织粗细 -->
+                      <input dataName="YarnSpecNum" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNum">
+                      <!-- 纱织粗细 单位 -->
+                      <input dataName="YarnSpecNumUnit" type="hidden" value="" name="FabricYarnsChaineSingle.YarnSpecNumUnit">
+                      <!-- 股线 -->
+                      <input dataName="StrandsNum" type="hidden" value="" name="FabricYarnsChaineSingle.StrandsNum">
+                      <!-- 成分比 -->
+                      <input dataName="ComponentRatio" type="hidden" value="" name="FabricYarnsChaineSingle.ComponentRatio">
+                      <!-- 孔数 -->
+                      <input dataName="HolesNum" type="hidden" value="" name="FabricYarnsChaineSingle.HolesNum">
+                      <!-- 纱线工艺 -->
+                      <input dataName="Technology" type="hidden" value="" name="FabricYarnsChaineSingle.Technology">
+                      <!-- 工厂ID -->
+                      <input dataName="FactoryYarnId" type="hidden" value="" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <!-- 是否是纱线 -->
+                      <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                 </span>
                 <span class="clearfix thickness">
                   <span class="lf ingredient_tit">粗细</span>
-                  <input class="lf input_fabric yarnthickness" name="" readonly="true" value="26S" id="weftDiameter1"/>
+                  <input dataName="YarnNum"  class="lf input_fabric yarnthickness" name="" readonly="true" value="26S" id="weftDiameter1"/>
                 </span>
                  </div>
                  <div class="yarn_butt lf" data-href="/html/easyPricing/pricing/factory2.html">选择纱线</div>
