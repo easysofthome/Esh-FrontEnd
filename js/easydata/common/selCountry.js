@@ -50,5 +50,5 @@ define(function (require, exports, module) {
     }
 
     init($('#sel-country'));
-    init($('#sel-country-input'));
+    init($('#sel-from-country'));
 });
