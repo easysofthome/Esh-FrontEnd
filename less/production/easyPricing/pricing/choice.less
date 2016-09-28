@@ -180,8 +180,36 @@ ul.arraybox{
     div.dropbox{
       opacity: 0;
       margin: 10px 10px 0 10px;
-      border-top: #e5e5e5 1px solid;
       width: 265px;
+      .Switch_button{
+        .button_a{
+          color: #3ea1d7;
+          line-height: 24px;
+          height: 24px;
+          padding: 0 10px;
+          border: #3ea1d7 1px solid;
+          margin-right: 10px;
+          cursor: pointer;
+          .border-radius(3px);
+        }
+        .button_cur,.button_a:hover{
+          color: #fff;
+          background-color: #3ea1d7;
+        }
+      }
+      form{
+        margin-top: 10px;
+        border-top: #e5e5e5 1px solid;
+      }
+      .input_box{
+        margin-top: 10px;
+        .input_style{
+          width: 30px;
+          padding: 5px 10px;
+          border: #d1d1d1 1px solid;
+          .border-radius(3px);
+        }
+      }
       label.lab{
         width: 45px;
         margin: 11px 4px 0 4px;

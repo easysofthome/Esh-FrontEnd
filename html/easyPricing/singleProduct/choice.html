@@ -135,6 +135,10 @@
         </div>
         <p class="name">滚边枕头</p>
         <div class="dropbox clearfix">
+          <div class="Switch_button">
+            <a class="button_a button_cur">选择尺寸</a>
+            <a class="button_a">输入尺寸</a>
+          </div>
           <form method="post" id="choiceForm" action="">
             <div>
             <label class="lab lf clearrfix label_check">
@@ -185,7 +189,22 @@
         </div>
         <p class="name">滚边枕头</p>
         <div class="dropbox clearfix">
+          <div class="Switch_button">
+            <a class="button_a">选择尺寸</a>
+            <a class="button_a button_cur">输入尺寸</a>
+          </div>
           <form method="post" id="choiceForm" action="">
+            <div class="input_box">
+              长 <input class="input_style" type="text" /> *
+              宽 <input class="input_style" type="text" /> *
+              高 <input class="input_style" type="text" />
+            </div>
+            <div class="input_box">
+              长 <input class="input_style" type="text" /> *
+              宽 <input class="input_style" type="text" />
+            </div>
+          </form>
+          <!-- <form method="post" id="choiceForm" action="">
             <div>
             <label class="lab lf clearrfix label_check">
               <input class="int lf" id="spam_a" name="spam[]" type="checkbox" checked="checked" />
@@ -199,7 +218,7 @@
             </label>
             </div>
             <div class="input-tip" id="messageBox"></div>
-          </form>
+          </form> -->
         </div>
         <a class="btn" id="btnNext" href="javascript:void(0)">下一步</a>
       </div>
