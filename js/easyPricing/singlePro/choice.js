@@ -24,6 +24,14 @@ define(function (require, exports, module) {
         $(this).attr('show', 'true');
       }
   });
+  // 筛选条件 过滤
+  $('body').on('click', '.Switch_button a', function () {
+    $(this).parent().find('a').toggleClass('button_cur');
+    var index = $(this).index(),
+      obj = $(this).parents('.dropbox');
+      obj.find('.js-filter').hide();
+      obj.find('.js-filter').eq(index).show();
+  })
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 $('.arraybox').find('a.btn').bind('click',function(){

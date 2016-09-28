@@ -19,18 +19,18 @@ define(function(require, exports, module) {
 
     /////////////// 默认选项 ///////////////
         //织造种类 默认选中第一个
-        $("input[name='WeavingType']:first").attr("checked", "checked");
+        $("input[name='WeavingType']:first").parent().click();
 
         //染织方法
-        $("input[name='DyeingType']:first").attr("checked", "checked");
+        $("input[name='DyeingType']:first").parent().click();
 
         //染色颜色
-        $("input[name='DyeingColorRequirements']:first").attr("checked", "checked");
+        $("input[name='DyeingColorRequirements']:first").parent().click();
 
         //染织方法
-        $("input[name='DyeingDyeRequirement']:first").attr("checked", "checked");
-        $("input[name='DyeingPrintingProcessRequirements']:first").attr("checked", "checked");
-        $("input[name='DyeingColourFastnessGrade']:first").attr("checked", "checked");
+        $("input[name='DyeingDyeRequirement']:first").parent().click();
+        $("input[name='DyeingPrintingProcessRequirements']:first").parent().click();
+        $("input[name='DyeingColourFastnessGrade']:first").parent().click();
         $("input[name=DyeingPrintingProcessRequirements]:last").parent().css('display','none');
 
         //汇率
@@ -103,7 +103,6 @@ define(function(require, exports, module) {
         max:4,
         value: abbNum,
         addEvent:function () {
-            abbNum++;
             var ifrUrl = $('.wefttype_box .yarn_butt').attr('data-href');
             $('#abb-ul').append('<li class="lf yarn_para">'
               + '<span class="lf para_tit">纬纱'+ abbNum +'：</span>'
@@ -131,6 +130,7 @@ define(function(require, exports, module) {
               + '</li>');
             $('.multiWarpWeft').find('.fixed-input-tip').eq(1).before('<span class="plus lf"></span>'
               + '<input type="text" id="abbSpinnerNum'+ (abbNum+1) +'" name="FabricYarns['+ abbNum +'].DensityLength" class="density_input lf">');
+            abbNum++;
         },
         cutEvent:function () {
             $('#abb-ul li:last input').poshytip('destroy');
