@@ -443,37 +443,37 @@
           <div class="clearfix data_frm" id="yeWorksAftertreatment">
             <span class="lf title_name">染厂后处理：</span>
             <div class="lf handle_one selected">
-              <input type="checkbox" class="hidden" checked="checked" value="" name="cb1">
+              <input type="checkbox" class="hidden" checked="checked" value="1" name="cb1">
               <span class="select"></span>
               抗菌处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="2" name="cb1">
               <span class="select"></span>
               丝光处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="3" name="cb1">
               <span class="select"></span>
               防水处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="4" name="cb1">
               <span class="select"></span>
               防油处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="5" name="cb1">
               <span class="select"></span>
               阻燃处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="6" name="cb1">
               <span class="select"></span>
               防霉处理
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb1">
+              <input type="checkbox" class="hidden" value="7" name="cb1">
               <span class="select"></span>
               抗静电处理
             </div>
@@ -482,37 +482,37 @@
           <div class="clearfix data_frm" id="otherAftertreatment">
             <span class="lf title_name">其他后处理：</span>
             <div class="lf handle_one selected">
-              <input type="checkbox" class="hidden" checked="checked" value="" name="cb2">
+              <input type="checkbox" class="hidden" checked="checked" value="a" name="cb2">
               <span class="select"></span>
               轧光
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="b" name="cb2">
               <span class="select"></span>
               轧花
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="c" name="cb2">
               <span class="select"></span>
               PA涂层
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="d" name="cb2">
               <span class="select"></span>
               PU涂层一层
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="e" name="cb2">
               <span class="select"></span>
               PU涂层二层
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="f" name="cb2">
               <span class="select"></span>
               PU涂层三层
             </div>
             <div class="lf handle_one  handle_mag">
-              <input type="checkbox" class="hidden" value="" name="cb2">
+              <input type="checkbox" class="hidden" value="g" name="cb2">
               <span class="select"></span>
               防绒涂层
             </div>
@@ -560,6 +560,22 @@
        </div>
       </form>
     </div>
+
+    <div id="hiddenArea" class="none">
+   <!-- 隐藏表单参数 纱织 -->
+   <input type="hidden" name="ChaineDensityLength" value="1"/>
+   <input type="hidden" name="FabricMaterials" value="2"/>
+   <input type="hidden" name="WovenMaterial" value="3"/>
+   <input type="hidden" name="DyeingMaterial" value="4"/>
+   <input type="hidden" name="FabricTotalWeight" value="5"/>
+
+   <!-- 隐藏表单参数 工厂 -->
+   <input type="hidden" name="WeavingProcessMId" value="6"/>
+   <input type="hidden" name="DyeingColourationMId" value="7"/>
+   <input type="hidden" name="DyeingPrintingMId" value="8"/>
+   <input type="hidden" name="DyeingYarnDyedFactoryId" value="9"/>
+   <input type="hidden" name="GreyClothFactoryId" value="1"/>
+ </div>
     <!--------------------- 核价页面 start ---------------------->
     <!-- 您要核价的面料参数 -->
     <div class="pricePart">
@@ -742,29 +758,6 @@
           <span class="tit_cla">请选择各环节的工厂报价</span>
         </div>
 
-        <table cellspacing="0" cellpadding="0" class="tab-box">
-          <tr>
-            <td class="name">可做坯布的工厂</td>
-            <td class="lf"></td>
-            <td class="operation">
-              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
-            </td>
-          </tr>
-          <tr>
-            <td>染色工厂</td>
-            <td class="lf"></td>
-            <td>
-              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
-            </td>
-          </tr>
-          <tr>
-            <td>涂层、轧花等其他后处理工厂</td>
-            <td class="lf"></td>
-            <td>
-              <span data-href="/html/easyPricing/fabric/choose.html" class="btn-save btn">选择工厂</span>
-            </td>
-          </tr>
-        </table>
         <div class="butt_box">
           <a href="javascript:void(0)" class="lf butt_return">返回</a>
           <a href="javascript:void(0)" class="lf butt_pricing">下一步</a>
@@ -945,6 +938,7 @@
       <a class="btn_gray lf close" href="#">关闭</a>
     </div>
   </div>
+
 </script>
 <!-- /laytpl模板引擎 -->
 
