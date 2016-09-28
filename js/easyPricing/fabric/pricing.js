@@ -231,19 +231,19 @@ define(function(require, exports, module) {
                 var para_tit = $(this).find('.para_tit').html()
                 $span.html(para_tit);
                 //成分
-                var yarnComponentVal = $(this).find('.yarnComponent').val();
+                var yarnComponentVal = $(this).find('input[dataName="YarnSpecName"]').val();
                 $p.html('成分：' +yarnComponentVal);
                 $div_sub.append($p[0].outerHTML);
                 //粗细
-                var yarnthicknessVal = $(this).find('.yarnthickness').val();
+                var yarnthicknessVal = $(this).find('input[dataName="YarnNum"]').val();
                 $p.html('粗细：' +yarnthicknessVal);
                 $div_sub.append($p[0].outerHTML);
                 //股线
-                var foldedYarnsVal = $(this).find('.foldedYarns').val();
+                var foldedYarnsVal = $(this).find('input[dataName="StrandsNum"]').val();
                 $p.html('股线：' +foldedYarnsVal);
                 $div_sub.append($p[0].outerHTML);
                 //成分比
-                var ratioConstituentsVal = $(this).find('.ratioConstituents').val();
+                var ratioConstituentsVal = $(this).find('input[dataName="ComponentRatio"]').val();
                 $p.html('成分比：' +ratioConstituentsVal);
                 $div_sub.append($p[0].outerHTML);
                 //将DIV放入父级DIV

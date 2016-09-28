@@ -376,8 +376,24 @@
   });
   </script>
   <script>
-    var index = parent.layer.getFrameIndex(window.name);
-    $('.close,.btn_close').click(function(){
+   var index = parent.layer.getFrameIndex(window.name);
+    $('.btn_blue').click(function(){
+      var _selectYarnNum = '20 s';
+
+      var dataParam = {
+            FabricElementId:2,
+            YarnSpecName:3,
+            YarnSpecNum:_selectYarnNum.split(" ")[0],
+            YarnSpecNumUnit:_selectYarnNum.split(" ")[1],
+            StrandsNum:5,
+            ComponentRatio:6,
+            YarnNum:_selectYarnNum.replace(" ",""),
+            FactoryYarnId:'abc',
+            IsChaineDensity:0,
+            HolesNum :'24F',
+            Technology :'有光'
+        }
+      parent.observer.publish('fabricForm',dataParam);
       parent.layer.close(index);
     });
   </script>

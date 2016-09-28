@@ -1,5 +1,6 @@
 define(function(require, exports, module) {
     require('jquery');
+    require('js/front/easydata/common/selCity'); //城市下拉选择
     var pricing = parent.window.priceObjPage;
     $('.tab-box').find('.access_butt').bind('click',function(){
         var trOjb =  $(this).parent().parent();
