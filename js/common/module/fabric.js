@@ -334,16 +334,15 @@ observer.subscribe('fabricForm',function(data){
         var name = $(this).attr('dataName');
         var readOnly = $(this).attr('readonly');
         if(readOnly){
-            if(data[name]){
+            if(data[name]!=undefined&&data[name]!=''){
               $(this).attr('readonly','');
               $(this).val(data[name]);
               $(this).attr('readonly','readonly')
             }
-           ;
         }else{
-             if(data[name]){
-                $(this).val(data[name]);
-             }
+         if(data[name]!=undefined&&data[name]!=''){
+            $(this).val(data[name]);
+         }
         }
 
     });
