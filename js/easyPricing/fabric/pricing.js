@@ -199,7 +199,7 @@ define(function(require, exports, module) {
             $span.html('单经单纬');
             $li.html('纱线种类数量 :   '+$span[0].outerHTML);
             $ul.append($li[0].outerHTML);
-            $span.html('1*1');
+            $span.html($(singleWarpSpinnerNum).val()+'*'+$(singleabbSpinnerNum).val());
             $li.html('经纬密 :   '+$span[0].outerHTML);
             $ul.append($li[0].outerHTML);
         }else{
