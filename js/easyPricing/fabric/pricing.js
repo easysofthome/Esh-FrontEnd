@@ -348,7 +348,7 @@ define(function(require, exports, module) {
           ['DyeingMaterial','FabricTotalWeight','FabricWidth','DyeingColorRequirements']);
         return this.processTd({
             fName:this.tagArray[1]+'工厂',
-            url:this.tagArray[5]
+            url:this.tagArray[5]+'?'+params
         });
       },
       //印花工厂
@@ -380,10 +380,10 @@ define(function(require, exports, module) {
         for(var i=0;i<len;i++){
           var symbol = i>0?'&':'';
           var val = $(sel).find('input[name="'+arryName[i]+'"]');
-          if(!val){
-            val = '';
+          if(val&&val.attr('name')){
+            p += (symbol+ val.attr('name')+'='+val.val());
           }
-          p += (symbol+val);
+
         }
         return p;
 
