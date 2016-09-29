@@ -399,7 +399,7 @@ define(function(require, exports, module) {
       //织造工厂
       weavingFacytory:function(){
         var params = this.symbolJoin('body',
-          ['WovenMaterial','ChaineDensityLength','WeavingType','DyeingType','FabricWidth','OrderQuantityID']);
+          ['WovenMaterial','ChaineDensityLength','WeavingType','DyeingType','FabricWidth','OrderQuantityId']);
         return this.processTd({
             fName:this.tagArray[6]+'工厂',
             url:'Fabric/ChooseWeavingFactory?'+params
