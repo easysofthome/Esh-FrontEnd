@@ -336,7 +336,8 @@ define(function(require, exports, module) {
       //可做坯布的工厂
       greyClothFactory:function(){
        var params = this.symbolJoin('body',
-          ['DyeingMaterial','FabricTotalWeight','FabricWidth','DyeingColorRequirements']);
+          ['ChaineDensityLength','WovenMaterial','DyeingMaterial','FabricTotalWeight',
+          'WeavingDyeingType','OrderQuantityId','WeavingType','FabricWidth']);
         return this.processTd({
             fName:this.tagArray[0]+'工厂',
             url:this.tagArray[5]+'?'+params
