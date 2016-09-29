@@ -69,6 +69,7 @@ define(function(require, exports, module) {
                 break;
             case 2:
                 $('#selFactoryPrice').show().find('.butt_box').show(); //请选择各环节的工厂报价
+                this.factory.processHTML_selFactoryPrice_y_w_c();
                 break;
             case 3:
                 $('#priceRet').show();//您的询价结果
@@ -237,6 +238,8 @@ define(function(require, exports, module) {
     //经纱 纱线列表
     _fn.processHTML_priceParam_partB = function($li,$ul,index) {
       var that = this;
+      //清空纱线列表
+      that.selFactoryParam.yarn = [];
       var $listLi = $li.addClass('yarntype_box');
       $listLi.empty() ;
       var $div_base = $('<div class="clearfix yarn_para"></div>');
@@ -248,6 +251,7 @@ define(function(require, exports, module) {
       var eachClass = yarnTypeNumTxt == '单经单纬'?'.singleWarpWeft':'.multiWarpWeft';
       $(eachClass).each(function(){
         $(this).find('li').each(function () {
+          var thatLi = this;
           $div_sub.empty();
           var para_tit = $(this).find('.para_tit').html()
           $span.html(para_tit);
@@ -274,7 +278,9 @@ define(function(require, exports, module) {
           //记录下选择各环节的工厂报价所需的参数
           if(index==1||index==2){
               var fName = $(this).children('span:first').text(); //工厂名称
-              that.selFactoryParam.yarn.push(fName);
+              var urlParams = that.factory.symbolJoin(thatLi,[
+                'FabricElementId','YarnSpecName','YarnSpecNum','StrandsNum','ComponentRatio','HolesNum','Technology']);
+              that.selFactoryParam.yarn.push({fName:fName,urlParams:urlParams});
           }
         });
       });
@@ -310,9 +316,12 @@ define(function(require, exports, module) {
       processHTML_selFactoryPrice_y_w_c : function(){
         var $table = $('<table class="tab-box"></table>');
         var $tbody = $('<tbody></tbody>');
-        //可做坯布的工厂
-        $tbody.append(this.greyClothFactory());
-
+        $tbody.append(this.yarnSpecFactory());
+        //染色方式
+        $tbody.append(this.getDyedMethod(this.pThis.selFactoryParam.dyedMethod));
+        //后处理
+        $tbody.append(this.afterProcessFactory());
+        $table.html($tbody);
         //先清空Table再放入Table
         $('#selFactoryPrice').children('.tab-box').remove();
         $('#selFactoryPrice').children('.tit_box').after($table);
@@ -332,6 +341,21 @@ define(function(require, exports, module) {
             break;
         }
         return ret;
+      },
+      //纱线列表
+      yarnSpecFactory:function(){
+        var trs = '';
+        var yarns = this.pThis.selFactoryParam.yarn;
+        var len = yarns.length;
+        for(var i =0;i<len;i++){
+          var tr = this.processTd({
+            fName:yarns[i].fName+'工厂',
+            url:this.tagArray[5]+'?'+yarns[i].urlParams
+          });
+          trs += tr;
+        }
+        return trs;
+
       },
       //可做坯布的工厂
       greyClothFactory:function(){
@@ -367,7 +391,14 @@ define(function(require, exports, module) {
           ['FabricMaterials','DyeingProcessRequirements']);
         return this.processTd({
             fName:this.tagArray[3]+'工厂',
-            url:this.tagArray[5]
+            url:this.tagArray[5]+'?'+params
+        });
+      },
+      //后处理工厂
+      afterProcessFactory:function(){
+        return this.processTd({
+            fName:this.tagArray[4]+'工厂',
+            url:this.tagArray[5]+'?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing
         });
       },
       /**
@@ -388,13 +419,6 @@ define(function(require, exports, module) {
         }
         return p;
 
-      },
-      //后处理工厂
-      afterProcessFactory:function(){
-        return this.processTd({
-            fName:this.tagArray[4]+'工厂',
-            url:this.tagArray[5]+'?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing
-        });
       },
       //生成tr td部分
       processTd : function(opt){
