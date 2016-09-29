@@ -296,7 +296,7 @@ define(function(require, exports, module) {
      */
     _fn.factory = {
       pThis :_fn,
-      tagArray :['可做坯布的','染色','印花','色织','后处理','/html/easyPricing/fabric/choose.html','织造'],
+      tagArray :['可做坯布的','染色','印花','色织','后处理','','织造'],
       //HTML（选择坯布+染色（印花））
       processHTML_selFactoryPrice_f_c : function(){
         var $table = $('<table class="tab-box"></table>');
@@ -352,7 +352,7 @@ define(function(require, exports, module) {
         for(var i =0;i<len;i++){
           var tr = this.processTd({
             fName:yarns[i].fName+'工厂',
-            url:this.tagArray[5]+'?'+yarns[i].urlParams
+            url:'Pricing/Fabric/ChooseYarnSpecFactory?'+yarns[i].urlParams
           });
           trs += tr;
         }
@@ -366,7 +366,7 @@ define(function(require, exports, module) {
           'WeavingDyeingType','OrderQuantityId','WeavingType','FabricWidth']);
         return this.processTd({
             fName:this.tagArray[0]+'工厂',
-            url:this.tagArray[5]+'?'+params
+            url:'Pricing/Fabric/ChooseGreyClothFactory?'+'?'+params
         });
       },
       //染色工厂
@@ -375,7 +375,7 @@ define(function(require, exports, module) {
           ['DyeingMaterial','FabricTotalWeight','FabricWidth','DyeingColorRequirements']);
         return this.processTd({
             fName:this.tagArray[1]+'工厂',
-            url:this.tagArray[5]+'?'+params
+            url:'Pricing/Fabric/ChooseDyeingColourationFactory?'+params
         });
       },
       //印花工厂
@@ -384,7 +384,7 @@ define(function(require, exports, module) {
           ['DyeingMaterial','DyeingColourFastnessGrade','FabricWidth','DyeingIsPositionFlower','FlowerLoop','DyeingColorNum','DyeingDyeRequirement','DyeingPrintingProcessRequirements']);
         return this.processTd({
             fName:this.tagArray[2]+'工厂',
-            url:this.tagArray[5]+'?'+params
+            url:'Pricing/Fabric/ChooseDyeingPrintingFactory?'+params
         });
       },
       //色织工厂
@@ -393,7 +393,7 @@ define(function(require, exports, module) {
           ['FabricMaterials','DyeingProcessRequirements']);
         return this.processTd({
             fName:this.tagArray[3]+'工厂',
-            url:this.tagArray[5]+'?'+params
+            url:'Pricing/Fabric/ChooseDyeingYarnDyedFactory?'+params
         });
       },
       //织造工厂
@@ -402,14 +402,14 @@ define(function(require, exports, module) {
           ['WovenMaterial','ChaineDensityLength','WeavingType','DyeingType','FabricWidth','OrderQuantityID']);
         return this.processTd({
             fName:this.tagArray[6]+'工厂',
-            url:this.tagArray[5]+'?'+params
+            url:'Pricing/Fabric/ChooseWeavingFacytory?'+params
         });
       },
       //后处理工厂
       afterProcessFactory:function(){
         return this.processTd({
             fName:this.tagArray[4]+'工厂',
-            url:this.tagArray[5]+'?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing
+            url:'Pricing/Fabric/ChooseAfterProcessesFactory?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing
         });
       },
       /**
