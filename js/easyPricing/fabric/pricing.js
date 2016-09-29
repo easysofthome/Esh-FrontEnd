@@ -129,7 +129,7 @@ define(function(require, exports, module) {
         $ul.append($li[0].outerHTML);
 
         //织造种类
-        var weavingType = $('#fabricForm').find('input[type="radio"]:checked').next('span').text();
+        var weavingType = $('#fabricForm').find('input[name="WeavingType"]:checked').next('span').text();
         $span.html(weavingType);
         $li.html('织造种类 :   '+ $span[0].outerHTML);
         $ul.append($li[0].outerHTML);
@@ -167,7 +167,7 @@ define(function(require, exports, module) {
         //染厂后处理
         $li.html(yeWorksAftertreatmentTxt).addClass('log_li');
         that.selFactoryParam.reprocessing = '';
-        $('#fabricForm').find('input[type="checkbox"]:checked').each(function(i){
+        $('#yeWorksAftertreatment').find('input[type="checkbox"]:checked').each(function(i){
             var symbol = i>0?',':'';
             var checkedTxt = $(this).parent().text();
             //存储染厂后处理
@@ -179,7 +179,7 @@ define(function(require, exports, module) {
         var otherAftertreatmentTxt = '其他后处理 :   ';
         //其他后处理
         $li.html(otherAftertreatmentTxt);
-        $('#fabricForm').find('input[type="checkbox"]:checked').each(function(){
+        $('#otherAftertreatment').find('input[type="checkbox"]:checked').each(function(){
             var symbol = that.selFactoryParam.reprocessing.length>0?',':'';
             var checkedTxt = $(this).parent().text();
             //存储其他后处理
