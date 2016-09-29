@@ -279,7 +279,7 @@ define(function(require, exports, module) {
           if(index==1||index==2){
               var fName = $(this).children('span:first').text(); //工厂名称
               var urlParams = that.factory.symbolJoin(thatLi,[
-                'FabricElementId','YarnSpecName','YarnSpecNum','StrandsNum','ComponentRatio','HolesNum','Technology']);
+                'FabricElementId','YarnSpecName','YarnSpecNum','StrandsNum','ComponentRatio','HolesNum','Technology'],'dataName');
               that.selFactoryParam.yarn.push({fName:fName,urlParams:urlParams});
           }
         });
@@ -296,16 +296,16 @@ define(function(require, exports, module) {
      */
     _fn.factory = {
       pThis :_fn,
-      tagArray :['可做坯布的','染色','印花','色织','后处理','/html/easyPricing/fabric/choose.html'],
+      tagArray :['可做坯布的','染色','印花','色织','后处理','/html/easyPricing/fabric/choose.html','织造'],
       //HTML（选择坯布+染色（印花））
       processHTML_selFactoryPrice_f_c : function(){
         var $table = $('<table class="tab-box"></table>');
         var $tbody = $('<tbody></tbody>');
         //可做坯布的工厂
         $tbody.append(this.greyClothFactory());
-        //染色方式
+        //'染色','印花','色织' 工厂
         $tbody.append(this.getDyedMethod(this.pThis.selFactoryParam.dyedMethod));
-        //后处理
+        //后处理工厂
         $tbody.append(this.afterProcessFactory());
         $table.html($tbody);
         //先清空Table再放入Table
@@ -317,9 +317,11 @@ define(function(require, exports, module) {
         var $table = $('<table class="tab-box"></table>');
         var $tbody = $('<tbody></tbody>');
         $tbody.append(this.yarnSpecFactory());
-        //染色方式
+        //'染色','印花','色织' 工厂
         $tbody.append(this.getDyedMethod(this.pThis.selFactoryParam.dyedMethod));
-        //后处理
+        //织造工厂
+        $tbody.append(this.weavingFacytory());
+        //后处理工厂
         $tbody.append(this.afterProcessFactory());
         $table.html($tbody);
         //先清空Table再放入Table
@@ -394,6 +396,15 @@ define(function(require, exports, module) {
             url:this.tagArray[5]+'?'+params
         });
       },
+      //织造工厂
+      weavingFacytory:function(){
+        var params = this.symbolJoin('body',
+          ['WovenMaterial','ChaineDensityLength','WeavingType','DyeingType','FabricWidth','OrderQuantityID']);
+        return this.processTd({
+            fName:this.tagArray[6]+'工厂',
+            url:this.tagArray[5]+'?'+params
+        });
+      },
       //后处理工厂
       afterProcessFactory:function(){
         return this.processTd({
@@ -406,16 +417,21 @@ define(function(require, exports, module) {
        * sel 容器selector
        * arrayName 表单元素name数组
        */
-      symbolJoin:function(sel,arryName){
+      symbolJoin:function(sel,arryName,attr){
+        var myAttr = attr || 'name';
         var len = arryName.length;
         var p = '';
         for(var i=0;i<len;i++){
           var symbol = i>0?'&':'';
-          var val = $(sel).find('input[name="'+arryName[i]+'"]');
-          if(val&&val.attr('name')){
-            p += (symbol+ val.attr('name')+'='+val.val());
+          var val = $(sel).find('input['+myAttr+'="'+arryName[i]+'"]');
+          if(!val||!val.attr('name')){
+            val = $(sel).find('select['+myAttr+'="'+arryName[i]+'"]');
+            if(val&&val.attr('name')){
+              p += (symbol+ val.attr(myAttr)+'='+val.val());
+            }
+          }else{
+             p += (symbol+ val.attr(myAttr)+'='+val.val());
           }
-
         }
         return p;
 
