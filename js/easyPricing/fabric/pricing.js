@@ -485,8 +485,16 @@ define(function(require, exports, module) {
         });
         //核价
         $('#selFactoryPrice').find('.butt_pricing').bind('click',function(){
+          if(that.validEmptyFactory()){
             $(this).parent().hide();
             that.askPrice();
+          }else{
+            layer.msg('请选择工厂报价！',2,{
+              shade:[0, '#000'],
+              type:0
+            });
+          }
+
         });
 
         //检索与您匹配的面料供应商
@@ -494,7 +502,18 @@ define(function(require, exports, module) {
             that.startLoadData();
         });
     }
-     _fn.bindSelFactory = function(){
+    _fn.validEmptyFactory = function(){
+      var tag = false;
+      $('#selFactoryPrice .tab-box tr').each(function(){
+        var text = $(this).children('td:nth-child(2)').text().replace(/\s/g,'');
+        if(text.length>0){
+          tag = true;
+          return;
+        }
+      });
+      return tag;
+    }
+    _fn.bindSelFactory = function(){
         var that = this;
          //选择工厂
         $('.btn').on("click", function(){
