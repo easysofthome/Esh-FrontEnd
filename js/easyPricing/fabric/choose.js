@@ -1,14 +1,16 @@
 define(function(require, exports, module) {
     require('jquery');
     require('js/front/easydata/common/selCity'); //城市下拉选择
-    var pricing = parent.window.priceObjPage;
+    var observer = parent.window.observer;
     $('.tab-box').find('.access_butt').bind('click',function(){
         var trOjb =  $(this).parent().parent();
         var data = {};
         data.fName = trOjb.find('.fName').text();
         data.fPrice = trOjb.find('.fPrice').text();
         data.fCode = trOjb.find('.fCode').attr('dataVal');
-        pricing.selFactoryCb(data);
+        data.fId = $(this).attr('dataFactoryId');
+        //发布选择工厂的数据
+        observer.publish('factoryCallback',data);
         var index = parent.layer.getFrameIndex(window.name)
         parent.layer.close(index);
     });

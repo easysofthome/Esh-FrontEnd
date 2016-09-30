@@ -127,7 +127,7 @@
                       <!-- 纱线工艺 -->
                       <input dataName="Technology" type="hidden" value="7" name="FabricYarnsChaineSingle.Technology">
                       <!-- 工厂ID -->
-                      <input dataName="FactoryYarnId" type="hidden" value="8" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <input dataName="FactoryYarnMId" type="hidden" value="8" name="FabricYarnsChaineSingle.FactoryYarnId">
                       <!-- 是否是纱线 -->
                       <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
@@ -180,7 +180,7 @@
                       <!-- 纱线工艺 -->
                       <input dataName="Technology" type="hidden" value="07" name="FabricYarnsChaineSingle.Technology">
                       <!-- 工厂ID -->
-                      <input dataName="FactoryYarnId" type="hidden" value="08" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <input dataName="FactoryYarnMId" type="hidden" value="08" name="FabricYarnsChaineSingle.FactoryYarnId">
                       <!-- 是否是纱线 -->
                       <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
@@ -231,7 +231,7 @@
                       <!-- 纱线工艺 -->
                       <input dataName="Technology" type="hidden" value="17" name="FabricYarnsChaineSingle.Technology">
                       <!-- 工厂ID -->
-                      <input dataName="FactoryYarnId" type="hidden" value="18" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <input dataName="FactoryYarnMId" type="hidden" value="18" name="FabricYarnsChaineSingle.FactoryYarnId">
                       <!-- 是否是纱线 -->
                       <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                     </span>
@@ -283,7 +283,7 @@
                       <!-- 纱线工艺 -->
                       <input dataName="Technology" type="hidden" value="27" name="FabricYarnsChaineSingle.Technology">
                       <!-- 工厂ID -->
-                      <input dataName="FactoryYarnId" type="hidden" value="28" name="FabricYarnsChaineSingle.FactoryYarnId">
+                      <input dataName="FactoryYarnMId" type="hidden" value="28" name="FabricYarnsChaineSingle.FactoryYarnId">
                       <!-- 是否是纱线 -->
                       <input dataName="IsChaineDensity" type="hidden" value="true" name="FabricYarnsChaineSingle.IsChaineDensity">
                 </span>
@@ -946,14 +946,6 @@
   <script>seajs.use(['js/front/easyPricing/fabric/fabric'
   //  ,'js/front/easyPricing/fabric/pagewalkthrough'
   ]);
-
-  priceObj = {};
-  //静态方法
-  priceObj.selFactoryCb = function(data){
-    if(_fn.$factory_flag){
-      _fn.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice+' '+data.fNum);
-    }
-  }
 
   </script>
 </body>

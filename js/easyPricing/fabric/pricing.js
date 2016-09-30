@@ -31,16 +31,11 @@ define(function(require, exports, module) {
             _fn.bindSelFactory();
         }
     }
-    //静态方法
-    priceObj.selFactoryCb = function(data){
-        if(_fn.$factory_flag){
-            _fn.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice+' '+data.fCode);
-        }
-    }
     //初始化
     _fn.init = function(){
         this.load();
         this.bindEvent();
+        this.subscribe();
     }
     //界面加载时执行
     _fn.load = function(){
@@ -278,9 +273,10 @@ define(function(require, exports, module) {
           //记录下选择各环节的工厂报价所需的参数
           if(index==1||index==2){
               var fName = $(this).children('span:first').text(); //工厂名称
+              var factoryId = $(this).find('input[dataName="FactoryYarnMId"]').attr('name');
               var urlParams = that.factory.symbolJoin(thatLi,[
-                'FabricElementId','YarnSpecName','YarnSpecNum','StrandsNum','ComponentRatio','HolesNum','Technology'],'dataName');
-              that.selFactoryParam.yarn.push({fName:fName,urlParams:urlParams});
+                'FabricElementId','YarnSpecName','YarnSpecNum','StrandsNum','ComponentRatio','HolesNum','Technology','YarnSpecNumUnit'],'dataName');
+              that.selFactoryParam.yarn.push({fName:fName,urlParams:urlParams,factoryId:factoryId});
           }
         });
       });
@@ -295,6 +291,7 @@ define(function(require, exports, module) {
      * @type {Object}
      */
     _fn.factory = {
+      testUrl:'choose.html?',
       pThis :_fn,
       tagArray :['可做坯布的','染色','印花','色织','后处理','','织造'],
       //HTML（选择坯布+染色（印花））
@@ -351,8 +348,9 @@ define(function(require, exports, module) {
         var len = yarns.length;
         for(var i =0;i<len;i++){
           var tr = this.processTd({
-            fName:yarns[i].fName+'工厂',
-            url:'Fabric/ChooseYarnSpecFactory?'+yarns[i].urlParams
+            fName:yarns[i].fName.replace(/\：$/,'')+'工厂',
+            url:this.testUrl?this.testUrl+yarns[i].urlParams:'Fabric/ChooseYarnSpecFactory?'+yarns[i].urlParams,
+            factoryId:yarns[i].factoryId
           });
           trs += tr;
         }
@@ -361,12 +359,14 @@ define(function(require, exports, module) {
       },
       //可做坯布的工厂
       greyClothFactory:function(){
-       var params = this.symbolJoin('body',
-          ['ChaineDensityLength','WovenMaterial','DyeingMaterial','FabricTotalWeight',
-          'WeavingDyeingType','OrderQuantityId','WeavingType','FabricWidth']);
+       // var params = this.symbolJoin('body',
+       //    ['ChaineDensityLength','WovenMaterial','DyeingMaterial','FabricTotalWeight',
+       //    'WeavingDyeingType','OrderQuantityId','WeavingType','FabricWidth']);
+       var params = $('#fabricForm').serialize();
         return this.processTd({
             fName:this.tagArray[0]+'工厂',
-            url:'Fabric/ChooseGreyClothFactory?'+'?'+params
+            url:this.testUrl?this.testUrl+params:'Fabric/ChooseGreyClothFactory?'+params,
+            factoryId:'GreyClothFactoryId'
         });
       },
       //染色工厂
@@ -375,7 +375,8 @@ define(function(require, exports, module) {
           ['DyeingMaterial','FabricTotalWeight','FabricWidth','DyeingColorRequirements']);
         return this.processTd({
             fName:this.tagArray[1]+'工厂',
-            url:'Fabric/ChooseDyeingColourationFactory?'+params
+            url:this.testUrl?this.testUrl+params:'Fabric/ChooseDyeingColourationFactory?'+params,
+            factoryId:'DyeingColourationMId'
         });
       },
       //印花工厂
@@ -384,7 +385,8 @@ define(function(require, exports, module) {
           ['DyeingMaterial','DyeingColourFastnessGrade','FabricWidth','DyeingIsPositionFlower','FlowerLoop','DyeingColorNum','DyeingDyeRequirement','DyeingPrintingProcessRequirements']);
         return this.processTd({
             fName:this.tagArray[2]+'工厂',
-            url:'Fabric/ChooseDyeingPrintingFactory?'+params
+            url:this.testUrl?this.testUrl+params:'Fabric/ChooseDyeingPrintingFactory?'+params,
+            factoryId:'DyeingPrintingMId'
         });
       },
       //色织工厂
@@ -393,7 +395,8 @@ define(function(require, exports, module) {
           ['FabricMaterials','DyeingProcessRequirements']);
         return this.processTd({
             fName:this.tagArray[3]+'工厂',
-            url:'Fabric/ChooseDyeingYarnDyedFactory?'+params
+            url:this.testUrl?this.testUrl+params:'Fabric/ChooseDyeingYarnDyedFactory?'+params,
+            factoryId:'DyeingYarnDyedFactoryId'
         });
       },
       //织造工厂
@@ -402,14 +405,16 @@ define(function(require, exports, module) {
           ['WovenMaterial','ChaineDensityLength','WeavingType','DyeingType','FabricWidth','OrderQuantityId']);
         return this.processTd({
             fName:this.tagArray[6]+'工厂',
-            url:'Fabric/ChooseWeavingFactory?'+params
+            url:this.testUrl?this.testUrl+params:'Fabric/ChooseWeavingFactory?'+params,
+            factoryId:'WeavingProcessMId'
         });
       },
       //后处理工厂
       afterProcessFactory:function(){
         return this.processTd({
             fName:this.tagArray[4]+'工厂',
-            url:'Fabric/ChooseAfterProcessesFactory?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing
+            url:this.testUrl?this.testUrl+this.pThis.selFactoryParam.reprocessing:'Fabric/ChooseAfterProcessesFactory?SelectAfterProcessIDs='+this.pThis.selFactoryParam.reprocessing,
+            factoryId:''
         });
       },
       /**
@@ -451,6 +456,7 @@ define(function(require, exports, module) {
         $tr.append($td[0].outerHTML);
         $td.attr('class','operation');
         $span.attr('data-href',opts.url).attr('class','btn-save btn').text(opts.btnName);
+        $span.attr('factoryId',opt.factoryId);
         $td.html($span[0].outerHTML);
         $tr.append($td[0].outerHTML);
         return $tr[0].outerHTML;
@@ -511,9 +517,27 @@ define(function(require, exports, module) {
             });
         });
      }
+     //订阅功能
+     _fn.subscribe = function(){
+        var that = this;
+        //订阅选择工厂数据 添加工厂名称、价格、code
+        observer.subscribe('factoryCallback',function(data){
+            if(that.$factory_flag){
+              that.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice+' '+data.fCode);
+            }
+        });
+        //订阅选择工厂数据 给不同工厂的隐藏域factoryID赋值
+         observer.subscribe('factoryCallback',function(data){
+          if(that.$factory_flag){
+            var fPriceName = that.$factory_flag.attr('factoryId');
+            $('#fabricForm').find('input[name="'+fPriceName+'"]').val(data.fId);
+          }
+        });
+     }
 
 
 /////////////////////入口///////////////////////
+
 
 
     module.exports = priceObj;

@@ -1,4 +1,6 @@
 define(function(require, exports, module) {
+    var observer = require('js/front/common/module/observer');
+    window.observer = observer;
     var fabric = require('js/front/common/module/fabric');
     var pricing = require('js/front/easyPricing/fabric/pricing'); //核价功能
    // var pricingObj = new pricing();
@@ -75,7 +77,7 @@ define(function(require, exports, module) {
                     + '<input dataName="HolesNum" name="FabricYarnsChaine['+ warpNum +'].HolesNum" type="hidden" value="">'
                     + '<input dataName="Technology" name="FabricYarnsChaine['+ warpNum +'].Technology" type="hidden" value="">'
                     + '<input dataName="IsChaineDensity" name="FabricYarnsChaine['+ warpNum +'].IsChaineDensity" type="hidden" value="true">'
-                    + '<input dataName="FactoryYarnId" name="FabricYarnsChaine['+ warpNum +'].FactoryYarnId" type="hidden" value="">'
+                    + '<input dataName="FactoryYarnMId" name="FabricYarnsChaine['+ warpNum +'].FactoryYarnId" type="hidden" value="">'
                   + '</span>'
                   + '<span class="clearfix thickness">'
                   + '<span class="clearfix thickness">'
@@ -119,7 +121,7 @@ define(function(require, exports, module) {
                     + '<input dataName="HolesNum" name="FabricYarns['+ abbNum +'].HolesNum" type="hidden" value="">'
                     + '<input dataName="Technology" name="FabricYarns['+ abbNum +'].Technology" type="hidden" value="">'
                     + '<input dataName="IsChaineDensity" name="FabricYarns['+ abbNum +'].IsChaineDensity" type="hidden" value="false">'
-                    + '<input dataName="FactoryYarnId" name="FabricYarns['+ abbNum +'].FactoryYarnId" type="hidden" value="">'
+                    + '<input dataName="FactoryYarnMId" name="FabricYarns['+ abbNum +'].FactoryYarnId" type="hidden" value="">'
                 + '</span>'
                 + '<span class="clearfix thickness">'
                   + '<span class="lf ingredient_tit">粗细</span>'
@@ -452,6 +454,5 @@ define(function(require, exports, module) {
     }
 
     fabric.init(submitHandler);
-/////////////////////// /表单验证 ////////////////////////////
 
-}); //define
+});
