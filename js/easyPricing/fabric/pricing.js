@@ -291,7 +291,8 @@ define(function(require, exports, module) {
      * @type {Object}
      */
     _fn.factory = {
-      testUrl:false,
+      //testUrl:true,
+      testUrl:'/html/easyPricing/fabric/choose.html?',
       pThis :_fn,
       tagArray :['可做坯布的','染色','印花','色织','后处理','','织造'],
       //HTML（选择坯布+染色（印花））
@@ -502,6 +503,7 @@ define(function(require, exports, module) {
             that.startLoadData();
         });
     }
+    //选择工厂报价不能为空
     _fn.validEmptyFactory = function(){
       var tag = false;
       $('#selFactoryPrice .tab-box tr').each(function(){
@@ -513,6 +515,7 @@ define(function(require, exports, module) {
       });
       return tag;
     }
+    //选择工厂事件
     _fn.bindSelFactory = function(){
         var that = this;
          //选择工厂
@@ -549,7 +552,11 @@ define(function(require, exports, module) {
          observer.subscribe('factoryCallback',function(data){
           if(that.$factory_flag){
             var fPriceName = that.$factory_flag.attr('factoryId');
-            $('#fabricForm').find('input[name="'+fPriceName+'"]').val(data.fId);
+            if(fPriceName.length>0){
+              //$('#fabricForm').find('input[name="'+fPriceName+'"]').val(data.fId);
+              $('input[name="'+fPriceName+'"]').val(data.fId);
+            }
+
           }
         });
      }
