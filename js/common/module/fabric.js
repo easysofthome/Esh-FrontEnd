@@ -183,7 +183,7 @@ define(function(require, exports, module) {
 
         }
 
-      }
+    }
 
     // 经纱种类选择纱线
     $('.yarntype_box').on('click', '.yarn_butt' , function() {
@@ -230,24 +230,24 @@ define(function(require, exports, module) {
         });
     });
 
-     //订阅选择纱线 callback
+    //订阅选择纱线 callback
     window.observer.subscribe('fabricForm',function(data){
 
-      $(that).parent().find('input').each(function(){
-        var name = $(this).attr('dataName');
-        var readOnly = $(this).attr('readonly');
-        if(readOnly){
-            if(data[name]!=undefined){
-              $(this).attr('readonly','');
-              $(this).val(data[name]);
-              $(this).attr('readonly','readonly');
+        $(that).parent().find('input').each(function(){
+            var name = $(this).attr('dataName');
+            var readOnly = $(this).attr('readonly');
+            if(readOnly){
+                if(data[name]!=undefined){
+                    $(this).attr('readonly','');
+                    $(this).val(data[name]);
+                    $(this).attr('readonly','readonly');
+                }
+            }else{
+                if(data[name]!=undefined){
+                    $(this).val(data[name]);
+                }
             }
-        }else{
-         if(data[name]!=undefined){
-            $(this).val(data[name]);
-         }
-        }
-      });
+        });
     });
 
 ////////////////////// iframe传值 ////////////////////
@@ -274,7 +274,7 @@ define(function(require, exports, module) {
     var form = $("#fabricForm");
 
     $('#startPrice').on('click', function() {
-        ///form.submit();
+        form.submit();
     });
 
     function init(callback) {
@@ -289,9 +289,11 @@ define(function(require, exports, module) {
         validator = form.validate({
             //忽略
             ignore: ':hidden',
-            submitHandler:function(){
+            submitHandler:function(form){
                 if(callback){
                     callback();
+                }else{
+                    form.submit();
                 }
             },
             onfocusout:function(element){
@@ -300,10 +302,10 @@ define(function(require, exports, module) {
             errorPlacement: function(error, element) {
                 $(element).poshytip('destroy');
                 if(error.text().length > 0){
-                   setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
+                    setMsgPosition(element,error.text(),$(element).attr("errorMsgPosition"));
                 }
                 return true;
-              },
+            },
             success:function(element){
                 $(element).poshytip('destroy');
             },
@@ -313,9 +315,9 @@ define(function(require, exports, module) {
         module.exports.validator = validator;
     }
 
-module.exports.setMsgPosition = setMsgPosition;
-module.exports.closeGuideLayer = closeGuideLayer;
-module.exports.init = init;
+    module.exports.setMsgPosition = setMsgPosition;
+    module.exports.closeGuideLayer = closeGuideLayer;
+    module.exports.init = init;
 
 
 });
