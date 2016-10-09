@@ -514,7 +514,7 @@ function init(){
   var imgIdArray_cur = Cookies.get('imgIdArray_cur');
   var pageIndex_cur = 0;
   //var pagination_cookie = Cookies.get('pagination');
-  var url_pageIndex = tools.urlHelp.getValueByKey('pageindex');
+  var url_pageIndex = tools.urlHelp.getValueByKey('pagendex');
   if(url_pageIndex!=-1){ //首次加载
     imgData.pagination.pageIndex = url_pageIndex;
     pageIndex_cur = imgData.pagination.pageIndex;
