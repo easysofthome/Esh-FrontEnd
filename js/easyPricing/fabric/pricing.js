@@ -556,7 +556,6 @@ define(function(require, exports, module) {
               //$('#fabricForm').find('input[name="'+fPriceName+'"]').val(data.fId);
               $('input[name="'+fPriceName+'"]').val(data.fId);
             }
-
           }
         });
      }
