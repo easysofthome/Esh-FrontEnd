@@ -310,7 +310,7 @@ define(function(require, exports, module) {
         }
     };
 
-    fabric.init();
+    module.exports.init = fabric.init();
 /////////////////////////////// /表单验证部分 ///////////////////////////////////
 
 

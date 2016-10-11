@@ -291,7 +291,7 @@ define(function(require, exports, module) {
             ignore: ':hidden',
             submitHandler:function(form){
                 if(callback){
-                    callback();
+                    callback(form);
                 }else{
                     form.submit();
                 }
