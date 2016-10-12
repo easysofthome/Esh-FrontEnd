@@ -14,7 +14,8 @@ define(function(require, exports, module) {
     placehold.init('input');
 
     // 下拉框
-    $('#fabricType,#fabricTypeSecond').customSelect({width:"120px",padding:"12px 5px"});
+    $('#fabricType').customSelect({width:"120px",padding:"12px 5px"});
+    $('#fabricTypeSecond').customSelect({width:"150px",padding:"12px 5px"});
     $('#minimum_order_num').customSelect({width:"120px",padding:"12px 5px"});
     $('#density_unit,#sel4,#sel5,#warp_flower_size,#across_flower_size,#exchange_rate').customSelect({width:"90px",padding:"12px 5px"});
 
@@ -309,7 +310,7 @@ define(function(require, exports, module) {
         }
     };
 
-    fabric.init();
+    module.exports.init = fabric.init();
 /////////////////////////////// /表单验证部分 ///////////////////////////////////
 
 

@@ -3,8 +3,8 @@ define(function(require, exports, module) {
     window.observer = observer;
     var fabric = require('js/front/common/module/fabric');
     var pricing = require('js/front/easyPricing/fabric/pricing'); //核价功能
-   // var pricingObj = new pricing();
-    var pricingObj = {};
+    var pricingObj = new pricing();
+
     $(document).ready(function(){
 
         // 单经单纬却换
