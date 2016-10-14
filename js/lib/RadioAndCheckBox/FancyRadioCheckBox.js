@@ -11,19 +11,21 @@ define(function (require, exports, module) {
             selector.find('.label_check').click(function () {
                 var that = this;
                 setupLabel(that);
+                return false;
             });
         }else{
              $('.label_check, .label_radio').click(function () {
                 var that = this;
                 setupLabel(that);
+                return false;
             });
         }
     };
 
     function setupLabel(that) {
         if(that){
-            var $checkbox = $(that).children('input[type=checkbox]');
-            if($checkbox.attr('checked')&&$checkbox.attr('checked')!=false){
+            var isChecked = $(that).hasClass('c_on');
+            if(isChecked){
                 $(that).removeClass('c_on');
             }else{
                 $(that).addClass('c_on');

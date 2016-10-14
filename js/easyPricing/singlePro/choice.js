@@ -35,7 +35,7 @@ define(function (require, exports, module) {
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
 $('.arraybox').find('a.btn').bind('click',function(){
-  var checkedNum = $(this).parent().find('input[type="checkbox"]:checked').length;
+  var checkedNum = $(this).parent().find('label.c_on').length;
   var checkedNone = checkedNum>0?false:true;
   if(checkedNone){
     $(this).parent().find('img').layerTip();
