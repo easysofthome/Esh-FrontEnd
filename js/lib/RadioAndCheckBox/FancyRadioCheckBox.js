@@ -14,7 +14,8 @@ define(function (require, exports, module) {
             });
         }else{
              $('.label_check, .label_radio').click(function () {
-                setupLabel();
+                var that = this;
+                setupLabel(that);
             });
         }
     };
@@ -22,7 +23,7 @@ define(function (require, exports, module) {
     function setupLabel(that) {
         if(that){
             var $checkbox = $(that).children('input[type=checkbox]');
-            if($checkbox.attr('checked')){
+            if($checkbox.attr('checked')&&$checkbox.attr('checked')!=false){
                 $(that).removeClass('c_on');
             }else{
                 $(that).addClass('c_on');
@@ -37,11 +38,6 @@ define(function (require, exports, module) {
             });
         };
     };
-
-    $(function () {
-
-        init();
-    });
     exports.init = init;
 
 });
