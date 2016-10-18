@@ -241,5 +241,24 @@ ul.arraybox{
           margin-left:8px ;
       }
 
+      .js-filter li.filed {
+        display:inline-block;
+        width:45%;
+        margin :0;
+      }
+      .js-filter li.filed > label {
+        float:none;
+        clear: left;
+      }
+     .js-filter li.filed span {  width:45%; display:inline-block }
+     .text-overflow {
+      display:block;/*内联对象需加*/
+      width:100%;/*指定宽度*/
+      word-break:keep-all;/* 不换行 */
+      white-space:nowrap;/* 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。不换行 */
+      overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+      text-overflow:ellipsis;/* IE 专有属性，当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    }
+
   }
 }
