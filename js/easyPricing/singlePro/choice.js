@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
   require('jquery');
   require('js/front/easyPricing/common/alertLayer');
+  var tool = require('tools');
   exports.nextFunction;
   $('.array').hover(
     function (event) {
@@ -34,11 +35,23 @@ define(function (require, exports, module) {
   })
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
+//选择尺寸不能为空，输入尺寸不能为空、必须是数字
 $('.arraybox').find('a.btn').bind('click',function(){
-  var checkedNum = $(this).parent().find('label.c_on').length;
-  var checkedNone = checkedNum>0?false:true;
-  if(checkedNone){
-    $(this).parent().find('img').layerTip();
+  var c = $(this).parent().find('.js-filter');
+  var msg = '';
+  var valid = false;
+  if(!$(c[0]).is(':hidden')){
+    var checkedNum = $(c[0]).find('label.c_on').length;
+    valid = checkedNum>0?true:false;
+    msg = '请选择尺寸！';
+  }else{
+    var msg = checkInput($(c[1]));
+    valid = msg=='ok'?true:false;
+  }
+  if(!valid){
+    $(this).parent().find('img').layerTip({
+      showText:msg
+    });
   }else{
     if(exports.nextFunction){
       exports.nextFunction();
@@ -47,6 +60,23 @@ $('.arraybox').find('a.btn').bind('click',function(){
     }
   }
 });
+
+//如果input为空或非数字返回错误信息，正确则返回’ok‘
+function checkInput(selector){
+  var msg = 'ok';
+  selector.find('input').each(function(){
+    var v = tool.validateHelper.trim(this.value);
+    var isNum = /\d+/.test(v);
+    if(v.length==0){
+      msg = '尺寸不能为空！';
+      return false;
+    }else if(!isNum){
+      msg = '请输入数字！';
+      return false;
+    }
+  });
+  return msg;
+}
 
 
 

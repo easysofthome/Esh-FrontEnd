@@ -11,7 +11,7 @@ define(function (require, exports, module) {
   };
   $.AlertLayer.prototype.init = function(){
     var that = this;
-    this.$elm.data('alertLayer',this);
+    //this.$elm.data('alertLayer',this);
     this.show();
     setTimeout(function(){
       that.hide();
@@ -50,7 +50,7 @@ define(function (require, exports, module) {
       this.creatHTML();
       this.$parentWraper.append(this.$wraper);
     }else{
-      this.$parentWraper.find('#'+this.alertId).show();
+      this.$parentWraper.find('#'+this.alertId).html('<span>'+this.opts.showText+'</span>').show();
     }
   }
 
@@ -64,12 +64,7 @@ define(function (require, exports, module) {
       });
     }
     return this.each(function() {
-      var alertLayer = $(this).data('alertLayer');
-      if(alertLayer){
-        alertLayer.init();
-      }else{
-        new $.AlertLayer(this);
-      }
+        new $.AlertLayer(this,options);
     });
   }
 

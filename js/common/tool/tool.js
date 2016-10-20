@@ -228,6 +228,13 @@ define(function (require, exports, module) {
         head.appendChild(style); //把创建的style元素插入到head中
     }
 
+    var validateHelper = {
+        //去掉首尾空格
+        trim:function(value){
+            return value.replace(/^\s+/g).replace(/\s+$/g);
+        }
+    }
+
      /** 手机号验证*/
     function validtaePhoneNum (value) {
         var reg = {
@@ -533,6 +540,7 @@ define(function (require, exports, module) {
     // module.exports.toKeepDecimal2 = toKeepDecimal2;
     module.exports.validateNumPointNum_plus = validateNumPointNum_plus;
     module.exports.EventHelper = EventHelper;
+    module.exports.validateHelper = validateHelper;
 
 
 
