@@ -67,7 +67,7 @@ function checkInput(selector){
   selector.find('input').each(function(){
     var v = tool.validateHelper.trim(this.value);
     var isNum = /\d+/.test(v);
-    if(v.length==0){
+    if(v.length==0||!v){
       msg = '尺寸不能为空！';
       return false;
     }else if(!isNum){
