@@ -23,22 +23,17 @@ define(function (require, exports, module) {
     };
 
     function setupLabel(that) {
-        if(that){
-            var isChecked = $(that).hasClass('c_on');
+        var tag = $(that).find('input').attr('type');
+        tag = tag=='radio'?'r_on':'c_on';
+        if(tag){
+            var isChecked = $(that).hasClass(tag);
             if(isChecked){
-                $(that).removeClass('c_on');
+                $(that).removeClass(tag);
             }else{
-                $(that).addClass('c_on');
+                $(that).addClass(tag);
             }
         }
-        if ($('.label_radio input').length) {
-            $('.label_radio').each(function () {
-                $(this).removeClass('r_on');
-            });
-            $('.label_radio input:checked').each(function () {
-                $(this).parent('label').addClass('r_on');
-            });
-        };
+
     };
     exports.init = init;
 

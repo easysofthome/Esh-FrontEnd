@@ -3,8 +3,6 @@ define(function (require, exports, module) {
   require('layer');
 
   require('js/front/lib/tip/jquery.poshytip');
-  var FancyRadioCheckBox = require('FancyRadioCheckBox');
-  FancyRadioCheckBox.init();
 
 
 ///////////////使用时间戳防止冒泡//////////////////////
