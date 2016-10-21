@@ -24,14 +24,17 @@ define(function (require, exports, module) {
 
     function setupLabel(that) {
         var tag = $(that).find('input').attr('type');
-        tag = tag=='radio'?'r_on':'c_on';
-        if(tag){
-            var isChecked = $(that).hasClass(tag);
+        var mytag = tag=='radio'?'r_on':'c_on';
+        if(tag=='checkbox'){
+            var isChecked = $(that).hasClass(mytag);
             if(isChecked){
-                $(that).removeClass(tag);
+                $(that).removeClass(mytag);
             }else{
-                $(that).addClass(tag);
+                $(that).addClass(mytag);
             }
+        }else if(tag=='radio'){
+            var isChecked = $(that).parent().find('.label_radio').removeClass(mytag);
+            $(that).addClass(mytag);
         }
 
     };
