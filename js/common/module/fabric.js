@@ -278,14 +278,13 @@ define(function(require, exports, module) {
     });
 
     function init(callback) {
-        validate(callback);
+        var returnValide  = validate(callback);
     }
 
     /** 表单验证 */
     var validator;
-
+    var _validSuccess = false;
     function validate(callback) {
-        //addrules();
         validator = form.validate({
             //忽略
             ignore: ':hidden',
@@ -295,6 +294,7 @@ define(function(require, exports, module) {
                 }else{
                     form.submit();
                 }
+                _validSuccess = true;
             },
             onfocusout:function(element){
                 $(element).valid();
@@ -318,7 +318,7 @@ define(function(require, exports, module) {
     module.exports.setMsgPosition = setMsgPosition;
     module.exports.closeGuideLayer = closeGuideLayer;
     module.exports.init = init;
-
+    module.exports.validSuccess = _validSuccess; //表单验证是否成功
 
 });
 

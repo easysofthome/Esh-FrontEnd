@@ -568,11 +568,11 @@ define(function(require, exports, module) {
     module.exports = priceObj;
 
     //测试用 跳过表单验证
-    var o = new priceObj();
+    // var o = new priceObj();
 
-    $('#startPrice').on('click', function() {
-        o.start();
-    });
+    // $('#startPrice').on('click', function() {
+    //     o.start();
+    // });
 
     //提供全局对象
     window.priceObjPage = priceObj;
