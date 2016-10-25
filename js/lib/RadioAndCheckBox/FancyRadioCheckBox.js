@@ -35,6 +35,7 @@ define(function (require, exports, module) {
         }else if(tag=='radio'){
             var isChecked = $(that).parent().find('.label_radio').removeClass(mytag);
             $(that).addClass(mytag);
+            $(that).find('input').attr('checked','checked')
         }
 
     };
