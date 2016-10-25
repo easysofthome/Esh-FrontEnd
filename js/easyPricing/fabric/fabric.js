@@ -355,17 +355,12 @@ define(function(require, exports, module) {
     //页面初始化加载
     module.exports.validSuccess = function(){
          var ret = fabric.validSuccess;
-         console.log(ret);
          return ret;
     }
-
+    module.exports.fabric = fabric;
+    module.exports.pricingObj = pricingObj;
     //测试
     fabric.init();
-    $('#startPrice').unbind('click');
-    $('#startPrice').bind('click',function(){
-        fabric.validSuccess = false;
-        $("#fabricForm").submit();
-        module.exports.validSuccess();
-    });
+
 
 });
