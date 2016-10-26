@@ -1,22 +1,49 @@
 @import '../../../../dev/mixins/mixins.less';
+
 .titbox
 {
     width: 854px;
     margin-top: 40px;
 
     background-color: #fff;
-    p.tit
-    {
-        font-size: 24px;
-        line-height: 66px;
+    .tit2_box{
+        width: 814px;
+        margin: 10px auto 2px auto;
+        padding: 10px 0 10px 0;
 
-        display: inline;
+        background-color: #f2f2f2;
+        .selectbox{
+            width: 670px;
+            li{
+                border: 1px solid #3CA1D7;
+                padding: 0 8px;
+                margin: 4px 0 0 4px;
+                color: #e22c37;
+                font-size: 12px;
+                line-height: 24px;
+                .border-radius(2px);
+            }
 
-        margin-left: 20px;
-
-        color: #333;
+        }
     }
+    .tit,.tit2
+    {
+        color: #333;
+
+    }
+    .tit{
+        line-height: 66px;
+        display: inline;
+        margin-left: 20px;
+    }
+    .tit2{
+        font-size: 20px;
+        margin-left: 14px;
+        line-height: 32px;
+    }
+
 }
+
 
 a.upload
 {
