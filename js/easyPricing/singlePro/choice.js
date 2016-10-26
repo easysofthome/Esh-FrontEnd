@@ -35,34 +35,52 @@ define(function (require, exports, module) {
   })
 
 /////////////////////////////// 表单验证部分 ///////////////////////////////////
-//选择尺寸不能为空，输入尺寸不能为空、必须是数字
-$('.arraybox').find('a.btn').bind('click',function(){
-  var c = $(this).parent().find('.js-filter');
+var _choicePage = (function(){
+
+//choice对象
+var choiceObj = {
+  $form:{}
+}
+choiceObj.init = function(){
+  this.bindEvent();
+}
+//下一步
+choiceObj.nextStep = function(that){
+  var c = $(that).parent().find('.js-filter');
   var msg = '';
   var valid = false;
   if(!$(c[0]).is(':hidden')){
     var checkedNum = $(c[0]).find('label.c_on').length;
     valid = checkedNum>0?true:false;
     msg = '请选择尺寸！';
+    this.$form = $(c[0]).parent();
   }else{
-    var msg = checkInput($(c[1]));
+    var msg = this.checkInput($(c[1]));
     valid = msg=='ok'?true:false;
+    this.$form = $(c[1]).parent();
   }
   if(!valid){
-    $(this).parent().find('img').layerTip({
+    $(that).parent().find('img').layerTip({
       showText:msg
     });
   }else{
     if(exports.nextFunction){
-      exports.nextFunction();
+      exports.nextFunction(this.$form);
     }else{
       console.log('接口"nextFunction"未实现');
     }
   }
-});
-
-//如果input为空或非数字返回错误信息，正确则返回’ok‘
-function checkInput(selector){
+}
+//绑定事件
+choiceObj.bindEvent = function(){
+  var that = this;
+  //选择尺寸不能为空，输入尺寸不能为空、必须是数字
+  $('.arraybox').find('a.btn').bind('click',function(){
+      that.nextStep(this);
+  });
+}
+//如果input为空或非数字返回错误信息，正确则返回’ok
+choiceObj.checkInput = function(selector){
   var msg = 'ok';
   selector.find('input').each(function(){
     var v = tool.validateHelper.trim(this.value);
@@ -77,7 +95,21 @@ function checkInput(selector){
   });
   return msg;
 }
+//返回Form对象
+choiceObj.getForm = function(){
+  var t = this.$form;
+  return t;
+}
+//页面加载时初始化
+choiceObj.init();
 
+return {
+  //返回Form对象
+  getForm:choiceObj.getForm
+}
+})();
 
+//接口
+module.exports.choicePage = _choicePage;
+})
 
-});

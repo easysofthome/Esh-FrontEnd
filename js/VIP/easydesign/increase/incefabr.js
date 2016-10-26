@@ -310,8 +310,8 @@ define(function(require, exports, module) {
         }
     };
 
-    module.exports.init = fabric.init();
-/////////////////////////////// /表单验证部分 ///////////////////////////////////
+    module.exports.init = fabric.init;
+
 
 
 // module.exports.validate = function(callback){callback()};

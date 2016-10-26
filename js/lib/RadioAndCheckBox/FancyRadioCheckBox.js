@@ -8,16 +8,19 @@ define(function (require, exports, module) {
     var init = function (selector) {
          $('body').addClass('has-js');
         if(selector){
-            selector.find('.label_check').click(function () {
+            selector.find('.label_check').click(function (t) {
+                var o = t.srcElement || t.target;
+                if(o.tagName!=='input'&&o.tagName!=='INPUT') return;
                 var that = this;
                 setupLabel(that);
-                return false;
             });
         }else{
-             $('.label_check, .label_radio').click(function () {
+             $('.label_check, .label_radio').click(function (t) {
+                var o = t.srcElement || t.target;
+                if(o.tagName!=='input'&&o.tagName!=='INPUT') return;
                 var that = this;
                 setupLabel(that);
-                return false;
+
             });
         }
     };
@@ -35,6 +38,7 @@ define(function (require, exports, module) {
         }else if(tag=='radio'){
             var isChecked = $(that).parent().find('.label_radio').removeClass(mytag);
             $(that).addClass(mytag);
+            $(that).find('input').attr('checked','checked')
         }
 
     };
