@@ -945,7 +945,19 @@
   @@include('easyPricing/common/footer.html')
   <script>seajs.use(['js/front/easyPricing/fabric/fabric'
   //  ,'js/front/easyPricing/fabric/pagewalkthrough'
-  ]);
+  ],function(f){
+      $('#startPrice').unbind('click');
+      $('#startPrice').bind('click',function(){
+        f.fabric.validSuccess = false;
+        $("#fabricForm").submit();
+        var isSuccess = f.fabric.validSuccess;
+        if(isSuccess){
+          f.pricingObj.start();
+        }
+
+
+    });
+  });
 
   </script>
 </body>

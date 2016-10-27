@@ -294,7 +294,6 @@ define(function(require, exports, module) {
                 }else{
                     //form.submit();
                 }
-                _validSuccess = true;
             },
             onfocusout:function(element){
                 $(element).valid();

@@ -42,13 +42,17 @@ define(function(require, exports, module) {
 
         //汇率
         $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
+        //染厂后处理
+        $("input[name='AfterProcessesIds']:first").click();
 
         $("#exchangeRateSel").change(function() {
             $("input[name='ExchangeRate']").val($(this).val());
         });
 
         //初始化表单验证
-        fabric.init();
+        fabric.init(function(form){
+            fabric.validSuccess = true;
+        });
     });
 
 ////////////////////////////表单样式///////////////////////////////////
@@ -358,12 +362,6 @@ define(function(require, exports, module) {
         }
     };
     // }
-
-    //页面初始化加载
-    module.exports.validSuccess = function(){
-         var ret = fabric.validSuccess;
-         return ret;
-    }
     module.exports.fabric = fabric;
     module.exports.pricingObj = pricingObj;
 
