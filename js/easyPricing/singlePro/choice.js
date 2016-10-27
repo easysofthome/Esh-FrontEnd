@@ -78,35 +78,35 @@ choiceObj.bindEvent = function(){
   $('.arraybox').find('a.btn').bind('click',function(){
       that.nextStep(this);
   });
-}
-//如果input为空或非数字返回错误信息，正确则返回’ok
-choiceObj.checkInput = function(selector){
-  var msg = 'ok';
-  selector.find('input').each(function(){
-    var v = tool.validateHelper.trim(this.value);
-    var isNum = /\d+/.test(v);
-    if(v.length==0||!v||v=='undefined'){
-      msg = '尺寸不能为空！';
-      return false;
-    }else if(!isNum){
-      msg = '请输入数字！';
-      return false;
-    }
-  });
-  return msg;
-}
-//返回Form对象
-choiceObj.getForm = function(){
-  var t = this.$form;
-  return t;
-}
-//页面加载时初始化
-choiceObj.init();
-
-return {
+  }
+  //如果input为空或非数字返回错误信息，正确则返回’ok
+  choiceObj.checkInput = function(selector){
+    var msg = 'ok';
+    selector.find('input').each(function(){
+      var v = tool.validateHelper.trim(this.value);
+      var isNum = /\d+/.test(v);
+      if(v.length==0||!v||v=='undefined'){
+        msg = '尺寸不能为空！';
+        return false;
+      }else if(!isNum){
+        msg = '请输入数字！';
+        return false;
+      }
+    });
+    return msg;
+  }
   //返回Form对象
-  getForm:choiceObj.getForm
-}
+  choiceObj.getForm = function(){
+    var t = this.$form;
+    return t;
+  }
+  //页面加载时初始化
+  choiceObj.init();
+
+  return {
+    //返回Form对象
+    getForm:choiceObj.getForm
+  }
 })();
 
 //接口

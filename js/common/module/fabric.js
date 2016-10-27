@@ -292,7 +292,7 @@ define(function(require, exports, module) {
                 if(callback){
                     callback(form);
                 }else{
-                    form.submit();
+                    //form.submit();
                 }
                 _validSuccess = true;
             },

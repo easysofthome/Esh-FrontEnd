@@ -7,6 +7,7 @@ define(function(require, exports, module) {
 
     $(document).ready(function(){
 
+
         // 单经单纬却换
         $('input[name=yarnTypeNum]').on('click', function() {
             var index = $(this).parent().index();
@@ -20,19 +21,23 @@ define(function(require, exports, module) {
         })
 
     /////////////// 默认选项 ///////////////
+        $('input[name=yarnTypeNum]:first').click();
         //织造种类 默认选中第一个
-        $("input[name='WeavingType']:first").parent().click();
+        $("input[name='WeavingType']:first").click();
 
         //染织方法
-        $("input[name='DyeingType']:first").parent().click();
+        $("input[name='DyeingType']:first").click();
+        $("input[name='Fruit3']:first").click();
+        $("input[name='Fruit7']:first").click();
+
 
         //染色颜色
-        $("input[name='DyeingColorRequirements']:first").parent().click();
+        $("input[name='DyeingColorRequirements']:first").click();
 
         //染织方法
-        $("input[name='DyeingDyeRequirement']:first").parent().click();
-        $("input[name='DyeingPrintingProcessRequirements']:first").parent().click();
-        $("input[name='DyeingColourFastnessGrade']:first").parent().click();
+        $("input[name='DyeingDyeRequirement']:first").click();
+        $("input[name='DyeingPrintingProcessRequirements']:first").click();
+        $("input[name='DyeingColourFastnessGrade']:first").click();
         $("input[name=DyeingPrintingProcessRequirements]:last").parent().css('display','none');
 
         //汇率
@@ -42,6 +47,8 @@ define(function(require, exports, module) {
             $("input[name='ExchangeRate']").val($(this).val());
         });
 
+        //初始化表单验证
+        fabric.init();
     });
 
 ////////////////////////////表单样式///////////////////////////////////
@@ -359,8 +366,6 @@ define(function(require, exports, module) {
     }
     module.exports.fabric = fabric;
     module.exports.pricingObj = pricingObj;
-    //测试
-    fabric.init();
 
 
 });
