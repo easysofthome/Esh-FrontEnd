@@ -287,7 +287,7 @@ define(function(require, exports, module) {
     function validate(callback) {
         validator = form.validate({
             //忽略
-            ignore: ':hidden',
+            ignore: ':hidden,.ignore',
             submitHandler:function(form){
                 if(callback){
                     callback(form);
@@ -296,6 +296,7 @@ define(function(require, exports, module) {
                 }
             },
             onfocusout:function(element){
+                if(element.type=='radio')return;
                 $(element).valid();
             },
             errorPlacement: function(error, element) {
