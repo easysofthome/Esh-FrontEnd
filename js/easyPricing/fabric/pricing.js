@@ -355,13 +355,9 @@ define(function(require, exports, module) {
       },
       //可做坯布的工厂
       greyClothFactory:function(){
-       // var params = this.symbolJoin('body',
-       //    ['ChaineDensityLength','WovenMaterial','DyeingMaterial','FabricTotalWeight',
-       //    'WeavingDyeingType','OrderQuantityId','WeavingType','FabricWidth']);
-       var params = $('#fabricForm').serialize();
         return this.processTd({
             fName:this.tagArray[0]+'工厂',
-            url:this.testUrl?this.testUrl+params:this.baseUrl+'ChooseGreyClothFactory?'+params,
+            url:this.testUrl?this.testUrl+params:this.baseUrl+'ChooseGreyClothFactory',
             factoryId:'GreyClothFactoryId'
         });
       },
@@ -407,6 +403,7 @@ define(function(require, exports, module) {
       },
       //后处理工厂
       afterProcessFactory:function(){
+        //后处理没有选择，则返回空，页面则不会显示
         if(this.pThis.selFactoryParam.reprocessing.length==0) return '';
         return this.processTd({
             fName:this.tagArray[4]+'工厂',

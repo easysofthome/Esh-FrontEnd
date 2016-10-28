@@ -184,6 +184,8 @@
   <script src="/js/seajs/sea-debug.js"></script>
   <script src="/js/seajs/seajs-css.js"></script>
   <script src="/js/rootConfig.js"></script>
-  <script>seajs.use(['js/front/easyPricing/fabric/choose.js']);</script>
+  <script>seajs.use(['js/front/easyPricing/fabric/choose.js'],function(c){
+      console.log(c.getFormParams());
+    });</script>
 </body>
 </html>
