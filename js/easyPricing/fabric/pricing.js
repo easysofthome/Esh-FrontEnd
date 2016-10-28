@@ -55,18 +55,18 @@ define(function(require, exports, module) {
         this.processHTML_priceParam(index);//构建核价的面料参数 数据
         $('#fabricParam').fadeIn(300);//父容器 核价面料参数 显示
         switch (index){
-            case 0:
+            case '0':
                 $('#matFactoryList').fadeIn(); //与您匹配的面料供应商
                 break;
-            case 1:
+            case '1':
                 $('#selFactoryPrice').show().find('.butt_box').show(); //请选择各环节的工厂报价
                 this.factory.processHTML_selFactoryPrice_f_c();
                 break;
-            case 2:
+            case '2':
                 $('#selFactoryPrice').show().find('.butt_box').show(); //请选择各环节的工厂报价
                 this.factory.processHTML_selFactoryPrice_y_w_c();
                 break;
-            case 3:
+            case '3':
                 $('#priceRet').show();//您的询价结果
                 break;
         }
@@ -101,14 +101,8 @@ define(function(require, exports, module) {
     }
     //获取选中的radio的索引
     _fn.getChekedIndex = function(selector){
-        var index = 0;
-        $(selector+' input[type="radio"]').each(function(i){
-            if($(this).attr('checked')){
-                index = i;
-                return;
-            }
-        });
-        return index;
+        var selVal = $(selector+' input[type="radio"]:checked').val();
+        return selVal;
     }
     //生成核价页您面料参数数据
     _fn.processHTML_priceParam = function(index){
