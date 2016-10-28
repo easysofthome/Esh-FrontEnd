@@ -43,7 +43,7 @@ define(function(require, exports, module) {
         //汇率
         $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
         //染厂后处理
-        $("input[name='AfterProcessesIds']:first").click();
+        //$("input[name='AfterProcessesIds']:first").click();
 
         $("#exchangeRateSel").change(function() {
             $("input[name='ExchangeRate']").val($(this).val());

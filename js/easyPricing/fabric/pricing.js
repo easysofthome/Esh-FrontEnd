@@ -291,8 +291,8 @@ define(function(require, exports, module) {
      * @type {Object}
      */
     _fn.factory = {
-      //testUrl:true,
-      testUrl:'/html/easyPricing/fabric/choose.html?',
+      testUrl:true,
+      //testUrl:'/html/easyPricing/fabric/choose.html?',
       pThis :_fn,
       tagArray :['可做坯布的','染色','印花','色织','后处理','','织造'],
       //HTML（选择坯布+染色（印花））
