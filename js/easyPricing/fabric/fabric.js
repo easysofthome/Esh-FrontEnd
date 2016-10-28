@@ -44,6 +44,8 @@ define(function(require, exports, module) {
         $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
         //染厂后处理
         //$("input[name='AfterProcessesIds']:first").click();
+        //核价方式 默认选中宜家纺
+        $("input[name='FabricPricingType']:last").click();
 
         $("#exchangeRateSel").change(function() {
             $("input[name='ExchangeRate']").val($(this).val());
