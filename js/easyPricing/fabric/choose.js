@@ -8,7 +8,8 @@ define(function(require, exports, module) {
         data.fName = trOjb.find('.fName').text();
         data.fPrice = trOjb.find('.fPrice').text();
         data.fCode = trOjb.find('.fCode').attr('dataVal');
-        data.fId = $(this).attr('dataFactoryId');
+        //data.fId = $(this).attr('dataFactoryId');
+        data.fId = ''
         //发布选择工厂绑定的数据
         observer.publish('factoryCallback',data);
         var index = parent.layer.getFrameIndex(window.name)

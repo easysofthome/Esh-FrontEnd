@@ -291,7 +291,7 @@ define(function(require, exports, module) {
      * @type {Object}
      */
     _fn.factory = {
-      testUrl:true,
+      testUrl:false,
       //testUrl:'/html/easyPricing/fabric/choose.html?',
       pThis :_fn,
       tagArray :['可做坯布的','染色','印花','色织','后处理','','织造'],
@@ -545,7 +545,7 @@ define(function(require, exports, module) {
         //订阅选择工厂数据 添加工厂名称、价格、code
         observer.subscribe('factoryCallback',function(data){
             if(that.$factory_flag){
-              that.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice+' '+data.fCode);
+              that.$factory_flag.parent().prev('td').html(data.fName+' '+data.fPrice);
             }
         });
         //订阅选择工厂数据 给不同工厂的隐藏域factoryID赋值
@@ -554,7 +554,7 @@ define(function(require, exports, module) {
             var fPriceName = that.$factory_flag.attr('factoryId');
             if(fPriceName.length>0){
               //$('#fabricForm').find('input[name="'+fPriceName+'"]').val(data.fId);
-              $('input[name="'+fPriceName+'"]').val(data.fId);
+              $('input[name="'+fPriceName+'"]').val(data.fCode);
             }
           }
         });

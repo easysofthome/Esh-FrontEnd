@@ -5,58 +5,6 @@ define(function(require, exports, module) {
     var pricing = require('js/front/easyPricing/fabric/pricing'); //核价功能
     var pricingObj = new pricing();
 
-    $(document).ready(function(){
-
-
-        // 单经单纬却换
-        $('input[name=yarnTypeNum]').on('click', function() {
-            var index = $(this).parent().index();
-            if(index){
-                $('.spinner,.singleWarpWeft').hide();
-                $('.spinner,.multiWarpWeft').show();
-            } else {
-                $('.spinner,.singleWarpWeft').show();
-                $('.spinner,.multiWarpWeft').hide();
-            }
-        })
-
-    /////////////// 默认选项 ///////////////
-        $('input[name=yarnTypeNum]:first').click();
-        //织造种类 默认选中第一个
-        $("input[name='WeavingType']:first").click();
-
-        //染织方法
-        $("input[name='DyeingType']:first").click();
-        $("input[name='Fruit3']:first").click();
-        $("input[name='Fruit7']:first").click();
-
-
-        //染色颜色
-        $("input[name='DyeingColorRequirements']:first").click();
-
-        //染织方法
-        $("input[name='DyeingDyeRequirement']:first").click();
-        $("input[name='DyeingPrintingProcessRequirements']:first").click();
-        $("input[name='DyeingColourFastnessGrade']:first").click();
-        $("input[name=DyeingPrintingProcessRequirements]:last").parent().css('display','none');
-
-        //汇率
-        $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
-        //染厂后处理
-        //$("input[name='AfterProcessesIds']:first").click();
-        //核价方式 默认选中宜家纺
-        $("input[name='FabricPricingType']:last").click();
-
-        $("#exchangeRateSel").change(function() {
-            $("input[name='ExchangeRate']").val($(this).val());
-        });
-
-        //初始化表单验证
-        fabric.init(function(form){
-            fabric.validSuccess = true;
-        });
-    });
-
 ////////////////////////////表单样式///////////////////////////////////
     $('.sel1').customSelect({width:"150px",padding:"12px 5px"});
     $('.sel2').customSelect({width:"90px",padding:"12px 5px"});
@@ -166,7 +114,7 @@ define(function(require, exports, module) {
     // 表单验证配置
     // function validateConf() {
     // 验证规则配置
-    fabric.rules = {
+    var _rules = {
         fabricWidth: {
             number:true,
             required: true,
@@ -260,7 +208,7 @@ define(function(require, exports, module) {
         }
     };
     // 验证的错误信息配置
-    fabric.messages = {
+    var _messages = {
         fabricWidth: {
             required: icons.error + '请输入面料门幅！',
             number: icons.error + '面料门幅值只能是数字！',
@@ -363,9 +311,62 @@ define(function(require, exports, module) {
             maxlength: icons.error + '输入数值过长！'
         }
     };
-    // }
+
+ $(document).ready(function(){
+        // 单经单纬却换
+        $('input[name=yarnTypeNum]').on('click', function() {
+            var index = $(this).parent().index();
+            if(index){
+                $('.spinner,.singleWarpWeft').hide();
+                $('.spinner,.multiWarpWeft').show();
+            } else {
+                $('.spinner,.singleWarpWeft').show();
+                $('.spinner,.multiWarpWeft').hide();
+            }
+        })
+
+    /////////////// 默认选项 ///////////////
+        $('input[name=yarnTypeNum]:first').click();
+        //织造种类 默认选中第一个
+        $("input[name='WeavingType']:first").click();
+
+        //染织方法
+        $("input[name='DyeingType']:first").click();
+        $("input[name='Fruit3']:first").click();
+        $("input[name='Fruit7']:first").click();
+
+
+        //染色颜色
+        $("input[name='DyeingColorRequirements']:first").click();
+
+        //染织方法
+        $("input[name='DyeingDyeRequirement']:first").click();
+        $("input[name='DyeingPrintingProcessRequirements']:first").click();
+        $("input[name='DyeingColourFastnessGrade']:first").click();
+        $("input[name=DyeingPrintingProcessRequirements]:last").parent().css('display','none');
+
+        //汇率
+        $("input[name='ExchangeRate']").val($("#exchangeRateSel option:first").val());
+        //染厂后处理
+        //$("input[name='AfterProcessesIds']:first").click();
+        //核价方式 默认选中宜家纺
+        $("input[name='FabricPricingType']:last").click();
+
+        $("#exchangeRateSel").change(function() {
+            $("input[name='ExchangeRate']").val($(this).val());
+        });
+
+        fabric.rules = _rules;
+        fabric.messages = _messages;
+        //初始化表单验证
+        fabric.init(function(form){
+            fabric.validSuccess = true;
+        });
+    });
+
     module.exports.fabric = fabric;
     module.exports.pricingObj = pricingObj;
+
 
 
 });
