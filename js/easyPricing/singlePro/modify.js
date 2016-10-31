@@ -74,6 +74,98 @@ function initPostionOnShowTip(obj){
     $(window).scrollTop(scrollT);
   }
 }
+////////////////////////核价信息参数核对修改页对象////////////////////////////////////
+var modifyPage = {};
+//初始化
+modifyPage.init = function(){
+  this.bindEvent();
+}
+//事件绑定
+modifyPage.bindEvent = function(){
+  //点击弹出 产品辅料 包装辅料  体积信息修改层
+  this.sizeInfoLayer();
+  //点击弹出替换面料层
+  this.mainFabricLayer();
+  //点击弹出替换辅料层
+  this.mainAccessoriesLayer();
+}
+//款式尺码信息
+modifyPage.sizeInfoLayer = function(){
+  $('.modfy_part2').find('a.sizeInfoModify').click(function(){
+    var $that = $(this);
+    var dataUrl = $that.attr('data-url');
+    //查看修改
+    $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '272px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 270)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: dataUrl},
+          success: function (layero, index) {
+          }
+        });
+  });
+}
+//主要面料 '../pricing/replaceFabric.html'
+modifyPage.mainFabricLayer = function(){
+  $('.modfy_part3').find('a.replaceFabric_name').click(function(){
+    var $that = $(this);
+    var dataUrl = $that.attr('data-url');
+    //替换面料
+    $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '980px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 964)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: dataUrl},
+          success: function (layero, index) {
+
+
+          }
+        });
+  });
+}
+//主要辅料 '/html/easyPricing/pricing/accessories.html'
+modifyPage.mainAccessoriesLayer = function(){
+  $('.modfy_part4').find('a.accessories_name').click(function(){
+    var $that = $(this);
+    var dataUrl = $that.attr('data-url');
+    //替换辅料
+    $.layer({
+          type:2,
+          title: false,
+          area: ['1000px', '600px'],
+          border: [5, 0.3, '#000'],
+          shade: [0.8, '#000'],
+          shadeClose: true,
+          offset: [($(window).height() - 600)/2+'px',''],
+          closeBtn: [0, false], //去掉默认关闭按钮
+          shift: 'top',
+          fix : false,
+          iframe: {src: dataUrl},
+          success: function (layero, index) {
+
+
+          }
+        });
+  });
+}
+
+//手动初始化
+modifyPage.init();
+////////////////////////核价信息参数核对修改页对象结束////////////////////////////////////
 
 ////////////////////////////弹出层///////////////////////////////////
 
@@ -92,116 +184,6 @@ function initPostionOnShowTip(obj){
           shift: 'top',
           fix : false,
           iframe: {src: '../pricing/export.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-      //产品辅料 查看修改
-      $("#product_view").attr('href', 'javascript:void(0)');
-      $("#product_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '272px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 270)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '../pricing/productacc.html'},
-          success: function (layero, index) {
-          }
-        });
-      });
-
-      //包装辅料 查看修改
-      $("#packing_view").attr('href', 'javascript:void(0)');
-      $("#packing_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '272px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 272)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '../pricing/productacc.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-       //体积信息 查看修改
-      $("#volume_view").attr('href', 'javascript:void(0)');
-      $("#volume_view").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '200px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 200)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '../pricing/volume.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-
-       //替换面料
-      $(".replaceFabric_name").attr('href', 'javascript:void(0)');
-      $(".replaceFabric_name").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '980px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 964)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '../pricing/replaceFabric.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
-
-
-      //辅料替换
-      $(".accessories_name").attr('href', 'javascript:void(0)');
-      $(".accessories_name").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '600px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 600)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
           success: function (layero, index) {
 
 
