@@ -1,11 +1,10 @@
-require('js/front/common/dropDownPanel/dropDownPanel'], function (o) {
-
-    });
+var dropDownPanel = require('js/front/common/dropDownPanel/dropDownPanel');
 define(function(require, exports, module) {
     require('jquery');
     require('js/front/easydata/common/selCity'); //城市下拉选择
     //选择工厂页对象
     var choosePage = {
+        selBaseUrl :'/Pricing/Fabric/FindGreyClothFactory',
         observer:parent.window.observer
     }
     //初始化
@@ -21,11 +20,14 @@ define(function(require, exports, module) {
         });
         //查找
         $('.sortbox .intbox').children('a').click(function(){
-
+            //ajax请求数据
+            this.searchAjax();
         });
          //默认排序 OrderBy=0
         $('.sortbox .sort_def').children('a').click(function(){
             $('#OrderBy').val(0);
+            //ajax请求数据
+            this.searchAjax();
         });
         //价格排序 OrderBy=3/4
         $('.sortbox .sort_price').children('a').click(function(){
@@ -42,25 +44,46 @@ define(function(require, exports, module) {
                 sortPrice = '3';
             }
             $('#OrderBy').val(sortPrice);
-            //ajax
+            //ajax请求数据
+            this.searchAjax();
         });
         //选择地区回调
         this.selCityCb();
     }
     //选择地区
     choosePage.selCityCb = function(){
-        o.callback = function (e) {
+        dropDownPanel.callback = function (e) {
             var code = $(e).attr('data');
             $('AreaCityCode').val(code);
         }
     }
     //获取查询参数
-    choosePage.processSelParam = function(){
+    choosePage.getSelParam = function(baseUrl){
         //排序参数 0为默认排序,3为价格正排序,4为价格倒排序
         var defSort = $('#OrderBy').val();
-        var defSortCity = $('#AreaCityCode').val();
+        var selCity = $('#AreaCityCode').val();
+        var selKeyword = $('#FactoryName').val();
+        var selUrl = [
+            baseUrl,
+            '?',
+            'OrderBy=',OrderBy,
+            '&FactoryName=',selKeyword
+        ].join();
+        return selUrl;
 
     }
+    //查询Ajax
+    choosePage.searchAjax = function(){
+        var selUrl = this.getSelParam(this.selBaseUrl);
+        $.ajax({
+            type: "POST",
+            url: selUrl,
+            dataType: "json",
+            success: function (data) {
+
+            }
+        });
+}
     //确定按钮回调函数
     choosePage.btnOKCallback = function($that){
         //tr对象
