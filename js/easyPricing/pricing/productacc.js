@@ -55,7 +55,8 @@ function operParentLayer(){
     });
 
     $('#addBtn').bind('click',function(){
-     $('#showAddLayer', parent.document).trigger('click');
+      var dataUrl = $(this).attr('data-url');
+     $('#showAddLayer', parent.document).attr('data-url',dataUrl).trigger('click');
     });
 }
 

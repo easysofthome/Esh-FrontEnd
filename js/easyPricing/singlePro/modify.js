@@ -88,6 +88,8 @@ modifyPage.bindEvent = function(){
   this.mainFabricLayer();
   //点击弹出替换辅料层
   this.mainAccessoriesLayer();
+  //产品辅料 新增
+  this.accessoriesAddLayer();
 }
 //款式尺码信息
 modifyPage.sizeInfoLayer = function(){
@@ -112,6 +114,29 @@ modifyPage.sizeInfoLayer = function(){
         });
   });
 }
+//产品辅料 新增
+modifyPage.accessoriesAddLayer =function(){
+  //产品辅料 新增(双层layer)
+   $("#showAddLayer").bind("click",function(){
+    var $that = $(this);
+    var dataUrl = $that.attr('data-url');
+      $.layer({
+        type:2,
+        title: false,
+        area: ['1000px', '594px'],
+        border: [5, 0.3, '#000'],
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        offset: [($(window).height() - 594)/2+'px',''],
+        closeBtn: [0, false], //去掉默认关闭按钮
+        shift: 'top',
+        fix : false,
+        iframe: {src: dataUrl},
+        success: function (layero, index) {
+        }
+      });
+    });
+}
 //主要面料 '../pricing/replaceFabric.html'
 modifyPage.mainFabricLayer = function(){
   $('.modfy_part3').find('a.replaceFabric_name').click(function(){
@@ -131,8 +156,6 @@ modifyPage.mainFabricLayer = function(){
           fix : false,
           iframe: {src: dataUrl},
           success: function (layero, index) {
-
-
           }
         });
   });
@@ -156,8 +179,6 @@ modifyPage.mainAccessoriesLayer = function(){
           fix : false,
           iframe: {src: dataUrl},
           success: function (layero, index) {
-
-
           }
         });
   });
@@ -213,26 +234,6 @@ modifyPage.init();
         });
       });
 
-     //产品辅料 新增(双层layer)
-     $("#showAddLayer").bind("click",function(){
-        $.layer({
-          type:2,
-          title: false,
-          area: ['1000px', '594px'],
-          border: [5, 0.3, '#000'],
-          shade: [0.8, '#000'],
-          shadeClose: true,
-          offset: [($(window).height() - 594)/2+'px',''],
-          closeBtn: [0, false], //去掉默认关闭按钮
-          shift: 'top',
-          fix : false,
-          iframe: {src: '/html/easyPricing/pricing/accessories.html'},
-          success: function (layero, index) {
-
-
-          }
-        });
-      });
 
 /////////////////////////////// 起始港 目的港 下拉提示 ///////////////////////////////////
 
