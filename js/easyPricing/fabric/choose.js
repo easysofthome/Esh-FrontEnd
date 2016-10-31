@@ -1,7 +1,7 @@
-var dropDownPanel = require('js/front/common/dropDownPanel/dropDownPanel');
 define(function(require, exports, module) {
     require('jquery');
     require('js/front/easydata/common/selCity'); //城市下拉选择
+    var dropDownPanel = require('js/front/common/dropDownPanel/dropDownPanel');
     //选择工厂页对象
     var choosePage = {
         selBaseUrl :'/Pricing/Fabric/FindGreyClothFactory',
@@ -23,7 +23,7 @@ define(function(require, exports, module) {
             //ajax请求数据
             this.searchAjax();
         });
-         //默认排序 OrderBy=0
+        //默认排序 OrderBy=0
         $('.sortbox .sort_def').children('a').click(function(){
             $('#OrderBy').val(0);
             //ajax请求数据
@@ -58,29 +58,29 @@ define(function(require, exports, module) {
         }
     }
     //获取查询参数
-    choosePage.getSelParam = function(baseUrl){
+    choosePage.getSelParam = function(){
         //排序参数 0为默认排序,3为价格正排序,4为价格倒排序
         var defSort = $('#OrderBy').val();
         var selCity = $('#AreaCityCode').val();
         var selKeyword = $('#FactoryName').val();
-        var selUrl = [
-            baseUrl,
-            '?',
-            'OrderBy=',OrderBy,
+        var otherParam = $("#hideparm").val();
+        var selDataParm = [
+            otherParam,
+            '&OrderBy=',OrderBy,
             '&FactoryName=',selKeyword
         ].join();
-        return selUrl;
+        return selDataParm;
 
     }
     //查询Ajax
     choosePage.searchAjax = function(){
-        var selUrl = this.getSelParam(this.selBaseUrl);
+        var selDataParm = this.getSelParam();
         $.ajax({
             type: "POST",
-            url: selUrl,
+            url: this.selBaseUrl,
+            data:selDataParm
             dataType: "json",
             success: function (data) {
-
             }
         });
 }
