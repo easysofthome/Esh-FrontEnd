@@ -50,7 +50,8 @@ define(function(require, exports, module) {
     //选择地区
     choosePage.selCityCb = function(){
         o.callback = function (e) {
-            $(e).text();
+            var code = $(e).attr('data');
+            $('AreaCityCode').val(code);
         }
     }
     //获取查询参数

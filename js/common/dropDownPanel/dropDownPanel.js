@@ -59,7 +59,7 @@ define(function (require, exports, module) {
     if(text == '全部'){
       text = Trim($(this).parent().prev().text());
     }
-    $('#sel-pro input').val(text);
+    $('#sel-pro input.dropdownInput').val(text);
     if(exports.callback)
     exports.callback(this);
   });
