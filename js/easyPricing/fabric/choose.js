@@ -21,13 +21,13 @@ define(function(require, exports, module) {
         //查找
         $('.sortbox .intbox').children('a').click(function(){
             //ajax请求数据
-            this.searchAjax();
+            that.searchAjax();
         });
         //默认排序 OrderBy=0
         $('.sortbox .sort_def').children('a').click(function(){
             $('#OrderBy').val(0);
             //ajax请求数据
-            this.searchAjax();
+            that.searchAjax();
         });
         //价格排序 OrderBy=3/4
         $('.sortbox .sort_price').children('a').click(function(){
@@ -45,10 +45,10 @@ define(function(require, exports, module) {
             }
             $('#OrderBy').val(sortPrice);
             //ajax请求数据
-            this.searchAjax();
+            that.searchAjax();
         });
         //选择地区回调
-        this.selCityCb();
+        that.selCityCb();
     }
     //选择地区
     choosePage.selCityCb = function(){
