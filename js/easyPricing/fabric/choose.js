@@ -78,7 +78,7 @@ define(function(require, exports, module) {
         $.ajax({
             type: "POST",
             url: this.selBaseUrl,
-            data:selDataParm
+            data:selDataParm,
             dataType: "json",
             success: function (data) {
             }
