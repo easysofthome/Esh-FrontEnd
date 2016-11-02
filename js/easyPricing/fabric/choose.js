@@ -71,10 +71,10 @@ define(function(require, exports, module) {
             '&FactoryName=',selKeyword
         ].join()).replace(/=,/g,'=').replace(/,&/g,'&');
         return selDataParm;
-
     }
     //查询Ajax
     choosePage.searchAjax = function(){
+        var that = this;
         var selDataParm = this.getSelParam();
         $.ajax({
             type: "POST",
@@ -82,9 +82,42 @@ define(function(require, exports, module) {
             data:selDataParm,
             dataType: "json",
             success: function (data) {
+                that.searchCallback(data);
             }
         });
-}
+    }
+    //查询后数据渲染
+    choosePage.searchCallback = function(data){
+        var that = this;
+        var len = data.GreyClothFactorys.length;
+        var $table = $('.TheBinding-box .tab-box');
+        if(len>0){
+            for(var i=0;i<len;i++){
+                var obj = data.GreyClothFactorys[i];
+                var $tr = $('<tr>');
+                var $td = $('<td>');
+                $td.text(obj.FactoryName);
+                $tr.appendChild($td[0].outerHTML);
+                $td.text(obj.AreaName);
+                $td.addClass('fName')
+                $tr.appendChild($td[0].outerHTML);
+                $td.text(obj.Price);
+                $td.addClass('fPrice')
+                $tr.appendChild($td[0].outerHTML);
+                $td.text(obj.LastUpdateDate);
+                $tr.appendChild($td[0].outerHTML);
+                //确定按钮
+                $td.html('<a href="javascript:void(0)" class="access_butt clearfix"><span class="lf confirm_bule"></span>'+
+                         '<span class="lf">确定</span></a>');
+                $td.addClass('fCode').attr('dataval',obj.FactoryId);
+                $tr.appendChild($td[0].outerHTML);
+                $tr.find('a').click(function(){
+                    that.btnOKCallback($(this));
+                });
+            }
+            $table.appendChild($tr);
+        }
+    }
     //确定按钮回调函数
     choosePage.btnOKCallback = function($that){
         //tr对象
