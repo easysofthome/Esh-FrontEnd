@@ -94,28 +94,28 @@ define(function(require, exports, module) {
         if(len>0){
             for(var i=0;i<len;i++){
                 var obj = data.GreyClothFactorys[i];
-                var $tr = $('<tr>');
-                var $td = $('<td>');
+                var $tr = $('<tr></tr>');
+                var $td = $('<td></td>');
                 $td.text(obj.FactoryName);
-                $tr.appendchild($td[0].outerHTML);
+                $tr.appendChild($td[0].outerHTML);
                 $td.text(obj.AreaName);
                 $td.addClass('fName')
-                $tr.appendchild($td[0].outerHTML);
+                $tr.appendChild($td[0].outerHTML);
                 $td.text(obj.Price);
                 $td.addClass('fPrice')
-                $tr.appendchild($td[0].outerHTML);
+                $tr.appendChild($td[0].outerHTML);
                 $td.text(obj.LastUpdateDate);
-                $tr.appendchild($td[0].outerHTML);
+                $tr.appendChild($td[0].outerHTML);
                 //确定按钮
                 $td.html('<a href="javascript:void(0)" class="access_butt clearfix"><span class="lf confirm_bule"></span>'+
                          '<span class="lf">确定</span></a>');
                 $td.addClass('fCode').attr('dataval',obj.FactoryId);
-                $tr.appendchild($td[0].outerHTML);
+                $tr.appendChild($td[0].outerHTML);
                 $tr.find('a').click(function(){
                     that.btnOKCallback($(this));
                 });
             }
-            $table.appendchild($tr);
+            $table.appendChild($tr);
         }
     }
     //确定按钮回调函数
