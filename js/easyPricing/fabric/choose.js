@@ -64,12 +64,12 @@ define(function(require, exports, module) {
         var selCity = $('#AreaCityCode').val();
         var selKeyword = $('#FactoryName').val();
         var otherParam = $("#hideparm").val();
-        var selDataParm = [
+        var selDataParm = ([
             otherParam,
             '&OrderBy=',defSort,
             '&AreaCityCode=',selCity,
             '&FactoryName=',selKeyword
-        ].join().repalce(/=,/g,'=').repalce(/,&/,'&');
+        ].join()).repalce(/=,/g,'=').repalce(/,&/,'&');
         return selDataParm;
 
     }
