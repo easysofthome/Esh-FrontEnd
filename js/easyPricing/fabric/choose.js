@@ -69,7 +69,7 @@ define(function(require, exports, module) {
             '&OrderBy=',defSort,
             '&AreaCityCode=',selCity,
             '&FactoryName=',selKeyword
-        ].join()).repalce(/=,/g,'=').repalce(/,&/,'&');
+        ].join()).replace(/=,/g,'=').replace(/,&/,'&');
         return selDataParm;
 
     }
