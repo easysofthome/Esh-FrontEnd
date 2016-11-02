@@ -54,7 +54,7 @@ define(function(require, exports, module) {
     choosePage.selCityCb = function(){
         dropDownPanel.callback = function (e) {
             var code = $(e).children('a').attr("data");
-            $('AreaCityCode').val(code);
+            $('#AreaCityCode').val(code);
         }
     }
     //获取查询参数
@@ -69,7 +69,7 @@ define(function(require, exports, module) {
             '&OrderBy=',defSort,
             '&AreaCityCode=',selCity,
             '&FactoryName=',selKeyword
-        ].join()).replace(/=,/g,'=').replace(/,&/,'&');
+        ].join()).replace(/=,/g,'=').replace(/,&/g,'&');
         return selDataParm;
 
     }
