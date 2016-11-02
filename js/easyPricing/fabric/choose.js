@@ -67,7 +67,7 @@ define(function(require, exports, module) {
         var selDataParm = [
             otherParam,
             '&OrderBy=',defSort,
-            '&AreaCityCode=',selCity
+            '&AreaCityCode=',selCity,
             '&FactoryName=',selKeyword
         ].join().repalce(/=,/g,'=').repalce(/,&/,'&');
         return selDataParm;
