@@ -115,7 +115,7 @@ define(function(require, exports, module) {
                     that.btnOKCallback($(this));
                 });
             }
-            $table.html($tr[0].outerHTML);
+            $table.html($tr);
         }
     }
     //确定按钮回调函数
