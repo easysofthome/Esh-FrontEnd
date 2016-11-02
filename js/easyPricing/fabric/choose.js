@@ -1,6 +1,5 @@
 define(function(require, exports, module) {
     require('jquery');
-    require('js/front/easydata/common/selCity'); //城市下拉选择
     var dropDownPanel = require('js/front/common/dropDownPanel/dropDownPanel');
     //选择工厂页对象
     var choosePage = {
@@ -53,7 +52,7 @@ define(function(require, exports, module) {
     //选择地区
     choosePage.selCityCb = function(){
         dropDownPanel.callback = function (e) {
-            var code = $(e).children('a').attr("data");
+            var code = $(e).children('span').attr("data");
             $('#AreaCityCode').val(code);
         }
     }

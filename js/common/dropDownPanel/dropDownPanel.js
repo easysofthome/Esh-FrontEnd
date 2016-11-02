@@ -17,6 +17,9 @@ define(function (require, exports, module) {
     var setVal = function(obj) {
         var hl = $(obj).find('span').html();
         $('.dropdownInput').val(hl);
+        if(exports.callback){
+          exports.callback(obj);
+        }
     }
 
     // 省份
