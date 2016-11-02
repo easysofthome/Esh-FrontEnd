@@ -21,24 +21,34 @@ define(function (require, exports, module) {
           exports.callback(obj);
         }
     }
+    //获取二级城市距离父容器的距离
+    function leftNumToParent(targer){
+      //父容器paddingLeft
+      pPaddingL = parseInt($('.pop-up').css('paddingLeft').replace('px',''));
+      var pL = $('.pop-up').offset().left+ pPaddingL;
+      var curL = $(targer).offset().left;
+      return curL - pL;
+    }
 
     // 省份
     $('.provinces>.item').on('click', function() {
         var index = $(this).index();
-
         setVal(this);
-
-        var obj = $(this).nextAll('.sub-items').eq(0);
+        //获取二级城市距离父容器的距离
+        leftNum = leftNumToParent(this);
+        var obj = $(this).children('.sub-items');
+        $('ul.sub-items').hide();
+        //弹出的二级城市层向左对齐
+        obj.css({'left':-leftNum+'px'});
         obj.show();
-        $('.sub-items ul').hide();
-        obj.find('ul:eq('+index+')').show();
     })
     // 最终城市
-    $('.sub-items .item').on('click', function() {
+    $('.sub-items .item').on('click', function(e) {
         if($(this).index() != 0){
             setVal(this);
         }
         $('.pop-up').hide();
+        return false;
     })
 
     // 选择热门城市

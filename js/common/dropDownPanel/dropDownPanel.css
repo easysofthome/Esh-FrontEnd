@@ -9,7 +9,7 @@
   position: relative;
 }
 .pop-up {
-  display: none;
+  display: block;
   position: absolute;
   top: 30px;
   left: 0;
@@ -29,9 +29,13 @@
   color: #333;
   overflow: hidden;
 }
+.pop-up li.province{
+  position:relative;
+  overflow:visible;
+}
 .pop-up ul.zxcities,
 .pop-up ul.provinces {
-  display: inline-block;
+  display: relative;
   font-size: 12px;
 }
 .pop-up ul.zxcities li span,
@@ -51,11 +55,13 @@
   padding: 4px;
 }
 .pop-up .sub-items {
-  display: none;
-  width: 100%;
+  z-index: 1;
+  top:23px;
+  position: absolute;
+  width: 374px;
   padding-left: 12px;
   margin: 0 0 0 -12px;
-  background: #eee;
+
 }
 .pop-up .sub-items span {
   font-size: 12px;
