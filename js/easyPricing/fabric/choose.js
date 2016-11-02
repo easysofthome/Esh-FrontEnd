@@ -90,7 +90,7 @@ define(function(require, exports, module) {
     choosePage.searchCallback = function(data){
         var that = this;
         var len = data.GreyClothFactorys.length;
-        var $table = $('.TheBinding-box .tab-box');
+        var $table = $('.TheBinding-box .tab-box tbody');
         if(len>0){
             for(var i=0;i<len;i++){
                 var obj = data.GreyClothFactorys[i];
@@ -115,7 +115,7 @@ define(function(require, exports, module) {
                     that.btnOKCallback($(this));
                 });
             }
-            $table.append($tr);
+            $table.html($tr[0].outerHTML);
         }
     }
     //确定按钮回调函数
