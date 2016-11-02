@@ -53,7 +53,7 @@ define(function(require, exports, module) {
     //选择地区
     choosePage.selCityCb = function(){
         dropDownPanel.callback = function (e) {
-            var code = $(e).attr('data');
+            var code = $(e).children('a').attr("data");
             $('AreaCityCode').val(code);
         }
     }
@@ -66,9 +66,10 @@ define(function(require, exports, module) {
         var otherParam = $("#hideparm").val();
         var selDataParm = [
             otherParam,
-            '&OrderBy=',OrderBy,
+            '&OrderBy=',defSort,
+            '&AreaCityCode=',selCity
             '&FactoryName=',selKeyword
-        ].join();
+        ].join().repalce(/=,/g,'=').repalce(/,&/,'&');
         return selDataParm;
 
     }
