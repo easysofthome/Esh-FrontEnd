@@ -99,23 +99,23 @@ define(function(require, exports, module) {
                 $td.text(obj.FactoryName);
                 $tr.append($td[0].outerHTML);
                 $td.text(obj.AreaName);
-                $td.addClass('fName')
+                $td.attr('class','fName')
                 $tr.append($td[0].outerHTML);
                 $td.text(obj.Price);
-                $td.addClass('fPrice')
+                $td.attr('class','fPrice')
                 $tr.append($td[0].outerHTML);
                 $td.text(obj.LastUpdateDate);
                 $tr.append($td[0].outerHTML);
                 //确定按钮
                 $td.html('<a href="javascript:void(0)" class="access_butt clearfix"><span class="lf confirm_bule"></span>'+
                          '<span class="lf">确定</span></a>');
-                $td.addClass('fCode').attr('dataval',obj.FactoryId);
+                $td.attr('class','fCode').attr('dataval',obj.FactoryId);
                 $tr.append($td[0].outerHTML);
                 $tr.find('a').click(function(){
                     that.btnOKCallback($(this));
                 });
             }
-            $table.append($tr);
+            $table.append("")($tr);
         }
     }
     //确定按钮回调函数
