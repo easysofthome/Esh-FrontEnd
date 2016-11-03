@@ -519,7 +519,7 @@ define(function(require, exports, module) {
             $.layer({
                 type: 2,
                 title: false,
-                area: ['965px', '540px'],
+                area: ['965px', '300px'],
                 border: [5, 0.3, '#000'],
                 shade: [0.8, '#000'],
                 shadeClose: true,
