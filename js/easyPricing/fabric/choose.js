@@ -9,6 +9,8 @@ define(function(require, exports, module) {
     //初始化
     choosePage.init = function(){
         this.bindEvent();
+         //页面加载后自动查询数据
+        this.searchAjax();
     }
     //事件绑定
     choosePage.bindEvent = function(){
