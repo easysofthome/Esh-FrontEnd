@@ -72,7 +72,8 @@ define(function(require, exports, module) {
             otherParam,
             '&OrderBy=',defSort,
             '&AreaCityCode=',selCity,
-            '&FactoryName=',selKeyword
+            '&FactoryName=',selKeyword,
+            '&PageIndex='+this.pagination.curPageIndex
         ].join()).replace(/=,/g,'=').replace(/,&/g,'&');
         return selDataParm;
     }
@@ -121,6 +122,8 @@ define(function(require, exports, module) {
                 });
             }
             $table.html($tr);
+            //渲染页码
+            that.pagination.init(data);
         }
     }
     //确定按钮回调函数
@@ -144,6 +147,81 @@ define(function(require, exports, module) {
         if(form){
             //接口 form内所有参数
             return form.serialize();
+        }
+    }
+    //页码对象
+    choosePage.pagination = {
+        var that = choosePage;
+        curPageIndex:1,
+        pageSize:10,
+        pageCount:0,
+        $pagination : $('.TheBinding-box .next-box'),
+        init:function(data){
+            this.curPageIndex = data.PageIndex;
+            this.pageSize = data.PageSize;
+            this.pageCount = Math.ceil(data.TotalItemCount/parseInt(this.pageSize));
+            if(this.curPageIndex<=1&&this.pageCount>1){
+                this.showPageBtn('.nextPage');
+            }else if(this.curPageIndex>1){
+                this.showPageBtn('.prevPage');
+            }else if(this.pageCount==1){
+                this.hidePageBtn('.nextPage');
+                this.hidePageBtn('.prevPage');
+            }
+            //绑定分页事件
+            this.bindEvent();
+        },
+        goPage:function(pageData){
+            that.searchAjax();
+        },
+        nextPage:function(){
+            this.curPageIndex++;
+            if(this.curPageIndex>=this.pageCount){
+                this.hidePageBtn('.nextPage');
+            }else{
+               this.goPage();
+            }
+        },
+        prevPage:function(){
+            this.curPageIndex--;
+            if(this.curPageIndex<=0){
+                this.hidePageBtn('.prevPage');
+            }else{
+                this.goPage();
+            }
+        },
+        firstPage:function(){
+            this.PageIndex = 1;
+            this.goPage();
+        },
+        endPage:function(){
+            this.curPageIndex = this.pageCount;
+            this.goPage();
+        },
+        bindEvent:function(){
+            var _that = this;
+            //下一页
+            this.$pagination.find('.nextPage').click(function(){
+                _that.nextPage();
+            });
+            //上一页
+            this.$pagination.find('.prevPage').click(function(){
+                _that.prevPage();
+            });
+            //首页
+            this.$pagination.find('.firstPage').click(function(){
+                _that.firstPage();
+            });
+            //尾页
+            this.$pagination.find('.endPage').click(function(){
+                _that.endPage();
+            });
+        },
+        hidePageBtn:function(selector){
+            this.$pagination.find(selector).hide();
+        },
+        showPageBtn:function(selector){
+            this.$pagination.find(selector).show();
         }
     }
 
