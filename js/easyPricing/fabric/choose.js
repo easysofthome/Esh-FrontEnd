@@ -9,10 +9,11 @@ define(function(require, exports, module) {
     //初始化
     choosePage.init = function(){
         this.bindEvent();
-         //页面加载后自动查询数据
-        this.searchAjax();
         //将父页面序列化的值放入隐藏域
         $("#hideparm").val(this.getFormParams());
+        //页面加载后自动查询数据
+        this.searchAjax();
+
     }
     //事件绑定
     choosePage.bindEvent = function(){
