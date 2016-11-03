@@ -4,7 +4,8 @@ define(function(require, exports, module) {
     //选择工厂页对象
     var choosePage = {
         selBaseUrl :'/Pricing/Fabric/FindGreyClothFactory',
-        observer:parent.window.observer
+        observer:parent.window.observer,
+        noDataHtml:'<tr><td colspan=5>没有匹配的数据！</td></tr>'
     }
     //初始化
     choosePage.init = function(){
@@ -35,7 +36,6 @@ define(function(require, exports, module) {
         });
         //价格排序 OrderBy=3/4
         $('.sortbox .sort_price').children('a').click(function(){
-            var sortPrice_cur = $('#OrderBy').val();
             var sortPrice = '';
             //如果当前是价格正排序3则置为反排序4
             if(sortPrice == '3'){
@@ -124,6 +124,8 @@ define(function(require, exports, module) {
             $table.html($tr);
             //渲染页码
             that.pagination.init(data);
+        }else{
+            $table.html(that.noDataHtml);
         }
     }
     //确定按钮回调函数
@@ -151,7 +153,7 @@ define(function(require, exports, module) {
     }
     //页码对象
     choosePage.pagination = {
-        var that = choosePage;
+        that:choosePage,
         curPageIndex:1,
         pageSize:10,
         pageCount:0,
@@ -164,15 +166,17 @@ define(function(require, exports, module) {
                 this.showPageBtn('.nextPage');
             }else if(this.curPageIndex>1){
                 this.showPageBtn('.prevPage');
-            }else if(this.pageCount==1){
+            }else if(this.pageCount<=1){
                 this.hidePageBtn('.nextPage');
                 this.hidePageBtn('.prevPage');
+                this.hidePageBtn('.firstPage');
+                this.hidePageBtn('.endPage');
             }
             //绑定分页事件
             this.bindEvent();
         },
-        goPage:function(pageData){
-            that.searchAjax();
+        goPage:function(){
+            this.searchAjax();
         },
         nextPage:function(){
             this.curPageIndex++;
