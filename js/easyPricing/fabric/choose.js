@@ -5,7 +5,9 @@ define(function(require, exports, module) {
     var choosePage = {
         selBaseUrl :'/Pricing/Fabric/FindGreyClothFactory',
         observer:parent.window.observer,
-        noDataHtml:'<tr><td colspan=5>没有匹配的数据！</td></tr>'
+        noDataHtml:'<tr><td colspan=5>没有匹配的数据！</td></tr>',
+        dataTableSelector:'.TheBinding-box .tab-box tbody',
+        dataTableLoadHtml:'<tr><td colspan=5><div class="loading"></div></td></tr>'
     }
     //初始化
     choosePage.init = function(){
@@ -81,6 +83,7 @@ define(function(require, exports, module) {
     choosePage.searchAjax = function(){
         var that = this;
         var selDataParm = this.getSelParam();
+        that.ajaxLoad(true);
         $.ajax({
             type: "POST",
             url: this.selBaseUrl,
@@ -91,11 +94,18 @@ define(function(require, exports, module) {
             }
         });
     }
+    //数据加载等待
+    choosePage.ajaxLoad = function(noFinished){
+        var $table = $(this.dataTableSelector);
+        if(noFinished){
+            $table.html(this.dataTableLoadHtml);
+        }
+    }
     //查询后数据渲染
     choosePage.searchCallback = function(data){
         var that = this;
         var len = data.GreyClothFactorys.length;
-        var $table = $('.TheBinding-box .tab-box tbody');
+        var $table = $(that.dataTableSelector);
         if(len>0){
             for(var i=0;i<len;i++){
                 var obj = data.GreyClothFactorys[i];
