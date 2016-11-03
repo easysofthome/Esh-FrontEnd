@@ -32,15 +32,21 @@ define(function (require, exports, module) {
 
     // 省份
     $('.provinces>.item').on('click', function() {
-        var index = $(this).index();
-        setVal(this);
+      var index = $(this).index();
+       var obj = $(this).children('.sub-items');
+      if(obj.is(':hidden')){
+        //setVal(this);
         //获取二级城市距离父容器的距离
         leftNum = leftNumToParent(this);
-        var obj = $(this).children('.sub-items');
         $('ul.sub-items').hide();
         //弹出的二级城市层向左对齐
         obj.css({'left':-leftNum+'px'});
         obj.show();
+      }else{
+        obj.hide();
+      }
+
+
     })
     // 最终城市
     $('.sub-items .item').on('click', function(e) {

@@ -104,6 +104,7 @@ define(function(require, exports, module) {
                 $td.attr('class','fPrice')
                 $tr.append($td[0].outerHTML);
                 $td.text(obj.LastUpdateDate);
+                $td.removeClass('fPrice');
                 $tr.append($td[0].outerHTML);
                 //确定按钮
                 $td.html('<a href="javascript:void(0)" class="access_butt clearfix"><span class="lf confirm_bule"></span>'+

@@ -9,7 +9,7 @@
   position: relative;
 }
 .pop-up {
-  display: block;
+  display: hidden;
   position: absolute;
   top: 30px;
   left: 0;
