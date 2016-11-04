@@ -92,7 +92,7 @@ operParentLayer();
           ignore: '.ignore',
           submitHandler: function (form) {
               //提交表单
-            // formSubmit(form);
+             form.submit();
               //阻止表单提交
              return false;
           },
