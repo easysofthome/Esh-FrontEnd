@@ -14,9 +14,12 @@ define(function(require, exports, module) {
         this.bindEvent();
         //将父页面序列化的值放入隐藏域
         $("#hideparm").val(this.getFormParams());
-        //页面加载后自动查询数据
+    }
+    //坯布页面加载后执行
+    choosePage.greyFabricInit = function(){
+        this.greyFabricBindEvent();
+         //页面加载后自动查询数据
         this.searchAjax();
-
     }
     //事件绑定
     choosePage.bindEvent = function(){
@@ -25,6 +28,12 @@ define(function(require, exports, module) {
         $('.tab-box').find('.access_butt').bind('click',function(){
             that.btnOKCallback($(this));
         });
+        //选择地区回调
+        that.selCityCb();
+    }
+    //坯布页面事件绑定
+    choosePage.greyFabricBindEvent = function(){
+        var that = this;
         //查找
         $('.sortbox .intbox').children('a').click(function(){
             //ajax请求数据
@@ -53,8 +62,6 @@ define(function(require, exports, module) {
             //ajax请求数据
             that.searchAjax();
         });
-        //选择地区回调
-        that.selCityCb();
     }
     //选择地区
     choosePage.selCityCb = function(){
@@ -241,6 +248,8 @@ define(function(require, exports, module) {
 
     //入口
     choosePage.init();
+    //坯布页面接口
+    module.exports.greyFabricInit = choosePage.greyFabricInit;
     module.exports.getFormParams = choosePage.getFormParams;
 
 });
