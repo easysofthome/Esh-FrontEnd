@@ -40,13 +40,13 @@ define(function(require, exports, module) {
                 that.searchAjax();
             });
             //默认排序 OrderBy=0
-            $('.sortbox .sort_def').children('a').click(function(){
+            $('.sortbox .sort_def').click(function(){
                 $('#OrderBy').val(0);
                 //ajax请求数据
                 that.searchAjax();
             });
             //价格排序 OrderBy=3/4
-            $('.sortbox .sort_price').children('a').click(function(){
+            $('.sortbox .sort_price').click(function(){
                 var sortPrice = '';
                 //如果当前是价格正排序3则置为反排序4
                 if(sortPrice == '3'){
