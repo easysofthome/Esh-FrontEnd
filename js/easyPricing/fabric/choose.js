@@ -2,7 +2,7 @@ define(function(require, exports, module) {
     require('jquery');
     var dropDownPanel = require('js/front/common/dropDownPanel/dropDownPanel');
     //选择工厂页对象
-    var choosePage = function(){
+    function choosePage(){
         this.selBaseUrl = '/Pricing/Fabric/FindGreyClothFactory';
         this.observer = parent.window.observer;
         this.noDataHtml = '<tr><td colspan=5>没有匹配的数据！</td></tr>';
@@ -251,8 +251,8 @@ define(function(require, exports, module) {
     //入口
     choosePageOjb.init();
     //坯布页面接口
-    module.exports.greyFabricInit = choosePageOjb.greyFabricInit;
-    module.exports.getFormParams = choosePage.getFormParams;
+    module.exports.choosePageOjb = choosePageOjb;
+    module.exports.getFormParams = choosePageOjb.getFormParams;
 
 });
 
