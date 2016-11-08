@@ -91,8 +91,8 @@ operParentLayer();
           //忽略
           ignore: '.ignore',
           submitHandler: function (form) {
-              //提交表单
-            // formSubmit(form);
+              //提交表单手动
+             form.submit();
               //阻止表单提交
              return false;
           },

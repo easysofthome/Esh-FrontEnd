@@ -1,68 +1,67 @@
 define(function (require, exports, module) {
+   require('js/front/common/dropDownPanel/dropDownPanel.css');
+   require('jquery');
+   exports.callback;
+
    var index = parent.layer.getFrameIndex(window.name);
     $('.close,.btn_close').click(function(){
       parent.layer.close(index);
     });
+   $('#selCity').hover(function() {
+        $('.pop-up').show();
+    },function() {
+        $('.pop-up').hide();
+    });
 
-  require('js/front/common/dropDownPanel/dropDownPanel.css');
-  exports.callback;
-  require('jquery');
-  var initH = $(document.body).height();
-  //选择产品
-  $('#sel-pro').hover(function() {
-    $('.sel-pro').show();
-     var h = $(document).height();
-      $(document.body).css({'height':h});
-      parent.layer.iframeAuto();
-  }, function() {
-    $('.sel-pro').hide();
-    $(document.body).css({'height':initH});
-    parent.layer.iframeAuto();
-  });
-
-  // $('#sel-pro').on('mouseover', '.level1>li', function(event) {
-  //   $(this).parent().find('.cur').removeClass('cur');
-  //   $(this).addClass('cur');
-  //   $('.level2 ul').hide();
-  //   $('.level2 ul').eq($(this).index()).show();
-  // });
-
-  var offsetL;
-  $('#sel-pro').on('mouseover', '.level2 ul>li', function(event) {
-    offsetL = $(this).offset().left-$('.level2').offset().left;
-    // 判断元素的位置在左半边还是右半边
-    var dropPanelW = $('#sel-pro').find('.sel-pro').width();
-    if(offsetL > dropPanelW - offsetL){
-      $(this).find('.level3').css('left','unset').css('right',0);
-      $(this).find('.level3').css('width',offsetL + $(this).width()-1);
-    }else{
-      $(this).find('.level3').css('width',dropPanelW-2 - offsetL);
+    // 设置输入框的值
+    var setVal = function(obj) {
+        var hl = $(obj).find('span').html();
+        $('.dropdownInput').val(hl);
+        if(exports.callback){
+          exports.callback(obj);
+        }
+    }
+    //获取二级城市距离父容器的距离
+    function leftNumToParent(targer){
+      //父容器paddingLeft
+      pPaddingL = parseInt($('.pop-up').css('paddingLeft').replace('px',''));
+      var pL = $('.pop-up').offset().left+ pPaddingL;
+      var curL = $(targer).offset().left;
+      return curL - pL;
     }
 
-    $(this).find('.level3-tit').css('z-index','3');
-    $(this).find('.level3').show();
-    var h = $(document).height();
-    $(document.body).css({'height':h});
-    parent.layer.iframeAuto();
+    // 省份
+    $('.provinces>.item').on('click', function() {
+      var index = $(this).index();
+       var obj = $(this).children('.sub-items');
+      if(obj.is(':hidden')){
+        //setVal(this);
+        //获取二级城市距离父容器的距离
+        leftNum = leftNumToParent(this);
+        $('ul.sub-items').hide();
+        //弹出的二级城市层向左对齐
+        obj.css({'left':-leftNum+'px'});
+        obj.show();
+      }else{
+        obj.hide();
+      }
 
 
-  });
+    })
+    // 最终城市
+    $('.sub-items .item').on('click', function(e) {
+        if($(this).index() != 0){
+            setVal(this);
+        }
+        $('.pop-up').hide();
+        return false;
+    })
 
-
-  $('#sel-pro').on('mouseout', '.level2 ul>li', function(event) {
-    $(this).find('.level3').hide();
-    $(this).find('.level3-tit').css('z-index','1');
-  });
-
-  $('#sel-pro').on('click', '.level2 ul>li .final', function(event) {
-    var text = Trim($(this).text());
-    if(text == '全部'){
-      text = Trim($(this).parent().prev().text());
-    }
-    $('#sel-pro input.dropdownInput').val(text);
-    if(exports.callback)
-    exports.callback(this);
-  });
+    // 选择热门城市
+    $('.zxcities>.item').on('click', function() {
+        setVal(this);
+        $('.pop-up').hide();
+    })
 
   function Trim(str){
     return str.replace(/(^\s*)|(\s*$)/g, "");
