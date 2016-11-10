@@ -166,8 +166,8 @@ function initPostionOnShowTip(obj){
 
 
        //替换面料
-      $("#mainFabric .accessories_name").attr('href', 'javascript:void(0)');
-      $("#mainFabric .accessories_name").bind("click",function(){
+      $(".replaceFabric_name").attr('href', 'javascript:void(0)');
+      $(".replaceFabric_name").bind("click",function(){
         $.layer({
           type:2,
           title: false,
@@ -189,8 +189,8 @@ function initPostionOnShowTip(obj){
 
 
       //辅料替换
-      $("#mainAccPurpose .accessories_name").attr('href', 'javascript:void(0)');
-      $("#mainAccPurpose .accessories_name").bind("click",function(){
+      $(".accessories_name").attr('href', 'javascript:void(0)');
+      $(".accessories_name").bind("click",function(){
         $.layer({
           type:2,
           title: false,
