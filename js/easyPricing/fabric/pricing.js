@@ -69,6 +69,10 @@ define(function(require, exports, module) {
             case '3':
                 $('#priceRet').show();//您的询价结果
                 break;
+            default:
+               $('#matFactoryList').fadeIn(); //与您匹配的面料供应商
+               $('#priceRet').show();//您的询价结果
+               break;
         }
     }
     //隐藏核价操作部分
@@ -561,11 +565,11 @@ define(function(require, exports, module) {
     module.exports = priceObj;
 
     //测试用 跳过表单验证
-    // var o = new priceObj();
+    var o = new priceObj();
 
-    // $('#startPrice').on('click', function() {
-    //     o.start();
-    // });
+    $('#startPrice').on('click', function() {
+        o.start();
+    });
 
     //提供全局对象
     window.priceObjPage = priceObj;
