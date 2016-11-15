@@ -70,7 +70,6 @@ define(function(require, exports, module) {
                 $('#priceRet').show();//您的询价结果
                 break;
             default:
-               $('#matFactoryList').fadeIn(); //与您匹配的面料供应商
                $('#priceRet').show();//您的询价结果
                break;
         }
