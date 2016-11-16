@@ -18,7 +18,8 @@ define(function ( require, exports, module) {
 var loadObj =  require('js/front/lib/Loading/littleLoading.js');
 //获取图片加载等待对象
 var myloadObj = loadObj.init({
-      'select':'#dataBox'
+      'select':'#dataBox',
+      'loadImgUrl': 'Static/pic/refresh.gif'
 });
 //查询接口
 $('.btn_01').click(function(){
