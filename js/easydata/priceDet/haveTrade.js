@@ -26,10 +26,7 @@ $('.btn_01').click(function(){
   //出现
   myloadObj.show();
 
-  setTimeout(function() {
-     //消失
-     myloadObj.destroy();
-  }, 2000);
+
 });
 
 //获取图片加载等待对象
