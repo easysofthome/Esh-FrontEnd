@@ -24,9 +24,17 @@ define(function (require, exports, module) {
 
     $('#section1 .othermodules').css('height',devHeight-160);
     $('#section1 .content_box').css('top','50%').css('left','50%').css('margin-left',w2+"px");
-    $('#section2 .wrap').css('height',devHeight-282);
-  };
+    $('#section1 .content_box').css('top','50%')
+    $('#section3 .wrap').css('height',devHeight-282);
 
+    var section2DesH = $('#section2 .Positioning').height();
+    var section2VideoH = $('#section2 .video_comp').height();
+    var section2DesH_temp = $('#section1').height() - section2VideoH;
+
+    if(section2DesH_temp - section2DesH-32>0){
+      $('#section2 .Positioning').css({top:(section2DesH_temp- section2DesH+32)/2});
+    }
+  };
   // 颜色渐变支持
 
   // 窗口结构加载完成时
@@ -147,7 +155,6 @@ define(function (require, exports, module) {
     myMouse.setLittleMousePosition("section0_id","little_mouse");
 
   });
-
 
   //弹出层
    $('#startDesign').on('click', function() {

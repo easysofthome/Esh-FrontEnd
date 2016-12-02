@@ -8,9 +8,10 @@ body,html{
   font-size: 12px;
 }
 
-
+othermodules
 .wrap{
   width:100%;
+
 }
 /*** 下一页提醒箭头 ***/
 .mousedown{
@@ -388,11 +389,13 @@ body,html{
     background-color: #f2f1f0;
     overflow: hidden;
   }
+
 }
+
 .downloadbox{
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 0;
   margin-top: -150px;
 }
@@ -598,4 +601,77 @@ iframe{
         }
     }
 }
+
+
+
+.effect_box{
+    background-color: #fff;
+    background-image: url("/images/production/easyPricing/video_ico.PNG");
+    background-repeat:no-repeat;
+    background-position:center 190px;
+    text-align: center;
+    color: #666666;
+    position:relative;
+    height: 100%;
+    left: 0;
+    top: 0;
+    .sim_exp{
+    color:#888;
+    font-size: 14px;
+    width: 800px;
+    margin: 30px auto 0 auto;
+    text-align: left;
+    }
+    .Positioning{
+      position: absolute;
+      left: 50%;
+      margin-left: -400px;
+      top: 6%;
+    }
+    .video_comp{
+    .sprite(@video_comp);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -420px;
+    .icon-easysofthome;
+
+    .video_cen{
+        margin: 40px auto 0 auto;
+        width: 750px;
+        height: 420px;
+        background-color: #000;
+        overflow: hidden;
+    }
+}
+
+
+.sim_titlebox{
+    position: relative;
+    display: inline-block;
+}
+    .title_left{
+    .sprite(@titlelf);
+    .icon-easysofthome;
+    position: absolute;
+
+    left:-10px;
+    top:-8px;
+}
+    .title_rg{
+    .sprite(@titlerg);
+    .icon-easysofthome;
+    position: absolute;
+
+    right: -12px;
+    bottom: -12px;
+}
+    .sim_title{
+    line-height: 32px;
+    font-size: 32px;
+    font-weight: bold;
+
+}
+}
+
 /**  /footer  */
